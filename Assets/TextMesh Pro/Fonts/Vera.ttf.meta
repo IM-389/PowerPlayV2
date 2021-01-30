@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 0f9aa4c3ba7dbdf4f8795b783de3e427
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Bitstream Vera Sans
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 68275862914058942b597c0f6d0aed16, type: 3}
+  - {fileID: 12800000, guid: dfbc2b948525fb3439160b4372fab0a3, type: 3}
+  - {fileID: 12800000, guid: db7393d8aa5353f41a671a9008b23d27, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
