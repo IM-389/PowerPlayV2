@@ -42,6 +42,7 @@ public static class Helper
     }
 
     //Draws a line
+    //-ok, but what's that mean? QD, 4:30 PM 1/31
     public static void DrawLine(Vector3 start, Vector3 end, Color color)
     {
         GameObject myLine = new GameObject();
