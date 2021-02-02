@@ -152,6 +152,7 @@ public class Phase2Manager : MonoBehaviour
      * Start Random Events
      */
 
+    
     public void TriggerEvent()
     {
         start = FindObjectOfType<StartUpScript>();
@@ -186,7 +187,7 @@ public class Phase2Manager : MonoBehaviour
         progressEvents();
     }
 
-    //updates the total power ui element
+    // updates the total power ui element
     public void UpdateUi(int coalAmount, int turbineAmount, int gasAmount, int solarAmount)
     {
         currentPower = 0;
@@ -272,6 +273,15 @@ public class Phase2Manager : MonoBehaviour
 
 
 
+    /// <summary>
+    /// Determines how much power is coming from each source, checkes against how much power is needed
+    /// Excess power becomes happiness, excess happiness allows more houses to appear
+    /// </summary>
+    /// <param name="coalAmount">How many there are</param>
+    /// <param name="turbineAmount">How many there are</param>
+    /// <param name="gasAmount">How many there are</param>
+    /// <param name="solarAmount">How many there are</param>
+    /// <param name="houseAmount">How many there are</param>
     public void RunSimulation(int coalAmount, int turbineAmount, int gasAmount, int solarAmount, int houseAmount)
     {
 
@@ -361,6 +371,9 @@ public class Phase2Manager : MonoBehaviour
         }
         */
 
+        // Totals are the sum of everything
+        // [object].power is default power of that object
+        // Multipliers are % of total power given that day
         windTotal = turbineAmount * turbine.power * windMultiplier;
         gasTotal = gasAmount * gas.power * gasMultiplier;
         solarTotal = solarAmount * solar.power * solarMultiplier;
@@ -388,6 +401,8 @@ public class Phase2Manager : MonoBehaviour
         gasPowerPercentage.text = System.String.Format("{0:0.0%}", gasPercentage);
 
 
+        // Pollution tick: unused
+        // Originally for a global counter to determine other events
         if (pollutionLevels > pollutionTollerance * pollutionTicks)
         {
             pollutionTicks++;
@@ -504,6 +519,9 @@ public class Phase2Manager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Determines what random events happen
+    /// </summary>
     public void RollRandom()
     {
         int RandomValue;
@@ -712,6 +730,9 @@ public class Phase2Manager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Called at the end
+    /// </summary>
     public void AdjustPopulation()
     {
 
@@ -752,6 +773,9 @@ public class Phase2Manager : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Handles things broken for more than one day
+    /// </summary>
     public void progressEvents()
     {
         var objects = GameObject.FindGameObjectsWithTag("turbine");
