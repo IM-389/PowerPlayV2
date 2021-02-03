@@ -55,7 +55,7 @@ public class SmallLineScript : MonoBehaviour
         }
     }
 
-    void determineIfPowered()
+    void determineIfPowered()//def make this a switch, or generally pare down the logic here. 
     {
         for (int i = 0; i < amountOfConnectedObjects; i++)
         {

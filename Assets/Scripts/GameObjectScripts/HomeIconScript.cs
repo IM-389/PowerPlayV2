@@ -9,13 +9,15 @@ public class HomeIconScript : MonoBehaviour
     public Sprite noPowerSprite;
     public Sprite noConnectionSprite;
     bool toggleDirection = false;
-
+   
     // Start is called before the first frame update
     void Start()
     {
-        parentScript = transform.parent.GetComponent<HomeScript>();
+        parentScript = transform.parent.GetComponent<HomeScript>();//seems like this logic permeates through most of the project, wherein we're referencing parent scripts
+        //this can prolly be avoided if we put it in gameManager
         sprRend = gameObject.GetComponent<SpriteRenderer>();
         sprRend.sprite = null;
+        Debug.Log("literally only here so i can push the comments to github lol");
     }
 
     // Update is called once per frame

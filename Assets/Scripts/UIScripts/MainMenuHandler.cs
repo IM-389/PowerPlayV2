@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenuHandler : MonoBehaviour
-{
+{//logically, this all works, but I don't like it. I don't think we need a class to handle menu things, but I may be wrong there
     public GameObject helpScreen1;
     public GameObject nextButton1;
     public GameObject helpScreen2;

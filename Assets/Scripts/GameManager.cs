@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine.Rendering;
 using UnityEngine;
-
+//nothing's here at the moment, obviously-I feel like we can probably put most of the gameObject scripts in here for ease of management?
 public class GameManager : MonoBehaviour
 {
 

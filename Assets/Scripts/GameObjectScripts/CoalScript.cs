@@ -50,7 +50,7 @@ public class CoalScript : MonoBehaviour
 
         if (BuildFunctions.simulationReset)
         {
-
+            //no need for this right? nothing's here. maybe put a debug.log to see what's up.
         }
         else
         {
@@ -115,7 +115,7 @@ public class CoalScript : MonoBehaviour
     }
 
     public void SearchForPower(GameObject startObject, int stepLimit)
-    {
+    {//there's a LOT here-might be best to split them into seperate functions
         if (stepLimit > 0)
         {
             for (int i = 0; i < amountOfConnectedObjects; i++)
@@ -125,7 +125,7 @@ public class CoalScript : MonoBehaviour
                     stepLimit--;
                     connectedObjects[i].GetComponent<SmallLineScript>().SearchForPower(startObject, stepLimit);
                 }
-                else if (connectedObjects[i].name == "solar(Clone)")
+                else if (connectedObjects[i].name == "solar(Clone)")//interesting way to handle this-we may wanna keep this in mind going forward if we need to look for specific objects.
                 {
                     if (connectedObjects[i].GetComponent<SolarScript>().power <= 0)
                     {

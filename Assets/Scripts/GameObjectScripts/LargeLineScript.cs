@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//this should be fine to leave, save for maybe putting in gameManager
 public class LargeLineScript : MonoBehaviour
 {
     // Start is called before the first frame update

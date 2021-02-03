@@ -52,7 +52,8 @@ public class NaturalGasScript : MonoBehaviour
 
         if (BuildFunctions.simulationReset)
         {
-
+            //should be able to remove this-im seeing a lot of similarites to CoalScript, and likely the other resource scripts too
+            //so, on the bright side, i think we can use the same/similar solution(s) for any resource code
         }
         else
         {
@@ -76,7 +77,7 @@ public class NaturalGasScript : MonoBehaviour
     }
     void SimulationReset()
     {
-        if (broken)
+        if (broken)//this wasn;t in coalScript-odd
         {
             power = 0;
         }
@@ -94,7 +95,8 @@ public class NaturalGasScript : MonoBehaviour
     {
         amountOfConnectedObjects = 0;
         Vector2 myLocation = new Vector2(transform.position.x, transform.position.y);
-        for (int i = 0; i <= BuildFunctions.lineNumber; i++)
+        for (int i = 0; i <= BuildFunctions.lineNumber; i++)//not sure i get the logic here-can't we just get the location of whatever object? 
+            //if im not mistaken, isn't there a getPosition function or something?
         {
 
             if (myLocation == BuildFunctions.lineLocations[i])

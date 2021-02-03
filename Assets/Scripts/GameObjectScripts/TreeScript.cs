@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//should be ok?
 public class TreeScript : MonoBehaviour
 {
     // Start is called before the first frame update

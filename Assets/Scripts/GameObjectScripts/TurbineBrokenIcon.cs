@@ -45,7 +45,7 @@ public class TurbineBrokenIcon : MonoBehaviour
         gameObject.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0, 1);
     }
     */
-
+    //same issue with other broken icon scripts
 
         if (parentScript.broken == true)
         {

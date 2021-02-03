@@ -6,6 +6,7 @@ using System;
 public class HomeScript : MonoBehaviour
 {
     //locations of connected objects
+    //this is what HomeIconScript references-again, both this and HIS.cs can probably be condensed into gameManager
     public GameObject[] connectedObjects = new GameObject[20];
 
     public uint amountOfConnectedObjects = 0;
@@ -61,7 +62,7 @@ public class HomeScript : MonoBehaviour
         }
         */
 
-        if (BuildFunctions.simulationReset)
+        if (BuildFunctions.simulationReset)//can condense these first three ifs into one if loop
         {
             if (connectedToPower)
             {
@@ -100,7 +101,7 @@ public class HomeScript : MonoBehaviour
         }
     }
 
-    void determineIfPowered()
+    void determineIfPowered()//way too many ifs-i'd recommend condensing them into a while, maybe? or a switch, that'd work too
     {
         for (int i = 0; i < amountOfConnectedObjects; i++)
         {
@@ -213,7 +214,7 @@ public class HomeScript : MonoBehaviour
         }
     }
 
-    public void SearchForPower(GameObject startObject, int stepLimit)
+    public void SearchForPower(GameObject startObject, int stepLimit)//def make a switch case or something that isnt tons of if-elses
     {
         if (stepLimit > 0)
         {

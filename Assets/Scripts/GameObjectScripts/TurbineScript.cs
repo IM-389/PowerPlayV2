@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+//same issues here as in nuclear/coal
 public class TurbineScript : MonoBehaviour
 {
     //is true when powered or provides power

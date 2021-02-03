@@ -46,7 +46,8 @@ public class SolarScriptBrokenIcon : MonoBehaviour
     }
     */
 
-if (parentScript.daysToBeBroken > 0 )
+if (parentScript.daysToBeBroken > 0 )//i dont think we need all this, we should be able to just change the sprites and call it a day as long as we have the proper position, right? same problem with
+            //all the other broken icon scripts
         {
             sprRend.sprite = noSunSprite;
             if (toggleDirection == true)
