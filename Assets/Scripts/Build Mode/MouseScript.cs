@@ -36,6 +36,7 @@ public class MouseScript : MonoBehaviour
         //check if mouse is on screen
         if (Helper.IsMouseOnScreen())
         {
+            // TODO: Cache mouse position
             transform.position = new Vector3(Helper.getMousePositionFromWorldRounded().x, Helper.getMousePositionFromWorldRounded().y, 0);
 
             if (BuildFunctions.areGridSpacesEmpty(Helper.getMousePositionFromWorldRounded()))
@@ -47,7 +48,7 @@ public class MouseScript : MonoBehaviour
                 sprRend.color = new Color(1, 0, 0, transLevel);
             }
 
-
+            // TODO: Standardize and generalize
             switch (BuildFunctions.menuSelection)
             {
                 case (0):

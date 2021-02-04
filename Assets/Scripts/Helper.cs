@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// TODO: Allow for camera to be passed in to allow for caching
 public static class Helper
 {
     //Snap object to grid
@@ -36,6 +37,7 @@ public static class Helper
 
     //returns screen pixel location for either game window or screen
     //im not sure which and im too tired to check
+    // TODO: Removel, unused
     public static Vector3 getMousePositionFromScreen()
     {
         return Input.mousePosition;

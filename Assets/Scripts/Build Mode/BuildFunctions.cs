@@ -19,12 +19,14 @@ public class BuildFunctions : MonoBehaviour
     [SerializeField] public GameObject tree;
 
     //amounts of power
+    // TODO: Merge into a single list
     public static int solarAmount = 0;
     public static int turbineAmount = 0;
     public static int coalAmount = 0;
     public static int gasAmount = 0;
 
     //this is a 2d grid used to store locations of objects on the game board
+    // TODO: Change to allow dynamic sizing
     public static GameObject[,] playArea = new GameObject[70, 70];
 
     //text that appears on bottom of the screen to tell player how to stop placeing object/using tool
@@ -34,9 +36,11 @@ public class BuildFunctions : MonoBehaviour
     public Text toolPromptText;
 
     //dropdown ui
+    // TODO: Remove, unused
     public TMPro.TMP_Dropdown dropDown;
 
     //positions used to lay lines in run lines tool
+    // TODO: Move to the objects themselves (Objects form connections between themselves, not at a manager level)
     public static Vector2 position1 = new Vector2(0, 0);
     public static Vector2 position2 = new Vector2(0, 0);
 
@@ -72,6 +76,7 @@ public class BuildFunctions : MonoBehaviour
 
         
         Invoke("delayedSimulationReset", .02f);
+        // TODO: Switch to an on-click event for placing, and on-dropdown-change event for the phantom item
         switch (menuSelection)
         {
             case 0:
@@ -106,10 +111,12 @@ public class BuildFunctions : MonoBehaviour
 
         }
 
+        // TODO: UIManager
         GameObject.Find("GameManager").GetComponent<Phase2Manager>().UpdateUi(coalAmount, turbineAmount, gasAmount, solarAmount);
     }
 
     //place object function
+    // TODO: Switch to an on-click event for placing, and on-dropdown-change event for the phantom item
     public void PlaceObjectFunction(GameObject selectedObject)
     {
         //check for input, check for click not on ui, and check that mouse in within game window.
@@ -169,6 +176,7 @@ public class BuildFunctions : MonoBehaviour
     //checks to make sure grid spaces are empty
     public static bool areGridSpacesEmpty(Vector2 position)
     {
+        // TODO: Condense via lists and return condensing as well
         switch (menuSelection)
         {
             case 0://power pole, single position to check
@@ -214,6 +222,7 @@ public class BuildFunctions : MonoBehaviour
     }
 
     //set many grid spaces
+    // TODO: Parameters. Please. Parameters.
     public static void AddGridSpaces(GameObject selectedObject)
     {
         switch (menuSelection)
@@ -286,6 +295,7 @@ public class BuildFunctions : MonoBehaviour
     }
 
     //tool that remove things
+    // TODO: Tags. Tags are very much a thing.
     public void RemoverTool()
     {
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
@@ -293,7 +303,7 @@ public class BuildFunctions : MonoBehaviour
             if (!IsGridSpaceEmpty(Helper.getMousePositionFromWorldRounded()))
             {
                 GameObject objectToBeRemoved = Helper.GetObjectFromLocation2d(Helper.getMousePositionFromWorldRounded());
-
+                // TODO: See parameters and lists. Also tags.
                 if (objectToBeRemoved.name == electricPole.name + "(Clone)")
                 {
 
@@ -368,6 +378,7 @@ public class BuildFunctions : MonoBehaviour
         }
     }
 
+    // TODO: Unused, remove 
     public static void RemoveExtraGridSpaces(GameObject objectToBeRemoved)
     {
         switch (menuSelection)
@@ -456,6 +467,7 @@ public class BuildFunctions : MonoBehaviour
             toolPromptText.text = "";
         }
 
+        //TODO: Cache variables
         if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             if (!IsGridSpaceEmpty(Helper.getMousePositionFromWorldRounded()) && position1 == new Vector2(0, 0) && !IsGridSpaceMatching(tree, Helper.getMousePositionFromWorldRounded()))
@@ -533,6 +545,7 @@ public class BuildFunctions : MonoBehaviour
 
 
     //returns true if selected gameObject is next to a tree
+    // TODO: Parameters and tags again. Please.
     public bool isObjectNextToTree(GameObject selectedGameObject)
     {
         if (selectedGameObject.name == "smallllines(Clone)")
@@ -626,6 +639,7 @@ public class BuildFunctions : MonoBehaviour
     }
 
 
+    // TODO: Same code as RemoverTool? Use this there
     public void RemoveObjectFunction(GameObject objectToBeRemoved)
     {
 
@@ -727,6 +741,7 @@ public class BuildFunctions : MonoBehaviour
 
     public void delayedSimulationReset() => BuildFunctions.simulationReset = true;
 
+    // TODO: Remove, unused
     public static GameObject getObjectFromGridPosition(Vector2 location)
     {
         //this is to stop a bug

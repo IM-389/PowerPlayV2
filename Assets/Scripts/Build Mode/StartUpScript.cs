@@ -47,6 +47,7 @@ public class StartUpScript : MonoBehaviour
     }
 
     //starts 1 frame after start this gives the camera time to run cameraScript
+    // TODO: Coroutine
     void briefPause()
     {
         //determine the starting amount of gridspaces
@@ -73,6 +74,7 @@ public class StartUpScript : MonoBehaviour
         spawnTrees();
     }
 
+    // TODO: Condense this and trees into one function
     //spawn houses
     void spawnHouses()
     {
@@ -223,6 +225,7 @@ public class StartUpScript : MonoBehaviour
 
         }
 
+        // TODO: Duplicate code? Remove
         if(housesToBeRemoved > 0)
         {
             while (housesToBeRemoved > 0)
