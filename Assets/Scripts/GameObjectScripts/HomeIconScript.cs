@@ -17,7 +17,7 @@ public class HomeIconScript : MonoBehaviour
         //this can prolly be avoided if we put it in gameManager
         sprRend = gameObject.GetComponent<SpriteRenderer>();
         sprRend.sprite = null;
-        Debug.Log("literally only here so i can push the comments to github lol");
+       
     }
 
     // Update is called once per frame
