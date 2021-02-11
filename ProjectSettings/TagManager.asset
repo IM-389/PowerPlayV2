@@ -10,6 +10,8 @@ TagManager:
   - gasPlant
   - solar
   - coal
+  - Background
+  - BuildCircle
   layers:
   - Default
   - TransparentFX
