@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 27588709232717112}
   - component: {fileID: 1302276669151511910}
   - component: {fileID: 3532806784607543446}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: transformers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
