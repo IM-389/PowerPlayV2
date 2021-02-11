@@ -77,7 +77,7 @@ public class NaturalGasScript : MonoBehaviour
     }
     void SimulationReset()
     {
-        if (broken)//this wasn;t in coalScript-odd
+        if (broken)//this if statement wasn't in coalScript-odd. add boolean canBreak, check yes/no
         {
             power = 0;
         }

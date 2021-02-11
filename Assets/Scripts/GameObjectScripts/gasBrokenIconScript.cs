@@ -50,7 +50,7 @@ public class gasBrokenIconScript : MonoBehaviour
         if (parentScript.broken == true)//if im not mistaken, this should change sprites to their "broken" form. 
         {//hoever, i dont think we need all this. should be able to just swap the sprites as long as the position stays the same, right? 
             //this seems too complex for that. 
-
+            
             sprRend.sprite = brokenSprite;
             if (toggleDirection == true)
             {
