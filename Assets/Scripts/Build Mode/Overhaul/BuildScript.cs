@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class BuildScript : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class BuildScript : MonoBehaviour
     public List<GameObject> spawnableBuildings = new List<GameObject>();
 
     public GameObject selectedBuilding;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,10 @@ public class BuildScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (EventSystem.current.IsPointerOverGameObject())
+        {
+            return;
+        }
         // Get the mouses world position
         Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mouseWorldPosRounded = RoundVector(mouseWorldPos);
@@ -33,13 +39,17 @@ public class BuildScript : MonoBehaviour
         // If the player clicked the button, check if the cursor is over the background
         if (Input.GetMouseButtonDown(0))
         {
+            PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
             // Raycast from the mouse position to the background
             RaycastHit2D hit;
             hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            Debug.Log(hit.transform.name);
-            Debug.DrawLine(mouseWorldPos, hit.point);
+            RaycastHit2D boxHit;
+            boxHit = Physics2D.BoxCast(mouseWorldPos, placeable.dimensions, 0f, Vector2.zero, 0, 1 << LayerMask.NameToLayer("Placeable"));
+            Debug.Log("Hit: " + hit.transform.name);
+            if (boxHit.transform != null)
+                Debug.Log("BoxHit: " + boxHit.transform.name);
             // If the raycast hit the background, then the cursor is over the background 
-            if (hit.transform.CompareTag("Background"))
+            if (hit.transform.CompareTag("Background") && boxHit.transform is null)
             {
                 Vector2 spawnPoint = RoundVector(hit.point);
                 GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
@@ -56,4 +66,5 @@ public class BuildScript : MonoBehaviour
         vec.y = (float) Math.Round(vec.y);
         return vec;
     }
+    
 }
