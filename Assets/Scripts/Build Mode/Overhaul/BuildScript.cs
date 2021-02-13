@@ -14,6 +14,8 @@ public class BuildScript : MonoBehaviour
 
     public GameObject selectedBuilding;
 
+    public List<RaycastHit2D> hitPoints = new List<RaycastHit2D>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,13 +36,43 @@ public class BuildScript : MonoBehaviour
         
         // Move the build circle to the mouse, and snap it to the grid
         buildCircle.transform.position = mouseWorldPosRounded;
-        Helper.SnapToGrid(buildCircle);
+        //Helper.SnapToGrid(buildCircle);
 
         // If the player clicked the button, check if the cursor is over the background
         if (Input.GetMouseButtonDown(0))
         {
             PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
+            
+            bool blocked = false;
+            RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
             // Raycast from the mouse position to the background
+            for(int i = 0; i < placeable.dimensions.x; i++)
+            {
+                for(int j = 0; j < placeable.dimensions.y; j++)
+                {
+                    RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                    hitPoints.Add(hitPoint);
+                }
+            }
+
+            foreach(RaycastHit2D hitPoint in hitPoints)
+            {
+                if (!hitPoint.transform.CompareTag("Background"))
+                {
+                    blocked = true;
+                }
+            }
+            if (!blocked)
+            {
+                Vector2 spawnPoint = RoundVector(origin.point);
+                GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
+                Vector3 newPos = spawned.transform.position;
+                newPos.z = -1;
+                spawned.transform.position = newPos;
+            }
+            hitPoints.Clear();
+            
+            /*
             RaycastHit2D hit;
             hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
             RaycastHit2D boxHit;
@@ -57,6 +89,8 @@ public class BuildScript : MonoBehaviour
                 newPos.z = -1;
                 spawned.transform.position = newPos;
             }
+            */
+
         }
     }
 
@@ -65,6 +99,46 @@ public class BuildScript : MonoBehaviour
         vec.x = (float)Math.Round(vec.x);
         vec.y = (float) Math.Round(vec.y);
         return vec;
+    }
+    public void SelectNaturalGas()
+    {
+        foreach(GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("gasPlant"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectCoalPlant()
+    {
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("coal"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectWindTurbine()
+    {
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("turbine"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectSolarPanel()
+    {
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("solar"))
+            {
+                selectedBuilding = building;
+            }
+        }
     }
     
 }
