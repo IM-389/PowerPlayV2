@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2404669415710288740}
   - component: {fileID: 1431917477511940950}
   - component: {fileID: 1968521706754183187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: smallllines
   m_TagString: Power
   m_Icon: {fileID: 0}
