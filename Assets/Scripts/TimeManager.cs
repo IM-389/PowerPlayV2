@@ -20,8 +20,33 @@ public class TimeManager : MonoBehaviour
         rect = new Rect(1800, -250, width, height);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
     }
-
-
+    
+    //to increase speed: i'll need a button, and when its clicked, set Time.timeScale to 2F/1.5F
+    //When clicked again, set Time.timeScale back to 1F
+    public void onButtonPressTwoTimesSpeed()
+    {
+        Time.timeScale = 2F;
+    }
+    public void onButtonPressOneAndHalfSpeed()
+    {   
+        Time.timeScale = 1.5F;
+    }
+    public void resetToRegSpeed()
+    {    
+        Time.timeScale = 1F;
+    }
+    public void pause()
+    {
+        if(Time.timeScale != 0)
+        {
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Time.timeScale = 1;
+        }
+    }
+    
     // Update is called once per frame
     void Update()
     {
@@ -31,11 +56,12 @@ public class TimeManager : MonoBehaviour
     {
         while (true)
         {
-            timeStep = timeStep + 0.5;//1.9?
-            if (timeStep >= 10)
+            timeStep = Time.time * 2;//timeStep + 0.5;//1.9?
+            if (timeStep >= 40)
             {
                 hours++;
-                timeStep -= 10;
+                timeStep -= timeStep;
+                
             }
             Debug.Log("Timestep: " + timeStep.ToString() + "Hours: " + hours.ToString());//"Days:" + days.ToString() + "  Hours:" + hours.ToString() + "  Minutes:" + minutes.ToString() + " Seconds:" + seconds.ToString());
 
