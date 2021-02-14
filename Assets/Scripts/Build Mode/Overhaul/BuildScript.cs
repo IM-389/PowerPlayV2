@@ -26,6 +26,7 @@ public class BuildScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the mouse is over UI, ignore this function
         if (EventSystem.current.IsPointerOverGameObject())
         {
             return;
@@ -45,8 +46,8 @@ public class BuildScript : MonoBehaviour
             
             bool blocked = false;
             RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-            // Raycast from the mouse position to the background
-            for(int i = 0; i < placeable.dimensions.x; i++)
+            // Raycasts  many dimensions depending on the object
+            for(int i = 0; i > -placeable.dimensions.x; i--)
             {
                 for(int j = 0; j < placeable.dimensions.y; j++)
                 {
@@ -54,7 +55,7 @@ public class BuildScript : MonoBehaviour
                     hitPoints.Add(hitPoint);
                 }
             }
-
+            // Checks the list to make sure each raycast is hitting the background
             foreach(RaycastHit2D hitPoint in hitPoints)
             {
                 if (!hitPoint.transform.CompareTag("Background"))
@@ -62,6 +63,7 @@ public class BuildScript : MonoBehaviour
                     blocked = true;
                 }
             }
+            // If the raycast isn't blocked by a building, then place the building
             if (!blocked)
             {
                 Vector2 spawnPoint = RoundVector(origin.point);
@@ -70,6 +72,7 @@ public class BuildScript : MonoBehaviour
                 newPos.z = -1;
                 spawned.transform.position = newPos;
             }
+            // Clear the list after its done
             hitPoints.Clear();
             
             /*
@@ -140,5 +143,25 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
-    
+    // Only for Debugging
+    public void SelectHouse()
+    {
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("house"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectTransformer()
+    {
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("transformer"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
 }
