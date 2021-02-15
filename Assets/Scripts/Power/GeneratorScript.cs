@@ -11,9 +11,8 @@ public class GeneratorScript : PowerBase
     public float amount;
 
     // TODO: Fully implement
-    protected override IEnumerator Tick()
+    protected override void Tick()
     {
-        yield return new WaitForSeconds(timestep);
-        storage.powerStored += amount;
+        storageScript.powerStored += amount;
     }
 }

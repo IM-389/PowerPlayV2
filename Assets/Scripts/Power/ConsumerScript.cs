@@ -14,13 +14,11 @@ public class ConsumerScript : PowerBase
     public bool isPowered;
 
     // TODO: Fully implement
-    protected override IEnumerator Tick()
+    protected override void Tick()
     {
-        yield return new WaitForSeconds(timestep);
-
-        if (storage.powerStored >= consumeAmount)
+        if (storageScript.powerStored >= consumeAmount)
         {
-            storage.powerStored -= consumeAmount;
+            storageScript.powerStored -= consumeAmount;
             isConsuming = true;
         }
     }
