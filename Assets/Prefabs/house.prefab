@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2016714305020912264}
   - component: {fileID: -6102916446783115222}
   - component: {fileID: 8346072645257851449}
+  - component: {fileID: 6943218560710127220}
   m_Layer: 7
   m_Name: house
   m_TagString: house
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016714305020912277}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.351, y: 0.321, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 3521149445682477541}
@@ -172,6 +173,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &6943218560710127220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016714305020912277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a985df4e2de82624ea043010c22b36ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dimensions: {x: 1, y: 1}
 --- !u!1 &9191420291392939292
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ TagManager:
   - coal
   - Background
   - BuildCircle
+  - transformer
   layers:
   - Default
   - TransparentFX
