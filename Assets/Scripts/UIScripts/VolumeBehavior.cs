@@ -44,7 +44,7 @@ public class VolumeBehavior : MonoBehaviour
 
 
         // This looks at options panel and finds the slider BGM.
-        Transform sfxObj = optionsMenu.transform.Find("SFX Slider");
+        Transform sfxObj = optionsMenu.transform.Find("SFX");
 
         // This gives volumeSlider the value of the slider in the 
         // options panel so it can be used.
