@@ -1,0 +1,5 @@
+The below is true for all scripts in the 
+0 is Coal
+1 is Natural Gas
+2 is Solar
+3 is Wind
