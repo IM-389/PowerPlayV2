@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 889208341471811863}
   - component: {fileID: 5991797229570015633}
-  - component: {fileID: 3351097774294068237}
   - component: {fileID: 6212093224041129665}
   - component: {fileID: 8060447301628684783}
   - component: {fileID: 1753640831272002030}
+  - component: {fileID: 7754937704179862211}
+  - component: {fileID: 7667836395580830298}
+  - component: {fileID: 8787135080675154851}
+  - component: {fileID: 1213381800353243764}
   m_Layer: 7
   m_Name: turbine
   m_TagString: turbine
@@ -87,47 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3351097774294068237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 69216548759930518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2f74d2ab0b26eb4899bc412ff056328, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powered: 1
-  maxPower: 20
-  power: 20
-  phase2: {fileID: 0}
-  connectedObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  amountOfConnectedObjects: 0
-  connectedObjectLocation: {x: 0, y: 0}
-  broken: 0
-  daysToBeBroken: 0
 --- !u!50 &6212093224041129665
 Rigidbody2D:
   serializedVersion: 4
@@ -188,6 +150,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 2}
+--- !u!114 &7754937704179862211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69216548759930518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60fadf3be5f5cf7448da380294437409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  amount: 1
+--- !u!114 &7667836395580830298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69216548759930518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerStored: 0
+  maxPower: 100
+  isFull: 0
+--- !u!114 &8787135080675154851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69216548759930518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  connections: []
+--- !u!114 &1213381800353243764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69216548759930518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4900880723872211217
 GameObject:
   m_ObjectHideFlags: 0

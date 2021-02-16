@@ -37,7 +37,7 @@ public abstract class PowerBase : MonoBehaviour
     {
         storageScript = gameObject.GetComponent<StorageScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
-        gos = GetComponent<GeneralObjectScript>();
+        gos = gameObject.GetComponent<GeneralObjectScript>();
     }
 
     /// <summary>
@@ -45,6 +45,7 @@ public abstract class PowerBase : MonoBehaviour
     /// </summary>
     private void Update()
     {
+        timestep = timeManager.totalTimeSteps;
         if (timestep > previousTimestep)
         {
             Tick();
