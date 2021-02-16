@@ -27,7 +27,7 @@ public class ConsumerScript : PowerBase
         // If there is enough power, consume it
         if ((storageScript.powerStored >= consumeAmount))
         {
-            storageScript.powerStored -= consumeAmount;
+            storageScript.PullPower(consumeAmount);
             // Set the flag so other objects can know if this one is consuming
             isConsuming = true;
         }
