@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,6 +9,11 @@ public class VolumeBehavior : MonoBehaviour
 
     [Tooltip("This contains the information for the background music.")]
     public AudioSource musicAudio;
+
+    [Tooltip("This contains the information for the Voice acting.")]
+    public GameObject voice;
+
+    AudioSource voiceAudio;
 
     [Tooltip("This contains the value from the slider," +
         " and it converts to the volume.")]
@@ -42,6 +48,7 @@ public class VolumeBehavior : MonoBehaviour
         // This sets the volumeSlider as the volume.
         volumeSlider.value = sliderValue;
 
+        // ----------------------------------------
 
         // This looks at options panel and finds the slider BGM.
         Transform sfxObj = optionsMenu.transform.Find("SFX");
@@ -52,7 +59,80 @@ public class VolumeBehavior : MonoBehaviour
 
         // This sets the volumeSlider as the volume of the game.
         sfxSlider.value = AudioListener.volume;
+
+        // ----------------------------------------
+
+        
+
+        // This fetches the AudioSource from the GameObject.
+        voiceAudio = voice.GetComponent<AudioSource>();
+
+        // This makes it so the background music
+        // isn't affected by the master volume.
+        voiceAudio.ignoreListenerVolume = true;
+
+        // This plays the AudioClip attached to the AudioSource on startup.
+        voiceAudio.Play();
+
+        // This looks at options panel and finds the slider BGM.
+        Transform voiceObj = optionsMenu.transform.Find("VOICE");
+
+        // This invokes the SetVolume function.
+        SetVoice(sliderValue);
+
+        // This gives volumeSlider the value of the slider in the 
+        // options panel so it can be used.
+        Slider voiceSlider = voiceObj.GetComponent<Slider>();
+
+        // This sets the volumeSlider as the volume.
+        voiceSlider.value = sliderValue;
+
     }
+
+    public void SetVoice(float volume)
+    {
+        //This fetches the AudioSource from the GameObject.
+        voiceAudio = voice.GetComponent<AudioSource>();
+
+        // This makes the volume of the Audio match the Slider value.
+        voiceAudio.volume = volume;
+
+        // The sliderValue will now be the same value
+        // as the volume that was just set.
+        sliderValue = volume;
+
+        // This invokes the UpdateVolumeLabel function.
+        UpdateVoiceLabel();
+    }
+
+    private void UpdateVoiceLabel()
+    {
+        // This looks at options panel and finds the BGM text.
+        Transform voiceObj = optionsMenu.transform.Find("Voice Text");
+
+        // This gives volumeText the value of the text in the 
+        // options panel so it can be used.
+        Text voiceText = voiceObj.GetComponent<Text>();
+
+        // This multiplies the float to a whole number to be used
+        // in the text and be easier to read.
+        int percent = Mathf.RoundToInt(sliderValue * 100f);
+
+        // This sets the text to say the percentage the volume is at.
+        voiceText.text = "<b>Voice Volume:</b> " + percent + "%";
+
+        // This looks at options panel and finds the slider BGM.
+        voiceObj = optionsMenu.transform.Find("VOICE");
+
+        // This gives volumeSlider the value of the slider in the 
+        // options panel so it can be used.
+        Slider volumeSlider = voiceObj.GetComponent<Slider>();
+
+        // This sets the volumeSlider as the volume so it stays
+        // the same after changing scenes.
+        volumeSlider.value = sliderValue;
+    }
+
     /// <summary>
     /// This adjusts the volume and slider so they will
     /// be consistant and stay the same after leaving the options panel.
