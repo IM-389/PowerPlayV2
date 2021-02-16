@@ -41,6 +41,17 @@ public class VolumeBehavior : MonoBehaviour
 
         // This sets the volumeSlider as the volume.
         volumeSlider.value = sliderValue;
+
+
+        // This looks at options panel and finds the slider BGM.
+        Transform sfxObj = optionsMenu.transform.Find("SFX Slider");
+
+        // This gives volumeSlider the value of the slider in the 
+        // options panel so it can be used.
+        Slider sfxSlider = sfxObj.GetComponent<Slider>();
+
+        // This sets the volumeSlider as the volume of the game.
+        sfxSlider.value = AudioListener.volume;
     }
     /// <summary>
     /// This adjusts the volume and slider so they will
@@ -95,5 +106,51 @@ public class VolumeBehavior : MonoBehaviour
         // the same after changing scenes.
         volumeSlider.value = sliderValue;
 
+    }
+
+    /// <summary>
+    /// This adjusts the volume and slider so they will
+    /// be consistant and stay the same after leaving the options panel.
+    /// </summary>
+    /// <param name="volume">The volume of the background music.</param>
+    public void SetSFX(float volume)
+    {
+        // The game volume will now be the same value
+        // as the volume that was just set.
+        AudioListener.volume = volume;
+        UpdateSFXLabel();
+    }
+
+    /// <summary>
+    /// This function adjusts the text above the slider and makes it
+    /// so the slider and its values will be the same
+    /// even after changing the scene.
+    /// </summary>
+    void UpdateSFXLabel()
+    {
+        // This looks at options panel and finds the SFX text.
+        Transform sfxObj = optionsMenu.transform.Find("SFX Text");
+
+        // This gives volumeText the value of the text in the 
+        // options panel so it can be used.
+        Text volumeText = sfxObj.GetComponent<Text>();
+
+        // This multiplies the float to a whole number to be used
+        // in the text and be easier to read.
+        int percent = Mathf.RoundToInt(AudioListener.volume * 100f);
+
+        // This sets the text to say the percentage the volume is at.
+        volumeText.text = "<b>SFX Volume:</b> " + percent + "%";
+
+        // This looks at options panel and finds the SFX slider.
+        sfxObj = optionsMenu.transform.Find("SFX");
+
+        // This gives volumeSlider the value of the slider in the 
+        // options panel so it can be used.
+        Slider sfxSlider = sfxObj.GetComponent<Slider>();
+
+        // This sets the volumeSlider as the volume so it stays
+        // the same after changing scenes.
+        sfxSlider.value = AudioListener.volume;
     }
 }
