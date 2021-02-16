@@ -14,13 +14,22 @@ public class BuildScript : MonoBehaviour
 
     public GameObject selectedBuilding;
 
-    public List<RaycastHit2D> hitPoints = new List<RaycastHit2D>();
+    List<RaycastHit2D> hitPoints = new List<RaycastHit2D>();
+
+    public bool wireMode;
+
+    public GameObject mouseObject;
+
+    public GameObject wireObject1, wireObject2;
+
+    LineRenderer lr;
 
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+        lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -42,39 +51,66 @@ public class BuildScript : MonoBehaviour
         // If the player clicked the button, check if the cursor is over the background
         if (Input.GetMouseButtonDown(0))
         {
-            PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
-            
-            bool blocked = false;
-            RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-            // Raycasts  many dimensions depending on the object
-            for(int i = 0; i > -placeable.dimensions.x; i--)
+            if (wireMode)
             {
-                for(int j = 0; j < placeable.dimensions.y; j++)
+                RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                if (!hit.transform.CompareTag("Background"))
                 {
-                    RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
-                    hitPoints.Add(hitPoint);
+                    // Sets the first wire object
+                    if(wireObject1 == null)
+                    {
+                        wireObject1 = hit.transform.gameObject;
+                    }
+                    // Otherwise it sets the second wire object
+                    else
+                    {
+                        // Checks to make sure the same object isn't clicked twice
+                        if (wireObject1 != hit.transform.gameObject)
+                        {
+                            wireObject2 = hit.transform.gameObject;
+                            CreateLine();
+                            //Sets objects back to null
+                            wireObject1 = null;
+                            wireObject2 = null;
+                        }
+                    }
                 }
             }
-            // Checks the list to make sure each raycast is hitting the background
-            foreach(RaycastHit2D hitPoint in hitPoints)
+            else
             {
-                if (!hitPoint.transform.CompareTag("Background"))
+                PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
+
+                bool blocked = false;
+                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                // Raycasts  many dimensions depending on the object
+                for (int i = 0; i > -placeable.dimensions.x; i--)
                 {
-                    blocked = true;
+                    for (int j = 0; j < placeable.dimensions.y; j++)
+                    {
+                        RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                        hitPoints.Add(hitPoint);
+                    }
                 }
+                // Checks the list to make sure each raycast is hitting the background
+                foreach (RaycastHit2D hitPoint in hitPoints)
+                {
+                    if (!hitPoint.transform.CompareTag("Background"))
+                    {
+                        blocked = true;
+                    }
+                }
+                // If the raycast isn't blocked by a building, then place the building
+                if (!blocked)
+                {
+                    Vector2 spawnPoint = RoundVector(origin.point);
+                    GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
+                    Vector3 newPos = spawned.transform.position;
+                    newPos.z = -1;
+                    spawned.transform.position = newPos;
+                }
+                // Clear the list after its done
+                hitPoints.Clear();
             }
-            // If the raycast isn't blocked by a building, then place the building
-            if (!blocked)
-            {
-                Vector2 spawnPoint = RoundVector(origin.point);
-                GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
-                Vector3 newPos = spawned.transform.position;
-                newPos.z = -1;
-                spawned.transform.position = newPos;
-            }
-            // Clear the list after its done
-            hitPoints.Clear();
-            
             /*
             RaycastHit2D hit;
             hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
@@ -97,15 +133,45 @@ public class BuildScript : MonoBehaviour
         }
     }
 
+    public void CreateLine()
+    {
+        GameObject myLine = new GameObject();
+        myLine.name = "powerLine";
+        myLine.transform.position = wireObject1.transform.position;
+        myLine.AddComponent<LineRenderer>();
+        LineRenderer lr = myLine.GetComponent<LineRenderer>();
+        lr.material = new Material(Shader.Find("Sprites/Default"));
+        lr.startColor = Color.white;
+        lr.endColor = Color.white;
+        lr.startWidth = .02f;
+        lr.endWidth = .02f;
+        lr.SetPosition(0, wireObject1.transform.position);
+        lr.SetPosition(1, wireObject2.transform.position);
+    }
     private Vector2 RoundVector(Vector2 vec)
     {
         vec.x = (float)Math.Round(vec.x);
         vec.y = (float) Math.Round(vec.y);
         return vec;
     }
+    public void SelectWireMode()
+    {
+        wireMode = true;
+        buildCircle.gameObject.SetActive(false);
+        mouseObject.SetActive(false);
+    }
+    public void DeselectWireMode()
+    {
+        wireMode = false;
+        buildCircle.gameObject.SetActive(true);
+        mouseObject.SetActive(true);
+        wireObject1 = null;
+        wireObject2 = null;
+    }
     public void SelectNaturalGas()
     {
-        foreach(GameObject building in spawnableBuildings)
+        DeselectWireMode();
+        foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("gasPlant"))
             {
@@ -115,6 +181,7 @@ public class BuildScript : MonoBehaviour
     }
     public void SelectCoalPlant()
     {
+        DeselectWireMode();
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("coal"))
@@ -125,6 +192,7 @@ public class BuildScript : MonoBehaviour
     }
     public void SelectWindTurbine()
     {
+        DeselectWireMode();
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("turbine"))
@@ -135,6 +203,7 @@ public class BuildScript : MonoBehaviour
     }
     public void SelectSolarPanel()
     {
+        DeselectWireMode();
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("solar"))
@@ -146,6 +215,7 @@ public class BuildScript : MonoBehaviour
     // Only for Debugging
     public void SelectHouse()
     {
+        DeselectWireMode();
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("house"))
@@ -156,6 +226,7 @@ public class BuildScript : MonoBehaviour
     }
     public void SelectTransformer()
     {
+        DeselectWireMode();
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("transformer"))
