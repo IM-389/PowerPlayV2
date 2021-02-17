@@ -333,7 +333,19 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1013744432}
+        m_TargetAssemblyTypeName: VolumeBehavior, Assembly-CSharp
+        m_MethodName: SetVoice
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &106115804
 GameObject:
   m_ObjectHideFlags: 0
@@ -1315,6 +1327,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BGM: {fileID: 266259855}
   musicAudio: {fileID: 266259856}
+  voice: {fileID: 1549679365}
   optionsMenu: {fileID: 2044081090}
 --- !u!4 &1013744433
 Transform:
@@ -1342,7 +1355,7 @@ GameObject:
   - component: {fileID: 1216130021}
   - component: {fileID: 1216130020}
   m_Layer: 5
-  m_Name: Text (2)
+  m_Name: Voice Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1692,6 +1705,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1549679366}
   - component: {fileID: 1549679367}
+  - component: {fileID: 1549679368}
   m_Layer: 0
   m_Name: Voice Testing
   m_TagString: Untagged
@@ -1724,7 +1738,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 489e3f0c243a1664a932b6715b3589e8, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1809,6 +1823,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1549679368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549679365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55fa44950ff74f241b688f67bd044503, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceOne: {fileID: 8300000, guid: 7267304b332e4a042b30df8dd900b308, type: 3}
+  voiceTwo: {fileID: 8300000, guid: 489e3f0c243a1664a932b6715b3589e8, type: 3}
+  voice: {fileID: 1549679365}
 --- !u!1 &1578874173
 GameObject:
   m_ObjectHideFlags: 0
