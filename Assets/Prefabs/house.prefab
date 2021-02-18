@@ -256,6 +256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  volts: 0
+  isGenerator: 0
+  isConsumer: 1
   connections: []
 --- !u!114 &5584834068119211078
 MonoBehaviour:
@@ -269,6 +272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canSend: 1
 --- !u!1 &9191420291392939292
 GameObject:
   m_ObjectHideFlags: 0

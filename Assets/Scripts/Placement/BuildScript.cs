@@ -60,18 +60,35 @@ public class BuildScript : MonoBehaviour
                     if(wireObject1 == null)
                     {
                         wireObject1 = hit.transform.gameObject;
+                        Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
                     }
                     // Otherwise it sets the second wire object
                     else
                     {
+                        wireObject2 = hit.transform.gameObject;
                         // Checks to make sure the same object isn't clicked twice
-                        if (wireObject1 != hit.transform.gameObject)
+                        if (wireObject1 != wireObject2)
                         {
-                            wireObject2 = hit.transform.gameObject;
-                            CreateLine();
-                            //Sets objects back to null
-                            wireObject1 = null;
-                            wireObject2 = null;
+                            // If the first object is a transformer it can connect to anything
+                            if (wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == 2)
+                            {
+                                CreateLine();
+                            }
+                            // Checks if the second object is either the same voltage as the first object or a transformer
+                            else
+                            {
+                                // Checks if the second object is the same voltage as the first object
+                                if ((wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() &&
+                                    // Checks to make sure both objects aren't generators
+                                    !(wireObject1.GetComponent<GeneralObjectScript>().isGenerator && wireObject2.GetComponent<GeneralObjectScript>().isGenerator) &&
+                                    // Checks to make sure both objects aren't consumers
+                                    !(wireObject1.GetComponent<GeneralObjectScript>().isConsumer && wireObject2.GetComponent<GeneralObjectScript>().isConsumer)) ||
+                                    // Checks if second object is a transformer
+                                    (wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() == 2))
+                                {
+                                    CreateLine();
+                                }
+                            }
                         }
                     }
                 }
@@ -135,6 +152,7 @@ public class BuildScript : MonoBehaviour
 
     public void CreateLine()
     {
+        // Creates line
         GameObject myLine = new GameObject();
         myLine.name = "powerLine";
         myLine.transform.position = wireObject1.transform.position;
@@ -147,6 +165,13 @@ public class BuildScript : MonoBehaviour
         lr.endWidth = .02f;
         lr.SetPosition(0, wireObject1.transform.position);
         lr.SetPosition(1, wireObject2.transform.position);
+        // Creates connection from both objects
+        wireObject1.GetComponent<GeneralObjectScript>().AddConnection(wireObject2);
+        wireObject2.GetComponent<GeneralObjectScript>().AddConnection(wireObject1);
+        // Sets objects back to null
+        wireObject1 = null;
+        wireObject2 = null;
+        
     }
     private Vector2 RoundVector(Vector2 vec)
     {
@@ -230,6 +255,28 @@ public class BuildScript : MonoBehaviour
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("transformer"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectLowPowerLines()
+    {
+        DeselectWireMode();
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("Power"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectHighPowerLines()
+    {
+        DeselectWireMode();
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("HighPower"))
             {
                 selectedBuilding = building;
             }
