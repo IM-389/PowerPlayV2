@@ -14,6 +14,7 @@ TagManager:
   - BuildCircle
   - transformer
   - HighPower
+  - TooltipPanel
   layers:
   - Default
   - TransparentFX

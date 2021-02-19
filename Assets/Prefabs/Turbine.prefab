@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2926200826277988146}
   - component: {fileID: 2923770450969584739}
   - component: {fileID: 359159728581028143}
+  - component: {fileID: 4540575886844898247}
   m_Layer: 7
   m_Name: Turbine
   m_TagString: turbine
@@ -250,6 +251,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   amount: 1
+--- !u!114 &4540575886844898247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4900880723872211217}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipOffset: {x: 0, y: -1.5}
 --- !u!1 &8644197826154682655
 GameObject:
   m_ObjectHideFlags: 0

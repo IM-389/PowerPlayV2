@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 6874283770724396703}
   - component: {fileID: 3750983780562473449}
   - component: {fileID: 5854946058926720500}
+  - component: {fileID: -9214463367474969197}
   m_Layer: 7
   m_Name: NaturalGas
   m_TagString: gasPlant
@@ -348,3 +349,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+--- !u!114 &-9214463367474969197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7688663850787778803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipOffset: {x: 0, y: -1.5}
