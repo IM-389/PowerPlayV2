@@ -709,7 +709,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1013744432}
         m_TargetAssemblyTypeName: VolumeBehavior, Assembly-CSharp
-        m_MethodName: SetVolume
+        m_MethodName: SetMusic
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1328,7 +1328,7 @@ MonoBehaviour:
   BGM: {fileID: 266259855}
   musicAudio: {fileID: 266259856}
   voice: {fileID: 1549679365}
-  optionsMenu: {fileID: 2044081090}
+  volumeMenu: {fileID: 2044081090}
 --- !u!4 &1013744433
 Transform:
   m_ObjectHideFlags: 0
@@ -2026,7 +2026,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.42
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
