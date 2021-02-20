@@ -22,8 +22,6 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
-    LineRenderer lr;
-
     [Tooltip("Reference to the tooltip panel")]
     public GameObject tooltipPanel;
     
@@ -32,7 +30,6 @@ public class BuildScript : MonoBehaviour
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
-        lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
@@ -54,6 +51,7 @@ public class BuildScript : MonoBehaviour
         // If the player clicked the button, check if the cursor is over the background
         if (Input.GetMouseButtonDown(0))
         {
+            // If in wire/connection mode
             if (wireMode)
             {
                 RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
@@ -72,8 +70,15 @@ public class BuildScript : MonoBehaviour
                         // Checks to make sure the same object isn't clicked twice
                         if (wireObject1 != wireObject2)
                         {
+                            GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
+                            GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
+                            // Can't make connection if either object has 2 or more connections
+                            if(wire1.connections.Count > 2 && wire2.connections.Count > 2)
+                            {
+                                return;
+                            }
                             // If the first object is a transformer it can connect to anything
-                            if (wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == 2)
+                            if (wire1.GetVoltage() == 2)
                             {
                                 CreateLine();
                             }
@@ -81,13 +86,13 @@ public class BuildScript : MonoBehaviour
                             else
                             {
                                 // Checks if the second object is the same voltage as the first object
-                                if ((wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() &&
+                                if ((wire1.GetVoltage() == wire2.GetVoltage() &&
                                     // Checks to make sure both objects aren't generators
-                                    !(wireObject1.GetComponent<GeneralObjectScript>().isGenerator && wireObject2.GetComponent<GeneralObjectScript>().isGenerator) &&
+                                    !(wire1.isGenerator && wire2.isGenerator) &&
                                     // Checks to make sure both objects aren't consumers
-                                    !(wireObject1.GetComponent<GeneralObjectScript>().isConsumer && wireObject2.GetComponent<GeneralObjectScript>().isConsumer)) ||
+                                    !(wire1.isConsumer && wire2.isConsumer)) ||
                                     // Checks if second object is a transformer
-                                    (wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() == 2))
+                                    (wire2.GetVoltage() == 2))
                                 {
                                     CreateLine();
                                 }
@@ -295,6 +300,32 @@ public class BuildScript : MonoBehaviour
             if (building.CompareTag("HighPower"))
             {
                 selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectHospital()
+    {
+        {
+            DeselectWireMode();
+            foreach (GameObject building in spawnableBuildings)
+            {
+                if (building.CompareTag("hospital"))
+                {
+                    selectedBuilding = building;
+                }
+            }
+        }
+    }
+    public void SelectFactory()
+    {
+        {
+            DeselectWireMode();
+            foreach (GameObject building in spawnableBuildings)
+            {
+                if (building.CompareTag("factory"))
+                {
+                    selectedBuilding = building;
+                }
             }
         }
     }
