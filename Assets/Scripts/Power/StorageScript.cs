@@ -59,6 +59,8 @@ public class StorageScript : MonoBehaviour
         // Cache the current power before removing from it
         float currentCache = powerStored;
         bool hasFloored = RemovePower(amount);
+
+        isFull = false;
         
         // If the value was floored, return the amount that was in before. Otherwise, return the requested amount
         return hasFloored ? currentCache : amount;

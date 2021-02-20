@@ -64,7 +64,6 @@ public class TimeManager : MonoBehaviour
             {
                 hours++;
                 timeStep -= timeStep;
-               
             }
             if(hours >= 6 && hours <= 18)
             {
@@ -81,7 +80,7 @@ public class TimeManager : MonoBehaviour
                 isDay = true;
                 hours = 0;
             }
-            Debug.Log("Timestep: " + timeStep.ToString() + " Hours: " + hours.ToString() + " Total timesteps: " + totalTimeSteps.ToString() + " Daytime: " + isDay);
+            //Debug.Log("Timestep: " + timeStep.ToString() + " Hours: " + hours.ToString() + " Total timesteps: " + totalTimeSteps.ToString() + " Daytime: " + isDay);
 
             yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }

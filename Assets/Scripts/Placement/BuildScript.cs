@@ -22,6 +22,7 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
+    private MoneyManager moneyManager;
     LineRenderer lr;
 
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class BuildScript : MonoBehaviour
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
         lr = GetComponent<LineRenderer>();
+        moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
     }
 
     // Update is called once per frame
@@ -60,18 +62,35 @@ public class BuildScript : MonoBehaviour
                     if(wireObject1 == null)
                     {
                         wireObject1 = hit.transform.gameObject;
+                        Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
                     }
                     // Otherwise it sets the second wire object
                     else
                     {
+                        wireObject2 = hit.transform.gameObject;
                         // Checks to make sure the same object isn't clicked twice
-                        if (wireObject1 != hit.transform.gameObject)
+                        if (wireObject1 != wireObject2)
                         {
-                            wireObject2 = hit.transform.gameObject;
-                            CreateLine();
-                            //Sets objects back to null
-                            wireObject1 = null;
-                            wireObject2 = null;
+                            // If the first object is a transformer it can connect to anything
+                            if (wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == 2)
+                            {
+                                CreateLine();
+                            }
+                            // Checks if the second object is either the same voltage as the first object or a transformer
+                            else
+                            {
+                                // Checks if the second object is the same voltage as the first object
+                                if ((wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() &&
+                                    // Checks to make sure both objects aren't generators
+                                    !(wireObject1.GetComponent<GeneralObjectScript>().isGenerator && wireObject2.GetComponent<GeneralObjectScript>().isGenerator) &&
+                                    // Checks to make sure both objects aren't consumers
+                                    !(wireObject1.GetComponent<GeneralObjectScript>().isConsumer && wireObject2.GetComponent<GeneralObjectScript>().isConsumer)) ||
+                                    // Checks if second object is a transformer
+                                    (wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() == 2))
+                                {
+                                    CreateLine();
+                                }
+                            }
                         }
                     }
                 }
@@ -81,35 +100,40 @@ public class BuildScript : MonoBehaviour
                 PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
 
                 bool blocked = false;
-                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-                // Raycasts  many dimensions depending on the object
-                for (int i = 0; i > -placeable.dimensions.x; i--)
+                if (moneyManager.money >= placeable.cost)
                 {
-                    for (int j = 0; j < placeable.dimensions.y; j++)
+
+                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                    // Raycasts  many dimensions depending on the object
+                    for (int i = 0; i > -placeable.dimensions.x; i--)
                     {
-                        RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
-                        hitPoints.Add(hitPoint);
+                        for (int j = 0; j < placeable.dimensions.y; j++)
+                        {
+                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                            hitPoints.Add(hitPoint);
+                        }
                     }
-                }
-                // Checks the list to make sure each raycast is hitting the background
-                foreach (RaycastHit2D hitPoint in hitPoints)
-                {
-                    if (!hitPoint.transform.CompareTag("Background"))
+                    // Checks the list to make sure each raycast is hitting the background
+                    foreach (RaycastHit2D hitPoint in hitPoints)
                     {
-                        blocked = true;
+                        if (!hitPoint.transform.CompareTag("Background"))
+                        {
+                            blocked = true;
+                        }
                     }
+                    // If the raycast isn't blocked by a building, then place the building
+                    if (!blocked)
+                    {
+                        Vector2 spawnPoint = RoundVector(origin.point);
+                        GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
+                        Vector3 newPos = spawned.transform.position;
+                        newPos.z = -1;
+                        spawned.transform.position = newPos;
+                        moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
+                    }
+                    // Clear the list after its done
+                    hitPoints.Clear();
                 }
-                // If the raycast isn't blocked by a building, then place the building
-                if (!blocked)
-                {
-                    Vector2 spawnPoint = RoundVector(origin.point);
-                    GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
-                    Vector3 newPos = spawned.transform.position;
-                    newPos.z = -1;
-                    spawned.transform.position = newPos;
-                }
-                // Clear the list after its done
-                hitPoints.Clear();
             }
             /*
             RaycastHit2D hit;
@@ -135,6 +159,7 @@ public class BuildScript : MonoBehaviour
 
     public void CreateLine()
     {
+        // Creates line
         GameObject myLine = new GameObject();
         myLine.name = "powerLine";
         myLine.transform.position = wireObject1.transform.position;
@@ -147,6 +172,13 @@ public class BuildScript : MonoBehaviour
         lr.endWidth = .02f;
         lr.SetPosition(0, wireObject1.transform.position);
         lr.SetPosition(1, wireObject2.transform.position);
+        // Creates connection from both objects
+        wireObject1.GetComponent<GeneralObjectScript>().AddConnection(wireObject2);
+        wireObject2.GetComponent<GeneralObjectScript>().AddConnection(wireObject1);
+        // Sets objects back to null
+        wireObject1 = null;
+        wireObject2 = null;
+        
     }
     private Vector2 RoundVector(Vector2 vec)
     {
@@ -230,6 +262,28 @@ public class BuildScript : MonoBehaviour
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("transformer"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectLowPowerLines()
+    {
+        DeselectWireMode();
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("Power"))
+            {
+                selectedBuilding = building;
+            }
+        }
+    }
+    public void SelectHighPowerLines()
+    {
+        DeselectWireMode();
+        foreach (GameObject building in spawnableBuildings)
+        {
+            if (building.CompareTag("HighPower"))
             {
                 selectedBuilding = building;
             }
