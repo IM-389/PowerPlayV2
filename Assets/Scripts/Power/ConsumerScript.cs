@@ -17,7 +17,12 @@ public class ConsumerScript : PowerBase
     /// How much power to consume, adjusted from the curve
     /// </summary>
     private float consumeAmount;
-    
+    private MoneyManager moneymanager;
+    public int moneyGained;
+    void Start()
+    {
+        moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+    }
     
     // TODO: Fully implement
     protected override void Tick()
@@ -30,6 +35,7 @@ public class ConsumerScript : PowerBase
             storageScript.PullPower(consumeAmount);
             // Set the flag so other objects can know if this one is consuming
             isConsuming = true;
+            moneymanager.money += moneyGained;
         }
         else
         {
