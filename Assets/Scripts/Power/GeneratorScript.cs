@@ -9,10 +9,16 @@ public class GeneratorScript : PowerBase
 
     [Tooltip("How much power is generated per unit time")]
     public float amount;
-
+    private MoneyManager moneymanager;
+    public int moneyGained;
+    void Start()
+    {
+        moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+    }
     // TODO: Fully implement
     protected override void Tick()
     {
         storageScript.powerStored += amount;
+        moneymanager.money -= moneyGained;
     }
 }

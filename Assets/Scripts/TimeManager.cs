@@ -64,7 +64,6 @@ public class TimeManager : MonoBehaviour
             {
                 hours++;
                 timeStep -= timeStep;
-               
             }
             if(hours >= 6 && hours <= 18)
             {
