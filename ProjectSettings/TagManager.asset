@@ -14,6 +14,7 @@ TagManager:
   - BuildCircle
   - transformer
   - HighPower
+  - TooltipPanel
   layers:
   - Default
   - TransparentFX
@@ -50,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Tooltip
+    uniqueID: 1944561929
     locked: 0

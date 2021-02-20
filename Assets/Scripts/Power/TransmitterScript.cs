@@ -5,6 +5,7 @@ public class TransmitterScript : PowerBase
 {
     [Tooltip("If the object is allowed to send power. True is yes, false is no")]
     public bool canSend = true;
+    
     protected override void Tick()
     {
         if (!canSend)

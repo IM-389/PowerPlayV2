@@ -24,6 +24,9 @@ public class BuildScript : MonoBehaviour
 
     LineRenderer lr;
 
+    [Tooltip("Reference to the tooltip panel")]
+    public GameObject tooltipPanel;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -127,6 +130,7 @@ public class BuildScript : MonoBehaviour
                 }
                 // Clear the list after its done
                 hitPoints.Clear();
+                
             }
             /*
             RaycastHit2D hit;
@@ -147,6 +151,18 @@ public class BuildScript : MonoBehaviour
             }
             */
 
+        }
+        
+        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+        HoverScript hover = hitPt.transform.GetComponent<HoverScript>();
+
+        if (hover != null)
+        {
+            hover.UpdateTooltip();
+        }
+        else
+        {
+            tooltipPanel.transform.position = new Vector2(1000, 1000);
         }
     }
 
