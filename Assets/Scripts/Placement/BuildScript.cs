@@ -300,38 +300,48 @@ public class BuildScript : MonoBehaviour
         // Otherwise it sets the second wire object
         else
         {
-                wireObject2 = hit.transform.gameObject;
-                // Checks to make sure the same object isn't clicked twice
-                if (wireObject1 != wireObject2)
-                {
-                    GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
-                    GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-                // Can't make connection if either object has 2 or more connections
-                if (wire1.connections.Count > 2 && wire2.connections.Count > 2)
+            wireObject2 = hit.transform.gameObject;
+            // Checks to make sure the same object isn't clicked twice
+            if (wireObject1 == wireObject2)
+            {
+               return;
+            }
+            GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
+            GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
+            // Can't make connection if either object has 2 or more connections
+            if (wire1.connections.Count > 2 && wire2.connections.Count > 2)
+            {
+                    return;
+            }
+            // Checks and sees if connection is already made between both objects
+            foreach(GameObject connect in wire1.connections)
+            {
+                if(connect == wireObject2)
                 {
                     return;
                 }
-                // If the first object is a transformer it can connect to anything
-                if (wire1.GetVoltage() == 2)
-                {
-                    CreateLine();
-                }
-                // Checks if the second object is either the same voltage as the first object or a transformer
-                else
-                {
-                    // Checks if the second object is the same voltage as the first object
-                    if ((wire1.GetVoltage() == wire2.GetVoltage() &&
-                        // Checks to make sure both objects aren't generators
-                        !(wire1.isGenerator && wire2.isGenerator) &&
-                        // Checks to make sure both objects aren't consumers
-                        !(wire1.isConsumer && wire2.isConsumer)) ||
-                        // Checks if second object is a transformer
-                        (wire2.GetVoltage() == 2))
-                    {
-                        CreateLine();
-                    }
-                }
-             }
+            }
+            // If the first object is a transformer it can connect to anything
+            if (wire1.GetVoltage() == 2)
+            {
+                CreateLine();
+            }
+            // Checks if the second object is either the same voltage as the first object or a transformer
+            else
+            {
+                 // Checks if the second object is the same voltage as the first object
+                 if ((wire1.GetVoltage() == wire2.GetVoltage() &&
+                 // Checks to make sure both objects aren't generators
+                 !(wire1.isGenerator && wire2.isGenerator) &&
+                 // Checks to make sure both objects aren't consumers
+                 !(wire1.isConsumer && wire2.isConsumer)) ||
+                 // Checks if second object is a transformer
+                 (wire2.GetVoltage() == 2))
+                 {
+                     CreateLine();
+                 }
+            }
+             
         }
         
     }
