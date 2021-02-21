@@ -1,0 +1,318 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!74 &7400000
+AnimationClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: CoalPlantBuildAnimation
+  serializedVersion: 6
+  m_Legacy: 0
+  m_Compressed: 0
+  m_UseHighQualityCurve: 1
+  m_RotationCurves: []
+  m_CompressedRotationCurves: []
+  m_EulerCurves: []
+  m_PositionCurves: []
+  m_ScaleCurves: []
+  m_FloatCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.76
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1.76
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.x
+    path: CoalPlantAnim
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 2.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.y
+    path: CoalPlantAnim
+    classID: 212
+    script: {fileID: 0}
+  m_PPtrCurves:
+  - curve:
+    - time: 0
+      value: {fileID: 0}
+    - time: 0.083333336
+      value: {fileID: 21300000, guid: a5b11243c09bc5440b81c28a4b97aaa6, type: 3}
+    - time: 0.16666667
+      value: {fileID: 21300000, guid: 0e8dd62e9d081c242ae7b078320d49c8, type: 3}
+    - time: 0.25
+      value: {fileID: 21300000, guid: 60b9422e9179d6148ae2ca63b63b8e49, type: 3}
+    - time: 0.33333334
+      value: {fileID: 21300000, guid: 37baa85855372f441ab6d5fc28e7ce98, type: 3}
+    - time: 0.41666666
+      value: {fileID: 21300000, guid: fa749cd5b43c9f14da8b4561a02af628, type: 3}
+    - time: 0.5
+      value: {fileID: 21300000, guid: cd9c86c59041e8541837117890e1f32f, type: 3}
+    - time: 0.5833333
+      value: {fileID: 21300000, guid: 38cfb3ffce34c6c4093d1794d275507d, type: 3}
+    - time: 0.6666667
+      value: {fileID: 21300000, guid: 2a59da3ba01b8694f88c286152c389e6, type: 3}
+    - time: 0.75
+      value: {fileID: 21300000, guid: 64ac910897e5b844cbf1182de1faac0c, type: 3}
+    - time: 0.8333333
+      value: {fileID: 21300000, guid: 06485887fef4aef4c925bee8a6db1480, type: 3}
+    - time: 0.9166667
+      value: {fileID: 21300000, guid: fa4c65c800ff4fa44944c7b9c71110ae, type: 3}
+    - time: 1
+      value: {fileID: 21300000, guid: 79663b19d4a47f844bc08d0e7de6ff47, type: 3}
+    - time: 1.0833334
+      value: {fileID: 21300000, guid: 47d4097e818b2b04e9051c53e01394a0, type: 3}
+    - time: 1.1666666
+      value: {fileID: 21300000, guid: 227a16985d5b2864a8d3c3f2bc5958c1, type: 3}
+    - time: 1.25
+      value: {fileID: 21300000, guid: b9a8ce96f4a8ee548af03112a5fc42bb, type: 3}
+    - time: 1.3333334
+      value: {fileID: 21300000, guid: 2ec784fbe31ce68408026b45c8de7a7f, type: 3}
+    - time: 1.4166666
+      value: {fileID: 21300000, guid: 5655191312c3f1d40b9ddeeb9512c864, type: 3}
+    - time: 1.5
+      value: {fileID: 21300000, guid: ff29ea6072711f842acd68fa2e00853f, type: 3}
+    - time: 1.5833334
+      value: {fileID: 21300000, guid: 51825350806d37b47a7ef9dcab00b55a, type: 3}
+    - time: 1.6666666
+      value: {fileID: 21300000, guid: 40facb3a0c1c2dc4c9c4d2c808fd0834, type: 3}
+    - time: 1.75
+      value: {fileID: 21300000, guid: a751febb650e8c74d9c79d5afc03d97f, type: 3}
+    - time: 1.8333334
+      value: {fileID: 21300000, guid: a4a6572350260ff4294c161fbd0225c3, type: 3}
+    - time: 1.9166666
+      value: {fileID: 21300000, guid: bd5537521f1ee2544bbf6f3f3d2e3b22, type: 3}
+    - time: 2
+      value: {fileID: 21300000, guid: ccb2aefb6d6cb9e4c9f914057279ec7c, type: 3}
+    - time: 2.0833333
+      value: {fileID: 21300000, guid: 7a1f8c8af6b1d694586a089c829f39dd, type: 3}
+    - time: 2.1666667
+      value: {fileID: 21300000, guid: 716776c2774242a448d23107f91a5b00, type: 3}
+    - time: 2.25
+      value: {fileID: 21300000, guid: e343223ca2658e542a31700ae89bc2ae, type: 3}
+    attribute: m_Sprite
+    path: CoalPlantAnim
+    classID: 212
+    script: {fileID: 0}
+  m_SampleRate: 60
+  m_WrapMode: 0
+  m_Bounds:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_ClipBindingConstant:
+    genericBindings:
+    - serializedVersion: 2
+      path: 265447959
+      attribute: 4197328169
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 265447959
+      attribute: 2368279999
+      script: {fileID: 0}
+      typeID: 212
+      customType: 0
+      isPPtrCurve: 0
+    - serializedVersion: 2
+      path: 265447959
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    pptrCurveMapping:
+    - {fileID: 0}
+    - {fileID: 21300000, guid: a5b11243c09bc5440b81c28a4b97aaa6, type: 3}
+    - {fileID: 21300000, guid: 0e8dd62e9d081c242ae7b078320d49c8, type: 3}
+    - {fileID: 21300000, guid: 60b9422e9179d6148ae2ca63b63b8e49, type: 3}
+    - {fileID: 21300000, guid: 37baa85855372f441ab6d5fc28e7ce98, type: 3}
+    - {fileID: 21300000, guid: fa749cd5b43c9f14da8b4561a02af628, type: 3}
+    - {fileID: 21300000, guid: cd9c86c59041e8541837117890e1f32f, type: 3}
+    - {fileID: 21300000, guid: 38cfb3ffce34c6c4093d1794d275507d, type: 3}
+    - {fileID: 21300000, guid: 2a59da3ba01b8694f88c286152c389e6, type: 3}
+    - {fileID: 21300000, guid: 64ac910897e5b844cbf1182de1faac0c, type: 3}
+    - {fileID: 21300000, guid: 06485887fef4aef4c925bee8a6db1480, type: 3}
+    - {fileID: 21300000, guid: fa4c65c800ff4fa44944c7b9c71110ae, type: 3}
+    - {fileID: 21300000, guid: 79663b19d4a47f844bc08d0e7de6ff47, type: 3}
+    - {fileID: 21300000, guid: 47d4097e818b2b04e9051c53e01394a0, type: 3}
+    - {fileID: 21300000, guid: 227a16985d5b2864a8d3c3f2bc5958c1, type: 3}
+    - {fileID: 21300000, guid: b9a8ce96f4a8ee548af03112a5fc42bb, type: 3}
+    - {fileID: 21300000, guid: 2ec784fbe31ce68408026b45c8de7a7f, type: 3}
+    - {fileID: 21300000, guid: 5655191312c3f1d40b9ddeeb9512c864, type: 3}
+    - {fileID: 21300000, guid: ff29ea6072711f842acd68fa2e00853f, type: 3}
+    - {fileID: 21300000, guid: 51825350806d37b47a7ef9dcab00b55a, type: 3}
+    - {fileID: 21300000, guid: 40facb3a0c1c2dc4c9c4d2c808fd0834, type: 3}
+    - {fileID: 21300000, guid: a751febb650e8c74d9c79d5afc03d97f, type: 3}
+    - {fileID: 21300000, guid: a4a6572350260ff4294c161fbd0225c3, type: 3}
+    - {fileID: 21300000, guid: bd5537521f1ee2544bbf6f3f3d2e3b22, type: 3}
+    - {fileID: 21300000, guid: ccb2aefb6d6cb9e4c9f914057279ec7c, type: 3}
+    - {fileID: 21300000, guid: 7a1f8c8af6b1d694586a089c829f39dd, type: 3}
+    - {fileID: 21300000, guid: 716776c2774242a448d23107f91a5b00, type: 3}
+    - {fileID: 21300000, guid: e343223ca2658e542a31700ae89bc2ae, type: 3}
+  m_AnimationClipSettings:
+    serializedVersion: 2
+    m_AdditiveReferencePoseClip: {fileID: 0}
+    m_AdditiveReferencePoseTime: 0
+    m_StartTime: 0
+    m_StopTime: 2.3333333
+    m_OrientationOffsetY: 0
+    m_Level: 0
+    m_CycleOffset: 0
+    m_HasAdditiveReferencePose: 0
+    m_LoopTime: 1
+    m_LoopBlend: 0
+    m_LoopBlendOrientation: 0
+    m_LoopBlendPositionY: 0
+    m_LoopBlendPositionXZ: 0
+    m_KeepOriginalOrientation: 0
+    m_KeepOriginalPositionY: 1
+    m_KeepOriginalPositionXZ: 0
+    m_HeightFromFeet: 0
+    m_Mirror: 0
+  m_EditorCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1.76
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 1.76
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.x
+    path: CoalPlantAnim
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 2.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.083333336
+        value: 8
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 2.2
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_Size.y
+    path: CoalPlantAnim
+    classID: 212
+    script: {fileID: 0}
+  m_EulerEditorCurves: []
+  m_HasGenericRootTransform: 0
+  m_HasMotionFloatCurves: 0
+  m_Events:
+  - time: 2.3333333
+    functionName: SpawnAndDestroy
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
