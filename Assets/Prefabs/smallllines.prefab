@@ -185,6 +185,8 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
+  isSubstation: 0
+  wireLength: 3
   connections: []
 --- !u!114 &7440650758699125439
 MonoBehaviour:
@@ -199,3 +201,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
+  cost: 0

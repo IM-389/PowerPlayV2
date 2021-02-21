@@ -290,6 +290,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
+  cost: 0
 --- !u!114 &802364249045430956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,6 +306,8 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
+  isSubstation: 0
+  wireLength: 5
   connections: []
 --- !u!114 &7329203526463667450
 MonoBehaviour:
@@ -348,6 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   amount: 0
+  moneyGained: 0
 --- !u!114 &2238314164939817958
 MonoBehaviour:
   m_ObjectHideFlags: 0

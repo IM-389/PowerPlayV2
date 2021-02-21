@@ -103,6 +103,7 @@ public class BuildScript : MonoBehaviour
                     hitPoints.Clear();
                 }
             }
+            // Old boxcast code
             /*
             RaycastHit2D hit;
             hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
@@ -139,6 +140,8 @@ public class BuildScript : MonoBehaviour
 
     public void CreateLine()
     {
+        GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
+        GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
         // Creates line
         GameObject myLine = new GameObject();
         myLine.name = "powerLine";
@@ -152,9 +155,23 @@ public class BuildScript : MonoBehaviour
         lr.endWidth = .02f;
         lr.SetPosition(0, wireObject1.transform.position);
         lr.SetPosition(1, wireObject2.transform.position);
-        // Creates connection from both objects
-        wireObject1.GetComponent<GeneralObjectScript>().AddConnection(wireObject2);
-        wireObject2.GetComponent<GeneralObjectScript>().AddConnection(wireObject1);
+
+        if (wire1.isConsumer)
+        {
+            wire1.AddConnection(wireObject2);
+            wire2.AddConsumerConnection(wireObject1);
+        }
+        else if (wire2.isConsumer)
+        {
+            wire1.AddConsumerConnection(wireObject2);
+            wire2.AddConnection(wireObject1);
+        }
+        else
+        {
+            // Creates connection from both objects
+            wire1.AddConnection(wireObject2);
+            wire2.AddConnection(wireObject1);
+        }
         // Sets objects back to null
         wireObject1 = null;
         wireObject2 = null;
@@ -317,13 +334,42 @@ public class BuildScript : MonoBehaviour
             {
                return;
             }
+            Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
+            Debug.Log(offset);
+            float hypotenuse = Mathf.Sqrt( Mathf.Pow(Mathf.Abs(offset.x), 2) + Mathf.Pow(Mathf.Abs(offset.y),2));
+            Debug.Log(hypotenuse);
+
+
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-            // Can't make connection if either object has 2 or more connections
-            if (wire1.connections.Count > 2 && wire2.connections.Count > 2)
+
+            Debug.Log(wire1.connections.Count);
+            Debug.Log(wire2.connections.Count);
+
+            // Can't create a line longer than the wire length
+            if(wire1.wireLength < hypotenuse)
             {
-                    return;
+                Debug.Log("Wire is longer than length");
+                return;
             }
+
+            // Generators and consumers can only have one connection
+            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= 1)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= 1))
+            {
+                return;
+            }
+            // Objects besides the substation can't have any more than two connections
+            if ((!wire1.isSubstation && wire1.connections.Count >= 2) || (!wire2.isSubstation && wire2.connections.Count >= 2))
+            {
+                Debug.Log("This happened");
+                return;
+            }
+            // Substations can only have a maximum of three connections
+            if (wire1.connections.Count >= 3 || wire2.connections.Count >= 3)
+            {
+                return;
+            }
+
             // Checks and sees if connection is already made between both objects
             foreach(GameObject connect in wire1.connections)
             {
