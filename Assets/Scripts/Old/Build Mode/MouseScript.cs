@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class MouseScript : MonoBehaviour
 {
     //object sprite render
-    SpriteRenderer sprRend;
+    public SpriteRenderer sprRend;
 
     //Color component of sprite renderer
     Color sprRendCol;

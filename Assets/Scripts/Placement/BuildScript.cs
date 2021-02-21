@@ -22,6 +22,9 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
+    [Tooltip("Reference to the tooltip panel")]
+    public GameObject tooltipPanel;
+    
     private MoneyManager moneyManager;
 
     private string clip = "place";
@@ -33,8 +36,10 @@ public class BuildScript : MonoBehaviour
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+
         lr = GetComponent<LineRenderer>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+
     }
 
     // Update is called once per frame
@@ -56,47 +61,10 @@ public class BuildScript : MonoBehaviour
         // If the player clicked the button, check if the cursor is over the background
         if (Input.GetMouseButtonDown(0))
         {
+            // If in wire/connection mode
             if (wireMode)
             {
-                RaycastHit2D hit = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-                if (!hit.transform.CompareTag("Background"))
-                {
-                    // Sets the first wire object
-                    if(wireObject1 == null)
-                    {
-                        wireObject1 = hit.transform.gameObject;
-                        Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
-                    }
-                    // Otherwise it sets the second wire object
-                    else
-                    {
-                        wireObject2 = hit.transform.gameObject;
-                        // Checks to make sure the same object isn't clicked twice
-                        if (wireObject1 != wireObject2)
-                        {
-                            // If the first object is a transformer it can connect to anything
-                            if (wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == 2)
-                            {
-                                CreateLine();
-                            }
-                            // Checks if the second object is either the same voltage as the first object or a transformer
-                            else
-                            {
-                                // Checks if the second object is the same voltage as the first object
-                                if ((wireObject1.GetComponent<GeneralObjectScript>().GetVoltage() == wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() &&
-                                    // Checks to make sure both objects aren't generators
-                                    !(wireObject1.GetComponent<GeneralObjectScript>().isGenerator && wireObject2.GetComponent<GeneralObjectScript>().isGenerator) &&
-                                    // Checks to make sure both objects aren't consumers
-                                    !(wireObject1.GetComponent<GeneralObjectScript>().isConsumer && wireObject2.GetComponent<GeneralObjectScript>().isConsumer)) ||
-                                    // Checks if second object is a transformer
-                                    (wireObject2.GetComponent<GeneralObjectScript>().GetVoltage() == 2))
-                                {
-                                    CreateLine();
-                                }
-                            }
-                        }
-                    }
-                }
+                CreateWire(mouseWorldPosRounded);
             }
             else
             {
@@ -162,6 +130,18 @@ public class BuildScript : MonoBehaviour
             }
             */
 
+        }
+        
+        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+        HoverScript hover = hitPt.transform.GetComponent<HoverScript>();
+
+        if (hover != null)
+        {
+            hover.UpdateTooltip();
+        }
+        else
+        {
+            tooltipPanel.transform.position = new Vector2(1000, 1000);
         }
     }
 
@@ -296,5 +276,92 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+    }
+    public void SelectHospital()
+    {
+        {
+            DeselectWireMode();
+            foreach (GameObject building in spawnableBuildings)
+            {
+                if (building.CompareTag("hospital"))
+                {
+                    selectedBuilding = building;
+                }
+            }
+        }
+    }
+    public void SelectFactory()
+    {
+        {
+            DeselectWireMode();
+            foreach (GameObject building in spawnableBuildings)
+            {
+                if (building.CompareTag("factory"))
+                {
+                    selectedBuilding = building;
+                }
+            }
+        }
+    }
+    void CreateWire(Vector2 mousePos)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        if (hit.transform.CompareTag("Background"))
+        {
+            return;
+        }
+        // Sets the first wire object
+        if (wireObject1 == null)
+        {
+                wireObject1 = hit.transform.gameObject;
+                Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
+        }
+        // Otherwise it sets the second wire object
+        else
+        {
+            wireObject2 = hit.transform.gameObject;
+            // Checks to make sure the same object isn't clicked twice
+            if (wireObject1 == wireObject2)
+            {
+               return;
+            }
+            GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
+            GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
+            // Can't make connection if either object has 2 or more connections
+            if (wire1.connections.Count > 2 && wire2.connections.Count > 2)
+            {
+                    return;
+            }
+            // Checks and sees if connection is already made between both objects
+            foreach(GameObject connect in wire1.connections)
+            {
+                if(connect == wireObject2)
+                {
+                    return;
+                }
+            }
+            // If the first object is a transformer it can connect to anything
+            if (wire1.GetVoltage() == 2)
+            {
+                CreateLine();
+            }
+            // Checks if the second object is either the same voltage as the first object or a transformer
+            else
+            {
+                 // Checks if the second object is the same voltage as the first object
+                 if ((wire1.GetVoltage() == wire2.GetVoltage() &&
+                 // Checks to make sure both objects aren't generators
+                 !(wire1.isGenerator && wire2.isGenerator) &&
+                 // Checks to make sure both objects aren't consumers
+                 !(wire1.isConsumer && wire2.isConsumer)) ||
+                 // Checks if second object is a transformer
+                 (wire2.GetVoltage() == 2))
+                 {
+                     CreateLine();
+                 }
+            }
+             
+        }
+        
     }
 }
