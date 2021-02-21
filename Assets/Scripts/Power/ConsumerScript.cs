@@ -36,6 +36,7 @@ public class ConsumerScript : PowerBase
             // Set the flag so other objects can know if this one is consuming
             isConsuming = true;
             moneymanager.money += moneyGained;
+            
         }
         else
         {

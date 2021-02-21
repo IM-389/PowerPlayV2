@@ -23,6 +23,9 @@ public class BuildScript : MonoBehaviour
     public GameObject wireObject1, wireObject2;
 
     private MoneyManager moneyManager;
+
+    private string clip = "place";
+
     LineRenderer lr;
 
     // Start is called before the first frame update
@@ -124,14 +127,19 @@ public class BuildScript : MonoBehaviour
                     // If the raycast isn't blocked by a building, then place the building
                     if (!blocked)
                     {
+                        Debug.Log("In the blocked if");
                         Vector2 spawnPoint = RoundVector(origin.point);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
                         newPos.z = -1;
                         spawned.transform.position = newPos;
+                        SoundManager.PlaySound("place");
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
+                        
                     }
+                  
                     // Clear the list after its done
+                    
                     hitPoints.Clear();
                 }
             }
