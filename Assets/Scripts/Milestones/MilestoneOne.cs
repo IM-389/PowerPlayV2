@@ -7,7 +7,6 @@ namespace Milestones
         private GameObject[] houses;
         public override bool CompleteMilestone()
         {
-            Debug.Log("Checking houses");
             houses = GameObject.FindGameObjectsWithTag("house");
 
             int poweredHouses = 0;
@@ -19,8 +18,7 @@ namespace Milestones
                     ++poweredHouses;
                 }
             }
-
-            Debug.Log($"{poweredHouses} houses powered");
+            
             if (poweredHouses >= 5)
             {
                 return true;

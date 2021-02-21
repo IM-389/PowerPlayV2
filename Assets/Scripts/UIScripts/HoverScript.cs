@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -33,6 +34,9 @@ public class HoverScript : MonoBehaviour
 
     [Tooltip("Where to locate the tooltip relative to the object")]
     public Vector2 tooltipOffset;
+
+    [Tooltip("If the object is equipped to be Smart. Provides more detailed info if yes")]
+    public bool isSmart;
     
     private void Start()
     {
@@ -50,16 +54,29 @@ public class HoverScript : MonoBehaviour
         panelPos += tooltipOffset;
         tooltipPanel.transform.position = panelPos;
         string toShow = "";
+        
         if (gos.isConsumer)
         {
-            toShow +=
-                $"Consuming {gameObject.GetComponent<ConsumerScript>().consumptionCurve[timeManager.hours]} power\n";
-        } else if (gos.isGenerator)
+            ConsumerScript consumerScript = gameObject.GetComponent<ConsumerScript>();
+            //Debug.Log("Hovering over consumer!");
+            if (isSmart)
+            {
+                toShow +=
+                    $"Consuming {consumerScript.consumptionCurve[timeManager.hours]} power\n";
+            }
+            else
+            {
+                toShow +=
+                    $"Consuming between {consumerScript.consumptionCurve.Max()} and {consumerScript.consumptionCurve.Min()} power\n";
+            }
+        }
+        else if (gos.isGenerator)
         {
             toShow += $"Generating {gameObject.GetComponent<GeneratorScript>().amount} power\n";
+            toShow += $"{storage.powerStored} power stored";
         }
 
-        toShow += $"{storage.powerStored} power stored";
+        //Debug.Log($"toShow: {toShow}");        
 
         powerAmtText.text = toShow;
     }

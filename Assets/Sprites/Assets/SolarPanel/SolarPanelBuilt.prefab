@@ -78,7 +78,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
-  amount: 0
+  amount: 1
+  moneyGained: 0
 --- !u!114 &-2769948529107755630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -136,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0

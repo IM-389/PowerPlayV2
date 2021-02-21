@@ -236,7 +236,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  amount: 0
+  amount: 1
+  moneyGained: 0
 --- !u!114 &1127105870938750875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,3 +264,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0

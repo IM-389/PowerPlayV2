@@ -10,6 +10,9 @@ public class PowerManager : MonoBehaviour
         TYPE_SOLAR = 2,
         TYPE_WIND = 3
     }
+
+    [Tooltip("Adjustments for coal, gas, solar, and wind respectivly")]
+    public float[] powerAdjusts = {1, 1, 1, 1};
     
     /// <summary>
     /// How much power from each source is being created. Offset from 

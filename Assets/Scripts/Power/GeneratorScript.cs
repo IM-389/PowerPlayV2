@@ -11,14 +11,36 @@ public class GeneratorScript : PowerBase
     public float amount;
     private MoneyManager moneymanager;
     public int moneyGained;
+    private PowerManager powerManager;
     void Start()
     {
+        base.Start();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+        powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
     }
     // TODO: Fully implement
     protected override void Tick()
     {
-        storageScript.powerStored += amount;
+        float amountModified = amount;
+        if (type == PowerManager.POWER_TYPES.TYPE_SOLAR)
+        {
+            if (!timeManager.isDay)
+            {
+                return;
+            }
+        }
+
+        for (int i = 0; i < 4; ++i)
+        {
+            Debug.Log($"{gameObject.name} type int {(int)type}");
+            if ((int)type == i)
+            {
+                amountModified *= powerManager.powerAdjusts[i];
+                break;
+            }
+        }
+        
+        storageScript.powerStored += amountModified;
         moneymanager.money -= moneyGained;
     }
 }
