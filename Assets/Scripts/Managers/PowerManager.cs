@@ -62,7 +62,10 @@ public class PowerManager : MonoBehaviour
         foreach (var generator in generators)
         {
             GeneratorScript generatorScript = generator.GetComponent<GeneratorScript>();
-            powerAmountsGenerated[(int) generatorScript.type] += generatorScript.amount;
+            if (generatorScript.type == type)
+            {
+                powerAmountsGenerated[(int) generatorScript.type] += generatorScript.amount;
+            }
         }
     }
 

@@ -119,6 +119,17 @@ public class BuildScript : MonoBehaviour
         if (hover != null)
         {
             hover.UpdateTooltip();
+
+            // If the player clicked on the object
+            if (Input.GetMouseButtonDown(0))
+            {
+                // If they clicked on a consumer, make it smart
+                // TODO: Tie a cost and tool to this
+                if (hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
+                {
+                    hover.isSmart = true;
+                }
+            }
         }
         else
         {
@@ -172,6 +183,7 @@ public class BuildScript : MonoBehaviour
     public void SelectNaturalGas()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("gasPlant"))
@@ -179,10 +191,13 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[2];
     }
     public void SelectCoalPlant()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("coal"))
@@ -190,10 +205,13 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[0];
     }
     public void SelectWindTurbine()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("turbine"))
@@ -201,10 +219,13 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[5];
     }
     public void SelectSolarPanel()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("solar"))
@@ -212,11 +233,14 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[3];
     }
     // Only for Debugging
     public void SelectHouse()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("house"))
@@ -224,10 +248,13 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[1];
     }
     public void SelectTransformer()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("transformer"))
@@ -235,6 +262,8 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[4];
     }
     public void SelectLowPowerLines()
     {
@@ -284,6 +313,7 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
+    
     void CreateWire(Vector2 mousePos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);

@@ -6061,7 +6061,7 @@ GameObject:
   - component: {fileID: -8050256215190477586}
   m_Layer: 0
   m_Name: Windmill
-  m_TagString: turbine
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

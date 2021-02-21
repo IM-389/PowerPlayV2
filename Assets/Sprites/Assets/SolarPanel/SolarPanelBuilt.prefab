@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 988902469203978700}
   m_Layer: 0
   m_Name: SolarPanelBuilt
-  m_TagString: solar
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   volts: 0
   isGenerator: 0
-  isConsumer: 0
+  isConsumer: 1
   connections: []
 --- !u!114 &-7172774964437932663
 MonoBehaviour:

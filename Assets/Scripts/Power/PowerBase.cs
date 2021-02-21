@@ -38,7 +38,6 @@ public abstract class PowerBase : MonoBehaviour
     {
         storageScript = gameObject.GetComponent<StorageScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
-        Debug.Log($"TimeManager: {timeManager}\nTotalTimesteps: {timeManager.totalTimeSteps}");
         gos = gameObject.GetComponent<GeneralObjectScript>();
     }
 

@@ -43,4 +43,19 @@ public class GeneratorScript : PowerBase
         storageScript.powerStored += amountModified;
         moneymanager.money -= moneyGained;
     }
+
+    /// <summary>
+    /// Disable the generator for a given amount of time
+    /// </summary>
+    /// <param name="seconds">How many seconds to disable it for</param>
+    /// <returns></returns>
+    public IEnumerator TimedDisable(int seconds)
+    {
+        float orignialAmount = amount;
+        amount = 0;
+
+        yield return new WaitForSeconds(seconds);
+
+        amount = orignialAmount;
+    }
 }
