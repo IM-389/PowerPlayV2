@@ -25,11 +25,16 @@ public class BuildScript : MonoBehaviour
     [Tooltip("Reference to the tooltip panel")]
     public GameObject tooltipPanel;
     
+    private MoneyManager moneyManager;
+    LineRenderer lr;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+        lr = GetComponent<LineRenderer>();
+        moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
     }
 
     // Update is called once per frame
@@ -61,36 +66,40 @@ public class BuildScript : MonoBehaviour
                 PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
 
                 bool blocked = false;
-                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-                // Raycasts  many dimensions depending on the object
-                for (int i = 0; i > -placeable.dimensions.x; i--)
+                if (moneyManager.money >= placeable.cost)
                 {
-                    for (int j = 0; j < placeable.dimensions.y; j++)
+
+                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                    // Raycasts  many dimensions depending on the object
+                    for (int i = 0; i > -placeable.dimensions.x; i--)
                     {
-                        RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
-                        hitPoints.Add(hitPoint);
+                        for (int j = 0; j < placeable.dimensions.y; j++)
+                        {
+                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                            hitPoints.Add(hitPoint);
+                        }
                     }
-                }
-                // Checks the list to make sure each raycast is hitting the background
-                foreach (RaycastHit2D hitPoint in hitPoints)
-                {
-                    if (!hitPoint.transform.CompareTag("Background"))
+                    // Checks the list to make sure each raycast is hitting the background
+                    foreach (RaycastHit2D hitPoint in hitPoints)
                     {
-                        blocked = true;
+                        if (!hitPoint.transform.CompareTag("Background"))
+                        {
+                            blocked = true;
+                        }
                     }
+                    // If the raycast isn't blocked by a building, then place the building
+                    if (!blocked)
+                    {
+                        Vector2 spawnPoint = RoundVector(origin.point);
+                        GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
+                        Vector3 newPos = spawned.transform.position;
+                        newPos.z = -1;
+                        spawned.transform.position = newPos;
+                        moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
+                    }
+                    // Clear the list after its done
+                    hitPoints.Clear();
                 }
-                // If the raycast isn't blocked by a building, then place the building
-                if (!blocked)
-                {
-                    Vector2 spawnPoint = RoundVector(origin.point);
-                    GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
-                    Vector3 newPos = spawned.transform.position;
-                    newPos.z = -1;
-                    spawned.transform.position = newPos;
-                }
-                // Clear the list after its done
-                hitPoints.Clear();
-                
             }
             /*
             RaycastHit2D hit;
