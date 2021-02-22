@@ -14,14 +14,19 @@ public class MilestoneSix : MilestoneBase
 
     public override bool CompleteMilestone()
     {
-        GameObject[] coalGenerators = GameObject.FindGameObjectsWithTag("coal");
+        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
 
-        if (coalGenerators.Length >= 2)
+        int numCoal = 0;
+
+        foreach (var generator in generators)
         {
-            return true;
+            if (generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
+            {
+                ++numCoal;
+            }
         }
 
-        return false;
+        return (numCoal >= 2);
 
     }
 }

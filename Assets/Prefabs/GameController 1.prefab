@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 3677482994058206729}
   - component: {fileID: 3677482994058206730}
   - component: {fileID: 3677482994058206731}
-  - component: {fileID: 3677482994058206728}
+  - component: {fileID: 3677482995026495604}
+  - component: {fileID: 3677482995026495603}
+  - component: {fileID: 3677482995026495602}
+  - component: {fileID: 3677482995026495601}
   m_Layer: 0
   m_Name: GameController 1
   m_TagString: GameController
@@ -63,7 +66,7 @@ MonoBehaviour:
   hours: 0
   days: 0
   isDay: 1
---- !u!114 &3677482994058206728
+--- !u!114 &3677482995026495604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,4 +80,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   milestones:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   milestoneText: {fileID: 0}
+--- !u!114 &3677482995026495603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677482994058206732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e529c157afdd8b048a50f9dbd54a16cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  events:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!114 &3677482995026495602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677482994058206732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38fd05524128d4640b4dab7395f42a29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerAdjusts:
+  - 1
+  - 1
+  - 1
+  - 1
+--- !u!114 &3677482995026495601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677482994058206732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93833b72786303546a121c7db0615988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 0

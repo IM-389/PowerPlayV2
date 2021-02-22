@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,9 +10,9 @@ public class MilestoneManager : MonoBehaviour
     public MilestoneBase[] milestones;
 
     /// <summary>
-    /// Which milestone the player is currently on
+    /// Which milestones the player are currently on
     /// </summary>
-    private int currentMilestone = 0;
+    public List<MilestoneBase> currentMilestones = new List<MilestoneBase>();
 
     [Tooltip("Text displaying the current milestone to the player")]
     public Text milestoneText;
@@ -21,8 +22,9 @@ public class MilestoneManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        milestones[currentMilestone].SetMilestoneProperties();
-        milestoneText.text = milestones[currentMilestone].milestoneText;
+        currentMilestones.Add(milestones[0]);
+        currentMilestones[0].SetMilestoneProperties();
+        milestoneText.text = currentMilestones[0].milestoneText;
     }
     
     /// <summary>
@@ -30,13 +32,33 @@ public class MilestoneManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        bool isComplete = milestones[currentMilestone].CompleteMilestone();
-        if (isComplete)
+        List<MilestoneBase> toAdd = new List<MilestoneBase>();
+        List<int> toRemove = new List<int>();
+        string text = "";
+        for(int i = 0; i < currentMilestones.Count; ++i)
         {
-            Debug.Log("Next milestone!");
-            ++currentMilestone;
-            milestones[currentMilestone].SetMilestoneProperties();
-            milestoneText.text = milestones[currentMilestone].milestoneText;
+            bool isComplete = currentMilestones[i].CompleteMilestone();
+            if (isComplete)
+            {
+                Debug.Log("Milestone complete, setting next ones!");
+                toAdd.AddRange(currentMilestones[i].nextMilestones);
+                toRemove.Add(i);
+
+                foreach (var newMilestone in currentMilestones[i].nextMilestones)
+                {
+                    newMilestone.SetMilestoneProperties();
+                }
+            }
+
+            text += currentMilestones[i].milestoneText + "\n";
+        }
+        
+        currentMilestones.AddRange(toAdd);
+        milestoneText.text = text;
+        
+        foreach (var index in toRemove)
+        {
+            currentMilestones.RemoveAt(index);
         }
     }
 }

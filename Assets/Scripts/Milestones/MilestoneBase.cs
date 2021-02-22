@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Milestones
@@ -15,6 +16,9 @@ namespace Milestones
         public string milestoneText;
 
         public string milestoneName;
+
+        [Tooltip("What milestone(s) are immediatly after this one")]
+        public List<MilestoneBase> nextMilestones = new List<MilestoneBase>();
         
         public abstract bool CompleteMilestone();
 
