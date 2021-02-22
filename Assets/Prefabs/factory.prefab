@@ -262,6 +262,8 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
+  isSubstation: 0
+  wireLength: 3
   connections: []
 --- !u!114 &6376666281117401630
 MonoBehaviour:

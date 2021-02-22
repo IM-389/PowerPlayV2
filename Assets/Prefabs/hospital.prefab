@@ -168,7 +168,7 @@ BoxCollider2D:
   m_Offset: {x: -2.5, y: 2.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.75, y: 0.25}
     oldSize: {x: 10.24, y: 10.24}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 2, y: 2}
+  cost: 0
 --- !u!114 &721417663547645832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +231,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  moneyGained: 0
 --- !u!114 &7544618107801901497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +262,8 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
+  isSubstation: 0
+  wireLength: 3
   connections: []
 --- !u!114 &8182319749470883275
 MonoBehaviour:

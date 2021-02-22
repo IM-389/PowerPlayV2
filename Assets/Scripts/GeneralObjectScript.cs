@@ -8,9 +8,17 @@ public class GeneralObjectScript : MonoBehaviour
     public Voltage volts;
     public bool isGenerator;
     public bool isConsumer;
+    public bool isSubstation;
+    public float wireLength;
 
     public List<GameObject> connections = new List<GameObject>();
+    public List<GameObject> consumerConnections = new List<GameObject>();
 
+
+    public void AddConsumerConnection(GameObject connection)
+    {
+        consumerConnections.Add(connection);
+    }
     public void AddConnection(GameObject connection)
     {
         connections.Add(connection);
