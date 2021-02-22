@@ -108,9 +108,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   volts: 0
-  isGenerator: 0
-  isConsumer: 1
+  isGenerator: 1
+  isConsumer: 0
+  isSubstation: 0
+  wireLength: 0
   connections: []
+  consumerConnections: []
 --- !u!114 &-7172774964437932663
 MonoBehaviour:
   m_ObjectHideFlags: 0

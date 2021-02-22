@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: -9214463367474969197}
   m_Layer: 7
   m_Name: NaturalGas
-  m_TagString: gasPlant
+  m_TagString: Generator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -310,6 +310,7 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   connections: []
+  consumerConnections: []
 --- !u!114 &6874283770724396703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,7 +339,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
-  amount: 0
+  amount: 1
   moneyGained: 0
 --- !u!114 &5854946058926720500
 MonoBehaviour:

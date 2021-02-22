@@ -21,7 +21,7 @@ public class PowerManager : MonoBehaviour
     /// 2 is Solar
     /// 3 is Wind
     /// </summary>
-    private float[] powerAmountsGenerated = new float[4];
+    public float[] powerAmountsGenerated = new float[4];
     // Start is called before the first frame update
 
     /// <summary>
@@ -51,11 +51,8 @@ public class PowerManager : MonoBehaviour
     public void CalculateAmountsGenerated(POWER_TYPES type)
     {
         
-        // Zero the amounts before recalculating
-        for (int i = 0; i < powerAmountsGenerated.Length; ++i)
-        {
-            powerAmountsGenerated[i] = 0;
-        }
+        // Zero the amount being recalculated
+        powerAmountsGenerated[(int) type] = 0;
         
         GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
 
