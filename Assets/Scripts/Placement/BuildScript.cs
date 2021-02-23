@@ -31,14 +31,14 @@ public class BuildScript : MonoBehaviour
     private string clip = "place";
 
     //LineRenderer lr;
-
-
+    
     public Text errorText;
-
-
-    [Tooltip("If the player is un upgrade mode")]
-
+    
+    [Tooltip("If the player isupgrade mode")]
     public bool upgradeMode;
+
+    [Tooltip("If the player is in removal mode")]
+    public bool removalMode;
     
     // Start is called before the first frame update
     void Start()
@@ -75,6 +75,19 @@ public class BuildScript : MonoBehaviour
             {
                 errorText.text = "";
                 CreateWire(mouseWorldPosRounded);
+            }
+            else if (removalMode)
+            {
+                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer"))
+                {
+                    GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+                    foreach (var connection in gos.connections)
+                    {
+                        connection.GetComponent<GeneralObjectScript>().connections.Remove(gos.gameObject);
+                    }
+                    Destroy(gos.gameObject);
+                }
             }
             else
             {
@@ -150,13 +163,14 @@ public class BuildScript : MonoBehaviour
 
         if (hover != null)
         {
+            Debug.Log(hitPt.transform.name);
             hover.UpdateTooltip();
 
             // If the player clicked on the object
             if (Input.GetMouseButtonDown(0))
             {
                 // If they clicked on a consumer, make it smart
-                // TODO: Tie a cost and tool to this
+                // TODO: Tie a cost to this
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
                     hover.isSmart = true;
@@ -220,6 +234,15 @@ public class BuildScript : MonoBehaviour
         DeselectWireMode();
         upgradeMode = true;
         buildCircle.gameObject.SetActive(false);
+        mouseObject.SetActive(false);
+    }
+
+    public void SelectRemovalMode()
+    {
+        DeselectWireMode();
+        removalMode = true;
+        buildCircle.gameObject.SetActive(false);
+        mouseObject.SetActive(false);
     }
     
     public void SelectWireMode()
@@ -232,6 +255,7 @@ public class BuildScript : MonoBehaviour
     {
         wireMode = false;
         upgradeMode = false;
+        removalMode = false;
         buildCircle.gameObject.SetActive(true);
         mouseObject.SetActive(true);
         wireObject1 = null;

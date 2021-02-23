@@ -188,7 +188,7 @@ MonoBehaviour:
   isGenerator: 0
   isConsumer: 0
   isSubstation: 0
-  wireLength: 3
+  wireLength: 5
   maxConnectiions: 2
   connections: []
   consumerConnections: []
