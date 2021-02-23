@@ -5226,6 +5226,7 @@ MonoBehaviour:
   isConsumer: 1
   isSubstation: 0
   wireLength: 0
+  maxConnectiions: 1
   connections: []
   consumerConnections: []
 --- !u!114 &2001197299529104073
@@ -5269,6 +5270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
   cost: 0
+  positionOffset: {x: 0, y: 0}
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0

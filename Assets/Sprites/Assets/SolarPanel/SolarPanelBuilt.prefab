@@ -112,6 +112,7 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  maxConnectiions: 1
   connections: []
   consumerConnections: []
 --- !u!114 &-7172774964437932663

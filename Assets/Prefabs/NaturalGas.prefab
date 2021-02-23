@@ -292,6 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 2, y: 2}
   cost: 0
+  positionOffset: {x: 0, y: 0}
 --- !u!114 &2655414223008581282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,6 +310,7 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  maxConnectiions: 1
   connections: []
   consumerConnections: []
 --- !u!114 &6874283770724396703

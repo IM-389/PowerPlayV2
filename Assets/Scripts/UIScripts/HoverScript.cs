@@ -73,8 +73,10 @@ public class HoverScript : MonoBehaviour
         else if (gos.isGenerator)
         {
             toShow += $"Generating {gameObject.GetComponent<GeneratorScript>().amount} power\n";
-            toShow += $"{storage.powerStored} power stored";
+            toShow += $"{storage.powerStored} power stored\n";
         }
+
+        toShow += $"{gos.connections.Count + gos.consumerConnections.Count} / {gos.maxConnectiions} connections\n";
 
         //Debug.Log($"toShow: {toShow}");        
 

@@ -141,7 +141,7 @@ public class BuildScript : MonoBehaviour
             {
                 // If they clicked on a consumer, make it smart
                 // TODO: Tie a cost and tool to this
-                if (hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
+                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
                     hover.isSmart = true;
                 }
@@ -198,6 +198,14 @@ public class BuildScript : MonoBehaviour
         vec.y = (float) Math.Round(vec.y);
         return vec;
     }
+
+    public void SelectUpgradeMode()
+    {
+        DeselectWireMode();
+        upgradeMode = true;
+        buildCircle.gameObject.SetActive(false);
+    }
+    
     public void SelectWireMode()
     {
         wireMode = true;
@@ -358,7 +366,6 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 == null)
         {
                 wireObject1 = hit.transform.gameObject;
-                wireObject1.GetComponent<SpriteRenderer>().color = Color.blue;
                 Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
         }
         // Otherwise it sets the second wire object
@@ -400,19 +407,19 @@ public class BuildScript : MonoBehaviour
                 }
             }
             // Generators and consumers can only have one connection
-            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= 1)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= 1))
+            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= wire1.maxConnectiions)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= wire2.maxConnectiions))
             {
                 errorText.text = "One of these object can only have one connection";
                 return;
             }
             // Objects besides the substation can't have any more than two connections
-            if ((!wire1.isSubstation && wire1.connections.Count >= 2) || (!wire2.isSubstation && wire2.connections.Count >= 2))
+            if ((!wire1.isSubstation && wire1.connections.Count >= wire1.maxConnectiions) || (!wire2.isSubstation && wire2.connections.Count >= wire2.maxConnectiions))
             {
                 errorText.text = "One of these object can only have two connections";
                 return;
             }
             // Substations can only have a maximum of three connections
-            if (wire1.connections.Count >= 3 || wire2.connections.Count >= 3)
+            if (wire1.connections.Count >= wire1.maxConnectiions || wire2.connections.Count >= wire2.maxConnectiions)
             {
                 errorText.text = "One of these object can only have three connections";
                 return;
@@ -422,7 +429,7 @@ public class BuildScript : MonoBehaviour
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
-                wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+                //wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
                 CreateLine();
             }
             // Checks if the second object is either the same voltage as the first object or a transformer
@@ -437,7 +444,7 @@ public class BuildScript : MonoBehaviour
                  // Checks if second object is a transformer
                  (wire2.GetVoltage() == 2))
                  {
-                     wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+                     //.GetComponent<SpriteRenderer>().color = Color.white;
                      CreateLine();
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())

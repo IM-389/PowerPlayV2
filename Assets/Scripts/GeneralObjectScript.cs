@@ -11,6 +11,8 @@ public class GeneralObjectScript : MonoBehaviour
     public bool isSubstation;
     public float wireLength;
 
+    public int maxConnectiions;
+    
     public List<GameObject> connections = new List<GameObject>();
     public List<GameObject> consumerConnections = new List<GameObject>();
 
