@@ -16,8 +16,10 @@ public class VolumeBehavior : MonoBehaviour
     [Tooltip("This contains the information for the current voice clip.")]
     AudioSource voiceAudio;
 
-    [Tooltip("This contains the value from the slider and it converts to the volume.")]
-    public static float sliderValue = 0.8f;
+    [Tooltip("This contains the value from the sliders and it converts to the volume.")]
+    public static float BGMValue = 0.8f;
+    public static float SFXValue = 0.8f;
+    public static float voiceValue = 0.8f;
 
     [Tooltip("This contains the information for the Volume panel.")]
     public GameObject volumeMenu;
@@ -35,13 +37,19 @@ public class VolumeBehavior : MonoBehaviour
         // This plays the AudioClip attached to the AudioSource on startup.
         musicAudio.Play();
 
+        // This keeps the volume setting that the player had
+        BGMValue = PlayerPrefs.GetFloat("BGM Value");
+
         // This invokes the SetMusic function.
-        SetMusic(sliderValue);
+        SetMusic(BGMValue);
 
         // ----------------------------------------
 
+        // This keeps the volume setting that the player had
+        SFXValue = PlayerPrefs.GetFloat("SFX Value");
+
         // This invokes the SetSFX function.
-        SetSFX(sliderValue);
+        SetSFX(SFXValue);
 
         // ----------------------------------------
 
@@ -54,8 +62,11 @@ public class VolumeBehavior : MonoBehaviour
         // This plays the AudioClip attached to the AudioSource on startup.
         voiceAudio.Play();
 
+        // This keeps the volume setting that the player had
+        voiceValue = PlayerPrefs.GetFloat("Voice Value");
+
         // This invokes the SetVoice function.
-        SetVoice(sliderValue);
+        SetVoice(voiceValue);
 
     }
 
@@ -72,7 +83,10 @@ public class VolumeBehavior : MonoBehaviour
 
         // The sliderValue will now be the same value
         // as the volume that was just set.
-        sliderValue = volume;
+        voiceValue = volume;
+
+        // Update volume.
+        PlayerPrefs.SetFloat("Voice Value", voiceValue);
 
         // This invokes the UpdateVoiceLabel function.
         UpdateVoiceLabel();
@@ -93,7 +107,7 @@ public class VolumeBehavior : MonoBehaviour
 
         // This multiplies the float to a whole number to be used
         // in the text and be easier to read.
-        int percent = Mathf.RoundToInt(sliderValue * 100f);
+        int percent = Mathf.RoundToInt(voiceValue * 100f);
 
         // This sets the text to say the percentage the volume is at.
         voiceText.text = "<b>Voice Volume:</b> " + percent + "%";
@@ -107,7 +121,7 @@ public class VolumeBehavior : MonoBehaviour
 
         // This sets the volumeSlider as the volume so it stays
         // the same after changing scenes.
-        volumeSlider.value = sliderValue;
+        volumeSlider.value = voiceValue;
     }
 
     /// <summary>
@@ -123,7 +137,10 @@ public class VolumeBehavior : MonoBehaviour
 
         // The sliderValue will now be the same value
         // as the volume that was just set.
-        sliderValue = volume;
+        BGMValue = volume;
+
+        // Update volume.
+        PlayerPrefs.SetFloat("BGM Value", BGMValue);
 
         // This invokes the UpdateVolumeLabel function.
         UpdateMusicLabel();
@@ -145,7 +162,7 @@ public class VolumeBehavior : MonoBehaviour
 
         // This multiplies the float to a whole number to be used
         // in the text and be easier to read.
-        int percent = Mathf.RoundToInt(sliderValue * 100f);
+        int percent = Mathf.RoundToInt(BGMValue * 100f);
 
         // This sets the text to say the percentage the volume is at.
         volumeText.text = "<b>BGM Volume:</b> " + percent + "%";
@@ -159,7 +176,7 @@ public class VolumeBehavior : MonoBehaviour
 
         // This sets the volumeSlider as the volume so it stays
         // the same after changing scenes.
-        volumeSlider.value = sliderValue;
+        volumeSlider.value = BGMValue;
 
     }
 
@@ -173,6 +190,10 @@ public class VolumeBehavior : MonoBehaviour
         // The game volume will now be the same value
         // as the volume that was just set.
         AudioListener.volume = volume;
+
+        // Update volume.
+        PlayerPrefs.SetFloat("SFX Value", volume);
+
         UpdateSFXLabel();
     }
 
