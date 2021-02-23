@@ -436,7 +436,7 @@ public class BuildScript : MonoBehaviour
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
-                wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                 CreateLine();
             }
             // Checks if the second object is either the same voltage as the first object or a transformer
@@ -451,7 +451,7 @@ public class BuildScript : MonoBehaviour
                  // Checks if second object is a transformer
                  (wire2.GetVoltage() == 2))
                  {
-                     wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+                     wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                      CreateLine();
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
