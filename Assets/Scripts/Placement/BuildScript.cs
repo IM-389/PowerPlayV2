@@ -35,7 +35,9 @@ public class BuildScript : MonoBehaviour
 
     public Text errorText;
 
-    [Tooltip()]
+
+    [Tooltip("If the player is un upgrade mode")]
+
     public bool upgradeMode;
     
     // Start is called before the first frame update
@@ -219,6 +221,7 @@ public class BuildScript : MonoBehaviour
     public void DeselectWireMode()
     {
         wireMode = false;
+        upgradeMode = false;
         buildCircle.gameObject.SetActive(true);
         mouseObject.SetActive(true);
         wireObject1 = null;
