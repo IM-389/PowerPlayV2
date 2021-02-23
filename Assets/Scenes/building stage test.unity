@@ -313,6 +313,8 @@ MonoBehaviour:
   minutes: 0
   hours: 0
   days: 0
+  isDay: 1
+  cash: 0
 --- !u!1 &32775406
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,6 +553,8 @@ MonoBehaviour:
   minutes: 0
   hours: 0
   days: 0
+  isDay: 1
+  cash: 0
 --- !u!1 &51962126
 GameObject:
   m_ObjectHideFlags: 0
@@ -2550,6 +2554,7 @@ GameObject:
   - component: {fileID: 369937701}
   - component: {fileID: 369937700}
   - component: {fileID: 369937699}
+  - component: {fileID: 369937703}
   m_Layer: 5
   m_Name: 2X Speed button
   m_TagString: Untagged
@@ -2594,6 +2599,8 @@ MonoBehaviour:
   minutes: 0
   hours: 0
   days: 0
+  isDay: 1
+  cash: 0
 --- !u!114 &369937700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,6 +2695,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369937697}
   m_CullTransparentMesh: 1
+--- !u!114 &369937703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369937697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e871d3f242fe04479b183c4eacef4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &370377187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5472,6 +5491,8 @@ MonoBehaviour:
   minutes: -1
   hours: 0
   days: 0
+  isDay: 1
+  cash: 0
 --- !u!114 &705816865
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6900,11 +6921,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transLevel: 0.45
-  electricPole: {fileID: 2404669415710288745, guid: 8acb8503cd4ad6149b03b7074d38ef3b, type: 3}
-  solarPanel: {fileID: 6603167316516251588, guid: d4b1fdae5d9bc5b4ba8cd66313f21653, type: 3}
-  windTurbine: {fileID: 4900880723872211217, guid: 76fc6c657e9a806439287e27bb097376, type: 3}
-  coalPlant: {fileID: 572443818696165632, guid: 86abe198aedf5304e9e907801f61e0c4, type: 3}
-  gasPlant: {fileID: 7688663850787778803, guid: e8a719ab879e2df43a23771576fa419f, type: 3}
+  buildScript: {fileID: 0}
 --- !u!212 &898209079
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7160,6 +7177,8 @@ MonoBehaviour:
   minutes: 0
   hours: 0
   days: 0
+  isDay: 1
+  cash: 0
 --- !u!114 &925780070
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -291,7 +291,7 @@ public class BuildFunctions : MonoBehaviour
     //convert menu selection to usable
     public void DropDownMenuHandler(int selection)
     {
-        SoundManager.PlaySound("menu");
+        //SoundManager.PlaySound("menu");
         menuSelection = (uint)selection;
     }
 

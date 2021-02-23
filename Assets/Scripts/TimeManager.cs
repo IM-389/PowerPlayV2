@@ -14,6 +14,7 @@ public class TimeManager : MonoBehaviour
     public int totalTimeSteps;
     public int minutes, hours, days = 0;
     public bool isDay = true;
+    public int cash = 0;//gonna be using this to cause houses to make money
     // Start is called before the first frame update
     void Start()
     {
