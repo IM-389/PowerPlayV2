@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 1968521706754183187}
   - component: {fileID: 2967856042336710478}
   - component: {fileID: 7440650758699125439}
+  - component: {fileID: 4964275525438312290}
+  - component: {fileID: -357091827175094459}
   m_Layer: 7
   m_Name: smallllines
   m_TagString: Power
@@ -185,7 +187,11 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
+  isSubstation: 0
+  wireLength: 3
+  maxConnectiions: 1
   connections: []
+  consumerConnections: []
 --- !u!114 &7440650758699125439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,3 +205,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
+  cost: 0
+  positionOffset: {x: 0, y: 0}
+--- !u!114 &4964275525438312290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404669415710288745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerStored: 0
+  maxPower: 100
+  isFull: 0
+--- !u!114 &-357091827175094459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404669415710288745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSend: 1

@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 public class MouseScript : MonoBehaviour
 {
     //object sprite render
-    SpriteRenderer sprRend;
+    public SpriteRenderer sprRend;
 
     //Color component of sprite renderer
     Color sprRendCol;
@@ -41,9 +41,9 @@ public class MouseScript : MonoBehaviour
         // Get the mouses world position
         Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 mouseWorldPosRounded = RoundVector(mouseWorldPos);
-        transform.position = mouseWorldPosRounded;
         bool blocked = false;
         PlaceableScript placeable = buildScript.selectedBuilding.GetComponent<PlaceableScript>();
+        transform.position = mouseWorldPosRounded - placeable.positionOffset;
 
         for (int i = 0; i > -placeable.dimensions.x; i--)
         {
