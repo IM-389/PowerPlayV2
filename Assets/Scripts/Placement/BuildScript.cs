@@ -73,7 +73,7 @@ public class BuildScript : MonoBehaviour
                 bool blocked = false;
                 if (moneyManager.money >= placeable.cost)
                 {
-
+                    Debug.Log("under money > placeablecost");
                     RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
                     // Raycasts  many dimensions depending on the object
                     for (int i = 0; i > -placeable.dimensions.x; i--)
