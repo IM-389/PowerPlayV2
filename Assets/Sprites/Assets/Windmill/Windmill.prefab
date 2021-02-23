@@ -6166,6 +6166,7 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  cost: 5
   maxConnectiions: 1
   connections: []
   consumerConnections: []

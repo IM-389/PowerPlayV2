@@ -44,6 +44,11 @@ public class GeneratorScript : PowerBase
         {
             storageScript.powerStored += amountModified;
             moneymanager.money -= moneyGained;
+
+            if (moneymanager.money < 0)
+            {
+                moneymanager.money = 0;
+            }
         }
     }
 

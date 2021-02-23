@@ -10,7 +10,10 @@ public class GeneralObjectScript : MonoBehaviour
     public bool isConsumer;
     public bool isSubstation;
     public float wireLength;
-
+    [Tooltip("Not used for placing, used for refunding after removal")]
+    public int cost;
+    
+    
     public int maxConnectiions;
     
     public List<GameObject> connections = new List<GameObject>();

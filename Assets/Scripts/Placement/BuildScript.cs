@@ -86,6 +86,8 @@ public class BuildScript : MonoBehaviour
                     {
                         connection.GetComponent<GeneralObjectScript>().connections.Remove(gos.gameObject);
                     }
+
+                    moneyManager.money += gos.cost;
                     Destroy(gos.gameObject);
                 }
             }
