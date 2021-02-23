@@ -79,6 +79,7 @@ public class TimeManager : MonoBehaviour
             {
                 isDay = true;
                 hours = 0;
+                ++days;
             }
             //Debug.Log("Timestep: " + timeStep.ToString() + " Hours: " + hours.ToString() + " Total timesteps: " + totalTimeSteps.ToString() + " Daytime: " + isDay);
 

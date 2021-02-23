@@ -21,6 +21,7 @@ public class ConsumerScript : PowerBase
     public int moneyGained;
     void Start()
     {
+        base.Start();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
     }
     
