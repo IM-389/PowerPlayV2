@@ -21,7 +21,7 @@ public class CameraDrag : MonoBehaviour
     {
         if (Input.GetMouseButton(1))
         {
-            float speed = dragSpeed;
+            float speed = dragSpeed * Time.fixedDeltaTime;
             camera.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed);
         }
     }
