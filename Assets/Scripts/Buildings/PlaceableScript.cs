@@ -7,6 +7,8 @@ public class PlaceableScript : MonoBehaviour
     [Tooltip("X and Y dimensions of the object, starting from the bottom right")]
     public Vector2 dimensions;
     public int cost;
+
+    public Vector2 positionOffset;
     // Start is called before the first frame update
     void Start()
     {

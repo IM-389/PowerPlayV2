@@ -6133,7 +6133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   amount: 1
-  moneyGained: 0
+  moneyGained: 1
 --- !u!114 &-5640932312535549940
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6164,7 +6164,10 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
+  isSubstation: 0
+  wireLength: 5
   connections: []
+  consumerConnections: []
 --- !u!114 &3500156768499126977
 MonoBehaviour:
   m_ObjectHideFlags: 0
