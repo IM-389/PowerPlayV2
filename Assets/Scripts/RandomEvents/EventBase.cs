@@ -11,6 +11,9 @@ public abstract class EventBase : MonoBehaviour
 
     protected TimeManager timeManager;
 
+    [Tooltip("Notification to give when the event occurs")]
+    public string notification;
+    
     protected void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();

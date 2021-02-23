@@ -39,9 +39,12 @@ public class GeneratorScript : PowerBase
                 break;
             }
         }
-        
-        storageScript.powerStored += amountModified;
-        moneymanager.money -= moneyGained;
+
+        if (!storageScript.isFull)
+        {
+            storageScript.powerStored += amountModified;
+            moneymanager.money -= moneyGained;
+        }
     }
 
     /// <summary>

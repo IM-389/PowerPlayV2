@@ -6132,7 +6132,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
-  amount: 1
+  amount: 5
   moneyGained: 1
 --- !u!114 &-5640932312535549940
 MonoBehaviour:

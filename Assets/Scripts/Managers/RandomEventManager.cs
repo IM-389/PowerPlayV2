@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RandomEventManager : MonoBehaviour
 {
@@ -23,6 +24,11 @@ public class RandomEventManager : MonoBehaviour
     private float previousTimestep;
 
     private PowerManager powerManager;
+
+    public GameObject eventNotification;
+
+    [Tooltip("How long to show the notification for")]
+    public float notificationShowTime;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,10 +58,57 @@ public class RandomEventManager : MonoBehaviour
             int eventRNG = Random.Range(0, events.Count);
 
             EventBase eventSelected = events[eventRNG];
-            
+
+            eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
+            eventNotification.SetActive(true);
+            StartCoroutine(HideNotification());
             eventSelected.DoEvent();
         }
-    
+
+        // Debug code, press the S key for a sunny day, c for cloudy day, and b for windmill break
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                powerManager.powerAdjusts[i] = 1;
+            }
+            
+            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[0].notification;
+            eventNotification.SetActive(true);
+            StartCoroutine(HideNotification());
+            events[0].DoEvent();
+        }
+
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                powerManager.powerAdjusts[i] = 1;
+            }
+            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[1].notification;
+            eventNotification.SetActive(true);
+            StartCoroutine(HideNotification());
+            events[1].DoEvent();
+        }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            for (int i = 0; i < 4; ++i)
+            {
+                powerManager.powerAdjusts[i] = 1;
+            }
+            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[2].notification;
+            eventNotification.SetActive(true);
+            StartCoroutine(HideNotification());
+            events[2].DoEvent();
+        }
+        
         previousTimestep = timeManager.days;
+    }
+
+    private IEnumerator HideNotification()
+    {
+        yield return new WaitForSeconds(notificationShowTime);
+        eventNotification.SetActive(false);
     }
 }

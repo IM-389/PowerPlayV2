@@ -14,6 +14,8 @@ public class HouseLights : MonoBehaviour
     public Sprite poweredSprite;
     public Sprite unpoweredSprite;
     public GameObject smoke;
+
+    public StorageScript storage;
     // Start is called before the first frame update
 
 
@@ -25,11 +27,8 @@ public class HouseLights : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-            powered =! powered;
-            CheckPower();
-        }
+        powered = (storage.powerStored > 0);
+        CheckPower();
     }
 
     void CheckPower()

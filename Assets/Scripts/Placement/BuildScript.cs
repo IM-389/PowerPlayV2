@@ -78,6 +78,8 @@ public class BuildScript : MonoBehaviour
             }
             else
             {
+                wireObject1 = null;
+                wireObject2 = null;
                 PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
 
                 bool blocked = false;

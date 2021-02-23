@@ -5422,6 +5422,7 @@ MonoBehaviour:
   poweredSprite: {fileID: 21300000, guid: 34b47aa83a542c949a9421038042f872, type: 3}
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
+  storage: {fileID: -1264574402197089311}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,11 +17,11 @@ public class CameraDrag : MonoBehaviour
     }
     
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetMouseButton(1))
         {
-            float speed = dragSpeed * Time.deltaTime;
+            float speed = dragSpeed;
             camera.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed);
         }
     }

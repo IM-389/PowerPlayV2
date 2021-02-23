@@ -41,7 +41,7 @@ public class HoverScript : MonoBehaviour
     private void Start()
     {
         tooltipPanel = GameObject.FindWithTag("TooltipPanel");
-        powerAmtText = tooltipPanel.transform.GetChild(0).GetComponent<Text>();
+        powerAmtText = tooltipPanel.transform.GetChild(1).GetComponent<Text>();
         gos = gameObject.GetComponent<GeneralObjectScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         storage = gameObject.GetComponent<StorageScript>();
