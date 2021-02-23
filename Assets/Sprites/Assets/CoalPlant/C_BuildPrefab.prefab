@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Building: {fileID: 7206924125788488262, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
-  xOffset: 0.5
-  yOffset: 0.5
+  xOffset: 0
+  yOffset: 0
 --- !u!114 &8269330129290094584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 2, y: 2}
   cost: 5
-  positionOffset: {x: -0.5, y: -0.5}
+  positionOffset: {x: 0, y: 0}
 --- !u!212 &-9218528639324640776
 SpriteRenderer:
   m_ObjectHideFlags: 0

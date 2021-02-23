@@ -28,9 +28,16 @@ public class BuildScript : MonoBehaviour
     
     private MoneyManager moneyManager;
 
+    private string clip = "place";
+
+    //LineRenderer lr;
+
+
     public Text errorText;
 
+
     [Tooltip("If the player is un upgrade mode")]
+
     public bool upgradeMode;
     
     // Start is called before the first frame update
@@ -38,7 +45,9 @@ public class BuildScript : MonoBehaviour
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+
         //lr = GetComponent<LineRenderer>();
+
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
     }
 
@@ -96,14 +105,19 @@ public class BuildScript : MonoBehaviour
                     // If the raycast isn't blocked by a building, then place the building
                     if (!blocked)
                     {
+                        Debug.Log("In the blocked if");
                         Vector2 spawnPoint = RoundVector(origin.point);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
                         newPos.z = -1;
                         spawned.transform.position = newPos;
+                        SoundManager.PlaySound("place");
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
+                        
                     }
+                  
                     // Clear the list after its done
+                    
                     hitPoints.Clear();
                 }
             }
@@ -366,6 +380,7 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 == null)
         {
                 wireObject1 = hit.transform.gameObject;
+                //wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
                 Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
         }
         // Otherwise it sets the second wire object
