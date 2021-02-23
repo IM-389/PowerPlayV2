@@ -376,6 +376,9 @@ public class BuildScript : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         if (hit.transform.CompareTag("Background"))
         {
+            if (wireObject1 != null) 
+                wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+            wireObject1 = null;
             return;
         }
         // Sets the first wire object

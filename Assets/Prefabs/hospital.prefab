@@ -209,30 +209,30 @@ MonoBehaviour:
   isPowered: 0
   consumptionCurve:
   - 2
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 5
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  moneyGained: 0
+  - 2
+  - 2
+  - 3
+  - 3
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 6
+  - 6
+  - 4
+  - 4
+  - 4
+  - 4
+  - 4
+  - 3
+  - 3
+  - 3
+  - 2
+  - 2
+  - 2
+  moneyGained: 3
 --- !u!114 &7544618107801901497
 MonoBehaviour:
   m_ObjectHideFlags: 0
