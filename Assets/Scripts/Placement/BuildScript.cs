@@ -372,7 +372,7 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 == null)
         {
                 wireObject1 = hit.transform.gameObject;
-                wireObject1.GetComponent<SpriteRenderer>().color = Color.blue;
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
                 Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
         }
         // Otherwise it sets the second wire object
