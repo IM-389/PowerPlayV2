@@ -232,7 +232,11 @@ public class BuildScript : MonoBehaviour
     {
         wireMode = false;
         upgradeMode = false;
-        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        // Changes the wire object back to white
+        if (wireObject1 != null)
+        {
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
         buildCircle.gameObject.SetActive(true);
         mouseObject.SetActive(true);
         wireObject1 = null;
