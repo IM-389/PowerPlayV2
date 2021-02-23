@@ -258,6 +258,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1312398380}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &26917604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -496,6 +508,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312398380}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: button
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &45014485
@@ -2554,7 +2578,6 @@ GameObject:
   - component: {fileID: 369937701}
   - component: {fileID: 369937700}
   - component: {fileID: 369937699}
-  - component: {fileID: 369937703}
   m_Layer: 5
   m_Name: 2X Speed button
   m_TagString: Untagged
@@ -2657,6 +2680,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1312398380}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &369937701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2695,18 +2730,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369937697}
   m_CullTransparentMesh: 1
---- !u!114 &369937703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369937697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e871d3f242fe04479b183c4eacef4a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &370377187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6920,6 +6943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0656fa7a27ab4695242f3fdffbbf3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprRend: {fileID: 0}
   transLevel: 0.45
   buildScript: {fileID: 0}
 --- !u!212 &898209079
@@ -7233,6 +7257,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1312398380}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: button
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &925780071
@@ -10000,6 +10036,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1312398380}
+        m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: button
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1227915874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10258,6 +10306,8 @@ GameObject:
   - component: {fileID: 1312398378}
   - component: {fileID: 1312398379}
   - component: {fileID: 1312398376}
+  - component: {fileID: 1312398380}
+  - component: {fileID: 1312398381}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -10410,6 +10460,31 @@ MonoBehaviour:
   eventPanel: {fileID: 831782033}
   eventPanelTitle: {fileID: 446922936}
   eventPanelText: {fileID: 1023705338}
+--- !u!114 &1312398380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312398375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e871d3f242fe04479b183c4eacef4a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1312398381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312398375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93833b72786303546a121c7db0615988, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 500
 --- !u!1 &1338493122
 GameObject:
   m_ObjectHideFlags: 0
@@ -15754,6 +15829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 3633663177104990420, guid: 25612fa18f90c374b9ca0e735451aaa4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e05b158f6dcb6e4b87fce304ad04cf0, type: 3}
     - target: {fileID: 3633663177104990421, guid: 25612fa18f90c374b9ca0e735451aaa4, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -15815,6 +15894,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa83ee4eb0dd97e4b9c1110004501949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2067106545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067106541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e871d3f242fe04479b183c4eacef4a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2069173526
