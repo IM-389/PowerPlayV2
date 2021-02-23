@@ -5169,30 +5169,31 @@ MonoBehaviour:
   isConsuming: 0
   isPowered: 0
   consumptionCurve:
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
-  - 0
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 1
+  - 2
+  - 2
+  - 2
+  - 2
+  - 3
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 2
+  - 1
+  - 1
+  - 1
+  - 1
+  moneyGained: 1
 --- !u!114 &-1264574402197089311
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5223,7 +5224,10 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
+  isSubstation: 0
+  wireLength: 0
   connections: []
+  consumerConnections: []
 --- !u!114 &2001197299529104073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5264,6 +5268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
+  cost: 0
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0

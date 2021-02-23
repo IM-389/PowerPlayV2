@@ -30,11 +30,16 @@ public class BuildScript : MonoBehaviour
 
     public Text errorText;
 
+    [Tooltip()]
+    public bool upgradeMode;
+    
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+
+        //lr = GetComponent<LineRenderer>();
 
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
     }
@@ -61,6 +66,7 @@ public class BuildScript : MonoBehaviour
             // If in wire/connection mode
             if (wireMode)
             {
+                errorText.text = "";
                 CreateWire(mouseWorldPosRounded);
             }
             else
@@ -353,6 +359,7 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 == null)
         {
                 wireObject1 = hit.transform.gameObject;
+                wireObject1.GetComponent<SpriteRenderer>().color = Color.blue;
                 Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
         }
         // Otherwise it sets the second wire object
@@ -416,6 +423,7 @@ public class BuildScript : MonoBehaviour
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
+                wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
                 CreateLine();
             }
             // Checks if the second object is either the same voltage as the first object or a transformer
@@ -430,6 +438,7 @@ public class BuildScript : MonoBehaviour
                  // Checks if second object is a transformer
                  (wire2.GetVoltage() == 2))
                  {
+                     wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
                      CreateLine();
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
@@ -447,7 +456,7 @@ public class BuildScript : MonoBehaviour
 
 
             }
-             
+
         }
         
     }
