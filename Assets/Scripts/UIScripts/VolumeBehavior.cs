@@ -10,8 +10,8 @@ public class VolumeBehavior : MonoBehaviour
     [Tooltip("This contains the information for the background music AudioSource.")]
     public AudioSource musicAudio;
 
-    [Tooltip("This contains the information for the Voice acting object.")]
-    public GameObject voice;
+    //[Tooltip("This contains the information for the Voice acting object.")]
+    //public GameObject voice;
 
     [Tooltip("This contains the information for the current voice clip.")]
     AudioSource voiceAudio;
@@ -19,7 +19,7 @@ public class VolumeBehavior : MonoBehaviour
     [Tooltip("This contains the value from the sliders and it converts to the volume.")]
     public static float BGMValue = 0.8f;
     public static float SFXValue = 0.8f;
-    public static float voiceValue = 0.8f;
+    //public static float voiceValue = 0.8f;
 
     [Tooltip("This contains the information for the Volume panel.")]
     public GameObject volumeMenu;
@@ -54,22 +54,22 @@ public class VolumeBehavior : MonoBehaviour
         // ----------------------------------------
 
         // This fetches the AudioSource from the GameObject.
-        voiceAudio = voice.GetComponent<AudioSource>();
+        //voiceAudio = voice.GetComponent<AudioSource>();
 
         // This makes it so the voice isn't affected by the master volume.
-        voiceAudio.ignoreListenerVolume = true;
+        //voiceAudio.ignoreListenerVolume = true;
 
         // This plays the AudioClip attached to the AudioSource on startup.
-        voiceAudio.Play();
+        //voiceAudio.Play();
 
         // This keeps the volume setting that the player had
-        voiceValue = PlayerPrefs.GetFloat("Voice Value");
+        //voiceValue = PlayerPrefs.GetFloat("Voice Value");
 
         // This invokes the SetVoice function.
-        SetVoice(voiceValue);
+        //SetVoice(voiceValue);
 
     }
-
+    /*
     /// <summary>
     /// This adjusts the voice volume and slider so they will
     /// be consistant and stay the same after leaving the options panel.
@@ -123,6 +123,7 @@ public class VolumeBehavior : MonoBehaviour
         // the same after changing scenes.
         volumeSlider.value = voiceValue;
     }
+    */
 
     /// <summary>
     /// This adjusts the music volume and slider so they will
