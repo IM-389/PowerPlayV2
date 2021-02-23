@@ -40428,6 +40428,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BackgroundMusic
       objectReference: {fileID: 0}
+    - target: {fileID: 3633663177104990420, guid: 25612fa18f90c374b9ca0e735451aaa4, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 2e05b158f6dcb6e4b87fce304ad04cf0, type: 3}
     - target: {fileID: 3633663177104990421, guid: 25612fa18f90c374b9ca0e735451aaa4, type: 3}
       propertyPath: m_RootOrder
       value: 13
