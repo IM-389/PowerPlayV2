@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BuildScript : MonoBehaviour
 {
@@ -26,7 +27,8 @@ public class BuildScript : MonoBehaviour
     public GameObject tooltipPanel;
     
     private MoneyManager moneyManager;
-    LineRenderer lr;
+
+    public Text errorText;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +36,6 @@ public class BuildScript : MonoBehaviour
         mainCamera = Camera.main;
         buildCircle = GameObject.FindWithTag("BuildCircle").transform;
 
-        lr = GetComponent<LineRenderer>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
 
     }
@@ -332,7 +333,8 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
-               return;
+                errorText.text = "You can't click the same object twice";
+                return;
             }
             Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
             Debug.Log(offset);
@@ -349,35 +351,39 @@ public class BuildScript : MonoBehaviour
             // Can't create a line longer than the wire length
             if(wire1.wireLength < hypotenuse)
             {
-                Debug.Log("Wire is longer than length");
+                errorText.text = "Wire cannot reach object";
                 return;
             }
 
+            // Checks and sees if connection is already made between both objects
+            foreach (GameObject connect in wire1.connections)
+            {
+                if (connect == wireObject2)
+                {
+                    errorText.text = "Connnection is already made between these objects";
+                    return;
+                }
+            }
             // Generators and consumers can only have one connection
             if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= 1)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= 1))
             {
+                errorText.text = "One of these object can only have one connection";
                 return;
             }
             // Objects besides the substation can't have any more than two connections
             if ((!wire1.isSubstation && wire1.connections.Count >= 2) || (!wire2.isSubstation && wire2.connections.Count >= 2))
             {
-                Debug.Log("This happened");
+                errorText.text = "One of these object can only have two connections";
                 return;
             }
             // Substations can only have a maximum of three connections
             if (wire1.connections.Count >= 3 || wire2.connections.Count >= 3)
             {
+                errorText.text = "One of these object can only have three connections";
                 return;
             }
 
-            // Checks and sees if connection is already made between both objects
-            foreach(GameObject connect in wire1.connections)
-            {
-                if(connect == wireObject2)
-                {
-                    return;
-                }
-            }
+            
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
@@ -397,6 +403,20 @@ public class BuildScript : MonoBehaviour
                  {
                      CreateLine();
                  }
+                 else if (wire1.GetVoltage() != wire2.GetVoltage())
+                 {
+                     errorText.text = "These objects don't have the same voltage";
+                 }
+                 else if (wire1.isGenerator && wire2.isGenerator)
+                 {
+                     errorText.text = "You cannot connect a generator to another generator";
+                 }
+                 else if (wire1.isConsumer && wire2.isConsumer)
+                 {
+                    errorText.text = "You cannot connect a consumer to another consumer";
+                 }
+
+
             }
              
         }
