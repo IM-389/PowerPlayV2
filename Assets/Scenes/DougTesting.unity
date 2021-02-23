@@ -1449,6 +1449,7 @@ GameObject:
   - component: {fileID: 446097886}
   - component: {fileID: 446097885}
   - component: {fileID: 446097884}
+  - component: {fileID: 446097887}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1521,6 +1522,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446097887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446097883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10267bebb92f29f4c923ad9b1bdb9eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragSpeed: 15
 --- !u!1 &486699276
 GameObject:
   m_ObjectHideFlags: 0
@@ -4288,6 +4302,7 @@ MonoBehaviour:
   wireObject2: {fileID: 0}
   tooltipPanel: {fileID: 578125998}
   errorText: {fileID: 0}
+  upgradeMode: 0
 --- !u!1 &1533491780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4501,6 +4516,7 @@ MonoBehaviour:
   wireObject2: {fileID: 0}
   tooltipPanel: {fileID: 578125998}
   errorText: {fileID: 388665436}
+  upgradeMode: 0
 --- !u!61 &1577444445
 BoxCollider2D:
   m_ObjectHideFlags: 0
