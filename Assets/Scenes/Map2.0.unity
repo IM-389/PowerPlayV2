@@ -6451,11 +6451,11 @@ Transform:
   - {fileID: 959210546}
   - {fileID: 1214326467}
   - {fileID: 1700369695}
+  - {fileID: 1902524082}
   - {fileID: 1410411392}
   - {fileID: 1342296480}
-  - {fileID: 1902524082}
-  - {fileID: 683650189}
   - {fileID: 2002351664}
+  - {fileID: 683650189}
   - {fileID: 1870739465}
   - {fileID: 1448320659}
   - {fileID: 710300799}
@@ -30857,12 +30857,12 @@ PrefabInstance:
       objectReference: {fileID: 327505876}
     - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
       propertyPath: milestones.Array.size
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
       propertyPath: milestones.Array.data[0]
       value: 
-      objectReference: {fileID: 1826401896}
+      objectReference: {fileID: 1477115568}
     - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
       propertyPath: milestones.Array.data[1]
       value: 
@@ -30870,7 +30870,19 @@ PrefabInstance:
     - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
       propertyPath: milestones.Array.data[2]
       value: 
+      objectReference: {fileID: 1848588761}
+    - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
+      propertyPath: milestones.Array.data[3]
+      value: 
       objectReference: {fileID: 739590574}
+    - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
+      propertyPath: milestones.Array.data[4]
+      value: 
+      objectReference: {fileID: 1960368051}
+    - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
+      propertyPath: milestones.Array.data[5]
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
 --- !u!1 &3677482995026495600 stripped
