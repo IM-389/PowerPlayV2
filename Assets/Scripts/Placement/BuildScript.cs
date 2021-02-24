@@ -84,9 +84,14 @@ public class BuildScript : MonoBehaviour
                     GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
                     foreach (var connection in gos.connections)
                     {
-                        connection.GetComponent<GeneralObjectScript>().connections.Remove(gos.gameObject);
+                        connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
                     }
 
+                    foreach (var connection in gos.consumerConnections)
+                    {
+                        connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
+                    }
+                    
                     moneyManager.money += gos.cost;
                     Destroy(gos.gameObject);
                 }
