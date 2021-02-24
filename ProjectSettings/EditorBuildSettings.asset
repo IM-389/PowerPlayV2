@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Map2.0.unity
     guid: 91355f5569b5cf94cab442e82b503aec
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/MattMapMaking.unity
     guid: 2d4a414f6bcd50344b3bee83c29d0576
   - enabled: 0
