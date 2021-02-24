@@ -87,6 +87,7 @@ public class TimeManager : MonoBehaviour
             yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
+    /*
     void OnGUI()
     {
         // Display the label at the center of the window.
@@ -103,4 +104,5 @@ public class TimeManager : MonoBehaviour
         // Display the current time.
         GUI.Label(rect, currentTime, labelStyle);
     }
+    */
 }

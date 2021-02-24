@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6815394163262744484}
   m_Layer: 0
   m_Name: roadTile_4wayIntersect
-  m_TagString: Untagged
+  m_TagString: Road
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

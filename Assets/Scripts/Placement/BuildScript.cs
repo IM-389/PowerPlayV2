@@ -406,10 +406,10 @@ public class BuildScript : MonoBehaviour
     void CreateWire(Vector2 mousePos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        if (hit.transform.CompareTag("Background"))
+        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
         {
             if (wireObject1 != null) 
-                wireObject1.GetComponent<SpriteRenderer>().color = Color.white;
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             wireObject1 = null;
             return;
         }
