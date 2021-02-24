@@ -7,7 +7,7 @@ public class BackGroundMusicScript : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
     
     // Update is called once per frame

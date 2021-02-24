@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class VolumeBehavior : MonoBehaviour
 {
+    
+
     [Tooltip("This contains the information for the background music object.")]
     public GameObject BGM;
 
@@ -230,4 +232,6 @@ public class VolumeBehavior : MonoBehaviour
         // the same after changing scenes.
         sfxSlider.value = AudioListener.volume;
     }
+
+        
 }
