@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5648452970475571260}
   - component: {fileID: 6766887339401483143}
   - component: {fileID: -2099193719442316402}
+  - component: {fileID: -6477512763960502311}
   m_Layer: 7
   m_Name: largelines
   m_TagString: HighPower
@@ -180,7 +181,9 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 15
-  maxConnectiions: 2
+  cost: 0
+  maxHVConnections: 2
+  maxLVConnections: 0
   connections: []
   consumerConnections: []
 --- !u!114 &6766887339401483143
@@ -211,3 +214,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+--- !u!114 &-6477512763960502311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5448026507461769134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0

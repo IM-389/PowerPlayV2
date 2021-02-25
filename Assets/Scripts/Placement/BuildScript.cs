@@ -79,19 +79,18 @@ public class BuildScript : MonoBehaviour
             else if (removalMode)
             {
                 RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-                if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer"))
+                if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
                 {
                     GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
-                    foreach (var connection in gos.connections)
+                    List<GameObject> allConnections = new List<GameObject>();
+                    allConnections.AddRange(gos.connections);
+                    allConnections.AddRange(gos.consumerConnections);
+                    foreach (var connection in allConnections)
                     {
                         connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
+                        //gos.RemoveConnection(connection.gameObject);
                     }
 
-                    foreach (var connection in gos.consumerConnections)
-                    {
-                        connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
-                    }
-                    
                     moneyManager.money += gos.cost;
                     Destroy(gos.gameObject);
                 }
@@ -208,21 +207,38 @@ public class BuildScript : MonoBehaviour
         lr.SetPosition(0, wireObject1.transform.position);
         lr.SetPosition(1, wireObject2.transform.position);
 
-        if (wire1.isConsumer)
-        {
-            wire1.AddConnection(wireObject2);
-            wire2.AddConsumerConnection(wireObject1);
-        }
-        else if (wire2.isConsumer)
+        if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
             wire1.AddConsumerConnection(wireObject2);
-            wire2.AddConnection(wireObject1);
         }
         else
         {
-            // Creates connection from both objects
-            wire1.AddConnection(wireObject2);
-            wire2.AddConnection(wireObject1);
+            if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
+                wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
+            {
+                wire1.AddConnection(wireObject2);
+            }
+            else
+            {
+                wire1.AddConsumerConnection(wireObject2);
+            }
+        }
+
+        if (wire2.volts == GeneralObjectScript.Voltage.LOW)
+        {
+            wire2.AddConsumerConnection(wireObject1);
+        }
+        else
+        {
+            if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
+                wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
+            {
+                wire2.AddConnection(wireObject1);
+            }
+            else
+            {
+                wire2.AddConsumerConnection(wireObject1);
+            }
         }
         // Sets objects back to null
         wireObject1 = null;
@@ -463,25 +479,39 @@ public class BuildScript : MonoBehaviour
                     return;
                 }
             }
+
+            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)))
+            {
+                errorText.text = "Too many high voltage connections on one object!";
+                return;
+            }
+            
+            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.consumerConnections.Count >= wire1.maxLVConnections || wire2.consumerConnections.Count >= wire2.maxLVConnections)))
+            {
+                errorText.text = "Too many low voltage connections on one object!";
+                return;
+            }
+            
+            /*
             // Generators and consumers can only have one connection
-            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= wire1.maxConnectiions)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= wire2.maxConnectiions))
+            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= wire1.maxHVConnections)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= wire2.maxHVConnections))
             {
                 errorText.text = "One of these object can only have one connection";
                 return;
             }
             // Objects besides the substation can't have any more than two connections
-            if ((!wire1.isSubstation && wire1.connections.Count >= wire1.maxConnectiions) || (!wire2.isSubstation && wire2.connections.Count >= wire2.maxConnectiions))
+            if ((!wire1.isSubstation && wire1.connections.Count >= wire1.maxHVConnections) || (!wire2.isSubstation && wire2.connections.Count >= wire2.maxHVConnections))
             {
                 errorText.text = "One of these object can only have two connections";
                 return;
             }
             // Substations can only have a maximum of three connections
-            if (wire1.connections.Count >= wire1.maxConnectiions || wire2.connections.Count >= wire2.maxConnectiions)
+            if (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)
             {
                 errorText.text = "One of these object can only have three connections";
                 return;
             }
-
+            */
             
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
