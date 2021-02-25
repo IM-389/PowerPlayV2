@@ -88,7 +88,7 @@ public class BuildScript : MonoBehaviour
                     foreach (var connection in allConnections)
                     {
                         connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
-                        //gos.RemoveConnection(connection.gameObject);
+                        gos.RemoveConnection(connection.gameObject);
                     }
 
                     moneyManager.money += gos.cost;
@@ -193,20 +193,7 @@ public class BuildScript : MonoBehaviour
     {
         GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
         GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-        // Creates line
-        GameObject myLine = new GameObject();
-        myLine.name = "powerLine";
-        myLine.transform.position = wireObject1.transform.position;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.startWidth = .02f;
-        lr.endWidth = .02f;
-        lr.SetPosition(0, wireObject1.transform.position);
-        lr.SetPosition(1, wireObject2.transform.position);
-
+        
         if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
             wire1.AddConsumerConnection(wireObject2);
