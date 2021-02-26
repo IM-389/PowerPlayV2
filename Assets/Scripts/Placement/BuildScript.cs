@@ -130,7 +130,8 @@ public class BuildScript : MonoBehaviour
                         Vector2 spawnPoint = RoundVector(origin.point);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
-                        newPos.z = (float)(newPos.y*0.0001)-1;
+                        // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
+                        newPos.z = -1;
                         spawned.transform.position = newPos;
                         SoundManager.PlaySound("place");
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
