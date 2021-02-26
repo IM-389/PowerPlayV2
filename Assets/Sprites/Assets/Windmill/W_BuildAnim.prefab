@@ -181,6 +181,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 2}
   cost: 5
   positionOffset: {x: 0.2, y: -1}
+  buildingName: Wind Generator
 --- !u!212 &7656360763664652194
 SpriteRenderer:
   m_ObjectHideFlags: 0

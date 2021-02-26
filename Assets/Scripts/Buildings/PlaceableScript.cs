@@ -9,15 +9,7 @@ public class PlaceableScript : MonoBehaviour
     public int cost;
 
     public Vector2 positionOffset;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("Name of the specific building")]
+    public string buildingName;
 }
