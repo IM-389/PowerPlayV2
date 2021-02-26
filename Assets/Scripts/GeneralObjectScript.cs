@@ -14,6 +14,7 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 
+    
     bool destroyed = false;
     GameObject destroyKey;
     
@@ -28,38 +29,12 @@ public class GeneralObjectScript : MonoBehaviour
     public void AddConsumerConnection(GameObject connection)
     {
         consumerConnections.Add(connection);
-        // Creates line
-        GameObject myLine = new GameObject();
-        myLine.name = "powerLine";
-        myLine.transform.position = connection.transform.position;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.startWidth = .02f;
-        lr.endWidth = .02f;
-        lr.SetPosition(0, this.transform.position);
-        lr.SetPosition(1, connection.transform.position);
-        wireConnections.Add(connection, myLine);
+        CreateLine(connection);
     }
     public void AddConnection(GameObject connection)
     {
         connections.Add(connection);
-        // Creates line
-        GameObject myLine = new GameObject();
-        myLine.name = "powerLine";
-        myLine.transform.position = connection.transform.position;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.startWidth = .02f;
-        lr.endWidth = .02f;
-        lr.SetPosition(0, this.transform.position);
-        lr.SetPosition(1, connection.transform.position);
-        wireConnections.Add(connection, myLine);
+        CreateLine(connection);
     }
     public void RemoveConnection(GameObject connection)
     {
@@ -84,5 +59,45 @@ public class GeneralObjectScript : MonoBehaviour
     public int GetVoltage()
     {
         return (int)volts;
+    }
+    public void CreateLine(GameObject connection)
+    {
+        Vector3 thisPos = this.transform.position;
+        Vector3 connectPos = connection.transform.position;
+        // Creates line
+        GameObject myLine = new GameObject();
+        myLine.name = "powerLine";
+        myLine.transform.position = connectPos;
+        myLine.AddComponent<LineRenderer>();
+        myLine.AddComponent<WireScript>();
+        LineRenderer lr = myLine.GetComponent<LineRenderer>();
+        WireScript ws = myLine.GetComponent<WireScript>();
+        ws.connect1 = this.gameObject;
+        ws.connect2 = connection;
+        lr.material = new Material(Shader.Find("Sprites/Default"));
+        lr.startColor = Color.white;
+        lr.endColor = Color.white;
+        lr.startWidth = .02f;
+        lr.endWidth = .02f;
+        lr.SetPosition(0, thisPos);
+        lr.SetPosition(1, connectPos);
+
+        // Creates box collider to wire
+        BoxCollider2D col = new GameObject("Collider").AddComponent<BoxCollider2D>();
+        col.transform.parent = myLine.transform;
+        col.transform.tag = "wire";
+        float lineLength = Vector3.Distance(thisPos, connectPos);
+        col.size = new Vector3(lineLength, 0.1f, 1f);
+        Vector3 midPoint = (thisPos + connectPos) / 2;
+        col.transform.position = midPoint;
+        float angle = (Mathf.Abs(thisPos.y - connectPos.y) / Mathf.Abs(thisPos.x - connectPos.x));
+        if ((thisPos.y < connectPos.y && thisPos.x > connectPos.x) || (connectPos.y < thisPos.y && connectPos.x > thisPos.x))
+        {
+            angle *= -1;
+        }
+        angle = Mathf.Rad2Deg * Mathf.Atan(angle);
+        col.transform.Rotate(0, 0, angle);
+
+        wireConnections.Add(connection, myLine);
     }
 }

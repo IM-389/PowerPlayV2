@@ -78,7 +78,10 @@ public class BuildScript : MonoBehaviour
             }
             else if (removalMode)
             {
+                wireObject1 = null;
+                wireObject2 = null;
                 RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                Debug.Log(origin.transform.tag);
                 if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
                 {
                     GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
@@ -93,6 +96,16 @@ public class BuildScript : MonoBehaviour
 
                     moneyManager.money += gos.cost;
                     Destroy(gos.gameObject);
+                }
+                else if (origin.transform.CompareTag("wire"))
+                {
+                    WireScript ws = origin.transform.parent.GetComponent<WireScript>();
+                    GameObject object1 = ws.connect1;
+                    GameObject object2 = ws.connect2;
+                    GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
+                    GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
+                    gos1.RemoveConnection(object2);
+                    gos2.RemoveConnection(object1);
                 }
             }
             else
@@ -170,7 +183,7 @@ public class BuildScript : MonoBehaviour
 
         if (hover != null)
         {
-            Debug.Log(hitPt.transform.name);
+            //Debug.Log(hitPt.transform.name);
             hover.UpdateTooltip();
 
             // If the player clicked on the object
@@ -425,10 +438,14 @@ public class BuildScript : MonoBehaviour
         // Sets the first wire object
         if (wireObject1 == null)
         {
+            if (!hit.transform.CompareTag("wire"))
+            {
                 wireObject1 = hit.transform.gameObject;
                 wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
                 Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
+            }
         }
+
         // Otherwise it sets the second wire object
         else
         {
@@ -448,8 +465,8 @@ public class BuildScript : MonoBehaviour
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
 
-            Debug.Log(wire1.connections.Count);
-            Debug.Log(wire2.connections.Count);
+            //Debug.Log(wire1.connections.Count);
+            //Debug.Log(wire2.connections.Count);
 
             // Can't create a line longer than the wire length
             if(wire1.wireLength < hypotenuse)

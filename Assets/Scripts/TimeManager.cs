@@ -69,12 +69,12 @@ public class TimeManager : MonoBehaviour
             if(hours >= 6 && hours <= 18)
             {
                 isDay = true;
-                Debug.Log("The time is Day");
+                //Debug.Log("The time is Day");
             }
             if(hours >=19 && hours <= 24 || hours <=5)
             {
                 isDay = false;
-                Debug.Log("The time is Night");//can add exact minutes later if they want
+                //Debug.Log("The time is Night");//can add exact minutes later if they want
             }
             if(hours == 24)
             {

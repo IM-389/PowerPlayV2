@@ -19,6 +19,7 @@ TagManager:
   - factory
   - Generator
   - Road
+  - wire
   layers:
   - Default
   - TransparentFX

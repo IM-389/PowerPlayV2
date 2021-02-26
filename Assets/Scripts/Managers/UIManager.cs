@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
             float totalGenerated = 0;
             for (int i = 0; i < 4; ++i)
             {
-                Debug.Log((PowerManager.POWER_TYPES)i);
+                //Debug.Log((PowerManager.POWER_TYPES)i);
                 powerManager.CalculateAmountsGenerated((PowerManager.POWER_TYPES)i);
             }
 
