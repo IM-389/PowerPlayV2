@@ -10,6 +10,8 @@ public class CameraDrag : MonoBehaviour
     private Vector3 dragOrigin;
 
     private Camera camera;
+
+    public KeyCode zoomIn, zoomOut;
     
     private void Start()
     {
@@ -23,6 +25,17 @@ public class CameraDrag : MonoBehaviour
         {
             float speed = dragSpeed * Time.fixedDeltaTime;
             camera.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed);
+        }
+        float xAxis = Input.GetAxis("Horizontal");
+        float yAxis = Input.GetAxis("Vertical");
+        camera.transform.Translate(new Vector3(xAxis*Time.fixedDeltaTime, yAxis*Time.fixedDeltaTime, 0));
+        if (Input.GetKeyDown(zoomIn))
+        {
+            camera.orthographicSize -= 1;
+        }
+        else if (Input.GetKeyDown(zoomOut))
+        {
+            camera.orthographicSize += 1;
         }
     }
 }

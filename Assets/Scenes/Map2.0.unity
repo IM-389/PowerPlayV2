@@ -5638,6 +5638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 20
+  zoomIn: 61
+  zoomOut: 45
 --- !u!1001 &463475925
 PrefabInstance:
   m_ObjectHideFlags: 0

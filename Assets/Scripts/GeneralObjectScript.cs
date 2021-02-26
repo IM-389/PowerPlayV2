@@ -67,7 +67,7 @@ public class GeneralObjectScript : MonoBehaviour
         // Creates line
         GameObject myLine = new GameObject();
         myLine.name = "powerLine";
-        myLine.transform.position = connectPos;
+        myLine.transform.position = connectPos + new Vector3(0, 0, 0.5f);
         myLine.AddComponent<LineRenderer>();
         myLine.AddComponent<WireScript>();
         LineRenderer lr = myLine.GetComponent<LineRenderer>();
@@ -77,8 +77,8 @@ public class GeneralObjectScript : MonoBehaviour
         lr.material = new Material(Shader.Find("Sprites/Default"));
         lr.startColor = Color.white;
         lr.endColor = Color.white;
-        lr.startWidth = .02f;
-        lr.endWidth = .02f;
+        lr.startWidth = .1f;
+        lr.endWidth = .1f;
         lr.SetPosition(0, thisPos);
         lr.SetPosition(1, connectPos);
 

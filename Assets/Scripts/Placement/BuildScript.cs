@@ -74,13 +74,13 @@ public class BuildScript : MonoBehaviour
             if (wireMode)
             {
                 errorText.text = "";
-                CreateWire(mouseWorldPosRounded);
+                CreateWire(mouseWorldPos);
             }
             else if (removalMode)
             {
                 wireObject1 = null;
                 wireObject2 = null;
-                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
                 Debug.Log(origin.transform.tag);
                 if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
                 {
@@ -428,6 +428,7 @@ public class BuildScript : MonoBehaviour
     void CreateWire(Vector2 mousePos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        Debug.Log(hit.transform.tag);
         if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
         {
             if (wireObject1 != null) 
@@ -438,17 +439,23 @@ public class BuildScript : MonoBehaviour
         // Sets the first wire object
         if (wireObject1 == null)
         {
-            if (!hit.transform.CompareTag("wire"))
+            if (hit.transform.CompareTag("wire"))
             {
-                wireObject1 = hit.transform.gameObject;
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
-            }
+                Debug.Log(hit.transform.gameObject.GetComponent<BoxCollider2D>().size);
+                return;
+            }            
+            wireObject1 = hit.transform.gameObject;
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
         }
 
         // Otherwise it sets the second wire object
         else
         {
+            if (hit.transform.CompareTag("wire"))
+            {
+                return;
+            }
             wireObject2 = hit.transform.gameObject;
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
