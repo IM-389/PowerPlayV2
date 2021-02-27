@@ -293,6 +293,7 @@ MonoBehaviour:
   dimensions: {x: 2, y: 2}
   cost: 5
   positionOffset: {x: 0, y: 0}
+  buildingName: Gas Generator
 --- !u!114 &2655414223008581282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +312,8 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   cost: 5
-  maxConnectiions: 1
+  maxHVConnections: 1
+  maxLVConnections: 0
   connections: []
   consumerConnections: []
 --- !u!114 &6874283770724396703

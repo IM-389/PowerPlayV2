@@ -51,6 +51,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 1}
   cost: 5
   positionOffset: {x: 0, y: 0}
+  buildingName: Solar Panels
 --- !u!212 &4861414731004053739
 SpriteRenderer:
   m_ObjectHideFlags: 0
