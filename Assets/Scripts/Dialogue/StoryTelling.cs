@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class StoryTelling : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject textSet;
+    public Dialogue dialogue;
+    public bool tut = true;
 
-    // Update is called once per frame
-    void Update()
+    public bool ready = true;
+
+    public string level = "tutorial";
+
+    public int test;
+    public void TriggerDialogue()
     {
-        
+        if (level == "Tutorial")
+        {
+            FindObjectOfType<DialogueBehaviour>().StartConvo(dialogue);
+        }
+
     }
 }
