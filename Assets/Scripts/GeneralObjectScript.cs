@@ -67,6 +67,7 @@ public class GeneralObjectScript : MonoBehaviour
         // Creates line
         GameObject myLine = new GameObject();
         myLine.name = "powerLine";
+        
         myLine.transform.position = connectPos + new Vector3(0, 0, 0.5f);
         myLine.AddComponent<LineRenderer>();
         myLine.AddComponent<WireScript>();
@@ -86,6 +87,7 @@ public class GeneralObjectScript : MonoBehaviour
         BoxCollider2D col = new GameObject("Collider").AddComponent<BoxCollider2D>();
         col.transform.parent = myLine.transform;
         col.transform.tag = "wire";
+        col.transform.gameObject.layer = 8;
         float lineLength = Vector2.Distance(new Vector2(thisPos.x, thisPos.y), new Vector2(connectPos.x,connectPos.y));
         Debug.Log(lineLength);
         col.size = new Vector3(lineLength, 0.1f, 1f);

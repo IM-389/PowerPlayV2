@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7665068778557236203}
   - component: {fileID: 2934269486491006116}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Shadow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 6028709752267001597}
   - component: {fileID: 6028709752267001596}
   - component: {fileID: 6028709752267001594}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ChimneySmoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4920,7 +4920,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6028709752611108926}
   - component: {fileID: 6028709752611108927}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Houseback
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,7 +5002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6028709752985026967}
   - component: {fileID: 6028709752985026964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: House front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5092,7 +5092,7 @@ GameObject:
   - component: {fileID: -1488912352967434167}
   - component: {fileID: -5367434403379632313}
   - component: {fileID: 1801298198787127375}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: HousePref
   m_TagString: house
   m_Icon: {fileID: 0}
@@ -5274,6 +5274,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 1}
   cost: 0
   positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!212 &1801298198787127375
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5336,7 +5337,7 @@ GameObject:
   - component: {fileID: 6028709754269011715}
   - component: {fileID: 6028709754269011713}
   - component: {fileID: 6028709754269011712}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Unlit Windows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5436,7 +5437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1649719701724196005}
   - component: {fileID: 3443469645019610668}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: house
   m_TagString: Untagged
   m_Icon: {fileID: 0}

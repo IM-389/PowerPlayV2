@@ -32,6 +32,8 @@ public class BuildScript : MonoBehaviour
     private string clip = "place";
 
     //LineRenderer lr;
+
+    int layerMask = ~(1 << 8);
     
     public Text errorText;
     
@@ -122,13 +124,15 @@ public class BuildScript : MonoBehaviour
                 if (moneyManager.money >= placeable.cost)
                 {
                     Debug.Log("under money > placeablecost");
-                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero, Mathf.Infinity, layerMask);
+                    Debug.Log(origin.transform.gameObject.layer);
+                    Debug.Log(origin.transform.tag);
                     // Raycasts  many dimensions depending on the object
                     for (int i = 0; i > -placeable.dimensions.x; i--)
                     {
                         for (int j = 0; j < placeable.dimensions.y; j++)
                         {
-                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero, Mathf.Infinity, layerMask);
                             hitPoints.Add(hitPoint);
                         }
                     }
