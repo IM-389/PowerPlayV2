@@ -86,7 +86,8 @@ public class GeneralObjectScript : MonoBehaviour
         BoxCollider2D col = new GameObject("Collider").AddComponent<BoxCollider2D>();
         col.transform.parent = myLine.transform;
         col.transform.tag = "wire";
-        float lineLength = Vector3.Distance(thisPos, connectPos);
+        float lineLength = Vector2.Distance(new Vector2(thisPos.x, thisPos.y), new Vector2(connectPos.x,connectPos.y));
+        Debug.Log(lineLength);
         col.size = new Vector3(lineLength, 0.1f, 1f);
         Vector3 midPoint = (thisPos + connectPos) / 2;
         col.transform.position = midPoint;
