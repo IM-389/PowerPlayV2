@@ -167,6 +167,7 @@ MonoBehaviour:
   dimensions: {x: 2, y: 2}
   cost: 5
   positionOffset: {x: 0, y: 0}
+  buildingName: Coal Generator
 --- !u!212 &-9218528639324640776
 SpriteRenderer:
   m_ObjectHideFlags: 0

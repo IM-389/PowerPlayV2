@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -39,6 +40,8 @@ public class BuildScript : MonoBehaviour
 
     [Tooltip("If the player is in removal mode")]
     public bool removalMode;
+
+    public TMP_Dropdown selection;
     
     // Start is called before the first frame update
     void Start()
@@ -49,6 +52,7 @@ public class BuildScript : MonoBehaviour
         //lr = GetComponent<LineRenderer>();
 
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+        SetupDropdown();
     }
 
     // Update is called once per frame
@@ -253,6 +257,22 @@ public class BuildScript : MonoBehaviour
         return vec;
     }
 
+    /// <summary>
+    /// Used to load the dropdown with the correct objects
+    /// </summary>
+    private void SetupDropdown()
+    {
+        List<string> dropdownOptions = new List<string>();
+        foreach (var building in spawnableBuildings)
+        {
+            dropdownOptions.Add(building.GetComponent<PlaceableScript>().buildingName);
+        }
+        dropdownOptions.Add("Wire Mode");
+        dropdownOptions.Add("Upgrade Mode");
+        dropdownOptions.Add("Removal Mode");
+        selection.AddOptions(dropdownOptions);
+    }
+    
     public void SelectUpgradeMode()
     {
         DeselectWireMode();
@@ -421,6 +441,40 @@ public class BuildScript : MonoBehaviour
                 {
                     selectedBuilding = building;
                 }
+            }
+        }
+    }
+
+    /// <summary>
+    /// Used to update the selected tool from the dropdown
+    /// </summary>
+    public void UpdateSelection()
+    {
+        // Get the value of the dropdown
+        int selected = selection.value;
+        
+        // If the value is somewhere in the spawnable buildings list, then select that building
+        if (selected < spawnableBuildings.Count)
+        {
+            DeselectWireMode();
+            selectedBuilding = spawnableBuildings[selected];
+        }
+        else
+        {
+            // Otherwise, pick from one of the tools
+            int difference = selected - spawnableBuildings.Count;
+            // 0 is wire mode, 1 is upgrade mode, 2 is removal mode
+            switch (difference)
+            {
+                case 0:
+                    SelectWireMode();
+                    break;
+                case 1:
+                    SelectUpgradeMode();
+                    break;
+                case 2:
+                    SelectRemovalMode();
+                    break;
             }
         }
     }

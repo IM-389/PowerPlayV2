@@ -164,6 +164,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 1}
   cost: 0
   positionOffset: {x: 0, y: 0}
+  buildingName: Transformer
 --- !u!114 &3419244029244310493
 MonoBehaviour:
   m_ObjectHideFlags: 0
