@@ -88,31 +88,7 @@ public class BuildScript : MonoBehaviour
                 wireObject2 = null;
                 RaycastHit2D origin = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
                 Debug.Log(origin.transform.tag);
-                if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
-                {
-                    GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
-                    List<GameObject> allConnections = new List<GameObject>();
-                    allConnections.AddRange(gos.connections);
-                    allConnections.AddRange(gos.consumerConnections);
-                    foreach (var connection in allConnections)
-                    {
-                        connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
-                        gos.RemoveConnection(connection.gameObject);
-                    }
-
-                    moneyManager.money += gos.cost;
-                    Destroy(gos.gameObject);
-                }
-                else if (origin.transform.CompareTag("wire"))
-                {
-                    WireScript ws = origin.transform.parent.GetComponent<WireScript>();
-                    GameObject object1 = ws.connect1;
-                    GameObject object2 = ws.connect2;
-                    GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
-                    GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
-                    gos1.RemoveConnection(object2);
-                    gos2.RemoveConnection(object1);
-                }
+                RemoveObject(origin);
             }
             else
             {
@@ -622,5 +598,34 @@ public class BuildScript : MonoBehaviour
 
         }
         
+    }
+
+    public void RemoveObject(RaycastHit2D origin)
+    {
+        if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
+        {
+            GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+            List<GameObject> allConnections = new List<GameObject>();
+            allConnections.AddRange(gos.connections);
+            allConnections.AddRange(gos.consumerConnections);
+            foreach (var connection in allConnections)
+            {
+                connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
+                gos.RemoveConnection(connection.gameObject);
+            }
+
+            moneyManager.money += gos.cost;
+            Destroy(gos.gameObject);
+        }
+        else if (origin.transform.CompareTag("wire"))
+        {
+            WireScript ws = origin.transform.parent.GetComponent<WireScript>();
+            GameObject object1 = ws.connect1;
+            GameObject object2 = ws.connect2;
+            GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
+            GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
+            gos1.RemoveConnection(object2);
+            gos2.RemoveConnection(object1);
+        }
     }
 }
