@@ -3,6 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(StorageScript))]
 [RequireComponent(typeof(GeneralObjectScript))]
+[RequireComponent(typeof(TransmitterScript))]
 public abstract class PowerBase : MonoBehaviour
 {
     /// <summary>
@@ -33,7 +34,7 @@ public abstract class PowerBase : MonoBehaviour
     /// <summary>
     /// Get the fixed timestep from the TimeManager
     /// </summary>
-    private void Start()
+    protected void Start()
     {
         storageScript = gameObject.GetComponent<StorageScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();

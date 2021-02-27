@@ -14,6 +14,7 @@ public class TimeManager : MonoBehaviour
     public int totalTimeSteps;
     public int minutes, hours, days = 0;
     public bool isDay = true;
+    public int cash = 0;//gonna be using this to cause houses to make money
     // Start is called before the first frame update
     void Start()
     {
@@ -79,12 +80,14 @@ public class TimeManager : MonoBehaviour
             {
                 isDay = true;
                 hours = 0;
+                ++days;
             }
             //Debug.Log("Timestep: " + timeStep.ToString() + " Hours: " + hours.ToString() + " Total timesteps: " + totalTimeSteps.ToString() + " Daytime: " + isDay);
 
             yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
+    /*
     void OnGUI()
     {
         // Display the label at the center of the window.
@@ -101,4 +104,5 @@ public class TimeManager : MonoBehaviour
         // Display the current time.
         GUI.Label(rect, currentTime, labelStyle);
     }
+    */
 }

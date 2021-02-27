@@ -7,15 +7,9 @@ public class PlaceableScript : MonoBehaviour
     [Tooltip("X and Y dimensions of the object, starting from the bottom right")]
     public Vector2 dimensions;
     public int cost;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Vector2 positionOffset;
+
+    [Tooltip("Name of the specific building")]
+    public string buildingName;
 }

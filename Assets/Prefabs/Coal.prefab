@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5476564718100181079}
   - component: {fileID: 8464288469326236194}
   - component: {fileID: 1127105870938750875}
+  - component: {fileID: -2065205184702061202}
   m_Layer: 7
   m_Name: Coal
   m_TagString: coal
@@ -191,6 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 3, y: 3}
+  cost: 0
 --- !u!114 &8736075831459045582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +208,8 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
+  isSubstation: 0
+  wireLength: 5
   connections: []
 --- !u!114 &5476564718100181079
 MonoBehaviour:
@@ -236,6 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   amount: 0
+  moneyGained: 0
 --- !u!114 &1127105870938750875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,3 +254,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+--- !u!114 &-2065205184702061202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572443818696165632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0

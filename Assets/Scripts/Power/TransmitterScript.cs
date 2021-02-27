@@ -29,14 +29,28 @@ public class TransmitterScript : PowerBase
 
             if (storageScript.powerStored >= otherStorage.powerStored)
             {
+                Debug.Log($"Added {otherStorage.name} to transmit to!");
                 toTransmit.Add(destination.GetComponent<TransmitterScript>());
             }
+        }
+
+        foreach (var destination in gos.consumerConnections)
+        {
+            // Prevent power from being pushed to null connections
+            if (destination == null)
+            {
+                continue;
+            }
+            
+            // Always transmit to consumers reguardless of power difference
+            toTransmit.Add(destination.GetComponent<TransmitterScript>());
         }
 
         float maxPush = storageScript.powerStored / toTransmit.Count;
         // Send power to those with less power than the sender 
         foreach (var destination in toTransmit)
         {
+            Debug.Log($"Transmitting to {destination.name}!");
             // This object asks the connected object to pull power
             destination.ReceivePower(this, maxPush);
         }

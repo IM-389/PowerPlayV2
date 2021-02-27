@@ -14,6 +14,11 @@ TagManager:
   - BuildCircle
   - transformer
   - HighPower
+  - TooltipPanel
+  - hospital
+  - factory
+  - Generator
+  - Road
   layers:
   - Default
   - TransparentFX
@@ -50,4 +55,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Trees
+    uniqueID: 1554202843
+    locked: 0
+  - name: Tooltip
+    uniqueID: 1944561929
     locked: 0
