@@ -16,18 +16,23 @@ public class HouseLights : MonoBehaviour
     public GameObject smoke;
 
     public StorageScript storage;
+
+    public ConsumerScript consumer;
+
+    private TimeManager timeManager;
     // Start is called before the first frame update
 
 
     private void Start()
     {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
+        timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         CheckPower();
     }
 
     private void Update()
     {
-        powered = (storage.powerStored > 0);
+        powered = (storage.powerStored > consumer.consumptionCurve[timeManager.hours]);
         CheckPower();
     }
 

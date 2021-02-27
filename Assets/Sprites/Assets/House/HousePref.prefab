@@ -5227,7 +5227,9 @@ MonoBehaviour:
   isConsumer: 1
   isSubstation: 0
   wireLength: 0
-  maxConnectiions: 1
+  cost: 0
+  maxHVConnections: 0
+  maxLVConnections: 1
   connections: []
   consumerConnections: []
 --- !u!114 &2001197299529104073
@@ -5423,6 +5425,7 @@ MonoBehaviour:
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
   storage: {fileID: -1264574402197089311}
+  consumer: {fileID: -8993503109168893168}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0
