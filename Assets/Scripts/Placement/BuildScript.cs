@@ -182,7 +182,7 @@ public class BuildScript : MonoBehaviour
 
         }
         
-        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
         HoverScript hover = hitPt.transform.GetComponent<HoverScript>();
 
         if (hover != null)
