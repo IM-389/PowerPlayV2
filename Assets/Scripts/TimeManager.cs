@@ -21,6 +21,8 @@ public class TimeManager : MonoBehaviour
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
+        Debug.Log("Start happened");
+        Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
     }
     
@@ -55,6 +57,8 @@ public class TimeManager : MonoBehaviour
     {
        
     }
+
+    
     IEnumerator TimeCalculator()//This is a coroutine.
     {
         while (true)
