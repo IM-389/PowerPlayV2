@@ -21,27 +21,27 @@ public class GeneralObjectScript : MonoBehaviour
     [FormerlySerializedAs("maxConnectiions")] public int maxHVConnections;
     public int maxLVConnections;
     
-    public List<GameObject> connections = new List<GameObject>();
-    public List<GameObject> consumerConnections = new List<GameObject>();
+    public List<GameObject> hVConnections = new List<GameObject>();
+    public List<GameObject> lvConnections = new List<GameObject>();
     public Dictionary<GameObject, GameObject> wireConnections = new Dictionary<GameObject, GameObject>();
 
 
-    public void AddConsumerConnection(GameObject connection)
+    public void AddLVConnection(GameObject connection)
     {
-        consumerConnections.Add(connection);
+        lvConnections.Add(connection);
         CreateLine(connection);
     }
-    public void AddConnection(GameObject connection)
+    public void AddHVConnection(GameObject connection)
     {
-        connections.Add(connection);
+        hVConnections.Add(connection);
         CreateLine(connection);
     }
     public void RemoveConnection(GameObject connection)
     {
-        connections.Remove(connection);
-        consumerConnections.Remove(connection);
-        connections.RemoveAll(item => item == null);
-        consumerConnections.RemoveAll(item => item == null);
+        hVConnections.Remove(connection);
+        lvConnections.Remove(connection);
+        hVConnections.RemoveAll(item => item == null);
+        lvConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))

@@ -17,7 +17,7 @@ public class TransmitterScript : PowerBase
         // The most the object can push is limited so each connected object gets the same total power.
 
         // Filter to all objects with less power than this one. Allows for bidirectional wires
-        foreach (var destination in gos.connections)
+        foreach (var destination in gos.hVConnections)
         {
             // Prevent power from being pushed to null connections
             if (destination == null)
@@ -34,7 +34,7 @@ public class TransmitterScript : PowerBase
             }
         }
 
-        foreach (var destination in gos.consumerConnections)
+        foreach (var destination in gos.lvConnections)
         {
             // Prevent power from being pushed to null connections
             if (destination == null)

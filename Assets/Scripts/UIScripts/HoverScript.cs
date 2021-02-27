@@ -76,8 +76,8 @@ public class HoverScript : MonoBehaviour
             toShow += $"{storage.powerStored} power stored\n";
         }
 
-        toShow += $"{gos.connections.Count} / {gos.maxHVConnections} HV connections\n";
-        toShow += $"{gos.consumerConnections.Count} / {gos.maxLVConnections} LV connections\n";
+        toShow += $"{gos.hVConnections.Count} / {gos.maxHVConnections} HV connections\n";
+        toShow += $"{gos.lvConnections.Count} / {gos.maxLVConnections} LV connections\n";
 
         //Debug.Log($"toShow: {toShow}");        
 

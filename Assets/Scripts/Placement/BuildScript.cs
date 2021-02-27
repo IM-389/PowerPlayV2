@@ -194,35 +194,35 @@ public class BuildScript : MonoBehaviour
         
         if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire1.AddConsumerConnection(wireObject2);
+            wire1.AddLVConnection(wireObject2);
         }
         else
         {
             if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire1.AddConnection(wireObject2);
+                wire1.AddHVConnection(wireObject2);
             }
             else
             {
-                wire1.AddConsumerConnection(wireObject2);
+                wire1.AddLVConnection(wireObject2);
             }
         }
 
         if (wire2.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire2.AddConsumerConnection(wireObject1);
+            wire2.AddLVConnection(wireObject1);
         }
         else
         {
             if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire2.AddConnection(wireObject1);
+                wire2.AddHVConnection(wireObject1);
             }
             else
             {
-                wire2.AddConsumerConnection(wireObject1);
+                wire2.AddLVConnection(wireObject1);
             }
         }
         // Sets objects back to null
@@ -517,7 +517,7 @@ public class BuildScript : MonoBehaviour
             }
 
             // Checks and sees if connection is already made between both objects
-            foreach (GameObject connect in wire1.connections)
+            foreach (GameObject connect in wire1.hVConnections)
             {
                 if (connect == wireObject2)
                 {
@@ -526,13 +526,13 @@ public class BuildScript : MonoBehaviour
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.hVConnections.Count >= wire1.maxHVConnections || wire2.hVConnections.Count >= wire2.maxHVConnections)))
             {
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
             
-            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.consumerConnections.Count >= wire1.maxLVConnections || wire2.consumerConnections.Count >= wire2.maxLVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
                 errorText.text = "Too many low voltage connections on one object!";
                 return;
@@ -606,8 +606,8 @@ public class BuildScript : MonoBehaviour
         {
             GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
             List<GameObject> allConnections = new List<GameObject>();
-            allConnections.AddRange(gos.connections);
-            allConnections.AddRange(gos.consumerConnections);
+            allConnections.AddRange(gos.hVConnections);
+            allConnections.AddRange(gos.lvConnections);
             foreach (var connection in allConnections)
             {
                 connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
