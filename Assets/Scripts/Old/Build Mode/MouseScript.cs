@@ -20,6 +20,7 @@ public class MouseScript : MonoBehaviour
     public BuildScript buildScript;
     private Camera mainCamera;
 
+    int layerMask = ~(1 << 8);
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +50,7 @@ public class MouseScript : MonoBehaviour
         {
             for (int j = 0; j < placeable.dimensions.y; j++)
             {
-                RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero, Mathf.Infinity, layerMask);
                 hitPoints.Add(hitPoint);
             }
         }

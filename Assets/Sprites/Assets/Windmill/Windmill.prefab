@@ -6167,9 +6167,11 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   cost: 5
-  maxConnectiions: 1
+  maxHVConnections: 1
+  maxLVConnections: 0
   connections: []
   consumerConnections: []
+  wirePrefab: {fileID: 4634076490070289605, guid: d6d7dc088f80e104f88348a106304186, type: 3}
 --- !u!114 &3500156768499126977
 MonoBehaviour:
   m_ObjectHideFlags: 0
