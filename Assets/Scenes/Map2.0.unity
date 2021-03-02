@@ -5918,8 +5918,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragSpeed: 20
-  zoomIn: 61
-  zoomOut: 45
+  zoomIn: 0
+  zoomOut: 0
 --- !u!1001 &463475925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9876,6 +9876,9 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: 
   milestoneName: 
+  unlockedObjects: []
+  removedFog: []
+  newBuildings: []
   nextMilestones: []
 --- !u!1001 &741066681
 PrefabInstance:
@@ -21541,6 +21544,11 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: 
   milestoneName: 
+  unlockedObjects: []
+  removedFog: []
+  newBuildings:
+  - {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
+  - {fileID: 5448026507461769134, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
   nextMilestones:
   - {fileID: 1826401896}
 --- !u!1001 &1489241985
@@ -23460,16 +23468,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f33fcd6904370c041ab59ee5f3a16ef9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnableBuildings:
-  - {fileID: 7192819586404073880, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
-  - {fileID: 7688663850787778803, guid: e8a719ab879e2df43a23771576fa419f, type: 3}
-  - {fileID: 647645244523254856, guid: f8e54f45831f70949b168e5521a0a42b, type: 3}
-  - {fileID: 666171787696389721, guid: d6122f7f6e466bc4a9dbfb3c07e69823, type: 3}
-  - {fileID: 27588709232717115, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
-  - {fileID: 2404669415710288745, guid: 8acb8503cd4ad6149b03b7074d38ef3b, type: 3}
-  - {fileID: 5448026507461769134, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
-  - {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
-  selectedBuilding: {fileID: 7192819586404073880, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+  spawnableBuildings: []
+  selectedBuilding: {fileID: 0}
   wireMode: 0
   mouseObject: {fileID: 223325042}
   wireObject1: {fileID: 0}
@@ -27853,6 +27853,9 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: 
   milestoneName: 
+  unlockedObjects: []
+  removedFog: []
+  newBuildings: []
   nextMilestones:
   - {fileID: 1848588761}
 --- !u!1001 &1831425055
@@ -28029,6 +28032,9 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: 
   milestoneName: 
+  unlockedObjects: []
+  removedFog: []
+  newBuildings: []
   nextMilestones:
   - {fileID: 739590574}
   - {fileID: 1960368051}
@@ -29071,6 +29077,9 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: 
   milestoneName: 
+  unlockedObjects: []
+  removedFog: []
+  newBuildings: []
   nextMilestones: []
 --- !u!1001 &1961670396
 PrefabInstance:

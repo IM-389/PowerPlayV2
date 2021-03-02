@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MilestoneSeven : MilestoneBase
 {
-    public override bool CompleteMilestone()
+    public override bool CheckCompleteMilestone()
     {
         GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
         GameObject[] allHospitals = GameObject.FindGameObjectsWithTag("hospital");

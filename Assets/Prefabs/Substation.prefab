@@ -203,6 +203,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  isMilestoneCounted: 1
   objectDescription: 
 --- !u!114 &7460058267911771528
 MonoBehaviour:

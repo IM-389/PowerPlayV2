@@ -13,6 +13,9 @@ public class StorageScript : MonoBehaviour
     [Tooltip("Is this storage full? True is yes, false if no")]
     public bool isFull;
     
+    [Tooltip("Does this object count towards milestone progress")]
+    public bool isMilestoneCounted = true;
+    
     [Tooltip("Description for the object")]
     public string objectDescription;
     /// <summary>

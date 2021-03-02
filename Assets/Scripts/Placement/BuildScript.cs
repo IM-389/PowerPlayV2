@@ -240,9 +240,11 @@ public class BuildScript : MonoBehaviour
     /// <summary>
     /// Used to load the dropdown with the correct objects
     /// </summary>
-    private void SetupDropdown()
+    public void SetupDropdown()
     {
+        selection.ClearOptions();
         List<string> dropdownOptions = new List<string>();
+        dropdownOptions.Add("--SELECT TOOL--");
         foreach (var building in spawnableBuildings)
         {
             dropdownOptions.Add(building.GetComponent<PlaceableScript>().buildingName);

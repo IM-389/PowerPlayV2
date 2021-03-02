@@ -12,7 +12,7 @@ public class MilestoneSix : MilestoneBase
         milestoneText = "Place and connect a second coal generator";
     }
 
-    public override bool CompleteMilestone()
+    public override bool CheckCompleteMilestone()
     {
         GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
 
@@ -20,7 +20,8 @@ public class MilestoneSix : MilestoneBase
 
         foreach (var generator in generators)
         {
-            if (generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
+            if (generator.GetComponent<StorageScript>().isMilestoneCounted &&
+                generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
             {
                 ++numCoal;
             }

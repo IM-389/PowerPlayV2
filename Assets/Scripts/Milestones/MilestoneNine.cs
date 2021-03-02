@@ -13,7 +13,7 @@ public class MilestoneNine : MilestoneBase
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
     }
     
-    public override bool CompleteMilestone()
+    public override bool CheckCompleteMilestone()
     {
         if (startDay < 0)
         {

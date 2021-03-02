@@ -7,7 +7,7 @@ public class MilestoneEight : MilestoneBase
 {
     private GameObject[] houses;
     
-    public override bool CompleteMilestone()
+    public override bool CheckCompleteMilestone()
     {
         houses = GameObject.FindGameObjectsWithTag("house");
 
