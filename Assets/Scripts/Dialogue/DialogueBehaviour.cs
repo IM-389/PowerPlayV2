@@ -7,29 +7,27 @@ public class DialogueBehaviour : MonoBehaviour
 
     //public TutorialBehaviour tb;
     public StoryTelling st;
-    public GameController gc;
+    public GameManager gm;
+    public SceneController sc;
 
     void Start()
     {
         sentences = new List<string>();
-        //tb = GameObject.FindObjectOfType<TutorialBehaviour>();
-        gc = GameObject.FindObjectOfType<GameController>();
+        gm = GameObject.FindObjectOfType<GameManager>();
+        sc = GameObject.FindObjectOfType<SceneController>();
     }
 
     public void StartConvo(Dialogue dialog)
     {
         st = GameObject.FindObjectOfType<StoryTelling>();
-        //Debug.Log("Starting convo");
 
+        sentences = new List<string>();
         sentences.Clear();
 
-        //print(sentences.Count);
         foreach (string sentence in dialog.sentences)
         {
             sentences.Add(sentence);
         }
-        //print("test = " + st.test);
-        //print(sentences.Count);
         DisplayNextSentence();
     }
 
@@ -37,32 +35,28 @@ public class DialogueBehaviour : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            gc.tutorialReady = false;
-            EndDialogue();
+            //gc.tutorialReady = false;
+            //EndDialogue();
             return;
         }
-        if (st.tut)
-        {
-            string talk = sentences[0];
-            tb.dialogueLine.text = talk;
-            sentences.RemoveAt(0);
-        }
-
+        string talk = sentences[0];
+        sc.dialogueLine.text = talk;
+        sentences.RemoveAt(0);
     }
 
-    void EndDialogue()
+}
+
+    /*void EndDialogue()
     {
         if (st.tut)
         {
             Destroy(st.textSet);
-            //st.textSet.SetActive(false);
-            tb.tutorialStarted = false;
-            tb.goToNext = false;
-            tb.dialoguePanel.SetActive(false);
-            //Debug.Log("end convo");
-            tb.LetPlayerMove(true);
+            //tb.tutorialStarted = false;
+            //tb.goToNext = false;
+            //tb.dialoguePanel.SetActive(false);
+            //tb.LetPlayerMove(true);
             Destroy(st.gameObject);
         }
+    }*/
 
-    }
-}
+
