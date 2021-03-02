@@ -12,6 +12,9 @@ public class StorageScript : MonoBehaviour
     
     [Tooltip("Is this storage full? True is yes, false if no")]
     public bool isFull;
+    
+    [Tooltip("Description for the object")]
+    public string objectDescription;
     /// <summary>
     /// Adds power to the object. Excess power is lost
     /// </summary>

@@ -54,6 +54,8 @@ public class HoverScript : MonoBehaviour
         panelPos += tooltipOffset;
         tooltipPanel.transform.position = panelPos;
         string toShow = "";
+
+        toShow += storage.objectDescription + "\n";
         
         if (gos.isConsumer)
         {

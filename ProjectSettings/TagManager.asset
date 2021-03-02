@@ -20,6 +20,7 @@ TagManager:
   - Generator
   - Road
   - wire
+  - Substation
   layers:
   - Default
   - TransparentFX
