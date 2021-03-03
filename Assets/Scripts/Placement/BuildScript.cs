@@ -433,10 +433,10 @@ public class BuildScript : MonoBehaviour
     public void UpdateSelection()
     {
         // Get the value of the dropdown
-        int selected = selection.value;
+        int selected = selection.value - 1;
         
         // If the value is somewhere in the spawnable buildings list, then select that building
-        if (selected < spawnableBuildings.Count)
+        if (selected >= 0 && selected < spawnableBuildings.Count)
         {
             DeselectWireMode();
             selectedBuilding = spawnableBuildings[selected];

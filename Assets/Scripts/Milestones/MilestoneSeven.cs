@@ -1,40 +1,33 @@
+using System.Collections;
+using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 
 public class MilestoneSeven : MilestoneBase
 {
+    private GameObject[] houses;
+    
     public override bool CheckCompleteMilestone()
     {
-        GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
-        GameObject[] allHospitals = GameObject.FindGameObjectsWithTag("hospital");
+        houses = GameObject.FindGameObjectsWithTag("house");
 
-        int poweredFactories = 0;
-        int poweredHospitals = 0;
-
-        foreach (var factory in allFactories)
+        int smartHouses = 0;
+        
+        foreach (var house in houses)
         {
-            if (factory.GetComponent<StorageScript>().powerStored > 0)
+            if (house.GetComponent<HoverScript>().isSmart)
             {
-                ++poweredFactories;
+                ++smartHouses;
             }
         }
 
-        foreach (var hospital in allHospitals)
-        {
-            if (hospital.GetComponent<StorageScript>().powerStored > 0)
-            {
-                ++poweredHospitals;
-            }
-        }
-
-        return (poweredFactories > 0 && poweredHospitals > 0);
-
+        return (smartHouses >= 10);
     }
 
     public override void SetMilestoneProperties()
     {
-        sequenceNumber = 7;
-        milestoneName = "Powering Industry";
-        milestoneText = "Power a factory and hospital";
+        sequenceNumber = 8;
+        milestoneName = "Building the Smart Grid";
+        milestoneText = "Put down 10 Smart Meters";
     }
 }

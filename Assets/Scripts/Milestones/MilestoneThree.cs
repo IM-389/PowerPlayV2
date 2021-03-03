@@ -13,7 +13,8 @@ public class MilestoneThree : MilestoneBase
         
         foreach (var generator in generators)
         {
-            if (generator.GetComponent<StorageScript>().isMilestoneCounted &&
+            GeneralObjectScript gos = generator.GetComponent<GeneralObjectScript>();
+            if (gos.isMilestoneCounted &&
                 generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
             {
                 ++coalGen;
@@ -30,19 +31,20 @@ public class MilestoneThree : MilestoneBase
         {
             // Reference to the power storage script
             StorageScript storage = house.GetComponent<StorageScript>();
-            if (storage.isMilestoneCounted && storage.powerStored > 0)
+            GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
+            if (gos.isMilestoneCounted && storage.powerStored > 0)
             {
                 ++poweredHouses;
             }
         }
         
-        return coalGen >= 1 && poweredHouses >= 10;
+        return coalGen >= 1 && poweredHouses >= 15;
     }
 
     public override void SetMilestoneProperties()
     {
-        sequenceNumber = 1;
-        milestoneName = "Branching Out";
-        milestoneText = "Create a new substation, and use it to power the new houses";
+        sequenceNumber = 3;
+        milestoneName = "Powering Up";
+        milestoneText = "Create a new coal plant, and power all the houses";
     }
 }

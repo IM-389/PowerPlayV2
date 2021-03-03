@@ -19,7 +19,8 @@ public class MilestoneTwo : MilestoneBase
         {
             // Reference to the power storage script
             StorageScript storage = house.GetComponent<StorageScript>();
-            if (storage.isMilestoneCounted && storage.powerStored > 0)
+            GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
+            if (gos.isMilestoneCounted && storage.powerStored > 0)
             {
                 ++poweredHouses;
             }
@@ -30,7 +31,7 @@ public class MilestoneTwo : MilestoneBase
 
     public override void SetMilestoneProperties()
     {
-        sequenceNumber = 1;
+        sequenceNumber = 2;
         milestoneName = "Branching Out";
         milestoneText = "Create a new substation, and use it to power the new houses";
     }

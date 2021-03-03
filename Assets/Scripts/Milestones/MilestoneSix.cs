@@ -1,33 +1,40 @@
-using System.Collections;
-using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 
 public class MilestoneSix : MilestoneBase
 {
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 6;
-        milestoneName = "Enter the Smart Grid";
-        milestoneText = "Place and connect a second coal generator";
-    }
-
     public override bool CheckCompleteMilestone()
     {
-        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
+        GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
+        GameObject[] allHospitals = GameObject.FindGameObjectsWithTag("hospital");
 
-        int numCoal = 0;
+        int poweredFactories = 0;
+        int poweredHospitals = 0;
 
-        foreach (var generator in generators)
+        foreach (var factory in allFactories)
         {
-            if (generator.GetComponent<StorageScript>().isMilestoneCounted &&
-                generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
+            if (factory.GetComponent<StorageScript>().powerStored > 0)
             {
-                ++numCoal;
+                ++poweredFactories;
             }
         }
 
-        return (numCoal >= 2);
+        foreach (var hospital in allHospitals)
+        {
+            if (hospital.GetComponent<StorageScript>().powerStored > 0)
+            {
+                ++poweredHospitals;
+            }
+        }
 
+        return (poweredFactories > 0 && poweredHospitals > 0);
+
+    }
+
+    public override void SetMilestoneProperties()
+    {
+        sequenceNumber = 7;
+        milestoneName = "Powering Industry";
+        milestoneText = "Power a factory and hospital";
     }
 }

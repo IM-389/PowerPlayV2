@@ -17,12 +17,14 @@ namespace Milestones
             {
                 // Reference to the power storage script
                 StorageScript storage = house.GetComponent<StorageScript>();
-                if (storage.isMilestoneCounted && storage.powerStored > 0)
+                GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
+                if (gos.isMilestoneCounted && storage.powerStored > 0)
                 {
                     ++poweredHouses;
                 }
             }
             
+            Debug.Log($"Powered Houses: {poweredHouses}");
             return poweredHouses >= 5;
         }
 
