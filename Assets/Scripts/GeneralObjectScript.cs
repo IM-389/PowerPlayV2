@@ -21,8 +21,17 @@ public class GeneralObjectScript : MonoBehaviour
     [FormerlySerializedAs("maxConnectiions")] public int maxHVConnections;
     public int maxLVConnections;
     
+
     public List<GameObject> hVConnections = new List<GameObject>();
     public List<GameObject> lvConnections = new List<GameObject>();
+
+        
+    [Tooltip("Does this object count towards milestone progress")]
+    public bool isMilestoneCounted = true;
+    
+    public List<GameObject> connections = new List<GameObject>();
+    public List<GameObject> consumerConnections = new List<GameObject>();
+
     public Dictionary<GameObject, GameObject> wireConnections = new Dictionary<GameObject, GameObject>();
 
 

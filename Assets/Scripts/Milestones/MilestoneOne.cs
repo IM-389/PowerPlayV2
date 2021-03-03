@@ -5,26 +5,27 @@ namespace Milestones
     public class MilestoneOne : MilestoneBase
     {
         private GameObject[] houses;
-        public override bool CompleteMilestone()
+        public override bool CheckCompleteMilestone()
         {
+            // Find all houses
             houses = GameObject.FindGameObjectsWithTag("house");
 
             int poweredHouses = 0;
 
+            // Loop through all houses
             foreach (var house in houses)
             {
-                if (house.GetComponent<StorageScript>().powerStored > 0)
+                // Reference to the power storage script
+                StorageScript storage = house.GetComponent<StorageScript>();
+                GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
+                if (gos.isMilestoneCounted && storage.powerStored > 0)
                 {
                     ++poweredHouses;
                 }
             }
             
-            if (poweredHouses >= 5)
-            {
-                return true;
-            }
-
-            return false;
+            Debug.Log($"Powered Houses: {poweredHouses}");
+            return poweredHouses >= 5;
         }
 
         public override void SetMilestoneProperties()
