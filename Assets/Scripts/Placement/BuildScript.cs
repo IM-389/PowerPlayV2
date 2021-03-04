@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -43,7 +44,11 @@ public class BuildScript : MonoBehaviour
     [Tooltip("If the player is in removal mode")]
     public bool removalMode;
 
+    [Tooltip("Dropdown used for selecting objects")]
     public TMP_Dropdown selection;
+
+    [Tooltip("Text used for displaying information about the selected object")]
+    public Text selectedTooltipText;
     
     // Start is called before the first frame update
     void Start()
@@ -440,6 +445,29 @@ public class BuildScript : MonoBehaviour
         {
             DeselectWireMode();
             selectedBuilding = spawnableBuildings[selected];
+            GeneralObjectScript sGos;
+            // TODO: Replace once new pole art is in
+            try
+            {
+                sGos = selectedBuilding.GetComponent<BuildingSpawn>().Building.GetComponent<GeneralObjectScript>();
+            }
+            catch (NullReferenceException e)
+            {
+                sGos = selectedBuilding.GetComponent<GeneralObjectScript>();
+            }
+
+            string tooltipInfo = "";
+            if (sGos.isGenerator)
+            {
+                GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
+                tooltipInfo += $"Generation: {generator.amount}\n";
+            }
+
+            tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
+            tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
+            tooltipInfo += $"LV Connections: {sGos.maxLVConnections}";
+
+            selectedTooltipText.text = tooltipInfo;
         }
         else
         {
