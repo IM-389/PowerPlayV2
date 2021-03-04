@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -4469835173496301528}
   - component: {fileID: -7172774964437932663}
   - component: {fileID: 988902469203978700}
+  - component: {fileID: 1965330459}
   m_Layer: 0
   m_Name: SolarPanelBuilt
   m_TagString: Generator
@@ -144,6 +145,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
   isSmart: 0
+--- !u!95 &1965330459
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007116474896301567}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 227c4506308bf8146abe20f4b31c095e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0
@@ -154,7 +174,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1007116475714797849}
   - component: {fileID: 1007116475714797854}
-  - component: {fileID: 1007116475714797855}
   m_Layer: 0
   m_Name: solarPanel
   m_TagString: Untagged
@@ -229,25 +248,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &1007116475714797855
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1007116475714797852}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dfec5e565665ce84d9bdc43632d9e362, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7927296136085746911
 GameObject:
   m_ObjectHideFlags: 0
