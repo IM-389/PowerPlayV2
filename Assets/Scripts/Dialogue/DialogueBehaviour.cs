@@ -13,6 +13,7 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject mainButton;
     public GameObject nextSetButton;
 
+    public GameObject dialougePanel;
     void Start()
     {
         sentences = new List<string>();
@@ -23,6 +24,7 @@ public class DialogueBehaviour : MonoBehaviour
 
     public void StartConvo(Dialogue dialog)
     {
+        dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
 
         sentences = new List<string>();
@@ -39,9 +41,10 @@ public class DialogueBehaviour : MonoBehaviour
     {
         if (sentences.Count == 0)
         {
-            sc.dialogueLine.text = nextSetMessage;
-            nextSetButton.SetActive(true);
-            mainButton.SetActive(false);
+            //sc.dialogueLine.text = nextSetMessage;
+            //nextSetButton.SetActive(true);
+            //mainButton.SetActive(false);
+            dialougePanel.SetActive(false);
             return;
         }
         string talk = sentences[0];

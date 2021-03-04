@@ -28,7 +28,7 @@ namespace Milestones
         
         [Tooltip("What milestone(s) are immediatly after this one")]
         public List<MilestoneBase> nextMilestones = new List<MilestoneBase>();
-        
+
         public abstract bool CheckCompleteMilestone();
 
         public virtual void SetCompleteMilestone()

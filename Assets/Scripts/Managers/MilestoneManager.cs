@@ -18,6 +18,8 @@ public class MilestoneManager : MonoBehaviour
     public Text milestoneText;
 
     public BuildScript build;
+
+    public StoryTelling dialouge;
     
     /// <summary>
     /// Sets the data for the first milestone
@@ -53,7 +55,10 @@ public class MilestoneManager : MonoBehaviour
                 build.SetupDropdown();
                 toAdd.AddRange(currentMilestones[i].nextMilestones);
                 toRemove.Add(i);
-
+                
+                dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
+                dialouge.TriggerDialogue();
+                
                 foreach (var newMilestone in currentMilestones[i].nextMilestones)
                 {
                     newMilestone.SetMilestoneProperties();
