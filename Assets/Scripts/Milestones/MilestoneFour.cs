@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Milestones;
 using UnityEngine;
 
@@ -8,7 +9,10 @@ public class MilestoneFour : MilestoneBase
     private int startDay = -1;
 
     private TimeManager timeManager;
-    
+
+    private List<GameObject> poweredHouses = new List<GameObject>();
+
+    private bool startCountdown = false;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
@@ -16,34 +20,41 @@ public class MilestoneFour : MilestoneBase
     
     public override bool CheckCompleteMilestone()
     {
-        if (startDay < 0)
-        {
-            startDay = timeManager.days;
-        }
-        
         GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
-        int poweredHouses = 0;
-
-        int daysElapsed = timeManager.days - startDay;
-        
         foreach (var house in allHouses)
         {
-            if (house.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
-                house.GetComponent<StorageScript>().powerStored > 0)
+            // If the house has not already been counted
+            if (!poweredHouses.Contains(house))
             {
-                ++poweredHouses;
+                // If the house is powered
+                if (house.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
+                    house.GetComponent<StorageScript>().powerStored > 0)
+                {
+                    // Add to the list of previously powered houses
+                    poweredHouses.Add(house);
+                }
             }
         }
 
-        if (daysElapsed >= 7 && poweredHouses >= 25)
+        // If enough houses are powered, start the week-long cooldown
+        if (poweredHouses.Count >= 25)
         {
-            return true;
+            startCountdown = true;
         }
         
-        if (poweredHouses < allHouses.Length)
+        if (startCountdown)
         {
-            startDay = -1;
+            // Set the starting day
+            if (startDay < 0)
+            {
+                startDay = timeManager.days;
+            }
+            
+            // Count the days elapsed
+            int daysElapsed = timeManager.days - startDay;
+
+            return daysElapsed >= 7;
         }
 
         return false;
