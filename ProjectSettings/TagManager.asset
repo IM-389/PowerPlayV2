@@ -19,6 +19,8 @@ TagManager:
   - factory
   - Generator
   - Road
+  - wire
+  - Substation
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - UI
   - Background
   - Placeable
-  - 
+  - Wire
   - 
   - 
   - 

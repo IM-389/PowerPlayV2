@@ -270,6 +270,7 @@ MonoBehaviour:
   maxLVConnections: 1
   connections: []
   consumerConnections: []
+  wirePrefab: {fileID: 4634076490070289605, guid: d6d7dc088f80e104f88348a106304186, type: 3}
 --- !u!114 &8182319749470883275
 MonoBehaviour:
   m_ObjectHideFlags: 0

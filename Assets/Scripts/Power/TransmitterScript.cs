@@ -29,7 +29,7 @@ public class TransmitterScript : PowerBase
 
             if (storageScript.powerStored >= otherStorage.powerStored)
             {
-                Debug.Log($"Added {otherStorage.name} to transmit to!");
+                //Debug.Log($"Added {otherStorage.name} to transmit to!");
                 toTransmit.Add(destination.GetComponent<TransmitterScript>());
             }
         }
@@ -50,7 +50,7 @@ public class TransmitterScript : PowerBase
         // Send power to those with less power than the sender 
         foreach (var destination in toTransmit)
         {
-            Debug.Log($"Transmitting to {destination.name}!");
+            //Debug.Log($"Transmitting to {destination.name}!");
             // This object asks the connected object to pull power
             destination.ReceivePower(this, maxPush);
         }

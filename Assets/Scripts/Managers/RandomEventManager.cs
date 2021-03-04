@@ -65,44 +65,6 @@ public class RandomEventManager : MonoBehaviour
             eventSelected.DoEvent();
         }
 
-        // Debug code, press the S key for a sunny day, c for cloudy day, and b for windmill break
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            for (int i = 0; i < 4; ++i)
-            {
-                powerManager.powerAdjusts[i] = 1;
-            }
-            
-            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[0].notification;
-            eventNotification.SetActive(true);
-            StartCoroutine(HideNotification());
-            events[0].DoEvent();
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            for (int i = 0; i < 4; ++i)
-            {
-                powerManager.powerAdjusts[i] = 1;
-            }
-            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[1].notification;
-            eventNotification.SetActive(true);
-            StartCoroutine(HideNotification());
-            events[1].DoEvent();
-        }
-
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            for (int i = 0; i < 4; ++i)
-            {
-                powerManager.powerAdjusts[i] = 1;
-            }
-            eventNotification.transform.GetChild(1).GetComponent<Text>().text = events[2].notification;
-            eventNotification.SetActive(true);
-            StartCoroutine(HideNotification());
-            events[2].DoEvent();
-        }
-        
         previousTimestep = timeManager.days;
     }
 

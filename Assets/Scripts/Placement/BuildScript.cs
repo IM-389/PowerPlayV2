@@ -32,6 +32,8 @@ public class BuildScript : MonoBehaviour
     private string clip = "place";
 
     //LineRenderer lr;
+
+    int layerMask = ~(1 << 8);
     
     public Text errorText;
     
@@ -78,26 +80,15 @@ public class BuildScript : MonoBehaviour
             if (wireMode)
             {
                 errorText.text = "";
-                CreateWire(mouseWorldPosRounded);
+                CreateWire(mouseWorldPos);
             }
             else if (removalMode)
             {
-                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
-                if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
-                {
-                    GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
-                    List<GameObject> allConnections = new List<GameObject>();
-                    allConnections.AddRange(gos.connections);
-                    allConnections.AddRange(gos.consumerConnections);
-                    foreach (var connection in allConnections)
-                    {
-                        connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
-                        //gos.RemoveConnection(connection.gameObject);
-                    }
-
-                    moneyManager.money += gos.cost;
-                    Destroy(gos.gameObject);
-                }
+                wireObject1 = null;
+                wireObject2 = null;
+                RaycastHit2D origin = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+                Debug.Log(origin.transform.tag);
+                RemoveObject(origin);
             }
             else
             {
@@ -109,13 +100,15 @@ public class BuildScript : MonoBehaviour
                 if (moneyManager.money >= placeable.cost)
                 {
                     Debug.Log("under money > placeablecost");
-                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero, Mathf.Infinity, layerMask);
+                    Debug.Log(origin.transform.gameObject.layer);
+                    Debug.Log(origin.transform.tag);
                     // Raycasts  many dimensions depending on the object
                     for (int i = 0; i > -placeable.dimensions.x; i--)
                     {
                         for (int j = 0; j < placeable.dimensions.y; j++)
                         {
-                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero);
+                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero, Mathf.Infinity, layerMask);
                             hitPoints.Add(hitPoint);
                         }
                     }
@@ -134,6 +127,7 @@ public class BuildScript : MonoBehaviour
                         Vector2 spawnPoint = RoundVector(origin.point);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
+                        // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
                         newPos.z = -1;
                         spawned.transform.position = newPos;
                         SoundManager.PlaySound("place");
@@ -168,12 +162,12 @@ public class BuildScript : MonoBehaviour
 
         }
         
-        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero);
+        RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
         HoverScript hover = hitPt.transform.GetComponent<HoverScript>();
 
         if (hover != null)
         {
-            Debug.Log(hitPt.transform.name);
+            //Debug.Log(hitPt.transform.name);
             hover.UpdateTooltip();
 
             // If the player clicked on the object
@@ -197,20 +191,7 @@ public class BuildScript : MonoBehaviour
     {
         GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
         GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-        // Creates line
-        GameObject myLine = new GameObject();
-        myLine.name = "powerLine";
-        myLine.transform.position = wireObject1.transform.position;
-        myLine.AddComponent<LineRenderer>();
-        LineRenderer lr = myLine.GetComponent<LineRenderer>();
-        lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.startWidth = .02f;
-        lr.endWidth = .02f;
-        lr.SetPosition(0, wireObject1.transform.position);
-        lr.SetPosition(1, wireObject2.transform.position);
-
+        
         if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
             wire1.AddConsumerConnection(wireObject2);
@@ -481,6 +462,7 @@ public class BuildScript : MonoBehaviour
     void CreateWire(Vector2 mousePos)
     {
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+        Debug.Log(hit.transform.tag);
         if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
         {
             if (wireObject1 != null) 
@@ -491,13 +473,23 @@ public class BuildScript : MonoBehaviour
         // Sets the first wire object
         if (wireObject1 == null)
         {
-                wireObject1 = hit.transform.gameObject;
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);
+            if (hit.transform.CompareTag("wire"))
+            {
+                Debug.Log(hit.transform.gameObject.GetComponent<BoxCollider2D>().size);
+                return;
+            }            
+            wireObject1 = hit.transform.gameObject;
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
         }
+
         // Otherwise it sets the second wire object
         else
         {
+            if (hit.transform.CompareTag("wire"))
+            {
+                return;
+            }
             wireObject2 = hit.transform.gameObject;
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
@@ -514,8 +506,8 @@ public class BuildScript : MonoBehaviour
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
 
-            Debug.Log(wire1.connections.Count);
-            Debug.Log(wire2.connections.Count);
+            //Debug.Log(wire1.connections.Count);
+            //Debug.Log(wire2.connections.Count);
 
             // Can't create a line longer than the wire length
             if(wire1.wireLength < hypotenuse)
@@ -606,5 +598,34 @@ public class BuildScript : MonoBehaviour
 
         }
         
+    }
+
+    public void RemoveObject(RaycastHit2D origin)
+    {
+        if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
+        {
+            GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+            List<GameObject> allConnections = new List<GameObject>();
+            allConnections.AddRange(gos.connections);
+            allConnections.AddRange(gos.consumerConnections);
+            foreach (var connection in allConnections)
+            {
+                connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
+                gos.RemoveConnection(connection.gameObject);
+            }
+
+            moneyManager.money += gos.cost;
+            Destroy(gos.gameObject);
+        }
+        else if (origin.transform.CompareTag("wire"))
+        {
+            WireScript ws = origin.transform.parent.GetComponent<WireScript>();
+            GameObject object1 = ws.connect1;
+            GameObject object2 = ws.connect2;
+            GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
+            GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
+            gos1.RemoveConnection(object2);
+            gos2.RemoveConnection(object1);
+        }
     }
 }

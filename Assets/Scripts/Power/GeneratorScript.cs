@@ -32,7 +32,7 @@ public class GeneratorScript : PowerBase
 
         for (int i = 0; i < 4; ++i)
         {
-            Debug.Log($"{gameObject.name} type int {(int)type}");
+            //Debug.Log($"{gameObject.name} type int {(int)type}");
             if ((int)type == i)
             {
                 amountModified *= powerManager.powerAdjusts[i];
