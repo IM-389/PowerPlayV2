@@ -12,7 +12,7 @@ EditorUserSettings:
       value: 22424703114646680e0b0227036c721102032c2f3f3c2f3e2a67083debf42d
       flags: 0
     RecentlyUsedScenePath-2:
-      value: 22424703114646680e0b0227036c721102032c2f3f3c2f3e2a67083debf42d
+      value: 22424703114646680e0b0227036c72111f1958072926337e38271427fb
       flags: 0
     RecentlyUsedScenePath-3:
       value: 22424703114646680e0b0227036c5d051f1b1c23222f662339281a36a2f4312bf6a923e7ee2e26
@@ -51,4 +51,4 @@ EditorUserSettings:
   m_VCProjectOverlayIcons: 1
   m_VCHierarchyOverlayIcons: 1
   m_VCOtherOverlayIcons: 1
-  m_VCAllowAsyncUpdate: 0
+  m_VCAllowAsyncUpdate: 1
