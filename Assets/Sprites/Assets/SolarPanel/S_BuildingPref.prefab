@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4861414731004053739}
   - component: {fileID: -5115294892351250238}
   - component: {fileID: -3247391745416707579}
+  - component: {fileID: 377459195}
+  - component: {fileID: 377459194}
   m_Layer: 0
   m_Name: S_BuildingPref
   m_TagString: solar
@@ -97,7 +99,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 6, y: 6}
+  m_Size: {x: 6.01, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -121,7 +123,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 6.01, y: 6}
-    newSize: {x: 6, y: 6}
+    newSize: {x: 6.01, y: 6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -142,6 +144,40 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2.5
+--- !u!95 &377459195
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647645244523254856}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfec5e565665ce84d9bdc43632d9e362, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &377459194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647645244523254856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85677a9dcd544224a8fbd5f3815e6dc7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Building: {fileID: 1007116474896301567, guid: 4e9c69e4ac18d9646980affa55e57c86, type: 3}
+  xOffset: 0
+  yOffset: 0
 --- !u!1 &647645245440258216
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,9 +188,7 @@ GameObject:
   m_Component:
   - component: {fileID: 647645245440258219}
   - component: {fileID: 647645245440258215}
-  - component: {fileID: 647645245440258212}
   - component: {fileID: 647645245440258213}
-  - component: {fileID: 647645245440258218}
   m_Layer: 0
   m_Name: S_BuildingFrames
   m_TagString: Untagged
@@ -171,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 647645245440258216}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.18, y: 0.18, z: 1}
   m_Children: []
   m_Father: {fileID: 647645244523254859}
   m_RootOrder: 0
@@ -227,25 +261,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &647645245440258212
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647645245440258216}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 37cc432c131afe84cb651b9aaf9c03b2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 2
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!210 &647645245440258213
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -257,21 +272,6 @@ SortingGroup:
   m_SortingLayerID: -815874809
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &647645245440258218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647645245440258216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85677a9dcd544224a8fbd5f3815e6dc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Building: {fileID: 1007116474896301567, guid: 4e9c69e4ac18d9646980affa55e57c86, type: 3}
-  xOffset: -0.1
-  yOffset: -0.1
 --- !u!1001 &647645244620715909
 PrefabInstance:
   m_ObjectHideFlags: 0
