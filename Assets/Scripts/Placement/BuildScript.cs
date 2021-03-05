@@ -35,7 +35,9 @@ public class BuildScript : MonoBehaviour
     //LineRenderer lr;
 
     int layerMask = ~(1 << 8);
-    
+
+    public GameObject errorBox;
+
     public Text errorText;
     
     [Tooltip("If the player isupgrade mode")]
@@ -85,6 +87,7 @@ public class BuildScript : MonoBehaviour
             if (wireMode)
             {
                 errorText.text = "";
+                errorBox.SetActive(false);
                 CreateWire(mouseWorldPos);
             }
             else if (removalMode)
@@ -183,6 +186,7 @@ public class BuildScript : MonoBehaviour
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
                     hover.isSmart = true;
+                    hover.transform.GetChild(5).gameObject.SetActive(true);
                 }
             }
         }
@@ -199,35 +203,35 @@ public class BuildScript : MonoBehaviour
         
         if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire1.AddConsumerConnection(wireObject2);
+            wire1.AddLVConnection(wireObject2);
         }
         else
         {
             if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire1.AddConnection(wireObject2);
+                wire1.AddHVConnection(wireObject2);
             }
             else
             {
-                wire1.AddConsumerConnection(wireObject2);
+                wire1.AddLVConnection(wireObject2);
             }
         }
 
         if (wire2.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire2.AddConsumerConnection(wireObject1);
+            wire2.AddLVConnection(wireObject1);
         }
         else
         {
             if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire2.AddConnection(wireObject1);
+                wire2.AddHVConnection(wireObject1);
             }
             else
             {
-                wire2.AddConsumerConnection(wireObject1);
+                wire2.AddLVConnection(wireObject1);
             }
         }
         // Sets objects back to null
@@ -524,6 +528,7 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
+                errorBox.SetActive(true);
                 errorText.text = "You can't click the same object twice";
                 return;
             }
@@ -542,28 +547,32 @@ public class BuildScript : MonoBehaviour
             // Can't create a line longer than the wire length
             if(wire1.wireLength < hypotenuse)
             {
+                errorBox.SetActive(true);
                 errorText.text = "Wire cannot reach object";
                 return;
             }
 
             // Checks and sees if connection is already made between both objects
-            foreach (GameObject connect in wire1.connections)
+            foreach (GameObject connect in wire1.hVConnections)
             {
                 if (connect == wireObject2)
                 {
+                    errorBox.SetActive(true);
                     errorText.text = "Connnection is already made between these objects";
                     return;
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.hVConnections.Count >= wire1.maxHVConnections || wire2.hVConnections.Count >= wire2.maxHVConnections)))
             {
+                errorBox.SetActive(true);
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
             
-            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.consumerConnections.Count >= wire1.maxLVConnections || wire2.consumerConnections.Count >= wire2.maxLVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
+                errorBox.SetActive(true);
                 errorText.text = "Too many low voltage connections on one object!";
                 return;
             }
@@ -612,14 +621,17 @@ public class BuildScript : MonoBehaviour
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
                  {
-                     errorText.text = "These objects don't have the same voltage";
+                    errorBox.SetActive(true);
+                    errorText.text = "These objects don't have the same voltage";
                  }
                  else if (wire1.isGenerator && wire2.isGenerator)
                  {
-                     errorText.text = "You cannot connect a generator to another generator";
+                    errorBox.SetActive(true);
+                    errorText.text = "You cannot connect a generator to another generator";
                  }
                  else if (wire1.isConsumer && wire2.isConsumer)
                  {
+                    errorBox.SetActive(true);
                     errorText.text = "You cannot connect a consumer to another consumer";
                  }
 
@@ -635,9 +647,14 @@ public class BuildScript : MonoBehaviour
         if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
         {
             GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+            // Doesn't remove it if the object is unremovable
+            if (gos.unRemovable)
+            {
+                return;
+            }
             List<GameObject> allConnections = new List<GameObject>();
-            allConnections.AddRange(gos.connections);
-            allConnections.AddRange(gos.consumerConnections);
+            allConnections.AddRange(gos.hVConnections);
+            allConnections.AddRange(gos.lvConnections);
             foreach (var connection in allConnections)
             {
                 connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);

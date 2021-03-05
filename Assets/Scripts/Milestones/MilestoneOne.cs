@@ -24,7 +24,7 @@ namespace Milestones
                 }
             }
             
-            Debug.Log($"Powered Houses: {poweredHouses}");
+            //Debug.Log($"Powered Houses: {poweredHouses}");
             return poweredHouses >= 5;
         }
 

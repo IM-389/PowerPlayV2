@@ -12,6 +12,9 @@ public class CameraDrag : MonoBehaviour
     private Camera camera;
 
     public KeyCode zoomIn, zoomOut;
+
+    public float minZoom;
+    public float maxZoom;
     
     private void Start()
     {
@@ -29,11 +32,11 @@ public class CameraDrag : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");
         camera.transform.Translate(new Vector3(xAxis*Time.fixedDeltaTime, yAxis*Time.fixedDeltaTime, 0));
-        if (Input.GetKeyDown(zoomIn))
+        if (Input.mouseScrollDelta.y > 0.5f && camera.orthographicSize > minZoom)
         {
             camera.orthographicSize -= 1;
         }
-        else if (Input.GetKeyDown(zoomOut))
+        else if (Input.mouseScrollDelta.y <= -0.5f && camera.orthographicSize < maxZoom)
         {
             camera.orthographicSize += 1;
         }

@@ -5211,6 +5211,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &-1264182747367775761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5227,12 +5228,14 @@ MonoBehaviour:
   isGenerator: 0
   isConsumer: 1
   isSubstation: 0
-  wireLength: 0
+  wireLength: 5
   cost: 0
   maxHVConnections: 0
   maxLVConnections: 1
-  connections: []
-  consumerConnections: []
+  hVConnections: []
+  lvConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &2001197299529104073
 MonoBehaviour:
   m_ObjectHideFlags: 0
