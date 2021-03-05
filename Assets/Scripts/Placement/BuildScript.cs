@@ -647,6 +647,11 @@ public class BuildScript : MonoBehaviour
         if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
         {
             GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+            // Doesn't remove it if the object is unremovable
+            if (gos.unRemovable)
+            {
+                return;
+            }
             List<GameObject> allConnections = new List<GameObject>();
             allConnections.AddRange(gos.hVConnections);
             allConnections.AddRange(gos.lvConnections);

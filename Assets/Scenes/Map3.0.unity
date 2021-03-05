@@ -19402,6 +19402,14 @@ PrefabInstance:
       propertyPath: maxConnections
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7541373085518871091, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7541373085518871091, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
+      propertyPath: m_Size.y
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8564935564043737464, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
       propertyPath: preMadeConnections.Array.size
       value: 1
@@ -21359,7 +21367,7 @@ MonoBehaviour:
   wireObject1: {fileID: 0}
   wireObject2: {fileID: 0}
   tooltipPanel: {fileID: 578125998}
-  errorBox: {fileID: 0}
+  errorBox: {fileID: 1116012378}
   errorText: {fileID: 388665436}
   upgradeMode: 0
   removalMode: 0

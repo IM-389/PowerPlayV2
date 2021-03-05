@@ -14,7 +14,10 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 
-    
+    /// <summary>
+    /// Determines whether object is removable or not
+    /// </summary>
+    public bool unRemovable;
     bool destroyed = false;
     GameObject destroyKey;
     
