@@ -439,7 +439,8 @@ public class BuildScript : MonoBehaviour
     {
         // Get the value of the dropdown
         int selected = selection.value - 1;
-        
+        //Strings for item tooltips. We can futz with the exact text later
+    
         // If the value is somewhere in the spawnable buildings list, then select that building
         if (selected >= 0 && selected < spawnableBuildings.Count)
         {
@@ -460,13 +461,17 @@ public class BuildScript : MonoBehaviour
             if (sGos.isGenerator)
             {
                 GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
-                tooltipInfo += $"Generation: {generator.amount}\n";
+                tooltipInfo += sGos.buildingText;
+                tooltipInfo += $"\nGeneration: {generator.amount}\n";
+                
             }
 
             tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
             tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
-            tooltipInfo += $"LV Connections: {sGos.maxLVConnections}";
-
+            tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
+            //tooltipInfo += coalInfo;
+            
+          
             selectedTooltipText.text = tooltipInfo;
         }
         else
@@ -491,6 +496,9 @@ public class BuildScript : MonoBehaviour
     
     void CreateWire(Vector2 mousePos)
     {
+        string tooltipWire = "";
+        GeneralObjectScript sWire;
+        //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         Debug.Log(hit.transform.tag);
         if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
@@ -531,7 +539,7 @@ public class BuildScript : MonoBehaviour
             Debug.Log(offset);
             float hypotenuse = Mathf.Sqrt( Mathf.Pow(Mathf.Abs(offset.x), 2) + Mathf.Pow(Mathf.Abs(offset.y),2));
             Debug.Log(hypotenuse);
-
+            tooltipWire += "Joins buildings to give electricity to each other.";
 
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();

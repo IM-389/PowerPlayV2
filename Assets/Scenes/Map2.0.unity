@@ -6326,7 +6326,7 @@ RectTransform:
   m_GameObject: {fileID: 491387799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.09, y: 1.2, z: 1}
   m_Children:
   - {fileID: 928967457}
   m_Father: {fileID: 1134782707}
@@ -6334,8 +6334,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -503.095, y: -110.44999}
-  m_SizeDelta: {x: 44.570038, y: 38.89998}
+  m_AnchoredPosition: {x: -503.095, y: -109.45}
+  m_SizeDelta: {x: 44.570038, y: 40.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491387801
 MonoBehaviour:
@@ -8962,6 +8962,11 @@ PrefabInstance:
     - target: {fileID: 1009903860706208975, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4701993810741548652, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
+      propertyPath: objectDescription
+      value: Uses [High-Voltage Power]. People go here to work, and they make things
+        for the whole city.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
@@ -26453,6 +26458,11 @@ PrefabInstance:
     - target: {fileID: 2878062338142282522, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7544618107801901497, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}
+      propertyPath: objectDescription
+      value: Uses [High-Voltage Power]. Takes care of sick people all day, every
+        day!
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}

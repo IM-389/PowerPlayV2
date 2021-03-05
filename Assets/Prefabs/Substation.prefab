@@ -183,9 +183,11 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: 
   cost: 0
   maxHVConnections: 1
   maxLVConnections: 1
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &5374108111642601614
@@ -203,8 +205,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  isMilestoneCounted: 1
-  objectDescription: 
+  objectDescription: Lets you connect many wires in one spot.
 --- !u!114 &7460058267911771528
 MonoBehaviour:
   m_ObjectHideFlags: 0

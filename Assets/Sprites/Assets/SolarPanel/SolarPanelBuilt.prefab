@@ -95,6 +95,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &-4469835173496301528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,8 +113,11 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: 
   cost: 5
-  maxConnectiions: 1
+  maxHVConnections: 1
+  maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &-7172774964437932663
@@ -141,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipOffset: {x: 0, y: -1.5}
+  tooltipOffset: {x: 1.5, y: -1.5}
   isSmart: 0
 --- !u!1 &1007116475714797852
 GameObject:

@@ -98,6 +98,7 @@ GameObject:
   - component: {fileID: 7081543421014072329}
   - component: {fileID: 3028938064642137138}
   - component: {fileID: 5441782896026427583}
+  - component: {fileID: -4719631048586710750}
   m_Layer: 0
   m_Name: CoalPlantPref
   m_TagString: Generator
@@ -162,6 +163,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &-4830182077416234453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +181,11 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: Makes lots of power. The smoke that comes out makes the air dirty.
   cost: 5
-  maxConnectiions: 1
+  maxHVConnections: 1
+  maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &7081543421014072329
@@ -236,6 +241,30 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7245225, y: 1.7742572}
   m_EdgeRadius: 0
+--- !u!114 &-4719631048586710750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206924125788488262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33fcd6904370c041ab59ee5f3a16ef9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnableBuildings: []
+  selectedBuilding: {fileID: 0}
+  wireMode: 0
+  mouseObject: {fileID: 0}
+  wireObject1: {fileID: 0}
+  wireObject2: {fileID: 0}
+  tooltipPanel: {fileID: 0}
+  errorText: {fileID: 0}
+  upgradeMode: 0
+  removalMode: 0
+  selection: {fileID: 0}
+  selectedTooltipText: {fileID: 0}
 --- !u!1 &7206924125870641257
 GameObject:
   m_ObjectHideFlags: 0

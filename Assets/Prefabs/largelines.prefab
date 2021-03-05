@@ -182,9 +182,11 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 15
+  buildingText: Helps you send High-Voltage Power a long way.
   cost: 0
   maxHVConnections: 2
   maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &6766887339401483143
@@ -202,8 +204,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  isMilestoneCounted: 1
-  objectDescription: 
+  objectDescription: Helps you send High-Voltage Power a long way.
 --- !u!114 &-2099193719442316402
 MonoBehaviour:
   m_ObjectHideFlags: 0

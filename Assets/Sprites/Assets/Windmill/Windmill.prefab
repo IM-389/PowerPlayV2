@@ -6149,6 +6149,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &-224924555205618465
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6166,12 +6167,14 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: Makes okay power. Sometimes the power made is low. It makes no dirty
+    air.
   cost: 5
   maxHVConnections: 1
   maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
-  wirePrefab: {fileID: 4634076490070289605, guid: d6d7dc088f80e104f88348a106304186, type: 3}
 --- !u!114 &3500156768499126977
 MonoBehaviour:
   m_ObjectHideFlags: 0

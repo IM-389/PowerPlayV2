@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4861414731004053739}
   - component: {fileID: -5115294892351250238}
   - component: {fileID: -3247391745416707579}
+  - component: {fileID: -8470253419008375937}
   m_Layer: 0
   m_Name: S_BuildingPref
   m_TagString: solar
@@ -142,6 +143,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifetime: 2.5
+--- !u!114 &-8470253419008375937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647645244523254856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volts: 0
+  isGenerator: 1
+  isConsumer: 0
+  isSubstation: 0
+  wireLength: 5
+  buildingText: Makes less power and does not work at night, but it doesn't make
+    the air dirty.
+  cost: 5
+  maxHVConnections: 1
+  maxLVConnections: 0
+  isMilestoneCounted: 1
+  connections: []
+  consumerConnections: []
 --- !u!1 &647645245440258216
 GameObject:
   m_ObjectHideFlags: 0

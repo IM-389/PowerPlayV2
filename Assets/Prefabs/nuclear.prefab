@@ -12,6 +12,10 @@ GameObject:
   - component: {fileID: 7924755445534424513}
   - component: {fileID: 7924755445534424515}
   - component: {fileID: -4598241027888716890}
+  - component: {fileID: 6063436244222425960}
+  - component: {fileID: 4216160590153789518}
+  - component: {fileID: 3931516651691144853}
+  - component: {fileID: 4248183883831323415}
   m_Layer: 7
   m_Name: nuclear
   m_TagString: Untagged
@@ -109,3 +113,74 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
+  cost: 0
+  positionOffset: {x: 0, y: 0}
+  buildingName: 
+--- !u!114 &6063436244222425960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924755445534424518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerStored: 0
+  maxPower: 100
+  isFull: 0
+  objectDescription: 
+--- !u!114 &4216160590153789518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924755445534424518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volts: 0
+  isGenerator: 0
+  isConsumer: 0
+  isSubstation: 0
+  wireLength: 0
+  cost: 0
+  maxHVConnections: 0
+  maxLVConnections: 0
+  isMilestoneCounted: 1
+  connections: []
+  consumerConnections: []
+--- !u!114 &3931516651691144853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924755445534424518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSend: 1
+--- !u!114 &4248183883831323415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7924755445534424518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60fadf3be5f5cf7448da380294437409, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  buildingText: 
+  amount: 0
+  moneyGained: 0
