@@ -66,11 +66,7 @@ public class DialogueBehaviour : MonoBehaviour
         Destroy(st.textSet);
         st = GameObject.FindObjectOfType<StoryTelling>();
         st.TriggerDialogue();
-        //tb.tutorialStarted = false;
-        //tb.goToNext = false;
-        //tb.dialoguePanel.SetActive(false);
-        //tb.LetPlayerMove(true);
-        //Destroy(st.gameObject);
+        
     }
 }
     
