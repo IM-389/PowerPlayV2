@@ -186,6 +186,7 @@ public class BuildScript : MonoBehaviour
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
                     hover.isSmart = true;
+                    hover.transform.GetChild(5).gameObject.SetActive(true);
                 }
             }
         }

@@ -5947,6 +5947,8 @@ MonoBehaviour:
   dragSpeed: 20
   zoomIn: 0
   zoomOut: 0
+  minZoom: 1
+  maxZoom: 10
 --- !u!1001 &463475925
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20526,6 +20528,7 @@ MonoBehaviour:
   wireObject1: {fileID: 0}
   wireObject2: {fileID: 0}
   tooltipPanel: {fileID: 578125998}
+  errorBox: {fileID: 0}
   errorText: {fileID: 0}
   upgradeMode: 0
   removalMode: 0
@@ -21356,6 +21359,7 @@ MonoBehaviour:
   wireObject1: {fileID: 0}
   wireObject2: {fileID: 0}
   tooltipPanel: {fileID: 578125998}
+  errorBox: {fileID: 0}
   errorText: {fileID: 388665436}
   upgradeMode: 0
   removalMode: 0
