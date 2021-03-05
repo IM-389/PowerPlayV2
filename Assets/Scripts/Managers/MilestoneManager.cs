@@ -20,6 +20,9 @@ public class MilestoneManager : MonoBehaviour
     public BuildScript build;
 
     public StoryTelling dialouge;
+
+    [Tooltip("Object for Griddy")]
+    public GameObject griddy;
     
     /// <summary>
     /// Sets the data for the first milestone
@@ -56,6 +59,7 @@ public class MilestoneManager : MonoBehaviour
                 toAdd.AddRange(currentMilestones[i].nextMilestones);
                 toRemove.Add(i);
                 
+                griddy.SetActive(true);
                 dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
                 dialouge.TriggerDialogue();
                 

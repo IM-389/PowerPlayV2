@@ -14,6 +14,7 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject nextSetButton;
 
     public GameObject dialougePanel;
+    public GameObject griddy;
     void Start()
     {
         sentences = new List<string>();
@@ -45,6 +46,7 @@ public class DialogueBehaviour : MonoBehaviour
             //nextSetButton.SetActive(true);
             //mainButton.SetActive(false);
             dialougePanel.SetActive(false);
+            griddy.SetActive(false);
             return;
         }
         string talk = sentences[0];
