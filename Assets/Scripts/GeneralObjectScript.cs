@@ -12,7 +12,7 @@ public class GeneralObjectScript : MonoBehaviour
     public bool isSubstation;
     public float wireLength;
     public string buildingText;
-    public string wireText;
+    //public string wireText;
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 

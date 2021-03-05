@@ -458,10 +458,11 @@ public class BuildScript : MonoBehaviour
             }
 
             string tooltipInfo = "";
+            tooltipInfo += sGos.buildingText + "\n";
             if (sGos.isGenerator)
             {
                 GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
-                tooltipInfo += sGos.buildingText;
+                
                 tooltipInfo += $"\nGeneration: {generator.amount}\n";
                 
             }
@@ -469,7 +470,7 @@ public class BuildScript : MonoBehaviour
             tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
             tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
             tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
-            //tooltipInfo += coalInfo;
+            
             
           
             selectedTooltipText.text = tooltipInfo;
@@ -482,6 +483,7 @@ public class BuildScript : MonoBehaviour
             switch (difference)
             {
                 case 0:
+                    selectedTooltipText.text = "Carries electricity like a water pipe.";
                     SelectWireMode();
                     break;
                 case 1:
