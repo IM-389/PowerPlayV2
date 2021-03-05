@@ -35,7 +35,9 @@ public class BuildScript : MonoBehaviour
     //LineRenderer lr;
 
     int layerMask = ~(1 << 8);
-    
+
+    public GameObject errorBox;
+
     public Text errorText;
     
     [Tooltip("If the player isupgrade mode")]
@@ -85,6 +87,7 @@ public class BuildScript : MonoBehaviour
             if (wireMode)
             {
                 errorText.text = "";
+                errorBox.SetActive(false);
                 CreateWire(mouseWorldPos);
             }
             else if (removalMode)
@@ -524,6 +527,7 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
+                errorBox.SetActive(true);
                 errorText.text = "You can't click the same object twice";
                 return;
             }
@@ -542,6 +546,7 @@ public class BuildScript : MonoBehaviour
             // Can't create a line longer than the wire length
             if(wire1.wireLength < hypotenuse)
             {
+                errorBox.SetActive(true);
                 errorText.text = "Wire cannot reach object";
                 return;
             }
@@ -551,6 +556,7 @@ public class BuildScript : MonoBehaviour
             {
                 if (connect == wireObject2)
                 {
+                    errorBox.SetActive(true);
                     errorText.text = "Connnection is already made between these objects";
                     return;
                 }
@@ -558,12 +564,14 @@ public class BuildScript : MonoBehaviour
 
             if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.hVConnections.Count >= wire1.maxHVConnections || wire2.hVConnections.Count >= wire2.maxHVConnections)))
             {
+                errorBox.SetActive(true);
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
             
             if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
+                errorBox.SetActive(true);
                 errorText.text = "Too many low voltage connections on one object!";
                 return;
             }
@@ -612,14 +620,17 @@ public class BuildScript : MonoBehaviour
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
                  {
-                     errorText.text = "These objects don't have the same voltage";
+                    errorBox.SetActive(true);
+                    errorText.text = "These objects don't have the same voltage";
                  }
                  else if (wire1.isGenerator && wire2.isGenerator)
                  {
-                     errorText.text = "You cannot connect a generator to another generator";
+                    errorBox.SetActive(true);
+                    errorText.text = "You cannot connect a generator to another generator";
                  }
                  else if (wire1.isConsumer && wire2.isConsumer)
                  {
+                    errorBox.SetActive(true);
                     errorText.text = "You cannot connect a consumer to another consumer";
                  }
 
