@@ -29,12 +29,45 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Does this object count towards milestone progress")]
     public bool isMilestoneCounted = true;
     
-    public List<GameObject> connections = new List<GameObject>();
-    public List<GameObject> consumerConnections = new List<GameObject>();
-
+    //public List<GameObject> connections = new List<GameObject>();
+    //public List<GameObject> consumerConnections = new List<GameObject>();
+    
     public Dictionary<GameObject, GameObject> wireConnections = new Dictionary<GameObject, GameObject>();
 
+    public GameObject[] preMadeConnections;
 
+    // Makes premade connections
+    private void Start()
+    {
+        foreach(GameObject connection in preMadeConnections)
+        {
+            GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
+            if(gos.volts == Voltage.LOW)
+            {
+                AddLVConnection(connection);
+            }
+            else if (gos.volts == Voltage.HIGH)
+            {
+                AddHVConnection(connection);
+            }
+            else if(gos.volts == Voltage.TRANSFORMER)
+            {
+                if(this.volts == Voltage.HIGH)
+                {
+                    AddHVConnection(connection);
+                }
+                else if(this.volts == Voltage.LOW)
+                {
+                    AddLVConnection(connection);
+                }
+                else
+                {
+                    AddLVConnection(connection);
+                }
+            }
+
+        }
+    }
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);

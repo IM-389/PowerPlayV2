@@ -186,8 +186,10 @@ MonoBehaviour:
   cost: 0
   maxHVConnections: 1
   maxLVConnections: 1
-  connections: []
-  consumerConnections: []
+  hVConnections: []
+  lvConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &5374108111642601614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +205,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  isMilestoneCounted: 1
   objectDescription: 
 --- !u!114 &7460058267911771528
 MonoBehaviour:
@@ -245,4 +246,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voltageSet: 0
-  maxConnections: 5
+  maxConnections: 6
