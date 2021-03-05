@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -5,7 +6,9 @@ public class TransmitterScript : PowerBase
 {
     [Tooltip("If the object is allowed to send power. True is yes, false is no")]
     public bool canSend = true;
-    
+
+    [Tooltip("If the object is allowed to recieve power. True if yes, false if no")]
+    public bool canRecieve = true;
     protected override void Tick()
     {
         if (!canSend)
@@ -30,7 +33,11 @@ public class TransmitterScript : PowerBase
             if (storageScript.powerStored >= otherStorage.powerStored)
             {
                 //Debug.Log($"Added {otherStorage.name} to transmit to!");
-                toTransmit.Add(destination.GetComponent<TransmitterScript>());
+                TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
+                if (otherTransmitter.canRecieve)
+                {
+                    toTransmit.Add(otherTransmitter);
+                }
             }
         }
 
@@ -40,6 +47,12 @@ public class TransmitterScript : PowerBase
             if (destination == null)
             {
                 continue;
+            }
+            
+            TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
+            if (otherTransmitter.canRecieve)
+            {
+                toTransmit.Add(otherTransmitter);
             }
             
             // Always transmit to consumers reguardless of power difference
@@ -52,7 +65,7 @@ public class TransmitterScript : PowerBase
         {
             //Debug.Log($"Transmitting to {destination.name}!");
             // This object asks the connected object to pull power
-            destination.ReceivePower(this, maxPush);
+            StartCoroutine(destination.ReceivePower(this, maxPush));
         }
 
     }
@@ -62,12 +75,13 @@ public class TransmitterScript : PowerBase
     /// </summary>
     /// <param name="source">The transmitter that pushed the power</param>>
     /// <param name="amount">How much power was received</param>
-    private void ReceivePower(TransmitterScript source, float amount)
+    private IEnumerator ReceivePower(TransmitterScript source, float amount)
     {
+        yield return new WaitForSeconds(0.1f);
         // Prevent object from overfilling
         if (storageScript.isFull)
         {
-            return;
+            yield break;
         }
         // Pulling entire amount from the source
         source.storageScript.PullPower(amount);

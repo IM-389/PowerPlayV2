@@ -131,8 +131,9 @@ public class BuildScript : MonoBehaviour
                     // If the raycast isn't blocked by a building, then place the building
                     if (!blocked)
                     {
-                        Debug.Log("In the blocked if");
                         Vector2 spawnPoint = RoundVector(origin.point);
+                        spawnPoint -= selectedBuilding.GetComponent<PlaceableScript>().positionOffset;
+                        Debug.Log(spawnPoint);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
                         // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering

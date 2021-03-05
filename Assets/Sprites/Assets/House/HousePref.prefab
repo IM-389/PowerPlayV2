@@ -5230,6 +5230,7 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   cost: 0
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 1
   hVConnections: []
@@ -5248,7 +5249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSend: 1
+  canSend: 0
+  canRecieve: 1
 --- !u!114 &-1488912352967434167
 MonoBehaviour:
   m_ObjectHideFlags: 0

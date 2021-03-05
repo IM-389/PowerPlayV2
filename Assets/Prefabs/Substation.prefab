@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 6470925103800842142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a985df4e2de82624ea043010c22b36ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: {x: 1, y: 1}
+  dimensions: {x: 2, y: 2}
   cost: 0
-  positionOffset: {x: 0, y: 0}
+  positionOffset: {x: 0.5, y: -0.5}
   buildingName: Substation
 --- !u!114 &8564935564043737464
 MonoBehaviour:
@@ -184,6 +184,7 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   cost: 0
+  unRemovable: 0
   maxHVConnections: 1
   maxLVConnections: 1
   hVConnections: []
@@ -219,6 +220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
 --- !u!114 &7300743165390096455
 MonoBehaviour:
   m_ObjectHideFlags: 0
