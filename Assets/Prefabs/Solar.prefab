@@ -291,6 +291,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
   cost: 0
+  positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!114 &802364249045430956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -308,7 +310,14 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: Makes less power. Does not work at night. It makes no dirty air.
+  wireText: 
+  cost: 0
+  maxHVConnections: 0
+  maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
+  consumerConnections: []
 --- !u!114 &7329203526463667450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +333,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &4364104696705706677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,3 +375,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: 0}
+  isSmart: 0
