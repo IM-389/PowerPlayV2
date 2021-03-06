@@ -201,10 +201,14 @@ public class BuildScript : MonoBehaviour
     {
         GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
         GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-        
-        if (wire1.volts == GeneralObjectScript.Voltage.LOW)
+        // Adds connection from wire 1 to wire 2
+        if (wire1.volts == GeneralObjectScript.Voltage.LOW && (!wire2.isConsumer))
         {
             wire1.AddLVConnection(wireObject2);
+        }
+        else if(wire1.volts == GeneralObjectScript.Voltage.LOW && wire2.isConsumer)
+        {
+            wire1.AddConsumerConnection(wireObject2);
         }
         else
         {
@@ -218,10 +222,14 @@ public class BuildScript : MonoBehaviour
                 wire1.AddLVConnection(wireObject2);
             }
         }
-
-        if (wire2.volts == GeneralObjectScript.Voltage.LOW)
+        // Adds connection from wire 2 to wire 1
+        if (wire2.volts == GeneralObjectScript.Voltage.LOW && (!wire1.isConsumer))
         {
             wire2.AddLVConnection(wireObject1);
+        }
+        else if (wire2.volts == GeneralObjectScript.Voltage.LOW && wire1.isConsumer)
+        {
+            wire2.AddConsumerConnection(wireObject1);
         }
         else
         {
@@ -507,7 +515,7 @@ public class BuildScript : MonoBehaviour
         GeneralObjectScript sWire;
         //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        Debug.Log(hit.transform.tag);
+        //Debug.Log(hit.transform.tag);
         if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
         {
             if (wireObject1 != null) 
@@ -525,7 +533,7 @@ public class BuildScript : MonoBehaviour
             }            
             wireObject1 = hit.transform.gameObject;
             wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
+            //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
         }
 
         // Otherwise it sets the second wire object
@@ -564,7 +572,25 @@ public class BuildScript : MonoBehaviour
             }
 
             // Checks and sees if connection is already made between both objects
+            foreach (GameObject connect in wire1.lvConnections)
+            {
+                if (connect == wireObject2)
+                {
+                    errorBox.SetActive(true);
+                    errorText.text = "Connnection is already made between these objects";
+                    return;
+                }
+            }
             foreach (GameObject connect in wire1.hVConnections)
+            {
+                if (connect == wireObject2)
+                {
+                    errorBox.SetActive(true);
+                    errorText.text = "Connnection is already made between these objects";
+                    return;
+                }
+            }
+            foreach (GameObject connect in wire1.consumerConnections)
             {
                 if (connect == wireObject2)
                 {
@@ -645,12 +671,8 @@ public class BuildScript : MonoBehaviour
                     errorBox.SetActive(true);
                     errorText.text = "You cannot connect a consumer to another consumer";
                  }
-
-
             }
-
         }
-        
     }
 
     public void RemoveObject(RaycastHit2D origin)
@@ -666,6 +688,7 @@ public class BuildScript : MonoBehaviour
             List<GameObject> allConnections = new List<GameObject>();
             allConnections.AddRange(gos.hVConnections);
             allConnections.AddRange(gos.lvConnections);
+            allConnections.AddRange(gos.consumerConnections);
             foreach (var connection in allConnections)
             {
                 connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
