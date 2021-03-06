@@ -11,37 +11,84 @@ public class GeneralObjectScript : MonoBehaviour
     public bool isConsumer;
     public bool isSubstation;
     public float wireLength;
+    public string buildingText;
+    //public string wireText;
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 
-    
+    /// <summary>
+    /// Determines whether object is removable or not
+    /// </summary>
+    public bool unRemovable;
     bool destroyed = false;
     GameObject destroyKey;
     
     [FormerlySerializedAs("maxConnectiions")] public int maxHVConnections;
     public int maxLVConnections;
     
-    public List<GameObject> connections = new List<GameObject>();
-    public List<GameObject> consumerConnections = new List<GameObject>();
+
+    public List<GameObject> hVConnections = new List<GameObject>();
+    public List<GameObject> lvConnections = new List<GameObject>();
+
+        
+    [Tooltip("Does this object count towards milestone progress")]
+    public bool isMilestoneCounted = true;
+    
+    //public List<GameObject> connections = new List<GameObject>();
+    //public List<GameObject> consumerConnections = new List<GameObject>();
+    
     public Dictionary<GameObject, GameObject> wireConnections = new Dictionary<GameObject, GameObject>();
 
+    public GameObject[] preMadeConnections;
 
-    public void AddConsumerConnection(GameObject connection)
+    // Makes premade connections
+    private void Start()
     {
-        consumerConnections.Add(connection);
+        foreach(GameObject connection in preMadeConnections)
+        {
+            GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
+            if(gos.volts == Voltage.LOW)
+            {
+                AddLVConnection(connection);
+            }
+            else if (gos.volts == Voltage.HIGH)
+            {
+                AddHVConnection(connection);
+            }
+            else if(gos.volts == Voltage.TRANSFORMER)
+            {
+                if(this.volts == Voltage.HIGH)
+                {
+                    AddHVConnection(connection);
+                }
+                else if(this.volts == Voltage.LOW)
+                {
+                    AddLVConnection(connection);
+                }
+                else
+                {
+                    AddLVConnection(connection);
+                }
+            }
+
+        }
+    }
+    public void AddLVConnection(GameObject connection)
+    {
+        lvConnections.Add(connection);
         CreateLine(connection);
     }
-    public void AddConnection(GameObject connection)
+    public void AddHVConnection(GameObject connection)
     {
-        connections.Add(connection);
+        hVConnections.Add(connection);
         CreateLine(connection);
     }
     public void RemoveConnection(GameObject connection)
     {
-        connections.Remove(connection);
-        consumerConnections.Remove(connection);
-        connections.RemoveAll(item => item == null);
-        consumerConnections.RemoveAll(item => item == null);
+        hVConnections.Remove(connection);
+        lvConnections.Remove(connection);
+        hVConnections.RemoveAll(item => item == null);
+        lvConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))

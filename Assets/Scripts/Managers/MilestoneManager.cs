@@ -17,6 +17,13 @@ public class MilestoneManager : MonoBehaviour
     [Tooltip("Text displaying the current milestone to the player")]
     public Text milestoneText;
 
+    public BuildScript build;
+
+    public StoryTelling dialouge;
+
+    [Tooltip("Object for Griddy")]
+    public GameObject griddy;
+    
     /// <summary>
     /// Sets the data for the first milestone
     /// </summary>
@@ -25,6 +32,7 @@ public class MilestoneManager : MonoBehaviour
         currentMilestones.Add(milestones[0]);
         currentMilestones[0].SetMilestoneProperties();
         milestoneText.text = currentMilestones[0].milestoneText;
+        build = GameObject.FindWithTag("Background").GetComponent<BuildScript>();
     }
     
     /// <summary>
@@ -37,13 +45,24 @@ public class MilestoneManager : MonoBehaviour
         string text = "";
         for(int i = 0; i < currentMilestones.Count; ++i)
         {
-            bool isComplete = currentMilestones[i].CompleteMilestone();
+            bool isComplete = currentMilestones[i].CheckCompleteMilestone();
             if (isComplete)
             {
                 Debug.Log("Milestone complete, setting next ones!");
+                currentMilestones[i].SetCompleteMilestone();
+                
+                foreach (var building in currentMilestones[i].newBuildings)
+                {
+                    build.spawnableBuildings.Add(building);
+                }
+                build.SetupDropdown();
                 toAdd.AddRange(currentMilestones[i].nextMilestones);
                 toRemove.Add(i);
-
+                
+                griddy.SetActive(true);
+                dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
+                dialouge.TriggerDialogue();
+                
                 foreach (var newMilestone in currentMilestones[i].nextMilestones)
                 {
                     newMilestone.SetMilestoneProperties();

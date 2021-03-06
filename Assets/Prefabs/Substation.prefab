@@ -35,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 6470925103800842142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10911, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: 03f33607e0a5f1242a001599a182461b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -139,16 +139,16 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6, y: 6}
   m_EdgeRadius: 0
 --- !u!114 &6021224240253869794
 MonoBehaviour:
@@ -162,9 +162,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a985df4e2de82624ea043010c22b36ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: {x: 1, y: 1}
+  dimensions: {x: 2, y: 2}
   cost: 0
-  positionOffset: {x: 0, y: 0}
+  positionOffset: {x: 0.5, y: -0.5}
   buildingName: Substation
 --- !u!114 &8564935564043737464
 MonoBehaviour:
@@ -183,11 +183,15 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: 
   cost: 0
+  unRemovable: 0
   maxHVConnections: 1
   maxLVConnections: 1
-  connections: []
-  consumerConnections: []
+  hVConnections: []
+  lvConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &5374108111642601614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -203,7 +207,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: 
+  objectDescription: Lets you connect many wires in one spot.
 --- !u!114 &7460058267911771528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
 --- !u!114 &7300743165390096455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,4 +249,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   voltageSet: 0
-  maxConnections: 5
+  maxConnections: 6

@@ -311,9 +311,11 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: Makes okay power. Puts less smoke in the air than Coal Plant.
   cost: 5
   maxHVConnections: 1
   maxLVConnections: 0
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &6874283770724396703
@@ -331,6 +333,8 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: Makes a good number of power. It puts smoke in the air, but
+    not as much as the Coal Plant.
 --- !u!114 &3750983780562473449
 MonoBehaviour:
   m_ObjectHideFlags: 0
