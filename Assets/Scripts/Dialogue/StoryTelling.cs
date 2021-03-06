@@ -9,6 +9,7 @@ public class StoryTelling : MonoBehaviour
     public Dialogue dialogue;
     public void TriggerDialogue()
     {
+        Debug.Log($"Called from {gameObject.name}");
         FindObjectOfType<DialogueBehaviour>().StartConvo(dialogue);
     }
 }

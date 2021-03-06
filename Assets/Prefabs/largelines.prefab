@@ -183,10 +183,13 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 15
   cost: 0
+  unRemovable: 0
   maxHVConnections: 2
   maxLVConnections: 0
-  connections: []
-  consumerConnections: []
+  hVConnections: []
+  lvConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &6766887339401483143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,6 +205,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &-2099193719442316402
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +219,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
 --- !u!114 &-6477512763960502311
 MonoBehaviour:
   m_ObjectHideFlags: 0

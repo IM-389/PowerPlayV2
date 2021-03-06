@@ -35,7 +35,7 @@ public class MouseScript : MonoBehaviour
     void Update()
     {
         // If the mouse is over UI, ignore this function
-        if (EventSystem.current.IsPointerOverGameObject())
+        if (EventSystem.current.IsPointerOverGameObject() || buildScript.selectedBuilding == null)
         {
             return;
         }

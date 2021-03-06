@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -45,7 +46,11 @@ public class BuildScript : MonoBehaviour
     [Tooltip("If the player is in removal mode")]
     public bool removalMode;
 
+    [Tooltip("Dropdown used for selecting objects")]
     public TMP_Dropdown selection;
+
+    [Tooltip("Text used for displaying information about the selected object")]
+    public Text selectedTooltipText;
     
     // Start is called before the first frame update
     void Start()
@@ -126,8 +131,9 @@ public class BuildScript : MonoBehaviour
                     // If the raycast isn't blocked by a building, then place the building
                     if (!blocked)
                     {
-                        Debug.Log("In the blocked if");
                         Vector2 spawnPoint = RoundVector(origin.point);
+                        spawnPoint -= selectedBuilding.GetComponent<PlaceableScript>().positionOffset;
+                        Debug.Log(spawnPoint);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
                         // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
@@ -181,6 +187,7 @@ public class BuildScript : MonoBehaviour
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
                     hover.isSmart = true;
+                    hover.transform.GetChild(5).gameObject.SetActive(true);
                 }
             }
         }
@@ -197,35 +204,35 @@ public class BuildScript : MonoBehaviour
         
         if (wire1.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire1.AddConsumerConnection(wireObject2);
+            wire1.AddLVConnection(wireObject2);
         }
         else
         {
             if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire1.AddConnection(wireObject2);
+                wire1.AddHVConnection(wireObject2);
             }
             else
             {
-                wire1.AddConsumerConnection(wireObject2);
+                wire1.AddLVConnection(wireObject2);
             }
         }
 
         if (wire2.volts == GeneralObjectScript.Voltage.LOW)
         {
-            wire2.AddConsumerConnection(wireObject1);
+            wire2.AddLVConnection(wireObject1);
         }
         else
         {
             if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire2.AddConnection(wireObject1);
+                wire2.AddHVConnection(wireObject1);
             }
             else
             {
-                wire2.AddConsumerConnection(wireObject1);
+                wire2.AddLVConnection(wireObject1);
             }
         }
         // Sets objects back to null
@@ -243,9 +250,11 @@ public class BuildScript : MonoBehaviour
     /// <summary>
     /// Used to load the dropdown with the correct objects
     /// </summary>
-    private void SetupDropdown()
+    public void SetupDropdown()
     {
+        selection.ClearOptions();
         List<string> dropdownOptions = new List<string>();
+        dropdownOptions.Add("--SELECT TOOL--");
         foreach (var building in spawnableBuildings)
         {
             dropdownOptions.Add(building.GetComponent<PlaceableScript>().buildingName);
@@ -434,13 +443,36 @@ public class BuildScript : MonoBehaviour
     public void UpdateSelection()
     {
         // Get the value of the dropdown
-        int selected = selection.value;
+        int selected = selection.value - 1;
         
         // If the value is somewhere in the spawnable buildings list, then select that building
-        if (selected < spawnableBuildings.Count)
+        if (selected >= 0 && selected < spawnableBuildings.Count)
         {
             DeselectWireMode();
             selectedBuilding = spawnableBuildings[selected];
+            GeneralObjectScript sGos;
+            // TODO: Replace once new pole art is in
+            try
+            {
+                sGos = selectedBuilding.GetComponent<BuildingSpawn>().Building.GetComponent<GeneralObjectScript>();
+            }
+            catch (NullReferenceException e)
+            {
+                sGos = selectedBuilding.GetComponent<GeneralObjectScript>();
+            }
+
+            string tooltipInfo = "";
+            if (sGos.isGenerator)
+            {
+                GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
+                tooltipInfo += $"Generation: {generator.amount}\n";
+            }
+
+            tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
+            tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
+            tooltipInfo += $"LV Connections: {sGos.maxLVConnections}";
+
+            selectedTooltipText.text = tooltipInfo;
         }
         else
         {
@@ -522,7 +554,7 @@ public class BuildScript : MonoBehaviour
             }
 
             // Checks and sees if connection is already made between both objects
-            foreach (GameObject connect in wire1.connections)
+            foreach (GameObject connect in wire1.hVConnections)
             {
                 if (connect == wireObject2)
                 {
@@ -532,14 +564,14 @@ public class BuildScript : MonoBehaviour
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.hVConnections.Count >= wire1.maxHVConnections || wire2.hVConnections.Count >= wire2.maxHVConnections)))
             {
                 errorBox.SetActive(true);
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
             
-            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.consumerConnections.Count >= wire1.maxLVConnections || wire2.consumerConnections.Count >= wire2.maxLVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
                 errorBox.SetActive(true);
                 errorText.text = "Too many low voltage connections on one object!";
@@ -616,9 +648,14 @@ public class BuildScript : MonoBehaviour
         if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
         {
             GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
+            // Doesn't remove it if the object is unremovable
+            if (gos.unRemovable)
+            {
+                return;
+            }
             List<GameObject> allConnections = new List<GameObject>();
-            allConnections.AddRange(gos.connections);
-            allConnections.AddRange(gos.consumerConnections);
+            allConnections.AddRange(gos.hVConnections);
+            allConnections.AddRange(gos.lvConnections);
             foreach (var connection in allConnections)
             {
                 connection.GetComponent<GeneralObjectScript>().RemoveConnection(gos.gameObject);
