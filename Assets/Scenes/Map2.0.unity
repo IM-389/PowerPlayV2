@@ -8965,8 +8965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4701993810741548652, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
       propertyPath: objectDescription
-      value: Uses [High-Voltage Power]. People go here to work, and they make things
-        for the whole city.
+      value: Uses High-Voltage Power. People go here to work.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
@@ -26461,8 +26460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7544618107801901497, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}
       propertyPath: objectDescription
-      value: Uses [High-Voltage Power]. Takes care of sick people all day, every
-        day!
+      value: Uses High-Voltage Power. Doctors need power to help sick people.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}
