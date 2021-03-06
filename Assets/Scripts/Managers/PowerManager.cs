@@ -61,7 +61,8 @@ public class PowerManager : MonoBehaviour
             GeneratorScript generatorScript = generator.GetComponent<GeneratorScript>();
             if (generatorScript.type == type)
             {
-                powerAmountsGenerated[(int) generatorScript.type] += generatorScript.amount;
+                powerAmountsGenerated[(int) generatorScript.type] +=
+                    (generatorScript.amount * (int) generatorScript.type);
             }
         }
     }
