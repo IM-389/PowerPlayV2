@@ -13459,6 +13459,10 @@ PrefabInstance:
       propertyPath: dialougePanel
       value: 
       objectReference: {fileID: 1472763687}
+    - target: {fileID: 1100612104764740746, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
+      propertyPath: st
+      value: 
+      objectReference: {fileID: 1387709554}
     - target: {fileID: 1100612104787061031, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 4
@@ -28699,7 +28703,7 @@ MonoBehaviour:
     - Hey there, my name is Griddy, Griddy the Smart Grid. My job is to help you
       make the best Smart Grid you can possibly make! With our teamwork, we can achieve
       anything!
-    - As you see on the screen, the people are without power. Me must restore power
+    - As you see on the screen, the people are without power. We must restore power
       to their homes to make them happy. First go build a coal plant.
 --- !u!1 &1389003356
 GameObject:
@@ -45778,6 +45782,10 @@ PrefabInstance:
       propertyPath: notificationShowTime
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
+      propertyPath: griddy
+      value: 
+      objectReference: {fileID: 230756702}
     - target: {fileID: 3677482995026495604, guid: 801fd9984b1bce046a653e80874c0b2a, type: 3}
       propertyPath: dialouge
       value: 

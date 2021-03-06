@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class DialogueBehaviour : MonoBehaviour
 {
-    List<string> sentences;
+    private List<string> sentences = new List<string>();
 
     //public TutorialBehaviour tb;
     public string nextSetMessage;
@@ -17,7 +17,7 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject griddy;
     void Start()
     {
-        sentences = new List<string>();
+        //sentences = new List<string>();
         gm = GameObject.FindObjectOfType<GameManager>();
         sc = GameObject.FindObjectOfType<SceneController>();
         st = GameObject.FindObjectOfType<StoryTelling>();
@@ -40,6 +40,8 @@ public class DialogueBehaviour : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        Debug.Log("Calling DisplayNextSentence!");
+        Debug.Log($"Number items in list: {sentences.Count}");
         if (sentences.Count == 0)
         {
             //sc.dialogueLine.text = nextSetMessage;
