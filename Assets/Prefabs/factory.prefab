@@ -193,6 +193,7 @@ MonoBehaviour:
   dimensions: {x: 3, y: 3}
   cost: 0
   positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!114 &2590121524529057885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +249,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: Uses High-Voltage Power. People go here to work.
 --- !u!114 &7062987643556779599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,9 +267,11 @@ MonoBehaviour:
   isConsumer: 1
   isSubstation: 0
   wireLength: 3
+  buildingText: Uses High-Voltage Power. People go here to work.
   cost: 0
   maxHVConnections: 0
   maxLVConnections: 1
+  isMilestoneCounted: 1
   connections: []
   consumerConnections: []
 --- !u!114 &6376666281117401630

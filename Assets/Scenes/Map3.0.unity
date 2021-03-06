@@ -12966,6 +12966,56 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!1 &615517263
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 615517264}
+  - component: {fileID: 615517265}
+  m_Layer: 0
+  m_Name: four
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &615517264
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615517263}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590425531}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &615517265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615517263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 615517263}
+  nextTextSet: {fileID: 0}
+  dialogue:
+    sentences:
+    - Amazing! Now that you know how to build a coal plant, try using another to
+      power more houses!
+    - Try to keep all the houses powered for one week!
 --- !u!1001 &615990505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20907,11 +20957,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 1015738052}
-  nextTextSet: {fileID: 0}
+  nextTextSet: {fileID: 615517263}
   dialogue:
     sentences:
-    - hello this is set 3
-    - this test is now over thanks
+    - Fantastic! The neighborhood now has power! When people have their homes powered
+      their satisfaction goes up which is what we want.
+    - The town keeps growing, another neighborhood has been built! This time, you
+      need to build the generator for it as well. Just like you built the substation,
+      build a Coal Generator near the new neighborhood!
+    - Once you have built the generator, connect it to the houses using transformers
+      and substations!
 --- !u!1001 &1017438975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22056,9 +22111,11 @@ MonoBehaviour:
   nextTextSet: {fileID: 1015738052}
   dialogue:
     sentences:
-    - hi set two here
-    - this is the second set of text
-    - the next one is three
+    - Great work connecting those wires! A new neighborhood has opened up, and you
+      need to build the substation and connect the wires!
+    - To build a substation, click the dropdown in the lower right side, and click
+      "Substation"
+    - Once you have done that, click anywhere on the screen to place the building!
 --- !u!1001 &1083343708
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28704,7 +28761,7 @@ MonoBehaviour:
       make the best Smart Grid you can possibly make! With our teamwork, we can achieve
       anything!
     - As you see on the screen, the people are without power. We must restore power
-      to their homes to make them happy. First go build a coal plant.
+      to their homes to make them happy. First go connect the coal plant to the houses.
 --- !u!1 &1389003356
 GameObject:
   m_ObjectHideFlags: 0
@@ -34047,6 +34104,7 @@ Transform:
   - {fileID: 1387709553}
   - {fileID: 1080881550}
   - {fileID: 1015738053}
+  - {fileID: 615517264}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

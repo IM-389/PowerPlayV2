@@ -204,7 +204,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: 
+  objectDescription: Helps you send Low-Voltage Power a long way.
 --- !u!114 &-357091827175094459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +250,8 @@ MonoBehaviour:
   isConsumer: 0
   isSubstation: 0
   wireLength: 5
+  buildingText: Helps you send Low-Voltage Power a long way.
+  wireText: Helps you send Low-Voltage Power a long way.
   cost: 0
   unRemovable: 0
   maxHVConnections: 0

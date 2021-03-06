@@ -5211,7 +5211,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: 
+  objectDescription: People live here. Houses use Low-Voltage Power.
 --- !u!114 &-1264182747367775761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5228,7 +5228,8 @@ MonoBehaviour:
   isGenerator: 0
   isConsumer: 1
   isSubstation: 0
-  wireLength: 5
+  wireLength: 0
+  buildingText: People live here. Houses use Low-Voltage Power.
   cost: 0
   unRemovable: 0
   maxHVConnections: 0
