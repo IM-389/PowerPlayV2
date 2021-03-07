@@ -4842,7 +4842,7 @@ PrefabInstance:
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 1719931336}
+      objectReference: {fileID: 1717194649}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[1]
       value: 
@@ -5829,6 +5829,10 @@ PrefabInstance:
       propertyPath: preMadeConnections.Array.data[1]
       value: 
       objectReference: {fileID: 1717194649}
+    - target: {fileID: 4478874532228927277, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
+      propertyPath: priorityNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
 --- !u!1001 &319185202
@@ -24336,6 +24340,10 @@ PrefabInstance:
       propertyPath: preMadeConnections.Array.data[1]
       value: 
       objectReference: {fileID: 1437721804}
+    - target: {fileID: 4478874532228927277, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
+      propertyPath: priorityNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
 --- !u!1001 &1198648718

@@ -677,7 +677,9 @@ public class BuildScript : MonoBehaviour
 
     public void RemoveObject(RaycastHit2D origin)
     {
-        if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower"))
+        if (origin.transform.CompareTag("Generator") || origin.transform.CompareTag("transformer") 
+            || origin.transform.CompareTag("Power") || origin.transform.CompareTag("HighPower")
+            || origin.transform.CompareTag("Substation"))
         {
             GeneralObjectScript gos = origin.transform.GetComponent<GeneralObjectScript>();
             // Doesn't remove it if the object is unremovable
