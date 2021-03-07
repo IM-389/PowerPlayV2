@@ -37,14 +37,17 @@ public class HoverScript : MonoBehaviour
 
     [Tooltip("If the object is equipped to be Smart. Provides more detailed info if yes")]
     public bool isSmart;
-    
+
+    private PowerManager powerManager;
     private void Start()
     {
         tooltipPanel = GameObject.FindWithTag("TooltipPanel");
         powerAmtText = tooltipPanel.transform.GetChild(1).GetComponent<Text>();
         gos = gameObject.GetComponent<GeneralObjectScript>();
-        timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         storage = gameObject.GetComponent<StorageScript>();
+        GameObject gameController = GameObject.FindWithTag("GameController");
+        timeManager = gameController.GetComponent<TimeManager>();
+        powerManager = gameController.GetComponent<PowerManager>();
     }
     
     
@@ -74,7 +77,8 @@ public class HoverScript : MonoBehaviour
         }
         else if (gos.isGenerator)
         {
-            toShow += $"Generating {gameObject.GetComponent<GeneratorScript>().amount} power\n";
+            GeneratorScript generator = gameObject.GetComponent<GeneratorScript>();
+            toShow += $"Generating {generator.amount * powerManager.powerAdjusts[(int) generator.type]} power\n";
             toShow += $"{storage.powerStored} power stored\n";
         }
 

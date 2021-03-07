@@ -11,7 +11,7 @@ public class BuildScript : MonoBehaviour
 
     private Camera mainCamera;
 
-    private Transform buildCircle;
+    //private Transform buildCircle;
 
     public List<GameObject> spawnableBuildings = new List<GameObject>();
 
@@ -56,7 +56,7 @@ public class BuildScript : MonoBehaviour
     void Start()
     {
         mainCamera = Camera.main;
-        buildCircle = GameObject.FindWithTag("BuildCircle").transform;
+        //buildCircle = GameObject.FindWithTag("BuildCircle").transform;
 
         //lr = GetComponent<LineRenderer>();
 
@@ -77,7 +77,7 @@ public class BuildScript : MonoBehaviour
         Vector2 mouseWorldPosRounded = RoundVector(mouseWorldPos);
         
         // Move the build circle to the mouse, and snap it to the grid
-        buildCircle.transform.position = mouseWorldPosRounded;
+        //buildCircle.transform.position = mouseWorldPosRounded;
         //Helper.SnapToGrid(buildCircle);
 
         // If the player clicked the button, check if the cursor is over the background
@@ -269,7 +269,7 @@ public class BuildScript : MonoBehaviour
     {
         DeselectWireMode();
         upgradeMode = true;
-        buildCircle.gameObject.SetActive(false);
+        //buildCircle.gameObject.SetActive(false);
         mouseObject.SetActive(false);
     }
 
@@ -277,14 +277,14 @@ public class BuildScript : MonoBehaviour
     {
         DeselectWireMode();
         removalMode = true;
-        buildCircle.gameObject.SetActive(false);
+        //buildCircle.gameObject.SetActive(false);
         mouseObject.SetActive(false);
     }
     
     public void SelectWireMode()
     {
         wireMode = true;
-        buildCircle.gameObject.SetActive(false);
+        //buildCircle.gameObject.SetActive(false);
         mouseObject.SetActive(false);
     }
     public void DeselectWireMode()
@@ -298,7 +298,7 @@ public class BuildScript : MonoBehaviour
 
         removalMode = false;
 
-        buildCircle.gameObject.SetActive(true);
+        //buildCircle.gameObject.SetActive(true);
         mouseObject.SetActive(true);
         wireObject1 = null;
         wireObject2 = null;

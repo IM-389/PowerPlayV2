@@ -48,7 +48,7 @@ public class UIManager : MonoBehaviour
 
             moneyText.text = moneyManager.money.ToString();
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSecondsRealtime(0.5f);
         }
     }
 }
