@@ -64,6 +64,6 @@ public class MilestoneFour : MilestoneBase
     {
         sequenceNumber = 4;
         milestoneName = "Rainy Day";
-        milestoneText = "Power all houses for a week";
+        milestoneText = "Power all houses for a 2 days";
     }
 }
