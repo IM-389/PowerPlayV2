@@ -188,7 +188,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 1}
   cost: 0
   positionOffset: {x: 0, y: 0}
-  buildingName: LV Power Line
+  buildingName: LV Power Pole
 --- !u!114 &4964275525438312290
 MonoBehaviour:
   m_ObjectHideFlags: 0
