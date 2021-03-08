@@ -2462,7 +2462,6 @@ GameObject:
   - component: {fileID: 149491868}
   - component: {fileID: 149491870}
   - component: {fileID: 149491869}
-  - component: {fileID: 149491871}
   m_Layer: 2
   m_Name: Clock
   m_TagString: Untagged
@@ -2531,27 +2530,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 149491867}
   m_CullTransparentMesh: 1
---- !u!114 &149491871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 149491867}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0.5
-  totalTimeSteps: 0
-  minutes: 0
-  displayHours: 0
-  days: 0
-  hours: 0
-  isDay: 1
-  clock: {fileID: 0}
-  cash: 0
 --- !u!1001 &149561530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6308,6 +6286,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6175920360165683689, guid: 5485c0162075dab499e914e9561827b3, type: 3}
   m_PrefabInstance: {fileID: 355132994}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &355458458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+  m_PrefabInstance: {fileID: 3423361747713739384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &361169655
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7590,8 +7579,8 @@ MonoBehaviour:
   zoomOut: 0
   minZoom: 1
   maxZoom: 10
-  minCameraPos: {x: -20, y: -20}
-  maxCameraPos: {x: 20, y: 15.5}
+  minCameraPos: {x: -20.5, y: -8.5}
+  maxCameraPos: {x: 15.5, y: 13.5}
 --- !u!1001 &447232966
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44211,27 +44200,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51799897898292094}
   m_CullTransparentMesh: 1
---- !u!114 &51799897898292092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51799897898292094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0
-  totalTimeSteps: 0
-  minutes: 0
-  displayHours: 0
-  days: 0
-  hours: 0
-  isDay: 1
-  clock: {fileID: 0}
-  cash: 0
 --- !u!114 &51799897898292093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44276,7 +44244,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 51799897898292092}
+      - m_Target: {fileID: 355458458}
         m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
         m_MethodName: onButtonPressTwoTimesSpeed
         m_Mode: 1
@@ -44348,7 +44316,6 @@ GameObject:
   - component: {fileID: 51799897898292083}
   - component: {fileID: 51799897898292082}
   - component: {fileID: 51799897898292093}
-  - component: {fileID: 51799897898292092}
   m_Layer: 5
   m_Name: 2X Speed button
   m_TagString: Untagged
@@ -44429,7 +44396,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 51799897918031821}
+      - m_Target: {fileID: 355458458}
         m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
         m_MethodName: pause
         m_Mode: 1
@@ -44540,27 +44507,6 @@ RectTransform:
   m_AnchoredPosition: {x: -375, y: -200}
   m_SizeDelta: {x: 35, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &51799897918031821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51799897918031823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0
-  totalTimeSteps: 0
-  minutes: 0
-  displayHours: 0
-  days: 0
-  hours: 0
-  isDay: 1
-  clock: {fileID: 0}
-  cash: 0
 --- !u!1 &51799897918031823
 GameObject:
   m_ObjectHideFlags: 0
@@ -44573,7 +44519,6 @@ GameObject:
   - component: {fileID: 51799897918031808}
   - component: {fileID: 51799897918031811}
   - component: {fileID: 51799897918031810}
-  - component: {fileID: 51799897918031821}
   m_Layer: 5
   m_Name: PauseButton
   m_TagString: Untagged
@@ -45910,7 +45855,6 @@ GameObject:
   - component: {fileID: 51799899385838242}
   - component: {fileID: 51799899385838253}
   - component: {fileID: 51799899385838252}
-  - component: {fileID: 51799899385838255}
   m_Layer: 5
   m_Name: 1.5XSpeedButton
   m_TagString: Untagged
@@ -45962,7 +45906,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 51799899385838255}
+      - m_Target: {fileID: 355458458}
         m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
         m_MethodName: onButtonPressOneAndHalfSpeed
         m_Mode: 1
@@ -46073,27 +46017,6 @@ RectTransform:
   m_AnchoredPosition: {x: -295, y: -200}
   m_SizeDelta: {x: 35, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &51799899385838255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51799899385838249}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0
-  totalTimeSteps: 0
-  minutes: 0
-  displayHours: 0
-  days: 0
-  hours: 0
-  isDay: 1
-  clock: {fileID: 0}
-  cash: 0
 --- !u!1 &51799899400187752
 GameObject:
   m_ObjectHideFlags: 0
@@ -46564,27 +46487,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 51799899729922814}
   m_CullTransparentMesh: 1
---- !u!114 &51799899729922812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 51799899729922814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeStep: 0
-  totalTimeSteps: 0
-  minutes: 0
-  displayHours: 0
-  days: 0
-  hours: 0
-  isDay: 1
-  clock: {fileID: 0}
-  cash: 0
 --- !u!114 &51799899729922813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46629,7 +46531,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 51799899729922812}
+      - m_Target: {fileID: 355458458}
         m_TargetAssemblyTypeName: TimeManager, Assembly-CSharp
         m_MethodName: resetToRegSpeed
         m_Mode: 1
@@ -46701,7 +46603,6 @@ GameObject:
   - component: {fileID: 51799899729922803}
   - component: {fileID: 51799899729922802}
   - component: {fileID: 51799899729922813}
-  - component: {fileID: 51799899729922812}
   m_Layer: 5
   m_Name: ResetSpeed
   m_TagString: Untagged
