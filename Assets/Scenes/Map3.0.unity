@@ -46869,6 +46869,10 @@ PrefabInstance:
       propertyPath: clock
       value: 
       objectReference: {fileID: 630487419}
+    - target: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+      propertyPath: hours
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2056792715769432564, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: m_Name
       value: GameController
