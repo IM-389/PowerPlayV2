@@ -15,6 +15,12 @@ public class CameraDrag : MonoBehaviour
 
     public float minZoom;
     public float maxZoom;
+
+    [Tooltip("Minimum (lowest) values the camera's coordinates can be")]
+    public Vector2 minCameraPos;
+    
+    [Tooltip("Maximum (highest) values the camera's coordinates cam be")]
+    public Vector2 maxCameraPos;
     
     private void Start()
     {
@@ -28,6 +34,10 @@ public class CameraDrag : MonoBehaviour
         {
             float speed = dragSpeed * Time.fixedDeltaTime;
             camera.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed);
+            Vector3 newPos = camera.transform.position;
+            newPos.x = Mathf.Clamp(newPos.x, minCameraPos.x, maxCameraPos.x);
+            newPos.y = Mathf.Clamp(newPos.y, minCameraPos.y, maxCameraPos.y);
+            camera.transform.position = newPos;
         }
         float xAxis = Input.GetAxis("Horizontal");
         float yAxis = Input.GetAxis("Vertical");

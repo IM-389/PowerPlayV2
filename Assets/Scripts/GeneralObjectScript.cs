@@ -29,7 +29,7 @@ public class GeneralObjectScript : MonoBehaviour
 
     public List<GameObject> hVConnections = new List<GameObject>();
     public List<GameObject> lvConnections = new List<GameObject>();
-
+    public List<GameObject> consumerConnections = new List<GameObject>();
         
     [Tooltip("Does this object count towards milestone progress")]
     public bool isMilestoneCounted = true;
@@ -83,12 +83,19 @@ public class GeneralObjectScript : MonoBehaviour
         hVConnections.Add(connection);
         CreateLine(connection);
     }
+    public void AddConsumerConnection(GameObject connection)
+    {
+        consumerConnections.Add(connection);
+        CreateLine(connection);
+    }
     public void RemoveConnection(GameObject connection)
     {
         hVConnections.Remove(connection);
         lvConnections.Remove(connection);
+        consumerConnections.Remove(connection);
         hVConnections.RemoveAll(item => item == null);
         lvConnections.RemoveAll(item => item == null);
+        consumerConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))

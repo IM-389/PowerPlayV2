@@ -12,8 +12,9 @@ public class TimeManager : MonoBehaviour
     //public int minutes = -1, hours, days, years;//This won't wait for the time to pass the very first time it's called, so minus one the minutes.
     public float timeStep = 0.5f;
     public int totalTimeSteps;
-    public int minutes, hours, days = 0;
+    public int minutes, displayHours, days, hours = 0;
     public bool isDay = true;
+    public Text clock;
     public int cash = 0;//gonna be using this to cause houses to make money
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,8 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+       //clock.text = "Day " + days + ", " + hours%12 + "A.M";
        
     }
 
@@ -68,26 +71,50 @@ public class TimeManager : MonoBehaviour
             if (timeStep >= 38)
             {
                 hours++;
+                displayHours++;
                 timeStep -= timeStep;
             }
-            if(hours >= 6 && hours <= 18)
+            if(hours >= 1 && hours <= 25)
             {
-                isDay = true;
+                //isDay = true;
+                string buffer = "";
+                if (hours == 25)
+                {
+                    //isDay = true;
+                    hours = 1;
+                   // displayHours = 1;
+                    ++days;
+                }
+                if (hours == 12 || hours == 24)
+                {
+                    buffer += "Day: " + days + ", 12 ";
+                   if(hours == 24)
+                    {
+                        buffer += " A.M";
+                    }
+                }
+                else
+                {
+                    buffer += "Day: " + days + ", " + hours % 12;
+                }
+
+                if (hours >= 12 && hours != 24)
+                {
+                        
+                    buffer +=  " P.M";
+                }
+
+                else if(hours > 24 || hours <= 11)
+                {
+                   buffer += " A.M";
+                }
+
+                clock.text = buffer;
                 //Debug.Log("The time is Day");
             }
-            if(hours >=19 && hours <= 24 || hours <=5)
-            {
-                isDay = false;
-                //Debug.Log("The time is Night");//can add exact minutes later if they want
-            }
-            if(hours == 24)
-            {
-                isDay = true;
-                hours = 0;
-                ++days;
-            }
-            //Debug.Log("Timestep: " + timeStep.ToString() + " Hours: " + hours.ToString() + " Total timesteps: " + totalTimeSteps.ToString() + " Daytime: " + isDay);
-
+          
+           
+            
             yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
@@ -103,7 +130,7 @@ public class TimeManager : MonoBehaviour
 
         // Obtain the current time.
         currentTime = Time.time.ToString("f6");
-        currentTime = "Time is: " + currentTime + " sec.";
+        currentTime = "Day: " + days + " Hour: " + hours;
 
         // Display the current time.
         GUI.Label(rect, currentTime, labelStyle);

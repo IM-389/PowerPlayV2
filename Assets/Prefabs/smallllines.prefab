@@ -188,7 +188,7 @@ MonoBehaviour:
   dimensions: {x: 1, y: 1}
   cost: 0
   positionOffset: {x: 0, y: 0}
-  buildingName: LV Power Line
+  buildingName: LV Power Pole
 --- !u!114 &4964275525438312290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSend: 1
   canRecieve: 1
+  priorityNumber: 3
 --- !u!114 &2257826378190876810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,12 +252,12 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   buildingText: Helps you send Low-Voltage Power a long way.
-  wireText: Helps you send Low-Voltage Power a long way.
   cost: 0
   unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 3
   hVConnections: []
   lvConnections: []
+  consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
