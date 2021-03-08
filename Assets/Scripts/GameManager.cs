@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
    
     private void Update()
     {
-        helpScreen.SetActive(true);
+        //helpScreen.SetActive(true);
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             Application.Quit();

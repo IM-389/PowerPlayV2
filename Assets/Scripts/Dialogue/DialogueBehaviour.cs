@@ -49,10 +49,12 @@ public class DialogueBehaviour : MonoBehaviour
             //mainButton.SetActive(false);
             dialougePanel.SetActive(false);
             griddy.SetActive(false);
+            Time.timeScale = 1;
             return;
         }
         string talk = sentences[0];
         sc.dialogueLine.text = talk;
+        Time.timeScale = 0;
         sentences.RemoveAt(0);
     }
 
@@ -63,6 +65,7 @@ public class DialogueBehaviour : MonoBehaviour
             sc.dialogueLine.text = "All done! Good job!";
             nextSetButton.SetActive(false);
             mainButton.SetActive(false);
+            Time.timeScale = 1;
             return;
         }
         print("hi?");
