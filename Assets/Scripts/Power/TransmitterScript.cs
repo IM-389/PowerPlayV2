@@ -9,6 +9,20 @@ public class TransmitterScript : PowerBase
 
     [Tooltip("If the object is allowed to recieve power. True if yes, false if no")]
     public bool canRecieve = true;
+
+    private bool isLVPole = false;
+
+    public int priorityNumber;
+    protected override void Start()
+    {
+        base.Start();
+        if (gos.GetType() == typeof(LVPowerLine))
+        {
+            isLVPole = true;
+        }
+        
+    }
+    
     protected override void Tick()
     {
         if (!canSend)
@@ -19,46 +33,24 @@ public class TransmitterScript : PowerBase
         List<TransmitterScript> toTransmit = new List<TransmitterScript>();
         // The most the object can push is limited so each connected object gets the same total power.
 
-        // Filter to all objects with less power than this one. Allows for bidirectional wires
-        foreach (var destination in gos.hVConnections)
+        toTransmit.AddRange(AddDestinations(gos.hVConnections));
+        toTransmit.AddRange(AddDestinations(gos.lvConnections));
+        
+        if (isLVPole)
         {
-            // Prevent power from being pushed to null connections
-            if (destination == null)
+            LVPowerLine line = (LVPowerLine) gos;
+            foreach (var destination in line.consumerConnections)
             {
-                continue;
-            }
-            
-            StorageScript otherStorage = destination.GetComponent<StorageScript>();
-
-            if (storageScript.powerStored >= otherStorage.powerStored)
-            {
-                //Debug.Log($"Added {otherStorage.name} to transmit to!");
+                StorageScript otherStorage = destination.GetComponent<StorageScript>();
                 TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
-                if (otherTransmitter.canRecieve)
+                if (otherTransmitter.canRecieve && !otherStorage.isFull)
                 {
                     toTransmit.Add(otherTransmitter);
                 }
             }
         }
-
-        foreach (var destination in gos.lvConnections)
-        {
-            // Prevent power from being pushed to null connections
-            if (destination == null)
-            {
-                continue;
-            }
-            
-            TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
-            if (otherTransmitter.canRecieve)
-            {
-                toTransmit.Add(otherTransmitter);
-            }
-            
-            // Always transmit to consumers reguardless of power difference
-            toTransmit.Add(destination.GetComponent<TransmitterScript>());
-        }
-
+        
+        
         float maxPush = storageScript.powerStored / toTransmit.Count;
         // Send power to those with less power than the sender 
         foreach (var destination in toTransmit)
@@ -87,5 +79,31 @@ public class TransmitterScript : PowerBase
         source.storageScript.PullPower(amount);
         // Adding the amount to the reciever (this object)
         storageScript.PushPower(amount);
+    }
+
+    private List<TransmitterScript> AddDestinations(List<GameObject> source)
+    {
+        List<TransmitterScript> toTransmit = new List<TransmitterScript>();
+        foreach (var destination in source)
+        {
+            // Prevent power from being pushed to null connections
+            if (destination == null)
+            {
+                continue;
+            }
+
+            StorageScript otherStorage = destination.GetComponent<StorageScript>();
+            if (storageScript.powerStored >= otherStorage.powerStored)
+            {
+                TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
+                if (otherTransmitter.canRecieve && !otherStorage.isFull 
+                    && priorityNumber <= otherTransmitter.priorityNumber)
+                {
+                    toTransmit.Add(otherTransmitter);
+                }
+            }
+        }
+
+        return toTransmit;
     }
 }

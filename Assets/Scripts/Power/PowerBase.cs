@@ -34,7 +34,7 @@ public abstract class PowerBase : MonoBehaviour
     /// <summary>
     /// Get the fixed timestep from the TimeManager
     /// </summary>
-    protected void Start()
+    protected virtual void Start()
     {
         storageScript = gameObject.GetComponent<StorageScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();

@@ -189,6 +189,7 @@ MonoBehaviour:
   maxLVConnections: 2
   hVConnections: []
   lvConnections: []
+  consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
 --- !u!114 &-7837405698394361301
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSend: 1
   canRecieve: 1
+  priorityNumber: 2
 --- !u!114 &-4828376763918429470
 MonoBehaviour:
   m_ObjectHideFlags: 0
