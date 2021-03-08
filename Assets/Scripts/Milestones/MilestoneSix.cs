@@ -30,11 +30,4 @@ public class MilestoneSix : MilestoneBase
         return (poweredFactories > 0 && poweredHospitals > 0);
 
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 7;
-        milestoneName = "Powering Industry";
-        milestoneText = "Power a factory and hospital";
-    }
 }

@@ -1369,8 +1369,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Power all houses for a 2 days
+  milestoneName: Rainy Day
   unlockedObjects:
   - {fileID: 1875756834}
   removedFog:
@@ -5426,8 +5426,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Create a new substation, and use it to power the new houses
+  milestoneName: Branching Out
   unlockedObjects:
   - {fileID: 908999662}
   - {fileID: 827976120}
@@ -14531,8 +14531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Put down 10 Smart Meters
+  milestoneName: Building the Smart Grid
   unlockedObjects: []
   removedFog: []
   newBuildings: []
@@ -18478,8 +18478,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Create a new coal plant, and power all the houses
+  milestoneName: Powering Up
   unlockedObjects:
   - {fileID: 1411023941}
   - {fileID: 975793930}
@@ -29618,8 +29618,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Connect 5 houses to a substation
+  milestoneName: Basic Connections
   unlockedObjects:
   - {fileID: 1315308270}
   - {fileID: 1244086266}
@@ -36853,8 +36853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Place and connect a second coal generator
+  milestoneName: Enter the Smart Grid
   unlockedObjects: []
   removedFog: []
   newBuildings: []
@@ -37042,8 +37042,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Power a factory and hospital
+  milestoneName: Powering Industry
   unlockedObjects: []
   removedFog: []
   newBuildings: []
@@ -39632,8 +39632,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: 
+  milestoneText: Ensure all customers have power for X time
+  milestoneName: Using the Smart Grid
   unlockedObjects: []
   removedFog: []
   newBuildings: []
@@ -46869,10 +46869,6 @@ PrefabInstance:
       propertyPath: clock
       value: 
       objectReference: {fileID: 630487419}
-    - target: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
-      propertyPath: hours
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 2056792715769432564, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: m_Name
       value: GameController

@@ -23,11 +23,4 @@ public class MilestoneSeven : MilestoneBase
 
         return (smartHouses >= 10);
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 8;
-        milestoneName = "Building the Smart Grid";
-        milestoneText = "Put down 10 Smart Meters";
-    }
 }

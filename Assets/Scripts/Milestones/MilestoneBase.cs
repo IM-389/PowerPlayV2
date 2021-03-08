@@ -43,7 +43,5 @@ namespace Milestones
                 fog.SetActive(false);
             }
         }
-
-        public abstract void SetMilestoneProperties();
     }
 }

@@ -47,11 +47,4 @@ public class MilestoneEight : MilestoneBase
         return false;
 
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 9;
-        milestoneName = "Using the Smart Grid";
-        milestoneText = "Ensure all customers have power for X time";
-    }
 }

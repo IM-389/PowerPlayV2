@@ -40,11 +40,4 @@ public class MilestoneThree : MilestoneBase
         
         return coalGen >= 1 && poweredHouses >= 15;
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 3;
-        milestoneName = "Powering Up";
-        milestoneText = "Create a new coal plant, and power all the houses";
-    }
 }

@@ -30,7 +30,6 @@ public class MilestoneManager : MonoBehaviour
     private void Start()
     {
         currentMilestones.Add(milestones[0]);
-        currentMilestones[0].SetMilestoneProperties();
         milestoneText.text = currentMilestones[0].milestoneText;
         build = GameObject.FindWithTag("Background").GetComponent<BuildScript>();
     }
@@ -62,11 +61,6 @@ public class MilestoneManager : MonoBehaviour
                 griddy.SetActive(true);
                 dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
                 dialouge.TriggerDialogue();
-                
-                foreach (var newMilestone in currentMilestones[i].nextMilestones)
-                {
-                    newMilestone.SetMilestoneProperties();
-                }
             }
 
             text += currentMilestones[i].milestoneText + "\n";

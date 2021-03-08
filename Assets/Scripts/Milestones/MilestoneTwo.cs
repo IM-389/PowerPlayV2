@@ -28,11 +28,4 @@ public class MilestoneTwo : MilestoneBase
         
         return substations.Length >= 2 && poweredHouses >= 10;
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 2;
-        milestoneName = "Branching Out";
-        milestoneText = "Create a new substation, and use it to power the new houses";
-    }
 }

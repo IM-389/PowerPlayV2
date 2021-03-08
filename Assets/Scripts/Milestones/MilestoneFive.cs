@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class MilestoneFive : MilestoneBase
 {
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 5;
-        milestoneName = "Enter the Smart Grid";
-        milestoneText = "Place and connect a second coal generator";
-    }
 
     public override bool CheckCompleteMilestone()
     {

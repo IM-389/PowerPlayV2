@@ -27,12 +27,5 @@ namespace Milestones
             //Debug.Log($"Powered Houses: {poweredHouses}");
             return poweredHouses >= 5;
         }
-
-        public override void SetMilestoneProperties()
-        {
-            sequenceNumber = 1;
-            milestoneName = "Basic Connections";
-            milestoneText = "Connect 5 houses to a power distribution center";
-        }
     }
 }

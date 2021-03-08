@@ -59,11 +59,4 @@ public class MilestoneFour : MilestoneBase
 
         return false;
     }
-
-    public override void SetMilestoneProperties()
-    {
-        sequenceNumber = 4;
-        milestoneName = "Rainy Day";
-        milestoneText = "Power all houses for a 2 days";
-    }
 }
