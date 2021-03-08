@@ -2469,7 +2469,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &149491868
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2547,8 +2547,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 0
+  days: 1
   isDay: 1
   clock: {fileID: 0}
   cash: 0
@@ -44196,8 +44196,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 0
+  days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
@@ -44525,8 +44525,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 0
+  days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
@@ -46058,8 +46058,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 0
+  days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
@@ -46549,8 +46549,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 0
+  days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
