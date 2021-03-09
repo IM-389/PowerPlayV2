@@ -65,8 +65,8 @@ MonoBehaviour:
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
-  days: 0
   hours: 6
+  days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
@@ -141,4 +141,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93833b72786303546a121c7db0615988, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  money: 100

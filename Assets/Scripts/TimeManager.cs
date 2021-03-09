@@ -69,7 +69,7 @@ public class TimeManager : MonoBehaviour
         {
             timeStep = (Time.time% 20) * 2;//timeStep + 0.5;//1.9?
             totalTimeSteps++;
-            if (timeStep >= 38)
+            if (timeStep >= 5)
             {
                 hours++;
                 displayHours++;

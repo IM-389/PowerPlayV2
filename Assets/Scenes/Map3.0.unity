@@ -12145,7 +12145,7 @@ MonoBehaviour:
       large amounts of power."
     - High voltage means it can be sent over long distances safely and is used for
       places like hospitals and factories that need large amounts of power.
-    - Try to keep all the houses powered for one week!
+    - Try to keep all the houses powered for two days!
 --- !u!1001 &615990505
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20199,6 +20199,30 @@ MonoBehaviour:
       build a Coal Generator near the new neighborhood!
     - Once you have built the generator, connect it to the houses using transformers
       and substations!
+--- !u!1 &1017147104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2056792715769432564, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+  m_PrefabInstance: {fileID: 3423361747713739384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1017147105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017147104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eeb39e9ddff68d418b1ddf962b22fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerAmountText:
+  - {fileID: 51799899489897353}
+  - {fileID: 51799898664580283}
+  - {fileID: 51799899473522627}
+  - {fileID: 51799898853945178}
+  totalPowerText: {fileID: 51799897684312195}
+  moneyText: {fileID: 51799898548079553}
 --- !u!1001 &1017438975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27639,17 +27663,15 @@ MonoBehaviour:
     - Hey there, my name is Griddy, Griddy the Smart Grid. My job is to help you
       make the best Smart Grid you can possibly make! With our teamwork, we can achieve
       anything!
-    - As you see on the screen, the people are without power. Me must restore power
+    - As you see on the screen, the people are without power. We must restore power
       to their homes to make them happy. First go connect the substation to the houses.
     - 'To connect the coal plant to the house you first need power poles and a substation.
       Power poles help transfer the power from place to place. '
     - Substations are used to convert the power into a state that is safe to handle.
     - "To build power poles and substations, click on the drop down and select the
       \u201Csubstation\u201D and \u201Cpower poles\u201D "
-    - Fantastic! Now all that is needed is building the wires and connecting everything
-      together.
-    - Now just select wires in the drop down and connect wires from the substation
-      to the power poles to finally connect to the houses.
+    - To place wires,  select wires in the drop down and click the two objects to
+      connect. Make sure they both have open connections!
 --- !u!1 &1389003356
 GameObject:
   m_ObjectHideFlags: 0
