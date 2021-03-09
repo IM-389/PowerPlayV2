@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -27,10 +29,10 @@ public class GeneralObjectScript : MonoBehaviour
     public int maxLVConnections;
     
 
-    public List<GameObject> hVConnections = new List<GameObject>();
-    public List<GameObject> lvConnections = new List<GameObject>();
-    public List<GameObject> consumerConnections = new List<GameObject>();
-        
+    public ObservableCollection<GameObject> hVConnections = new ObservableCollection<GameObject>();
+    public ObservableCollection<GameObject> lvConnections = new ObservableCollection<GameObject>();
+    public ObservableCollection<GameObject> consumerConnections = new ObservableCollection<GameObject>();
+    
     [Tooltip("Does this object count towards milestone progress")]
     public bool isMilestoneCounted = true;
     
@@ -41,9 +43,24 @@ public class GeneralObjectScript : MonoBehaviour
 
     public GameObject[] preMadeConnections;
 
+    [Tooltip("How many connections the object has")]
+    public int connectionCount;
+
+    /// <summary>
+    /// Reference to the attached network script
+    /// </summary>
+    private NetworkScript powerNetwork;
+    
     // Makes premade connections
     private void Start()
     {
+        // Register the list changing to the callback function.
+        hVConnections.CollectionChanged += OnListChanged;
+        lvConnections.CollectionChanged += OnListChanged;
+        consumerConnections.CollectionChanged += OnListChanged;
+
+        powerNetwork = gameObject.GetComponent<NetworkScript>();
+        
         foreach(GameObject connection in preMadeConnections)
         {
             GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
@@ -76,16 +93,19 @@ public class GeneralObjectScript : MonoBehaviour
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);
+        ++connectionCount;
         CreateLine(connection, Color.white, 0.1f);
     }
     public void AddHVConnection(GameObject connection)
     {
         hVConnections.Add(connection);
+        ++connectionCount;
         CreateLine(connection, Color.white, 0.1f);
     }
     public void AddConsumerConnection(GameObject connection)
     {
         consumerConnections.Add(connection);
+        ++connectionCount;
         CreateLine(connection, Color.black, 0.05f);
     }
     public void RemoveConnection(GameObject connection)
@@ -93,9 +113,9 @@ public class GeneralObjectScript : MonoBehaviour
         hVConnections.Remove(connection);
         lvConnections.Remove(connection);
         consumerConnections.Remove(connection);
-        hVConnections.RemoveAll(item => item == null);
-        lvConnections.RemoveAll(item => item == null);
-        consumerConnections.RemoveAll(item => item == null);
+        //hVConnections.RemoveAll(item => item == null);
+        //lvConnections.RemoveAll(item => item == null);
+        //consumerConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))
@@ -105,10 +125,13 @@ public class GeneralObjectScript : MonoBehaviour
                 destroyKey = kvp.Key;
             }
         }
+
         if (destroyed)
         {
             wireConnections.Remove(destroyKey);
         }
+
+        --connectionCount;
     }
     public int GetVoltage()
     {
@@ -156,5 +179,31 @@ public class GeneralObjectScript : MonoBehaviour
         col.transform.Rotate(0, 0, angle);
 
         wireConnections.Add(connection, myLine);
+    }
+
+    /// <summary>
+    /// Called whenever a change happens to the connected lists.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="args"></param>
+    private void OnListChanged(object sender, NotifyCollectionChangedEventArgs args)
+    {
+        if (args.OldItems is null)
+        {
+            powerNetwork.OnConnected((GameObject) args.NewItems[0]);
+        }
+        else
+        {
+            powerNetwork.OnRemoved((GameObject) args.OldItems[0]);
+        }
+    }
+
+    public List<GameObject> GetAllConnections()
+    {
+        List<GameObject> allConnections = new List<GameObject>();
+        allConnections.AddRange(hVConnections);
+        allConnections.AddRange(lvConnections);
+        allConnections.AddRange(consumerConnections);
+        return allConnections;
     }
 }

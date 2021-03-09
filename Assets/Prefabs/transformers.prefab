@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: -7837405698394361301}
   - component: {fileID: 4478874532228927277}
   - component: {fileID: -4828376763918429470}
+  - component: {fileID: 7249086830698509982}
+  - component: {fileID: -5664383136442904070}
   m_Layer: 7
   m_Name: transformers
   m_TagString: transformer
@@ -187,11 +189,9 @@ MonoBehaviour:
   unRemovable: 0
   maxHVConnections: 2
   maxLVConnections: 2
-  hVConnections: []
-  lvConnections: []
-  consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
+  connectionCount: 0
 --- !u!114 &-7837405698394361301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,3 +237,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
   isSmart: 0
+--- !u!114 &7249086830698509982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27588709232717115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe0b61ea3193444ca461b59d24f7a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
+--- !u!114 &-5664383136442904070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 27588709232717115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e807b19d2d5add346bb40d6f23193c0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  precedenceNumber: 0
+  powerGenerated: 0
+  powerConsumed: 0

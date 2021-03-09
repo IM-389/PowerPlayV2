@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 
 public class TransmitterScript : PowerBase
@@ -81,7 +82,7 @@ public class TransmitterScript : PowerBase
         storageScript.PushPower(amount);
     }
 
-    private List<TransmitterScript> AddDestinations(List<GameObject> source)
+    private List<TransmitterScript> AddDestinations(ObservableCollection<GameObject> source)
     {
         List<TransmitterScript> toTransmit = new List<TransmitterScript>();
         foreach (var destination in source)
