@@ -975,6 +975,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6028709754009470984, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
   m_PrefabInstance: {fileID: 38449215}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &47587201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 47587202}
+  - component: {fileID: 47587203}
+  m_Layer: 0
+  m_Name: five
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &47587202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47587201}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590425531}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &47587203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 47587201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 47587201}
+  nextTextSet: {fileID: 0}
+  dialogue:
+    sentences:
+    - "Looks like some houses aren\u2019t powered. Let\u2019s go build another coal
+      plant."
+    - This neighborhood is bigger, you may need to add an additional coal plant.
 --- !u!4 &53509572 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7275677607026634837, guid: 696fc74687ccf40468e8acbe984e9041, type: 3}
@@ -12089,6 +12139,12 @@ MonoBehaviour:
     sentences:
     - Amazing! Now that you know how to build a coal plant, try using another to
       power more houses!
+    - Now we need to build a transformer. A transformer is used to change the voltage
+      of the power from high to low.
+    - "Low voltage means it is used for houses and other places that don\u2019t need
+      large amounts of power."
+    - High voltage means it can be sent over long distances safely and is used for
+      places like hospitals and factories that need large amounts of power.
     - Try to keep all the houses powered for one week!
 --- !u!1001 &615990505
 PrefabInstance:
@@ -12447,17 +12503,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630487417}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 51799899569183671}
-  m_RootOrder: 4
+  m_Father: {fileID: 1983669659}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -312, y: -192}
-  m_SizeDelta: {x: 296.2, y: 41.49}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 108.8108, y: 28.954}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &630487419
 MonoBehaviour:
@@ -12472,7 +12528,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.77100325, g: 0, b: 1, a: 1}
+  m_Color: {r: 0.20392157, g: 0.21568628, b: 0.30980393, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -12481,12 +12537,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 10
+    m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -12677,6 +12733,10 @@ PrefabInstance:
     - target: {fileID: 1100612104740112518, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
       propertyPath: m_Name
       value: Dialogue system
+      objectReference: {fileID: 0}
+    - target: {fileID: 1100612104740112518, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1100612104764740744, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
       propertyPath: st
@@ -13700,6 +13760,55 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6175920360165683689, guid: 5485c0162075dab499e914e9561827b3, type: 3}
   m_PrefabInstance: {fileID: 700048245}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &702533959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 702533960}
+  - component: {fileID: 702533961}
+  m_Layer: 0
+  m_Name: Six
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &702533960
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702533959}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590425531}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &702533961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702533959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 702533959}
+  nextTextSet: {fileID: 0}
+  dialogue:
+    sentences:
+    - The new coal plants have attracted the attention of a Factory and Hospital.
+      We should go power them.
 --- !u!1 &707286903
 GameObject:
   m_ObjectHideFlags: 0
@@ -21238,6 +21347,8 @@ MonoBehaviour:
       need to build the substation and connect the wires!
     - To build a substation, click the dropdown in the lower right side, and click
       "Substation"
+    - To move the camera and view the new neighborhood use the arrow keys to move
+      the camera around and use the scroll wheel to zoom in and out.
     - Once you have done that, click anywhere on the screen to place the building!
 --- !u!1001 &1083343708
 PrefabInstance:
@@ -27528,8 +27639,17 @@ MonoBehaviour:
     - Hey there, my name is Griddy, Griddy the Smart Grid. My job is to help you
       make the best Smart Grid you can possibly make! With our teamwork, we can achieve
       anything!
-    - As you see on the screen, the people are without power. We must restore power
-      to their homes to make them happy. First go connect the coal plant to the houses.
+    - As you see on the screen, the people are without power. Me must restore power
+      to their homes to make them happy. First go connect the substation to the houses.
+    - 'To connect the coal plant to the house you first need power poles and a substation.
+      Power poles help transfer the power from place to place. '
+    - Substations are used to convert the power into a state that is safe to handle.
+    - "To build power poles and substations, click on the drop down and select the
+      \u201Csubstation\u201D and \u201Cpower poles\u201D "
+    - Fantastic! Now all that is needed is building the wires and connecting everything
+      together.
+    - Now just select wires in the drop down and connect wires from the substation
+      to the power poles to finally connect to the houses.
 --- !u!1 &1389003356
 GameObject:
   m_ObjectHideFlags: 0
@@ -32737,6 +32857,8 @@ Transform:
   - {fileID: 1080881550}
   - {fileID: 1015738053}
   - {fileID: 615517264}
+  - {fileID: 47587202}
+  - {fileID: 702533960}
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -40229,6 +40351,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980524919}
   m_CullTransparentMesh: 1
+--- !u!1 &1983669658
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1983669659}
+  - component: {fileID: 1983669662}
+  - component: {fileID: 1983669661}
+  - component: {fileID: 1983669660}
+  m_Layer: 5
+  m_Name: Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1983669659
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983669658}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 630487418}
+  m_Father: {fileID: 51799899569183671}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -314.99997, y: -163.25879}
+  m_SizeDelta: {x: 54.996, y: -59.5276}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1983669660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983669658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 0
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &1983669661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983669658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8352941}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 4f5cae44abb72484a9da4f7a8ced5338, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1983669662
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1983669658}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1985404995
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46407,7 +46632,7 @@ RectTransform:
   - {fileID: 51799899385838254}
   - {fileID: 51799899729922815}
   - {fileID: 51799897918031820}
-  - {fileID: 630487418}
+  - {fileID: 1983669659}
   m_Father: {fileID: 1285866983}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
