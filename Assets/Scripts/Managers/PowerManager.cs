@@ -62,7 +62,7 @@ public class PowerManager : MonoBehaviour
             if (generatorScript.type == type)
             {
                 powerAmountsGenerated[(int) generatorScript.type] +=
-                    (generatorScript.amount * (int) generatorScript.type);
+                    (generatorScript.amount * powerAdjusts[(int) generatorScript.type]);
             }
         }
     }

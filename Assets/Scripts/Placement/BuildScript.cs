@@ -98,7 +98,7 @@ public class BuildScript : MonoBehaviour
                 Debug.Log(origin.transform.tag);
                 RemoveObject(origin);
             }
-            else
+            else if (!upgradeMode)
             {
                 wireObject1 = null;
                 wireObject2 = null;

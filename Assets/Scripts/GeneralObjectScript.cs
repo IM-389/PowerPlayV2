@@ -76,17 +76,17 @@ public class GeneralObjectScript : MonoBehaviour
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);
-        CreateLine(connection);
+        CreateLine(connection, Color.white, 0.1f);
     }
     public void AddHVConnection(GameObject connection)
     {
         hVConnections.Add(connection);
-        CreateLine(connection);
+        CreateLine(connection, Color.white, 0.1f);
     }
     public void AddConsumerConnection(GameObject connection)
     {
         consumerConnections.Add(connection);
-        CreateLine(connection);
+        CreateLine(connection, Color.black, 0.05f);
     }
     public void RemoveConnection(GameObject connection)
     {
@@ -114,7 +114,7 @@ public class GeneralObjectScript : MonoBehaviour
     {
         return (int)volts;
     }
-    public void CreateLine(GameObject connection)
+    public void CreateLine(GameObject connection, Color color, float width)
     {
         Vector3 thisPos = this.transform.position;
         Vector3 connectPos = connection.transform.position;
@@ -130,10 +130,10 @@ public class GeneralObjectScript : MonoBehaviour
         ws.connect1 = this.gameObject;
         ws.connect2 = connection;
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = Color.white;
-        lr.endColor = Color.white;
-        lr.startWidth = .1f;
-        lr.endWidth = .1f;
+        lr.startColor = color;
+        lr.endColor = color;
+        lr.startWidth = width;
+        lr.endWidth = width;
         lr.SetPosition(0, thisPos);
         lr.SetPosition(1, connectPos);
 

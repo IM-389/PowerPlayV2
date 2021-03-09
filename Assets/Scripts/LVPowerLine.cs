@@ -17,7 +17,7 @@ public class LVPowerLine : GeneralObjectScript
                 if (lvConnections.Count < maxLVConnections && buildingGOS.lvConnections.Count < buildingGOS.maxLVConnections)
                 {
                     AddConsumerConnection(building.gameObject);
-                    buildingGOS.AddLVConnection(this.gameObject);
+                    //buildingGOS.AddLVConnection(this.gameObject);
                 }
             }
         }

@@ -12,7 +12,8 @@ public class TimeManager : MonoBehaviour
     //public int minutes = -1, hours, days, years;//This won't wait for the time to pass the very first time it's called, so minus one the minutes.
     public float timeStep = 0.5f;
     public int totalTimeSteps;
-    public int minutes, displayHours, days, hours = 0;
+    public int minutes, displayHours, hours = 0;
+    public int days = 1;
     public bool isDay = true;
     public Text clock;
     public int cash = 0;//gonna be using this to cause houses to make money
@@ -68,7 +69,7 @@ public class TimeManager : MonoBehaviour
         {
             timeStep = (Time.time% 20) * 2;//timeStep + 0.5;//1.9?
             totalTimeSteps++;
-            if (timeStep >= 38)
+            if (timeStep >= 5)
             {
                 hours++;
                 displayHours++;
