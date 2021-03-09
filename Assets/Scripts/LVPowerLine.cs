@@ -24,6 +24,11 @@ public class LVPowerLine : GeneralObjectScript
     }
     private void Start()
     {
+        // Register the list changing to the callback function.
+        hVConnections.CollectionChanged += OnListChanged;
+        lvConnections.CollectionChanged += OnListChanged;
+        consumerConnections.CollectionChanged += OnListChanged;
+        powerNetwork = gameObject.GetComponent<NetworkScript>();
         AutoAddGeneratorConnections();
     }
 }

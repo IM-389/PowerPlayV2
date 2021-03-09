@@ -17,7 +17,8 @@ public class NetworkScript : MonoBehaviour
     public GeneralObjectScript gos;
 
     public bool isManager = true;
-    
+
+    private bool isVisited = false;
     // Start is called before the first frame update
     void Awake()
     {
@@ -61,6 +62,9 @@ public class NetworkScript : MonoBehaviour
                 removedFrom.GetComponent<NetworkScript>().manager.powerGenerated -=
                     gameObject.GetComponent<PowerAmountInfo>().amount;
             }
+
+            isVisited = false;
+            Debug.Log($"Promoting {gameObject.name} to manager!");
             PromoteManager();
         }
     }
@@ -73,7 +77,7 @@ public class NetworkScript : MonoBehaviour
     private void NegotiateManager(NetworkScript otherNetwork)
     {
         NetworkManager otherManager = otherNetwork.manager;
-        if (manager is null || manager.precedenceNumber < otherManager.precedenceNumber)
+        if (manager.precedenceNumber < otherManager.precedenceNumber)
         {
             manager.SetProperties(otherManager);
             otherNetwork.ChangeManager(manager);
@@ -82,6 +86,7 @@ public class NetworkScript : MonoBehaviour
         }
         else if (!otherNetwork.isManager)
         {
+            //Destroy(manager);
             ChangeManager(otherManager);
         }
         
@@ -131,9 +136,16 @@ public class NetworkScript : MonoBehaviour
     /// <returns>True if manager is found, false if not</returns>
     private bool FindManager(NetworkManager networkManager)
     {
+        Debug.Log($"Finding {networkManager.gameObject.name} from {gameObject.name}");
+        isVisited = true;
         if (isManager && manager.Equals(networkManager))
         {
             return true;
+        }
+        
+        if (isVisited)
+        {
+            return false;
         }
         
         List<GameObject> allConnections = gos.GetAllConnections();

@@ -49,7 +49,7 @@ public class GeneralObjectScript : MonoBehaviour
     /// <summary>
     /// Reference to the attached network script
     /// </summary>
-    private NetworkScript powerNetwork;
+    protected NetworkScript powerNetwork;
     
     // Makes premade connections
     private void Start()
@@ -186,10 +186,11 @@ public class GeneralObjectScript : MonoBehaviour
     /// </summary>
     /// <param name="sender"></param>
     /// <param name="args"></param>
-    private void OnListChanged(object sender, NotifyCollectionChangedEventArgs args)
+    protected void OnListChanged(object sender, NotifyCollectionChangedEventArgs args)
     {
         if (args.OldItems is null)
         {
+            Debug.Log(args.NewItems[0]);
             powerNetwork.OnConnected((GameObject) args.NewItems[0]);
         }
         else
