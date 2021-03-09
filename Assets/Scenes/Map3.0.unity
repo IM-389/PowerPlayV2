@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 47587201}
-  nextTextSet: {fileID: 0}
+  nextTextSet: {fileID: 702533959}
   dialogue:
     sentences:
     - "Looks like some houses aren\u2019t powered. Let\u2019s go build another coal
@@ -12134,7 +12134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 615517263}
-  nextTextSet: {fileID: 0}
+  nextTextSet: {fileID: 47587201}
   dialogue:
     sentences:
     - Amazing! Now that you know how to build a coal plant, try using another to
@@ -27670,7 +27670,7 @@ MonoBehaviour:
     - Substations are used to convert the power into a state that is safe to handle.
     - "To build power poles and substations, click on the drop down and select the
       \u201Csubstation\u201D and \u201Cpower poles\u201D "
-    - To place wires,  select wires in the drop down and click the two objects to
+    - To place wires, select wires in the drop down and click the two objects to
       connect. Make sure they both have open connections!
 --- !u!1 &1389003356
 GameObject:

@@ -54,7 +54,7 @@ public class MilestoneFour : MilestoneBase
             // Count the days elapsed
             int daysElapsed = timeManager.days - startDay;
 
-            return daysElapsed >= 7;
+            return daysElapsed >= 2;
         }
 
         return false;
