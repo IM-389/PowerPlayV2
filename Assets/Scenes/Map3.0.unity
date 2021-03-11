@@ -12124,6 +12124,7 @@ MonoBehaviour:
       power more houses!
     - Now we need to build a transformer. A transformer is used to change the voltage
       of the power from high to low.
+    - Building a transformer is just like building all the other buildings.
     - "Low voltage means it is used for houses and other places that don\u2019t need
       large amounts of power."
     - High voltage means it can be sent over long distances safely and is used for
