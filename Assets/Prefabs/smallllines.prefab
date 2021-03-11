@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
   objectDescription: Helps you send Low-Voltage Power a long way.
 --- !u!114 &-357091827175094459

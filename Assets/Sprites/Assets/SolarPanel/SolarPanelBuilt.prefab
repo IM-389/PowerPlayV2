@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
   objectDescription: 
 --- !u!114 &-4469835173496301528
@@ -115,13 +115,15 @@ MonoBehaviour:
   isSubstation: 0
   wireLength: 5
   buildingText: Makes less power. Does not work at night. It makes no dirty air.
-  wireText: 
   cost: 5
+  unRemovable: 0
   maxHVConnections: 1
   maxLVConnections: 0
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &-7172774964437932663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,6 +137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &988902469203978700
 MonoBehaviour:
   m_ObjectHideFlags: 0

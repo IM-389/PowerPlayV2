@@ -5209,7 +5209,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
   objectDescription: People live here. Houses use Low-Voltage Power.
 --- !u!114 &-1264182747367775761

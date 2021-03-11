@@ -157,4 +157,27 @@ public class GeneralObjectScript : MonoBehaviour
 
         wireConnections.Add(connection, myLine);
     }
+
+    /// <summary>
+    /// Get all connections attached to the object
+    /// </summary>
+    /// <returns>A list of all connections</returns>
+    public List<GameObject> GetAllConnections()
+    {
+        List<GameObject> allConnections = new List<GameObject>();
+        allConnections.AddRange(hVConnections);
+        allConnections.AddRange(lvConnections);
+        allConnections.AddRange(consumerConnections);
+
+        return allConnections;
+    }
+
+    /// <summary>
+    /// Get total number of connections an object has
+    /// </summary>
+    /// <returns>The number of connections</returns>
+    public int GetAllConnectionsCount()
+    {
+        return (hVConnections.Count + lvConnections.Count + consumerConnections.Count);
+    }
 }

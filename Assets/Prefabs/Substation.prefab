@@ -206,7 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
   objectDescription: Lets you connect many wires in one spot.
 --- !u!114 &7460058267911771528
