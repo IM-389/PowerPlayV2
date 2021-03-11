@@ -46,7 +46,7 @@ public class UIManager : MonoBehaviour
 
             totalPowerText.text = totalGenerated.ToString();
 
-            moneyText.text = moneyManager.money.ToString();
+            moneyText.text = "$" + moneyManager.money.ToString();
 
             yield return new WaitForSecondsRealtime(0.5f);
         }
