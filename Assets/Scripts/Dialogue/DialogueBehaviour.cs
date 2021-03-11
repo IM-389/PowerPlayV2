@@ -16,7 +16,7 @@ public class DialogueBehaviour : MonoBehaviour
 
     public GameObject dialougePanel;
     public GameObject griddy;
-    private Animator griddyAnim;
+    public Animator griddyAnim;
     void Start()
     {
         //sentences = new List<string>();
@@ -24,7 +24,7 @@ public class DialogueBehaviour : MonoBehaviour
         sc = GameObject.FindObjectOfType<SceneController>();
         st = GameObject.FindObjectOfType<StoryTelling>();
         // Ugly method of getting the correct animator
-        griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
+        //griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     public void StartConvo(Dialogue dialog)
