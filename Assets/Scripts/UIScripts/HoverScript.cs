@@ -89,6 +89,11 @@ public class HoverScript : MonoBehaviour
 
         powerAmtText.text = toShow;
     }
-    
+
+    public void ToggleBuildCircle(bool show)
+    {
+        gos.buildCircle.SetActive(show);
+    }
+
 
 }

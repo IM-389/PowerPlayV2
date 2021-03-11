@@ -16,6 +16,9 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 
+    [Tooltip("Object showing the range of the object when hovered over")]
+    public GameObject buildCircle;
+    
     /// <summary>
     /// Determines whether object is removable or not
     /// </summary>
@@ -44,6 +47,7 @@ public class GeneralObjectScript : MonoBehaviour
     // Makes premade connections
     private void Start()
     {
+        buildCircle.transform.localScale *= wireLength;
         foreach(GameObject connection in preMadeConnections)
         {
             GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
@@ -156,5 +160,28 @@ public class GeneralObjectScript : MonoBehaviour
         col.transform.Rotate(0, 0, angle);
 
         wireConnections.Add(connection, myLine);
+    }
+
+    /// <summary>
+    /// Get all connections attached to the object
+    /// </summary>
+    /// <returns>A list of all connections</returns>
+    public List<GameObject> GetAllConnections()
+    {
+        List<GameObject> allConnections = new List<GameObject>();
+        allConnections.AddRange(hVConnections);
+        allConnections.AddRange(lvConnections);
+        allConnections.AddRange(consumerConnections);
+
+        return allConnections;
+    }
+
+    /// <summary>
+    /// Get total number of connections an object has
+    /// </summary>
+    /// <returns>The number of connections</returns>
+    public int GetAllConnectionsCount()
+    {
+        return (hVConnections.Count + lvConnections.Count + consumerConnections.Count);
     }
 }

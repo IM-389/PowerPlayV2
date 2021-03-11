@@ -67,5 +67,10 @@ public class ConsumerScript : PowerBase
             // Set the flag so other objects can know if this one is consuming
             isCutOff = true;
         }
+
+        if (gos.GetAllConnectionsCount() == 0)
+        {
+            storageScript.powerStored = 0;
+        }
     }
 }

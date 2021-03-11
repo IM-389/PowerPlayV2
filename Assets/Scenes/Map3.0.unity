@@ -600,6 +600,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 670298437390421311, guid: e46913eb949041e45b3eb57c2a6b5d01, type: 3}
   m_PrefabInstance: {fileID: 24118582}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &24230427 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7678258801276838574, guid: c53ec4833c36a9048bbf572513552c83, type: 3}
+  m_PrefabInstance: {fileID: 230756700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &26920111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12725,6 +12730,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 230756702}
     - target: {fileID: 1100612104764740744, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
+      propertyPath: griddyAnim
+      value: 
+      objectReference: {fileID: 24230427}
+    - target: {fileID: 1100612104764740744, guid: 63ae888659458e64989169f72a46e5b2, type: 3}
       propertyPath: dialougePanel
       value: 
       objectReference: {fileID: 1472763687}
@@ -20201,6 +20210,8 @@ MonoBehaviour:
   - {fileID: 51799898853945178}
   totalPowerText: {fileID: 51799897684312195}
   moneyText: {fileID: 51799898548079553}
+  pauseMenu: {fileID: 0}
+  pauseBlocker: {fileID: 0}
 --- !u!114 &1017147110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
@@ -35743,6 +35754,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6175920360165683689, guid: 5485c0162075dab499e914e9561827b3, type: 3}
   m_PrefabInstance: {fileID: 1746306736}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1747820987
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1747820989}
+  - component: {fileID: 1747820988}
+  m_Layer: 0
+  m_Name: PauseBuildBlocker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!61 &1747820988
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747820987}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 68, y: 56.44}
+  m_EdgeRadius: 0
+--- !u!4 &1747820989
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747820987}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1749816701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40448,7 +40516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 4f5cae44abb72484a9da4f7a8ced5338, type: 3}
-  m_Type: 1
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

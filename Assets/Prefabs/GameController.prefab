@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   eventNotification: {fileID: 0}
-  notificationShowTime: 0
+  notificationShowTime: 5
 --- !u!114 &2056792714870349706
 MonoBehaviour:
   m_ObjectHideFlags: 0
