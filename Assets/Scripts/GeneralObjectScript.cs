@@ -16,6 +16,9 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Not used for placing, used for refunding after removal")]
     public int cost;
 
+    [Tooltip("Object showing the range of the object when hovered over")]
+    public GameObject buildCircle;
+    
     /// <summary>
     /// Determines whether object is removable or not
     /// </summary>
@@ -44,6 +47,7 @@ public class GeneralObjectScript : MonoBehaviour
     // Makes premade connections
     private void Start()
     {
+        buildCircle.transform.localScale *= wireLength;
         foreach(GameObject connection in preMadeConnections)
         {
             GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();

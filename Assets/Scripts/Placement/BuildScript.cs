@@ -51,6 +51,11 @@ public class BuildScript : MonoBehaviour
 
     [Tooltip("Text used for displaying information about the selected object")]
     public Text selectedTooltipText;
+
+    /// <summary>
+    /// Cache the object hovered over last frame
+    /// </summary>
+    private HoverScript hoverCache;
     
     // Start is called before the first frame update
     void Start()
@@ -178,7 +183,7 @@ public class BuildScript : MonoBehaviour
         {
             //Debug.Log(hitPt.transform.name);
             hover.UpdateTooltip();
-
+            hover.ToggleBuildCircle(true);
             // If the player clicked on the object
             if (Input.GetMouseButtonDown(0))
             {
@@ -193,8 +198,14 @@ public class BuildScript : MonoBehaviour
         }
         else
         {
+            if (hoverCache != null)
+            {
+                hoverCache.ToggleBuildCircle(false);
+            }
             tooltipPanel.transform.position = new Vector2(1000, 1000);
         }
+
+        hoverCache = hover;
     }
 
     public void CreateLine()
