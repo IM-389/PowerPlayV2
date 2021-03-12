@@ -12,19 +12,16 @@ public class PauseMenuHandler : MonoBehaviour
     // Start is called before the first frame update
     public void HamburgerMenuButton()
     {
-        SoundManager.PlaySound("menu");
         pauseMenuCurtain.SetActive(!pauseMenuCurtain.activeSelf);
     }
 
     public void ResumeGame()
     {
-        SoundManager.PlaySound("menu");
         pauseMenuCurtain.SetActive(false);
     }
 
     public void HelpMenu()
     {
-        SoundManager.PlaySound("menu");
         HelpScreenOne();
     }
 
@@ -50,7 +47,6 @@ public class PauseMenuHandler : MonoBehaviour
 
     public void ExitGame()
     {
-        SoundManager.PlaySound("menu");
         Application.Quit();
     }
 

@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using System;
+using FMOD.Studio;
+
 public class TimeManager : MonoBehaviour
 {
     private int width, height;
@@ -17,6 +18,13 @@ public class TimeManager : MonoBehaviour
     public bool isDay = true;
     public Text clock;
     public int cash = 0;//gonna be using this to cause houses to make money
+
+    //Accesses the FMOD Event
+    [FMODUnity.EventRef]
+    public string backgroundReference;
+    FMOD.Studio.EventInstance backgrounds;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +34,10 @@ public class TimeManager : MonoBehaviour
         Debug.Log("Start happened");
         Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
+
+        // Finding and Starting the Event
+        backgrounds = FMODUnity.RuntimeManager.CreateInstance(backgroundReference);
+        backgrounds.start();
     }
     
     //to increase speed: i'll need a button, and when its clicked, set Time.timeScale to 2F/1.5F
@@ -57,9 +69,8 @@ public class TimeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       //clock.text = "Day " + days + ", " + hours%12 + "A.M";
-       
+        //Changing the music based on TOD
+        backgrounds.setParameterByName("Time Of Day", hours);
     }
 
     
@@ -89,7 +100,7 @@ public class TimeManager : MonoBehaviour
                 if (hours == 12 || hours == 24)
                 {
                     buffer += "Day: " + days + ", 12 ";
-                   if(hours == 24)
+                    if(hours == 24)
                     {
                         buffer += " A.M";
                     }
@@ -107,14 +118,14 @@ public class TimeManager : MonoBehaviour
 
                 else if(hours > 24 || hours <= 11)
                 {
-                   buffer += " A.M";
+                    buffer += " A.M";
                 }
 
                 clock.text = buffer;
                 //Debug.Log("The time is Day");
             }
-          
-           
+
+
             
             yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
