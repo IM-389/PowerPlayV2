@@ -56,6 +56,8 @@ public class BuildScript : MonoBehaviour
     /// Cache the object hovered over last frame
     /// </summary>
     private HoverScript hoverCache;
+
+    private string placeSound = "event:/Sound Effects/Place";
     
     // Start is called before the first frame update
     void Start()
@@ -141,14 +143,14 @@ public class BuildScript : MonoBehaviour
                         Debug.Log(spawnPoint);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
+                        FMODUnity.RuntimeManager.PlayOneShot(placeSound);
                         // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
                         newPos.z = -1;
                         spawned.transform.position = newPos;
-                        SoundManager.PlaySound("place");
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
                         
                     }
-                  
+
                     // Clear the list after its done
                     
                     hitPoints.Clear();
