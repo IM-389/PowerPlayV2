@@ -54,15 +54,14 @@ public class PowerManager : MonoBehaviour
         // Zero the amount being recalculated
         powerAmountsGenerated[(int) type] = 0;
         
-        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
+        GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
 
         foreach (var generator in generators)
         {
-            GeneratorScript generatorScript = generator.GetComponent<GeneratorScript>();
-            if (generatorScript.type == type)
+            if (generator.type == type)
             {
-                powerAmountsGenerated[(int) generatorScript.type] +=
-                    (generatorScript.amount * powerAdjusts[(int) generatorScript.type]);
+                powerAmountsGenerated[(int) generator.type] +=
+                    (generator.amount * powerAdjusts[(int) generator.type]);
             }
         }
     }
