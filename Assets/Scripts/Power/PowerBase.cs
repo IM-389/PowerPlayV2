@@ -30,11 +30,11 @@ public abstract class PowerBase : MonoBehaviour
     /// Reference to the attached GeneralObjectScript. Used for connections
     /// </summary>
     protected GeneralObjectScript gos;
-    
+
     /// <summary>
     /// Get the fixed timestep from the TimeManager
     /// </summary>
-    protected void Start()
+    protected virtual void Start()
     {
         storageScript = gameObject.GetComponent<StorageScript>();
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();

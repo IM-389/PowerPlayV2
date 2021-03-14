@@ -193,6 +193,7 @@ MonoBehaviour:
   dimensions: {x: 2, y: 2}
   cost: 0
   positionOffset: {x: 0, y: 0}
+  buildingName: Hospital
 --- !u!114 &721417663547645832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -232,6 +233,12 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+  consumptionCurve2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   moneyGained: 3
 --- !u!114 &7544618107801901497
 MonoBehaviour:
@@ -263,13 +270,18 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  isSubstation: 0
   wireLength: 3
-  cost: 0
+  buildingText: Uses High-Voltage Power. Doctors need power to help sick people.
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &8182319749470883275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -283,6 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &7824566094599213365
 MonoBehaviour:
   m_ObjectHideFlags: 0

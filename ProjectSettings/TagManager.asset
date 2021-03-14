@@ -19,6 +19,8 @@ TagManager:
   - factory
   - Generator
   - Road
+  - wire
+  - Substation
   layers:
   - Default
   - TransparentFX
@@ -28,7 +30,7 @@ TagManager:
   - UI
   - Background
   - Placeable
-  - 
+  - Wire
   - 
   - 
   - 
@@ -61,4 +63,7 @@ TagManager:
     locked: 0
   - name: Tooltip
     uniqueID: 1944561929
+    locked: 0
+  - name: Griddy
+    uniqueID: 106311279
     locked: 0

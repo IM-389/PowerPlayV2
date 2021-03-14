@@ -12,6 +12,7 @@ public class StorageScript : MonoBehaviour
     
     [Tooltip("Is this storage full? True is yes, false if no")]
     public bool isFull;
+
     /// <summary>
     /// Adds power to the object. Excess power is lost
     /// </summary>
@@ -61,7 +62,7 @@ public class StorageScript : MonoBehaviour
         bool hasFloored = RemovePower(amount);
 
         isFull = false;
-        
+
         // If the value was floored, return the amount that was in before. Otherwise, return the requested amount
         return hasFloored ? currentCache : amount;
     }

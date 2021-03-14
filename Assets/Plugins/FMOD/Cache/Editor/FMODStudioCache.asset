@@ -1,0 +1,1157 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9050885927327290081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-8781314294878092937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-8750680607531537188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Place
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Place
+  guid: c5cc50cb03d77446944c86f7c194cf9d
+  Banks:
+  - {fileID: -6213939869413209431}
+  - {fileID: 2790554312331871089}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &-8536704072957613888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-7891796160873082106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/In Game Background
+  m_EditorClassIdentifier: 
+  Path: event:/Music/In Game Background
+  guid: e71613420eec2740b001bdd8ed21de49
+  Banks:
+  - {fileID: 8989870410384717368}
+  - {fileID: -6480125469547032948}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3581192598233138624}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9431
+--- !u!114 &-7887008350828307185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-7770475385304184783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-6945414340144399061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-6480125469547032948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: PowerPlayV2 Fmod/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637512434632624937
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-6213939869413209431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../PowerPlayV2 Fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637510846510000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-4765070195100143559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Griddy Affirmative
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Griddy Affirmative
+  guid: 24859f9c0fb69d44b78b28404e2b0509
+  Banks:
+  - {fileID: -133698178601427293}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &-4720077059352576520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-4609388544551259064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-4485267805035809073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-4374129437591380743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-3780910794903134803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Griddy Speak
+  m_EditorClassIdentifier: 
+  Path: event:/Griddy Speak
+  guid: bed9ea1927d7b84982d196b8436337dc
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 570
+--- !u!114 &-3604841516065742753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Place
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Place
+  guid: c5cc50cb03d77446944c86f7c194cf9d
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &-3497837781019063296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-3386165354823853970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-3255557207143209018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-1999750347459128178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &-1678892403952434374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../PowerPlayV2 Fmod/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 637510846510000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-1485051429034514087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../PowerPlayV2 Fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637510846510000000
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1206
+  Exists: 1
+--- !u!114 &-1400109028950997474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Menu Background
+  m_EditorClassIdentifier: 
+  Path: event:/Menu Background
+  guid: a639142c02407f45995f957a63a8bf0d
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1085957305487481564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-544782670688514888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-198829782917884605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &-133698178601427293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: PowerPlayV2 Fmod/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 637512434632639945
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 4649623703875398220}
+  - {fileID: 8989870410384717368}
+  - {fileID: -6480125469547032948}
+  - {fileID: -133698178601427293}
+  EditorEvents:
+  - {fileID: 4569509996011322056}
+  - {fileID: 1462032650141833453}
+  - {fileID: 7195795838988257779}
+  - {fileID: -7891796160873082106}
+  - {fileID: -4765070195100143559}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8989870410384717368}
+  StringsBanks:
+  - {fileID: 4649623703875398220}
+  stringsBankWriteTime: 637512434632599945
+  cacheVersion: 6
+--- !u!114 &387394264549468540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1002048823128011849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1460327493229159875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &1462032650141833453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Griddy Speak
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Griddy Speak
+  guid: bed9ea1927d7b84982d196b8436337dc
+  Banks:
+  - {fileID: 8989870410384717368}
+  - {fileID: -133698178601427293}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 570
+--- !u!114 &1494946998765759088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &1587243706709766979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu Background
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu Background
+  guid: a639142c02407f45995f957a63a8bf0d
+  Banks:
+  - {fileID: -6213939869413209431}
+  - {fileID: -1678892403952434374}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &1944285842740318180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &2581968999418110289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &2790554312331871089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../PowerPlayV2 Fmod/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 637510846510000000
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3581192598233138624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &3729033353924663044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
+--- !u!114 &3825383839352693486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &4001223260565772138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &4174091423356274941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/In Game Background
+  m_EditorClassIdentifier: 
+  Path: event:/In Game Background
+  guid: e71613420eec2740b001bdd8ed21de49
+  Banks: []
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3729033353924663044}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9431
+--- !u!114 &4569509996011322056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Menu Background
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Menu Background
+  guid: a639142c02407f45995f957a63a8bf0d
+  Banks:
+  - {fileID: 8989870410384717368}
+  - {fileID: -6480125469547032948}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &4649623703875398220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: PowerPlayV2 Fmod/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 637512434632599945
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 1206
+  Exists: 1
+--- !u!114 &5688242772775817449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Griddy Speak
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Griddy Speak
+  guid: bed9ea1927d7b84982d196b8436337dc
+  Banks:
+  - {fileID: -6213939869413209431}
+  - {fileID: 2790554312331871089}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 570
+--- !u!114 &6880558792403340585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/In Game Background
+  m_EditorClassIdentifier: 
+  Path: event:/Music/In Game Background
+  guid: e71613420eec2740b001bdd8ed21de49
+  Banks:
+  - {fileID: -6213939869413209431}
+  - {fileID: -1678892403952434374}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1460327493229159875}
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 9431
+--- !u!114 &7195795838988257779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Place
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Place
+  guid: c5cc50cb03d77446944c86f7c194cf9d
+  Banks:
+  - {fileID: 8989870410384717368}
+  - {fileID: -133698178601427293}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 500
+--- !u!114 &7238118216994982600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &7427427593287554603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &7722817018535444654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound Effects/Griddy Affirmative
+  m_EditorClassIdentifier: 
+  Path: event:/Sound Effects/Griddy Affirmative
+  guid: 24859f9c0fb69d44b78b28404e2b0509
+  Banks:
+  - {fileID: 2790554312331871089}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 1000
+--- !u!114 &8923238007820693198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &8979420075058459970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
+--- !u!114 &8989870410384717368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: PowerPlayV2 Fmod/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 637512434632584974
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &9080392131134452041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0

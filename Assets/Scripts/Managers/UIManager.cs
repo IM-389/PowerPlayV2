@@ -15,6 +15,11 @@ public class UIManager : MonoBehaviour
 
     [Tooltip("Text for the amount of money the player currently has")]
     public Text moneyText;
+
+    [Tooltip("Reference to the pause menu object")]
+    public GameObject pauseMenu;
+    [Tooltip("Reference to the pause blocker object")]
+    public GameObject pauseBlocker;
     
     private PowerManager powerManager;
 
@@ -34,7 +39,7 @@ public class UIManager : MonoBehaviour
             float totalGenerated = 0;
             for (int i = 0; i < 4; ++i)
             {
-                Debug.Log((PowerManager.POWER_TYPES)i);
+                //Debug.Log((PowerManager.POWER_TYPES)i);
                 powerManager.CalculateAmountsGenerated((PowerManager.POWER_TYPES)i);
             }
 
@@ -46,9 +51,9 @@ public class UIManager : MonoBehaviour
 
             totalPowerText.text = totalGenerated.ToString();
 
-            moneyText.text = moneyManager.money.ToString();
+            moneyText.text = "$" + moneyManager.money.ToString();
 
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSecondsRealtime(0.5f);
         }
     }
 }

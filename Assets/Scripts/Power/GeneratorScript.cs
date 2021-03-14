@@ -1,16 +1,17 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GeneratorScript : PowerBase
 {
 
     [Tooltip("What type of power the generator creates")]
     public PowerManager.POWER_TYPES type;
-
+    
     [Tooltip("How much power is generated per unit time")]
     public float amount;
     private MoneyManager moneymanager;
-    public int moneyGained;
+    [FormerlySerializedAs("moneyGained")] public int upkeep;
     private PowerManager powerManager;
     void Start()
     {
@@ -32,7 +33,7 @@ public class GeneratorScript : PowerBase
 
         for (int i = 0; i < 4; ++i)
         {
-            Debug.Log($"{gameObject.name} type int {(int)type}");
+            //Debug.Log($"{gameObject.name} type int {(int)type}");
             if ((int)type == i)
             {
                 amountModified *= powerManager.powerAdjusts[i];
@@ -43,7 +44,7 @@ public class GeneratorScript : PowerBase
         if (!storageScript.isFull)
         {
             storageScript.powerStored += amountModified;
-            moneymanager.money -= moneyGained;
+            moneymanager.money -= upkeep;
 
             if (moneymanager.money < 0)
             {
