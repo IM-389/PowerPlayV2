@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6028709752267001597}
   - component: {fileID: 6028709752267001596}
   - component: {fileID: 6028709752267001594}
+  - component: {fileID: 200637540377962170}
   m_Layer: 7
   m_Name: ChimneySmoke
   m_TagString: Untagged
@@ -109,7 +110,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028709752267001598}
   m_LocalRotation: {x: -0.6971299, y: 0.118363574, z: -0.1183636, w: 0.6971299}
-  m_LocalPosition: {x: 1.5399991, y: 3.8399994, z: 0}
+  m_LocalPosition: {x: 1.6, y: 3.89, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6028709754269011715}
@@ -1065,21 +1066,30 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.28378296
-          inSlope: 0
-          outSlope: 0
+          value: 0.05405654
+          inSlope: 0.8014348
+          outSlope: 0.8014348
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.3198588
+        - serializedVersion: 3
+          time: 0.8961609
+          value: 0.45945972
+          inSlope: 0.794132
+          outSlope: 0.794132
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
-          value: 1
-          inSlope: 1
-          outSlope: 1
+          value: 0
+          inSlope: 0.5584734
+          outSlope: 0.5584734
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.33333334
+          inWeight: 0.1693812
           outWeight: 0.33333334
         m_PreInfinity: 2
         m_PostInfinity: 2
@@ -1387,7 +1397,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
-        key1: {r: 1, g: 0.995283, b: 0.995283, a: 0}
+        key1: {r: 1, g: 0.995283, b: 0.995283, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1403,8 +1413,8 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 18890
-        atime1: 65535
-        atime2: 0
+        atime1: 56476
+        atime2: 65342
         atime3: 0
         atime4: 0
         atime5: 0
@@ -1412,7 +1422,7 @@ ParticleSystem:
         atime7: 0
         m_Mode: 0
         m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -4853,7 +4863,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 19e57046bfe99e64d869f8f55de720a8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4894,7 +4904,7 @@ ParticleSystemRenderer:
   m_FreeformStretching: 0
   m_RotateWithStretchDirection: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -4910,6 +4920,24 @@ SortingGroup:
   m_SortingLayerID: -815874809
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &200637540377962170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6028709752267001598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outlineMode: 0
+  outlineColor: {r: 1, g: 1, b: 1, a: 1}
+  outlineWidth: 2
+  precomputeOutline: 0
+  bakeKeys: []
+  bakeValues: []
 --- !u!1 &6028709752611108913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,7 +5701,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323866560095056174, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2958126929302945038, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: SizeModule.enabled
