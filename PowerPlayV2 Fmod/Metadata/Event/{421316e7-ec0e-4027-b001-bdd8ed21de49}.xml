@@ -43,7 +43,7 @@
 	</object>
 	<object class="MasterTrack" id="{13ae7b0a-2e81-4d5e-b0dd-455c3afe4b6b}">
 		<relationship name="automationTracks">
-			<destination>{16d5b753-5eaf-4dbd-883f-046d946cac94}</destination>
+			<destination>{9282bb4a-b724-44b2-8bb2-b046f50f968f}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{961af646-10f6-4ab8-b8ce-901595966926}</destination>
@@ -92,7 +92,7 @@
 			<destination>{d58d2a21-5d10-4211-94cc-b7d92c5ffc89}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{16d5b753-5eaf-4dbd-883f-046d946cac94}">
+	<object class="AutomationTrack" id="{9282bb4a-b724-44b2-8bb2-b046f50f968f}">
 		<relationship name="automator">
 			<destination>{9f1a0fe1-ba4a-451f-93e1-4da654026546}</destination>
 		</relationship>
@@ -133,7 +133,7 @@
 			<value>0</value>
 		</property>
 		<property name="length">
-			<value>9.4250000000000007</value>
+			<value>9.4313749999999992</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{207a7dea-d27c-427f-903e-661d00503cbd}</destination>
@@ -180,7 +180,7 @@
 	<object class="MixerBusFader" id="{2df42117-103e-4231-80ab-bafc80c4ef13}" />
 	<object class="AutomationPoint" id="{269bc5fe-5eba-48fe-9adc-196852ccf907}">
 		<property name="position">
-			<value>17</value>
+			<value>18</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -188,7 +188,7 @@
 	</object>
 	<object class="AutomationPoint" id="{5147454d-08a4-419b-a45f-78a58f51340b}">
 		<property name="position">
-			<value>8</value>
+			<value>6</value>
 		</property>
 		<property name="value">
 			<value>0</value>
@@ -212,7 +212,7 @@
 	</object>
 	<object class="AutomationPoint" id="{a07dc19e-4f86-436f-9c58-fe9796b21ae1}">
 		<property name="position">
-			<value>5</value>
+			<value>3</value>
 		</property>
 		<property name="value">
 			<value>-2.5</value>
@@ -220,7 +220,7 @@
 	</object>
 	<object class="AutomationPoint" id="{41d1b9f1-1ef5-4d39-af0a-b2c1e2c9c4c4}">
 		<property name="position">
-			<value>20</value>
+			<value>21</value>
 		</property>
 		<property name="value">
 			<value>-2.5</value>
