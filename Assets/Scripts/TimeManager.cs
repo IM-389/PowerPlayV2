@@ -20,6 +20,7 @@ public class TimeManager : MonoBehaviour
     public int cash = 0;//gonna be using this to cause houses to make money
 
     //Accesses the FMOD Event
+    [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
     public string backgroundReference;
     FMOD.Studio.EventInstance backgrounds;
@@ -82,8 +83,13 @@ public class TimeManager : MonoBehaviour
             totalTimeSteps++;
             if (timeStep >= 5)
             {
-                hours++;
-                displayHours++;
+                minutes += 10;
+                if (minutes == 60)
+                {
+                    hours++;
+                    displayHours++;
+                    minutes = 0;
+                }
                 timeStep -= timeStep;
             }
             if(hours >= 1 && hours <= 25)
@@ -112,7 +118,6 @@ public class TimeManager : MonoBehaviour
 
                 if (hours >= 12 && hours != 24)
                 {
-                        
                     buffer +=  " P.M";
                 }
 
@@ -127,7 +132,7 @@ public class TimeManager : MonoBehaviour
 
 
             
-            yield return new WaitForSeconds(1.0F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
+            yield return new WaitForSeconds(0.35F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
     /*
