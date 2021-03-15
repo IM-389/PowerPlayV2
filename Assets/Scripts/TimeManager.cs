@@ -83,16 +83,15 @@ public class TimeManager : MonoBehaviour
         {
             timeStep = (Time.time% 20) * 2;//timeStep + 0.5;//1.9?
             totalTimeSteps++;
+         
             if (timeStep >= 38)
             {
-                minutes += 10;
-                if (minutes == 60)
-                {
-                    hours++;
-                    displayHours++;
-                    minutes = 0;
-                }
                 timeStep -= timeStep;
+                hours++;
+                displayHours++;
+                //minutes = 0;
+               
+              
             }
             if(hours >= 1 && hours <= 25)
             {
@@ -130,7 +129,10 @@ public class TimeManager : MonoBehaviour
                 }
                 if(hours == 6 || hours == 12 || hours == 16 || hours == 24)
                 {
-                    coinGen.smartCoins++;
+                    if (coinGen != null)
+                    {
+                        coinGen.smartCoins++;
+                    }
                 }
                 if(hours >= 5 || hours <= 18)
                 {

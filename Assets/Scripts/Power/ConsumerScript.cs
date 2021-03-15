@@ -29,7 +29,7 @@ public class ConsumerScript : PowerBase
     private bool isCutOff = false;
     
     private MoneyManager moneymanager;
-    private TimeManager cityApproval;
+    public TimeManager cityApproval;
     public int moneyGained;
     void Start()
     {
@@ -49,18 +49,6 @@ public class ConsumerScript : PowerBase
         Debug.Log("Consume Amount 2:" + consumeAmount2);
         // If there is enough power, consume it
 
-        if (isCutOff)
-        {
-            isConsuming = false;
-        }
-        if(!isConsuming)
-        {
-            if(cityApproval.hours == 25)
-            {
-                cityApproval.cityApproval-=20;//we're gonna hope this works
-            }
-            Debug.Log("City approval should go down at the end of the day");
-        }
         if ((storageScript.powerStored >= consumeAmount))
         {
             storageScript.PullPower(consumeAmount);
@@ -68,13 +56,30 @@ public class ConsumerScript : PowerBase
             isConsuming = true;
             isCutOff = false;
             moneymanager.money += moneyGained;
-            
+
         }
         else
         {
             // Set the flag so other objects can know if this one is consuming
-            isCutOff = true;
+            isCutOff = !isConsuming;
+            isConsuming = !isCutOff;
         }
+
+
+        if (cityApproval != null)
+        {
+            if (cityApproval.hours == 25)
+            {
+                if (!isConsuming)
+                {
+                    cityApproval.cityApproval -= 20;//we're gonna hope this works
+                    Debug.Log("City approval should go down at the end of the day");
+                }
+
+            }
+        }
+        
+       
 
         if (gos.GetAllConnectionsCount() == 0)
         {
