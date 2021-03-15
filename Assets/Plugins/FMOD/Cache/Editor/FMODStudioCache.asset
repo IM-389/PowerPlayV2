@@ -145,11 +145,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-<<<<<<< Updated upstream
   - {fileID: -4720077059352576520}
-=======
-  - {fileID: -7624831722643262429}
->>>>>>> Stashed changes
   MinDistance: 0
   MaxDistance: 0
   Length: 9431
@@ -268,11 +264,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-<<<<<<< Updated upstream
   lastModified: 637510846510000000
-=======
-  lastModified: 637512503760000000
->>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -922,11 +914,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-<<<<<<< Updated upstream
-  lastModified: 637510846510000000
-=======
   lastModified: 637512503760000000
->>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -960,11 +948,7 @@ MonoBehaviour:
   - {fileID: 8989870410384717368}
   StringsBanks:
   - {fileID: 4649623703875398220}
-<<<<<<< Updated upstream
-  stringsBankWriteTime: 637510846510000000
-=======
   stringsBankWriteTime: 637512503760000000
->>>>>>> Stashed changes
   cacheVersion: 6
 --- !u!114 &143846589519920699
 MonoBehaviour:
@@ -1457,16 +1441,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Menu Background/VolumeLevel
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Path: ../PowerPlayV2 Fmod/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 637510846510000000
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &3729033353924663044
-=======
   Name: VolumeLevel
   Min: 0
   Max: 1
@@ -1496,7 +1470,6 @@ MonoBehaviour:
     data2: 0
   Exists: 0
 --- !u!114 &5624903937621918583
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1632,18 +1605,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Menu Background/VolumeLevel
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
-  Path: PowerPlayV2 Fmod/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 637510846510000000
-  LoadResult: 0
-  FileSizes:
-  - Name: Desktop
-    Value: 1206
-  Exists: 1
---- !u!114 &5688242772775817449
-=======
   Name: VolumeLevel
   Min: 0
   Max: 1
@@ -1653,7 +1614,6 @@ MonoBehaviour:
     data2: 0
   Exists: 0
 --- !u!114 &6445412634153781935
->>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1900,11 +1860,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-<<<<<<< Updated upstream
-  lastModified: 637510846510000000
-=======
   lastModified: 637512503760000000
->>>>>>> Stashed changes
   LoadResult: 0
   FileSizes: []
   Exists: 1
