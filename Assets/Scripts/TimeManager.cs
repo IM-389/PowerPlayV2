@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
-
+using Milestones;
 public class TimeManager : MonoBehaviour
 {
     private int width, height;
@@ -14,11 +14,13 @@ public class TimeManager : MonoBehaviour
     public float timeStep = 0.5f;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
+    public int cityApproval = 0;//Note: we've also got this
     public int days = 1;
     public bool isDay = true;
     public Text clock;
     public int cash = 0;//gonna be using this to cause houses to make money
-
+    ConsumerScript isConsuming;
+    MilestoneBase coinGen;
     //Accesses the FMOD Event
     [FMODUnity.EventRef]
     public string backgroundReference;
@@ -80,7 +82,7 @@ public class TimeManager : MonoBehaviour
         {
             timeStep = (Time.time% 20) * 2;//timeStep + 0.5;//1.9?
             totalTimeSteps++;
-            if (timeStep >= 5)
+            if (timeStep >= 38)
             {
                 hours++;
                 displayHours++;
@@ -112,7 +114,7 @@ public class TimeManager : MonoBehaviour
 
                 if (hours >= 12 && hours != 24)
                 {
-                        
+            
                     buffer +=  " P.M";
                 }
 
@@ -120,8 +122,21 @@ public class TimeManager : MonoBehaviour
                 {
                     buffer += " A.M";
                 }
-
-                clock.text = buffer;
+                if(hours == 6 || hours == 12 || hours == 16 || hours == 24)
+                {
+                    coinGen.smartCoins++;
+                }
+                if(hours >= 5 || hours <= 18)
+                {
+                    isDay = true;
+                    Debug.Log("It is daytime");
+                }
+                else
+                {
+                    isDay = false;
+                    Debug.Log("It is night");
+                }
+                clock.text = buffer + isDay;
                 //Debug.Log("The time is Day");
             }
 

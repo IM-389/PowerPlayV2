@@ -20,7 +20,7 @@ public class SunnyDayEvent : EventBase
         if (chance < eventChance)
         {
             Debug.Log("Running Sunny Day!");
-            StartCoroutine(SunnyDay());
+            StartCoroutine(SunnyDay());//this delays sunny day to only happen in the daytime. keep that in mind. windmill break can and will trigger instantly 
         }
     }
 

@@ -29,6 +29,7 @@ public class ConsumerScript : PowerBase
     private bool isCutOff = false;
     
     private MoneyManager moneymanager;
+    private TimeManager cityApproval;
     public int moneyGained;
     void Start()
     {
@@ -42,7 +43,7 @@ public class ConsumerScript : PowerBase
         // TODO: Smooth the transition between values
         //consumeAmount = consumptionCurve[timeManager.hours];
         consumeAmount = consumptionCurve2.Evaluate(timeManager.hours);
-
+        
         Debug.Log(timeManager.hours);
         Debug.Log("Consume Amount 1:" + consumeAmount);
         Debug.Log("Consume Amount 2:" + consumeAmount2);
@@ -52,7 +53,14 @@ public class ConsumerScript : PowerBase
         {
             isConsuming = false;
         }
-        
+        if(!isConsuming)
+        {
+            if(cityApproval.hours == 25)
+            {
+                cityApproval.cityApproval-=20;//we're gonna hope this works
+            }
+            Debug.Log("City approval should go down at the end of the day");
+        }
         if ((storageScript.powerStored >= consumeAmount))
         {
             storageScript.PullPower(consumeAmount);
