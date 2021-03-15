@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GeneratorScript : PowerBase
 {
@@ -10,7 +11,7 @@ public class GeneratorScript : PowerBase
     [Tooltip("How much power is generated per unit time")]
     public float amount;
     private MoneyManager moneymanager;
-    public int moneyGained;
+    [FormerlySerializedAs("moneyGained")] public int upkeep;
     private PowerManager powerManager;
     void Start()
     {
@@ -43,7 +44,7 @@ public class GeneratorScript : PowerBase
         if (!storageScript.isFull)
         {
             storageScript.powerStored += amountModified;
-            moneymanager.money -= moneyGained;
+            moneymanager.money -= upkeep;
 
             if (moneymanager.money < 0)
             {

@@ -12,11 +12,15 @@ public class ConsumerScript : PowerBase
 
     [Tooltip("How the consumption changes over time. Index is hour, value is consumption at that hour")]
     public float[] consumptionCurve = new float[24];
-    
+
+    public AnimationCurve consumptionCurve2;
+
     /// <summary>
     /// How much power to consume, adjusted from the curve
     /// </summary>
     private float consumeAmount;
+
+    private float consumeAmount2;
 
     /// <summary>
     /// If the object is cut off from power. Set to true the tick the object does not have enough power
@@ -36,7 +40,12 @@ public class ConsumerScript : PowerBase
     protected override void Tick()
     {
         // TODO: Smooth the transition between values
-        consumeAmount = consumptionCurve[timeManager.hours];
+        //consumeAmount = consumptionCurve[timeManager.hours];
+        consumeAmount = consumptionCurve2.Evaluate(timeManager.hours);
+
+        Debug.Log(timeManager.hours);
+        Debug.Log("Consume Amount 1:" + consumeAmount);
+        Debug.Log("Consume Amount 2:" + consumeAmount2);
         // If there is enough power, consume it
 
         if (isCutOff)

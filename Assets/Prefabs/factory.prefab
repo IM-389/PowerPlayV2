@@ -193,7 +193,7 @@ MonoBehaviour:
   dimensions: {x: 3, y: 3}
   cost: 0
   positionOffset: {x: 0, y: 0}
-  buildingName: 
+  buildingName: Factory
 --- !u!114 &2590121524529057885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,6 +233,12 @@ MonoBehaviour:
   - 2
   - 1
   - 1
+  consumptionCurve2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   moneyGained: 3
 --- !u!114 &4701993810741548652
 MonoBehaviour:
@@ -249,7 +255,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: Uses High-Voltage Power. People go here to work.
 --- !u!114 &7062987643556779599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,15 +270,18 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  isSubstation: 0
   wireLength: 3
   buildingText: Uses High-Voltage Power. People go here to work.
-  cost: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 1
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &6376666281117401630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +295,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &5000536205628022496
 MonoBehaviour:
   m_ObjectHideFlags: 0

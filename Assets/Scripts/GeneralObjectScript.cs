@@ -9,12 +9,11 @@ public class GeneralObjectScript : MonoBehaviour
     public Voltage volts;
     public bool isGenerator;
     public bool isConsumer;
-    public bool isSubstation;
     public float wireLength;
     public string buildingText;
     //public string wireText;
-    [Tooltip("Not used for placing, used for refunding after removal")]
-    public int cost;
+    [FormerlySerializedAs("cost")] [Tooltip("Not used for placing, used for refunding after removal")]
+    public int refundAmount;
 
     [Tooltip("Object showing the range of the object when hovered over")]
     public GameObject buildCircle;

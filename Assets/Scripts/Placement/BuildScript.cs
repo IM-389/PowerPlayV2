@@ -493,7 +493,7 @@ public class BuildScript : MonoBehaviour
                 
             }
 
-            tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
+            tooltipInfo += $"Cost: {sGos.refundAmount}\nRange: {sGos.wireLength}\n";
             tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
             tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
             
@@ -710,7 +710,7 @@ public class BuildScript : MonoBehaviour
                 gos.RemoveConnection(connection.gameObject);
             }
 
-            moneyManager.money += gos.cost;
+            moneyManager.money += gos.refundAmount;
             Destroy(gos.gameObject);
         }
         else if (origin.transform.CompareTag("wire"))

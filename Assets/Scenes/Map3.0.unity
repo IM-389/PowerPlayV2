@@ -1426,7 +1426,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power all houses for a 2 days
   milestoneName: Rainy Day
-  unlockedObjects:
+  unlockables:
   - {fileID: 1875756834}
   removedFog:
   - {fileID: 1395960459}
@@ -5472,7 +5472,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new substation, and use it to power the new houses
   milestoneName: Branching Out
-  unlockedObjects:
+  unlockables:
   - {fileID: 908999662}
   - {fileID: 827976120}
   - {fileID: 1894055724}
@@ -12126,6 +12126,7 @@ MonoBehaviour:
       power more houses!
     - Now we need to build a transformer. A transformer is used to change the voltage
       of the power from high to low.
+    - Building a transformer is just like building all the other buildings.
     - "Low voltage means it is used for houses and other places that don\u2019t need
       large amounts of power."
     - High voltage means it can be sent over long distances safely and is used for
@@ -14667,7 +14668,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Put down 10 Smart Meters
   milestoneName: Building the Smart Grid
-  unlockedObjects: []
+  unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones: []
@@ -18307,6 +18308,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 87604867}
     - target: {fileID: 2485656953358364938, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
+      propertyPath: upkeep
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485656953358364938, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
       propertyPath: moneyGained
       value: 0
       objectReference: {fileID: 0}
@@ -18614,7 +18619,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new coal plant, and power all the houses
   milestoneName: Powering Up
-  unlockedObjects:
+  unlockables:
   - {fileID: 1411023941}
   - {fileID: 975793930}
   - {fileID: 1955367535}
@@ -26746,6 +26751,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1189657394}
     - target: {fileID: 2485656953358364938, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
+      propertyPath: upkeep
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2485656953358364938, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
       propertyPath: moneyGained
       value: 0
       objectReference: {fileID: 0}
@@ -29854,7 +29863,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Connect 5 houses to a substation
   milestoneName: Basic Connections
-  unlockedObjects:
+  unlockables:
   - {fileID: 1315308270}
   - {fileID: 1244086266}
   - {fileID: 1349084115}
@@ -37101,7 +37110,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Place and connect a second coal generator
   milestoneName: Enter the Smart Grid
-  unlockedObjects: []
+  unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones:
@@ -37290,7 +37299,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power a factory and hospital
   milestoneName: Powering Industry
-  unlockedObjects: []
+  unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones:
@@ -39898,7 +39907,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Ensure all customers have power for X time
   milestoneName: Using the Smart Grid
-  unlockedObjects: []
+  unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones: []
