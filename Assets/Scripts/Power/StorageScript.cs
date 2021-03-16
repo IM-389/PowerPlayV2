@@ -27,9 +27,7 @@ public class StorageScript : MonoBehaviour
             powerStored = maxPower;
             return true;
         }
-
         return false;
-
     }
 
     /// <summary>

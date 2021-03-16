@@ -11,7 +11,7 @@ public class TimeManager : MonoBehaviour
     private GUIStyle labelStyle;
     private string currentTime;
     //public int minutes = -1, hours, days, years;//This won't wait for the time to pass the very first time it's called, so minus one the minutes.
-    public float timeStep = 0.5f;
+    public float timeStep;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
     public int cityApproval = 0;//Note: we've also got this
@@ -81,19 +81,7 @@ public class TimeManager : MonoBehaviour
     {
         while (true)
         {
-            timeStep = (Time.time% 20) * 2;//timeStep + 0.5;//1.9?
-            totalTimeSteps++;
-         
-            if (timeStep >= 38)
-            {
-                timeStep -= timeStep;
-                hours++;
-                displayHours++;
-                //minutes = 0;
-               
-              
-            }
-            if(hours >= 1 && hours <= 25)
+            if (hours >= 1 && hours <= 25)
             {
                 //isDay = true;
                 string buffer = "";
@@ -149,8 +137,17 @@ public class TimeManager : MonoBehaviour
             }
 
 
-            
-            yield return new WaitForSeconds(0.35F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
+            totalTimeSteps++;
+            timeStep++;
+
+            if (timeStep >= 20)
+            {
+                timeStep = 0;
+                hours++;
+                displayHours++;
+            }
+
+            yield return new WaitForSeconds(1F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
     /*
