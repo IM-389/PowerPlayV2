@@ -83,7 +83,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8536704072957613888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +144,29 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &-7944711484496051032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/In Game Background 2
+  m_EditorClassIdentifier: 
+  Path: event:/Music/In Game Background 2
+  guid: da2f04d2d9882345baa9bf2fc65432c5
+  Banks:
+  - {fileID: -6480125469547032948}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 66561
 --- !u!114 &-7891796160873082106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +188,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -6938134527903548691}
+  - {fileID: 1357879454094718788}
   MinDistance: 0
   MaxDistance: 0
   Length: 9431
@@ -228,7 +251,7 @@ MonoBehaviour:
   ID:
     data1: 0
     data2: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-6480125469547032948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,9 +267,29 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 637514235330000000
+  lastModified: 637514482794176797
   LoadResult: 0
   FileSizes: []
+  Exists: 1
+--- !u!114 &-6291839475382758679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu Background/VolumeLevel
+  m_EditorClassIdentifier: 
+  Name: VolumeLevel
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
   Exists: 1
 --- !u!114 &-6213939869413209431
 MonoBehaviour:
@@ -416,6 +459,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 580
+--- !u!114 &-3954887476028035078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-3780910794903134803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -625,6 +688,26 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-1260055326414312967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Menu Background/VolumeLevel
+  m_EditorClassIdentifier: 
+  Name: VolumeLevel
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 0
 --- !u!114 &-1085957305487481564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,7 +783,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 637514404800000000
+  lastModified: 637514482794206799
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -729,12 +812,13 @@ MonoBehaviour:
   - {fileID: -4765070195100143559}
   - {fileID: -4065403526462872601}
   - {fileID: -4045878700921177179}
+  - {fileID: -7944711484496051032}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8989870410384717368}
   StringsBanks:
   - {fileID: 4649623703875398220}
-  stringsBankWriteTime: 637514404800000000
+  stringsBankWriteTime: 637514482794086780
   cacheVersion: 6
 --- !u!114 &387394264549468540
 MonoBehaviour:
@@ -796,6 +880,26 @@ MonoBehaviour:
     data1: 0
     data2: 0
   Exists: 0
+--- !u!114 &1357879454094718788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/In Game Background/Time Of Day
+  m_EditorClassIdentifier: 
+  Name: Time Of Day
+  Min: 0
+  Max: 24
+  Default: 12
+  ID:
+    data1: 0
+    data2: 0
+  Exists: 1
 --- !u!114 &1460327493229159875
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1047,7 +1151,7 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -8603250904915120179}
+  - {fileID: -6291839475382758679}
   MinDistance: 0
   MaxDistance: 0
   Length: 12799
@@ -1066,7 +1170,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637514404800000000
+  lastModified: 637514482794086780
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1306,7 +1410,7 @@ MonoBehaviour:
   Path: PowerPlayV2 Fmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637514235330000000
+  lastModified: 637514482794061779
   LoadResult: 0
   FileSizes: []
   Exists: 1
