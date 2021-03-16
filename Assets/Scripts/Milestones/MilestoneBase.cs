@@ -30,6 +30,12 @@ namespace Milestones
         [Tooltip("What milestone(s) are immediatly after this one")]
         public List<MilestoneBase> nextMilestones = new List<MilestoneBase>();
 
+        [Tooltip("Whether or not we're generating Smart Coins (tm)")]
+        public bool isGeneratingSmartCoins;
+
+        [Tooltip("Smart Coins(tm) value: increments or decrements with different things")]
+        public int smartCoins;
+
         public abstract bool CheckCompleteMilestone();
 
         public virtual void SetCompleteMilestone()
