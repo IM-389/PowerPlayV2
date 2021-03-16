@@ -61,15 +61,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeStep: 0.5
+  timeStep: 0
   totalTimeSteps: 0
   minutes: 0
   displayHours: 0
   hours: 6
+  cityApproval: 0
   days: 0
   isDay: 1
   clock: {fileID: 0}
   cash: 0
+  backgroundReference: 
 --- !u!114 &2056792714870349708
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,6 +6,7 @@ using FMODUnity;
 public class SoundManager : MonoBehaviour
 {
     FMOD.Studio.Bus Master;
+    [Header("Volume Buses")]
     public string masterBus;
     float masterVolume = 1f;
 
@@ -16,6 +17,10 @@ public class SoundManager : MonoBehaviour
     FMOD.Studio.Bus SFX;
     public string sfxBus;
     float sfxVolume = 0.5f;
+
+    [Header("Sound Locations")]
+    [FMODUnity.EventRef]
+    public string buttonPress;
 
 
     // Start is called before the first frame update
@@ -34,17 +39,46 @@ public class SoundManager : MonoBehaviour
         SFX.setVolume(sfxVolume);
     }
 
+    /// <summary>
+    /// Handles the Master Volume for all sounds
+    /// </summary>
+    /// <param name="newVolume"></param>
     public void MasterVolumeLevel (float newVolume)
     {
-        masterVolume = newVolume;
+        masterVolume = newVolume / 100;
     }
+
+    /// <summary>
+    /// Handles the volume level of all music and backgrounds
+    /// </summary>
+    /// <param name="newVolume"></param>
     public void MusicVolumeLevel (float newVolume)
     {
-        musicVolume = newVolume;
+        musicVolume = newVolume / 100;
     }
+
+    /// <summary>
+    /// Handles the volume of all sound effects
+    /// </summary>
+    /// <param name="newVolume"></param>
     public void SFXVolumeLevel (float newVolume)
     {
-        sfxVolume = newVolume;
+        sfxVolume = newVolume / 100;
+    }
+
+    /// <summary>
+    /// Plays a test sound after change in SFX volume
+    /// </summary>
+    public void TestSound()
+    {
         FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Griddy Affirmative");
+    }
+
+    /// <summary>
+    /// Plays the button press sound
+    /// </summary>
+    public void ButtonClick()
+    {
+        RuntimeManager.PlayOneShot(buttonPress);
     }
 }

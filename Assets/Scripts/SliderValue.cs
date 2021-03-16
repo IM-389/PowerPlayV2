@@ -16,7 +16,8 @@ public class SliderValue : MonoBehaviour
 
     public void ShowSliderValue () 
     {
-        string sliderMessage = sliderUI.name + " = " + (Mathf.Round(sliderUI.value * 100));
+        string sliderMessage = sliderUI.name + 
+                            " = " + (Mathf.Round(sliderUI.value)) + "%";
         textSliderValue.text = sliderMessage;
     }     
 }
