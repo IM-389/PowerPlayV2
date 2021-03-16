@@ -58,7 +58,7 @@ public class HoverScript : MonoBehaviour
         tooltipPanel.transform.position = panelPos;
         string toShow = "";
 
-        toShow += storage.objectDescription + "\n";
+        toShow += storage.gameObject.GetComponent<GeneralObjectScript>().buildingText + "\n";
         
         if (gos.isConsumer)
         {

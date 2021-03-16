@@ -56,7 +56,25 @@ public class BuildScript : MonoBehaviour
     /// Cache the object hovered over last frame
     /// </summary>
     private HoverScript hoverCache;
-    
+
+    private TimeManager cityApproval;
+
+    private string placeSound = "event:/Sound Effects/Place";
+
+    public double totalBuildingsPlaced = 0;//increment this no matter what's placed. Divide it by clean and dirty seperately, check if the number is > a certain percentage of the total buildings AFTER a certain milestone.
+
+    public double totalDirtyPowerPlaced = 0;//way im thinkin rn is to just use this variable to increment for coal/other "dirty" sources as opposed to tracking like 3 variables
+
+    public double totalCleanPowerPlaced = 0; //same logic as above
+
+    public double totalCoalPlaced = 0;
+
+    public double totalGasPlaced = 0;
+
+    public double totalSolarPlaced = 0;
+
+    public double totalWindmillPlaced = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -141,14 +159,67 @@ public class BuildScript : MonoBehaviour
                         Debug.Log(spawnPoint);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
+                        FMODUnity.RuntimeManager.PlayOneShot(placeSound);
                         // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
                         newPos.z = -1;
                         spawned.transform.position = newPos;
-                        SoundManager.PlaySound("place");
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
                         
+                        if(selectedBuilding.CompareTag("coal"))  
+                        {
+                            totalBuildingsPlaced++;
+                            totalDirtyPowerPlaced++;
+                            totalCoalPlaced++;
+                            //check if day has finished, like in ConsumerScript, then do calculation for % of dirty vs clean-be sure to tell doug so he can help with milestone part
+                        }
+                        else if(selectedBuilding.CompareTag("gas"))
+                        {
+                            totalBuildingsPlaced++;
+                            totalDirtyPowerPlaced++;
+                            totalGasPlaced++;
+                        }
+                        else if(selectedBuilding.CompareTag("solar"))  
+                        {
+                            totalBuildingsPlaced++;
+                            totalCleanPowerPlaced++;
+                            totalSolarPlaced++;
+                        }
+                        else if(selectedBuilding.CompareTag("turbine"))
+                        {
+                            totalBuildingsPlaced++;
+                            totalCleanPowerPlaced++;
+                            totalWindmillPlaced++;
+                        }
+                        //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
+                        if (cityApproval.hours == 25)
+                        {
+                            if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                            {
+                                cityApproval.cityApproval -= 10;
+                                if(totalCoalPlaced / totalBuildingsPlaced > 0.50)
+                                {
+                                    cityApproval.cityApproval -= 15;
+                                }
+                                else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
+                                {
+                                    cityApproval.cityApproval -= 10;
+                                }
+                            }
+                            if(totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
+                            {
+                                cityApproval.cityApproval += 10;
+                                if(totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                                {
+                                    cityApproval.cityApproval += 15;
+                                }
+                                else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                                {
+                                    cityApproval.cityApproval += 10;
+                                }
+                            }
+                        }
                     }
-                  
+
                     // Clear the list after its done
                     
                     hitPoints.Clear();
@@ -492,7 +563,7 @@ public class BuildScript : MonoBehaviour
                 
             }
 
-            tooltipInfo += $"Cost: {sGos.cost}\nRange: {sGos.wireLength}\n";
+            tooltipInfo += $"Cost: {sGos.refundAmount}\nRange: {sGos.wireLength}\n";
             tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
             tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
             
@@ -709,7 +780,7 @@ public class BuildScript : MonoBehaviour
                 gos.RemoveConnection(connection.gameObject);
             }
 
-            moneyManager.money += gos.cost;
+            moneyManager.money += gos.refundAmount;
             Destroy(gos.gameObject);
         }
         else if (origin.transform.CompareTag("wire"))

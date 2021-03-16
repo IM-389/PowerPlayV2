@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="AudioFile" id="{c068c78b-9ef5-4053-aa0f-6e9cdd3e76f8}">
+		<property name="assetPath">
+			<value>Thunk.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.4830612244897958</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e48e2da-21d7-4120-b34f-08794ca31071}</destination>
+		</relationship>
+	</object>
+</objects>

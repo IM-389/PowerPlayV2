@@ -17,6 +17,11 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject dialougePanel;
     public GameObject griddy;
     public Animator griddyAnim;
+
+    // Reference to location of sound
+    [FMODUnity.EventRef]
+    public string griddyAffirmative;
+
     void Start()
     {
         //sentences = new List<string>();
@@ -31,6 +36,8 @@ public class DialogueBehaviour : MonoBehaviour
     {
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
+
+        FMODUnity.RuntimeManager.PlayOneShot(griddyAffirmative);
 
         sentences = new List<string>();
         sentences.Clear();
