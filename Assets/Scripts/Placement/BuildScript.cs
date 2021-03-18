@@ -75,6 +75,8 @@ public class BuildScript : MonoBehaviour
 
     public double totalWindmillPlaced = 0;
 
+    public bool trackApproval;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -164,8 +166,8 @@ public class BuildScript : MonoBehaviour
                         newPos.z = -1;
                         spawned.transform.position = newPos;
                         moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
-                        
-                        if(selectedBuilding.CompareTag("coal"))  
+
+                        if (selectedBuilding.CompareTag("coal"))
                         {
                             totalBuildingsPlaced++;
                             totalDirtyPowerPlaced++;
@@ -180,45 +182,68 @@ public class BuildScript : MonoBehaviour
                             totalGasPlaced++;
                         }
                         */
-                        else if(selectedBuilding.CompareTag("solar"))  
+                        else if (selectedBuilding.CompareTag("solar"))
                         {
                             totalBuildingsPlaced++;
                             totalCleanPowerPlaced++;
                             totalSolarPlaced++;
                         }
-                        else if(selectedBuilding.CompareTag("turbine"))
+                        else if (selectedBuilding.CompareTag("turbine"))
                         {
                             totalBuildingsPlaced++;
                             totalCleanPowerPlaced++;
                             totalWindmillPlaced++;
                         }
                         //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
-                        if (cityApproval.hours == 25)
+                        if (trackApproval)
                         {
-                            if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                            if (cityApproval.hours == 25)
                             {
-                                cityApproval.cityApproval -= 10;
-                                if(totalCoalPlaced / totalBuildingsPlaced > 0.50)
-                                {
-                                    cityApproval.cityApproval -= 15;
-                                }
-                                /*
-                                else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
+                                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                                 {
                                     cityApproval.cityApproval -= 10;
+                                    if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval -= 15;
+                                    }
+                                    else if (totalCoalPlaced / totalBuildingsPlaced > 0.90)
+                                    {
+                                        cityApproval.cityApproval -= 20;
+                                    }
+                                    /*
+                                    else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval -= 10;
+                                    }
+                                    */
                                 }
-                                */
-                            }
-                            if(totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
-                            {
-                                cityApproval.cityApproval += 10;
-                                if(totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
                                 {
-                                    cityApproval.cityApproval += 15;
+                                    cityApproval.cityApproval -= 20;
                                 }
-                                else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
+                                {
+                                    cityApproval.cityApproval -= 35;
+                                }
+                                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                                 {
                                     cityApproval.cityApproval += 10;
+                                    if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 15;
+                                    }
+                                    else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 10;
+                                    }
+                                }
+                                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
+                                {
+                                    cityApproval.cityApproval += 20;
+                                }
+                                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
+                                {
+                                    cityApproval.cityApproval += 35;
                                 }
                             }
                         }

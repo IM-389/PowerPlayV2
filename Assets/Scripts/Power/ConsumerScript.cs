@@ -24,7 +24,9 @@ public class ConsumerScript : PowerBase
 
     public AnimationCurve consumptionCurve2;
 
-    
+    public int numHousesPowered = 0;
+    public int totalHouses = 0;//this may be wrong. I plan on incrementing it when the player connects to houses, but i will NOT decrement it
+    //if they lose power. that way i can calculate the % of houses powered. 
 
     /// <summary>
     /// How much power to consume, adjusted from the curve
@@ -70,11 +72,14 @@ public class ConsumerScript : PowerBase
             isConsuming = true;
             isCutOff = false;
             moneymanager.money += moneyGained;
-
+            numHousesPowered++;
+            totalHouses++;
         }
         else
         {
             // Set the flag so other objects can know if this one is consuming
+            numHousesPowered--;
+           
             isCutOff = !isConsuming;
             isConsuming = false;
         }
@@ -86,6 +91,7 @@ public class ConsumerScript : PowerBase
             {
                 if (!isConsuming)
                 {
+                    //calc % of houses powered
                     cityApproval.cityApproval -= 20;//we're gonna hope this works
                     Debug.Log("City approval should go down at the end of the day");
                 }
