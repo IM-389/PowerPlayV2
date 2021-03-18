@@ -13,7 +13,9 @@ public class ConsumerScript : PowerBase
     public GameObject alert;
     public GameObject alertArrow;
     public static int consumerOut;
+    public static int housesPowered;
     public bool powerOut = false;
+    public bool powerOn = false;
 
     HoverScript hover;
 
@@ -91,6 +93,8 @@ public class ConsumerScript : PowerBase
             }
         }
         //Debug.Log(gos.connected && !isConsuming);
+
+        // Adds to Power out if the consumer is connected and not consuming power
         if (gos.connected && !isConsuming)
         {
             if (!powerOut)
@@ -109,6 +113,24 @@ public class ConsumerScript : PowerBase
                 powerOut = false;
             }
         }
+        // Tracks if a house is being powered on or not
+        if (isConsuming)
+        {
+            if (!powerOn)
+            {
+                housesPowered++;
+                powerOn = true;
+            }
+        }
+        else
+        {
+            if (powerOn)
+            {
+                housesPowered--;
+                powerOn = false;
+            }
+        }
+
         if (hover.isSmart)
         {
             alertArrow.SetActive(powerOut);
@@ -121,7 +143,8 @@ public class ConsumerScript : PowerBase
         {
             alert.SetActive(false);
         }
-        Debug.Log(consumerOut);
+        //Debug.Log(consumerOut);
+        Debug.Log(housesPowered);
        
 
         if (gos.GetAllConnectionsCount() == 0)
