@@ -1,0 +1,83 @@
+{
+  "Questions": [
+    {
+      "Question": "Power plants use high and low voltage wires to get power to your house. What is the purpose of high voltage wires?\n",
+      "Answers": [
+        "To power factories/hospitals and to transfer power over long distances",
+        "To power homes and to transfer power over long distances",
+        "High voltage means everything is faster",
+        "High voltage isn’t used for anything"
+      ],
+      "Correct": 0
+    },
+    {
+      "Question": "The purpose of a transformer is to safely turn the power up in voltage or down in voltage so it can be used correctly?\n",
+      "Answers": [
+        "True",
+        "False"
+      ],
+      "Correct": 0
+    },
+    {
+      "Question": "Coal power plants add a lot of CO2 and other harmful pollutants into the atmosphere. As an alternative, which type of power plant is the most environmentally friendly?\n",
+      "Answers": [
+        "Wind",
+        "Solar",
+        "Water",
+        "Nuclear"
+      ],
+      "Correct": 3
+    },
+    {
+      "Question": "TBD\n",
+      "Answers": [
+        "TBD",
+        "TBD",
+        "TBD",
+        "TBD"
+      ],
+      "Correct": 1
+    },
+    {
+      "Question": "A key feature of the Smart Grid is Smart Meters, these stand out from traditional meters in which way(s)?\n",
+      "Answers": [
+        "Smart Meters help the grid tell when a place needs more or less power",
+        "Smart Meters can help tell when and where a blackout is occuring",
+        "Smart Meters display how much power a house or other building needs",
+        "All of the above"
+      ],
+      "Correct": 3
+    },
+    {
+      "Question": "Factories and hospitals use a different type of voltage to be powered as they use far more energy than homes do. What type of voltage does the Smart Grid need to send to these places?\n",
+      "Answers": [
+        "High Voltage",
+        "Low Voltage"
+      ],
+      "Correct": 0
+    },
+    {
+      "Question": "The Smart Grid helps out in a lot of ways, for example the Smart Grid can tell when a home needs more or less power, can detect where and when a house lost power, and can be more efficient than the traditional grid.\n",
+      "Answers": [
+        "True",
+        "False"
+      ],
+      "Correct": 0
+    },
+    {
+      "Question": "TBD\n",
+      "Answers": [
+        "TBD",
+        "TBD"
+      ],
+      "Correct": 0
+    },
+    {
+      "Question": "END\n",
+      "Answers": [
+        "END"
+      ],
+      "Correct": 0
+    }
+  ]
+}

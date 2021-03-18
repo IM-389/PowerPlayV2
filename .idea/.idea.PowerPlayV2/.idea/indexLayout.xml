@@ -25,9 +25,11 @@
       <Path>.git</Path>
       <Path>.idea</Path>
       <Path>.vs</Path>
+      <Path>.vscode</Path>
       <Path>App</Path>
       <Path>Library</Path>
       <Path>Logs</Path>
+      <Path>PowerPlayV2 Fmod</Path>
       <Path>Temp</Path>
       <Path>UserSettings</Path>
       <Path>obj</Path>
