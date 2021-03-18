@@ -622,6 +622,8 @@ MonoBehaviour:
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
   buttonPress: event:/Sound Effects/Button Press
+  quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
+  quizNegative: event:/Sound Effects/Griddy Negative
 --- !u!4 &136930138
 Transform:
   m_ObjectHideFlags: 0
@@ -2385,6 +2387,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: HousePref
       objectReference: {fileID: 0}
+    - target: {fileID: 6028709754009470987, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6028709754269011712, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6028709754269011713, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2627,6 +2637,10 @@ PrefabInstance:
     - target: {fileID: 8061530428792904579, guid: e46913eb949041e45b3eb57c2a6b5d01, type: 3}
       propertyPath: m_Name
       value: TreeLayout1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8061530428792904579, guid: e46913eb949041e45b3eb57c2a6b5d01, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e46913eb949041e45b3eb57c2a6b5d01, type: 3}
@@ -3552,6 +3566,10 @@ PrefabInstance:
     - target: {fileID: 666599633324337563, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
       propertyPath: m_Parameters.widthMultiplier
       value: 2.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2103043246350211260, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3842447526435992641, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
       propertyPath: m_Parameters.widthMultiplier
@@ -5235,7 +5253,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4309855078864674158, guid: c4bb5ead35b64c243a70d6ded3b1e36e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.557997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4309855078864674158, guid: c4bb5ead35b64c243a70d6ded3b1e36e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5268,6 +5286,10 @@ PrefabInstance:
     - target: {fileID: 4432021125689880400, guid: c4bb5ead35b64c243a70d6ded3b1e36e, type: 3}
       propertyPath: m_Name
       value: CloudParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4432021125689880400, guid: c4bb5ead35b64c243a70d6ded3b1e36e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4bb5ead35b64c243a70d6ded3b1e36e, type: 3}
