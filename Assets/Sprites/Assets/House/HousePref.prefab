@@ -5279,6 +5279,7 @@ MonoBehaviour:
   alert: {fileID: 0}
   alertArrow: {fileID: 2067710383698671812}
   powerOut: 0
+  powerOn: 0
   consumptionCurve:
   - 1
   - 1
@@ -5364,6 +5365,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 1
     m_RotationOrder: 4
+  numHousesPowered: 0
+  totalHouses: 0
   cityApproval: {fileID: 0}
   moneyGained: 1
 --- !u!114 &-1264574402197089311
@@ -5783,7 +5786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323866560095056174, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2958126929302945038, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: SizeModule.enabled
