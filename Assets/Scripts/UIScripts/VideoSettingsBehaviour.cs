@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,7 +14,9 @@ public class VideoSettingsBehaviour : MonoBehaviour
     [Tooltip("Toggle used for detecting fullscreen status")]
     public Toggle fullscreenToggle;
     
-    private Resolution[] resolutions;
+    public Resolution[] resolutions;
+
+    private Dictionary<int, int> resolutionIndexMap = new Dictionary<int, int>();
     
     // Start is called before the first frame update
     void Start()
@@ -22,21 +25,28 @@ public class VideoSettingsBehaviour : MonoBehaviour
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
         int currentResIndex = 0;
-
+        int resMapping = 0;
+        
         for (int i = 0; i < resolutions.Length; ++i)
         {
             string option = $"{resolutions[i].width} x {resolutions[i].height}";
-            options.Add(option);
+            if (!options.Contains(option))
+            {
+                options.Add(option);
+                resolutionIndexMap.Add(resMapping, i);
+                ++resMapping;
+            }
+
             if (resolutions[i].width == Screen.currentResolution.width 
                 && resolutions[i].height == Screen.currentResolution.height)
             {
                 currentResIndex = i;
             }
-            
-            resolutionSelect.AddOptions(options);
-            resolutionSelect.RefreshShownValue();
-            LoadSettings(currentResIndex);
         }
+        
+        resolutionSelect.AddOptions(options);
+        resolutionSelect.RefreshShownValue();
+        LoadSettings(currentResIndex);
     }
 
     public void SetFullscreen(bool isFullscreen)
@@ -46,7 +56,7 @@ public class VideoSettingsBehaviour : MonoBehaviour
 
     public void SetResolution(int index)
     {
-        Resolution resolution = resolutions[resolutionSelect.value];
+        Resolution resolution = resolutions[resolutionIndexMap[resolutionSelect.value]];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
