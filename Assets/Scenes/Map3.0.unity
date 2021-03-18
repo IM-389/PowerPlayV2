@@ -4572,7 +4572,7 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 318847600}
+  m_GameObject: {fileID: 390257740}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -5809,22 +5809,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 696fc74687ccf40468e8acbe984e9041, type: 3}
---- !u!1 &318847600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 243944404}
-  m_Layer: 0
-  m_Name: Recovery GameObject (243944404)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1001 &318888676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7000,6 +6984,22 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6175920360165683689, guid: 5485c0162075dab499e914e9561827b3, type: 3}
   m_PrefabInstance: {fileID: 389487668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &390257740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 243944404}
+  m_Layer: 0
+  m_Name: Recovery GameObject (243944404)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1001 &390772500
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21607,7 +21607,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1017147112}
-  soundManager: {fileID: 1147460736}
   questionsList: []
   currentQuestion:
     Question: 
@@ -24438,7 +24437,7 @@ GameObject:
   - component: {fileID: 1147460737}
   - component: {fileID: 1147460736}
   m_Layer: 0
-  m_Name: SoundManager
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24460,8 +24459,6 @@ MonoBehaviour:
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
   buttonPress: event:/Sound Effects/Button Press
-  quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
-  quizNegative: event:/Sound Effects/Griddy Negative
 --- !u!4 &1147460737
 Transform:
   m_ObjectHideFlags: 0
@@ -29726,8 +29723,6 @@ MonoBehaviour:
     - Substations are used to convert the power into a state that is safe to handle.
     - "To build power poles and substations, click on the drop down and select the
       \u201Csubstation\u201D and \u201Cpower poles\u201D "
-    - To place wires, select wires in the drop down and click the two objects to
-      connect. Make sure they both have open connections!
 --- !u!1 &1389003356
 GameObject:
   m_ObjectHideFlags: 0
@@ -51360,10 +51355,6 @@ PrefabInstance:
     - target: {fileID: 2056792715769432564, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: m_Name
       value: GameController
-      objectReference: {fileID: 0}
-    - target: {fileID: 2056792715769432564, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
