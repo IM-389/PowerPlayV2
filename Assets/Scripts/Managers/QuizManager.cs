@@ -13,7 +13,7 @@ public class QuizManager : MonoBehaviour
 
     private QuestionContainer questions;
 
-    private List<QuestionInfo> questionsList;
+    private List<QuestionInfo> questionsList = new List<QuestionInfo>();
 
     [Tooltip("The current question being asked")]
     public QuestionInfo currentQuestion;
@@ -23,6 +23,9 @@ public class QuizManager : MonoBehaviour
 
     [Tooltip("Where the answers to the question get chosen")]
     public Dropdown answerChoices;
+
+    [Tooltip("Reference to the quiz panel")]
+    public GameObject quizPanel;
     
     /// <summary>
     /// How many questions have been asked
@@ -36,6 +39,9 @@ public class QuizManager : MonoBehaviour
     {
         TextAsset questionData = Resources.Load<TextAsset>("Quiz/questions");
         questions = JsonUtility.FromJson<QuestionContainer>(questionData.text);
+
+        questionsList.AddRange(questions.Questions);
+
         //Debug.Log(questionsList.Count);
     }
     
@@ -87,6 +93,7 @@ public class QuizManager : MonoBehaviour
     
     public QuestionInfo NextQuestion()
     {
+        quizPanel.SetActive(true);
         QuestionInfo question = GetQuestion(questionsAsked);
         UpdateQuiz(question);
         ++questionsAsked;
@@ -97,4 +104,23 @@ public class QuizManager : MonoBehaviour
     {
         return answer == currentQuestion.Correct;
     }
+
+    public void ConfirmSelection()
+    {
+        string result = "";
+
+        if (CheckAnswer(answerChoices.value))
+        {
+            result += "Correct, the answer is ";
+        }
+        else
+        {
+            result += "Incorrect, the answer was ";
+        }
+
+        result += currentQuestion.Answers[currentQuestion.Correct];
+
+        questionText.text = result;
+    }
+    
 }
