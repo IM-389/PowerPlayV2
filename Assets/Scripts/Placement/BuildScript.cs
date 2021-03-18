@@ -357,6 +357,7 @@ public class BuildScript : MonoBehaviour
         dropdownOptions.Add("Upgrade Mode");
         dropdownOptions.Add("Removal Mode");
         selection.AddOptions(dropdownOptions);
+        selection.RefreshShownValue();
     }
     
     public void SelectUpgradeMode()
