@@ -21607,6 +21607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1017147112}
+  soundManager: {fileID: 1147460736}
   questionsList: []
   currentQuestion:
     Question: 
@@ -24437,7 +24438,7 @@ GameObject:
   - component: {fileID: 1147460737}
   - component: {fileID: 1147460736}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SoundManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24459,6 +24460,8 @@ MonoBehaviour:
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
   buttonPress: event:/Sound Effects/Button Press
+  quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
+  quizNegative: event:/Sound Effects/Griddy Negative
 --- !u!4 &1147460737
 Transform:
   m_ObjectHideFlags: 0
