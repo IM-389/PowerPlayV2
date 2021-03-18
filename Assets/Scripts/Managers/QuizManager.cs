@@ -10,7 +10,8 @@ public class QuizManager : MonoBehaviour
 {
     [Tooltip("Reference to the GameManager")]
     public GameManager gameManager;
-
+    [Tooltip("Reference to the SoundManager")]
+    public SoundManager soundManager;
     private QuestionContainer questions;
 
     public List<QuestionInfo> questionsList = new List<QuestionInfo>();
@@ -112,10 +113,12 @@ public class QuizManager : MonoBehaviour
         if (CheckAnswer(answerChoices.value))
         {
             result += "Correct, the answer is ";
+            FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizAffirmative);
         }
         else
         {
             result += "Incorrect, the answer was ";
+            FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizNegative);
         }
 
         result += currentQuestion.Answers[currentQuestion.Correct];
