@@ -13,7 +13,7 @@ public class QuizManager : MonoBehaviour
 
     private QuestionContainer questions;
 
-    private List<QuestionInfo> questionsList = new List<QuestionInfo>();
+    public List<QuestionInfo> questionsList = new List<QuestionInfo>();
 
     [Tooltip("The current question being asked")]
     public QuestionInfo currentQuestion;
@@ -94,7 +94,7 @@ public class QuizManager : MonoBehaviour
     public QuestionInfo NextQuestion()
     {
         quizPanel.SetActive(true);
-        QuestionInfo question = GetQuestion(questionsAsked);
+        QuestionInfo question = GetQuestion(0);
         UpdateQuiz(question);
         ++questionsAsked;
         return question;
