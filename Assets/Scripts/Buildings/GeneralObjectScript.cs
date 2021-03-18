@@ -11,6 +11,7 @@ public class GeneralObjectScript : MonoBehaviour
     public bool isConsumer;
     public float wireLength;
     public string buildingText;
+    public bool connected = false;
     //public string wireText;
     [FormerlySerializedAs("cost")] [Tooltip("Not used for placing, used for refunding after removal")]
     public int refundAmount;
@@ -79,16 +80,19 @@ public class GeneralObjectScript : MonoBehaviour
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);
+        connected = true;
         CreateLine(connection, Color.white, 0.1f);
     }
     public void AddHVConnection(GameObject connection)
     {
         hVConnections.Add(connection);
+        connected = true;
         CreateLine(connection, Color.white, 0.1f);
     }
     public void AddConsumerConnection(GameObject connection)
     {
         consumerConnections.Add(connection);
+        connected = true;
         CreateLine(connection, Color.black, 0.05f);
     }
     public void RemoveConnection(GameObject connection)

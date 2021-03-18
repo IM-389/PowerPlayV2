@@ -172,12 +172,14 @@ public class BuildScript : MonoBehaviour
                             totalCoalPlaced++;
                             //check if day has finished, like in ConsumerScript, then do calculation for % of dirty vs clean-be sure to tell doug so he can help with milestone part
                         }
+                        /*
                         else if(selectedBuilding.CompareTag("gas"))
                         {
                             totalBuildingsPlaced++;
                             totalDirtyPowerPlaced++;
                             totalGasPlaced++;
                         }
+                        */
                         else if(selectedBuilding.CompareTag("solar"))  
                         {
                             totalBuildingsPlaced++;
@@ -200,10 +202,12 @@ public class BuildScript : MonoBehaviour
                                 {
                                     cityApproval.cityApproval -= 15;
                                 }
+                                /*
                                 else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
                                 {
                                     cityApproval.cityApproval -= 10;
                                 }
+                                */
                             }
                             if(totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                             {

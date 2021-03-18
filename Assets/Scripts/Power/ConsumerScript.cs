@@ -10,10 +10,21 @@ public class ConsumerScript : PowerBase
     [Tooltip("Is the object currently gaining power. True if yes, false if no")]
     public bool isPowered;
 
+    public GameObject alert;
+    public GameObject alertArrow;
+    public static int consumerOut;
+    public static int housesPowered;
+    public bool powerOut = false;
+    public bool powerOn = false;
+
+    HoverScript hover;
+
     [Tooltip("How the consumption changes over time. Index is hour, value is consumption at that hour")]
     public float[] consumptionCurve = new float[24];
 
     public AnimationCurve consumptionCurve2;
+
+    
 
     /// <summary>
     /// How much power to consume, adjusted from the curve
@@ -34,19 +45,22 @@ public class ConsumerScript : PowerBase
     void Start()
     {
         base.Start();
+        hover = GetComponent<HoverScript>();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
+        alert.SetActive(false);
     }
     
     // TODO: Fully implement
     protected override void Tick()
     {
+        
         // TODO: Smooth the transition between values
         //consumeAmount = consumptionCurve[timeManager.hours];
         consumeAmount = consumptionCurve2.Evaluate(timeManager.hours);
         
-        Debug.Log(timeManager.hours);
-        Debug.Log("Consume Amount 1:" + consumeAmount);
-        Debug.Log("Consume Amount 2:" + consumeAmount2);
+        //Debug.Log(timeManager.hours);
+        //Debug.Log("Consume Amount 1:" + consumeAmount);
+        //Debug.Log("Consume Amount 2:" + consumeAmount2);
         // If there is enough power, consume it
 
         if ((storageScript.powerStored >= consumeAmount))
@@ -62,7 +76,7 @@ public class ConsumerScript : PowerBase
         {
             // Set the flag so other objects can know if this one is consuming
             isCutOff = !isConsuming;
-            isConsuming = !isCutOff;
+            isConsuming = false;
         }
 
 
@@ -78,7 +92,59 @@ public class ConsumerScript : PowerBase
 
             }
         }
-        
+        //Debug.Log(gos.connected && !isConsuming);
+
+        // Adds to Power out if the consumer is connected and not consuming power
+        if (gos.connected && !isConsuming)
+        {
+            if (!powerOut)
+            {
+                //Debug.Log("This is happening");
+                consumerOut++;
+                powerOut = true;
+                
+            }
+        }
+        else
+        {
+            if (powerOut)
+            {
+                consumerOut--;
+                powerOut = false;
+            }
+        }
+        // Tracks if a house is being powered on or not
+        if (isConsuming)
+        {
+            if (!powerOn)
+            {
+                housesPowered++;
+                powerOn = true;
+            }
+        }
+        else
+        {
+            if (powerOn)
+            {
+                housesPowered--;
+                powerOn = false;
+            }
+        }
+
+        if (hover.isSmart)
+        {
+            alertArrow.SetActive(powerOut);
+        }
+        if (consumerOut > 0)
+        {
+            alert.SetActive(true);
+        }
+        else
+        {
+            alert.SetActive(false);
+        }
+        //Debug.Log(consumerOut);
+        Debug.Log(housesPowered);
        
 
         if (gos.GetAllConnectionsCount() == 0)
