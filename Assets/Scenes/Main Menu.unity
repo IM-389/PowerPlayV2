@@ -2409,7 +2409,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5367434403379632313, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
+    - {fileID: -1488912352967434167, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
+    - {fileID: -8993503109168893168, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
 --- !u!1 &1516455225
 GameObject:
@@ -3609,7 +3612,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5589047734585162851, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
+    - {fileID: 2103043246350211260, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
 --- !u!1001 &5557490422880787423
 PrefabInstance:
