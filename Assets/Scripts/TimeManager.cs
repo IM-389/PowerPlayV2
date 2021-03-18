@@ -18,6 +18,7 @@ public class TimeManager : MonoBehaviour
     public int days = 1;
     public bool isDay = true;
     public Text clock;
+    public Text citySat;
     public int cash = 0;//gonna be using this to cause houses to make money
     ConsumerScript isConsuming;
     MilestoneBase coinGen;
@@ -74,6 +75,7 @@ public class TimeManager : MonoBehaviour
     {
         //Changing the music based on TOD
         backgrounds.setParameterByName("Time Of Day", hours);
+        citySat.text = "City Satisfaction: " + cityApproval;
     }
 
     
