@@ -23,6 +23,9 @@ public class MilestoneManager : MonoBehaviour
 
     [Tooltip("Object for Griddy")]
     public GameObject griddy;
+
+    [Tooltip("Reference to the QuizManager")]
+    public QuizManager quizManager;
     
     /// <summary>
     /// Sets the data for the first milestone
@@ -59,6 +62,11 @@ public class MilestoneManager : MonoBehaviour
                 toRemove.Add(i);
                 
                 griddy.SetActive(true);
+                if (currentMilestones[i].hasQuestion)
+                {
+                    quizManager.StartQuiz();
+                }
+
                 dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
                 dialouge.TriggerDialogue();
             }

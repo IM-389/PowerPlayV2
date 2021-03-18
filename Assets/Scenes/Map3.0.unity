@@ -1013,7 +1013,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590425531}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &47587203
 MonoBehaviour:
@@ -1413,7 +1413,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &80196500
 MonoBehaviour:
@@ -1430,6 +1430,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power all houses for a 2 days
   milestoneName: Rainy Day
+  hasQuestion: 1
   unlockables:
   - {fileID: 1875756834}
   removedFog:
@@ -1643,6 +1644,7 @@ Transform:
   m_LocalPosition: {x: -2.531316, y: 1.7541244, z: -1.6677682}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1576661842}
   - {fileID: 1477115567}
   - {fileID: 305982801}
   - {fileID: 924613855}
@@ -5461,7 +5463,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &305982802
 MonoBehaviour:
@@ -5478,6 +5480,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new substation, and use it to power the new houses
   milestoneName: Branching Out
+  hasQuestion: 1
   unlockables:
   - {fileID: 908999662}
   - {fileID: 827976120}
@@ -12165,7 +12168,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590425531}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &615517265
 MonoBehaviour:
@@ -13880,7 +13883,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590425531}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &702533961
 MonoBehaviour:
@@ -14716,7 +14719,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &739590574
 MonoBehaviour:
@@ -14733,6 +14736,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Put down 10 Smart Meters
   milestoneName: Building the Smart Grid
+  hasQuestion: 1
   unlockables: []
   removedFog: []
   newBuildings: []
@@ -18669,7 +18673,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &924613856
 MonoBehaviour:
@@ -18686,6 +18690,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new coal plant, and power all the houses
   milestoneName: Powering Up
+  hasQuestion: 1
   unlockables:
   - {fileID: 1411023941}
   - {fileID: 975793930}
@@ -20301,7 +20306,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590425531}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1015738054
 MonoBehaviour:
@@ -20368,6 +20373,26 @@ MonoBehaviour:
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
   buttonPress: event:/Sound Effects/Button Press
+--- !u!114 &1017147107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017147104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cf7a385c6e7994c85a8b561c121f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 1017147112}
+  currentQuestion:
+    Question: 
+    Answers: []
+    Correct: 0
+  questionText: {fileID: 0}
+  answerChoices: {fileID: 0}
+  quizPoints: 10
 --- !u!114 &1017147110 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
@@ -20377,6 +20402,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3e9ff4dfba1f614eacaf2c3f867a83a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1017147112 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2056792715769432562, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+  m_PrefabInstance: {fileID: 3423361747713739384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017147104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba41189925cb5e46ae5aee39f386992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1017438975
@@ -21505,7 +21541,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590425531}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1080881551
 MonoBehaviour:
@@ -27832,7 +27868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 1387709552}
-  nextTextSet: {fileID: 1080881549}
+  nextTextSet: {fileID: 1980704564}
   dialogue:
     sentences:
     - Hey there, my name is Griddy, Griddy the Smart Grid. My job is to help you
@@ -29924,7 +29960,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1477115568
 MonoBehaviour:
@@ -29941,6 +29977,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Connect 5 houses to a substation
   milestoneName: Basic Connections
+  hasQuestion: 1
   unlockables:
   - {fileID: 1315308270}
   - {fileID: 1244086266}
@@ -32555,6 +32592,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8850016391901818330, guid: 7b843dda8b26fb44a966547b114adddc, type: 3}
   m_PrefabInstance: {fileID: 1574776982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1576661841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1576661842}
+  - component: {fileID: 1576661843}
+  m_Layer: 0
+  m_Name: MilestoneOneHalf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1576661842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576661841}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 86027660}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1576661843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576661841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 674c72ad9f87497f9e7fdaca0c35aa33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Connect 5 houses to a substation
+  milestoneName: Basic Connections
+  hasQuestion: 0
+  unlockables: []
+  removedFog: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 1477115568}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!1 &1577444440
 GameObject:
   m_ObjectHideFlags: 0
@@ -33071,6 +33162,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1387709553}
+  - {fileID: 1980704565}
   - {fileID: 1080881550}
   - {fileID: 1015738053}
   - {fileID: 615517264}
@@ -37191,7 +37283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1826401896
 MonoBehaviour:
@@ -37208,6 +37300,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Place and connect a second coal generator
   milestoneName: Enter the Smart Grid
+  hasQuestion: 1
   unlockables: []
   removedFog: []
   newBuildings: []
@@ -37382,7 +37475,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1848588761
 MonoBehaviour:
@@ -37399,6 +37492,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power a factory and hospital
   milestoneName: Powering Industry
+  hasQuestion: 1
   unlockables: []
   removedFog: []
   newBuildings: []
@@ -39992,7 +40086,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 86027660}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1960368051
 MonoBehaviour:
@@ -40009,6 +40103,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Ensure all customers have power for X time
   milestoneName: Using the Smart Grid
+  hasQuestion: 1
   unlockables: []
   removedFog: []
   newBuildings: []
@@ -40606,6 +40701,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980524919}
   m_CullTransparentMesh: 1
+--- !u!1 &1980704564
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980704565}
+  - component: {fileID: 1980704566}
+  m_Layer: 0
+  m_Name: one+half
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1980704565
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980704564}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1590425531}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1980704566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980704564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 1980704564}
+  nextTextSet: {fileID: 1080881549}
+  dialogue:
+    sentences:
+    - Fantastic! Now all that is needed is building the wires and connecting everything
+      together.
+    - Now just select wires in the drop down and connect wires from the substation
+      to the power poles to finally connect to the houses.
 --- !u!1 &1983669658
 GameObject:
   m_ObjectHideFlags: 0
@@ -47310,13 +47456,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1387709554}
     - target: {fileID: 2056792714870349708, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+      propertyPath: quizManager
+      value: 
+      objectReference: {fileID: 1017147107}
+    - target: {fileID: 2056792714870349708, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: milestoneText
       value: 
       objectReference: {fileID: 51799899678702958}
     - target: {fileID: 2056792714870349708, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: milestones.Array.data[0]
       value: 
-      objectReference: {fileID: 1477115568}
+      objectReference: {fileID: 1576661843}
     - target: {fileID: 2056792715769432561, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: m_RootOrder
       value: 0

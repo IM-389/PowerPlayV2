@@ -6,17 +6,16 @@ namespace Milestones
 {
     public abstract class MilestoneBase : MonoBehaviour
     {
-        /// <summary>
-        /// Order the milestones come in
-        /// </summary>
+        [Tooltip("Order the milestones come in")]
         public int sequenceNumber;
 
-        /// <summary>
-        /// What text shows on the milestone
-        /// </summary>
+        [Tooltip("What text shows on the milestone")]
         public string milestoneText;
 
         public string milestoneName;
+
+        [Tooltip("If this milestone has a question once it is completed")]
+        public bool hasQuestion;
 
         [FormerlySerializedAs("unlockedObjects")] [Tooltip("What areas/parts the map get unlocked when the milestone is completed")]
         public GameObject[] unlockables;
