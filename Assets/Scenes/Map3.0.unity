@@ -10713,7 +10713,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1017147106}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: SoundManager, Assembly-CSharp
           m_MethodName: TestSound
           m_Mode: 1
@@ -21618,22 +21618,6 @@ MonoBehaviour:
   moneyText: {fileID: 51799898548079553}
   pauseMenu: {fileID: 0}
   pauseBlocker: {fileID: 0}
---- !u!114 &1017147106
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1017147104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a95cc3841b04de28c7148cd9c06ff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  masterBus: bus:/Master
-  musicBus: bus:/Master/Music
-  sfxBus: bus:/Master/SFX
-  buttonPress: event:/Sound Effects/Button Press
 --- !u!114 &1017147107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24465,6 +24449,53 @@ Transform:
   - {fileID: 999345651}
   m_Father: {fileID: 1169901577}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1147460735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1147460737}
+  - component: {fileID: 1147460736}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1147460736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147460735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a95cc3841b04de28c7148cd9c06ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterBus: bus:/Master
+  musicBus: bus:/Master/Music
+  sfxBus: bus:/Master/SFX
+  buttonPress: event:/Sound Effects/Button Press
+--- !u!4 &1147460737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147460735}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 899.29004, y: 154.17749, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1153125766
 PrefabInstance:
@@ -46149,7 +46180,7 @@ PrefabInstance:
     - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1017147106}
+      objectReference: {fileID: 0}
     - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -46258,18 +46289,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -286.86853
       objectReference: {fileID: 0}
-    - target: {fileID: 7801456441084275550, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801456441084275550, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 0ffd485ea5f719040b6beabe4a6a314f, type: 3}
-    - target: {fileID: 7801456441084275550, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 7801456441084275551, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -46373,7 +46392,7 @@ PrefabInstance:
     - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1017147106}
+      objectReference: {fileID: 0}
     - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -46517,22 +46536,6 @@ PrefabInstance:
     - target: {fileID: 7801456442270500033, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_Name
       value: Volume Panel
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801456442270500033, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801456442270500038, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_Type
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7801456442270500038, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: fe215e84d3edeb74da4e3f1d4c51bdf9, type: 3}
-    - target: {fileID: 7801456442270500038, guid: c57e153306537d641949750f08fc8e97, type: 3}
-      propertyPath: m_PixelsPerUnitMultiplier
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7801456442364833650, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_AnchorMax.y
