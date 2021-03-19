@@ -4,20 +4,38 @@ using UnityEngine;
 
 public class UIBehaviour : MonoBehaviour
 {
-    public GameObject options;
+    bool menuOpen = false;
+    public GameObject pause;
+    public TimeManager tm;
     // Start is called before the first frame update
     void Start()
     {
-        
+        tm = GameObject.FindObjectOfType<TimeManager>();
     }
 
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            options.SetActive(true);
-            Time.timeScale = 0;
+            if (!menuOpen)
+            {
+                menuOpen = true;
+                pause.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else if(menuOpen && pause.activeSelf)
+            {
+                menuOpen = false;
+                pause.SetActive(false);
+                ResumeTime();
+            }
+            
         }
+    }
+
+    public void ResumeTime()
+    {
+        Time.timeScale = tm.resume;
     }
 }
