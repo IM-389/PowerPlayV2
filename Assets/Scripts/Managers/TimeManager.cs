@@ -29,7 +29,7 @@ public class TimeManager : MonoBehaviour
     FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
-    public float resume;
+    public float resume = 1;
 
 
     // Start is called before the first frame update

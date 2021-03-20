@@ -26,7 +26,7 @@ public class UIBehaviour : MonoBehaviour
             }
             else if(menuOpen && pause.activeSelf)
             {
-                menuOpen = false;
+                
                 pause.SetActive(false);
                 ResumeTime();
             }
@@ -36,6 +36,12 @@ public class UIBehaviour : MonoBehaviour
 
     public void ResumeTime()
     {
+        menuOpen = false;
         Time.timeScale = tm.resume;
+    }
+
+    public void GoToScene(int num)
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(num);
     }
 }
