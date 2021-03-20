@@ -52,11 +52,6 @@ public class BuildScript : MonoBehaviour
     [Tooltip("Text used for displaying information about the selected object")]
     public Text selectedTooltipText;
 
-    /// <summary>
-    /// Cache the object hovered over last frame
-    /// </summary>
-    private HoverScript hoverCache;
-
     private TimeManager cityApproval;
 
     private string placeSound = "event:/Sound Effects/Place";
@@ -298,14 +293,8 @@ public class BuildScript : MonoBehaviour
         }
         else
         {
-            if (hoverCache != null)
-            {
-                hoverCache.ToggleBuildCircle(false);
-            }
             tooltipPanel.transform.position = new Vector2(1000, 1000);
         }
-
-        hoverCache = hover;
     }
 
     public void CreateLine()

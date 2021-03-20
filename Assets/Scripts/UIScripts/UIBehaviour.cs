@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
     bool menuOpen = false;
     public GameObject pause;
     public TimeManager tm;
+
+    [Tooltip("Used to prevent building while paused")]
+    public GameObject pauseBlocker;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,18 +26,25 @@ public class UIBehaviour : MonoBehaviour
             {
                 menuOpen = true;
                 pause.SetActive(true);
+                pauseBlocker.SetActive(true);
                 Time.timeScale = 0;
             }
             else if(menuOpen && pause.activeSelf)
             {
-                
-                pause.SetActive(false);
-                ResumeTime();
+                Unpause();
             }
             
         }
     }
 
+    public void Unpause()
+    {
+        menuOpen = false;
+        pause.SetActive(false);
+        pauseBlocker.SetActive(false);
+        ResumeTime();
+    }
+    
     public void ResumeTime()
     {
         menuOpen = false;

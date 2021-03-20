@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -186,5 +187,15 @@ public class GeneralObjectScript : MonoBehaviour
     public int GetAllConnectionsCount()
     {
         return (hVConnections.Count + lvConnections.Count + consumerConnections.Count);
+    }
+
+    public void OnMouseEnter()
+    {
+        gameObject.GetComponent<HoverScript>().ToggleBuildCircle(true);
+    }
+
+    public void OnMouseExit()
+    {
+        gameObject.GetComponent<HoverScript>().ToggleBuildCircle(false);
     }
 }

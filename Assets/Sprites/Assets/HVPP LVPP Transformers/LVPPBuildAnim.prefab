@@ -247,9 +247,10 @@ GameObject:
   - component: {fileID: 6701049442044380113}
   - component: {fileID: -3333175242485543721}
   - component: {fileID: 668524441742737482}
+  - component: {fileID: -8647179348354918231}
   m_Layer: 0
   m_Name: LVPPBuildAnim
-  m_TagString: Power
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -297,7 +298,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: fa9965c912e773545986bd62b3ce46c6, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
@@ -397,6 +398,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.9, y: 6.14}
   m_EdgeRadius: 0
+--- !u!114 &-8647179348354918231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8172532887073661878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae02609c4fa75e43b68c76889263826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xScale: 0.14
+  yScale: 0.14
 --- !u!1001 &8172532887492589136
 PrefabInstance:
   m_ObjectHideFlags: 0

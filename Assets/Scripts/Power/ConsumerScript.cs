@@ -47,6 +47,7 @@ public class ConsumerScript : PowerBase
     void Start()
     {
         base.Start();
+        alert = GameObject.FindGameObjectWithTag("alert").transform.GetChild(0).gameObject;
         hover = GetComponent<HoverScript>();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         alert.SetActive(false);

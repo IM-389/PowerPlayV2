@@ -46,7 +46,7 @@ public class RandomEventManager : MonoBehaviour
         
         // Ticks on day changes
         timestep = timeManager.days;
-        if (timestep > previousTimestep)
+        if (timestep > previousTimestep && timeManager.days > 1)
         {
             // Reset all the power adjustments each day
             for (int i = 0; i < 4; ++i)
