@@ -47,12 +47,12 @@ public class UIBehaviour : MonoBehaviour
     
     public void ResumeTime()
     {
+        menuOpen = false;
         Time.timeScale = tm.resume;
     }
 
-    public void LoadScene(int id)
+    public void GoToScene(int num)
     {
-        SceneManager.LoadScene(id);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(num);
     }
-    
 }
