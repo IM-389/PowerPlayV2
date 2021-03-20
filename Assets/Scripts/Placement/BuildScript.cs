@@ -220,10 +220,26 @@ public class BuildScript : MonoBehaviour
                                 else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
                                 {
                                     cityApproval.cityApproval -= 20;
+                                    if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval -= 15;
+                                    }
+                                    else if (totalCoalPlaced / totalBuildingsPlaced > 0.90)
+                                    {
+                                        cityApproval.cityApproval -= 20;
+                                    }
                                 }
                                 else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
                                 {
                                     cityApproval.cityApproval -= 35;
+                                    if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval -= 15;
+                                    }
+                                    else if (totalCoalPlaced / totalBuildingsPlaced > 0.90)
+                                    {
+                                        cityApproval.cityApproval -= 20;
+                                    }
                                 }
                                 if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                                 {
@@ -240,10 +256,26 @@ public class BuildScript : MonoBehaviour
                                 else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
                                 {
                                     cityApproval.cityApproval += 20;
+                                    if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 15;
+                                    }
+                                    else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 10;
+                                    }
                                 }
                                 else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
                                 {
                                     cityApproval.cityApproval += 35;
+                                    if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 15;
+                                    }
+                                    else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                                    {
+                                        cityApproval.cityApproval += 10;
+                                    }
                                 }
                             }
                         }
