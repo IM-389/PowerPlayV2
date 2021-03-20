@@ -158,7 +158,7 @@ public class BuildScript : MonoBehaviour
                     {
                         Vector2 spawnPoint = RoundVector(origin.point);
                         spawnPoint -= selectedBuilding.GetComponent<PlaceableScript>().positionOffset;
-                        Debug.Log(spawnPoint);
+                        //Debug.Log(spawnPoint);
                         GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
                         Vector3 newPos = spawned.transform.position;
                         FMODUnity.RuntimeManager.PlayOneShot(placeSound);

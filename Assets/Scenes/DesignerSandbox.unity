@@ -493,11 +493,14 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Place and connect a second coal generator
   milestoneName: Enter the Smart Grid
+  hasQuestion: 0
   unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones:
   - {fileID: 1127185370}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &36618750
 Transform:
   m_ObjectHideFlags: 0
@@ -7716,6 +7719,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Connect 5 houses to a substation
   milestoneName: Basic Connections
+  hasQuestion: 0
   unlockables:
   - {fileID: 1775536295}
   - {fileID: 836662112}
@@ -7729,6 +7733,8 @@ MonoBehaviour:
   - {fileID: 5448026507461769134, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
   nextMilestones:
   - {fileID: 1336331955}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &333453548
 Transform:
   m_ObjectHideFlags: 0
@@ -12823,10 +12829,13 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Put down 10 Smart Meters
   milestoneName: Building the Smart Grid
+  hasQuestion: 0
   unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones: []
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!1001 &585225059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18598,10 +18607,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableBuildings:
-  - {fileID: 2404669415710288745, guid: 8acb8503cd4ad6149b03b7074d38ef3b, type: 3}
-  - {fileID: 5448026507461769134, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
+  - {fileID: 8172532887073661878, guid: edcc673d4a43e754099a251f43f1b08b, type: 3}
+  - {fileID: 7486872807712199635, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
   - {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
-  - {fileID: 27588709232717115, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
+  - {fileID: 4372302633028423459, guid: 51f8c9d52d1a0a4499ab15a63364e084, type: 3}
   - {fileID: 2878062338142282520, guid: d9ffaea4763971f478db6cf93ee9bac9, type: 3}
   - {fileID: 1009903860706208973, guid: 55e7187d6e0bc8f4099776e505ca6d3e, type: 3}
   - {fileID: 6028709754009470987, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
@@ -18620,6 +18629,14 @@ MonoBehaviour:
   removalMode: 0
   selection: {fileID: 1613594795}
   selectedTooltipText: {fileID: 571115118}
+  totalBuildingsPlaced: 0
+  totalDirtyPowerPlaced: 0
+  totalCleanPowerPlaced: 0
+  totalCoalPlaced: 0
+  totalGasPlaced: 0
+  totalSolarPlaced: 0
+  totalWindmillPlaced: 0
+  trackApproval: 0
 --- !u!95 &843012996
 Animator:
   serializedVersion: 3
@@ -21280,10 +21297,13 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Ensure all customers have power for X time
   milestoneName: Using the Smart Grid
+  hasQuestion: 0
   unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones: []
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &945960174
 Transform:
   m_ObjectHideFlags: 0
@@ -23688,6 +23708,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new coal plant, and power all the houses
   milestoneName: Powering Up
+  hasQuestion: 0
   unlockables:
   - {fileID: 1313004470}
   - {fileID: 1391608713}
@@ -23697,6 +23718,8 @@ MonoBehaviour:
   newBuildings: []
   nextMilestones:
   - {fileID: 1332238386}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &1039749233
 Transform:
   m_ObjectHideFlags: 0
@@ -25609,12 +25632,15 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power a factory and hospital
   milestoneName: Powering Industry
+  hasQuestion: 0
   unlockables: []
   removedFog: []
   newBuildings: []
   nextMilestones:
   - {fileID: 582392718}
   - {fileID: 945960173}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &1127185371
 Transform:
   m_ObjectHideFlags: 0
@@ -30078,6 +30104,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power all houses for a 2 days
   milestoneName: Rainy Day
+  hasQuestion: 0
   unlockables:
   - {fileID: 2122267073}
   removedFog:
@@ -30085,6 +30112,8 @@ MonoBehaviour:
   newBuildings: []
   nextMilestones:
   - {fileID: 36618749}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &1332238387
 Transform:
   m_ObjectHideFlags: 0
@@ -30209,6 +30238,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new substation, and use it to power the new houses
   milestoneName: Branching Out
+  hasQuestion: 0
   unlockables:
   - {fileID: 1862442970}
   - {fileID: 225010757}
@@ -30220,6 +30250,8 @@ MonoBehaviour:
   - {fileID: 27588709232717115, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
   nextMilestones:
   - {fileID: 1039749232}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
 --- !u!4 &1336331956
 Transform:
   m_ObjectHideFlags: 0
@@ -38156,6 +38188,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 670298437390421311, guid: e46913eb949041e45b3eb57c2a6b5d01, type: 3}
   m_PrefabInstance: {fileID: 1672774683}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1674980678
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7192819584471381913, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.421
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073879, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192819586404073880, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
+      propertyPath: m_Name
+      value: C_BuildPrefab
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
 --- !u!1 &1679860590
 GameObject:
   m_ObjectHideFlags: 0
@@ -41466,6 +41559,14 @@ MonoBehaviour:
   removalMode: 0
   selection: {fileID: 0}
   selectedTooltipText: {fileID: 0}
+  totalBuildingsPlaced: 0
+  totalDirtyPowerPlaced: 0
+  totalCleanPowerPlaced: 0
+  totalCoalPlaced: 0
+  totalGasPlaced: 0
+  totalSolarPlaced: 0
+  totalWindmillPlaced: 0
+  trackApproval: 0
 --- !u!61 &1848753611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -46038,6 +46139,63 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6175920360165683689, guid: 5485c0162075dab499e914e9561827b3, type: 3}
   m_PrefabInstance: {fileID: 2105469113}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2110034993
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7486872807712199635, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_Name
+      value: HVPPBuildAnim
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.985
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.961
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7486872807712199637, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 718f2a7b57b5d92419fb3c31ae3917dd, type: 3}
 --- !u!1001 &2110793265
 PrefabInstance:
   m_ObjectHideFlags: 0

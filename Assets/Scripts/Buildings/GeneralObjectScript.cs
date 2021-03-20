@@ -47,7 +47,7 @@ public class GeneralObjectScript : MonoBehaviour
     // Makes premade connections
     private void Start()
     {
-        buildCircle.transform.localScale *= wireLength;
+        //buildCircle.transform.localScale *= wireLength;
         foreach(GameObject connection in preMadeConnections)
         {
             GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
