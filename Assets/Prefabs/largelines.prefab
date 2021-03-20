@@ -181,10 +181,10 @@ MonoBehaviour:
   volts: 1
   isGenerator: 0
   isConsumer: 0
-  isSubstation: 0
   wireLength: 15
   buildingText: Helps you send High-Voltage Power a long way.
-  cost: 0
+  connected: 0
+  refundAmount: 0
   buildCircle: {fileID: 8333134694539750419}
   unRemovable: 0
   maxHVConnections: 2
@@ -209,7 +209,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 1000
   isFull: 0
-  objectDescription: Helps you send High-Voltage Power a long way.
 --- !u!114 &-2099193719442316402
 MonoBehaviour:
   m_ObjectHideFlags: 0
