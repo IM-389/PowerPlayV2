@@ -181,10 +181,10 @@ MonoBehaviour:
   volts: 2
   isGenerator: 0
   isConsumer: 0
-  isSubstation: 0
   wireLength: 5
   buildingText: Changes the kind of power that goes through the wires.
-  cost: 0
+  connected: 0
+  refundAmount: 0
   buildCircle: {fileID: 8428609223405396986}
   unRemovable: 0
   maxHVConnections: 2
@@ -207,9 +207,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
-  objectDescription: Changes the kind of power that goes through the wires.
 --- !u!114 &4478874532228927277
 MonoBehaviour:
   m_ObjectHideFlags: 0

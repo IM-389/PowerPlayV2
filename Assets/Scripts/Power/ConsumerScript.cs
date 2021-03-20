@@ -12,8 +12,8 @@ public class ConsumerScript : PowerBase
 
     public GameObject alert;
     public GameObject alertArrow;
-    public static int consumerOut;
-    public static int housesPowered;
+    //public static int consumerOut;
+    //public static int housesPowered;
     public bool powerOut = false;
     public bool powerOn = false;
 
@@ -47,6 +47,7 @@ public class ConsumerScript : PowerBase
     void Start()
     {
         base.Start();
+        alert = GameObject.FindGameObjectWithTag("alert").transform.GetChild(0).gameObject;
         hover = GetComponent<HoverScript>();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         alert.SetActive(false);
@@ -106,7 +107,7 @@ public class ConsumerScript : PowerBase
             if (!powerOut)
             {
                 //Debug.Log("This is happening");
-                consumerOut++;
+                //consumerOut++;
                 powerOut = true;
                 
             }
@@ -115,7 +116,7 @@ public class ConsumerScript : PowerBase
         {
             if (powerOut)
             {
-                consumerOut--;
+                //consumerOut--;
                 powerOut = false;
             }
         }
@@ -124,7 +125,7 @@ public class ConsumerScript : PowerBase
         {
             if (!powerOn)
             {
-                housesPowered++;
+                //housesPowered++;
                 powerOn = true;
             }
         }
@@ -132,7 +133,7 @@ public class ConsumerScript : PowerBase
         {
             if (powerOn)
             {
-                housesPowered--;
+                //housesPowered--;
                 powerOn = false;
             }
         }
@@ -141,16 +142,16 @@ public class ConsumerScript : PowerBase
         {
             alertArrow.SetActive(powerOut);
         }
-        if (consumerOut > 0)
-        {
-            alert.SetActive(true);
-        }
-        else
-        {
-            alert.SetActive(false);
-        }
+        //if (consumerOut > 0)
+        //{
+        //    alert.SetActive(true);
+        //}
+        //else
+        //{
+        //    alert.SetActive(false);
+        //
         //Debug.Log(consumerOut);
-        Debug.Log(housesPowered);
+        //Debug.Log(housesPowered);
        
 
         if (gos.GetAllConnectionsCount() == 0)

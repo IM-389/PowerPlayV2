@@ -28,6 +28,9 @@ public class TimeManager : MonoBehaviour
     public string backgroundReference;
     FMOD.Studio.EventInstance backgrounds;
 
+    // For pause menu
+    public float resume = 1;
+
 
     // Start is called before the first frame update
     void Start()
@@ -49,14 +52,17 @@ public class TimeManager : MonoBehaviour
     public void onButtonPressTwoTimesSpeed()
     {
         Time.timeScale = 2F;
+        resume = 2F;
     }
     public void onButtonPressOneAndHalfSpeed()
     {   
         Time.timeScale = 1.5F;
+        resume = 1.5F;
     }
     public void resetToRegSpeed()
     {    
         Time.timeScale = 1F;
+        resume = 1f;
     }
     public void pause()
     {
