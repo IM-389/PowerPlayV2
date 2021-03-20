@@ -44,4 +44,9 @@ public class UIBehaviour : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(num);
     }
+
+    public void ExitGameButton()
+    {
+        Application.Quit();
+    }
 }
