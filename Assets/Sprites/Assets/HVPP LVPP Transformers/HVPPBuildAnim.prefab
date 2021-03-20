@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 2865828316494465041}
   - component: {fileID: -7087691080505365954}
   - component: {fileID: 4085097615709174363}
+  - component: {fileID: 3181634138808402413}
   m_Layer: 0
   m_Name: HVPPBuildAnim
   m_TagString: Untagged
@@ -397,6 +398,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.33, y: 5.83}
   m_EdgeRadius: 0
+--- !u!114 &3181634138808402413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486872807712199635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ae02609c4fa75e43b68c76889263826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xScale: 0.12
+  yScale: 0.12
 --- !u!1001 &7486872808098612789
 PrefabInstance:
   m_ObjectHideFlags: 0
