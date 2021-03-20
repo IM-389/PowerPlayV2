@@ -78,7 +78,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You are a new engineer hired to develop the smart grid in a growing town.
+  m_Text: "You are a new engineer hired to develop the Smart Grid in a growing town.
     This town just keeps growing, and as such you\u2019ve been given new Smart Grid
     technologies and need to implement them into the existing grid. \n\nYou have
     to balance maintaining the existing grid and implementing new Smart Grid technologies
