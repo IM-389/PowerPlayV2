@@ -45991,6 +45991,10 @@ PrefabInstance:
       value: -21.3794
       objectReference: {fileID: 0}
     - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1017147114}
@@ -46000,7 +46004,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: ResumeTime
+      value: Unpause
       objectReference: {fileID: 0}
     - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
@@ -46020,7 +46024,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2269213457029146906, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2269213457029146906, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
