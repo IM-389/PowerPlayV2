@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     public float timeStep;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
-    public int cityApproval = 0;//Note: we've also got this
+    public int cityApproval = 100;//Note: we've also got this
     public int days = 1;
     public bool isDay = true;
     public Text clock;

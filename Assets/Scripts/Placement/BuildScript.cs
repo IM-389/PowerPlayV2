@@ -79,7 +79,7 @@ public class BuildScript : MonoBehaviour
         //buildCircle = GameObject.FindWithTag("BuildCircle").transform;
 
         //lr = GetComponent<LineRenderer>();
-
+        cityApproval = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         SetupDropdown();
     }
@@ -87,6 +87,7 @@ public class BuildScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateSatisfaction();
         // If the mouse is over UI, ignore this function
         if (EventSystem.current.IsPointerOverGameObject())
         {
@@ -189,59 +190,7 @@ public class BuildScript : MonoBehaviour
                             totalCleanPowerPlaced++;
                             totalWindmillPlaced++;
                         }
-                        //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
-                        if (trackApproval)
-                        {
-                            if (cityApproval.hours == 25)
-                            {
-                                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
-                                {
-                                    cityApproval.cityApproval -= 10;
-                                    if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
-                                    {
-                                        cityApproval.cityApproval -= 15;
-                                    }
-                                    else if (totalCoalPlaced / totalBuildingsPlaced > 0.90)
-                                    {
-                                        cityApproval.cityApproval -= 20;
-                                    }
-                                    /*
-                                    else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
-                                    {
-                                        cityApproval.cityApproval -= 10;
-                                    }
-                                    */
-                                }
-                                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
-                                {
-                                    cityApproval.cityApproval -= 20;
-                                }
-                                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
-                                {
-                                    cityApproval.cityApproval -= 35;
-                                }
-                                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
-                                {
-                                    cityApproval.cityApproval += 10;
-                                    if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
-                                    {
-                                        cityApproval.cityApproval += 15;
-                                    }
-                                    else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
-                                    {
-                                        cityApproval.cityApproval += 10;
-                                    }
-                                }
-                                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
-                                {
-                                    cityApproval.cityApproval += 20;
-                                }
-                                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
-                                {
-                                    cityApproval.cityApproval += 35;
-                                }
-                            }
-                        }
+
                     }
 
                     // Clear the list after its done
@@ -810,6 +759,63 @@ public class BuildScript : MonoBehaviour
             GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
             gos1.RemoveConnection(object2);
             gos2.RemoveConnection(object1);
+        }
+    }
+
+    private void UpdateSatisfaction()
+    {
+        //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
+        if (trackApproval)
+        {
+            if (cityApproval.hours >= 24)
+            {
+                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                {
+                    cityApproval.cityApproval -= 10;
+                    if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
+                    {
+                        cityApproval.cityApproval -= 15;
+                    }
+                    else if (totalCoalPlaced / totalBuildingsPlaced > 0.90)
+                    {
+                        cityApproval.cityApproval -= 20;
+                    }
+                    /*
+                    else if(totalGasPlaced / totalBuildingsPlaced > 0.50)
+                    {
+                        cityApproval.cityApproval -= 10;
+                    }
+                    */
+                }
+                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+                {
+                    cityApproval.cityApproval -= 20;
+                }
+                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
+                {
+                    cityApproval.cityApproval -= 35;
+                }
+                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
+                {
+                    cityApproval.cityApproval += 10;
+                    if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
+                    {
+                        cityApproval.cityApproval += 15;
+                    }
+                    else if (totalWindmillPlaced / totalBuildingsPlaced > 0.50)
+                    {
+                        cityApproval.cityApproval += 10;
+                    }
+                }
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
+                {
+                    cityApproval.cityApproval += 20;
+                }
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
+                {
+                    cityApproval.cityApproval += 35;
+                }
+            }
         }
     }
 }

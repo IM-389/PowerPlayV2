@@ -27,5 +27,12 @@ namespace Milestones
             //Debug.Log($"Powered Houses: {poweredHouses}");
             return poweredHouses >= 5;
         }
+        
+        public override void SetCompleteMilestone()
+        {
+            BuildScript bs = GameObject.FindObjectOfType<BuildScript>();
+            bs.trackApproval = true;
+        }
     }
+    
 }
