@@ -623,6 +623,8 @@ MonoBehaviour:
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
   buttonPress: event:/Sound Effects/Button Press
+  quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
+  quizNegative: event:/Sound Effects/Griddy Negative
 --- !u!4 &136930138
 Transform:
   m_ObjectHideFlags: 0

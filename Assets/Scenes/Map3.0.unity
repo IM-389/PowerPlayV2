@@ -12976,6 +12976,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630487417}
   m_CullTransparentMesh: 1
+--- !u!1 &633111481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633111483}
+  - component: {fileID: 633111482}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &633111482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633111481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67a95cc3841b04de28c7148cd9c06ff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterBus: bus:/Master
+  musicBus: bus:/Master/Music
+  sfxBus: bus:/Master/SFX
+  buttonPress: event:/Sound Effects/Button Press
+  quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
+  quizNegative: event:/Sound Effects/Griddy Negative
+--- !u!4 &633111483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633111481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.845928, y: 11.540758, z: -13.250395}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &639550798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21129,6 +21178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1017147112}
+  soundManager: {fileID: 0}
   questionsList: []
   currentQuestion:
     Question: 
@@ -22032,22 +22082,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7275677607026634837, guid: 696fc74687ccf40468e8acbe984e9041, type: 3}
   m_PrefabInstance: {fileID: 1060317566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1066219019 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1147460736, guid: c57e153306537d641949750f08fc8e97, type: 3}
-  m_PrefabInstance: {fileID: 2078927499}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1066219252}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67a95cc3841b04de28c7148cd9c06ff7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!1 &1066219252 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1147460735, guid: c57e153306537d641949750f08fc8e97, type: 3}
-  m_PrefabInstance: {fileID: 2078927499}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1066965205
 PrefabInstance:
@@ -45214,6 +45248,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1285866983}
     m_Modifications:
+    - target: {fileID: 565281068, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 633111482}
+    - target: {fileID: 565281068, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: TestSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147460736, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: quizNegative
+      value: event:/Sound Effects/Griddy Negative
+      objectReference: {fileID: 0}
+    - target: {fileID: 1147460736, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: quizAffirmative
+      value: event:/Sound Effects/Griddy Quiz Affirmative
+      objectReference: {fileID: 0}
     - target: {fileID: 7801456440659819932, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -45232,7 +45282,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_Value
-      value: 100
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 633111482}
+    - target: {fileID: 7801456440667555237, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MusicVolumeLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7801456440667555238, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_AnchorMax.y
@@ -45306,6 +45368,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: SetActive
       objectReference: {fileID: 0}
+    - target: {fileID: 7801456441152107571, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7801456441196464617, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -45356,7 +45422,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_Value
-      value: 100
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 633111482}
+    - target: {fileID: 7801456441703556031, guid: c57e153306537d641949750f08fc8e97, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SFXVolumeLevel
       objectReference: {fileID: 0}
     - target: {fileID: 7801456442231131024, guid: c57e153306537d641949750f08fc8e97, type: 3}
       propertyPath: m_AnchorMax.x
@@ -45746,7 +45824,7 @@ PrefabInstance:
     - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1066219019}
+      objectReference: {fileID: 0}
     - target: {fileID: 1517876323105081239, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: ResumeTime
@@ -45786,7 +45864,7 @@ PrefabInstance:
     - target: {fileID: 2269213457029146906, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 1066219019}
+      objectReference: {fileID: 0}
     - target: {fileID: 2269213457029146906, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: GoToScene
@@ -45842,7 +45920,7 @@ PrefabInstance:
     - target: {fileID: 5642938515228193399, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
-      objectReference: {fileID: 1066219252}
+      objectReference: {fileID: 0}
     - target: {fileID: 5642938515228193399, guid: 86149d384a2bd3e459635265b484a0ee, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
