@@ -74,12 +74,13 @@ public class ConsumerScript : PowerBase
             isConsuming = true;
             isCutOff = false;
             moneymanager.money += moneyGained;
-            if (buildingType.CompareTag("house"))
-            {
-                numHousesPowered++;
-                totalHouses++;
-            }
+            //if (buildingType.CompareTag("house"))
+            //{
+            //    numHousesPowered++;
+            //    totalHouses++;
+            //}
         }
+        /*
         else
         {
             // Set the flag so other objects can know if this one is consuming
@@ -90,7 +91,7 @@ public class ConsumerScript : PowerBase
             isCutOff = !isConsuming;
             isConsuming = false;
         }
-
+        */
 
         if (cityApproval != null)
         {

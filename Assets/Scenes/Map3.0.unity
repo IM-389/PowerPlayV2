@@ -30268,7 +30268,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1441714031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -50892,7 +50892,11 @@ PrefabInstance:
     - target: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: citySat
       value: 
-      objectReference: {fileID: 1441714032}
+      objectReference: {fileID: 1663983271}
+    - target: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+      propertyPath: cityApproval
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2056792715769432563, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: backgroundReference
       value: event:/Music/In Game Background

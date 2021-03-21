@@ -30,6 +30,7 @@ namespace Milestones
         
         public override void SetCompleteMilestone()
         {
+            base.SetCompleteMilestone();
             BuildScript bs = GameObject.FindObjectOfType<BuildScript>();
             bs.trackApproval = true;
         }
