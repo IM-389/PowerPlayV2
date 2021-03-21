@@ -22,7 +22,7 @@ public class SquirrelEvent : EventBase
         {
             Debug.Log("Squirrel time baby!");
            
-            GameObject[] findPower = GameObject.FindGameObjectsWithTag("power");//finds all gameobjects with the tag "power"
+            GameObject[] findPower = GameObject.FindGameObjectsWithTag("Power");//finds all gameobjects with the tag "power"
             int rand = Random.Range(0, findPower.Length);
             GeneralObjectScript safeFound = findPower[rand].GetComponent<GeneralObjectScript>();
             if (safeFound.consumerConnections.Count > 0)
