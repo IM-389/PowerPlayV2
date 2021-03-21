@@ -14,7 +14,7 @@ public class TimeManager : MonoBehaviour
     public float timeStep;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
-    public int cityApproval = 0;//Note: we've also got this
+    public int cityApproval = 100;//Note: we've also got this
     public int days = 1;
     public bool isDay = true;
     public Text clock;
@@ -97,15 +97,16 @@ public class TimeManager : MonoBehaviour
                 {
                     //isDay = true;
                     hours = 1;
-                   // displayHours = 1;
-                    ++days;
+                    ++days;//currently bugged so that we dont move onto next day till 1 am
                 }
+                
                 if (hours == 12 || hours == 24)
                 {
                     buffer += "Day: " + days + ", 12 ";
                     if(hours == 24)
                     {
                         buffer += " A.M";
+                        
                     }
                 }
                 else
@@ -140,8 +141,8 @@ public class TimeManager : MonoBehaviour
                     isDay = false;
                     Debug.Log("It is night");
                 }
-
-                clock.text = buffer;// + isDay;
+                
+                clock.text = buffer;
                 //Debug.Log("The time is Day");
             }
 

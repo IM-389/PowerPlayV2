@@ -5,6 +5,8 @@ using FMODUnity;
 
 public class SoundManager : MonoBehaviour
 {
+    // These control the volume. The basic mix between sound types has been 
+    // done already, but these allow for in-game tuning
     FMOD.Studio.Bus Master;
     [Header("Volume Buses")]
     public string masterBus;
@@ -18,14 +20,20 @@ public class SoundManager : MonoBehaviour
     public string sfxBus;
     float sfxVolume = 0.5f;
 
+    // These are the locations of the sound events
     [Header("Sound Locations")]
     [FMODUnity.EventRef]
     public string buttonPress;
+    [FMODUnity.EventRef]
+    public string quizAffirmative;
+    [FMODUnity.EventRef]
+    public string quizNegative;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        // Initializing the volume buses
         Master = RuntimeManager.GetBus(masterBus);
         Music = RuntimeManager.GetBus(musicBus);
         SFX = RuntimeManager.GetBus(sfxBus);
