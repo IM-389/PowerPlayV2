@@ -190,7 +190,6 @@ public class BuildScript : MonoBehaviour
                             totalCleanPowerPlaced++;
                             totalWindmillPlaced++;
                         }
-
                     }
 
                     // Clear the list after its done
