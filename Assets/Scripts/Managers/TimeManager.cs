@@ -22,6 +22,8 @@ public class TimeManager : MonoBehaviour
     public int cash = 0;//gonna be using this to cause houses to make money
     ConsumerScript isConsuming;
     MilestoneBase coinGen;
+    public float resume = 1;
+
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
@@ -29,8 +31,7 @@ public class TimeManager : MonoBehaviour
     FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
-    public float resume = 1;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -150,14 +151,14 @@ public class TimeManager : MonoBehaviour
             totalTimeSteps++;
             timeStep++;
 
-            if (timeStep >= 5)
+            if (timeStep >= 20)
             {
                 timeStep = 0;
                 hours++;
                 displayHours++;
             }
 
-            yield return new WaitForSeconds(0.25F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
+            yield return new WaitForSeconds(1F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
     /*
