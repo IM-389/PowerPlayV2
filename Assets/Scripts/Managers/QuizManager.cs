@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
@@ -20,7 +21,7 @@ public class QuizManager : MonoBehaviour
     public QuestionInfo currentQuestion;
 
     [Tooltip("Text for the current question")]
-    public Text questionText;
+    public TextMeshProUGUI questionText;
 
     [Tooltip("Where the answers to the question get chosen")]
     public Dropdown answerChoices;
