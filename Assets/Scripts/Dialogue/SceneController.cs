@@ -1,11 +1,12 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
     public GameObject dialoguePanel;
-    public Text dialogueLine;
+    public TextMeshProUGUI dialogueLine;
 
     public bool goToNext = true;
     public bool canPress = true;
