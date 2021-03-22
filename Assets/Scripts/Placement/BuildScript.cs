@@ -766,7 +766,7 @@ public class BuildScript : MonoBehaviour
         //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
         if (trackApproval)
         {
-            if (cityApproval.hours >= 24)
+            if (cityApproval.hours >= 25)
             {
                 if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
