@@ -19,6 +19,14 @@ public class NetworkScript : MonoBehaviour
     public bool isManager = true;
 
     private bool isVisited = false;
+    
+    /*
+     * Dictionary of if each connection leads to the generator
+     * Pathfinding algo style
+     * excluding myself, does this take me closer to the generator (in # of connections)
+     *  as you find, only propogate to something with a lower stepcount
+     *  when new manager is promoted, propogate the update step count
+     */
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,7 +36,8 @@ public class NetworkScript : MonoBehaviour
         gos = gameObject.GetComponent<GeneralObjectScript>();
 
     }
-
+    
+    
     /// <summary>
     /// Called when connecting an object to another one
     /// </summary>
