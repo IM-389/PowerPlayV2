@@ -119,7 +119,8 @@ public class QuizManager : MonoBehaviour
         }
         else
         {
-            result += currentQuestion.PostAnswerTextIncorrect;
+            result += currentQuestion.PostAnswerTextIncorrect + ": ";
+            result += currentQuestion.Answers[currentQuestion.Correct - 1];
             FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizNegative);
         }
 
