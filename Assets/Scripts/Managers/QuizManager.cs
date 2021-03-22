@@ -80,6 +80,7 @@ public class QuizManager : MonoBehaviour
     {
         answerChoices.options.Clear();
         List<string> options = new List<string>();
+        options.Add("SELECT");
         //questionText.text = question.Question;
         string text = question.Question + "\n";
         char character = 'A';
@@ -113,16 +114,16 @@ public class QuizManager : MonoBehaviour
 
         if (CheckAnswer(answerChoices.value))
         {
-            result += "Correct, the answer is ";
+            result += currentQuestion.PostAnswerTextCorrect;
             FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizAffirmative);
         }
         else
         {
-            result += "Incorrect, the answer was ";
+            result += currentQuestion.PostAnswerTextIncorrect;
             FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizNegative);
         }
 
-        result += currentQuestion.Answers[currentQuestion.Correct];
+        //result += currentQuestion.Answers[currentQuestion.Correct];
 
         questionText.text = result;
     }

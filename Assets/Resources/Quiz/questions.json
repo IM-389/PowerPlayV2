@@ -8,7 +8,9 @@
         "Voltage means everything is faster",
         "Voltage isn’t used for anything"
       ],
-      "Correct": 0
+      "Correct": 1,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "The purpose of a transformer is to safely turn the power up in voltage or down in voltage so it can be used correctly?\n",
@@ -16,7 +18,9 @@
         "True",
         "False"
       ],
-      "Correct": 0
+      "Correct": 1,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "Coal power plants add a lot of CO <sub>2</sub> (Carbon Dioxide) and other greenhouse gases that hurt the planet. As alternatives, which type(s) of power plant(s) would be the more environmentally friendly?\n",
@@ -26,7 +30,9 @@
         "Both A and B",
         "None of the above"
       ],
-      "Correct": 2
+      "Correct": 3,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "Why can’t we solely rely on solar energy?\n",
@@ -36,7 +42,9 @@
         "The sun was a lie",
         "This is false, we can solely rely on solar energy"
       ],
-      "Correct": 0
+      "Correct": 1,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "What is the key thing Smart Meters are communicating?\n",
@@ -46,7 +54,9 @@
         "Smart Meters show how much power you are using and how much you need",
         "All of the above"
       ],
-      "Correct": 1
+      "Correct": 2,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "Factories and Hospitals require a lot more energy to run because they always need to be working at their best. The Smart Grid would help as would help bring power to these places more efficiently making them work better.\n",
@@ -54,7 +64,9 @@
         "True",
         "False"
       ],
-      "Correct": 0
+      "Correct": 1,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "The Smart Grid helps out in a lot of ways, for example the Smart Grid can tell when a home needs more or less power, can detect where and when a house lost power, and can be more efficient than the traditional grid.\n",
@@ -62,7 +74,9 @@
         "True",
         "False"
       ],
-      "Correct": 0
+      "Correct": 1,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "What is a quality of life improvement that the Smart Grid supplies?\n",
@@ -72,14 +86,18 @@
         "The Smart Grid brings you flowers when you are unwell",
         "The Smart grid can detect where a blackout is and get it fixed way quicker"
       ],
-      "Correct": 3
+      "Correct": 4,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     },
     {
       "Question": "END\n",
       "Answers": [
         "END"
       ],
-      "Correct": 0
+      "Correct": 0,
+      "PostAnswerTextCorrect": "correct",
+      "PostAnswerTextIncorrect": "incorrect"
     }
   ]
 }

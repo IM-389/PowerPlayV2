@@ -7,4 +7,8 @@ public class QuestionInfo
     /// Which of the answers is correct. 0-indexed, top-to-bottom in JSON file
     /// </summary>
     public int Correct;
+
+    public string PostAnswerTextCorrect;
+
+    public string PostAnswerTextIncorrect;
 }
