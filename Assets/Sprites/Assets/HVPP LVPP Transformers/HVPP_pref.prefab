@@ -170,7 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
 --- !u!114 &6073397824285504847
 MonoBehaviour:
