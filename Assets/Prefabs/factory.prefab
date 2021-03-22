@@ -208,6 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConsuming: 0
   isPowered: 0
+  alert: {fileID: 0}
+  alertArrow: {fileID: 0}
+  powerOut: 0
+  powerOn: 0
   consumptionCurve:
   - 2
   - 2
@@ -239,6 +243,10 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  buildingType: {fileID: 0}
+  numHousesPowered: 0
+  totalHouses: 0
+  cityApproval: {fileID: 0}
   moneyGained: 3
 --- !u!114 &4701993810741548652
 MonoBehaviour:
@@ -253,7 +261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
 --- !u!114 &7062987643556779599
 MonoBehaviour:
@@ -272,6 +280,7 @@ MonoBehaviour:
   isConsumer: 1
   wireLength: 3
   buildingText: Uses High-Voltage Power. People go here to work.
+  connected: 0
   refundAmount: 0
   buildCircle: {fileID: 0}
   unRemovable: 0
@@ -296,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canSend: 0
   canRecieve: 1
-  priorityNumber: 0
+  priorityNumber: 4
 --- !u!114 &5000536205628022496
 MonoBehaviour:
   m_ObjectHideFlags: 0

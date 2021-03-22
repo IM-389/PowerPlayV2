@@ -34,7 +34,7 @@ public class MilestoneEight : MilestoneBase
             }
         }
 
-        if (daysElapsed >= 7)
+        if (daysElapsed >= 3)
         {
             return true;
         }

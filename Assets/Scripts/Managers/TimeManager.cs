@@ -151,14 +151,14 @@ public class TimeManager : MonoBehaviour
             totalTimeSteps++;
             timeStep++;
 
-            if (timeStep >= 20)
+            if (timeStep >= 10)
             {
                 timeStep = 0;
                 hours++;
                 displayHours++;
             }
 
-            yield return new WaitForSeconds(1F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
+            yield return new WaitForSeconds(0.25F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
     /*
