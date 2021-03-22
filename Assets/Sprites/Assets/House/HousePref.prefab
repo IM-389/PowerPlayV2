@@ -5233,9 +5233,9 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6028709754009470987}
   m_Enabled: 1
-  m_SortingLayerID: -815874809
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
 --- !u!61 &9213772324347092880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5365,6 +5365,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 1
     m_RotationOrder: 4
+  buildingType: {fileID: 0}
   numHousesPowered: 0
   totalHouses: 0
   cityApproval: {fileID: 0}
