@@ -582,6 +582,7 @@ public class BuildScript : MonoBehaviour
             }            
             wireObject1 = hit.transform.gameObject;
             wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            
             //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
         }
 

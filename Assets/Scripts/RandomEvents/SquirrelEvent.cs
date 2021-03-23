@@ -14,7 +14,8 @@ public class SquirrelEvent : EventBase
     //variables are camelcased, functions pascal cased
     // }
     //public GameObject[] findPower;
-   public override void DoEvent()
+    private BuildScript wireObject1;
+    public override void DoEvent()
     {
         Debug.Log("Squirrel time selected!");
         int chance = Random.Range(0, 100);
@@ -31,6 +32,11 @@ public class SquirrelEvent : EventBase
                 {
                     safeFound.RemoveConnection(consumer);
                     consumer.GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    //Destroy(wireObject1);
+                    //if(wireObject1.wireObject1.GetComponentInChildren<SpriteRenderer>().color == Color.blue)
+                    //{
+                    //    Destroy(wireObject1.wireObject1);
+                   // }
                 }
             }
 
@@ -38,4 +44,6 @@ public class SquirrelEvent : EventBase
         }
     }
     
+    
+
 }

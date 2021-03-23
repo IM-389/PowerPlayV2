@@ -98,6 +98,10 @@ public class TimeManager : MonoBehaviour
                 {
                     //isDay = true;
                     hours = 1;
+                    if(cityApproval < 0)
+                    {
+                        cityApproval = 0;
+                    }
                     ++days;//currently bugged so that we dont move onto next day till 1 am
                 }
                 

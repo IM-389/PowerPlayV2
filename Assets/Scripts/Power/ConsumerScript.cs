@@ -103,6 +103,7 @@ public class ConsumerScript : PowerBase
                     //if (buildingType.compareTag("house")/hospital)
                     //{
                         cityApproval.cityApproval -= 20;//we're gonna hope this works
+                    
                    // }
                    //if(buildingType.compareTag("hospital"))
                    // {
