@@ -12,7 +12,7 @@ public class CloudyDayEvent : EventBase
         powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
     }
     
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Cloudy Day Selected!");
         int chance = Random.Range(0, 100);
@@ -21,6 +21,9 @@ public class CloudyDayEvent : EventBase
         {
             Debug.Log("Running Cloudy Day!");
             powerManager.powerAdjusts[2] = 0.5f;
+            return true;
         }
+
+        return false;
     }
 }

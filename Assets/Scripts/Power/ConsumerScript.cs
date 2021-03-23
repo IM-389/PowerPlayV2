@@ -116,7 +116,9 @@ public class ConsumerScript : PowerBase
                     //calc % of houses powered
                     //if (buildingType.compareTag("house")/hospital)
                     //{
+
                    //     cityApproval.cityApproval -= 20;//we're gonna hope this works
+
                    // }
                    //if(buildingType.compareTag("hospital"))
                    // {

@@ -112,7 +112,7 @@ public class QuizManager : MonoBehaviour
     {
         string result = "";
 
-        if (CheckAnswer(answerChoices.value))
+        if (CheckAnswer(answerChoices.value - 1))
         {
             result += currentQuestion.PostAnswerTextCorrect;
             FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizAffirmative);
@@ -120,7 +120,7 @@ public class QuizManager : MonoBehaviour
         else
         {
             result += currentQuestion.PostAnswerTextIncorrect + ": ";
-            result += currentQuestion.Answers[currentQuestion.Correct - 1];
+            result += currentQuestion.Answers[currentQuestion.Correct];
             FMODUnity.RuntimeManager.PlayOneShot(soundManager.quizNegative);
         }
 
