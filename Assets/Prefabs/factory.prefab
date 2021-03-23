@@ -34,8 +34,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1009903860706208973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.5251575, y: -0.5199975, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.1}
+  m_LocalPosition: {x: -2.28, y: -0.38, z: 0}
+  m_LocalScale: {x: 0.47022, y: 0.47022, z: 0.15674}
   m_Children:
   - {fileID: 2675852927930709949}
   m_Father: {fileID: 0}
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 29c4024898b792e4ba2e2a22413fbe00, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a85fb88b7e586e544b38aba55fcbd1e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -165,18 +165,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -3.25, y: 3.25}
+  m_Offset: {x: 0.059535027, y: -0.018167257}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.833333, y: 0.166667}
-    oldSize: {x: 8, y: 8}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 6.359514, y: 6.194036}
   m_EdgeRadius: 0
 --- !u!114 &8477019914061652012
 MonoBehaviour:
@@ -279,7 +279,7 @@ MonoBehaviour:
   isGenerator: 0
   isConsumer: 1
   wireLength: 3
-  buildingText: Uses High-Voltage Power. People go here to work.
+  buildingText: People go here to work.
   connected: 0
   refundAmount: 0
   buildCircle: {fileID: 0}
