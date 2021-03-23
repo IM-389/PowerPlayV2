@@ -8,8 +8,8 @@
         "Voltage means everything is faster",
         "Voltage isn’t used for anything"
       ],
-      "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A"
     },
     {
@@ -18,8 +18,8 @@
         "True",
         "False"
       ],
-      "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A"
     },
     {
@@ -30,8 +30,8 @@
         "Both A and B",
         "None of the above"
       ],
-      "Correct": 3,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 2,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C"
     },
     {
@@ -42,8 +42,8 @@
         "The sun was a lie",
         "This is false, we can solely rely on solar energy"
       ],
-      "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A"
     },
     {
@@ -54,8 +54,8 @@
         "Smart Meters show how much power you are using and how much you need",
         "All of the above"
       ],
-      "Correct": 2,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 1,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be B"
     },
     {
@@ -64,8 +64,8 @@
         "True",
         "False"
       ],
-      "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A"
     },
     {
@@ -74,8 +74,8 @@
         "True",
         "False"
       ],
-      "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A"
     },
     {
@@ -86,8 +86,8 @@
         "The Smart Grid brings you flowers when you are unwell",
         "The Smart grid can detect where a blackout is and get it fixed way quicker"
       ],
-      "Correct": 4,
-      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and social satisfaction has gone up.",
+      "Correct": 3,
+      "PostAnswerTextCorrect": "Correct! The people like it when someone in charge knows what they are doing. As a result people are happier and city satisfaction has gone up.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D"
     },
     {
