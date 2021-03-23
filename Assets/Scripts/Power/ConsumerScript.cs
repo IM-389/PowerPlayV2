@@ -12,7 +12,7 @@ public class ConsumerScript : PowerBase
 
     public GameObject alert;
     public GameObject alertArrow;
-    //public static int consumerOut;
+    public static int consumerOut;
     //public static int housesPowered;
     public bool powerOut = false;
     public bool powerOn = false;
@@ -25,8 +25,8 @@ public class ConsumerScript : PowerBase
     public AnimationCurve consumptionCurve2;
     public GameObject buildingType;
 
-    public double numHousesPowered = 0;
-    public double totalHouses = 0;//this may be wrong. I plan on incrementing it when the player connects to houses, but i will NOT decrement it
+    public float numHousesPowered = 0;
+    public float totalHouses = 0;//this may be wrong. I plan on incrementing it when the player connects to houses, but i will NOT decrement it
     //if they lose power. that way i can calculate the % of houses powered. 
 
     /// <summary>
@@ -52,6 +52,7 @@ public class ConsumerScript : PowerBase
         hover = GetComponent<HoverScript>();
         moneymanager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         alert.SetActive(false);
+        cityApproval = GameObject.FindGameObjectWithTag("GameController").GetComponent<TimeManager>();
     }
     
     // TODO: Fully implement
@@ -61,12 +62,21 @@ public class ConsumerScript : PowerBase
         // TODO: Smooth the transition between values
         //consumeAmount = consumptionCurve[timeManager.hours];
         consumeAmount = consumptionCurve2.Evaluate(timeManager.hours);
-        
+
         //Debug.Log(timeManager.hours);
         //Debug.Log("Consume Amount 1:" + consumeAmount);
         //Debug.Log("Consume Amount 2:" + consumeAmount2);
         // If there is enough power, consume it
-
+        numHousesPowered = 0;
+        GameObject[] houses = GameObject.FindGameObjectsWithTag("house");
+        foreach(GameObject house in houses)
+        {
+            if (house.GetComponent<ConsumerScript>().isConsuming)
+            {
+                numHousesPowered++;
+            }
+        }
+        totalHouses = GameObject.FindGameObjectsWithTag("house").Length;
         if ((storageScript.powerStored >= consumeAmount))
         {
             storageScript.PullPower(consumeAmount);
@@ -80,29 +90,33 @@ public class ConsumerScript : PowerBase
             //    totalHouses++;
             //}
         }
-        /*
+        
         else
         {
             // Set the flag so other objects can know if this one is consuming
-            if (buildingType.CompareTag("house"))
+            /*
+             * if (buildingType.CompareTag("house"))
             {
                 numHousesPowered--;
             }
-            isCutOff = !isConsuming;
+            */
+            //isCutOff = !isConsuming;
             isConsuming = false;
         }
-        */
-
+        
+        Debug.Log(cityApproval);
         if (cityApproval != null)
         {
+            Debug.Log("This");
             if (cityApproval.hours == 25)
             {
+                Debug.Log("This2");
                 if (!isConsuming)
                 {
                     //calc % of houses powered
                     //if (buildingType.compareTag("house")/hospital)
                     //{
-                        cityApproval.cityApproval -= 20;//we're gonna hope this works
+                   //     cityApproval.cityApproval -= 20;//we're gonna hope this works
                    // }
                    //if(buildingType.compareTag("hospital"))
                    // {
@@ -132,7 +146,7 @@ public class ConsumerScript : PowerBase
             if (!powerOut)
             {
                 //Debug.Log("This is happening");
-                //consumerOut++;
+                consumerOut++;
                 powerOut = true;
                 
             }
@@ -141,7 +155,7 @@ public class ConsumerScript : PowerBase
         {
             if (powerOut)
             {
-                //consumerOut--;
+                consumerOut--;
                 powerOut = false;
             }
         }
@@ -167,14 +181,14 @@ public class ConsumerScript : PowerBase
         {
             alertArrow.SetActive(powerOut);
         }
-        //if (consumerOut > 0)
-        //{
-        //    alert.SetActive(true);
-        //}
-        //else
-        //{
-        //    alert.SetActive(false);
-        //
+        if (consumerOut > 0)
+        {
+            alert.SetActive(true);
+        }
+        else
+        {
+            alert.SetActive(false);
+        }
         //Debug.Log(consumerOut);
         //Debug.Log(housesPowered);
        
