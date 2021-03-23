@@ -12,7 +12,7 @@ public class SunnyDayEvent : EventBase
         powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
     }
     
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Sunny Day Selected!");
         int chance = Random.Range(0, 100);
@@ -20,8 +20,11 @@ public class SunnyDayEvent : EventBase
         if (chance < eventChance)
         {
             Debug.Log("Running Sunny Day!");
-            StartCoroutine(SunnyDay());//this delays sunny day to only happen in the daytime. keep that in mind. windmill break can and will trigger instantly 
+            StartCoroutine(SunnyDay());//this delays sunny day to only happen in the daytime. keep that in mind. windmill break can and will trigger instantly
+            return true;
         }
+
+        return false;
     }
 
     private IEnumerator SunnyDay()

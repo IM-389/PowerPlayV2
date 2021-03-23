@@ -15,7 +15,7 @@ public class SquirrelEvent : EventBase
     // }
     //public GameObject[] findPower;
     private BuildScript wireObject1;
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Squirrel time selected!");
         int chance = Random.Range(0, 100);
@@ -28,10 +28,11 @@ public class SquirrelEvent : EventBase
             GeneralObjectScript safeFound = findPower[rand].GetComponent<GeneralObjectScript>();
             if (safeFound.consumerConnections.Count > 0)
             {
-                foreach(GameObject consumer in safeFound.consumerConnections)
+                List<GameObject> consumerCopy = safeFound.consumerConnections;
+                for(int i = 0; i < safeFound.consumerConnections.Count;)
                 {
-                    safeFound.RemoveConnection(consumer);
-                    consumer.GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.RemoveConnection(consumerCopy[i]);
+                    consumerCopy[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
                     //Destroy(wireObject1);
                     //if(wireObject1.wireObject1.GetComponentInChildren<SpriteRenderer>().color == Color.blue)
                     //{
@@ -40,8 +41,11 @@ public class SquirrelEvent : EventBase
                 }
             }
 
-           
+            return true;
+
         }
+
+        return false;
     }
     
     

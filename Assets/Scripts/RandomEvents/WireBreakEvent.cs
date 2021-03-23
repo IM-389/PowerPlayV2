@@ -13,7 +13,7 @@ public class WireBreakEvent : EventBase
     // Update is called once per frame
     public BuildScript wireBreaker;
     private MoneyManager moneyManager;
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Wire Break Selected!");
         //Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
@@ -32,7 +32,9 @@ public class WireBreakEvent : EventBase
             //Remove A from B's connection list and vice versa
             storeCache.GetComponent<GeneralObjectScript>().RemoveConnection(breakConnection[rand].gameObject);//removes A from B
             breakConnection[rand].RemoveConnection(storeCache);
-            
+            return true;
         }
+
+        return false;
     }
 }

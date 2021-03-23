@@ -59,10 +59,13 @@ public class RandomEventManager : MonoBehaviour
 
             EventBase eventSelected = events[eventRNG];
 
-            eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
-            eventNotification.SetActive(true);
-            StartCoroutine(HideNotification());
-            eventSelected.DoEvent();
+            if (eventSelected.DoEvent())
+            {
+                eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
+                eventNotification.SetActive(true);
+                StartCoroutine(HideNotification());
+            }
+
         }
 
         previousTimestep = timeManager.days;
