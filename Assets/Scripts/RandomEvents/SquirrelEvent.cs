@@ -28,11 +28,10 @@ public class SquirrelEvent : EventBase
             GeneralObjectScript safeFound = findPower[rand].GetComponent<GeneralObjectScript>();
             if (safeFound.consumerConnections.Count > 0)
             {
-                List<GameObject> consumerCopy = safeFound.consumerConnections;
                 for(int i = 0; i < safeFound.consumerConnections.Count;)
                 {
-                    safeFound.RemoveConnection(consumerCopy[i]);
-                    consumerCopy[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.consumerConnections[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.RemoveConnection(safeFound.consumerConnections[i]);
                     //Destroy(wireObject1);
                     //if(wireObject1.wireObject1.GetComponentInChildren<SpriteRenderer>().color == Color.blue)
                     //{
