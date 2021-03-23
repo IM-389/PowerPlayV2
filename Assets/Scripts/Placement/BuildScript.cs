@@ -81,7 +81,7 @@ public class BuildScript : MonoBehaviour
         //lr = GetComponent<LineRenderer>();
         cityApproval = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
-        SetupDropdown();
+        //();
     }
 
     // Update is called once per frame
@@ -386,7 +386,7 @@ public class BuildScript : MonoBehaviour
             }
         }
         */
-        selectedBuilding = spawnableBuildings[0];
+        selectedBuilding = spawnableBuildings[1];
     }
     public void SelectWindTurbine()
     {
@@ -400,7 +400,7 @@ public class BuildScript : MonoBehaviour
             }
         }
         */
-        selectedBuilding = spawnableBuildings[5];
+        selectedBuilding = spawnableBuildings[6];
     }
     public void SelectSolarPanel()
     {
@@ -414,7 +414,7 @@ public class BuildScript : MonoBehaviour
             }
         }
         */
-        selectedBuilding = spawnableBuildings[3];
+        selectedBuilding = spawnableBuildings[4];
     }
     // Only for Debugging
     public void SelectHouse()
@@ -443,11 +443,12 @@ public class BuildScript : MonoBehaviour
             }
         }
         */
-        selectedBuilding = spawnableBuildings[4];
+        selectedBuilding = spawnableBuildings[3];
     }
     public void SelectLowPowerLines()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("Power"))
@@ -455,10 +456,13 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[0];
     }
     public void SelectHighPowerLines()
     {
         DeselectWireMode();
+        /*
         foreach (GameObject building in spawnableBuildings)
         {
             if (building.CompareTag("HighPower"))
@@ -466,6 +470,8 @@ public class BuildScript : MonoBehaviour
                 selectedBuilding = building;
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[2];
     }
     public void SelectHospital()
     {
@@ -480,10 +486,11 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
-    public void SelectFactory()
+    public void SelectSubstation()
     {
+        DeselectWireMode();
+        /*
         {
-            DeselectWireMode();
             foreach (GameObject building in spawnableBuildings)
             {
                 if (building.CompareTag("factory"))
@@ -492,6 +499,8 @@ public class BuildScript : MonoBehaviour
                 }
             }
         }
+        */
+        selectedBuilding = spawnableBuildings[5];
     }
 
     /// <summary>

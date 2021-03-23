@@ -57,7 +57,7 @@ public class MilestoneManager : MonoBehaviour
                 {
                     build.spawnableBuildings.Add(building);
                 }
-                build.SetupDropdown();
+                //build.SetupDropdown();
                 toAdd.AddRange(currentMilestones[i].nextMilestones);
                 toRemove.Add(i);
                 
