@@ -70,6 +70,7 @@ public class TimeManager : MonoBehaviour
         if(Time.timeScale != 0)
         {
             Time.timeScale = 0;
+            resume = 0;
         }
         else
         {
