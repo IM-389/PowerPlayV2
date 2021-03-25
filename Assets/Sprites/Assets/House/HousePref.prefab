@@ -5400,7 +5400,7 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  wireLength: 0
+  wireLength: 5
   buildingText: People live here. Houses use Low-Voltage Power.
   connected: 0
   refundAmount: 0

@@ -269,7 +269,7 @@ public class BuildScript : MonoBehaviour
         else
         {
             wire1.AddNonConsumerConnection(wireObject2);
-            wire2.AddNonConsumerConnection(wireObject2);
+            wire2.AddNonConsumerConnection(wireObject1);
         }
         
         /*
