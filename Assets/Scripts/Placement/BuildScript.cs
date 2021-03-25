@@ -292,7 +292,24 @@ public class BuildScript : MonoBehaviour
             }
         }
         // Sets objects back to null
-        wireObject1 = null;
+        if(wireObject1.tag == "house")
+        {
+            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else
+        {
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+        
+        wireObject1 = wireObject2;
+        if (wireObject1.tag == "house")
+        {
+            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        else
+        {
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+        }
         wireObject2 = null;
         
     }
@@ -350,7 +367,14 @@ public class BuildScript : MonoBehaviour
         upgradeMode = false;
         if (wireObject1 != null)
         {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            if (wireObject1.tag == "house")
+            {
+                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            }
         }
 
         removalMode = false;
@@ -576,8 +600,17 @@ public class BuildScript : MonoBehaviour
         //Debug.Log(hit.transform.tag);
         if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
         {
-            if (wireObject1 != null) 
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            if (wireObject1 != null)
+            {
+                if (wireObject1.tag == "house")
+                {
+                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+            }
             wireObject1 = null;
             return;
         }
@@ -590,8 +623,15 @@ public class BuildScript : MonoBehaviour
                 return;
             }            
             wireObject1 = hit.transform.gameObject;
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            
+            if (wireObject1.tag == "house")
+            {
+                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+            else
+            {
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            }
+
             //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
         }
 
@@ -697,7 +737,6 @@ public class BuildScript : MonoBehaviour
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                 CreateLine();
             }
             // Checks if the second object is either the same voltage as the first object or a transformer
@@ -712,7 +751,6 @@ public class BuildScript : MonoBehaviour
                  // Checks if second object is a transformer
                  (wire2.GetVoltage() == 2))
                  {
-                     wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                      CreateLine();
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
