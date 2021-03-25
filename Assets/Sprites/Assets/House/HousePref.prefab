@@ -5406,10 +5406,8 @@ MonoBehaviour:
   refundAmount: 0
   buildCircle: {fileID: 668803029286808096}
   unRemovable: 0
-  maxHVConnections: 0
-  maxLVConnections: 1
-  hVConnections: []
-  lvConnections: []
+  maxConnections: 1
+  nonConsumerConnections: []
   consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
