@@ -18,29 +18,31 @@ public class SubstationScript : MonoBehaviour
 
     private void Update()
     {
-        if (gos.hVConnections.Count <= 0 && gos.hVConnections.Count <= 0 )
+        if (gos.nonConsumerConnections.Count <= 0 && gos.nonConsumerConnections.Count <= 0 )
         {
             voltageSet = false;
-            gos.maxLVConnections = 1;
-            gos.maxHVConnections = 1;
+            //gos.maxLVConnections = 1;
+            gos.maxConnections = 1;
         }
         
         if (!voltageSet)
         {
-            if (gos.hVConnections.Count > 0)
+            if (gos.nonConsumerConnections.Count > 0)
             {
                 gos.volts = GeneralObjectScript.Voltage.HIGH;
-                gos.maxHVConnections = maxConnections;
-                gos.maxLVConnections = 0;
+                gos.maxConnections = maxConnections;
+                //gos.maxLVConnections = 0;
                 voltageSet = true;
             }
+            /*
             else if (gos.lvConnections.Count > 0)
             {
                 gos.volts = GeneralObjectScript.Voltage.LOW;
-                gos.maxLVConnections = maxConnections;
-                gos.maxHVConnections = 0;
+                //gos.maxLVConnections = maxConnections;
+                gos.maxConnections = 0;
                 voltageSet = true;
             }
+            */
             
         }
         

@@ -14,10 +14,10 @@ public class LVPowerLine : GeneralObjectScript
             if(building.transform.CompareTag("house") || building.transform.CompareTag("hospital") || building.CompareTag("factory"))
             {
                 GeneralObjectScript buildingGOS = building.transform.gameObject.GetComponent<GeneralObjectScript>();
-                if (lvConnections.Count < maxLVConnections && buildingGOS.lvConnections.Count < buildingGOS.maxLVConnections)
+                if (buildingGOS.nonConsumerConnections.Count < buildingGOS.maxConnections)
                 {
                     AddConsumerConnection(building.gameObject);
-                    buildingGOS.AddLVConnection(this.gameObject);
+                    buildingGOS.AddNonConsumerConnection(this.gameObject);
                 }
             }
         }

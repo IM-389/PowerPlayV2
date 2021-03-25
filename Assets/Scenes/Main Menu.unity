@@ -800,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 6843285432876306936, guid: dc281753fa557c14dae06009605a7723, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1921027113}
     - target: {fileID: 6843285432876306936, guid: dc281753fa557c14dae06009605a7723, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -840,7 +840,7 @@ PrefabInstance:
     - target: {fileID: 6843285432886728936, guid: dc281753fa557c14dae06009605a7723, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1921027113}
     - target: {fileID: 6843285432886728936, guid: dc281753fa557c14dae06009605a7723, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetFullscreen
