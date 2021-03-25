@@ -60,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -192,6 +192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
   cost: 0
+  positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!114 &3895293728049192453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConsuming: 0
   isPowered: 0
+  alert: {fileID: 0}
+  alertArrow: {fileID: 0}
+  powerOut: 0
+  powerOn: 0
   consumptionCurve:
   - 2
   - 0
@@ -231,6 +237,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  consumptionCurve2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  buildingType: {fileID: 0}
+  numHousesPowered: 0
+  totalHouses: 0
+  cityApproval: {fileID: 0}
   moneyGained: 0
 --- !u!114 &6106879691197372468
 MonoBehaviour:
@@ -262,9 +278,19 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  isSubstation: 0
   wireLength: 3
-  connections: []
+  buildingText: 
+  connected: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
+  maxHVConnections: 0
+  maxLVConnections: 0
+  hVConnections: []
+  lvConnections: []
+  consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &5584834068119211078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &-3415327331999805256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0
 --- !u!1 &9191420291392939292
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +371,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

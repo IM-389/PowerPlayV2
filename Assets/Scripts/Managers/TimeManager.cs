@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
 using Milestones;
+using UnityEngine.Experimental.Rendering.Universal;
+
 public class TimeManager : MonoBehaviour
 {
     private int width, height;
@@ -30,6 +32,8 @@ public class TimeManager : MonoBehaviour
     public string backgroundReference;
     FMOD.Studio.EventInstance backgrounds;
 
+    public Light2D globalLight;
+
     // For pause menu
     
 
@@ -46,6 +50,8 @@ public class TimeManager : MonoBehaviour
         // Finding and Starting the Event
         backgrounds = FMODUnity.RuntimeManager.CreateInstance(backgroundReference);
         backgrounds.start();
+
+        globalLight.intensity = 0.4375f;
     }
     
     //to increase speed: i'll need a button, and when its clicked, set Time.timeScale to 2F/1.5F
@@ -85,6 +91,7 @@ public class TimeManager : MonoBehaviour
         backgrounds.setParameterByName("Time Of Day", hours);
         citySat.text = "City Satisfaction: " + cityApproval;
     }
+
 
     
     IEnumerator TimeCalculator()//This is a coroutine.
@@ -147,11 +154,22 @@ public class TimeManager : MonoBehaviour
                     isDay = false;
                     Debug.Log("It is night");
                 }
+                if (hours >= 20 || hours <= 4)
+                {
+                    globalLight.intensity = 0.25f;
+                }
+                else if (hours > 12)
+                {
+                    globalLight.intensity -= 0.009375f;
+                }  
+                else if (hours > 4)
+                {
+                    globalLight.intensity += 0.009375f;
+                } 
                 
                 clock.text = buffer;
                 //Debug.Log("The time is Day");
             }
-
 
             totalTimeSteps++;
             timeStep++;
