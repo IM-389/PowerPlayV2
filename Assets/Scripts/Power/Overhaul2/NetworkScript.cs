@@ -89,13 +89,12 @@ public class NetworkScript : MonoBehaviour
         if (manager.precedenceNumber < otherManager.precedenceNumber)
         {
             manager.SetProperties(otherManager);
-            otherNetwork.ChangeManager(manager);
+            //otherNetwork.ChangeManager(manager);
             otherNetwork.isManager = false;
             Destroy(otherManager);
         }
-        else if (!otherNetwork.isManager)
+        else
         {
-            //Destroy(manager);
             ChangeManager(otherManager);
         }
         
