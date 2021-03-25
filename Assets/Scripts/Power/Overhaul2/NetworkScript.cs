@@ -62,6 +62,7 @@ public class NetworkScript : MonoBehaviour
         Debug.Log("Disconnected!");
         if (!FindManager(manager))
         {
+            manager = null;
             if (gos.isConsumer)
             {
                 removedFrom.GetComponent<NetworkScript>().manager.powerConsumed -=
@@ -151,17 +152,19 @@ public class NetworkScript : MonoBehaviour
     private bool FindManager(NetworkManager networkManager)
     {
         Debug.Log($"Finding {networkManager.gameObject.name} from {gameObject.name}");
-        isVisited = true;
         if (isManager && manager.Equals(networkManager))
         {
+            Debug.Log("Found manager!!!");
             return true;
         }
         
         if (isVisited)
         {
+            Debug.Log("Already visited object!");
             return false;
         }
         
+        isVisited = true;
         List<GameObject> allConnections = gos.GetAllConnections();
 
         bool found = false;
@@ -170,6 +173,7 @@ public class NetworkScript : MonoBehaviour
             found = connection.GetComponent<NetworkScript>().FindManager(networkManager);
             if (found)
             {
+                Debug.Log("Found manager, breaking!!!");
                 break;
             }
         }
