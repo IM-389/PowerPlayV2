@@ -2997,12 +2997,12 @@ PrefabInstance:
       objectReference: {fileID: 1451077726}
     - target: {fileID: -4830182077416234453, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
       propertyPath: preMadeConnections.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -4830182077416234453, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 1451077726}
+      objectReference: {fileID: 0}
     - target: {fileID: 2485656953358364938, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
       propertyPath: upkeep
       value: 0
@@ -3061,11 +3061,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
---- !u!1 &126341691 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7206924125788488262, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
-  m_PrefabInstance: {fileID: 126341690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &126341692 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7206924125788488263, guid: 5cae3bba3e70b9142b4bb3f28e22daf5, type: 3}
@@ -11574,23 +11569,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 1513344395}
+      objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[1]
       value: 
-      objectReference: {fileID: 2121710026}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
---- !u!1 &525511399 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 27588709232717115, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
-  m_PrefabInstance: {fileID: 525511398}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &525511400 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 27588709232717113, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
@@ -18598,10 +18588,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableBuildings:
-  - {fileID: 8172532887073661878, guid: edcc673d4a43e754099a251f43f1b08b, type: 3}
+  - {fileID: 2404669415710288745, guid: 8acb8503cd4ad6149b03b7074d38ef3b, type: 3}
   - {fileID: 7192819586404073880, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
   - {fileID: 6028709754009470987, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
-  - {fileID: 4372302633028423459, guid: 51f8c9d52d1a0a4499ab15a63364e084, type: 3}
+  - {fileID: 27588709232717115, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
   - {fileID: 647645244523254856, guid: f8e54f45831f70949b168e5521a0a42b, type: 3}
   - {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
   - {fileID: 666171787696389721, guid: d6122f7f6e466bc4a9dbfb3c07e69823, type: 3}
@@ -33214,16 +33204,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 126341691}
+      objectReference: {fileID: 0}
     - target: {fileID: 3419244029244310493, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: preMadeConnections.Array.data[1]
       value: 
-      objectReference: {fileID: 1513344395}
+      objectReference: {fileID: 0}
     - target: {fileID: 4478874532228927277, guid: 14e6f854b2f9d4b4b8c296ff8c1d12f2, type: 3}
       propertyPath: priorityNumber
       value: 1
@@ -34429,23 +34419,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5648452970475571260, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
       propertyPath: preMadeConnections.Array.size
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5648452970475571260, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 1451077726}
+      objectReference: {fileID: 0}
     - target: {fileID: 5648452970475571260, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
       propertyPath: preMadeConnections.Array.data[1]
       value: 
-      objectReference: {fileID: 525511399}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
---- !u!1 &1513344395 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5448026507461769134, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
-  m_PrefabInstance: {fileID: 1513344394}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1513344396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5448026507461769120, guid: ccaab3a2215f9a74ab49b2fa05cf9474, type: 3}
@@ -42664,22 +42649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CollisionTag: 
-  Event: event:/Sound Effects/Griddy Speak
-  PlayEvent: 15
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 0
-  OverrideMaxDistance: 0
-  hasTriggered: 0
-  isQuitting: 0
-  isOneshot: 0
-  cachedParams: []
-  <IsActive>k__BackingField: 0
 --- !u!1001 &1919499042
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46504,19 +46473,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8564935564043737464, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
       propertyPath: preMadeConnections.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8564935564043737464, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
       propertyPath: preMadeConnections.Array.data[0]
       value: 
-      objectReference: {fileID: 525511399}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
---- !u!1 &2121710026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
-  m_PrefabInstance: {fileID: 2121710025}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2121710027 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6470925103800842140, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}

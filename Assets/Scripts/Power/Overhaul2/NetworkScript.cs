@@ -91,10 +91,15 @@ public class NetworkScript : MonoBehaviour
             manager.SetProperties(otherManager);
             //otherNetwork.ChangeManager(manager);
             otherNetwork.isManager = false;
-            Destroy(otherManager);
+            DestroyImmediate(otherManager);
+        }
+        else if (manager.precedenceNumber == otherManager.precedenceNumber)
+        {
+            ++manager.precedenceNumber;
         }
         else
         {
+            DestroyImmediate(manager);
             ChangeManager(otherManager);
         }
         
@@ -111,7 +116,8 @@ public class NetworkScript : MonoBehaviour
         {
             return;
         }
-        
+
+        isManager = false;
         manager = newManager;
 
         List<GameObject> allConnections = gos.GetAllConnections();
