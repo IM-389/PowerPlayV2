@@ -34,13 +34,13 @@ public class TransmitterScript : PowerBase
         List<TransmitterScript> toTransmit = new List<TransmitterScript>();
         // The most the object can push is limited so each connected object gets the same total power.
 
-        toTransmit.AddRange(AddDestinations(gos.hVConnections));
-        toTransmit.AddRange(AddDestinations(gos.lvConnections));
+        toTransmit.AddRange(AddDestinations(gos.nonConsumerConnections));
+        toTransmit.AddRange(AddDestinations(gos.consumerConnections));
         
+        /*
         if (isLVPole)
         {
-            LVPowerLine line = (LVPowerLine) gos;
-            foreach (var destination in line.consumerConnections)
+            foreach (var destination in gos.consumerConnections)
             {
                 StorageScript otherStorage = destination.GetComponent<StorageScript>();
                 TransmitterScript otherTransmitter = destination.GetComponent<TransmitterScript>();
@@ -50,6 +50,7 @@ public class TransmitterScript : PowerBase
                 }
             }
         }
+        */
         
         
         float maxPush = storageScript.powerStored / toTransmit.Count;

@@ -1,11 +1,12 @@
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
     public GameObject dialoguePanel;
-    public Text dialogueLine;
+    public TextMeshProUGUI dialogueLine;
 
     public bool goToNext = true;
     public bool canPress = true;
@@ -19,6 +20,10 @@ public class SceneController : MonoBehaviour
 
     public StoryTelling st;
     public DialogueBehaviour db;
+
+    [FMODUnity.EventRef]
+    public string griddySounds;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +44,7 @@ public class SceneController : MonoBehaviour
     public void PressButtonForText()
     {
             db.DisplayNextSentence();
+            FMODUnity.RuntimeManager.PlayOneShot(griddySounds);
             canPress = false;
             Invoke("WaitToPress", waitTime);
 

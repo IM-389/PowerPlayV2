@@ -58,7 +58,7 @@ public class HoverScript : MonoBehaviour
         tooltipPanel.transform.position = panelPos;
         string toShow = "";
 
-        toShow += storage.objectDescription + "\n";
+        toShow += storage.gameObject.GetComponent<GeneralObjectScript>().buildingText + "\n";
         
         if (gos.isConsumer)
         {
@@ -82,13 +82,18 @@ public class HoverScript : MonoBehaviour
             toShow += $"{storage.powerStored} power stored\n";
         }
 
-        toShow += $"{gos.hVConnections.Count} / {gos.maxHVConnections} HV connections\n";
-        toShow += $"{gos.lvConnections.Count} / {gos.maxLVConnections} LV connections\n";
+        toShow += $"{gos.nonConsumerConnections.Count} / {gos.maxConnections} connections\n";
+        //toShow += $"{gos.lvConnections.Count} / {gos.maxLVConnections} LV connections\n";
 
         //Debug.Log($"toShow: {toShow}");        
 
         powerAmtText.text = toShow;
     }
-    
+
+    public void ToggleBuildCircle(bool show)
+    {
+        gos.buildCircle.SetActive(show);
+    }
+
 
 }

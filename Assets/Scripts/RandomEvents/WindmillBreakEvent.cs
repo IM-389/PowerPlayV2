@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WindmillBreakEvent : EventBase
 {
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Windmill Break Selected!");
         int chance = Random.Range(0, 100);
@@ -28,6 +28,9 @@ public class WindmillBreakEvent : EventBase
             int randTurbine = Random.Range(0, turbines.Count);
 
             StartCoroutine(turbines[randTurbine].TimedDisable(30));
+            return true;
         }
+
+        return false;
     }
 }

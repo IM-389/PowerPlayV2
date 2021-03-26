@@ -6,14 +6,5 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject helpScreen;
-   
-    private void Update()
-    {
-        //helpScreen.SetActive(true);
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
-    }
 
 }

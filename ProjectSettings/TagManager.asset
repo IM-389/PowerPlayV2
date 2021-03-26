@@ -21,6 +21,7 @@ TagManager:
   - Road
   - wire
   - Substation
+  - alert
   layers:
   - Default
   - TransparentFX

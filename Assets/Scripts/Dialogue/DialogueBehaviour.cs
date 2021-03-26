@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,18 +16,28 @@ public class DialogueBehaviour : MonoBehaviour
 
     public GameObject dialougePanel;
     public GameObject griddy;
+    public Animator griddyAnim;
+
+    // Reference to location of sound
+    [FMODUnity.EventRef]
+    public string griddyAffirmative;
+
     void Start()
     {
         //sentences = new List<string>();
         gm = GameObject.FindObjectOfType<GameManager>();
         sc = GameObject.FindObjectOfType<SceneController>();
         st = GameObject.FindObjectOfType<StoryTelling>();
+        // Ugly method of getting the correct animator
+        //griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     public void StartConvo(Dialogue dialog)
     {
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
+
+        FMODUnity.RuntimeManager.PlayOneShot(griddyAffirmative);
 
         sentences = new List<string>();
         sentences.Clear();
@@ -48,10 +59,12 @@ public class DialogueBehaviour : MonoBehaviour
             //nextSetButton.SetActive(true);
             //mainButton.SetActive(false);
             dialougePanel.SetActive(false);
-            griddy.SetActive(false);
+            griddyAnim.SetBool("leaving", true);
+            StartCoroutine(HideGriddy());
             Time.timeScale = 1;
             return;
         }
+        griddyAnim.SetTrigger("talkingTrigger");
         string talk = sentences[0];
         sc.dialogueLine.text = talk;
         Time.timeScale = 0;
@@ -74,6 +87,12 @@ public class DialogueBehaviour : MonoBehaviour
         st = GameObject.FindObjectOfType<StoryTelling>();
         st.TriggerDialogue();
         
+    }
+
+    private IEnumerator HideGriddy()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        griddy.SetActive(false);
     }
 }
     

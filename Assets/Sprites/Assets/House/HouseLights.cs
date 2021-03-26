@@ -32,7 +32,8 @@ public class HouseLights : MonoBehaviour
 
     private void Update()
     {
-        powered = (storage.powerStored > consumer.consumptionCurve[timeManager.hours]);
+        powered = (storage.powerStored > consumer.consumptionCurve2.Evaluate(timeManager.hours));
+        //powered = (storage.powerStored > consumer.consumptionCurve[timeManager.hours]);
         CheckPower();
     }
 

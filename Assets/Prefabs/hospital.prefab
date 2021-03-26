@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6c4aac0b31e51fe4ca8130de19d56dc5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 03cc5243307838b42a59437178f45c62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -165,18 +165,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -2.5, y: 2.5}
+  m_Offset: {x: -0.12303448, y: 0.12303352}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.75, y: 0.25}
-    oldSize: {x: 10.24, y: 10.24}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 8, y: 8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 10}
+  m_Size: {x: 9.919424, y: 9.758272}
   m_EdgeRadius: 0
 --- !u!114 &6653897980499226617
 MonoBehaviour:
@@ -193,7 +193,7 @@ MonoBehaviour:
   dimensions: {x: 2, y: 2}
   cost: 0
   positionOffset: {x: 0, y: 0}
-  buildingName: 
+  buildingName: Hospital
 --- !u!114 &721417663547645832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,6 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConsuming: 0
   isPowered: 0
+  alert: {fileID: 0}
+  alertArrow: {fileID: 0}
+  powerOut: 0
+  powerOn: 0
   consumptionCurve:
   - 2
   - 2
@@ -233,6 +237,16 @@ MonoBehaviour:
   - 2
   - 2
   - 2
+  consumptionCurve2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  buildingType: {fileID: 0}
+  numHousesPowered: 0
+  totalHouses: 0
+  cityApproval: {fileID: 0}
   moneyGained: 3
 --- !u!114 &7544618107801901497
 MonoBehaviour:
@@ -247,9 +261,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerStored: 0
-  maxPower: 100
+  maxPower: 1000
   isFull: 0
-  objectDescription: Uses High-Voltage Power. Doctors need power to help sick people.
 --- !u!114 &5474069892262664602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -265,15 +278,19 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  isSubstation: 0
   wireLength: 3
-  buildingText: Uses High-Voltage Power. Doctors need power to help sick people.
-  cost: 0
+  buildingText: Doctors need power to help sick people.
+  connected: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 1
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &8182319749470883275
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -287,6 +304,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  canRecieve: 1
+  priorityNumber: 4
 --- !u!114 &7824566094599213365
 MonoBehaviour:
   m_ObjectHideFlags: 0

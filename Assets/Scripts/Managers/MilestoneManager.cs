@@ -23,6 +23,9 @@ public class MilestoneManager : MonoBehaviour
 
     [Tooltip("Object for Griddy")]
     public GameObject griddy;
+
+    [Tooltip("Reference to the QuizManager")]
+    public QuizManager quizManager;
     
     /// <summary>
     /// Sets the data for the first milestone
@@ -45,7 +48,7 @@ public class MilestoneManager : MonoBehaviour
         for(int i = 0; i < currentMilestones.Count; ++i)
         {
             bool isComplete = currentMilestones[i].CheckCompleteMilestone();
-            if (isComplete)
+            if (isComplete || Input.GetKeyDown(KeyCode.Y))
             {
                 Debug.Log("Milestone complete, setting next ones!");
                 currentMilestones[i].SetCompleteMilestone();
@@ -54,11 +57,16 @@ public class MilestoneManager : MonoBehaviour
                 {
                     build.spawnableBuildings.Add(building);
                 }
-                build.SetupDropdown();
+                //build.SetupDropdown();
                 toAdd.AddRange(currentMilestones[i].nextMilestones);
                 toRemove.Add(i);
                 
                 griddy.SetActive(true);
+                if (currentMilestones[i].hasQuestion)
+                {
+                    quizManager.StartQuiz();
+                }
+
                 dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
                 dialouge.TriggerDialogue();
             }
