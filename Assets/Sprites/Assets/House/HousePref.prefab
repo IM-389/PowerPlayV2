@@ -5189,10 +5189,7 @@ GameObject:
   - component: {fileID: 6028709754009470984}
   - component: {fileID: 1615638224}
   - component: {fileID: 9213772324347092880}
-  - component: {fileID: -8993503109168893168}
-  - component: {fileID: -1264574402197089311}
   - component: {fileID: -1264182747367775761}
-  - component: {fileID: 2001197299529104073}
   - component: {fileID: -1488912352967434167}
   - component: {fileID: -5367434403379632313}
   - component: {fileID: 1801298198787127375}
@@ -5265,129 +5262,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.2318006, y: 6.41084}
   m_EdgeRadius: 0
---- !u!114 &-8993503109168893168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028709754009470987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ea9d223a61bc040a95736ec2d6c165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isConsuming: 0
-  isPowered: 0
-  alert: {fileID: 0}
-  alertArrow: {fileID: 2067710383698671812}
-  powerOut: 0
-  powerOn: 0
-  consumptionCurve:
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 1
-  - 2
-  - 2
-  - 2
-  - 2
-  - 3
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 2
-  - 1
-  - 1
-  - 1
-  - 1
-  consumptionCurve2:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0.615779
-      outSlope: 0.615779
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.041893847
-    - serializedVersion: 3
-      time: 6
-      value: 2
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 10
-      value: 3
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 11
-      value: 2
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 20
-      value: 1
-      inSlope: Infinity
-      outSlope: Infinity
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 23
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 1
-    m_RotationOrder: 4
-  buildingType: {fileID: 0}
-  numHousesPowered: 0
-  totalHouses: 0
-  cityApproval: {fileID: 0}
-  moneyGained: 1
---- !u!114 &-1264574402197089311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028709754009470987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerStored: 0
-  maxPower: 1000
-  isFull: 0
 --- !u!114 &-1264182747367775761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5410,26 +5284,9 @@ MonoBehaviour:
   buildCircle: {fileID: 668803029286808096}
   unRemovable: 0
   maxConnections: 1
-  nonConsumerConnections: []
-  consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
---- !u!114 &2001197299529104073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028709754009470987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSend: 0
-  canRecieve: 1
-  priorityNumber: 4
 --- !u!114 &-1488912352967434167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5524,6 +5381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  gos: {fileID: 0}
   isManager: 1
 --- !u!114 &-4739558249545406185
 MonoBehaviour:
@@ -5552,7 +5410,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 2
+  amountGenerated: 0
+  amountConsumed: 0
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5652,8 +5511,8 @@ MonoBehaviour:
   poweredSprite: {fileID: 21300000, guid: 34b47aa83a542c949a9421038042f872, type: 3}
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
-  storage: {fileID: -1264574402197089311}
-  consumer: {fileID: -8993503109168893168}
+  storage: {fileID: 0}
+  consumer: {fileID: 0}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0

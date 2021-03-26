@@ -92,10 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7206924125788488263}
   - component: {fileID: 7206924125788488256}
-  - component: {fileID: 2485656953358364938}
-  - component: {fileID: -2914542872329018571}
   - component: {fileID: -4830182077416234453}
-  - component: {fileID: 7081543421014072329}
   - component: {fileID: 3028938064642137138}
   - component: {fileID: 5441782896026427583}
   - component: {fileID: -1158628869385494028}
@@ -136,36 +133,6 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &2485656953358364938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7206924125788488262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60fadf3be5f5cf7448da380294437409, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  amount: 15
-  upkeep: 1
---- !u!114 &-2914542872329018571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7206924125788488262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerStored: 0
-  maxPower: 1000
-  isFull: 0
 --- !u!114 &-4830182077416234453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,26 +154,10 @@ MonoBehaviour:
   refundAmount: 5
   buildCircle: {fileID: 5794920829783192117}
   unRemovable: 0
-  maxHVConnections: 1
-  maxLVConnections: 0
+  maxConnections: 1
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
---- !u!114 &7081543421014072329
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7206924125788488262}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSend: 1
-  canRecieve: 0
-  priorityNumber: 0
 --- !u!114 &3028938064642137138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
+  gos: {fileID: 0}
   isManager: 1
 --- !u!114 &-3708978372728394728
 MonoBehaviour:
@@ -288,7 +240,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amount: 15
+  amountGenerated: 0
+  amountConsumed: 0
 --- !u!1 &7206924125870641257
 GameObject:
   m_ObjectHideFlags: 0

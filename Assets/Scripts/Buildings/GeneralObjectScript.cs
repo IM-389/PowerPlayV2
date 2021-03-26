@@ -58,8 +58,7 @@ public class GeneralObjectScript : MonoBehaviour
     private void Start()
     {
         // Register the list changing to the callback function.
-        hVConnections.CollectionChanged += OnListChanged;
-        lvConnections.CollectionChanged += OnListChanged;
+        nonConsumerConnections.CollectionChanged += OnListChanged;
         consumerConnections.CollectionChanged += OnListChanged;
 
         powerNetwork = gameObject.GetComponent<NetworkScript>();
@@ -123,9 +122,9 @@ public class GeneralObjectScript : MonoBehaviour
         nonConsumerConnections.Remove(connection);
         //lvConnections.Remove(connection);
         consumerConnections.Remove(connection);
-        nonConsumerConnections.RemoveAll(item => item == null);
+        //nonConsumerConnections.RemoveAll(item => item == null);
         //lvConnections.RemoveAll(item => item == null);
-        consumerConnections.RemoveAll(item => item == null);
+        //consumerConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))

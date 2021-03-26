@@ -1,9 +1,9 @@
 using System.Collections;
 using UnityEngine;
 
-[RequireComponent(typeof(StorageScript))]
-[RequireComponent(typeof(GeneralObjectScript))]
-[RequireComponent(typeof(TransmitterScript))]
+//[RequireComponent(typeof(StorageScript))]
+//[RequireComponent(typeof(GeneralObjectScript))]
+//[RequireComponent(typeof(TransmitterScript))]
 public abstract class PowerBase : MonoBehaviour
 {
     /// <summary>
