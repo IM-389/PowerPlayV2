@@ -14,6 +14,7 @@ public class HouseLights : MonoBehaviour
     public Sprite poweredSprite;
     public Sprite unpoweredSprite;
     public GameObject smoke;
+    public GameObject houseLight;
 
     public StorageScript storage;
 
@@ -43,10 +44,12 @@ public class HouseLights : MonoBehaviour
         {
             spriteR.sprite = unpoweredSprite;
             smoke.SetActive(false);
+            houseLight.SetActive(false);
         }
         if(powered == true)
         {
             spriteR.sprite = poweredSprite;
+            houseLight.SetActive(true);
             smoke.SetActive(true);
         }
     }
