@@ -24,7 +24,8 @@ public class NetworkManager : MonoBehaviour
     void Start()
     {
         // Determine predecence number randomly upon placement
-        precedenceNumber = Random.Range(0, 100);
+        // Random number is large enough to (hopefully) prevent 2 managers with the same from being connected
+        precedenceNumber = Random.Range(0, 1000000);
     }
 
     public void SetProperties(NetworkManager other)

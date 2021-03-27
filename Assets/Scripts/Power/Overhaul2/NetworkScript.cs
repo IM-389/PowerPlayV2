@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -78,7 +79,15 @@ public class NetworkScript : MonoBehaviour
     private void NegotiateManager(NetworkScript otherNetwork)
     {
         NetworkManager otherManager = otherNetwork.manager;
+
+        if (otherManager == manager)
+        {
+            return;
+        }
+        
         Debug.Log($"Negotiating between {manager.gameObject.name} and {otherManager.gameObject.name}");
+
+        // This always runs at least once per connection
         if (manager.precedenceNumber < otherManager.precedenceNumber)
         {
             //manager.SetProperties(otherManager);
@@ -87,10 +96,12 @@ public class NetworkScript : MonoBehaviour
             otherNetwork.isManager = false;
             //DestroyImmediate(otherManager);
         }
+        // This may run: either this or the else below run
         else if (manager.precedenceNumber == otherManager.precedenceNumber)
         {
             Debug.Log("Managers share precedence, increasing number");
-            ++manager.precedenceNumber;
+            DestroyImmediate(manager);
+            //++manager.precedenceNumber;
         }
         else
         {
