@@ -856,7 +856,15 @@ public class BuildScript : MonoBehaviour
         {
             if (cityApproval.hours >= 25)
             {
-                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 1)
+                {
+                    cityApproval.cityApproval -= 35;
+                }
+                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+                {
+                    cityApproval.cityApproval -= 20;
+                }
+                else if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval -= 10;
                     if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
@@ -874,15 +882,16 @@ public class BuildScript : MonoBehaviour
                     }
                     */
                 }
-                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+
+                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
                 {
-                    cityApproval.cityApproval -= 20;
+                    cityApproval.cityApproval += 35;
                 }
-                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
                 {
-                    cityApproval.cityApproval -= 35;
+                    cityApproval.cityApproval += 20;
                 }
-                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval += 10;
                     if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
@@ -894,14 +903,8 @@ public class BuildScript : MonoBehaviour
                         cityApproval.cityApproval += 10;
                     }
                 }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
-                {
-                    cityApproval.cityApproval += 20;
-                }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
-                {
-                    cityApproval.cityApproval += 35;
-                }
+                
+                
             }
         }
     }
