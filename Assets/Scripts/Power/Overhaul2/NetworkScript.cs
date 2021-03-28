@@ -35,7 +35,7 @@ public class NetworkScript : MonoBehaviour
     {
         // Each object starts as its own manager
         manager = gameObject.GetComponent<NetworkManager>();
-        
+
         gos = gameObject.GetComponent<GeneralObjectScript>();
 
     }
@@ -49,10 +49,6 @@ public class NetworkScript : MonoBehaviour
         NetworkScript otherNetwork = connectedTo.GetComponent<NetworkScript>();
 
         NegotiateManager(otherNetwork);
-
-        manager.powerConsumed += gameObject.GetComponent<PowerAmountInfo>().amountConsumed;
-        
-        manager.powerGenerated += gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
 
     }
 
@@ -76,13 +72,13 @@ public class NetworkScript : MonoBehaviour
     /// </summary>
     /// <param name="otherNetwork">The network to compare against</param>
     /// <returns></returns>
-    private void NegotiateManager(NetworkScript otherNetwork)
+    private bool NegotiateManager(NetworkScript otherNetwork)
     {
         NetworkManager otherManager = otherNetwork.manager;
 
         if (otherManager == manager)
         {
-            return;
+            return false;
         }
         
         Debug.Log($"Negotiating between {manager.gameObject.name} and {otherManager.gameObject.name}");
@@ -102,6 +98,7 @@ public class NetworkScript : MonoBehaviour
             Debug.Log("Managers share precedence, increasing number");
             DestroyImmediate(manager);
             //++manager.precedenceNumber;
+            return false;
         }
         else
         {
@@ -110,8 +107,10 @@ public class NetworkScript : MonoBehaviour
             DestroyImmediate(manager);
             ChangeManager(otherManager);
         }
-        
-        
+
+        return true;
+
+
     }
 
     /// <summary>

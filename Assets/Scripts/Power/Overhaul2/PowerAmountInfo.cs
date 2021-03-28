@@ -5,9 +5,9 @@ public class PowerAmountInfo : MonoBehaviour
 {
 
     [Tooltip("How much this object generates")]
-    public int amountGenerated;
+    public float amountGenerated;
 
     [Tooltip("How much power an object consumes")]
-    public int amountConsumed;
+    public float amountConsumed;
 
 }

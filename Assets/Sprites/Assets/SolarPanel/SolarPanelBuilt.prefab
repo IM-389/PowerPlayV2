@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 0
+  amountGenerated: 2
   amountConsumed: 0
 --- !u!114 &7781973340629442645
 MonoBehaviour:
@@ -169,6 +169,7 @@ MonoBehaviour:
   precedenceNumber: 0
   powerGenerated: 0
   powerConsumed: 0
+  hasEnoughPower: 0
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0

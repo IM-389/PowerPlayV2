@@ -13,21 +13,31 @@ public class NetworkManager : MonoBehaviour
     /// <summary>
     /// How much power is being generated in the connected network
     /// </summary>
-    public int powerGenerated;
+    public float powerGenerated;
     
     /// <summary>
     /// How much power is being consumed in the connected network
     /// </summary>
-    public int powerConsumed;
+    public float powerConsumed;
 
+    public bool hasEnoughPower = false;
+    
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        powerConsumed += gameObject.GetComponent<PowerAmountInfo>().amountConsumed;
+        
+        powerGenerated += gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
         // Determine predecence number randomly upon placement
         // Random number is large enough to (hopefully) prevent 2 managers with the same from being connected
         precedenceNumber = Random.Range(0, 1000000);
     }
 
+    private void Update()
+    {
+        hasEnoughPower = powerConsumed <= powerGenerated;
+    }
+    
     public void SetProperties(NetworkManager other)
     {
         powerConsumed += other.powerConsumed;
