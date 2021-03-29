@@ -622,7 +622,7 @@ public class BuildScript : MonoBehaviour
         //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         //Debug.Log(hit.transform.tag);
-        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
+        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road") || hit.transform.CompareTag("tree") || hit.transform.CompareTag("wire"))
         {
             if (wireObject1 != null)
             {
@@ -641,11 +641,6 @@ public class BuildScript : MonoBehaviour
         // Sets the first wire object
         if (wireObject1 == null)
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                Debug.Log(hit.transform.gameObject.GetComponent<BoxCollider2D>().size);
-                return;
-            }            
             wireObject1 = hit.transform.gameObject;
             if (wireObject1.tag == "house")
             {
@@ -654,18 +649,12 @@ public class BuildScript : MonoBehaviour
             else
             {
                 wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            }
-
-            //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
+            }  
         }
 
         // Otherwise it sets the second wire object
         else
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                return;
-            }
             wireObject2 = hit.transform.gameObject;
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
@@ -731,7 +720,18 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
-            
+            if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot connect substation to a consumer";
+                return;
+            }
+            if(wire1.isConsumer && wire2.isConsumer)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot create a connection between consumers";
+                return;
+            }
             /*
             if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
