@@ -48,7 +48,7 @@ public class MilestoneManager : MonoBehaviour
         for(int i = 0; i < currentMilestones.Count; ++i)
         {
             bool isComplete = currentMilestones[i].CheckCompleteMilestone();
-            if (isComplete)
+            if (isComplete || Input.GetKeyDown(KeyCode.Y))
             {
                 Debug.Log("Milestone complete, setting next ones!");
                 currentMilestones[i].SetCompleteMilestone();

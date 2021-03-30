@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volts: 1
+  volts: 0
   isGenerator: 1
   isConsumer: 0
   wireLength: 5

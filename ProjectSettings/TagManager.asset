@@ -22,6 +22,7 @@ TagManager:
   - wire
   - Substation
   - alert
+  - tree
   layers:
   - Default
   - TransparentFX

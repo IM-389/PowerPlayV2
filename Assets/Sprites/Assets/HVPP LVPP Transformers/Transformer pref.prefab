@@ -293,7 +293,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volts: 2
+  volts: 0
   isGenerator: 0
   isConsumer: 0
   wireLength: 5
@@ -302,10 +302,8 @@ MonoBehaviour:
   refundAmount: 0
   buildCircle: {fileID: 3699488343037396948}
   unRemovable: 0
-  maxHVConnections: 2
-  maxLVConnections: 2
-  hVConnections: []
-  lvConnections: []
+  maxConnections: 2
+  nonConsumerConnections: []
   consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []

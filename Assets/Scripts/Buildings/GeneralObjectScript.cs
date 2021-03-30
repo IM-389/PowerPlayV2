@@ -27,12 +27,12 @@ public class GeneralObjectScript : MonoBehaviour
     bool destroyed = false;
     GameObject destroyKey;
     
-    [FormerlySerializedAs("maxConnectiions")] public int maxHVConnections;
-    public int maxLVConnections;
+    [FormerlySerializedAs("maxHVConnections")] [FormerlySerializedAs("maxConnectiions")] public int maxConnections;
+    //public int maxLVConnections;
     
 
-    public List<GameObject> hVConnections = new List<GameObject>();
-    public List<GameObject> lvConnections = new List<GameObject>();
+    [FormerlySerializedAs("hVConnections")] public List<GameObject> nonConsumerConnections = new List<GameObject>();
+    //public List<GameObject> lvConnections = new List<GameObject>();
     public List<GameObject> consumerConnections = new List<GameObject>();
         
     [Tooltip("Does this object count towards milestone progress")]
@@ -51,7 +51,8 @@ public class GeneralObjectScript : MonoBehaviour
         //buildCircle.transform.localScale *= wireLength;
         foreach(GameObject connection in preMadeConnections)
         {
-            GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
+            //GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
+            /*
             if(gos.volts == Voltage.LOW)
             {
                 AddLVConnection(connection);
@@ -75,18 +76,22 @@ public class GeneralObjectScript : MonoBehaviour
                     AddLVConnection(connection);
                 }
             }
+            */
+            AddNonConsumerConnection(connection);
 
         }
     }
+    /*
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);
         connected = true;
         CreateLine(connection, Color.white, 0.1f);
     }
-    public void AddHVConnection(GameObject connection)
+    */
+    public void AddNonConsumerConnection(GameObject connection)
     {
-        hVConnections.Add(connection);
+        nonConsumerConnections.Add(connection);
         connected = true;
         CreateLine(connection, Color.white, 0.1f);
     }
@@ -98,11 +103,11 @@ public class GeneralObjectScript : MonoBehaviour
     }
     public void RemoveConnection(GameObject connection)
     {
-        hVConnections.Remove(connection);
-        lvConnections.Remove(connection);
+        nonConsumerConnections.Remove(connection);
+        //lvConnections.Remove(connection);
         consumerConnections.Remove(connection);
-        hVConnections.RemoveAll(item => item == null);
-        lvConnections.RemoveAll(item => item == null);
+        nonConsumerConnections.RemoveAll(item => item == null);
+        //lvConnections.RemoveAll(item => item == null);
         consumerConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
@@ -173,8 +178,8 @@ public class GeneralObjectScript : MonoBehaviour
     public List<GameObject> GetAllConnections()
     {
         List<GameObject> allConnections = new List<GameObject>();
-        allConnections.AddRange(hVConnections);
-        allConnections.AddRange(lvConnections);
+        allConnections.AddRange(nonConsumerConnections);
+        //allConnections.AddRange(lvConnections);
         allConnections.AddRange(consumerConnections);
 
         return allConnections;
@@ -186,7 +191,7 @@ public class GeneralObjectScript : MonoBehaviour
     /// <returns>The number of connections</returns>
     public int GetAllConnectionsCount()
     {
-        return (hVConnections.Count + lvConnections.Count + consumerConnections.Count);
+        return (nonConsumerConnections.Count + consumerConnections.Count);
     }
 
     public void OnMouseEnter()

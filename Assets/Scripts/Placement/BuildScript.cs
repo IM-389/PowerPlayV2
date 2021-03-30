@@ -250,6 +250,29 @@ public class BuildScript : MonoBehaviour
         GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
         GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
         // Adds connection from wire 1 to wire 2
+        if (wire1.isConsumer)
+        {
+            if (wire2.volts == GeneralObjectScript.Voltage.LOW)
+            {
+                wire1.AddNonConsumerConnection(wireObject2);
+                wire2.AddConsumerConnection(wireObject1);
+            }
+        } 
+        else if (wire2.isConsumer)
+        {
+            if (wire1.volts == GeneralObjectScript.Voltage.LOW)
+            {
+                wire2.AddNonConsumerConnection(wireObject1);
+                wire1.AddConsumerConnection(wireObject2);
+            }
+        }
+        else
+        {
+            wire1.AddNonConsumerConnection(wireObject2);
+            wire2.AddNonConsumerConnection(wireObject1);
+        }
+        
+        /*
         if (wire1.volts == GeneralObjectScript.Voltage.LOW && (!wire2.isConsumer))
         {
             wire1.AddLVConnection(wireObject2);
@@ -263,7 +286,7 @@ public class BuildScript : MonoBehaviour
             if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire1.AddHVConnection(wireObject2);
+                wire1.AddNonConsumerConnection(wireObject2);
             }
             else
             {
@@ -284,13 +307,14 @@ public class BuildScript : MonoBehaviour
             if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
                 wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
             {
-                wire2.AddHVConnection(wireObject1);
+                wire2.AddNonConsumerConnection(wireObject1);
             }
             else
             {
                 wire2.AddLVConnection(wireObject1);
             }
         }
+        */
         // Sets objects back to null
         if(wireObject1.tag == "house")
         {
@@ -453,7 +477,7 @@ public class BuildScript : MonoBehaviour
             }
         }
         */
-        selectedBuilding = spawnableBuildings[1];
+        selectedBuilding = spawnableBuildings[2];
     }
     public void SelectTransformer()
     {
@@ -563,8 +587,8 @@ public class BuildScript : MonoBehaviour
             }
 
             tooltipInfo += $"Cost: {sGos.refundAmount}\nRange: {sGos.wireLength}\n";
-            tooltipInfo += $"HV Connections: {sGos.maxHVConnections}\n";
-            tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
+            tooltipInfo += $"Connections: {sGos.maxConnections}\n";
+            //tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
             
             
           
@@ -598,7 +622,7 @@ public class BuildScript : MonoBehaviour
         //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
         //Debug.Log(hit.transform.tag);
-        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
+        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road") || hit.transform.CompareTag("tree") || hit.transform.CompareTag("wire"))
         {
             if (wireObject1 != null)
             {
@@ -617,11 +641,6 @@ public class BuildScript : MonoBehaviour
         // Sets the first wire object
         if (wireObject1 == null)
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                Debug.Log(hit.transform.gameObject.GetComponent<BoxCollider2D>().size);
-                return;
-            }            
             wireObject1 = hit.transform.gameObject;
             if (wireObject1.tag == "house")
             {
@@ -630,18 +649,12 @@ public class BuildScript : MonoBehaviour
             else
             {
                 wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            }
-
-            //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
+            }  
         }
 
         // Otherwise it sets the second wire object
         else
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                return;
-            }
             wireObject2 = hit.transform.gameObject;
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
@@ -671,6 +684,7 @@ public class BuildScript : MonoBehaviour
             }
 
             // Checks and sees if connection is already made between both objects
+            /*
             foreach (GameObject connect in wire1.lvConnections)
             {
                 if (connect == wireObject2)
@@ -680,7 +694,8 @@ public class BuildScript : MonoBehaviour
                     return;
                 }
             }
-            foreach (GameObject connect in wire1.hVConnections)
+            */
+            foreach (GameObject connect in wire1.nonConsumerConnections)
             {
                 if (connect == wireObject2)
                 {
@@ -699,19 +714,32 @@ public class BuildScript : MonoBehaviour
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.hVConnections.Count >= wire1.maxHVConnections || wire2.hVConnections.Count >= wire2.maxHVConnections)))
+            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections)))
             {
                 errorBox.SetActive(true);
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
-            
+            if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot connect substation to a consumer";
+                return;
+            }
+            if(wire1.isConsumer && wire2.isConsumer)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot create a connection between consumers";
+                return;
+            }
+            /*
             if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
                 errorBox.SetActive(true);
                 errorText.text = "Too many low voltage connections on one object!";
                 return;
             }
+            */
             
             /*
             // Generators and consumers can only have one connection
@@ -732,7 +760,7 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "One of these object can only have three connections";
                 return;
             }
-            */
+            
             
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
@@ -769,6 +797,18 @@ public class BuildScript : MonoBehaviour
                     errorText.text = "You cannot connect a consumer to another consumer";
                  }
             }
+            */
+
+            if ((wire1.volts == GeneralObjectScript.Voltage.HIGH && wire2.isConsumer)
+                || wire2.volts == GeneralObjectScript.Voltage.HIGH && wire1.isConsumer)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "You cannot connect this generator directly to a consumer!";
+                return;
+            }
+            
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            CreateLine();
         }
     }
 
@@ -785,8 +825,8 @@ public class BuildScript : MonoBehaviour
                 return;
             }
             List<GameObject> allConnections = new List<GameObject>();
-            allConnections.AddRange(gos.hVConnections);
-            allConnections.AddRange(gos.lvConnections);
+            allConnections.AddRange(gos.nonConsumerConnections);
+            //allConnections.AddRange(gos.lvConnections);
             allConnections.AddRange(gos.consumerConnections);
             foreach (var connection in allConnections)
             {
@@ -816,7 +856,15 @@ public class BuildScript : MonoBehaviour
         {
             if (cityApproval.hours >= 25)
             {
-                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 1)
+                {
+                    cityApproval.cityApproval -= 35;
+                }
+                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+                {
+                    cityApproval.cityApproval -= 20;
+                }
+                else if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval -= 10;
                     if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
@@ -834,15 +882,16 @@ public class BuildScript : MonoBehaviour
                     }
                     */
                 }
-                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+
+                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
                 {
-                    cityApproval.cityApproval -= 20;
+                    cityApproval.cityApproval += 35;
                 }
-                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
                 {
-                    cityApproval.cityApproval -= 35;
+                    cityApproval.cityApproval += 20;
                 }
-                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval += 10;
                     if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
@@ -854,14 +903,8 @@ public class BuildScript : MonoBehaviour
                         cityApproval.cityApproval += 10;
                     }
                 }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
-                {
-                    cityApproval.cityApproval += 20;
-                }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
-                {
-                    cityApproval.cityApproval += 35;
-                }
+                
+                
             }
         }
     }

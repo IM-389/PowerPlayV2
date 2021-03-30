@@ -5400,16 +5400,14 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  wireLength: 0
+  wireLength: 5
   buildingText: People live here. Houses use Low-Voltage Power.
   connected: 0
   refundAmount: 0
   buildCircle: {fileID: 668803029286808096}
   unRemovable: 0
-  maxHVConnections: 0
-  maxLVConnections: 1
-  hVConnections: []
-  lvConnections: []
+  maxConnections: 1
+  nonConsumerConnections: []
   consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []

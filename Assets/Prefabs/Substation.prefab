@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: 5374108111642601614}
   - component: {fileID: 7460058267911771528}
   - component: {fileID: 7300743165390096455}
-  - component: {fileID: 6607762517425147501}
   m_Layer: 7
   m_Name: Substation
   m_TagString: Substation
@@ -261,7 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ad0db3478184c94db5e7ad2551708ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volts: 2
+  volts: 0
   isGenerator: 0
   isConsumer: 0
   wireLength: 5
@@ -270,10 +269,8 @@ MonoBehaviour:
   refundAmount: 0
   buildCircle: {fileID: 2658288360252787931}
   unRemovable: 0
-  maxHVConnections: 1
-  maxLVConnections: 1
-  hVConnections: []
-  lvConnections: []
+  maxConnections: 6
+  nonConsumerConnections: []
   consumerConnections: []
   isMilestoneCounted: 1
   preMadeConnections: []
@@ -321,17 +318,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
   isSmart: 0
---- !u!114 &6607762517425147501
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6470925103800842142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebf47bb9864758f4b923f123f000f393, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  voltageSet: 0
-  maxConnections: 6
