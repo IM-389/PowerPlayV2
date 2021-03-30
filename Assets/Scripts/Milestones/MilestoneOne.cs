@@ -32,7 +32,7 @@ namespace Milestones
         {
             base.SetCompleteMilestone();
             BuildScript bs = GameObject.FindObjectOfType<BuildScript>();
-            bs.trackApproval = true;
+            //bs.trackApproval = true;
         }
     }
     

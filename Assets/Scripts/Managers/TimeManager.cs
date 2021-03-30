@@ -139,12 +139,12 @@ public class TimeManager : MonoBehaviour
                 if(hours >= 5 || hours <= 18)
                 {
                     isDay = true;
-                    Debug.Log("It is daytime");
+                    //Debug.Log("It is daytime");
                 }
                 else
                 {
                     isDay = false;
-                    Debug.Log("It is night");
+                    //Debug.Log("It is night");
                 }
                 
                 clock.text = buffer;
