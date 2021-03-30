@@ -19,6 +19,8 @@ public class GeneralObjectScript : MonoBehaviour
     [FormerlySerializedAs("cost")] [Tooltip("Not used for placing, used for refunding after removal")]
     public int refundAmount;
 
+    public int buyCost;
+    
     [Tooltip("Object showing the range of the object when hovered over")]
     public GameObject buildCircle;
     
@@ -53,6 +55,8 @@ public class GeneralObjectScript : MonoBehaviour
     /// Reference to the attached network script
     /// </summary>
     protected NetworkScript powerNetwork;
+
+    protected MoneyManager moneyManager;
     
     // Makes premade connections
     private void Start()
@@ -60,7 +64,7 @@ public class GeneralObjectScript : MonoBehaviour
         // Register the list changing to the callback function.
         nonConsumerConnections.CollectionChanged += OnListChanged;
         consumerConnections.CollectionChanged += OnListChanged;
-
+        
         powerNetwork = gameObject.GetComponent<NetworkScript>();
         
         foreach(GameObject connection in preMadeConnections)

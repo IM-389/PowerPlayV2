@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Building: {fileID: 7366105119603548861, guid: 0a12649e20ace6f4eae8a7928b4b961e, type: 3}
   xOffset: 0
-  yOffset: 0
+  yOffset: -1
 --- !u!210 &475482139
 SortingGroup:
   m_ObjectHideFlags: 0

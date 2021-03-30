@@ -21,7 +21,7 @@ public class NetworkManager : MonoBehaviour
     public float powerConsumed;
 
     public bool hasEnoughPower = false;
-    
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -30,7 +30,7 @@ public class NetworkManager : MonoBehaviour
         powerGenerated += gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
         // Determine predecence number randomly upon placement
         // Random number is large enough to (hopefully) prevent 2 managers with the same from being connected
-        precedenceNumber = Random.Range(0, 1000000);
+        precedenceNumber = Random.Range(0, 100000000);
     }
 
     private void Update()

@@ -24605,13 +24605,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1651406093}
     - target: {fileID: 2056792714870349707, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
+      propertyPath: events.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056792714870349707, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: events.Array.data[0]
       value: 
       objectReference: {fileID: 1435124333}
     - target: {fileID: 2056792714870349707, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: events.Array.data[1]
       value: 
-      objectReference: {fileID: 2040843967}
+      objectReference: {fileID: 1402635771}
     - target: {fileID: 2056792714870349707, guid: b5da0436fd6be8542bc7b3b7bfd34c90, type: 3}
       propertyPath: events.Array.data[2]
       value: 
@@ -32878,6 +32882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventChance: 25
   notification: Cloudy Day! Solar panels produce half their power!
+  powerAdjust: 0.5
 --- !u!1001 &1439209247
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -44582,6 +44587,9 @@ MonoBehaviour:
   eventChance: 25
   notification: Solar Flare! Solar panels produce double, everything else produces
     nothing!
+  coalAdjust: 0
+  solarAdjust: 2
+  windAdjust: 0
 --- !u!1 &2041510070
 GameObject:
   m_ObjectHideFlags: 0

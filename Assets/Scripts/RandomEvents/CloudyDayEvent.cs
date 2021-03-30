@@ -6,6 +6,8 @@ public class CloudyDayEvent : EventBase
 {
     private PowerManager powerManager;
 
+    public float powerAdjust;
+    
     private void Start()
     {
         base.Start();
@@ -20,7 +22,7 @@ public class CloudyDayEvent : EventBase
         if (chance < eventChance)
         {
             Debug.Log("Running Cloudy Day!");
-            powerManager.powerAdjusts[2] = 0.5f;
+            powerManager.powerAdjusts[2] = powerAdjust;
             return true;
         }
 

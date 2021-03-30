@@ -14,12 +14,16 @@ namespace Power.Overhaul2
         private TimeManager timeManager;
 
         private int previousTimestep;
+
+        public int moneyGained;
+        private MoneyManager moneyManager;
         
         private void Start()
         {
             timeManager = GameObject.FindObjectOfType<TimeManager>();
             ns = gameObject.GetComponent<NetworkScript>();
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
+            moneyManager = GameObject.FindObjectOfType<MoneyManager>();
         }
 
         private void Update()
@@ -34,6 +38,12 @@ namespace Power.Overhaul2
                 manager.powerConsumed += consumptionModifier;
                 // Update the amount so if the object is removed the manager updates properly
                 amountInfo.amountConsumed += consumptionModifier;
+
+                // TODO: Find a way to move this to the NetworkManager
+                if (manager.hasEnoughPower)
+                {
+                    moneyManager.money += moneyGained;
+                }
             }
 
             previousTimestep = timeManager.hours;

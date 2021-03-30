@@ -21,7 +21,7 @@ public class NetworkScript : MonoBehaviour
 
     private bool isVisited = false;
 
-    private List<NetworkManager> visitedManagers = new List<NetworkManager>();
+    private List<GameObject> visitedObjects = new List<GameObject>();
     
     /*
      * Dictionary of if each connection leads to the generator
@@ -55,15 +55,16 @@ public class NetworkScript : MonoBehaviour
     public void OnRemoved(GameObject removedFrom)
     {
         Debug.Log("Disconnected!");
-        if (!FindManager(manager))
+        if (!FindManager(manager, gameObject))
         {
-            manager.powerConsumed -= gameObject.GetComponent<PowerAmountInfo>().amountConsumed;
-            manager.powerGenerated -= gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
+            NetworkManager prevManager = manager;
             manager = null;
             //isVisited = false;
-            visitedManagers.Clear();
+            visitedObjects.Clear();
             Debug.Log($"Promoting {gameObject.name} to manager!");
             PromoteManager();
+            prevManager.powerConsumed -= manager.powerConsumed;
+            prevManager.powerGenerated -= manager.powerGenerated;
         }
     }
 
@@ -92,7 +93,7 @@ public class NetworkScript : MonoBehaviour
             otherNetwork.isManager = false;
             //DestroyImmediate(otherManager);
         }
-        // This may run: either this or the else below run
+        // TODO: Fix this, things still break really badly if numbers are equal
         else if (manager.precedenceNumber == otherManager.precedenceNumber)
         {
             Debug.Log("Managers share precedence, increasing number");
@@ -103,7 +104,7 @@ public class NetworkScript : MonoBehaviour
         else
         {
             Debug.Log($"{otherManager} has higher precedence, updating manager");
-            otherManager.SetProperties(manager);
+            //otherManager.SetProperties(manager);
             DestroyImmediate(manager);
             ChangeManager(otherManager);
         }
@@ -127,6 +128,9 @@ public class NetworkScript : MonoBehaviour
         isManager = false;
         manager = newManager;
 
+        manager.powerConsumed += gameObject.GetComponent<PowerAmountInfo>().amountConsumed;
+        manager.powerGenerated += gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
+        
         List<GameObject> allConnections = gos.GetAllConnections();
 
         foreach (var connection in allConnections)
@@ -144,9 +148,9 @@ public class NetworkScript : MonoBehaviour
         manager = gameObject.AddComponent<NetworkManager>();
         isManager = true;
         List<GameObject> allConnections = gos.GetAllConnections();
-        if (allConnections.Count > 0)
+        foreach (var connection in allConnections)
         {
-            allConnections[0].GetComponent<NetworkScript>().ChangeManager(manager);
+            connection.GetComponent<NetworkScript>().ChangeManager(manager);
         }
     }
 
@@ -155,39 +159,40 @@ public class NetworkScript : MonoBehaviour
     /// </summary>
     /// <param name="networkManager">The manager to search for</param>
     /// <returns>True if manager is found, false if not</returns>
-    private bool FindManager(NetworkManager networkManager)
+    private bool FindManager(NetworkManager networkManager, GameObject target)
     {
         Debug.Log($"Finding {networkManager.gameObject.name} from {gameObject.name}");
         if (isManager && manager.Equals(networkManager))
         {
-            Debug.Log($"{gameObject.name} found manager!!!");
-            visitedManagers.Clear();
+            Debug.Log($"FindManager: {gameObject.name} found manager!!!");
+            visitedObjects.Clear();
             return true;
         }
         
         //if (isVisited)
-        if (visitedManagers.Contains(networkManager))
+        if (visitedObjects.Contains(target))
         {
-            Debug.Log($"{gameObject.name} already visited {networkManager.gameObject.name}!");
+            Debug.Log($"FindManager: {gameObject.name} already visited {networkManager.gameObject.name}!");
             return false;
         }
         
         //isVisited = true;
-        visitedManagers.Add(networkManager);
         List<GameObject> allConnections = gos.GetAllConnections();
 
         bool found = false;
         foreach (var connection in allConnections)
         {
-            found = connection.GetComponent<NetworkScript>().FindManager(networkManager);
+            visitedObjects.Add(connection);
+            found = connection.GetComponent<NetworkScript>().FindManager(networkManager, gameObject);
+            //found = FindManager(networkManager, connection);
             if (found)
             {
-                Debug.Log($"{gameObject.name} found manager, breaking!!!");
+                Debug.Log($"FindManager: {gameObject.name} found manager, breaking!!!");
                 break;
             }
         }
         
-        visitedManagers.Clear();
+        visitedObjects.Clear();
         return found;
     }
 }

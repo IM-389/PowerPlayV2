@@ -6059,6 +6059,7 @@ GameObject:
   - component: {fileID: -4664598286806722273}
   - component: {fileID: -8458922824595951122}
   - component: {fileID: 8949452604914509501}
+  - component: {fileID: -7853954688869160092}
   m_Layer: 0
   m_Name: Windmill
   m_TagString: Generator
@@ -6140,6 +6141,7 @@ MonoBehaviour:
     air.
   connected: 0
   refundAmount: 5
+  buyCost: 0
   buildCircle: {fileID: 8939545911215852518}
   unRemovable: 0
   maxConnections: 1
@@ -6205,6 +6207,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountGenerated: 3
   amountConsumed: 0
+--- !u!114 &-7853954688869160092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366105119603548861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f8266fbb49f4c8fb87961fa03034e30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  upkeepCost: 0
 --- !u!1 &8495574583738963149
 GameObject:
   m_ObjectHideFlags: 0
@@ -6428,6 +6444,10 @@ PrefabInstance:
     - target: {fileID: 7790683048750285244, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Name
       value: RangeParent
+      objectReference: {fileID: 0}
+    - target: {fileID: 7790683048750285244, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
