@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Power.V2;
 using UnityEngine;
 
 public class LVPowerLine : GeneralObjectScript

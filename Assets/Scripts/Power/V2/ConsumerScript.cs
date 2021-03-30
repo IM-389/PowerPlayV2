@@ -34,10 +34,14 @@ namespace Power.V2
 
             if (timeManager.hours != previousTimestep)
             {
-                // Apply the modifier to the amount, as the base should have been done when connected
-                manager.powerConsumed += consumptionModifier;
+                // Remove the consumption from the manager prior to updating amount
+                manager.powerConsumed -= amountInfo.amountConsumed;
+                
                 // Update the amount so if the object is removed the manager updates properly
-                amountInfo.amountConsumed += consumptionModifier;
+                amountInfo.amountConsumed = consumptionModifier;
+
+                // Apply the change to the manager
+                manager.powerConsumed += amountInfo.amountConsumed;
 
                 // TODO: Find a way to move this to the NetworkManager
                 if (manager.hasEnoughPower)

@@ -1,5 +1,4 @@
-using System;
-using System.Collections;
+using Power.V2;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -95,8 +94,9 @@ public class GeneralObjectScript : MonoBehaviour
                 }
             }
             */
+            // Force the connection to be added recpricoally and at one after the other
             AddNonConsumerConnection(connection);
-
+            connection.GetComponent<GeneralObjectScript>().AddNonConsumerConnection(gameObject);
         }
     }
     /*
