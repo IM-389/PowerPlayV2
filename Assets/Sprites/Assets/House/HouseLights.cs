@@ -15,8 +15,6 @@ public class HouseLights : MonoBehaviour
     public GameObject smoke;
     public GameObject houseLight;
 
-    public StorageScript storage;
-
     public ConsumerScript consumer;
 
     private TimeManager timeManager;
