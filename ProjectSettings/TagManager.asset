@@ -32,8 +32,8 @@ TagManager:
   - Background
   - Placeable
   - Wire
-  - 
-  - 
+  - LightLayer
+  - Cloud
   - 
   - 
   - 
@@ -70,4 +70,7 @@ TagManager:
     locked: 0
   - name: NightCycle
     uniqueID: 2145369835
+    locked: 0
+  - name: Clouds
+    uniqueID: 2157870119
     locked: 0
