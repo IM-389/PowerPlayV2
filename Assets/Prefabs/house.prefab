@@ -61,7 +61,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -209,6 +209,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isConsuming: 0
   isPowered: 0
+  alert: {fileID: 0}
+  alertArrow: {fileID: 0}
+  powerOut: 0
+  powerOn: 0
   consumptionCurve:
   - 2
   - 0
@@ -234,6 +238,16 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  consumptionCurve2:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  buildingType: {fileID: 0}
+  numHousesPowered: 0
+  totalHouses: 0
+  cityApproval: {fileID: 0}
   moneyGained: 0
 --- !u!114 &6106879691197372468
 MonoBehaviour:
@@ -266,7 +280,6 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  isSubstation: 0
   wireLength: 3
   buildingText: 
   cost: 0
@@ -369,7 +382,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

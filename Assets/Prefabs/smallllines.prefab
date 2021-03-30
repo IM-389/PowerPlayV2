@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,7 +205,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 1000
   isFull: 0
-  objectDescription: Helps you send Low-Voltage Power a long way.
 --- !u!114 &-357091827175094459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +249,10 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
-  isSubstation: 0
   wireLength: 5
   buildingText: Helps you send Low-Voltage Power a long way.
-  cost: 0
+  connected: 0
+  refundAmount: 0
   buildCircle: {fileID: 7129301949984255950}
   unRemovable: 0
   maxHVConnections: 0
@@ -313,7 +312,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
