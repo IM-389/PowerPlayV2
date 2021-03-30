@@ -5284,6 +5284,7 @@ MonoBehaviour:
   refundAmount: 0
   buyCost: 0
   buildCircle: {fileID: 668803029286808096}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 1
   isMilestoneCounted: 1
@@ -5302,7 +5303,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
-  isSmart: 0
 --- !u!114 &-5367434403379632313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5659,6 +5659,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moneyGained: 0
+  smartPowerAlert: {fileID: 2067710383698671812}
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0

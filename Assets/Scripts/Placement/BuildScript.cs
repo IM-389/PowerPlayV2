@@ -234,7 +234,7 @@ public class BuildScript : MonoBehaviour
                 // TODO: Tie a cost to this
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
-                    hover.isSmart = true;
+                    hover.GetComponent<GeneralObjectScript>().isSmart = true;
                     hover.transform.GetChild(5).gameObject.SetActive(true);
                 }
             }

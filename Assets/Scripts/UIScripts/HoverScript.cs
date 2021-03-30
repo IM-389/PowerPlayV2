@@ -34,9 +34,6 @@ public class HoverScript : MonoBehaviour
     [Tooltip("Where to locate the tooltip relative to the object")]
     public Vector2 tooltipOffset;
 
-    [Tooltip("If the object is equipped to be Smart. Provides more detailed info if yes")]
-    public bool isSmart;
-
     private PowerManager powerManager;
     private void Start()
     {
@@ -63,7 +60,7 @@ public class HoverScript : MonoBehaviour
         {
             ConsumerScript consumerScript = gameObject.GetComponent<ConsumerScript>();
             //Debug.Log("Hovering over consumer!");
-            if (isSmart)
+            if (gos.isSmart)
             {
                 toShow +=
                     $"Consuming {consumerScript.consumptionCurve[timeManager.hours]} power\n";

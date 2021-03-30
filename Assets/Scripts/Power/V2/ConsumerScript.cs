@@ -18,12 +18,16 @@ namespace Power.V2
         public int moneyGained;
         private MoneyManager moneyManager;
         
+        public GameObject smartPowerAlert;
+
+        private GeneralObjectScript gos;
         private void Start()
         {
             timeManager = GameObject.FindObjectOfType<TimeManager>();
             ns = gameObject.GetComponent<NetworkScript>();
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
             moneyManager = GameObject.FindObjectOfType<MoneyManager>();
+            gos = gameObject.GetComponent<GeneralObjectScript>();
         }
 
         private void Update()
@@ -47,6 +51,15 @@ namespace Power.V2
                 if (manager.hasEnoughPower)
                 {
                     moneyManager.money += moneyGained;
+                    smartPowerAlert.SetActive(false);
+                }
+                else if (gos.isSmart)
+                {
+                    smartPowerAlert.SetActive(true);
+                }
+                else
+                {
+                    smartPowerAlert.SetActive(false);
                 }
             }
 

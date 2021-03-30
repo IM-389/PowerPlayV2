@@ -23,7 +23,6 @@ namespace Power.V2
         public float powerConsumed;
 
         public bool hasEnoughPower = false;
-
         // Start is called before the first frame update
         void Awake()
         {

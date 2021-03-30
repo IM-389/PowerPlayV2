@@ -23,6 +23,9 @@ public class GeneralObjectScript : MonoBehaviour
     [Tooltip("Object showing the range of the object when hovered over")]
     public GameObject buildCircle;
     
+    [Tooltip("If the object is equipped to be Smart. Provides more detailed info if yes")]
+    public bool isSmart;
+    
     /// <summary>
     /// Determines whether object is removable or not
     /// </summary>

@@ -190,7 +190,7 @@ namespace Power.V1
                 }
             }
 
-            if (hover.isSmart)
+            if (hover.GetComponent<GeneralObjectScript>().isSmart)
             {
                 alertArrow.SetActive(powerOut);
             }
