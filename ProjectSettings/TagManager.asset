@@ -23,6 +23,7 @@ TagManager:
   - Substation
   - alert
   - tree
+  - fog
   layers:
   - Default
   - TransparentFX

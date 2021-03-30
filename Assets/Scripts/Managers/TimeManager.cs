@@ -22,7 +22,6 @@ public class TimeManager : MonoBehaviour
     public Text clock;
     public Text citySat;
     public int cash = 0;//gonna be using this to cause houses to make money
-    ConsumerScript isConsuming;
     MilestoneBase coinGen;
     public float resume = 1;
 
@@ -147,12 +146,12 @@ public class TimeManager : MonoBehaviour
                 if(hours >= 5 || hours <= 18)
                 {
                     isDay = true;
-                    Debug.Log("It is daytime");
+                    //Debug.Log("It is daytime");
                 }
                 else
                 {
                     isDay = false;
-                    Debug.Log("It is night");
+                    //Debug.Log("It is night");
                 }
                 if (hours >= 20 || hours <= 4)
                 {
