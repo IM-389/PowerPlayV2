@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2105524756422621346}
   - component: {fileID: 8696495601126479570}
   - component: {fileID: 2950440989526212778}
+  - component: {fileID: -3898479872415834453}
   - component: {fileID: 4643292264813615015}
   m_Layer: 0
   m_Name: SubstationPref
@@ -110,6 +111,7 @@ MonoBehaviour:
   refundAmount: 0
   buyCost: 0
   buildCircle: {fileID: 272067711978254278}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 6
   isMilestoneCounted: 1
@@ -160,6 +162,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountGenerated: 0
   amountConsumed: 0
+--- !u!114 &-3898479872415834453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034602858000373936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32203a8445e1ea240bdcc9a6a0ae9a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tooltipOffset: {x: 0, y: 0}
 --- !u!61 &4643292264813615015
 BoxCollider2D:
   m_ObjectHideFlags: 0
