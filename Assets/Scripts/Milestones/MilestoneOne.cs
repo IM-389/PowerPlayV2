@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Power.V2;
 namespace Milestones
 {
     public class MilestoneOne : MilestoneBase
@@ -16,9 +16,9 @@ namespace Milestones
             foreach (var house in houses)
             {
                 // Reference to the power storage script
-                StorageScript storage = house.GetComponent<StorageScript>();
+                ConsumerScript consumer = house.GetComponent<ConsumerScript>();
                 GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
-                if (gos.isMilestoneCounted && storage.powerStored > 0)
+                if (gos.isMilestoneCounted && consumer.GetManager().hasEnoughPower)
                 {
                     ++poweredHouses;
                 }
@@ -32,7 +32,7 @@ namespace Milestones
         {
             base.SetCompleteMilestone();
             BuildScript bs = GameObject.FindObjectOfType<BuildScript>();
-            bs.trackApproval = true;
+            //bs.trackApproval = true;
         }
     }
     

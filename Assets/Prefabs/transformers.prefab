@@ -10,13 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 27588709232717113}
   - component: {fileID: 27588709232717114}
-  - component: {fileID: 27588709232717112}
-  - component: {fileID: 1302276669151511910}
   - component: {fileID: 3532806784607543446}
   - component: {fileID: 729851813072323655}
   - component: {fileID: 3419244029244310493}
-  - component: {fileID: -7837405698394361301}
-  - component: {fileID: 4478874532228927277}
   - component: {fileID: -4828376763918429470}
   m_Layer: 7
   m_Name: transformers
@@ -91,39 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &27588709232717112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27588709232717115}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 822a71d13ba52124a98e9cd6d514d040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &1302276669151511910
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27588709232717115}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &3532806784607543446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,43 +150,10 @@ MonoBehaviour:
   refundAmount: 0
   buildCircle: {fileID: 8428609223405396986}
   unRemovable: 0
-  maxHVConnections: 2
-  maxLVConnections: 2
-  hVConnections: []
-  lvConnections: []
-  consumerConnections: []
+  maxConnections: 2
   isMilestoneCounted: 1
   preMadeConnections: []
---- !u!114 &-7837405698394361301
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27588709232717115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerStored: 0
-  maxPower: 1000
-  isFull: 0
---- !u!114 &4478874532228927277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 27588709232717115}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSend: 1
-  canRecieve: 1
-  priorityNumber: 2
+  connectionCount: 0
 --- !u!114 &-4828376763918429470
 MonoBehaviour:
   m_ObjectHideFlags: 0

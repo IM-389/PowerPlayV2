@@ -15,7 +15,7 @@ public class MilestoneSeven : MilestoneBase
         
         foreach (var house in houses)
         {
-            if (house.GetComponent<HoverScript>().isSmart)
+            if (house.GetComponent<GeneralObjectScript>().isSmart)
             {
                 ++smartHouses;
             }

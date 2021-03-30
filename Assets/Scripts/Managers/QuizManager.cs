@@ -91,6 +91,7 @@ public class QuizManager : MonoBehaviour
             ++character;
         }
         answerChoices.AddOptions(options);
+        answerChoices.value = 0;
         questionText.text = text;
     }
     

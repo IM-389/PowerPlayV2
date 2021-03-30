@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Power.V2;
 using UnityEngine;
 
 public class LVPowerLine : GeneralObjectScript
@@ -14,16 +13,20 @@ public class LVPowerLine : GeneralObjectScript
             if(building.transform.CompareTag("house") || building.transform.CompareTag("hospital") || building.CompareTag("factory"))
             {
                 GeneralObjectScript buildingGOS = building.transform.gameObject.GetComponent<GeneralObjectScript>();
-                if (lvConnections.Count < maxLVConnections && buildingGOS.lvConnections.Count < buildingGOS.maxLVConnections)
+                if (buildingGOS.nonConsumerConnections.Count < buildingGOS.maxConnections)
                 {
                     AddConsumerConnection(building.gameObject);
-                    buildingGOS.AddLVConnection(this.gameObject);
+                    buildingGOS.AddNonConsumerConnection(this.gameObject);
                 }
             }
         }
     }
     private void Start()
     {
+        // Register the list changing to the callback function.
+        nonConsumerConnections.CollectionChanged += OnListChanged;
+        consumerConnections.CollectionChanged += OnListChanged;
+        powerNetwork = gameObject.GetComponent<NetworkScript>();
         AutoAddGeneratorConnections();
     }
 }
