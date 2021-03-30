@@ -621,8 +621,8 @@ public class BuildScript : MonoBehaviour
         GeneralObjectScript sWire;
         //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        //Debug.Log(hit.transform.tag);
-        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road") || hit.transform.CompareTag("tree") || hit.transform.CompareTag("wire"))
+        Debug.Log(hit.transform.tag);
+        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road") || hit.transform.CompareTag("tree") || hit.transform.CompareTag("wire") || hit.transform.CompareTag("fog"))
         {
             if (wireObject1 != null)
             {

@@ -104,13 +104,13 @@ public class ConsumerScript : PowerBase
             isConsuming = false;
         }
         
-        Debug.Log(cityApproval);
+        //Debug.Log(cityApproval);
         if (cityApproval != null)
         {
-            Debug.Log("This");
+            //Debug.Log("This");
             if (cityApproval.hours == 25)
             {
-                Debug.Log("This2");
+                //Debug.Log("This2");
                 if (!isConsuming)
                 {
                     //calc % of houses powered
