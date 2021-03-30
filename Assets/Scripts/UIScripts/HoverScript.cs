@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Power.V2;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,7 +29,7 @@ public class HoverScript : MonoBehaviour
     /// <summary>
     /// Reference to this object's storage component
     /// </summary>
-    private StorageScript storage;
+    private PowerAmountInfo amountInfo;
 
     [Tooltip("Where to locate the tooltip relative to the object")]
     public Vector2 tooltipOffset;
@@ -44,7 +43,7 @@ public class HoverScript : MonoBehaviour
         tooltipPanel = GameObject.FindWithTag("TooltipPanel");
         powerAmtText = tooltipPanel.transform.GetChild(1).GetComponent<Text>();
         gos = gameObject.GetComponent<GeneralObjectScript>();
-        storage = gameObject.GetComponent<StorageScript>();
+        amountInfo = gameObject.GetComponent<PowerAmountInfo>();
         GameObject gameController = GameObject.FindWithTag("GameController");
         timeManager = gameController.GetComponent<TimeManager>();
         powerManager = gameController.GetComponent<PowerManager>();
@@ -58,7 +57,7 @@ public class HoverScript : MonoBehaviour
         tooltipPanel.transform.position = panelPos;
         string toShow = "";
 
-        toShow += storage.gameObject.GetComponent<GeneralObjectScript>().buildingText + "\n";
+        toShow += amountInfo.gameObject.GetComponent<GeneralObjectScript>().buildingText + "\n";
         
         if (gos.isConsumer)
         {
@@ -72,14 +71,12 @@ public class HoverScript : MonoBehaviour
             else
             {
                 toShow +=
-                    $"Consuming between {consumerScript.consumptionCurve.Max()} and {consumerScript.consumptionCurve.Min()} power\n";
+                    $"Consuming between {consumerScript.consumptionCurve[0]} and {consumerScript.consumptionCurve[0]} power\n";
             }
         }
         else if (gos.isGenerator)
         {
-            GeneratorScript generator = gameObject.GetComponent<GeneratorScript>();
-            toShow += $"Generating {generator.amount * powerManager.powerAdjusts[(int) generator.type]} power\n";
-            toShow += $"{storage.powerStored} power stored\n";
+            toShow += $"Generating {amountInfo.amountGenerated} power\n";
         }
 
         toShow += $"{gos.nonConsumerConnections.Count} / {gos.maxConnections} connections\n";

@@ -1,4 +1,5 @@
 using Milestones;
+using Power.V2;
 using UnityEngine;
 
 public class MilestoneEight : MilestoneBase
@@ -28,7 +29,7 @@ public class MilestoneEight : MilestoneBase
         
         foreach (var house in allHouses)
         {
-            if (house.GetComponent<StorageScript>().powerStored > 0)
+            if (house.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
             {
                 ++poweredHouses;
             }

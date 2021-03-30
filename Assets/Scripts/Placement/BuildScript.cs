@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Power.V2;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -580,9 +580,9 @@ public class BuildScript : MonoBehaviour
             tooltipInfo += sGos.buildingText + "\n";
             if (sGos.isGenerator)
             {
-                GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
+                PowerAmountInfo amountInfo = sGos.GetComponent<PowerAmountInfo>();
                 
-                tooltipInfo += $"\nGeneration: {generator.amount}\n";
+                tooltipInfo += $"\nGeneration: {amountInfo.amountGenerated}\n";
                 
             }
 

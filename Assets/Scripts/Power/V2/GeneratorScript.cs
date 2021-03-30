@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Power.Overhaul2
+namespace Power.V2
 {
     public class GeneratorScript : MonoBehaviour
     {

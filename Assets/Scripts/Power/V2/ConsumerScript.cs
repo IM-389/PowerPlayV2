@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Power.Overhaul2
+namespace Power.V2
 {
     public class ConsumerScript : MonoBehaviour
     {
@@ -49,6 +49,10 @@ namespace Power.Overhaul2
             previousTimestep = timeManager.hours;
 
         }
-        
+
+        public NetworkManager GetManager()
+        {
+            return ns.manager;
+        }
     }
 }
