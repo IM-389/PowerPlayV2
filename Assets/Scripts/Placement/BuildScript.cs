@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Power.V2;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -234,7 +234,7 @@ public class BuildScript : MonoBehaviour
                 // TODO: Tie a cost to this
                 if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
                 {
-                    hover.isSmart = true;
+                    hover.GetComponent<GeneralObjectScript>().isSmart = true;
                     hover.transform.GetChild(5).gameObject.SetActive(true);
                 }
             }
@@ -580,9 +580,9 @@ public class BuildScript : MonoBehaviour
             tooltipInfo += sGos.buildingText + "\n";
             if (sGos.isGenerator)
             {
-                GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
+                PowerAmountInfo amountInfo = sGos.GetComponent<PowerAmountInfo>();
                 
-                tooltipInfo += $"\nGeneration: {generator.amount}\n";
+                tooltipInfo += $"\nGeneration: {amountInfo.amountGenerated}\n";
                 
             }
 

@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using Power.V2;
 using UnityEngine;
 
 public class HouseLights : MonoBehaviour
@@ -14,25 +13,21 @@ public class HouseLights : MonoBehaviour
     public Sprite poweredSprite;
     public Sprite unpoweredSprite;
     public GameObject smoke;
-
-    public StorageScript storage;
-
-    public ConsumerScript consumer;
-
-    private TimeManager timeManager;
+    
     // Start is called before the first frame update
 
+    private NetworkScript network;
 
     private void Start()
     {
         spriteR = gameObject.GetComponent<SpriteRenderer>();
-        timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+        network = transform.parent.GetComponent<NetworkScript>();
         CheckPower();
     }
 
     private void Update()
     {
-        powered = (storage.powerStored > consumer.consumptionCurve2.Evaluate(timeManager.hours));
+        powered = network.manager.hasEnoughPower;
         //powered = (storage.powerStored > consumer.consumptionCurve[timeManager.hours]);
         CheckPower();
     }

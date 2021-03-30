@@ -10,13 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5448026507461769120}
   - component: {fileID: 5448026507461769121}
-  - component: {fileID: 5448026507461769123}
-  - component: {fileID: -8673571162671384056}
   - component: {fileID: -5749702513193550943}
   - component: {fileID: -2232783831501892777}
   - component: {fileID: 5648452970475571260}
-  - component: {fileID: 6766887339401483143}
-  - component: {fileID: -2099193719442316402}
   - component: {fileID: -6477512763960502311}
   m_Layer: 7
   m_Name: largelines
@@ -91,39 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5448026507461769123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5448026507461769134}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8eb1882b757d62409a9db0eb21add52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &-8673571162671384056
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5448026507461769134}
-  m_BodyType: 2
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!61 &-5749702513193550943
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -187,43 +150,10 @@ MonoBehaviour:
   refundAmount: 0
   buildCircle: {fileID: 8333134694539750419}
   unRemovable: 0
-  maxHVConnections: 2
-  maxLVConnections: 0
-  hVConnections: []
-  lvConnections: []
-  consumerConnections: []
+  maxConnections: 2
   isMilestoneCounted: 1
   preMadeConnections: []
---- !u!114 &6766887339401483143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5448026507461769134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerStored: 0
-  maxPower: 1000
-  isFull: 0
---- !u!114 &-2099193719442316402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5448026507461769134}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSend: 1
-  canRecieve: 1
-  priorityNumber: 1
+  connectionCount: 0
 --- !u!114 &-6477512763960502311
 MonoBehaviour:
   m_ObjectHideFlags: 0

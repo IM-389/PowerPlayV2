@@ -20,7 +20,6 @@ public class TimeManager : MonoBehaviour
     public Text clock;
     public Text citySat;
     public int cash = 0;//gonna be using this to cause houses to make money
-    ConsumerScript isConsuming;
     MilestoneBase coinGen;
     public float resume = 1;
 

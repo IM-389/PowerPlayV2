@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8645764611861436439}
   - component: {fileID: 5584834068119211078}
   - component: {fileID: -3415327331999805256}
+  - component: {fileID: 26859442706765587}
   m_Layer: 7
   m_Name: house
   m_TagString: house
@@ -192,6 +193,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
   cost: 0
+  positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!114 &3895293728049192453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,6 +250,7 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
+  objectDescription: 
 --- !u!114 &8645764611861436439
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +268,14 @@ MonoBehaviour:
   isConsumer: 1
   isSubstation: 0
   wireLength: 3
-  connections: []
+  buildingText: 
+  cost: 0
+  unRemovable: 0
+  maxHVConnections: 0
+  maxLVConnections: 0
+  isMilestoneCounted: 1
+  preMadeConnections: []
+  connectionCount: 0
 --- !u!114 &5584834068119211078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 0
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &-3415327331999805256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +304,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0
+--- !u!114 &26859442706765587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016714305020912277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fe0b61ea3193444ca461b59d24f7a1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1 &9191420291392939292
 GameObject:
   m_ObjectHideFlags: 0

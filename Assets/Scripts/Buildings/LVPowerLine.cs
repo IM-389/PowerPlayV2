@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Power.V2;
 using UnityEngine;
 
 public class LVPowerLine : GeneralObjectScript
@@ -24,6 +23,10 @@ public class LVPowerLine : GeneralObjectScript
     }
     private void Start()
     {
+        // Register the list changing to the callback function.
+        nonConsumerConnections.CollectionChanged += OnListChanged;
+        consumerConnections.CollectionChanged += OnListChanged;
+        powerNetwork = gameObject.GetComponent<NetworkScript>();
         AutoAddGeneratorConnections();
     }
 }
