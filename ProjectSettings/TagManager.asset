@@ -23,6 +23,7 @@ TagManager:
   - Substation
   - alert
   - tree
+  - fog
   layers:
   - Default
   - TransparentFX
@@ -33,8 +34,8 @@ TagManager:
   - Background
   - Placeable
   - Wire
-  - 
-  - 
+  - LightLayer
+  - Cloud
   - 
   - 
   - 
@@ -68,4 +69,10 @@ TagManager:
     locked: 0
   - name: Griddy
     uniqueID: 106311279
+    locked: 0
+  - name: NightCycle
+    uniqueID: 2145369835
+    locked: 0
+  - name: Clouds
+    uniqueID: 2157870119
     locked: 0

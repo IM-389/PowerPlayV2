@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,7 +158,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -308,16 +308,19 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
-  isSubstation: 0
   wireLength: 5
   buildingText: Makes less power. Does not work at night. It makes no dirty air.
-  wireText: 
-  cost: 0
+  connected: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 0
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &7329203526463667450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +336,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: 
 --- !u!114 &4364104696705706677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -347,6 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &276053666797627274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,7 +365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   amount: 0
-  moneyGained: 0
+  upkeep: 0
 --- !u!114 &2238314164939817958
 MonoBehaviour:
   m_ObjectHideFlags: 0

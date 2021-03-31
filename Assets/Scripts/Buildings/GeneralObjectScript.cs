@@ -1,6 +1,7 @@
-using System;
-using System.Collections;
+using Power.V2;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -17,8 +18,13 @@ public class GeneralObjectScript : MonoBehaviour
     [FormerlySerializedAs("cost")] [Tooltip("Not used for placing, used for refunding after removal")]
     public int refundAmount;
 
+    public int buyCost;
+    
     [Tooltip("Object showing the range of the object when hovered over")]
     public GameObject buildCircle;
+    
+    [Tooltip("If the object is equipped to be Smart. Provides more detailed info if yes")]
+    public bool isSmart;
     
     /// <summary>
     /// Determines whether object is removable or not
@@ -31,10 +37,9 @@ public class GeneralObjectScript : MonoBehaviour
     //public int maxLVConnections;
     
 
-    [FormerlySerializedAs("hVConnections")] public List<GameObject> nonConsumerConnections = new List<GameObject>();
+    [FormerlySerializedAs("hVConnections")] public ObservableCollection<GameObject> nonConsumerConnections = new ObservableCollection<GameObject>();
     //public List<GameObject> lvConnections = new List<GameObject>();
-    public List<GameObject> consumerConnections = new List<GameObject>();
-        
+    public ObservableCollection<GameObject> consumerConnections = new ObservableCollection<GameObject>();
     [Tooltip("Does this object count towards milestone progress")]
     public bool isMilestoneCounted = true;
     
@@ -45,10 +50,25 @@ public class GeneralObjectScript : MonoBehaviour
 
     public GameObject[] preMadeConnections;
 
+    [Tooltip("How many connections the object has")]
+    public int connectionCount;
+
+    /// <summary>
+    /// Reference to the attached network script
+    /// </summary>
+    protected NetworkScript powerNetwork;
+
+    protected MoneyManager moneyManager;
+    
     // Makes premade connections
     private void Start()
     {
-        //buildCircle.transform.localScale *= wireLength;
+        // Register the list changing to the callback function.
+        nonConsumerConnections.CollectionChanged += OnListChanged;
+        consumerConnections.CollectionChanged += OnListChanged;
+        
+        powerNetwork = gameObject.GetComponent<NetworkScript>();
+        
         foreach(GameObject connection in preMadeConnections)
         {
             //GeneralObjectScript gos = connection.GetComponent<GeneralObjectScript>();
@@ -77,14 +97,16 @@ public class GeneralObjectScript : MonoBehaviour
                 }
             }
             */
+            // Force the connection to be added recpricoally and at one after the other
             AddNonConsumerConnection(connection);
-
+            connection.GetComponent<GeneralObjectScript>().AddNonConsumerConnection(gameObject);
         }
     }
     /*
     public void AddLVConnection(GameObject connection)
     {
         lvConnections.Add(connection);
+        ++connectionCount;
         connected = true;
         CreateLine(connection, Color.white, 0.1f);
     }
@@ -98,6 +120,7 @@ public class GeneralObjectScript : MonoBehaviour
     public void AddConsumerConnection(GameObject connection)
     {
         consumerConnections.Add(connection);
+        ++connectionCount;
         connected = true;
         CreateLine(connection, Color.black, 0.05f);
     }
@@ -106,9 +129,9 @@ public class GeneralObjectScript : MonoBehaviour
         nonConsumerConnections.Remove(connection);
         //lvConnections.Remove(connection);
         consumerConnections.Remove(connection);
-        nonConsumerConnections.RemoveAll(item => item == null);
+        //nonConsumerConnections.RemoveAll(item => item == null);
         //lvConnections.RemoveAll(item => item == null);
-        consumerConnections.RemoveAll(item => item == null);
+        //consumerConnections.RemoveAll(item => item == null);
         foreach(KeyValuePair<GameObject, GameObject> kvp in wireConnections)
         {
             if (kvp.Key.Equals(connection))
@@ -118,10 +141,13 @@ public class GeneralObjectScript : MonoBehaviour
                 destroyKey = kvp.Key;
             }
         }
+
         if (destroyed)
         {
             wireConnections.Remove(destroyKey);
         }
+
+        --connectionCount;
     }
     public int GetVoltage()
     {
@@ -172,6 +198,23 @@ public class GeneralObjectScript : MonoBehaviour
     }
 
     /// <summary>
+    /// Called whenever a change happens to the connected lists.
+    /// </summary>
+    /// <param name="sender"></param>
+    /// <param name="args"></param>
+    protected void OnListChanged(object sender, NotifyCollectionChangedEventArgs args)
+    {
+        if (args.OldItems is null)
+        {
+            Debug.Log(args.NewItems[0]);
+            powerNetwork.OnConnected((GameObject) args.NewItems[0]);
+        }
+        else
+        {
+            powerNetwork.OnRemoved((GameObject) args.OldItems[0]);
+        }
+    }
+    
     /// Get all connections attached to the object
     /// </summary>
     /// <returns>A list of all connections</returns>

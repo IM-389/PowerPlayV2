@@ -60,7 +60,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -194,6 +194,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 2}
   cost: 0
+  positionOffset: {x: 0, y: 0}
+  buildingName: 
 --- !u!114 &8404105654924854892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,9 +226,19 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
-  isSubstation: 0
   wireLength: 5
-  connections: []
+  buildingText: 
+  connected: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
+  maxHVConnections: 0
+  maxLVConnections: 0
+  hVConnections: []
+  lvConnections: []
+  consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &2923770450969584739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &359159728581028143
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -254,7 +268,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   amount: 1
-  moneyGained: 0
+  upkeep: 0
 --- !u!114 &4540575886844898247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
+  isSmart: 0
 --- !u!1 &8644197826154682655
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,7 +334,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

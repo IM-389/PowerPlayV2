@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Milestones;
+using Power.V2;
 using UnityEngine;
 
 public class MilestoneFour : MilestoneBase
@@ -35,7 +36,7 @@ public class MilestoneFour : MilestoneBase
             {
                 // If the house is powered
                 if (house.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
-                    house.GetComponent<StorageScript>().powerStored > 0)
+                    house.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
                 {
                     // Add to the list of previously powered houses
                     poweredHouses.Add(house);

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using Power.V2;
 public class PowerManager : MonoBehaviour
 {
 
@@ -61,7 +61,7 @@ public class PowerManager : MonoBehaviour
             if (generator.type == type)
             {
                 powerAmountsGenerated[(int) generator.type] +=
-                    (generator.amount * powerAdjusts[(int) generator.type]);
+                    (generator.GetComponent<PowerAmountInfo>().amountGenerated);
             }
         }
     }
