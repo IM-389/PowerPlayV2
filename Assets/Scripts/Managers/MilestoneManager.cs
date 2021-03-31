@@ -17,6 +17,8 @@ public class MilestoneManager : MonoBehaviour
     [Tooltip("Text displaying the current milestone to the player")]
     public Text milestoneText;
 
+    public Text timeText;
+
     public BuildScript build;
 
     public StoryTelling dialouge;
@@ -26,6 +28,8 @@ public class MilestoneManager : MonoBehaviour
 
     [Tooltip("Reference to the QuizManager")]
     public QuizManager quizManager;
+
+    public TimeManager timeManager;
     
     /// <summary>
     /// Sets the data for the first milestone
@@ -70,7 +74,10 @@ public class MilestoneManager : MonoBehaviour
                 dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
                 dialouge.TriggerDialogue();
             }
-
+            if(currentMilestones[i].startDay > -1)
+            {
+               currentMilestones[i].daysElapsed = timeManager.days - currentMilestones[i].startDay;
+            }
             text += currentMilestones[i].milestoneText + "\n";
         }
         

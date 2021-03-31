@@ -4,13 +4,15 @@ using UnityEngine;
 public class MilestoneEight : MilestoneBase
 {
 
-    private int startDay = -1;
+    //private int startDay = -1;
 
     private TimeManager timeManager;
-    
+
+    private MilestoneManager milestoneTimeTrack;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+        milestoneTimeTrack = GameObject.FindWithTag("GameController").GetComponent<MilestoneManager>();
     }
     
     public override bool CheckCompleteMilestone()
@@ -24,7 +26,7 @@ public class MilestoneEight : MilestoneBase
 
         int poweredHouses = 0;
 
-        int daysElapsed = timeManager.days - startDay;
+        daysElapsed = timeManager.days - startDay;
         
         foreach (var house in allHouses)
         {
@@ -41,10 +43,13 @@ public class MilestoneEight : MilestoneBase
         
         if (poweredHouses < allHouses.Length)
         {
-            startDay = -1;
+            startDay = timeManager.days;//-1
         }
+        daysElapsed = timeManager.days - startDay;
+        milestoneTimeTrack.timeText.text = "Days all houses powered: " + daysElapsed;
 
-        return false;
+        return daysElapsed >= 7;
+        //return false;
 
     }
 }
