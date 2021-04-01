@@ -27,7 +27,7 @@ public class TimeManager : MonoBehaviour
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
     public string backgroundReference;
-    FMOD.Studio.EventInstance backgrounds;
+    public static FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
     
