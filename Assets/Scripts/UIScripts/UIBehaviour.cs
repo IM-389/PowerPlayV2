@@ -54,6 +54,7 @@ public class UIBehaviour : MonoBehaviour
     public void GoToScene(int num)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(num);
+        TimeManager.backgrounds.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     public void ExitGameButton()
