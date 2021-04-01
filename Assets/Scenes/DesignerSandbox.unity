@@ -501,6 +501,9 @@ MonoBehaviour:
   - {fileID: 1127185370}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &36618750
 Transform:
   m_ObjectHideFlags: 0
@@ -1009,7 +1012,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Transformer
+  m_Text: Substation
 --- !u!222 &49658411
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1031,7 +1034,7 @@ GameObject:
   - component: {fileID: 50324139}
   - component: {fileID: 50324138}
   m_Layer: 5
-  m_Name: TransformerButton
+  m_Name: SubstationButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1103,7 +1106,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 843012995}
         m_TargetAssemblyTypeName: BuildScript, Assembly-CSharp
-        m_MethodName: SelectTransformer
+        m_MethodName: SelectSubstation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7735,6 +7738,9 @@ MonoBehaviour:
   - {fileID: 1336331955}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &333453548
 Transform:
   m_ObjectHideFlags: 0
@@ -12840,6 +12846,9 @@ MonoBehaviour:
   nextMilestones: []
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!1001 &585225059
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18616,7 +18625,7 @@ MonoBehaviour:
   - {fileID: 6028709754009470987, guid: 4ec415ada9ea02b419b368607554acfb, type: 3}
   - {fileID: 4372302633028423459, guid: 51f8c9d52d1a0a4499ab15a63364e084, type: 3}
   - {fileID: 647645244523254856, guid: f8e54f45831f70949b168e5521a0a42b, type: 3}
-  - {fileID: 6470925103800842142, guid: f376e57c61546f544b9d42f7d8cfffb2, type: 3}
+  - {fileID: 9145904563573339927, guid: 079bbbeaec0eb084da3a6850bc144e52, type: 3}
   - {fileID: 666171787696389721, guid: d6122f7f6e466bc4a9dbfb3c07e69823, type: 3}
   selectedBuilding: {fileID: 0}
   wireMode: 0
@@ -21305,6 +21314,9 @@ MonoBehaviour:
   nextMilestones: []
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &945960174
 Transform:
   m_ObjectHideFlags: 0
@@ -23721,6 +23733,9 @@ MonoBehaviour:
   - {fileID: 1332238386}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &1039749233
 Transform:
   m_ObjectHideFlags: 0
@@ -25649,6 +25664,9 @@ MonoBehaviour:
   - {fileID: 945960173}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &1127185371
 Transform:
   m_ObjectHideFlags: 0
@@ -30194,6 +30212,9 @@ MonoBehaviour:
   - {fileID: 36618749}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &1332238387
 Transform:
   m_ObjectHideFlags: 0
@@ -30332,6 +30353,9 @@ MonoBehaviour:
   - {fileID: 1039749232}
   isGeneratingSmartCoins: 0
   smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  maxDays: 0
 --- !u!4 &1336331956
 Transform:
   m_ObjectHideFlags: 0
