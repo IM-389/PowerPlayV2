@@ -63,12 +63,12 @@ public class HoverScript : MonoBehaviour
             if (gos.isSmart)
             {
                 toShow +=
-                    $"Consuming {consumerScript.consumptionCurve[timeManager.hours]} power\n";
+                    $"Consuming {consumerScript.consumptionCurve.Evaluate(timeManager.hours)} power\n";
             }
             else
             {
                 toShow +=
-                    $"Consuming between {consumerScript.consumptionCurve[0]} and {consumerScript.consumptionCurve[0]} power\n";
+                    $"Consuming between {consumerScript.maxConsumption} and {consumerScript.minConsumption} power\n";
             }
         }
         else if (gos.isGenerator)
