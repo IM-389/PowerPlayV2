@@ -187,7 +187,7 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
-  wireLength: 3
+  wireLength: 3.1
   buildingText: Helps you send Low-Voltage Power a long way.
   connected: 0
   refundAmount: 0
