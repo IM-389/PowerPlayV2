@@ -155,6 +155,7 @@ MonoBehaviour:
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 5794920829783192117}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 1
   isMilestoneCounted: 1
@@ -173,7 +174,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -2}
-  isSmart: 0
 --- !u!61 &5441782896026427583
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 5
+  amountGenerated: 15
   amountConsumed: 0
 --- !u!114 &404765403952639720
 MonoBehaviour:
