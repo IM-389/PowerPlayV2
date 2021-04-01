@@ -14,10 +14,7 @@ GameObject:
   - component: {fileID: 1675960665988444583}
   - component: {fileID: 5755341195054953396}
   - component: {fileID: 6653897980499226617}
-  - component: {fileID: 721417663547645832}
-  - component: {fileID: 7544618107801901497}
   - component: {fileID: 5474069892262664602}
-  - component: {fileID: 8182319749470883275}
   - component: {fileID: 7824566094599213365}
   - component: {fileID: -712320886536736979}
   - component: {fileID: 7553032643689079190}
@@ -198,75 +195,6 @@ MonoBehaviour:
   cost: 0
   positionOffset: {x: 0, y: 0}
   buildingName: Hospital
---- !u!114 &721417663547645832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878062338142282520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95ea9d223a61bc040a95736ec2d6c165, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isConsuming: 0
-  isPowered: 0
-  alert: {fileID: 0}
-  alertArrow: {fileID: 0}
-  powerOut: 0
-  powerOn: 0
-  consumptionCurve:
-  - 2
-  - 2
-  - 2
-  - 3
-  - 3
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 6
-  - 6
-  - 4
-  - 4
-  - 4
-  - 4
-  - 4
-  - 3
-  - 3
-  - 3
-  - 2
-  - 2
-  - 2
-  consumptionCurve2:
-    serializedVersion: 2
-    m_Curve: []
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  buildingType: {fileID: 0}
-  numHousesPowered: 0
-  totalHouses: 0
-  cityApproval: {fileID: 0}
-  moneyGained: 3
---- !u!114 &7544618107801901497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878062338142282520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31a8f8390b642054abcd6c2b552260ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  powerStored: 0
-  maxPower: 1000
-  isFull: 0
 --- !u!114 &5474069892262664602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -294,21 +222,6 @@ MonoBehaviour:
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
---- !u!114 &8182319749470883275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2878062338142282520}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1ed46678999f634692c9abbad7cd0d4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSend: 0
-  canRecieve: 1
-  priorityNumber: 4
 --- !u!114 &7824566094599213365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -342,6 +255,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   moneyGained: 0
   smartPowerAlert: {fileID: 0}
+  maxConsumption: -1
+  minConsumption: 2.1474836e+9
 --- !u!114 &7553032643689079190
 MonoBehaviour:
   m_ObjectHideFlags: 0
