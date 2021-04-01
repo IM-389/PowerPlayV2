@@ -23,6 +23,9 @@ public class TimeManager : MonoBehaviour
     MilestoneBase coinGen;
     public float resume = 1;
 
+    public GameObject dayLights;
+    Animator lightAnim;
+
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
@@ -35,6 +38,8 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lightAnim = dayLights.GetComponent<Animator>();
+
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
@@ -83,6 +88,14 @@ public class TimeManager : MonoBehaviour
         //Changing the music based on TOD
         backgrounds.setParameterByName("Time Of Day", hours);
         citySat.text = "City Satisfaction: " + cityApproval;
+        if (hours == 20)
+        {
+            lightAnim.SetBool("NightTimeStart", true);
+        }
+        else if (hours == 3)
+        {
+            lightAnim.SetBool("NightTimeStart", false);
+        }
     }
 
     

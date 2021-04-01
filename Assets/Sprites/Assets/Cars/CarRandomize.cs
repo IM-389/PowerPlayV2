@@ -11,6 +11,7 @@ public class CarRandomize : MonoBehaviour
     public Sprite carSpriteTwo;
     public Sprite carSpriteThree;
     public Sprite carSpriteFour;
+    public GameObject parent;
 
     int randN;
     // Start is called before the first frame update
@@ -41,6 +42,14 @@ public class CarRandomize : MonoBehaviour
         }
 
         carSpriteR.sprite = randomizedSprite;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "despawner")
+        {
+            Destroy(parent);
+        }
     }
 
 }
