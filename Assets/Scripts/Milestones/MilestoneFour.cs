@@ -7,16 +7,22 @@ using UnityEngine;
 
 public class MilestoneFour : MilestoneBase
 {
-    private int startDay = -1;
+   // private int startDay = -1;
 
     private TimeManager timeManager;
 
+    private MilestoneManager mileManager;
+
     private List<GameObject> poweredHouses = new List<GameObject>();
+
+    //public Text dayLeftText;
+    //public Text secondLeftText;
 
     private bool startCountdown = false;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+        mileManager = GameObject.FindWithTag("GameController").GetComponent<MilestoneManager>();
     }
     
     public override bool CheckCompleteMilestone()
@@ -39,6 +45,7 @@ public class MilestoneFour : MilestoneBase
         }
 
         // If enough houses are powered, start the week-long cooldown
+        
         if (poweredHouses.Count >= 25)
         {
             startCountdown = true;
@@ -51,13 +58,14 @@ public class MilestoneFour : MilestoneBase
             {
                 startDay = timeManager.days;
             }
-            
+            Debug.Log("Should be in startcountdown now");
             // Count the days elapsed
-            int daysElapsed = timeManager.days - startDay;
+            daysElapsed = timeManager.days - startDay;
+            mileManager.timeText.text = "Days all houses powered: " + daysElapsed ;
 
             return daysElapsed >= 2;
         }
-
+        
         return false;
     }
 }

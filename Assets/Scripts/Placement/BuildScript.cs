@@ -676,7 +676,7 @@ public class BuildScript : MonoBehaviour
             //Debug.Log(wire2.connections.Count);
 
             // Can't create a line longer than the wire length
-            if(wire1.wireLength < hypotenuse)
+            if(wire1.wireLength <= hypotenuse)
             {
                 errorBox.SetActive(true);
                 errorText.text = "Wire cannot reach object";

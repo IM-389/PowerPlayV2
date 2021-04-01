@@ -35,6 +35,11 @@ namespace Milestones
         [Tooltip("Smart Coins(tm) value: increments or decrements with different things")]
         public int smartCoins;
 
+        public int startDay = -1;
+
+        public int daysElapsed;
+
+        public int maxDays;
         public abstract bool CheckCompleteMilestone();
 
         public virtual void SetCompleteMilestone()

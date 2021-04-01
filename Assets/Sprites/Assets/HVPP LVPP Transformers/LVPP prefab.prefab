@@ -50,7 +50,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -187,11 +187,13 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
-  wireLength: 5
+  wireLength: 3
   buildingText: Helps you send Low-Voltage Power a long way.
   connected: 0
   refundAmount: 0
+  buyCost: 0
   buildCircle: {fileID: 6811981818816594772}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 3
   isMilestoneCounted: 1
@@ -210,7 +212,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
-  isSmart: 0
 --- !u!61 &4336220729891179375
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -281,6 +282,7 @@ MonoBehaviour:
   precedenceNumber: 0
   powerGenerated: 0
   powerConsumed: 0
+  hasEnoughPower: 0
 --- !u!1 &6605184905482117524
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +334,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

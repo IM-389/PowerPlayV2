@@ -13,7 +13,11 @@ public class HouseLights : MonoBehaviour
     public Sprite poweredSprite;
     public Sprite unpoweredSprite;
     public GameObject smoke;
-    
+    public GameObject houseLight;
+
+    public ConsumerScript consumer;
+
+    private TimeManager timeManager;
     // Start is called before the first frame update
 
     private NetworkScript network;
@@ -38,10 +42,12 @@ public class HouseLights : MonoBehaviour
         {
             spriteR.sprite = unpoweredSprite;
             smoke.SetActive(false);
+            houseLight.SetActive(false);
         }
         if(powered == true)
         {
             spriteR.sprite = poweredSprite;
+            houseLight.SetActive(true);
             smoke.SetActive(true);
         }
     }
