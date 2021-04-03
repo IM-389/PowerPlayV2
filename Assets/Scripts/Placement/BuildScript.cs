@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using Power.V2;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -232,10 +232,14 @@ public class BuildScript : MonoBehaviour
             {
                 // If they clicked on a consumer, make it smart
                 // TODO: Tie a cost to this
-                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
+                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory") || hover.CompareTag("Generator"))
                 {
-                    hover.isSmart = true;
+                    hover.GetComponent<GeneralObjectScript>().isSmart = true;
                     hover.transform.GetChild(5).gameObject.SetActive(true);
+                    if (hover.CompareTag("Generator"))
+                    {
+                        hover.GetComponent<GeneratorScript>().DoUpgrade();
+                    }
                 }
             }
         }
@@ -269,7 +273,7 @@ public class BuildScript : MonoBehaviour
         else
         {
             wire1.AddNonConsumerConnection(wireObject2);
-            wire2.AddNonConsumerConnection(wireObject2);
+            wire2.AddNonConsumerConnection(wireObject1);
         }
         
         /*
@@ -316,7 +320,24 @@ public class BuildScript : MonoBehaviour
         }
         */
         // Sets objects back to null
-        wireObject1 = null;
+        if(wireObject1.tag == "house")
+        {
+            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
+        else
+        {
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+        
+        wireObject1 = wireObject2;
+        if (wireObject1.tag == "house")
+        {
+            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+        else
+        {
+            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+        }
         wireObject2 = null;
         
     }
@@ -374,7 +395,14 @@ public class BuildScript : MonoBehaviour
         upgradeMode = false;
         if (wireObject1 != null)
         {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            if (wireObject1.tag == "house")
+            {
+                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+            }
+            else
+            {
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            }
         }
 
         removalMode = false;
@@ -556,9 +584,9 @@ public class BuildScript : MonoBehaviour
             tooltipInfo += sGos.buildingText + "\n";
             if (sGos.isGenerator)
             {
-                GeneratorScript generator = sGos.GetComponent<GeneratorScript>();
+                PowerAmountInfo amountInfo = sGos.GetComponent<PowerAmountInfo>();
                 
-                tooltipInfo += $"\nGeneration: {generator.amount}\n";
+                tooltipInfo += $"\nGeneration: {amountInfo.amountGenerated}\n";
                 
             }
 
@@ -597,35 +625,40 @@ public class BuildScript : MonoBehaviour
         GeneralObjectScript sWire;
         //tooltipWire += sWire.buildingText;
         RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
-        //Debug.Log(hit.transform.tag);
-        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road"))
+        Debug.Log(hit.transform.tag);
+        if (hit.transform.CompareTag("Background") || hit.collider is null || hit.transform.CompareTag("Road") || hit.transform.CompareTag("tree") || hit.transform.CompareTag("wire") || hit.transform.CompareTag("fog"))
         {
-            if (wireObject1 != null) 
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            if (wireObject1 != null)
+            {
+                if (wireObject1.tag == "house")
+                {
+                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+            }
             wireObject1 = null;
             return;
         }
         // Sets the first wire object
         if (wireObject1 == null)
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                Debug.Log(hit.transform.gameObject.GetComponent<BoxCollider2D>().size);
-                return;
-            }            
             wireObject1 = hit.transform.gameObject;
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            
-            //Debug.Log(wireObject1.GetComponent<GeneralObjectScript>().volts);            
+            if (wireObject1.tag == "house")
+            {
+                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            }
+            else
+            {
+                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+            }  
         }
 
         // Otherwise it sets the second wire object
         else
         {
-            if (hit.transform.CompareTag("wire"))
-            {
-                return;
-            }
             wireObject2 = hit.transform.gameObject;
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
@@ -691,7 +724,18 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "Too many high voltage connections on one object!";
                 return;
             }
-            
+            if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot connect substation to a consumer";
+                return;
+            }
+            if(wire1.isConsumer && wire2.isConsumer)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Cannot create a connection between consumers";
+                return;
+            }
             /*
             if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
             {
@@ -725,7 +769,6 @@ public class BuildScript : MonoBehaviour
             // If the first object is a transformer it can connect to anything
             if (wire1.GetVoltage() == 2)
             {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                 CreateLine();
             }
             // Checks if the second object is either the same voltage as the first object or a transformer
@@ -740,7 +783,6 @@ public class BuildScript : MonoBehaviour
                  // Checks if second object is a transformer
                  (wire2.GetVoltage() == 2))
                  {
-                     wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
                      CreateLine();
                  }
                  else if (wire1.GetVoltage() != wire2.GetVoltage())
@@ -818,7 +860,15 @@ public class BuildScript : MonoBehaviour
         {
             if (cityApproval.hours >= 25)
             {
-                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
+                if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 1)
+                {
+                    cityApproval.cityApproval -= 35;
+                }
+                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+                {
+                    cityApproval.cityApproval -= 20;
+                }
+                else if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval -= 10;
                     if (totalCoalPlaced / totalBuildingsPlaced > 0.50)
@@ -836,15 +886,16 @@ public class BuildScript : MonoBehaviour
                     }
                     */
                 }
-                else if(totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.90)
+
+                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
                 {
-                    cityApproval.cityApproval -= 20;
+                    cityApproval.cityApproval += 35;
                 }
-                else if (totalDirtyPowerPlaced /totalBuildingsPlaced >= 1)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
                 {
-                    cityApproval.cityApproval -= 35;
+                    cityApproval.cityApproval += 20;
                 }
-                if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
+                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.75)
                 {
                     cityApproval.cityApproval += 10;
                     if (totalSolarPlaced / totalBuildingsPlaced > 0.50)
@@ -856,14 +907,8 @@ public class BuildScript : MonoBehaviour
                         cityApproval.cityApproval += 10;
                     }
                 }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 0.90)
-                {
-                    cityApproval.cityApproval += 20;
-                }
-                else if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
-                {
-                    cityApproval.cityApproval += 35;
-                }
+                
+                
             }
         }
     }

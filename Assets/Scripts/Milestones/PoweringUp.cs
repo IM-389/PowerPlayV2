@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using Power.V2;
 using Milestones;
 using UnityEngine;
 
@@ -30,9 +29,9 @@ public class PoweringUp : MilestoneBase
         foreach (var house in houses)
         {
             // Reference to the power storage script
-            StorageScript storage = house.GetComponent<StorageScript>();
+            ConsumerScript consumer = house.GetComponent<ConsumerScript>();
             GeneralObjectScript gos = house.GetComponent<GeneralObjectScript>();
-            if (gos.isMilestoneCounted && storage.powerStored > 0)
+            if (gos.isMilestoneCounted && consumer.GetManager().hasEnoughPower)
             {
                 ++poweredHouses;
             }

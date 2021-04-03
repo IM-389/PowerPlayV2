@@ -51,7 +51,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,15 +309,19 @@ MonoBehaviour:
   volts: 1
   isGenerator: 1
   isConsumer: 0
-  isSubstation: 0
   wireLength: 5
   buildingText: Makes okay power. Puts less smoke in the air than Coal Plant.
-  cost: 5
+  connected: 0
+  refundAmount: 5
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 1
   maxLVConnections: 0
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &6874283770724396703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,8 +337,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: Makes a good number of power. It puts smoke in the air, but
-    not as much as the Coal Plant.
 --- !u!114 &3750983780562473449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +351,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   amount: 10
-  moneyGained: 0
+  upkeep: 0
 --- !u!114 &5854946058926720500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -363,6 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &-9214463367474969197
 MonoBehaviour:
   m_ObjectHideFlags: 0

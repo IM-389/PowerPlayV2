@@ -20,15 +20,17 @@ public class TimeManager : MonoBehaviour
     public Text clock;
     public Text citySat;
     public int cash = 0;//gonna be using this to cause houses to make money
-    ConsumerScript isConsuming;
     MilestoneBase coinGen;
     public float resume = 1;
+
+    public GameObject dayLights;
+    Animator lightAnim;
 
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
     public string backgroundReference;
-    FMOD.Studio.EventInstance backgrounds;
+    public static FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
     
@@ -36,6 +38,8 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lightAnim = dayLights.GetComponent<Animator>();
+
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
@@ -84,6 +88,14 @@ public class TimeManager : MonoBehaviour
         //Changing the music based on TOD
         backgrounds.setParameterByName("Time Of Day", hours);
         citySat.text = "City Satisfaction: " + cityApproval;
+        if (hours == 20)
+        {
+            lightAnim.SetBool("NightTimeStart", true);
+        }
+        else if (hours == 3)
+        {
+            lightAnim.SetBool("NightTimeStart", false);
+        }
     }
 
     
@@ -140,12 +152,12 @@ public class TimeManager : MonoBehaviour
                 if(hours >= 5 || hours <= 18)
                 {
                     isDay = true;
-                    Debug.Log("It is daytime");
+                    //Debug.Log("It is daytime");
                 }
                 else
                 {
                     isDay = false;
-                    Debug.Log("It is night");
+                    //Debug.Log("It is night");
                 }
                 
                 clock.text = buffer;

@@ -1,4 +1,5 @@
 using Milestones;
+using Power.V2;
 using UnityEngine;
 
 public class PoweringIndustry : MilestoneBase
@@ -13,7 +14,7 @@ public class PoweringIndustry : MilestoneBase
 
         foreach (var factory in allFactories)
         {
-            if (factory.GetComponent<StorageScript>().powerStored > 0)
+            if (factory.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
             {
                 ++poweredFactories;
             }
@@ -21,7 +22,7 @@ public class PoweringIndustry : MilestoneBase
 
         foreach (var hospital in allHospitals)
         {
-            if (hospital.GetComponent<StorageScript>().powerStored > 0)
+            if (hospital.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
             {
                 ++poweredHospitals;
             }

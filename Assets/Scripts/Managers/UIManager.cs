@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Power.V2;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
@@ -16,23 +17,22 @@ public class UIManager : MonoBehaviour
     [Tooltip("Text for the amount of money the player currently has")]
     public Text moneyText;
 
-    [Tooltip("Reference to the pause menu object")]
-    public GameObject pauseMenu;
-    [Tooltip("Reference to the pause blocker object")]
-    public GameObject pauseBlocker;
-    
     private PowerManager powerManager;
 
     private MoneyManager moneyManager;
+    
+
+    [Tooltip("What to show when a house is out of power")]
+    public GameObject outOfPowerAlert;
     // Start is called before the first frame update
     void Start()
     {
         powerManager = gameObject.GetComponent<PowerManager>();
         moneyManager = gameObject.GetComponent<MoneyManager>();
-        StartCoroutine(UpdateText());
+        StartCoroutine(UpdateUI());
     }
 
-    private IEnumerator UpdateText()
+    private IEnumerator UpdateUI()
     {
         while (true)
         {
@@ -53,6 +53,25 @@ public class UIManager : MonoBehaviour
 
             moneyText.text = "$" + moneyManager.money.ToString();
 
+            NetworkManager[] managers = GameObject.FindObjectsOfType<NetworkManager>();
+            int numOutOfPower = 0;
+            foreach (var manager in managers)
+            {
+                if (!manager.hasEnoughPower)
+                {
+                    ++numOutOfPower;
+                }
+            }
+
+            if (numOutOfPower > 0)
+            {
+                outOfPowerAlert.SetActive(true);
+            }
+            else
+            {
+                outOfPowerAlert.SetActive(false);                
+            }
+            
             yield return new WaitForSecondsRealtime(0.5f);
         }
     }

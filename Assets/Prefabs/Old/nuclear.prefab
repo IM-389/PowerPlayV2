@@ -56,7 +56,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -131,7 +131,6 @@ MonoBehaviour:
   powerStored: 0
   maxPower: 100
   isFull: 0
-  objectDescription: 
 --- !u!114 &4216160590153789518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,14 +146,19 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 0
-  isSubstation: 0
   wireLength: 0
-  cost: 0
+  buildingText: 
+  connected: 0
+  refundAmount: 0
+  buildCircle: {fileID: 0}
+  unRemovable: 0
   maxHVConnections: 0
   maxLVConnections: 0
-  isMilestoneCounted: 1
-  connections: []
+  hVConnections: []
+  lvConnections: []
   consumerConnections: []
+  isMilestoneCounted: 1
+  preMadeConnections: []
 --- !u!114 &3931516651691144853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,6 +172,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canSend: 1
+  canRecieve: 1
+  priorityNumber: 0
 --- !u!114 &4248183883831323415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,6 +187,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  buildingText: 
   amount: 0
-  moneyGained: 0
+  upkeep: 0
