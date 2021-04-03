@@ -254,7 +254,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moneyGained: 0
-  smartPowerAlert: {fileID: 0}
+  smartPowerAlert: {fileID: 7670004836200557380}
   maxConsumption: -1
   minConsumption: 2.1474836e+9
 --- !u!114 &6224135023708915516
@@ -313,13 +313,14 @@ GameObject:
   - component: {fileID: 2675852927930709949}
   - component: {fileID: 1598508781946270461}
   - component: {fileID: 4866118154220178363}
+  - component: {fileID: 4017692158656810205}
   m_Layer: 7
   m_Name: IconObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2675852927930709949
 Transform:
   m_ObjectHideFlags: 0
@@ -392,10 +393,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7670004836200557380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b30fae2f08300458f43aca70bc3354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   noPowerSprite: {fileID: 21300000, guid: 4518aacb065b26445a27d9ab73a359a2, type: 3}
   noConnectionSprite: {fileID: 21300000, guid: d07a64a7bc1d51245888bdb21af91669, type: 3}
+--- !u!114 &4017692158656810205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7670004836200557380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2164de9067890d4da8152419bb5ca02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

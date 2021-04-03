@@ -254,7 +254,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moneyGained: 0
-  smartPowerAlert: {fileID: 0}
+  smartPowerAlert: {fileID: 4864552276357145745}
   maxConsumption: -1
   minConsumption: 2.1474836e+9
 --- !u!114 &7553032643689079190

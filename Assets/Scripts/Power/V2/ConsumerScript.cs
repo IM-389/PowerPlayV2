@@ -69,15 +69,18 @@ namespace Power.V2
                 if (manager.hasEnoughPower)
                 {
                     moneyManager.money += moneyGained;
-                    smartPowerAlert.SetActive(false);
+                    if (smartPowerAlert != null)
+                        smartPowerAlert.SetActive(false);
                 }
                 else if (gos.isSmart)
                 {
-                    smartPowerAlert.SetActive(true);
+                    if (smartPowerAlert != null)
+                        smartPowerAlert.SetActive(true);
                 }
                 else
                 {
-                    smartPowerAlert.SetActive(false);
+                    if (smartPowerAlert != null)
+                        smartPowerAlert.SetActive(false);
                 }
             }
 
