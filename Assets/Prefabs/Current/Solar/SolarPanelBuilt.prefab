@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5888860044823673085}
   - component: {fileID: 7781973340629442645}
   - component: {fileID: -8021645519560125708}
-  - component: {fileID: 257820389139315996}
+  - component: {fileID: -2601394823961240912}
   m_Layer: 0
   m_Name: SolarPanelBuilt
   m_TagString: Generator
@@ -39,6 +39,8 @@ Transform:
   - {fileID: 6357308005963646114}
   - {fileID: 5712868789196590213}
   - {fileID: 4713480070782656186}
+  - {fileID: 4695381784552342357}
+  - {fileID: 707884754722421697}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -89,6 +91,7 @@ MonoBehaviour:
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 3125414001668101589}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 1
   isMilestoneCounted: 1
@@ -107,7 +110,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
-  isSmart: 0
 --- !u!95 &1965330459
 Animator:
   serializedVersion: 3
@@ -139,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 2
+  amountGenerated: 9
   amountConsumed: 0
 --- !u!114 &7781973340629442645
 MonoBehaviour:
@@ -172,7 +174,7 @@ MonoBehaviour:
   powerGenerated: 0
   powerConsumed: 0
   hasEnoughPower: 0
---- !u!114 &257820389139315996
+--- !u!114 &-2601394823961240912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -181,11 +183,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1007116474896301567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8266fbb49f4c8fb87961fa03034e30, type: 3}
+  m_Script: {fileID: 11500000, guid: a93c0c5ebdc44580a65f4d554b92215a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
   upkeepCost: 0
+  upgradePowerAmount: 12
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,6 +273,66 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1718386516630917574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707884754722421697}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &707884754722421697
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1718386516630917574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00399971, y: 0.06789899, z: 6.808455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1007116474896301566}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2113877416872517214
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4695381784552342357}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4695381784552342357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113877416872517214}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00399971, y: 0.06789899, z: 6.808455}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1007116474896301566}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7927296136085746911
 GameObject:
   m_ObjectHideFlags: 0

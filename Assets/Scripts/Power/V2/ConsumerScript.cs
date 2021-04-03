@@ -89,10 +89,5 @@ namespace Power.V2
         {
             return ns.manager;
         }
-
-        protected void DoUpgrade()
-        {
-            
-        }
     }
 }

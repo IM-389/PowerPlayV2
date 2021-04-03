@@ -232,10 +232,14 @@ public class BuildScript : MonoBehaviour
             {
                 // If they clicked on a consumer, make it smart
                 // TODO: Tie a cost to this
-                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
+                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory") || hover.CompareTag("Generator"))
                 {
                     hover.GetComponent<GeneralObjectScript>().isSmart = true;
                     hover.transform.GetChild(5).gameObject.SetActive(true);
+                    if (hover.CompareTag("Generator"))
+                    {
+                        hover.GetComponent<GeneratorScript>().DoUpgrade();
+                    }
                 }
             }
         }
