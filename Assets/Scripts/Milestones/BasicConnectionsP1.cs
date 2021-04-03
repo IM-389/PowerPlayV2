@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace Milestones
 {
-    public class MilestoneOneHalf : MilestoneBase
+    public class BasicConnectionsP1 : MilestoneBase
     {
         public override bool CheckCompleteMilestone()
         {

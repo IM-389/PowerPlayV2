@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 
-public class MilestoneThree : MilestoneBase
+public class PoweringUp : MilestoneBase
 {
     public override bool CheckCompleteMilestone()
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using Milestones;
 using UnityEngine;
 
-public class MilestoneFour : MilestoneBase
+public class RainyDay : MilestoneBase
 {
     private int startDay = -1;
 
@@ -42,7 +42,7 @@ public class MilestoneFour : MilestoneBase
         {
             startCountdown = true;
         }
-        
+
         if (startCountdown)
         {
             // Set the starting day
@@ -50,11 +50,11 @@ public class MilestoneFour : MilestoneBase
             {
                 startDay = timeManager.days;
             }
-            
+
             // Count the days elapsed
             int daysElapsed = timeManager.days - startDay;
 
-            return daysElapsed >= 2;
+            return daysElapsed >= 1;
         }
 
         return false;

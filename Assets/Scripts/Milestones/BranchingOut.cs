@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 
-public class MilestoneTwo : MilestoneBase
+public class BranchingOut : MilestoneBase
 {
     public override bool CheckCompleteMilestone()
     {

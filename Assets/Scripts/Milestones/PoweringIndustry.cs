@@ -1,7 +1,7 @@
 using Milestones;
 using UnityEngine;
 
-public class MilestoneSix : MilestoneBase
+public class PoweringIndustry : MilestoneBase
 {
     public override bool CheckCompleteMilestone()
     {
