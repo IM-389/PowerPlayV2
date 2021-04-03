@@ -25,6 +25,10 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
+    public GameObject dirtEmission;
+
+    public GameObject sparkEmission;
+
     [Tooltip("Reference to the tooltip panel")]
     public GameObject tooltipPanel;
     
@@ -835,13 +839,22 @@ public class BuildScript : MonoBehaviour
             }
 
             moneyManager.money += gos.refundAmount;
+            Instantiate(dirtEmission, new Vector3(gos.gameObject.transform.position.x,
+            gos.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(gos.gameObject);
         }
         else if (origin.transform.CompareTag("wire"))
         {
+
             WireScript ws = origin.transform.parent.GetComponent<WireScript>();
             GameObject object1 = ws.connect1;
             GameObject object2 = ws.connect2;
+
+            Instantiate(sparkEmission, new Vector3((object1.gameObject.transform.position.x + 
+            object2.gameObject.transform.position.x) / 2,
+            (object1.gameObject.transform.position.y + object2.gameObject.transform.position.y) / 2,
+            0), Quaternion.identity);
+
             GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
             gos1.RemoveConnection(object2);
