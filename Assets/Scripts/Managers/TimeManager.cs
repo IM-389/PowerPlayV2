@@ -28,8 +28,16 @@ public class TimeManager : MonoBehaviour
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
-    public string backgroundReference;
-    FMOD.Studio.EventInstance backgrounds;
+    public string backgroundReference1;
+    FMOD.Studio.EventInstance backgrounds1;
+
+     //Accesses the FMOD Event
+    [Tooltip("The location of the sound")]
+    [FMODUnity.EventRef]
+    public string backgroundReference2;
+    FMOD.Studio.EventInstance backgrounds2;
+
+    int temp = 2;
 
     public Light2D globalLight;
 
@@ -47,8 +55,8 @@ public class TimeManager : MonoBehaviour
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
 
         // Finding and Starting the Event
-        backgrounds = FMODUnity.RuntimeManager.CreateInstance(backgroundReference);
-        backgrounds.start();
+        backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
+        backgrounds1.start();
 
         globalLight.intensity = 0.4375f;
     }
@@ -87,12 +95,60 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         //Changing the music based on TOD
-        backgrounds.setParameterByName("Time Of Day", hours);
+        backgrounds1.setParameterByName("Time Of Day", hours);
+        backgrounds2.setParameterByName("Time Of Day", hours);
+        
         citySat.text = "City Satisfaction: " + cityApproval;
     }
 
+    /// <summary>
+    /// Stops the pre-existing track and starts the other 
+    /// </summary>
+    /// <param name="num">Which track to start</param>
+    void FlipBackgrounds(int num)
+    {
+        switch(num)
+        {
+            case 2:
+                backgrounds1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                backgrounds1.release();
 
-    
+                backgrounds2 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference2);
+                backgrounds2.start();
+                temp = 1;
+                break;
+
+            case 1:
+                backgrounds2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                backgrounds2.release();
+
+                backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
+                backgrounds1.start();
+                temp = 2;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Determines when to flip backgrounds
+    /// </summary>
+    void MusicManage()
+    {
+        if (timeStep == 0 && days % 5 == 0)
+        {
+            // Handles setting music change variable at 12pm
+            var random = Random.Range(1, 2);
+            if (random == 1)
+            {
+                FlipBackgrounds(temp);
+                Debug.Log("Change");
+            }
+        }
+    }
+
     IEnumerator TimeCalculator()//This is a coroutine.
     {
         while (true)
@@ -113,8 +169,14 @@ public class TimeManager : MonoBehaviour
                 }
                 
                 if (hours == 12 || hours == 24)
-                {
+                {   
                     buffer += "Day: " + days + ", 12 ";
+
+                    if (hours == 12)
+                    {
+                        MusicManage();
+                    }
+
                     if(hours == 24)
                     {
                         buffer += " A.M";
@@ -128,7 +190,6 @@ public class TimeManager : MonoBehaviour
 
                 if (hours >= 12 && hours != 24)
                 {
-            
                     buffer +=  " P.M";
                 }
 
