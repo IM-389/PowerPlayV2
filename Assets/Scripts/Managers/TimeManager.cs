@@ -24,7 +24,10 @@ public class TimeManager : MonoBehaviour
     public int cash = 0;//gonna be using this to cause houses to make money
     MilestoneBase coinGen;
     public float resume = 1;
+    public Light2D globalLight;
 
+
+    [Header("Sound")]
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
@@ -37,9 +40,11 @@ public class TimeManager : MonoBehaviour
     public string backgroundReference2;
     FMOD.Studio.EventInstance backgrounds2;
 
+    [Tooltip("Sets the number of days before chance to change tracks")]
+    public int daysBetweenTracks;
+
     int temp = 2;
 
-    public Light2D globalLight;
 
     // For pause menu
     
@@ -137,7 +142,7 @@ public class TimeManager : MonoBehaviour
     /// </summary>
     void MusicManage()
     {
-        if (timeStep == 0 && days % 5 == 0)
+        if (timeStep == 0 && days % daysBetweenTracks == 0)
         {
             // Handles setting music change variable at 12pm
             var random = Random.Range(1, 2);
