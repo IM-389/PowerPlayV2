@@ -145,7 +145,7 @@ public class TimeManager : MonoBehaviour
         if (timeStep == 0 && days % daysBetweenTracks == 0)
         {
             // Handles setting music change variable at 12pm
-            var random = Random.Range(1, 2);
+            var random = Random.Range(0, 2);
             if (random == 1)
             {
                 FlipBackgrounds(temp);
