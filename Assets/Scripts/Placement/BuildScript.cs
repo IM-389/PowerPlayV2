@@ -199,6 +199,7 @@ public class BuildScript : MonoBehaviour
                         {
                             if (cityApproval.hours == 25)
                             {
+                                cityApproval.hours = 1;
                                 if (totalDirtyPowerPlaced / totalBuildingsPlaced >= 0.75)
                                 {
                                     cityApproval.cityApproval -= 10;

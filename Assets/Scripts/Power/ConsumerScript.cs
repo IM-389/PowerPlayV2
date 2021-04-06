@@ -95,6 +95,7 @@ public class ConsumerScript : PowerBase
         {
             if (cityApproval.hours == 25)
             {
+                cityApproval.hours = 1;
                 if (!isConsuming)
                 {
                     //calc % of houses powered
