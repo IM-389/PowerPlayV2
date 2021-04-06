@@ -102,6 +102,10 @@ public class GeneralObjectScript : MonoBehaviour
             connection.GetComponent<GeneralObjectScript>().AddNonConsumerConnection(gameObject);
         }
     }
+    private void Update()
+    {
+        gameObject.GetComponent<HoverScript>().ToggleBuildCircle(false);
+    }
     /*
     public void AddLVConnection(GameObject connection)
     {
@@ -237,7 +241,7 @@ public class GeneralObjectScript : MonoBehaviour
         return (nonConsumerConnections.Count + consumerConnections.Count);
     }
 
-    public void OnMouseEnter()
+    public void OnMouseStay()
     {
         gameObject.GetComponent<HoverScript>().ToggleBuildCircle(true);
     }
