@@ -48,6 +48,7 @@ public class MilestoneManager : MonoBehaviour
             if (isComplete)
             {
                 Debug.Log("Milestone complete, setting next ones!");
+                
                 currentMilestones[i].SetCompleteMilestone();
                 
                 foreach (var building in currentMilestones[i].newBuildings)
@@ -71,7 +72,9 @@ public class MilestoneManager : MonoBehaviour
         
         foreach (var index in toRemove)
         {
+            Debug.Log("in foreach at top-see this, borked");
             currentMilestones.RemoveAt(index);
+            Debug.Log("in foreach at bottom-see this, borked");
         }
     }
 }
