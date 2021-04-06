@@ -6,13 +6,17 @@ public class SunnyDayEvent : EventBase
 {
     private PowerManager powerManager;
 
+    public float coalAdjust;
+    public float solarAdjust;
+    public float windAdjust;
+    
     private void Start()
     {
         base.Start();
         powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
     }
     
-    public override void DoEvent()
+    public override bool DoEvent()
     {
         Debug.Log("Sunny Day Selected!");
         int chance = Random.Range(0, 100);
@@ -20,8 +24,11 @@ public class SunnyDayEvent : EventBase
         if (chance < eventChance)
         {
             Debug.Log("Running Sunny Day!");
-            StartCoroutine(SunnyDay());//this delays sunny day to only happen in the daytime. keep that in mind. windmill break can and will trigger instantly 
+            StartCoroutine(SunnyDay());//this delays sunny day to only happen in the daytime. keep that in mind. windmill break can and will trigger instantly
+            return true;
         }
+
+        return false;
     }
 
     private IEnumerator SunnyDay()
@@ -32,10 +39,10 @@ public class SunnyDayEvent : EventBase
             yield return new WaitForSeconds(0.5f);
         }
 
-        powerManager.powerAdjusts[0] = 0;
+        powerManager.powerAdjusts[0] = coalAdjust;
         powerManager.powerAdjusts[1] = 0;
-        powerManager.powerAdjusts[2] = 2;
-        powerManager.powerAdjusts[3] = 0;
+        powerManager.powerAdjusts[2] = solarAdjust;
+        powerManager.powerAdjusts[3] = windAdjust;
 
         yield return new WaitForSeconds(30f);
 

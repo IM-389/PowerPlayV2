@@ -46,7 +46,7 @@ public class RandomEventManager : MonoBehaviour
         
         // Ticks on day changes
         timestep = timeManager.days;
-        if (timestep > previousTimestep)
+        if (timestep > previousTimestep && timeManager.days > 1)
         {
             // Reset all the power adjustments each day
             for (int i = 0; i < 4; ++i)
@@ -59,10 +59,13 @@ public class RandomEventManager : MonoBehaviour
 
             EventBase eventSelected = events[eventRNG];
 
-            eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
-            eventNotification.SetActive(true);
-            StartCoroutine(HideNotification());
-            eventSelected.DoEvent();
+            if (eventSelected.DoEvent())
+            {
+                eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
+                eventNotification.SetActive(true);
+                StartCoroutine(HideNotification());
+            }
+
         }
 
         previousTimestep = timeManager.days;

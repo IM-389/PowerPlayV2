@@ -14,7 +14,8 @@ public class SquirrelEvent : EventBase
     //variables are camelcased, functions pascal cased
     // }
     //public GameObject[] findPower;
-   public override void DoEvent()
+    private BuildScript wireObject1;
+    public override bool DoEvent()
     {
         Debug.Log("Squirrel time selected!");
         int chance = Random.Range(0, 100);
@@ -22,20 +23,30 @@ public class SquirrelEvent : EventBase
         {
             Debug.Log("Squirrel time baby!");
            
-            GameObject[] findPower = GameObject.FindGameObjectsWithTag("power");//finds all gameobjects with the tag "power"
+            GameObject[] findPower = GameObject.FindGameObjectsWithTag("Power");//finds all gameobjects with the tag "power"
             int rand = Random.Range(0, findPower.Length);
             GeneralObjectScript safeFound = findPower[rand].GetComponent<GeneralObjectScript>();
             if (safeFound.consumerConnections.Count > 0)
             {
-                foreach(GameObject consumer in safeFound.consumerConnections)
+                for(int i = 0; i < safeFound.consumerConnections.Count;)
                 {
-                    safeFound.RemoveConnection(consumer);
-                    consumer.GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.consumerConnections[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.RemoveConnection(safeFound.consumerConnections[i]);
+                    //Destroy(wireObject1);
+                    //if(wireObject1.wireObject1.GetComponentInChildren<SpriteRenderer>().color == Color.blue)
+                    //{
+                    //    Destroy(wireObject1.wireObject1);
+                   // }
                 }
             }
 
-           
+            return true;
+
         }
+
+        return false;
     }
     
+    
+
 }
