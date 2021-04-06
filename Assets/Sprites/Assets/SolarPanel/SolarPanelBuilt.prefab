@@ -89,6 +89,7 @@ MonoBehaviour:
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 3125414001668101589}
+  isSmart: 0
   unRemovable: 0
   maxConnections: 1
   isMilestoneCounted: 1
@@ -107,7 +108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltipOffset: {x: 0, y: -1.5}
-  isSmart: 0
 --- !u!95 &1965330459
 Animator:
   serializedVersion: 3
@@ -520,6 +520,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SolarPanelTwinkle
       objectReference: {fileID: 0}
+    - target: {fileID: 3691427570609482738, guid: 39bbd7722bf804d4e8d7d3b1bc42f83d, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b627f50ea65eac04ab18eada35e5a8ae, type: 2}
     - target: {fileID: 3691427570609482739, guid: 39bbd7722bf804d4e8d7d3b1bc42f83d, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 1
