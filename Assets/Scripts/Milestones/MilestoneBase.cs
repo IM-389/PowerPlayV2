@@ -17,11 +17,11 @@ namespace Milestones
         [Tooltip("If this milestone has a question once it is completed")]
         public bool hasQuestion;
 
-        [FormerlySerializedAs("unlockedObjects")] [Tooltip("What areas/parts the map get unlocked when the milestone is completed")]
-        public GameObject[] unlockables;
+        [FormerlySerializedAs("unlockables")] [FormerlySerializedAs("unlockedObjects")] [Tooltip("What pbjects get enabled when the milestone is completed")]
+        public GameObject[] enabledObjects;
 
-        [Tooltip("Which sections of fog will be removed upon milestone completion")]
-        public GameObject[] removedFog;
+        [FormerlySerializedAs("removedFog")] [Tooltip("Which objects are disabled upon milestone completion")]
+        public GameObject[] disabledObjects;
 
         [Tooltip("What new buildings to add")]
         public GameObject[] newBuildings;
@@ -44,12 +44,12 @@ namespace Milestones
 
         public virtual void SetCompleteMilestone()
         {
-            foreach (var unlocked in unlockables)
+            foreach (var unlocked in enabledObjects)
             {
                 unlocked.SetActive(true);
             }
             
-            foreach (var fog in removedFog)
+            foreach (var fog in disabledObjects)
             {
                 fog.SetActive(false);
             }
