@@ -197,8 +197,7 @@ MonoBehaviour:
   unRemovable: 0
   maxConnections: 3
   isMilestoneCounted: 1
-  preMadeConnections:
-  - {fileID: 0}
+  preMadeConnections: []
   connectionCount: 0
 --- !u!114 &6769998827749591628
 MonoBehaviour:
