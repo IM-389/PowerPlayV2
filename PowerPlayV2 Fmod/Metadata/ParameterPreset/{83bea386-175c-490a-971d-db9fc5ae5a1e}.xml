@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="ParameterPreset" id="{83bea386-175c-490a-971d-db9fc5ae5a1e}">
+		<property name="name">
+			<value>Random End</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f8c32272-2d40-47f7-8069-de7523d3cdff}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{f2cf8ffc-641b-4802-83ec-f4158aa195b6}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{f2cf8ffc-641b-4802-83ec-f4158aa195b6}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="isExposedRecursively">
+			<value>false</value>
+		</property>
+	</object>
+</objects>
