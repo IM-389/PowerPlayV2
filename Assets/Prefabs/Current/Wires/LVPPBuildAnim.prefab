@@ -284,8 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Building: {fileID: 4459776290939348815, guid: f7a6a3eb6c562964da5fb9ef149413f4, type: 3}
-  xOffset: -0.01
-  yOffset: 0.06
+  xOffset: 0
+  yOffset: 0
 --- !u!95 &8172532887073661873
 Animator:
   serializedVersion: 3

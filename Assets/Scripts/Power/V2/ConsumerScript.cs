@@ -23,6 +23,8 @@ namespace Power.V2
 
         private GeneralObjectScript gos;
 
+        static float totalHouses;
+
         public float maxConsumption = -1;
         public float minConsumption = Int32.MaxValue;
         private void Start()
@@ -46,6 +48,8 @@ namespace Power.V2
                     minConsumption = value;
                 }
             }
+            totalHouses++;
+            Debug.Log(totalHouses);
         }
 
         private void Update()
