@@ -61,7 +61,7 @@ public class GeneralObjectScript : MonoBehaviour
     protected MoneyManager moneyManager;
     
     // Makes premade connections
-    private void Start()
+    protected void Start()
     {
         // Register the list changing to the callback function.
         nonConsumerConnections.CollectionChanged += OnListChanged;
