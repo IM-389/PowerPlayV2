@@ -667,8 +667,19 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
-                errorBox.SetActive(true);
-                errorText.text = "You can't click the same object twice";
+                //errorBox.SetActive(true);
+                //errorText.text = "You can't click the same object twice";
+                if (wireObject1.tag == "house")
+                {
+                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+
+                wireObject1 = null;
+                wireObject2 = null;
                 return;
             }
             Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
