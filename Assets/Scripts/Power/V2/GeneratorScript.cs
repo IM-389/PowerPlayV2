@@ -53,6 +53,26 @@ namespace Power.V2
 
                 // TODO: Find a way to move this to the NetworkManager
                 moneyManager.money -= upkeepCost;
+
+                // City Approval Stuff
+                if (timeManager.hours == 25)
+                {
+                    // If the generator is a coal plant or windmill
+                    if(type == PowerManager.POWER_TYPES.TYPE_COAL || type == PowerManager.POWER_TYPES.TYPE_WIND)
+                    {
+                        // Make a raycast of 6 squares
+                        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 6f, Vector2.zero);
+                        foreach (RaycastHit2D hit in hits)
+                        {
+                            GameObject hitObject = hit.transform.gameObject;
+                            // If one of the objects hit is a consumer, lower the city satisfaction.
+                            if(hitObject.CompareTag("house") || hitObject.CompareTag("factory")|| hitObject.CompareTag("hospital"))
+                            {
+                                Debug.Log("Lower City satisfaction, coal plant/windmill is too close to house");
+                            }
+                        }
+                    }
+                }
             }
 
             previousTimestep = timeManager.hours;

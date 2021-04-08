@@ -18,12 +18,16 @@ namespace Power.V2
 
         public int moneyGained;
         private MoneyManager moneyManager;
-        
+
+        public GameObject alert;
         public GameObject smartPowerAlert;
 
         private GeneralObjectScript gos;
 
+        static float consumingHouses;
         static float totalHouses;
+
+        bool isPowered = false;
 
         public float maxConsumption = -1;
         public float minConsumption = Int32.MaxValue;
@@ -34,6 +38,8 @@ namespace Power.V2
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
             moneyManager = GameObject.FindObjectOfType<MoneyManager>();
             gos = gameObject.GetComponent<GeneralObjectScript>();
+            alert = GameObject.FindGameObjectWithTag("alert").transform.GetChild(0).gameObject;
+            alert.SetActive(false);
 
             for (int i = 0; i < consumptionCurve.length; ++i)
             {
@@ -72,16 +78,66 @@ namespace Power.V2
                 // TODO: Find a way to move this to the NetworkManager
                 if (manager.hasEnoughPower)
                 {
+                    // Turns house powered on once when it has enough power
+                    if (!isPowered)
+                    {
+                        consumingHouses++;
+                        isPowered = true;
+                        smartPowerAlert.SetActive(false);
+                    }
                     moneyManager.money += moneyGained;
-                    smartPowerAlert.SetActive(false);
                 }
                 else if (gos.isSmart)
                 {
-                    smartPowerAlert.SetActive(true);
+                    if (isPowered)
+                    {
+                        smartPowerAlert.SetActive(true);
+                        consumingHouses--;
+                        isPowered = false;
+                    }
                 }
                 else
                 {
+                    if (isPowered)
+                    {
+                        consumingHouses--;
+                        isPowered = false;
+                    }
                     smartPowerAlert.SetActive(false);
+                }
+                //Debug.Log(consumingHouses);
+                // Turns on alert if house is not attached
+                if(consumingHouses == totalHouses)
+                {
+                    alert.SetActive(false);
+                }
+                else
+                {
+                    alert.SetActive(true);
+                }
+                // City Approval stuff
+                if (timeManager.hours == 25)
+                {
+                    if (!isPowered)
+                    {
+                        Debug.Log("City approval should go down at the end of the day");
+                    }
+                    else
+                    {
+                        if (consumingHouses / totalHouses >= 0.50)
+                        {
+                            timeManager.cityApproval += 10;
+                        }
+                        else if (consumingHouses / totalHouses >= 1)
+                        {
+                            timeManager.cityApproval += 25;
+                        }
+                    }
+                    RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 3f, Vector2.zero);
+                    foreach(RaycastHit2D hit in hits)
+                    {
+                        Debug.Log(hit.transform.gameObject);
+                    }
                 }
             }
 
