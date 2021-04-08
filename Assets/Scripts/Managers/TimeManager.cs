@@ -45,6 +45,14 @@ public class TimeManager : MonoBehaviour
 
     int temp = 2;
 
+    public GameObject dayLights;
+    Animator lightAnim;
+
+    //Accesses the FMOD Event
+    [Tooltip("The location of the sound")]
+    [FMODUnity.EventRef]
+    public string backgroundReference;
+    public static FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
     
@@ -52,6 +60,8 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        lightAnim = dayLights.GetComponent<Animator>();
+
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
@@ -104,6 +114,14 @@ public class TimeManager : MonoBehaviour
         backgrounds2.setParameterByName("Time Of Day", hours);
         
         citySat.text = "City Satisfaction: " + cityApproval;
+        if (hours == 20)
+        {
+            lightAnim.SetBool("NightTimeStart", true);
+        }
+        else if (hours == 3)
+        {
+            lightAnim.SetBool("NightTimeStart", false);
+        }
     }
 
     /// <summary>

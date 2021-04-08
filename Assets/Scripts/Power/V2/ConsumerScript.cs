@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Power.V2
@@ -21,6 +22,9 @@ namespace Power.V2
         public GameObject smartPowerAlert;
 
         private GeneralObjectScript gos;
+
+        public float maxConsumption = -1;
+        public float minConsumption = Int32.MaxValue;
         private void Start()
         {
             timeManager = GameObject.FindObjectOfType<TimeManager>();
@@ -28,6 +32,20 @@ namespace Power.V2
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
             moneyManager = GameObject.FindObjectOfType<MoneyManager>();
             gos = gameObject.GetComponent<GeneralObjectScript>();
+
+            for (int i = 0; i < consumptionCurve.length; ++i)
+            {
+                float value = consumptionCurve.Evaluate(i);
+                if (value > maxConsumption)
+                {
+                    maxConsumption = value;
+                }
+
+                if (value < minConsumption)
+                {
+                    minConsumption = value;
+                }
+            }
         }
 
         private void Update()
