@@ -25,6 +25,10 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
+    public GameObject dirtEmission;
+
+    public GameObject sparkEmission;
+
     [Tooltip("Reference to the tooltip panel")]
     public GameObject tooltipPanel;
     
@@ -663,8 +667,19 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
-                errorBox.SetActive(true);
-                errorText.text = "You can't click the same object twice";
+                //errorBox.SetActive(true);
+                //errorText.text = "You can't click the same object twice";
+                if (wireObject1.tag == "house")
+                {
+                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+
+                wireObject1 = null;
+                wireObject2 = null;
                 return;
             }
             Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
@@ -718,10 +733,10 @@ public class BuildScript : MonoBehaviour
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections)))
+            if ((wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections))
             {
                 errorBox.SetActive(true);
-                errorText.text = "Too many high voltage connections on one object!";
+                errorText.text = "Too many connections on one object!";
                 return;
             }
             if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
@@ -839,13 +854,22 @@ public class BuildScript : MonoBehaviour
             }
 
             moneyManager.money += gos.refundAmount;
+            Instantiate(dirtEmission, new Vector3(gos.gameObject.transform.position.x,
+            gos.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(gos.gameObject);
         }
         else if (origin.transform.CompareTag("wire"))
         {
+
             WireScript ws = origin.transform.parent.GetComponent<WireScript>();
             GameObject object1 = ws.connect1;
             GameObject object2 = ws.connect2;
+
+            Instantiate(sparkEmission, new Vector3((object1.gameObject.transform.position.x + 
+            object2.gameObject.transform.position.x) / 2,
+            (object1.gameObject.transform.position.y + object2.gameObject.transform.position.y) / 2,
+            0), Quaternion.identity);
+
             GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
             gos1.RemoveConnection(object2);

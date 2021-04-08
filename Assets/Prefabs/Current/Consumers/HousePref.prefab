@@ -5002,7 +5002,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 19e57046bfe99e64d869f8f55de720a8, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5705,6 +5705,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   moneyGained: 0
   smartPowerAlert: {fileID: 2067710383698671812}
+  maxConsumption: -1
+  minConsumption: 2.1474836e+9
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,7 +5780,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815874809
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5806,8 +5808,7 @@ MonoBehaviour:
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
   houseLight: {fileID: 633748989864264945}
-  storage: {fileID: -1264574402197089311}
-  consumer: {fileID: -8993503109168893168}
+  consumer: {fileID: 0}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,6 +6053,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 71360e10490c45848a6d960b24b0ba28, type: 3}
+    - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7790683048750285244, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Name
       value: RangeParent

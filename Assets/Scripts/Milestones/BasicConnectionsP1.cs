@@ -8,7 +8,7 @@ namespace Milestones
         {
             GameObject[] powerPoles = GameObject.FindGameObjectsWithTag("Power");
 
-            return powerPoles.Length > 0;
+            return powerPoles.Length > 5;
         }
     }
 }
