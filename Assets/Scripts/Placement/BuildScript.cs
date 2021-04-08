@@ -722,10 +722,10 @@ public class BuildScript : MonoBehaviour
                 }
             }
 
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections)))
+            if ((wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections))
             {
                 errorBox.SetActive(true);
-                errorText.text = "Too many high voltage connections on one object!";
+                errorText.text = "Too many connections on one object!";
                 return;
             }
             if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))

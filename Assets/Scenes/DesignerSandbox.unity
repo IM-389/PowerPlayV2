@@ -7804,12 +7804,12 @@ MonoBehaviour:
   milestoneText: Connect 5 houses to a substation
   milestoneName: Basic Connections
   hasQuestion: 0
-  unlockables:
+  enabledObjects:
   - {fileID: 1775536295}
   - {fileID: 836662112}
   - {fileID: 640600595}
   - {fileID: 2122267073}
-  removedFog:
+  disabledObjects:
   - {fileID: 1064267171}
   - {fileID: 48563284}
   newBuildings:
@@ -18789,6 +18789,8 @@ MonoBehaviour:
   mouseObject: {fileID: 778924100}
   wireObject1: {fileID: 0}
   wireObject2: {fileID: 0}
+  dirtEmission: {fileID: 8731801821995250434, guid: f6362b31c25e8494ebefe49ab2903db9, type: 3}
+  sparkEmission: {fileID: 2925518530331203777, guid: 71f8a468b27050e45b95fe1b33f3b9d8, type: 3}
   tooltipPanel: {fileID: 301933054}
   errorBox: {fileID: 932915720}
   errorText: {fileID: 527177796}
@@ -23879,11 +23881,11 @@ MonoBehaviour:
   milestoneText: Create a new coal plant, and power all the houses
   milestoneName: Powering Up
   hasQuestion: 0
-  unlockables:
+  enabledObjects:
   - {fileID: 1313004470}
   - {fileID: 1391608713}
   - {fileID: 1962189323}
-  removedFog:
+  disabledObjects:
   - {fileID: 1237858922}
   newBuildings: []
   nextMilestones:
@@ -25900,17 +25902,18 @@ MonoBehaviour:
   milestoneText: Power a factory and hospital
   milestoneName: Powering Industry
   hasQuestion: 0
-  unlockables: []
-  removedFog: []
+  enabledObjects: []
+  disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 582392718}
-  - {fileID: 945960173}
+  - {fileID: 0}
+  - {fileID: 0}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
   maxDays: 0
+  upgradeArea: {fileID: 0}
 --- !u!4 &1127185371
 Transform:
   m_ObjectHideFlags: 0
@@ -30375,13 +30378,13 @@ MonoBehaviour:
   milestoneText: Power all houses for a 2 days
   milestoneName: Rainy Day
   hasQuestion: 0
-  unlockables:
+  enabledObjects:
   - {fileID: 2122267073}
-  removedFog:
+  disabledObjects:
   - {fileID: 48563284}
   newBuildings: []
   nextMilestones:
-  - {fileID: 36618749}
+  - {fileID: 0}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -30512,11 +30515,11 @@ MonoBehaviour:
   milestoneText: Create a new substation, and use it to power the new houses
   milestoneName: Branching Out
   hasQuestion: 0
-  unlockables:
+  enabledObjects:
   - {fileID: 1862442970}
   - {fileID: 225010757}
   - {fileID: 55759482}
-  removedFog:
+  disabledObjects:
   - {fileID: 2030553961}
   newBuildings:
   - {fileID: 7192819586404073880, guid: 8f710ab96f23dd24dbf24a0eca26d1e6, type: 3}
@@ -41768,6 +41771,8 @@ MonoBehaviour:
   mouseObject: {fileID: 778924100}
   wireObject1: {fileID: 0}
   wireObject2: {fileID: 0}
+  dirtEmission: {fileID: 0}
+  sparkEmission: {fileID: 0}
   tooltipPanel: {fileID: 301933054}
   errorBox: {fileID: 0}
   errorText: {fileID: 0}

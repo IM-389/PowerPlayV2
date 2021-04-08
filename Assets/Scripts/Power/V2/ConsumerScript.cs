@@ -38,7 +38,7 @@ namespace Power.V2
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
             moneyManager = GameObject.FindObjectOfType<MoneyManager>();
             gos = gameObject.GetComponent<GeneralObjectScript>();
-            alert = GameObject.FindGameObjectWithTag("alert").transform.GetChild(0).gameObject;
+            alert = GameObject.FindWithTag("alert").transform.GetChild(0).gameObject;
             alert.SetActive(false);
 
             for (int i = 0; i < consumptionCurve.length; ++i)
