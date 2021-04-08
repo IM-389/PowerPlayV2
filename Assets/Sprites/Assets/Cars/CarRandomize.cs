@@ -44,6 +44,12 @@ public class CarRandomize : MonoBehaviour
         carSpriteR.sprite = randomizedSprite;
     }
 
+    private void Update()
+    {
+        //transform.rotation.Translate()
+        //transform.rotation = Vector3.RotateTowards(gameObject.transform.rotation, transform.forward, 1, 0.0f);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag == "despawner")
