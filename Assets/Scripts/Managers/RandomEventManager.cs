@@ -29,6 +29,8 @@ public class RandomEventManager : MonoBehaviour
 
     [Tooltip("How long to show the notification for")]
     public float notificationShowTime;
+
+    public bool doEvents = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +48,7 @@ public class RandomEventManager : MonoBehaviour
         
         // Ticks on day changes
         timestep = timeManager.days;
-        if (timestep > previousTimestep && timeManager.days > 1)
+        if (doEvents && timestep > previousTimestep && timeManager.days > 1)
         {
             // Reset all the power adjustments each day
             for (int i = 0; i < 4; ++i)

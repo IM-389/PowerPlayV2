@@ -25,6 +25,10 @@ public class BuildScript : MonoBehaviour
 
     public GameObject wireObject1, wireObject2;
 
+    public GameObject dirtEmission;
+
+    public GameObject sparkEmission;
+
     [Tooltip("Reference to the tooltip panel")]
     public GameObject tooltipPanel;
     
@@ -663,15 +667,26 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
-                errorBox.SetActive(true);
-                errorText.text = "You can't click the same object twice";
+                //errorBox.SetActive(true);
+                //errorText.text = "You can't click the same object twice";
+                if (wireObject1.tag == "house")
+                {
+                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                }
+                else
+                {
+                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                }
+
+                wireObject1 = null;
+                wireObject2 = null;
                 return;
             }
             Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
             Debug.Log(offset);
             float hypotenuse = Mathf.Sqrt( Mathf.Pow(Mathf.Abs(offset.x), 2) + Mathf.Pow(Mathf.Abs(offset.y),2));
             Debug.Log(hypotenuse);
-            tooltipWire += "Joins buildings to give electricity to each other.";
+            //tooltipWire += "Joins buildings to give electricity to each other.";
 
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
@@ -717,13 +732,7 @@ public class BuildScript : MonoBehaviour
                     return;
                 }
             }
-
-            if (((wire1.volts == GeneralObjectScript.Voltage.HIGH || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.HIGH)) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections)))
-            {
-                errorBox.SetActive(true);
-                errorText.text = "Too many high voltage connections on one object!";
-                return;
-            }
+            
             if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
             {
                 errorBox.SetActive(true);
@@ -736,72 +745,14 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "Cannot create a connection between consumers";
                 return;
             }
-            /*
-            if (((wire1.volts == GeneralObjectScript.Voltage.LOW || (wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER && wire2.volts == GeneralObjectScript.Voltage.LOW)) && (wire1.lvConnections.Count >= wire1.maxLVConnections || wire2.lvConnections.Count >= wire2.maxLVConnections)))
+            // Makes sure that the objects don't connect to more than they are allowed. First condition is because
+            // connections to consumers don't count towards the limit
+            if (!(wire1.isConsumer || wire2.isConsumer) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections))
             {
                 errorBox.SetActive(true);
-                errorText.text = "Too many low voltage connections on one object!";
+                errorText.text = "Too many connections on one object!";
                 return;
             }
-            */
-            
-            /*
-            // Generators and consumers can only have one connection
-            if (((wire1.isGenerator || wire1.isConsumer) && wire1.connections.Count >= wire1.maxHVConnections)|| ((wire2.isGenerator || wire2.isConsumer) && wire2.connections.Count >= wire2.maxHVConnections))
-            {
-                errorText.text = "One of these object can only have one connection";
-                return;
-            }
-            // Objects besides the substation can't have any more than two connections
-            if ((!wire1.isSubstation && wire1.connections.Count >= wire1.maxHVConnections) || (!wire2.isSubstation && wire2.connections.Count >= wire2.maxHVConnections))
-            {
-                errorText.text = "One of these object can only have two connections";
-                return;
-            }
-            // Substations can only have a maximum of three connections
-            if (wire1.connections.Count >= wire1.maxHVConnections || wire2.connections.Count >= wire2.maxHVConnections)
-            {
-                errorText.text = "One of these object can only have three connections";
-                return;
-            }
-            
-            
-            // If the first object is a transformer it can connect to anything
-            if (wire1.GetVoltage() == 2)
-            {
-                CreateLine();
-            }
-            // Checks if the second object is either the same voltage as the first object or a transformer
-            else
-            {
-                 // Checks if the second object is the same voltage as the first object
-                 if ((wire1.GetVoltage() == wire2.GetVoltage() &&
-                 // Checks to make sure both objects aren't generators
-                 !(wire1.isGenerator && wire2.isGenerator) &&
-                 // Checks to make sure both objects aren't consumers
-                 !(wire1.isConsumer && wire2.isConsumer)) ||
-                 // Checks if second object is a transformer
-                 (wire2.GetVoltage() == 2))
-                 {
-                     CreateLine();
-                 }
-                 else if (wire1.GetVoltage() != wire2.GetVoltage())
-                 {
-                    errorBox.SetActive(true);
-                    errorText.text = "These objects don't have the same voltage";
-                 }
-                 else if (wire1.isGenerator && wire2.isGenerator)
-                 {
-                    errorBox.SetActive(true);
-                    errorText.text = "You cannot connect a generator to another generator";
-                 }
-                 else if (wire1.isConsumer && wire2.isConsumer)
-                 {
-                    errorBox.SetActive(true);
-                    errorText.text = "You cannot connect a consumer to another consumer";
-                 }
-            }
-            */
 
             if ((wire1.volts == GeneralObjectScript.Voltage.HIGH && wire2.isConsumer)
                 || wire2.volts == GeneralObjectScript.Voltage.HIGH && wire1.isConsumer)
@@ -839,13 +790,22 @@ public class BuildScript : MonoBehaviour
             }
 
             moneyManager.money += gos.refundAmount;
+            Instantiate(dirtEmission, new Vector3(gos.gameObject.transform.position.x,
+            gos.gameObject.transform.position.y, 0), Quaternion.identity);
             Destroy(gos.gameObject);
         }
         else if (origin.transform.CompareTag("wire"))
         {
+
             WireScript ws = origin.transform.parent.GetComponent<WireScript>();
             GameObject object1 = ws.connect1;
             GameObject object2 = ws.connect2;
+
+            Instantiate(sparkEmission, new Vector3((object1.gameObject.transform.position.x + 
+            object2.gameObject.transform.position.x) / 2,
+            (object1.gameObject.transform.position.y + object2.gameObject.transform.position.y) / 2,
+            0), Quaternion.identity);
+
             GeneralObjectScript gos1 = object1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript gos2 = object2.GetComponent<GeneralObjectScript>();
             gos1.RemoveConnection(object2);

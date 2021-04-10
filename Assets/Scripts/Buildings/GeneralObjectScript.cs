@@ -61,7 +61,7 @@ public class GeneralObjectScript : MonoBehaviour
     protected MoneyManager moneyManager;
     
     // Makes premade connections
-    private void Start()
+    protected void Start()
     {
         // Register the list changing to the callback function.
         nonConsumerConnections.CollectionChanged += OnListChanged;
@@ -101,6 +101,10 @@ public class GeneralObjectScript : MonoBehaviour
             AddNonConsumerConnection(connection);
             connection.GetComponent<GeneralObjectScript>().AddNonConsumerConnection(gameObject);
         }
+    }
+    private void Update()
+    {
+        //gameObject.GetComponent<HoverScript>().ToggleBuildCircle(false);
     }
     /*
     public void AddLVConnection(GameObject connection)

@@ -25,6 +25,7 @@ TagManager:
   - tree
   - fog
   - despawner
+  - PauseBlocker
   layers:
   - Default
   - TransparentFX
@@ -65,15 +66,18 @@ TagManager:
   - name: Trees
     uniqueID: 1554202843
     locked: 0
+  - name: NightCycle
+    uniqueID: 2145369835
+    locked: 0
+  - name: Clouds
+    uniqueID: 2157870119
+    locked: 0
   - name: Tooltip
     uniqueID: 1944561929
     locked: 0
   - name: Griddy
     uniqueID: 106311279
     locked: 0
-  - name: NightCycle
-    uniqueID: 2145369835
-    locked: 0
-  - name: Clouds
-    uniqueID: 2157870119
+  - name: OverlayingEffects
+    uniqueID: 3992871783
     locked: 0

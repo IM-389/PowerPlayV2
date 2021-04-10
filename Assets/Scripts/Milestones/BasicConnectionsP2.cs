@@ -7,6 +7,7 @@ namespace Milestones
         private GameObject[] houses;
         public override bool CheckCompleteMilestone()
         {
+            Debug.Log("BasicConnections{2");
             // Find all houses
             houses = GameObject.FindGameObjectsWithTag("house");
 

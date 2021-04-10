@@ -195,7 +195,7 @@ MonoBehaviour:
   buildCircle: {fileID: 6811981818816594772}
   isSmart: 0
   unRemovable: 0
-  maxConnections: 3
+  maxConnections: 2
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
@@ -439,7 +439,11 @@ PrefabInstance:
     - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 71360e10490c45848a6d960b24b0ba28, type: 3}
+      objectReference: {fileID: 21300000, guid: 58680704fc56e7b4f848ac07bbb1df3c, type: 3}
+    - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
+      propertyPath: m_SortingLayer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7790683048750285244, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Name
       value: RangeParent

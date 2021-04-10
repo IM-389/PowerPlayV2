@@ -37,7 +37,7 @@ namespace Milestones
                 }
             }
         
-            return solarGen >= 1 && poweredHouses >= 15;
+            return solarGen >= 1 && poweredHouses >= 20;
         }
     }
 }

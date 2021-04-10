@@ -5323,8 +5323,8 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  wireLength: 5
-  buildingText: People live here. Houses use Low-Voltage Power.
+  wireLength: 3.1
+  buildingText: People live here.
   connected: 0
   refundAmount: 0
   buyCost: 0
@@ -5704,7 +5704,10 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   moneyGained: 0
+  alert: {fileID: 0}
   smartPowerAlert: {fileID: 2067710383698671812}
+  maxConsumption: -1
+  minConsumption: 2.1474836e+9
 --- !u!1 &6028709754269011714
 GameObject:
   m_ObjectHideFlags: 0
@@ -5778,7 +5781,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -815874809
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5806,8 +5809,7 @@ MonoBehaviour:
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
   houseLight: {fileID: 633748989864264945}
-  storage: {fileID: -1264574402197089311}
-  consumer: {fileID: -8993503109168893168}
+  consumer: {fileID: 0}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6051,7 +6053,11 @@ PrefabInstance:
     - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 71360e10490c45848a6d960b24b0ba28, type: 3}
+      objectReference: {fileID: 21300000, guid: 58680704fc56e7b4f848ac07bbb1df3c, type: 3}
+    - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7790683048750285244, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Name
       value: RangeParent
@@ -6291,6 +6297,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5449561428097745153, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
 --- !u!224 &6038326799458311947 stripped

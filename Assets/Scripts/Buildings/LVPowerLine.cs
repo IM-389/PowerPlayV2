@@ -6,7 +6,7 @@ public class LVPowerLine : GeneralObjectScript
     public void AutoAddGeneratorConnections()
     {
         //string text = "";
-        Collider2D[] buildingsHit = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), wireLength);
+        Collider2D[] buildingsHit = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), wireLength-0.5f);
        
         foreach (Collider2D building in buildingsHit)
         {
@@ -23,10 +23,7 @@ public class LVPowerLine : GeneralObjectScript
     }
     private void Start()
     {
-        // Register the list changing to the callback function.
-        nonConsumerConnections.CollectionChanged += OnListChanged;
-        consumerConnections.CollectionChanged += OnListChanged;
-        powerNetwork = gameObject.GetComponent<NetworkScript>();
+        base.Start();
         AutoAddGeneratorConnections();
     }
 }
