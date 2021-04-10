@@ -51,6 +51,10 @@ public class DialogueBehaviour : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+
+        FaceScript.faceSprite = 2;
+        FaceScript.switchFaces = true;
+
         Debug.Log("Calling DisplayNextSentence!");
         Debug.Log($"Number items in list: {sentences.Count}");
         if (sentences.Count == 0)
@@ -58,11 +62,14 @@ public class DialogueBehaviour : MonoBehaviour
             //sc.dialogueLine.text = nextSetMessage;
             //nextSetButton.SetActive(true);
             //mainButton.SetActive(false);
+            FaceScript.faceSprite = 1;
+            FaceScript.switchFaces = true;
             dialougePanel.SetActive(false);
             griddyAnim.SetBool("leaving", true);
             StartCoroutine(HideGriddy());
             Time.timeScale = 1;
             return;
+
         }
         griddyAnim.SetTrigger("talkingTrigger");
         string talk = sentences[0];

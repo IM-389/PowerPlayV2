@@ -5806,8 +5806,7 @@ MonoBehaviour:
   unpoweredSprite: {fileID: 21300000, guid: 2a91fdaec02fd114f84325a8a9b6b1a1, type: 3}
   smoke: {fileID: 6028709752267001598}
   houseLight: {fileID: 633748989864264945}
-  storage: {fileID: -1264574402197089311}
-  consumer: {fileID: -8993503109168893168}
+  consumer: {fileID: 0}
 --- !u!1 &8096312003895520629
 GameObject:
   m_ObjectHideFlags: 0
@@ -6291,6 +6290,10 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5449561428097745153, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
 --- !u!224 &6038326799458311947 stripped

@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: cb00a239c60d1334fbb6c3d07d3721a6
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - anim: {instanceID: 0}
+  - spr: {instanceID: 0}
+  - griddieFace: {instanceID: 0}
+  - faceOne: {fileID: 5732193527877526173, guid: a97c4c79bedbadf4bb76c385fcd8ca67, type: 3}
+  - faceTwo: {fileID: -8203030753940802018, guid: a97c4c79bedbadf4bb76c385fcd8ca67, type: 3}
+  - faceThree: {instanceID: 0}
+  - faceFour: {instanceID: 0}
+  - faceFive: {instanceID: 0}
+  - faceSix: {instanceID: 0}
+  - faceSeven: {instanceID: 0}
+  - faceEight: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
