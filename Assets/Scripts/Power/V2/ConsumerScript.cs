@@ -26,6 +26,7 @@ namespace Power.V2
 
         static float consumingHouses;
         static float totalHouses;
+        static bool check = false;
 
         bool isPowered = false;
 
@@ -116,6 +117,10 @@ namespace Power.V2
                     alert.SetActive(true);
                 }
                 // City Approval stuff
+                if (timeManager.hours == 1)
+                {
+                    check = false;
+                }
                 if (timeManager.hours == 25)
                 {
                     if (!isPowered)
@@ -151,15 +156,17 @@ namespace Power.V2
                             timeManager.cityApproval += 10;
                         }
                     }
-                    if(consumingHouses/totalHouses >= 1)
+                    if(!check && consumingHouses/totalHouses >= 1)
                     {
                         timeManager.cityApproval += 25;
                         Debug.Log("Congrats, all of your consumers are powered");
+                        check = true;
                     }
-                    else if(consumingHouses/totalHouses >= 0.5)
+                    else if(!check && consumingHouses / totalHouses >= 0.5)
                     {
                         timeManager.cityApproval += 10;
                         Debug.Log("Congrats, half or more of your consumers are powered");
+                        check = true;
                     }
                 }
             }
