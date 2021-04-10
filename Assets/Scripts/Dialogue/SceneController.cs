@@ -48,6 +48,7 @@ public class SceneController : MonoBehaviour
             canPress = false;
             Invoke("WaitToPress", waitTime);
 
+
     }
 
     public void ContinueTutorial()
