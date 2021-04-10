@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
 using Milestones;
+using UnityEngine.Experimental.Rendering.Universal;
+
 public class TimeManager : MonoBehaviour
 {
     private int width, height;
@@ -22,15 +24,27 @@ public class TimeManager : MonoBehaviour
     public int cash = 0;//gonna be using this to cause houses to make money
     MilestoneBase coinGen;
     public float resume = 1;
+    public Light2D globalLight;
 
-    public GameObject dayLights;
-    Animator lightAnim;
 
+    [Header("Sound")]
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
-    public string backgroundReference;
-    public static FMOD.Studio.EventInstance backgrounds;
+    public string backgroundReference1;
+    public static FMOD.Studio.EventInstance backgrounds1;
+
+     //Accesses the FMOD Event
+    [Tooltip("The location of the sound")]
+    [FMODUnity.EventRef]
+    public string backgroundReference2;
+    public static FMOD.Studio.EventInstance backgrounds2;
+
+    [Tooltip("Sets the number of days before chance to change tracks")]
+    public int daysBetweenTracks;
+
+    int temp = 2;
+
 
     // For pause menu
     
@@ -38,8 +52,6 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightAnim = dayLights.GetComponent<Animator>();
-
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
@@ -48,8 +60,10 @@ public class TimeManager : MonoBehaviour
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
 
         // Finding and Starting the Event
-        backgrounds = FMODUnity.RuntimeManager.CreateInstance(backgroundReference);
-        backgrounds.start();
+        backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
+        backgrounds1.start();
+
+        globalLight.intensity = 0.4375f;
     }
     
     //to increase speed: i'll need a button, and when its clicked, set Time.timeScale to 2F/1.5F
@@ -86,19 +100,60 @@ public class TimeManager : MonoBehaviour
     void Update()
     {
         //Changing the music based on TOD
-        backgrounds.setParameterByName("Time Of Day", hours);
+        backgrounds1.setParameterByName("Time Of Day", hours);
+        backgrounds2.setParameterByName("Time Of Day", hours);
+        
         citySat.text = "City Satisfaction: " + cityApproval;
-        if (hours == 20)
+    }
+
+    /// <summary>
+    /// Stops the pre-existing track and starts the other 
+    /// </summary>
+    /// <param name="num">Which track to start</param>
+    void FlipBackgrounds(int num)
+    {
+        switch(num)
         {
-            lightAnim.SetBool("NightTimeStart", true);
-        }
-        else if (hours == 3)
-        {
-            lightAnim.SetBool("NightTimeStart", false);
+            case 2:
+                backgrounds1.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                backgrounds1.release();
+
+                backgrounds2 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference2);
+                backgrounds2.start();
+                temp = 1;
+                break;
+
+            case 1:
+                backgrounds2.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                backgrounds2.release();
+
+                backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
+                backgrounds1.start();
+                temp = 2;
+                break;
+
+            default:
+                break;
         }
     }
 
-    
+    /// <summary>
+    /// Determines when to flip backgrounds
+    /// </summary>
+    void MusicManage()
+    {
+        if (timeStep == 0 && days % daysBetweenTracks == 0)
+        {
+            // Handles setting music change variable at 12pm
+            var random = Random.Range(0, 2);
+            if (random == 1)
+            {
+                FlipBackgrounds(temp);
+                Debug.Log("Change");
+            }
+        }
+    }
+
     IEnumerator TimeCalculator()//This is a coroutine.
     {
         while (true)
@@ -119,8 +174,14 @@ public class TimeManager : MonoBehaviour
                 }
                 
                 if (hours == 12 || hours == 24)
-                {
+                {   
                     buffer += "Day: " + days + ", 12 ";
+
+                    if (hours == 12)
+                    {
+                        MusicManage();
+                    }
+
                     if(hours == 24)
                     {
                         buffer += " A.M";
@@ -134,7 +195,6 @@ public class TimeManager : MonoBehaviour
 
                 if (hours >= 12 && hours != 24)
                 {
-            
                     buffer +=  " P.M";
                 }
 
@@ -159,11 +219,22 @@ public class TimeManager : MonoBehaviour
                     isDay = false;
                     //Debug.Log("It is night");
                 }
+                if (hours >= 20 || hours <= 4)
+                {
+                    globalLight.intensity = 0.25f;
+                }
+                else if (hours > 12)
+                {
+                    globalLight.intensity -= 0.009375f;
+                }  
+                else if (hours > 4)
+                {
+                    globalLight.intensity += 0.009375f;
+                } 
                 
                 clock.text = buffer;
                 //Debug.Log("The time is Day");
             }
-
 
             totalTimeSteps++;
             timeStep++;
