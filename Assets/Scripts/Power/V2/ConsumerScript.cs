@@ -140,18 +140,27 @@ namespace Power.V2
                     {
                         if (gameObject.CompareTag("house"))
                         {
-                            timeManager.cityApproval += 5;
+                            timeManager.cityApproval += 1;
                         }
                         else if (gameObject.CompareTag("hospital"))
                         {
-                            timeManager.cityApproval += 40;
+                            timeManager.cityApproval += 20;
                         }
                         else if (gameObject.CompareTag("factory"))
                         {
-                            timeManager.cityApproval += 20;
+                            timeManager.cityApproval += 10;
                         }
                     }
-                    
+                    if(consumingHouses/totalHouses >= 1)
+                    {
+                        timeManager.cityApproval += 25;
+                        Debug.Log("Congrats, all of your consumers are powered");
+                    }
+                    else if(consumingHouses/totalHouses >= 0.5)
+                    {
+                        timeManager.cityApproval += 10;
+                        Debug.Log("Congrats, half or more of your consumers are powered");
+                    }
                 }
             }
 
