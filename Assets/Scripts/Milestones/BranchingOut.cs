@@ -11,6 +11,8 @@ public class BranchingOut : MilestoneBase
         // Find all houses
         GameObject[] houses = GameObject.FindGameObjectsWithTag("house");
 
+        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
+        
         int poweredHouses = 0;
 
         // Loop through all houses
@@ -25,6 +27,6 @@ public class BranchingOut : MilestoneBase
             }
         }
         
-        return substations.Length >= 2 && poweredHouses >= 10;
+        return substations.Length >= 2 && poweredHouses >= 10 && generators.Length >= 2;
     }
 }

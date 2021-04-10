@@ -25,7 +25,7 @@ namespace Milestones
             }
             
             //Debug.Log($"Powered Houses: {poweredHouses}");
-            return poweredHouses >= 5;
+            return poweredHouses >= 8;
         }
         
         public override void SetCompleteMilestone()
