@@ -6091,7 +6091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1323866560095056174, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2958126929302945038, guid: fe1f297df5ca1ef4a9c41f9821fee545, type: 3}
       propertyPath: SizeModule.enabled
