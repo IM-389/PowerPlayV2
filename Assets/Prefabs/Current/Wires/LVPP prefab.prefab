@@ -195,7 +195,7 @@ MonoBehaviour:
   buildCircle: {fileID: 6811981818816594772}
   isSmart: 0
   unRemovable: 0
-  maxConnections: 3
+  maxConnections: 2
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
