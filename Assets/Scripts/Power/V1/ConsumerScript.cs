@@ -123,6 +123,21 @@ namespace Power.V1
                     Debug.Log("This2");
                     if (!isConsuming)
                     {
+                        if (gameObject.CompareTag("house"))
+                        {
+                            timeManager.cityApproval -= 3;
+                            Debug.Log("A house isn't powered. -3 CitySat");
+                        }
+                        else if (gameObject.CompareTag("hospital"))
+                        {
+                            timeManager.cityApproval -= 35;
+                            Debug.Log("A hospital isn't powered. -35 CitySat");
+                        }
+                        else if (gameObject.CompareTag("factory"))
+                        {
+                            timeManager.cityApproval -= 15;
+                            Debug.Log("A factory isn't powered. -15 CitySat");
+                        }
                         //calc % of houses powered
                         //if (buildingType.compareTag("house")/hospital)
                         //{
@@ -138,13 +153,17 @@ namespace Power.V1
                     }
                     else
                     {
-                        if (numHousesPowered / totalHouses >= 0.50)
+                        if (gameObject.CompareTag("house"))
                         {
-                            cityApproval.cityApproval += 10;
+                            timeManager.cityApproval += 5;
                         }
-                        else if (numHousesPowered / totalHouses >= 1)
+                        else if (gameObject.CompareTag("hospital"))
                         {
-                            cityApproval.cityApproval += 25;
+                            timeManager.cityApproval += 40;
+                        }
+                        else if (gameObject.CompareTag("factory"))
+                        {
+                            timeManager.cityApproval += 20;
                         }
                     }
 
