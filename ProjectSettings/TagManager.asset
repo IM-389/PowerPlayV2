@@ -24,6 +24,7 @@ TagManager:
   - alert
   - tree
   - fog
+  - despawner
   layers:
   - Default
   - TransparentFX

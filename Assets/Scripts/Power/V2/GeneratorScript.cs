@@ -6,10 +6,15 @@ namespace Power.V2
     public class GeneratorScript : MonoBehaviour
     {
         public PowerManager.POWER_TYPES type;
-        
+
         private PowerAmountInfo amountInfo;
-        private float originalPower;
+        protected float basePower;
         
+        /// <summary>
+        /// Is this object immune to the power adjusts. 1 if no, 0 if yes
+        /// </summary>
+        protected bool powerAdjustImmune = false;
+
         private NetworkScript ns;
 
         private TimeManager timeManager;
@@ -26,7 +31,7 @@ namespace Power.V2
             amountInfo = gameObject.GetComponent<PowerAmountInfo>();
             moneyManager = GameObject.FindObjectOfType<MoneyManager>();
             powerManager = GameObject.FindObjectOfType<PowerManager>();
-            originalPower = amountInfo.amountGenerated;
+            basePower = amountInfo.amountGenerated;
         }
 
         private void Update()
@@ -40,7 +45,8 @@ namespace Power.V2
                 manager.powerGenerated -= amountInfo.amountGenerated;
                 
                 // Update the amount so if the object is removed the manager updates properly
-                amountInfo.amountGenerated = originalPower * powerManager.powerAdjusts[(int)type];
+                amountInfo.amountGenerated =
+                    basePower * (powerAdjustImmune ? 1 : powerManager.powerAdjusts[(int) type]);
 
                 // Apply the changes to the manager again
                 manager.powerGenerated += amountInfo.amountGenerated;
@@ -64,17 +70,22 @@ namespace Power.V2
             amountInfo.amountGenerated = 0;
 
             // Apply the changes to the manager again
-            manager.powerGenerated += amountInfo.amountGenerated;
+            //manager.powerGenerated += amountInfo.amountGenerated;
 
             yield return new WaitForSeconds(seconds);
 
             // Remove the previously generated amount
             manager.powerGenerated -= amountInfo.amountGenerated;
             
-            amountInfo.amountGenerated = originalPower;
+            amountInfo.amountGenerated = basePower;
             
             // Apply the changes to the manager again
             manager.powerGenerated += amountInfo.amountGenerated;
+        }
+        
+        public virtual void DoUpgrade()
+        {
+            
         }
         
     }

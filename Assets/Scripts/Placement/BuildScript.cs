@@ -232,10 +232,14 @@ public class BuildScript : MonoBehaviour
             {
                 // If they clicked on a consumer, make it smart
                 // TODO: Tie a cost to this
-                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory"))
+                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory") || hover.CompareTag("Generator"))
                 {
                     hover.GetComponent<GeneralObjectScript>().isSmart = true;
                     hover.transform.GetChild(5).gameObject.SetActive(true);
+                    if (hover.CompareTag("Generator"))
+                    {
+                        hover.GetComponent<GeneratorScript>().DoUpgrade();
+                    }
                 }
             }
         }
@@ -676,7 +680,7 @@ public class BuildScript : MonoBehaviour
             //Debug.Log(wire2.connections.Count);
 
             // Can't create a line longer than the wire length
-            if(wire1.wireLength <= hypotenuse)
+            if(wire1.wireLength < hypotenuse)
             {
                 errorBox.SetActive(true);
                 errorText.text = "Wire cannot reach object";
