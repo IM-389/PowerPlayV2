@@ -5323,8 +5323,8 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  wireLength: 5
-  buildingText: People live here. Houses use Low-Voltage Power.
+  wireLength: 3.1
+  buildingText: People live here.
   connected: 0
   refundAmount: 0
   buyCost: 0
@@ -6053,7 +6053,7 @@ PrefabInstance:
     - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 71360e10490c45848a6d960b24b0ba28, type: 3}
+      objectReference: {fileID: 21300000, guid: 58680704fc56e7b4f848ac07bbb1df3c, type: 3}
     - target: {fileID: 4354271050061109715, guid: d4f79598abbda0741a6871eab1a70e6a, type: 3}
       propertyPath: m_SortingOrder
       value: 2

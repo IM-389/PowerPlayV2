@@ -10,7 +10,7 @@ public class UIBehaviour : MonoBehaviour
     public TimeManager tm;
 
     [Tooltip("Used to prevent building while paused")]
-    public GameObject pauseBlocker;
+    public BoxCollider2D pauseBlocker;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class UIBehaviour : MonoBehaviour
             {
                 menuOpen = true;
                 pause.SetActive(true);
-                pauseBlocker.SetActive(true);
+                pauseBlocker.enabled = true;
                 Time.timeScale = 0;
             }
             else if(menuOpen && pause.activeSelf)
@@ -41,7 +41,7 @@ public class UIBehaviour : MonoBehaviour
     {
         menuOpen = false;
         pause.SetActive(false);
-        pauseBlocker.SetActive(false);
+        pauseBlocker.enabled = false;
         ResumeTime();
     }
     
