@@ -86,6 +86,7 @@ public class HoverScript : MonoBehaviour
 
     public void ToggleBuildCircle(bool show)
     {
+        Debug.Log($"Setting buildcircle on {gameObject.name}!");
         gos.buildCircle.SetActive(show);
     }
 
