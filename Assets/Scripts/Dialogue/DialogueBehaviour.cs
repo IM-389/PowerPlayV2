@@ -17,7 +17,8 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject dialougePanel;
     public GameObject griddy;
     public Animator griddyAnim;
-
+    public BoxCollider2D pauseBlocker;
+    
     // Reference to location of sound
     [FMODUnity.EventRef]
     public string griddyAffirmative;
@@ -60,6 +61,7 @@ public class DialogueBehaviour : MonoBehaviour
             //mainButton.SetActive(false);
             dialougePanel.SetActive(false);
             griddyAnim.SetBool("leaving", true);
+            pauseBlocker.enabled = false;
             StartCoroutine(HideGriddy());
             Time.timeScale = 1;
             return;
@@ -78,6 +80,7 @@ public class DialogueBehaviour : MonoBehaviour
             sc.dialogueLine.text = "All done! Good job!";
             nextSetButton.SetActive(false);
             mainButton.SetActive(false);
+            pauseBlocker.enabled = true;
             Time.timeScale = 1;
             return;
         }

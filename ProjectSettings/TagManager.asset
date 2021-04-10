@@ -25,6 +25,7 @@ TagManager:
   - tree
   - fog
   - despawner
+  - PauseBlocker
   layers:
   - Default
   - TransparentFX
@@ -76,6 +77,7 @@ TagManager:
     locked: 0
   - name: Griddy
     uniqueID: 106311279
+    locked: 0
   - name: OverlayingEffects
     uniqueID: 3992871783
     locked: 0
