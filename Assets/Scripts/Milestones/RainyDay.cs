@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Milestones;
 using UnityEngine;
 using Power.V2;
-
+using UnityEngine.UI;
 public class RainyDay : MilestoneBase
 {
     private int startDay = -1;
@@ -12,6 +12,8 @@ public class RainyDay : MilestoneBase
     private List<GameObject> poweredHouses = new List<GameObject>();
 
     private bool startCountdown = false;
+
+    public Text daysLeft;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
@@ -52,7 +54,7 @@ public class RainyDay : MilestoneBase
 
             // Count the days elapsed
             int daysElapsed = timeManager.days - startDay;
-
+            daysLeft.text = "Days all houses powered: " + daysElapsed;
             return daysElapsed >= 1;
         }
 
