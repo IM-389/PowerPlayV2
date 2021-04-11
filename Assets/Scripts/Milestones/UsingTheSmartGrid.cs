@@ -36,7 +36,7 @@ namespace Milestones
             }
 
             // If enough houses are powered, start the week-long cooldown
-            if (poweredHouses.Count >= 25)
+            if (poweredHouses.Count >= 23)
             {
                 startCountdown = true;
             }
