@@ -27,6 +27,7 @@ namespace Power.V2
         static float consumingHouses;
         static float totalHouses;
         static bool check = false;
+        static bool approvalTracking;
 
         bool isPowered = false;
 
@@ -121,7 +122,7 @@ namespace Power.V2
                 {
                     check = false;
                 }
-                if (timeManager.hours == 25)
+                if (timeManager.hours == 25 && approvalTracking)
                 {
                     if (!isPowered)
                     {
@@ -174,7 +175,12 @@ namespace Power.V2
             previousTimestep = timeManager.hours;
 
         }
-
+        public void TrackApproval()
+        {
+            approvalTracking = true;
+            
+            
+        }
         public NetworkManager GetManager()
         {
             return ns.manager;

@@ -24,6 +24,7 @@ namespace Power.V2
         static float totalGenerators;
         static float coalGenerators;
         static bool check = false;
+        static bool approvalTracking;
 
         public int upkeepCost;
         private MoneyManager moneyManager;
@@ -69,7 +70,7 @@ namespace Power.V2
                 }
 
                 // City Approval Stuff
-                if (timeManager.hours == 25)
+                if (timeManager.hours == 25 && approvalTracking)
                 {
                     // If the generator is a coal plant or windmill
                     if(type == PowerManager.POWER_TYPES.TYPE_COAL || type == PowerManager.POWER_TYPES.TYPE_WIND)
@@ -111,6 +112,10 @@ namespace Power.V2
 
             previousTimestep = timeManager.hours;
 
+        }
+        public void TrackApproval()
+        {
+            approvalTracking = true;
         }
 
         public IEnumerator TimedDisable(float seconds)
