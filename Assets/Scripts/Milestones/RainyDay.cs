@@ -12,6 +12,9 @@ public class RainyDay : MilestoneBase
     private List<GameObject> poweredHouses = new List<GameObject>();
 
     private bool startCountdown = false;
+    
+    [Tooltip("Area to upgrade the houses in")]
+    public GameObject upgradeArea;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
@@ -57,5 +60,19 @@ public class RainyDay : MilestoneBase
         }
 
         return false;
+    }
+    
+    public override void SetCompleteMilestone()
+    {
+        base.SetCompleteMilestone();
+
+        for (int i = 0; i < upgradeArea.transform.childCount; ++i)
+        {
+            if (upgradeArea.transform.GetChild(i).CompareTag("house"))
+            {
+                upgradeArea.transform.GetChild(i).GetComponent<GeneralObjectScript>().isSmart = true;
+                upgradeArea.transform.GetChild(i).GetChild(5).gameObject.SetActive(true);
+            }
+        }
     }
 }

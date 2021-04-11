@@ -25913,7 +25913,7 @@ MonoBehaviour:
   startDay: -1
   daysElapsed: 0
   maxDays: 0
-  upgradeArea: {fileID: 0}
+  upgradeAreas: []
 --- !u!4 &1127185371
 Transform:
   m_ObjectHideFlags: 0
@@ -30390,6 +30390,7 @@ MonoBehaviour:
   startDay: -1
   daysElapsed: 0
   maxDays: 0
+  upgradeArea: {fileID: 0}
 --- !u!4 &1332238387
 Transform:
   m_ObjectHideFlags: 0

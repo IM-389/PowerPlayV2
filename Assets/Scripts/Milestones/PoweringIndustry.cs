@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoweringIndustry : MilestoneBase
 {
     [Tooltip("Area to upgrade the houses in")]
-    public GameObject upgradeArea;
+    public GameObject[] upgradeAreas;
     public override bool CheckCompleteMilestone()
     {
         GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
@@ -38,12 +38,15 @@ public class PoweringIndustry : MilestoneBase
     {
         base.SetCompleteMilestone();
 
-        for (int i = 0; i < upgradeArea.transform.childCount; ++i)
+        foreach (var upgradeArea in upgradeAreas)
         {
-            if (upgradeArea.transform.GetChild(i).CompareTag("house"))
+            for (int i = 0; i < upgradeArea.transform.childCount; ++i)
             {
-                upgradeArea.transform.GetChild(i).GetComponent<GeneralObjectScript>().isSmart = true;
-                upgradeArea.transform.GetChild(i).GetChild(5).gameObject.SetActive(true);
+                if (upgradeArea.transform.GetChild(i).CompareTag("house"))
+                {
+                    upgradeArea.transform.GetChild(i).GetComponent<GeneralObjectScript>().isSmart = true;
+                    upgradeArea.transform.GetChild(i).GetChild(5).gameObject.SetActive(true);
+                }
             }
         }
     }
