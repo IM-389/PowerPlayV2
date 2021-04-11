@@ -32,6 +32,8 @@ public class GeneralObjectScript : MonoBehaviour
     public bool unRemovable;
     bool destroyed = false;
     GameObject destroyKey;
+
+    bool mouseOver = false;
     
     [FormerlySerializedAs("maxHVConnections")] [FormerlySerializedAs("maxConnectiions")] public int maxConnections;
     //public int maxLVConnections;
@@ -104,7 +106,11 @@ public class GeneralObjectScript : MonoBehaviour
     }
     private void Update()
     {
-        //gameObject.GetComponent<HoverScript>().ToggleBuildCircle(false);
+        if (!mouseOver)
+        {
+            gameObject.GetComponent<HoverScript>().ToggleBuildCircle(false);
+        }
+        mouseOver = false;
     }
     /*
     public void AddLVConnection(GameObject connection)
@@ -241,8 +247,9 @@ public class GeneralObjectScript : MonoBehaviour
         return (nonConsumerConnections.Count + consumerConnections.Count);
     }
 
-    public void OnMouseEnter()
+    private void OnMouseOver()
     {
+        mouseOver = true;
         gameObject.GetComponent<HoverScript>().ToggleBuildCircle(true);
     }
 
