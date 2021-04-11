@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 30
+  amountGenerated: 15
   amountConsumed: 0
 --- !u!114 &404765403952639720
 MonoBehaviour:

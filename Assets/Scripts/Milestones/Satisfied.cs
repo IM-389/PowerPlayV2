@@ -4,7 +4,7 @@ using Milestones;
 using UnityEngine;
 
 public class Satisfied : MilestoneBase {
-    private int startDay = -1;
+    //private int startDay = -1;
 
     private TimeManager timeManager;
     private RandomEventManager randomEvents;
@@ -38,7 +38,7 @@ public class Satisfied : MilestoneBase {
         }
 
         // If enough houses are powered, start the week-long cooldown
-        if (poweredHouses.Count >= 23)
+        if (poweredHouses.Count >= 22)
         {
             startCountdown = true;
         }

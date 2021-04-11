@@ -55,8 +55,8 @@ public class TimeManager : MonoBehaviour
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
-        Debug.Log("Start happened");
-        Debug.Log(this.gameObject);
+        //Debug.Log("Start happened");
+        //Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
 
         // Finding and Starting the Event
@@ -209,7 +209,7 @@ public class TimeManager : MonoBehaviour
                         coinGen.smartCoins++;
                     }
                 }
-                if(hours >= 5 || hours <= 18)
+                if(hours >= 5 && hours <= 18)
                 {
                     isDay = true;
                     //Debug.Log("It is daytime");

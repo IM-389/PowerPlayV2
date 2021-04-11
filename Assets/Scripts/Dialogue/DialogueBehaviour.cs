@@ -56,8 +56,8 @@ public class DialogueBehaviour : MonoBehaviour
         FaceScript.faceSprite = 2;
         FaceScript.switchFaces = true;
 
-        Debug.Log("Calling DisplayNextSentence!");
-        Debug.Log($"Number items in list: {sentences.Count}");
+        //Debug.Log("Calling DisplayNextSentence!");
+        //Debug.Log($"Number items in list: {sentences.Count}");
         if (sentences.Count == 0)
         {
             //sc.dialogueLine.text = nextSetMessage;

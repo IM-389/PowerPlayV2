@@ -10,7 +10,7 @@ public class StoryTelling : MonoBehaviour
     private BoxCollider2D pauseBlocker;
     public void TriggerDialogue()
     {
-        Debug.Log($"Called from {gameObject.name}");
+        //Debug.Log($"Called from {gameObject.name}");
         pauseBlocker = GameObject.FindWithTag("PauseBlocker").GetComponent<BoxCollider2D>();
         pauseBlocker.enabled = true;
         FindObjectOfType<DialogueBehaviour>().StartConvo(dialogue);

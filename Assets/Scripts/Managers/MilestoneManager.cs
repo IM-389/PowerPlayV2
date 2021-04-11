@@ -10,9 +10,9 @@ public class MilestoneManager : MonoBehaviour
     public MilestoneBase[] milestones;
 
     /// <summary>
-    /// Which milestones the player are currently on
+    /// Which milestone the player is currently on
     /// </summary>
-    public List<MilestoneBase> currentMilestones = new List<MilestoneBase>();
+    public MilestoneBase currentMilestones;
 
     [Tooltip("Text displaying the current milestone to the player")]
     public Text milestoneText;
@@ -36,8 +36,8 @@ public class MilestoneManager : MonoBehaviour
     /// </summary>
     private void Start()
     {
-        currentMilestones.Add(milestones[0]);
-        milestoneText.text = currentMilestones[0].milestoneText;
+        currentMilestones = milestones[0];
+        milestoneText.text = currentMilestones.milestoneText;
         build = GameObject.FindWithTag("Background").GetComponent<BuildScript>();
     }
     
@@ -49,44 +49,34 @@ public class MilestoneManager : MonoBehaviour
         List<MilestoneBase> toAdd = new List<MilestoneBase>();
         List<int> toRemove = new List<int>();
         string text = "";
-        for(int i = 0; i < currentMilestones.Count; ++i)
+        bool isComplete = currentMilestones.CheckCompleteMilestone();
+        if (isComplete || Input.GetKeyDown(KeyCode.Y))
         {
-            bool isComplete = currentMilestones[i].CheckCompleteMilestone();
-            if (isComplete || Input.GetKeyDown(KeyCode.Y))
+            Debug.Log("Milestone complete, setting next ones!");
+            currentMilestones.SetCompleteMilestone();
+            
+            foreach (var building in currentMilestones.newBuildings)
             {
-                Debug.Log("Milestone complete, setting next ones!");
-                currentMilestones[i].SetCompleteMilestone();
-                
-                foreach (var building in currentMilestones[i].newBuildings)
-                {
-                    build.spawnableBuildings.Add(building);
-                }
-                //build.SetupDropdown();
-                toAdd.AddRange(currentMilestones[i].nextMilestones);
-                toRemove.Add(i);
-                
-                griddy.SetActive(true);
-                if (currentMilestones[i].hasQuestion)
-                {
-                    quizManager.StartQuiz();
-                }
+                build.spawnableBuildings.Add(building);
+            }
+            //build.SetupDropdown();
+            currentMilestones = currentMilestones.nextMilestones[0];
+            
+            griddy.SetActive(true);
+            if (currentMilestones.hasQuestion)
+            {
+                quizManager.StartQuiz();
+            }
 
-                dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
-                dialouge.TriggerDialogue();
-            }
-            if(currentMilestones[i].startDay > -1)
-            {
-               currentMilestones[i].daysElapsed = timeManager.days - currentMilestones[i].startDay;
-            }
-            text += currentMilestones[i].milestoneText + "\n";
+            dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
+            dialouge.TriggerDialogue();
         }
-        
-        currentMilestones.AddRange(toAdd);
-        milestoneText.text = text;
-        
-        foreach (var index in toRemove)
+        if(currentMilestones.startDay > -1)
         {
-            currentMilestones.RemoveAt(index);
+           currentMilestones.daysElapsed = timeManager.days - currentMilestones.startDay;
         }
+        text += currentMilestones.milestoneText + "\n";
+        
+        milestoneText.text = text;
     }
 }

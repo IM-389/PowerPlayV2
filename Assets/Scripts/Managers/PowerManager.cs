@@ -3,6 +3,10 @@ using Power.V2;
 public class PowerManager : MonoBehaviour
 {
 
+    private TimeManager timeManager;
+
+    private bool wasDay;
+    
     public enum POWER_TYPES
     {
         TYPE_COAL = 0,
@@ -11,6 +15,28 @@ public class PowerManager : MonoBehaviour
         TYPE_WIND = 3
     }
 
+    private void Start()
+    {
+        timeManager = gameObject.GetComponent<TimeManager>();
+    }
+
+    private void Update()
+    {
+        if (timeManager.isDay && !wasDay)
+        {
+            powerAdjusts[2] = 1;
+        }
+
+        if (wasDay && !timeManager.isDay)
+        {
+            powerAdjusts[2] = 0;
+        }
+
+        wasDay = timeManager.isDay;
+
+    }
+    
+    
     [Tooltip("Adjustments for coal, gas, solar, and wind respectivly")]
     public float[] powerAdjusts = {1, 1, 1, 1};
     
