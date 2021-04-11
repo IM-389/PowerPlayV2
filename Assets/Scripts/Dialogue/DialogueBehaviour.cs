@@ -18,6 +18,8 @@ public class DialogueBehaviour : MonoBehaviour
     public GameObject griddy;
     public Animator griddyAnim;
     public BoxCollider2D pauseBlocker;
+
+    public GameObject arrow;
     
     // Reference to location of sound
     [FMODUnity.EventRef]
@@ -103,6 +105,7 @@ public class DialogueBehaviour : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         griddy.SetActive(false);
+        arrow.SetActive(true);
     }
 }
     
