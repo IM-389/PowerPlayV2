@@ -46,8 +46,8 @@ public class MilestoneManager : MonoBehaviour
     /// </summary>
     void Update()
     {
-        List<MilestoneBase> toAdd = new List<MilestoneBase>();
-        List<int> toRemove = new List<int>();
+        //List<MilestoneBase> toAdd = new List<MilestoneBase>();
+        //List<int> toRemove = new List<int>();
         string text = "";
         bool isComplete = currentMilestones.CheckCompleteMilestone();
         if (isComplete || Input.GetKeyDown(KeyCode.Y))
@@ -69,13 +69,13 @@ public class MilestoneManager : MonoBehaviour
             }
 
             dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
-            dialouge.TriggerDialogue();
+            dialouge.TriggerDialogue(currentMilestones.hasQuestion);
         }
         if(currentMilestones.startDay > -1)
         {
            currentMilestones.daysElapsed = timeManager.days - currentMilestones.startDay;
         }
-        text += currentMilestones.milestoneText + "\n";
+        text = currentMilestones.milestoneText + "\n";
         
         milestoneText.text = text;
     }

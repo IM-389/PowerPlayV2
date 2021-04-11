@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Power.V2;
+using UnityEngine.UI;
 namespace Milestones
 {
     public class UsingTheSmartGrid : MilestoneBase
@@ -12,6 +13,8 @@ namespace Milestones
         private List<GameObject> poweredHouses = new List<GameObject>();
 
         private bool startCountdown = false;
+
+        public Text daysLeft;
         private void Start()
         {
             timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
@@ -51,7 +54,7 @@ namespace Milestones
 
                 // Count the days elapsed
                 int daysElapsed = timeManager.days - startDay;
-
+                daysLeft.text = "Days all houses/buildings powered: " + daysElapsed;
                 return daysElapsed >= 1;
             }
 
