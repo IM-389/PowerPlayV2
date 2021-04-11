@@ -5,7 +5,7 @@ namespace Milestones
 {
     public class EnterTheSmartGrid : MilestoneBase
     {
-        private int startDay = -1;
+        //private int startDay = -1;
 
         private TimeManager timeManager;
 
@@ -39,7 +39,7 @@ namespace Milestones
             }
 
             // If enough houses are powered, start the week-long cooldown
-            if (poweredHouses.Count >= 25)
+            if (poweredHouses.Count >= 22)
             {
                 startCountdown = true;
             }

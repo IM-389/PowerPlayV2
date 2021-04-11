@@ -15,6 +15,9 @@ GameObject:
   - component: {fileID: 2056792714870349707}
   - component: {fileID: 2056792714870349706}
   - component: {fileID: 2056792714870349705}
+  - component: {fileID: 53392498213443576}
+  - component: {fileID: 5776730363631497723}
+  - component: {fileID: 4521155145659076711}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -70,8 +73,13 @@ MonoBehaviour:
   days: 0
   isDay: 1
   clock: {fileID: 0}
+  citySat: {fileID: 0}
   cash: 0
-  backgroundReference: 
+  resume: 1
+  globalLight: {fileID: 0}
+  backgroundReference1: 
+  backgroundReference2: 
+  daysBetweenTracks: 0
 --- !u!114 &2056792714870349708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,9 +96,12 @@ MonoBehaviour:
   - {fileID: 0}
   currentMilestones: []
   milestoneText: {fileID: 0}
+  timeText: {fileID: 0}
   build: {fileID: 0}
   dialouge: {fileID: 0}
   griddy: {fileID: 0}
+  quizManager: {fileID: 0}
+  timeManager: {fileID: 0}
 --- !u!114 &2056792714870349707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,6 +120,7 @@ MonoBehaviour:
   - {fileID: 0}
   eventNotification: {fileID: 0}
   notificationShowTime: 5
+  doEvents: 0
 --- !u!114 &2056792714870349706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +156,63 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   money: 100
+--- !u!114 &53392498213443576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056792715769432564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4eeb39e9ddff68d418b1ddf962b22fa5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerAmountText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  totalPowerText: {fileID: 0}
+  moneyText: {fileID: 0}
+  outOfPowerAlert: {fileID: 0}
+--- !u!114 &5776730363631497723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056792715769432564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3cf7a385c6e7994c85a8b561c121f46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 2056792715769432562}
+  soundManager: {fileID: 0}
+  questionsList: []
+  currentQuestion:
+    Question: 
+    Answers: []
+    Correct: 0
+    PostAnswerTextCorrect: 
+    PostAnswerTextIncorrect: 
+  questionText: {fileID: 0}
+  answerChoices: {fileID: 0}
+  quizPanel: {fileID: 0}
+  quizPoints: 10
+--- !u!114 &4521155145659076711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2056792715769432564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bd383b5ca4af264285b927bd61ae73f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pause: {fileID: 0}
+  tm: {fileID: 0}
+  pauseBlocker: {fileID: 0}

@@ -69,7 +69,7 @@ public class UIManager : MonoBehaviour
             }
             else
             {
-                outOfPowerAlert.SetActive(false);                
+                outOfPowerAlert.SetActive(false);
             }
             
             yield return new WaitForSecondsRealtime(0.5f);

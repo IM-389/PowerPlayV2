@@ -232,6 +232,7 @@ public class BuildScript : MonoBehaviour
             hover.UpdateTooltip();
             hover.ToggleBuildCircle(true);
             // If the player clicked on the object
+            /*
             if (Input.GetMouseButtonDown(0))
             {
                 // If they clicked on a consumer, make it smart
@@ -246,6 +247,7 @@ public class BuildScript : MonoBehaviour
                     }
                 }
             }
+            */
         }
         else
         {

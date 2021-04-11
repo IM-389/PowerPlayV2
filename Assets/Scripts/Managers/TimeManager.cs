@@ -32,27 +32,19 @@ public class TimeManager : MonoBehaviour
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
     public string backgroundReference1;
-    FMOD.Studio.EventInstance backgrounds1;
+    public static FMOD.Studio.EventInstance backgrounds1;
 
      //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
     public string backgroundReference2;
-    FMOD.Studio.EventInstance backgrounds2;
+    public static FMOD.Studio.EventInstance backgrounds2;
 
     [Tooltip("Sets the number of days before chance to change tracks")]
     public int daysBetweenTracks;
 
     int temp = 2;
 
-    public GameObject dayLights;
-    Animator lightAnim;
-
-    //Accesses the FMOD Event
-    [Tooltip("The location of the sound")]
-    [FMODUnity.EventRef]
-    public string backgroundReference;
-    public static FMOD.Studio.EventInstance backgrounds;
 
     // For pause menu
     
@@ -60,13 +52,11 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lightAnim = dayLights.GetComponent<Animator>();
-
         width = 600;
         height = 600;
         rect = new Rect(1800, -250, width, height);
-        Debug.Log("Start happened");
-        Debug.Log(this.gameObject);
+        //Debug.Log("Start happened");
+        //Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
 
         // Finding and Starting the Event
@@ -114,14 +104,6 @@ public class TimeManager : MonoBehaviour
         backgrounds2.setParameterByName("Time Of Day", hours);
         
         citySat.text = "City Satisfaction: " + cityApproval;
-        if (hours == 20)
-        {
-            lightAnim.SetBool("NightTimeStart", true);
-        }
-        else if (hours == 3)
-        {
-            lightAnim.SetBool("NightTimeStart", false);
-        }
     }
 
     /// <summary>
@@ -227,7 +209,7 @@ public class TimeManager : MonoBehaviour
                         coinGen.smartCoins++;
                     }
                 }
-                if(hours >= 5 || hours <= 18)
+                if(hours >= 5 && hours <= 18)
                 {
                     isDay = true;
                     //Debug.Log("It is daytime");

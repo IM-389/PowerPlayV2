@@ -37,7 +37,7 @@ namespace Milestones
                 }
             }
         
-            return windGen >= 1 && poweredHouses >= 15;
+            return windGen >= 1 && poweredHouses >= 22;
         }
     }
 }

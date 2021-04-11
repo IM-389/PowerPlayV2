@@ -5,7 +5,7 @@ using Power.V2;
 
 public class RainyDay : MilestoneBase
 {
-    private int startDay = -1;
+    //private int startDay = -1;
 
     private TimeManager timeManager;
 
@@ -37,7 +37,7 @@ public class RainyDay : MilestoneBase
         }
 
         // If enough houses are powered, start the week-long cooldown
-        if (poweredHouses.Count >= 25)
+        if (poweredHouses.Count >= 22)
         {
             startCountdown = true;
         }

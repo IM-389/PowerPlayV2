@@ -8,23 +8,18 @@ namespace Milestones
     {
         [Tooltip("How many solars need to be upgraded to complete the milestone")]
         public int numToComplete = 5;
+
+        private PowerManager powerManager;
+
+        private void Start()
+        {
+            powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
+        }
+        
         
         public override bool CheckCompleteMilestone()
         {
-            GeneratorScript[] allGenerators = GameObject.FindObjectsOfType<GeneratorScript>();
-
-            int upgradedSolar = 0;
-
-            foreach (var generator in allGenerators)
-            {
-                if (generator.type == PowerManager.POWER_TYPES.TYPE_SOLAR && generator.GetComponent<GeneralObjectScript>().isSmart)
-                {
-                    ++upgradedSolar;
-                }
-            }
-
-            return upgradedSolar >= numToComplete;
-
+            return powerManager.powerAmountsGenerated[2] >= 150;
         }
 
         public override void SetCompleteMilestone()
