@@ -13,6 +13,9 @@ public class CameraDrag : MonoBehaviour
 
     public KeyCode zoomIn, zoomOut;
 
+    public GameObject Griddie;
+    Vector3 startPosGriddie;
+
     public float minZoom;
     public float maxZoom;
 
@@ -25,6 +28,7 @@ public class CameraDrag : MonoBehaviour
     private void Start()
     {
         camera = Camera.main;
+        startPosGriddie = Griddie.transform.position;
     }
     
     // Update is called once per frame
@@ -49,10 +53,22 @@ public class CameraDrag : MonoBehaviour
         if (Input.mouseScrollDelta.y > 0.5f && camera.orthographicSize > minZoom)
         {
             camera.orthographicSize -= 1;
+            Griddie.transform.localScale -= new Vector3(0.14f, 0.14f);
+            Griddie.transform.position = startPosGriddie;
+            Vector3 pos = Camera.main.WorldToViewportPoint(Griddie.transform.position);
+            pos.x = 0.24f;
+            pos.y = 0.1f;
+            Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
         else if (Input.mouseScrollDelta.y <= -0.5f && camera.orthographicSize < maxZoom)
         {
             camera.orthographicSize += 1;
+            Griddie.transform.localScale += new Vector3(0.14f, 0.14f);
+            Griddie.transform.position = startPosGriddie;
+            Vector3 pos = Camera.main.WorldToViewportPoint(Griddie.transform.position);
+            pos.x = 0.24f;
+            pos.y = 0.1f;
+            Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
         }
     }
 

@@ -26,6 +26,8 @@ namespace Power.V2
 
         static float consumingHouses;
         static float totalHouses;
+        static bool check = false;
+        static bool approvalTracking;
 
         bool isPowered = false;
 
@@ -116,27 +118,56 @@ namespace Power.V2
                     alert.SetActive(true);
                 }
                 // City Approval stuff
-                if (timeManager.hours == 25)
+                if (timeManager.hours == 1)
+                {
+                    check = false;
+                }
+                if (timeManager.hours == 25 && approvalTracking)
                 {
                     if (!isPowered)
                     {
-                        Debug.Log("City approval should go down at the end of the day");
+                        if (gameObject.CompareTag("house"))
+                        {
+                            timeManager.cityApproval -= 3;
+                            Debug.Log("A house isn't powered. -3 CitySat");
+                        }
+                        else if (gameObject.CompareTag("hospital"))
+                        {
+                            timeManager.cityApproval -= 35;
+                            Debug.Log("A hospital isn't powered. -35 CitySat");
+                        }
+                        else if (gameObject.CompareTag("factory"))
+                        {
+                            timeManager.cityApproval -= 15;
+                            Debug.Log("A factory isn't powered. -15 CitySat");
+                        }
                     }
                     else
                     {
-                        if (consumingHouses / totalHouses >= 0.50)
+                        if (gameObject.CompareTag("house"))
+                        {
+                            timeManager.cityApproval += 1;
+                        }
+                        else if (gameObject.CompareTag("hospital"))
+                        {
+                            timeManager.cityApproval += 20;
+                        }
+                        else if (gameObject.CompareTag("factory"))
                         {
                             timeManager.cityApproval += 10;
                         }
-                        else if (consumingHouses / totalHouses >= 1)
-                        {
-                            timeManager.cityApproval += 25;
-                        }
                     }
-                    RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, 3f, Vector2.zero);
-                    foreach(RaycastHit2D hit in hits)
+                    if(!check && consumingHouses/totalHouses >= 1)
                     {
-                        Debug.Log(hit.transform.gameObject);
+                        timeManager.cityApproval += 25;
+                        Debug.Log("Congrats, all of your consumers are powered");
+                        check = true;
+                    }
+                    else if(!check && consumingHouses / totalHouses >= 0.5)
+                    {
+                        timeManager.cityApproval += 10;
+                        Debug.Log("Congrats, half or more of your consumers are powered");
+                        check = true;
                     }
                 }
             }
@@ -144,7 +175,12 @@ namespace Power.V2
             previousTimestep = timeManager.hours;
 
         }
-
+        public void TrackApproval()
+        {
+            approvalTracking = true;
+            
+            
+        }
         public NetworkManager GetManager()
         {
             return ns.manager;
