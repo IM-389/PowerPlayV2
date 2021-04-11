@@ -33,7 +33,7 @@ public class DialogueBehaviour : MonoBehaviour
         //griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
-    public void StartConvo(Dialogue dialog)
+    public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
@@ -47,10 +47,12 @@ public class DialogueBehaviour : MonoBehaviour
         {
             sentences.Add(sentence);
         }
-        DisplayNextSentence();
+
+        sc.hasQuiz = hasQuiz;
+        DisplayNextSentence(hasQuiz);
     }
 
-    public void DisplayNextSentence()
+    public void DisplayNextSentence(bool hasQuiz)
     {
 
         FaceScript.faceSprite = 2;
@@ -66,10 +68,14 @@ public class DialogueBehaviour : MonoBehaviour
             FaceScript.faceSprite = 1;
             FaceScript.switchFaces = true;
             dialougePanel.SetActive(false);
-            griddyAnim.SetBool("leaving", true);
-            pauseBlocker.enabled = false;
-            StartCoroutine(HideGriddy());
-            Time.timeScale = 1;
+            if (!hasQuiz)
+            {
+                griddyAnim.SetBool("leaving", true);
+                pauseBlocker.enabled = false;
+                StartCoroutine(HideGriddy());
+                Time.timeScale = 1;
+            }
+
             return;
 
         }
@@ -80,7 +86,7 @@ public class DialogueBehaviour : MonoBehaviour
         sentences.RemoveAt(0);
     }
 
-    public void EndDialogue()
+    public void EndDialogue(bool hasQuiz)
     {
         if(st.nextTextSet == null)
         {
@@ -95,7 +101,7 @@ public class DialogueBehaviour : MonoBehaviour
         st.nextTextSet.SetActive(true);
         Destroy(st.textSet);
         st = GameObject.FindObjectOfType<StoryTelling>();
-        st.TriggerDialogue();
+        st.TriggerDialogue(hasQuiz);
         
     }
 

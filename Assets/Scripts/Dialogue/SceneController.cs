@@ -23,13 +23,14 @@ public class SceneController : MonoBehaviour
 
     [FMODUnity.EventRef]
     public string griddySounds;
-    
+
+    public bool hasQuiz;
     // Start is called before the first frame update
     void Start()
     {
         db = GameObject.FindObjectOfType<DialogueBehaviour>();
         st = GameObject.FindObjectOfType<StoryTelling>();
-        st.TriggerDialogue();
+        st.TriggerDialogue(false);
 
         canPress = false;
         Invoke("WaitToPress", waitTime);
@@ -43,7 +44,7 @@ public class SceneController : MonoBehaviour
 
     public void PressButtonForText()
     {
-            db.DisplayNextSentence();
+            db.DisplayNextSentence(hasQuiz);
             FMODUnity.RuntimeManager.PlayOneShot(griddySounds);
             canPress = false;
             Invoke("WaitToPress", waitTime);

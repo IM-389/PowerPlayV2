@@ -29,6 +29,9 @@ public class QuizManager : MonoBehaviour
     [Tooltip("Reference to the quiz panel")]
     public GameObject quizPanel;
     
+    public GameObject griddy;
+    public Animator griddyAnim;
+    public BoxCollider2D pauseBlocker;
     /// <summary>
     /// How many questions have been asked
     /// </summary>
@@ -129,5 +132,18 @@ public class QuizManager : MonoBehaviour
 
         questionText.text = result;
     }
+
+    public void CloseQuiz()
+    {
+        griddyAnim.SetBool("leaving", true);
+        pauseBlocker.enabled = false;
+        StartCoroutine(HideGriddy());
+        Time.timeScale = 1;
+    }
     
+    private IEnumerator HideGriddy()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        griddy.SetActive(false);
+    }
 }
