@@ -2,6 +2,7 @@ using Power.V2;
 using System.Collections.Generic;
 using UnityEngine;
 using Milestones;
+using UnityEngine.UI;
 
 public class BuildingTheSmartGrid : MilestoneBase
 {
@@ -11,6 +12,8 @@ public class BuildingTheSmartGrid : MilestoneBase
 
     private List<GameObject> poweredHouses = new List<GameObject>();
 
+    public Text daysLeft;
+    
     private bool startCountdown = false;
     private void Start()
     {
@@ -51,8 +54,8 @@ public class BuildingTheSmartGrid : MilestoneBase
             }
 
             // Count the days elapsed
-            int daysElapsed = timeManager.days - startDay;
-
+            daysElapsed = timeManager.days - startDay;
+            daysLeft.text = "Days all houses powered: " + daysElapsed;
             return daysElapsed >= 1;
         }
 

@@ -53,8 +53,8 @@ namespace Milestones
                 }
 
                 // Count the days elapsed
-                int daysElapsed = timeManager.days - startDay;
-                daysLeft.text = "Days all houses/buildings powered: " + daysElapsed;
+                daysElapsed = timeManager.days - startDay;
+                daysLeft.text = "Days all houses powered: " + daysElapsed;
                 return daysElapsed >= 1;
             }
 

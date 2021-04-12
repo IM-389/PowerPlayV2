@@ -56,7 +56,7 @@ public class RainyDay : MilestoneBase
             }
 
             // Count the days elapsed
-            int daysElapsed = timeManager.days - startDay;
+            daysElapsed = timeManager.days - startDay;
             daysLeft.text = "Days all houses powered: " + daysElapsed;
             return daysElapsed >= 1;
         }
