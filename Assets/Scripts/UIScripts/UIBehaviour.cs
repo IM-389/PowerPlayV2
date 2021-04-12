@@ -54,6 +54,7 @@ public class UIBehaviour : MonoBehaviour
     public void GoToScene(int num)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(num);
+        Time.timeScale = 1;
         TimeManager.backgrounds1.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         TimeManager.backgrounds2.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
