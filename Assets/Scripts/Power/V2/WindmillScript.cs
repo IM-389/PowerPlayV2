@@ -12,8 +12,14 @@ namespace Power.V2
         public float windmillMultiplier = 2;
 
         private float originalPower;
+
+        private bool isUpgraded;
         public override void DoUpgrade()
         {
+            if (isUpgraded)
+                return;
+
+            isUpgraded = true;
             Debug.Log("Upgrading Windmill!");
             originalPower = basePower;
             StartCoroutine(WindmillCheck());

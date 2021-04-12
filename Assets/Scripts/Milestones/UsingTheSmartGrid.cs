@@ -60,5 +60,21 @@ namespace Milestones
 
             return false;
         }
+
+        public override void SetCompleteMilestone()
+        {
+            base.SetCompleteMilestone();
+
+            GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            foreach (var generator in generators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_SOLAR)
+                {
+                    generator.DoUpgrade();
+                }
+                
+            }
+        }
     }
 }

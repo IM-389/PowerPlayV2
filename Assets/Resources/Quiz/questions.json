@@ -9,7 +9,7 @@
         "Power poles isn’t used for anything"
       ],
       "Correct": 0,
-      "PostAnswerTextCorrect": "Correct! The core purpose of power plants is to help move electricity from one place to another.",
+      "PostAnswerTextCorrect": "Correct! The core purpose of power poles is to help move electricity from one place to another.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, to move the electricity from one place to another."
     },
     {
@@ -59,10 +59,10 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, Wind turbines get power when the wind turns the blades and powers a generator."
     },
     {
-      "Question": "Can normal houses communicate if they don't have power on their own?\n",
+      "Question": "Can houses without Smart Meters communicate if they don't have power on their own?\n",
       "Answers": [
-        "True",
-        "False"
+        "Yes",
+        "No"
       ],
       "Correct": 1,
       "PostAnswerTextCorrect": "Correct! Normal houses can't communicate with the power grid on their own. Which is why we would need Smart Meters to help the houses communicate.",

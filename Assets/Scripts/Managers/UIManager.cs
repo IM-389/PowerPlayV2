@@ -66,12 +66,12 @@ public class UIManager : MonoBehaviour
             if (numOutOfPower > 0)
             {
                 Debug.Log("Enabling OOP Alert");
-                outOfPowerAlert.SetActive(true);
+                //outOfPowerAlert.SetActive(true);
             }
             else
             {
                 Debug.Log("Disabling OOP Alert");
-                outOfPowerAlert.SetActive(false);
+                //outOfPowerAlert.SetActive(false);
             }
             
             yield return new WaitForSecondsRealtime(0.5f);

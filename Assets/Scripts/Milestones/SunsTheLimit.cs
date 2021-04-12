@@ -25,6 +25,18 @@ namespace Milestones
         public override void SetCompleteMilestone()
         {
             base.SetCompleteMilestone();
+            
+            GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            foreach (var generator in generators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_WIND)
+                {
+                    generator.DoUpgrade();
+                }
+                
+            }
+            
             StartCoroutine(AutoUpgrade());
 
         }
