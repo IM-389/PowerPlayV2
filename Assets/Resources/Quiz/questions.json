@@ -23,7 +23,7 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, Substations make sure the power is safe to use for your home."
     },
     {
-      "Question": "Coal power plants add a lot of CO2 (Carbon Dioxide) and other greenhouse gases that hurt the planet. As alternatives, which type(s) of power plant(s) would be the more environmentally friendly?\n",
+      "Question": "Coal power plants add a lot of CO<sub>2</sub> (Carbon Dioxide) and other greenhouse gases that hurt the planet. As alternatives, which type(s) of power plant(s) would be the more environmentally friendly?\n",
       "Answers": [
         "Wind",
         "Solar",

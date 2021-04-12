@@ -37,6 +37,6 @@ public class PoweringUp : MilestoneBase
             }
         }
         
-        return coalGen >= 2 && poweredHouses >= 14;
+        return coalGen >= 1 && poweredHouses >= 14;
     }
 }
