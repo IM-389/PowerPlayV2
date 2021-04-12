@@ -53,7 +53,7 @@ public class ArrowBehaviour : MonoBehaviour
 
     public void FinishTheJob()
     {
-        if (isThereMore)
+        if (isThereMore && gameObject.activeSelf)
         {
             next.SetActive(true);
             isThereMore = false;
