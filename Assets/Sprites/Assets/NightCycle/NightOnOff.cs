@@ -6,15 +6,18 @@ public class NightOnOff : MonoBehaviour
 {
     public static bool night = false;
 
-    void NightOn()
+    public Animator nightAnimation;
+    public void NightOn()
     {
         night = true;
+        nightAnimation.SetBool("NightTimeStart", true);
         print("night");
     }
 
-    void NightOff()
+    public void NightOff()
     {
         night = false;
+        nightAnimation.SetBool("NightTimeStart", false);
         print("day");
     }
 }

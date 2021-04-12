@@ -25,7 +25,7 @@ public class TimeManager : MonoBehaviour
     MilestoneBase coinGen;
     public float resume = 1;
     public Light2D globalLight;
-
+    public NightOnOff nightAnimation;
 
     [Header("Sound")]
     //Accesses the FMOD Event
@@ -212,11 +212,13 @@ public class TimeManager : MonoBehaviour
                 if(hours >= 5 && hours <= 18)
                 {
                     isDay = true;
+                    nightAnimation.NightOff();
                     //Debug.Log("It is daytime");
                 }
                 else
                 {
                     isDay = false;
+                    nightAnimation.NightOn();
                     //Debug.Log("It is night");
                 }
                 if (hours >= 20 || hours <= 4)
