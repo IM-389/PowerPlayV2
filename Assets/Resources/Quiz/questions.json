@@ -86,7 +86,7 @@
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! The Smart Grid can tell when a home has no power or too much power and will fix the issue itself without a long process",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D"
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be true. The Smart Grid allows homes to automatically alert the power company when they lose power."
     },
     {
       "Question": "What is the key thing Smart Meters are communicating?\n",

@@ -30,7 +30,8 @@ public class MilestoneManager : MonoBehaviour
     public QuizManager quizManager;
 
     public TimeManager timeManager;
-    
+
+    public Text daysLeft;
     /// <summary>
     /// Sets the data for the first milestone
     /// </summary>
@@ -76,6 +77,7 @@ public class MilestoneManager : MonoBehaviour
            currentMilestones.daysElapsed = timeManager.days - currentMilestones.startDay;
         }
         text = currentMilestones.milestoneText + "\n";
+        daysLeft.text = "";
         
         milestoneText.text = text;
     }
