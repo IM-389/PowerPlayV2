@@ -8,6 +8,7 @@ public class ArrowBehaviour : MonoBehaviour
     //public GameObject cam;
     public float speed = 1;
     float angle;
+    public float destroyDis = 2.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,10 @@ public class ArrowBehaviour : MonoBehaviour
         angle = Mathf.Atan2(dis.y, dis.x) * Mathf.Rad2Deg;
         Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, q, Time.deltaTime * speed);
+
+        if (Vector3.Distance(gameObject.transform.position, target.transform.position) < destroyDis) //set this to whatever suits best
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
