@@ -25,9 +25,13 @@ public class CameraDrag : MonoBehaviour
     
     [Tooltip("Maximum (highest) values the camera's coordinates cam be")]
     public Vector2 maxCameraPos;
-    
+
+
+    //public GameObject arrowManager;
+    ArrowManager am;
     private void Start()
     {
+        //am = arrowManager.GetComponent<ArrowManager>();
         camera = Camera.main;
         startPosGriddie = Griddie.transform.position;
     }
@@ -60,6 +64,7 @@ public class CameraDrag : MonoBehaviour
             pos.x = 0.24f;
             pos.y = 0.1f;
             Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
+            //am.dis -= 0.14f;
         }
         else if (Input.mouseScrollDelta.y <= -0.5f && camera.orthographicSize < maxZoom)
         {
@@ -70,6 +75,7 @@ public class CameraDrag : MonoBehaviour
             pos.x = 0.24f;
             pos.y = 0.1f;
             Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
+            //am.dis += 0.14f;
         }
     }
 
