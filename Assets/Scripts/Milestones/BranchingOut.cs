@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class BranchingOut : MilestoneBase
 {
+    public GameObject arrow;
+    ArrowBehaviour am;
     public override bool CheckCompleteMilestone()
     {
         GameObject[] substations = GameObject.FindGameObjectsWithTag("Substation");
+
+        if(substations.Length >= 2)
+        {
+            am = arrow.GetComponent<ArrowBehaviour>();
+            am.FinishTheJob();
+        }
         
         // Find all houses
         GameObject[] houses = GameObject.FindGameObjectsWithTag("house");
