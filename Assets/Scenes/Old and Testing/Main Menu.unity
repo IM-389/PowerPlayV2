@@ -624,6 +624,10 @@ MonoBehaviour:
   masterBus: bus:/Master
   musicBus: bus:/Master/Music
   sfxBus: bus:/Master/SFX
+  musicSlider: {fileID: 253727425}
+  sfxSlider: {fileID: 2095450233}
+  musicSliderText: {fileID: 329337892}
+  sfxSliderText: {fileID: 1050077053}
   buttonPress: event:/Sound Effects/Button Press
   quizAffirmative: event:/Sound Effects/Griddy Quiz Affirmative
   quizNegative: event:/Sound Effects/Griddy Negative
@@ -1241,6 +1245,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240585170}
   m_CullTransparentMesh: 0
+--- !u!114 &253727425 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &286908314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1386,6 +1401,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286908314}
   m_CullTransparentMesh: 0
+--- !u!114 &329337891 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918870053142228, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d4d464db114460c82b726e839d0a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &329337892 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918870053142252, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &358317749
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2412,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -6.087}
+--- !u!114 &1050077052 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918870589721256, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69d4d464db114460c82b726e839d0a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1050077053 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918870589721255, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1062999211
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,6 +5145,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2095450233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+  m_PrefabInstance: {fileID: 550099720768718880}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2107678004
 GameObject:
   m_ObjectHideFlags: 0
@@ -5430,9 +5500,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 1921027111}
     m_Modifications:
     - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 136930137}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1050077052}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowSliderValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918868872847600, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7774918868872847608, guid: f09b727670717d64c89a07890268b419, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -5529,10 +5623,42 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 136930137}
+    - target: {fileID: 7774918870043051752, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 136930137}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 329337891}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: ShowSliderValue
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SliderValue, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918870043051754, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7774918870053142226, guid: f09b727670717d64c89a07890268b419, type: 3}
+      propertyPath: m_Name
+      value: Music Text
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f09b727670717d64c89a07890268b419, type: 3}
 --- !u!1001 &966088294486012533
