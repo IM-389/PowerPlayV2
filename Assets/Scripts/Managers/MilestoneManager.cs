@@ -51,7 +51,7 @@ public class MilestoneManager : MonoBehaviour
         //List<int> toRemove = new List<int>();
         string text = "";
         bool isComplete = currentMilestones.CheckCompleteMilestone();
-        if (isComplete || Input.GetKeyDown(KeyCode.Y))
+        if (isComplete)
         {
             Debug.Log("Milestone complete, setting next ones!");
             currentMilestones.SetCompleteMilestone();
