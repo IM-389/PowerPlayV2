@@ -11,22 +11,23 @@ public class SoundManager : MonoBehaviour
     FMOD.Studio.Bus Master;
     [Header("Volume Buses")]
     public string masterBus;
-    float masterVolume;
+    float masterVolume = 1f;
 
     FMOD.Studio.Bus Music;
     public string musicBus;
-    float musicVolume;
+    float musicVolume = 1f;
     
 
     FMOD.Studio.Bus SFX;
     public string sfxBus;
-    float sfxVolume;
+    float sfxVolume = 1f;
 
     [Header("Volume Sliders")]
-    //public Slider masterSlider;
+    public Slider masterSlider;
     public Slider musicSlider;
     public Slider sfxSlider;
 
+    public Text masterSliderText;
     public Text musicSliderText;
     public Text sfxSliderText;
 
@@ -50,6 +51,7 @@ public class SoundManager : MonoBehaviour
 
         LoadSettings();
 
+        masterSlider.value = masterVolume * 100;
         musicSlider.value = musicVolume * 100;
         sfxSlider.value = sfxVolume * 100;
         
@@ -59,7 +61,7 @@ public class SoundManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Master.setVolume(masterVolume);
+        Master.setVolume(masterVolume);
         Music.setVolume(musicVolume);
         SFX.setVolume(sfxVolume);
     }
@@ -68,13 +70,11 @@ public class SoundManager : MonoBehaviour
     /// Handles the Master Volume for all sounds
     /// </summary>
     /// <param name="newVolume"></param>
-    // public void MasterVolumeLevel (float newVolume)
-    // {
-    //     masterVolume = newVolume / 100;
-    //     PlayerPrefs.SetFloat("Master Volume", masterVolume);
-    //     PlayerPrefs.Save();
-    //     SetSliderText();
-    // }
+    public void MasterVolumeLevel (float newVolume)
+    {
+        masterVolume = newVolume / 100;
+        SetSliderText();
+    }
 
     /// <summary>
     /// Handles the volume level of all music and backgrounds
@@ -115,12 +115,22 @@ public class SoundManager : MonoBehaviour
     
     void SetSliderText()
     {
+        masterSliderText.text = "Master = " + (Mathf.Round(masterSlider.value)) + "%";
         musicSliderText.text = "Music = " + (Mathf.Round(musicSlider.value)) + "%";
         sfxSliderText.text = "SFX = " + (Mathf.Round(sfxSlider.value)) + "%";
     }
 
     public void LoadSettings()
     {
+        if (PlayerPrefs.HasKey("Master Volume"))
+        {
+            masterVolume = PlayerPrefs.GetFloat("Master Volume");
+        }
+        else
+        {
+            masterVolume = 1f;
+        }
+
         if (PlayerPrefs.HasKey("Music Volume"))
         {
             musicVolume = PlayerPrefs.GetFloat("Music Volume");
@@ -142,9 +152,9 @@ public class SoundManager : MonoBehaviour
 
     public void SaveSettings()
     {
+        PlayerPrefs.SetFloat("Master Volume", masterVolume);
         PlayerPrefs.SetFloat("Music Volume", musicVolume);
         PlayerPrefs.SetFloat("SFX Volume", sfxVolume);
-
     }
 
     private void OnDisable()
