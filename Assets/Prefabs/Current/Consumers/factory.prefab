@@ -219,7 +219,7 @@ MonoBehaviour:
   buildCircle: {fileID: 0}
   isSmart: 0
   unRemovable: 0
-  maxConnections: 0
+  maxConnections: 1
   isMilestoneCounted: 1
   preMadeConnections: []
   connectionCount: 0
