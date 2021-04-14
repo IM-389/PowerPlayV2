@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.01.00">
 	<object class="AudioFile" id="{d821b332-ac2f-47c4-9af0-aead92cffb15}">
 		<property name="assetPath">
-			<value>Backgrounds 2 v2.wav</value>
+			<value>Backgrounds/Backgrounds 2 v2.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>48</value>

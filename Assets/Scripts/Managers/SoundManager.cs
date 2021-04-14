@@ -16,7 +16,6 @@ public class SoundManager : MonoBehaviour
     FMOD.Studio.Bus Music;
     public string musicBus;
     float musicVolume = 1f;
-    
 
     FMOD.Studio.Bus SFX;
     public string sfxBus;
@@ -50,12 +49,12 @@ public class SoundManager : MonoBehaviour
         SFX = RuntimeManager.GetBus(sfxBus);
 
         LoadSettings();
+        SetSliderText();
 
         masterSlider.value = masterVolume * 100;
         musicSlider.value = musicVolume * 100;
         sfxSlider.value = sfxVolume * 100;
         
-        SetSliderText();
     }
 
     // Update is called once per frame
