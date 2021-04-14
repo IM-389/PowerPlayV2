@@ -720,8 +720,23 @@ public class BuildScript : MonoBehaviour
             {
                 if (connect == wireObject2)
                 {
-                    errorBox.SetActive(true);
-                    errorText.text = "Connnection is already made between these objects";
+                    if (wireObject1.tag == "house")
+                    {
+                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
+                    else
+                    {
+                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    }
+                    wireObject1 = wireObject2;
+                    if (wireObject1.tag == "house")
+                    {
+                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                    }
+                    else
+                    {
+                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+                    }
                     return;
                 }
             }
@@ -729,8 +744,23 @@ public class BuildScript : MonoBehaviour
             {
                 if (connect == wireObject2)
                 {
-                    errorBox.SetActive(true);
-                    errorText.text = "Connnection is already made between these objects";
+                    if (wireObject1.tag == "house")
+                    {
+                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+                    }
+                    else
+                    {
+                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+                    }
+                    wireObject1 = wireObject2;
+                    if (wireObject1.tag == "house")
+                    {
+                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+                    }
+                    else
+                    {
+                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+                    }
                     return;
                 }
             }
@@ -755,7 +785,18 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "Too many connections on one object!";
                 return;
             }
-
+            if((wire1.isConsumer && !wire2.isConsumer) && wire1.nonConsumerConnections.Count >= wire1.maxConnections)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Too many connections on one object!";
+                return;
+            }
+            if((wire2.isConsumer && !wire1.isConsumer) && wire2.nonConsumerConnections.Count >= wire2.maxConnections)
+            {
+                errorBox.SetActive(true);
+                errorText.text = "Too many connections on one object!";
+                return;
+            }
             if ((wire1.volts == GeneralObjectScript.Voltage.HIGH && wire2.isConsumer)
                 || wire2.volts == GeneralObjectScript.Voltage.HIGH && wire1.isConsumer)
             {
