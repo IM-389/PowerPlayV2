@@ -370,6 +370,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SlideOutUI, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &545439933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1895,6 +1907,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SlideOutUI, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1969275011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,6 +2061,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: ArrowBehaviour, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2412,6 +2448,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SlideOutUI, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2140394215
 GameObject:
   m_ObjectHideFlags: 0
@@ -2553,6 +2601,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SlideOutUI, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5088,11 +5148,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
---- !u!224 &2620592384010413191 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1215473949636363729, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
-  m_PrefabInstance: {fileID: 3783039069682524502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6719803243618304008 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7620517798493217118, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
@@ -5104,6 +5159,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96638cbfd1feb46448e5101d6eb20486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &2620592384010413191 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1215473949636363729, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
+  m_PrefabInstance: {fileID: 3783039069682524502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4311236389015709478
 PrefabInstance:
   m_ObjectHideFlags: 0

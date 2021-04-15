@@ -109,7 +109,6 @@ public class SoundManager : MonoBehaviour
     public void ButtonClick()
     {
         RuntimeManager.PlayOneShot(buttonPress);
-        PlayerPrefs.Save();
     }
     
     void SetSliderText()
