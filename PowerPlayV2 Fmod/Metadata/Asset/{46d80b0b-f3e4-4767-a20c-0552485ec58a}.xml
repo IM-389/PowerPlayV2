@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.01.00">
+	<object class="EncodableAsset" id="{46d80b0b-f3e4-4767-a20c-0552485ec58a}">
+		<property name="assetPath">
+			<value>Backgrounds/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2e48e2da-21d7-4120-b34f-08794ca31071}</destination>
+		</relationship>
+	</object>
+</objects>

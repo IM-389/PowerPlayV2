@@ -634,7 +634,7 @@
 	</object>
 	<object class="ParameterCondition" id="{50d90b48-dc23-47b2-b991-c52e899b0d57}">
 		<property name="minimum">
-			<value>6</value>
+			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>18</value>
@@ -661,7 +661,7 @@
 	</object>
 	<object class="ParameterCondition" id="{963d2c46-0f68-4f79-9d2d-43f15c5b8a80}">
 		<property name="minimum">
-			<value>6</value>
+			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>18</value>
@@ -685,7 +685,7 @@
 	</object>
 	<object class="ParameterCondition" id="{91857031-35d1-47bd-a53e-8a1aa30fc710}">
 		<property name="minimum">
-			<value>6</value>
+			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>18</value>
@@ -709,7 +709,7 @@
 	</object>
 	<object class="ParameterCondition" id="{703dd286-d19f-47c6-861f-43ee82b14d2a}">
 		<property name="minimum">
-			<value>6</value>
+			<value>8</value>
 		</property>
 		<property name="maximum">
 			<value>18</value>
