@@ -14,6 +14,7 @@ public class GeneralObjectScript : MonoBehaviour
     public float wireLength;
     public string buildingText;
     public bool connected = false;
+    public Material wireMat;
     //public string wireText;
     [FormerlySerializedAs("cost")] [Tooltip("Not used for placing, used for refunding after removal")]
     public int refundAmount;
@@ -179,12 +180,24 @@ public class GeneralObjectScript : MonoBehaviour
         ws.connect1 = this.gameObject;
         ws.connect2 = connection;
         lr.material = new Material(Shader.Find("Sprites/Default"));
-        lr.startColor = color;
-        lr.endColor = color;
-        lr.startWidth = width;
-        lr.endWidth = width;
+        //GetComponent<Renderer>().material = wireMat;
+        lr.startColor = new Color(1, 1, 1, 0);
+        lr.endColor = new Color(1, 1, 1, .9f);
+        lr.startWidth = width * .2f;
+        lr.endWidth = width * .5f;
         lr.SetPosition(0, thisPos);
-        lr.SetPosition(1, connectPos);
+        lr.SetPosition(1, ((thisPos + connectPos) / 2) - new Vector3(0, .05f, 0));
+        lr.SetPosition(2, connectPos);
+        
+        /*
+        AnimationCurve curve = new AnimationCurve();
+        curve.AddKey(0, .2f);
+        curve.AddKey(.1f, .5f);
+        curve.AddKey(.9f, .5f);
+        curve.AddKey(1, .2f);
+        lr.widthCurve = curve;
+        */
+        //gameObject.GetComponent<LineRenderer>().widthCurve = curve;
 
         // Creates box collider to wire
         BoxCollider2D col = new GameObject("Collider").AddComponent<BoxCollider2D>();
