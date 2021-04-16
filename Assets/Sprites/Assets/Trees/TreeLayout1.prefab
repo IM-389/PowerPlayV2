@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 670298437390421311}
   - component: {fileID: 4919436424764764129}
   - component: {fileID: 819002863597625433}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TreeLayout1
   m_TagString: tree
   m_Icon: {fileID: 0}
@@ -112,6 +112,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 670298437390421311}
     m_Modifications:
+    - target: {fileID: 3223226853749106251, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223226854866106391, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3223226855561979130, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -159,6 +167,10 @@ PrefabInstance:
     - target: {fileID: 3223226855561979132, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
       propertyPath: m_Name
       value: TreePref3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223226855561979132, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2458a1598e385ec45946b6cdd06e060a, type: 3}
@@ -227,6 +239,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: TreePref1
       objectReference: {fileID: 0}
+    - target: {fileID: 4923695672199125285, guid: 7d1632ce3eedd8f44a63c78c77981436, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923695672894473678, guid: 7d1632ce3eedd8f44a63c78c77981436, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923695674018290578, guid: 7d1632ce3eedd8f44a63c78c77981436, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d1632ce3eedd8f44a63c78c77981436, type: 3}
 --- !u!1 &2485352002517841298 stripped
@@ -249,6 +273,10 @@ PrefabInstance:
     - target: {fileID: 1825202715349229730, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
       propertyPath: m_Name
       value: TreePref2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825202715349229730, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1825202715349229732, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
       propertyPath: m_RootOrder
@@ -293,6 +321,14 @@ PrefabInstance:
     - target: {fileID: 1825202715349229732, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825202716062153801, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1825202717153976853, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9bfe4a6d82460a43867d4efedb53da7, type: 3}

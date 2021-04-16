@@ -68,7 +68,7 @@ public class HoverScript : MonoBehaviour
             else
             {
                 toShow +=
-                    $"Consuming between {consumerScript.maxConsumption} and {consumerScript.minConsumption} power\n";
+                    $"Consumes between {consumerScript.minConsumption} and {consumerScript.maxConsumption} power\n";
             }
         }
         else if (gos.isGenerator)

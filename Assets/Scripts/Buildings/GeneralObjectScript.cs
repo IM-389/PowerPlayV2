@@ -185,6 +185,7 @@ public class GeneralObjectScript : MonoBehaviour
         lr.endColor = new Color(1, 1, 1, .9f);
         lr.startWidth = width * .2f;
         lr.endWidth = width * .5f;
+        lr.gameObject.layer = 8;
         lr.SetPosition(0, thisPos);
         lr.SetPosition(1, ((thisPos + connectPos) / 2) - new Vector3(0, .05f, 0));
         lr.SetPosition(2, connectPos);
