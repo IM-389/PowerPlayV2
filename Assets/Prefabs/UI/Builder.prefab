@@ -3042,7 +3042,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: Tools
 --- !u!1 &927144056425923331
 GameObject:
   m_ObjectHideFlags: 0
@@ -3316,7 +3316,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Low Power Poles
+  m_text: Power Pole
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5148,6 +5148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
+--- !u!224 &2620592384010413191 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1215473949636363729, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
+  m_PrefabInstance: {fileID: 3783039069682524502}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6719803243618304008 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7620517798493217118, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
@@ -5159,11 +5164,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96638cbfd1feb46448e5101d6eb20486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &2620592384010413191 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 1215473949636363729, guid: 23016eb9f6a20224ab044456cb5c6ef3, type: 3}
-  m_PrefabInstance: {fileID: 3783039069682524502}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4311236389015709478
 PrefabInstance:
   m_ObjectHideFlags: 0
