@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: -6876943426339012747}
   - component: {fileID: 3819171122871918867}
   - component: {fileID: 7168065688421045046}
+  - component: {fileID: 5857085337370895825}
   m_Layer: 0
   m_Name: LVPP prefab
   m_TagString: Power
@@ -190,6 +191,7 @@ MonoBehaviour:
   wireLength: 3.5
   buildingText: Helps you send Low-Voltage Power a long way.
   connected: 0
+  wireMat: {fileID: 0}
   refundAmount: 0
   buyCost: 0
   buildCircle: {fileID: 6811981818816594772}
@@ -283,6 +285,20 @@ MonoBehaviour:
   powerGenerated: 0
   powerConsumed: 0
   hasEnoughPower: 0
+--- !u!114 &5857085337370895825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4459776290939348815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects:
+  - {fileID: 4459776289939229750}
 --- !u!1 &6605184905482117524
 GameObject:
   m_ObjectHideFlags: 0

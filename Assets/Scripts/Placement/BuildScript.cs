@@ -88,7 +88,7 @@ public class BuildScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateSatisfaction();
+        //UpdateSatisfaction();
         // If the mouse is over UI, ignore this function
         if (EventSystem.current.IsPointerOverGameObject())
         {
@@ -238,24 +238,10 @@ public class BuildScript : MonoBehaviour
         // Sets objects back to nulls
         wireObject1.layer = 0;
         wireObject2.layer = 0;
-        if(wireObject1.tag == "house")
-        {
-            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else
-        {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-        }
-        
+        wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
+
         wireObject1 = wireObject2;
-        if (wireObject1.tag == "house")
-        {
-            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-        else
-        {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-        }
+        wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
         wireObject2 = null;
         
     }
@@ -294,14 +280,7 @@ public class BuildScript : MonoBehaviour
         upgradeMode = false;
         if (wireObject1 != null)
         {
-            if (wireObject1.tag == "house")
-            {
-                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else
-            {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            }
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
         }
 
         removalMode = false;
@@ -530,14 +509,7 @@ public class BuildScript : MonoBehaviour
             if (wireObject1 != null)
             {
                 wireObject1.layer = 0;
-                if (wireObject1.tag == "house")
-                {
-                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                }
-                else
-                {
-                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                }
+                wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
             }
             wireObject1 = null;
             return;
@@ -547,14 +519,7 @@ public class BuildScript : MonoBehaviour
         {
             wireObject1 = hit.transform.gameObject;
             wireObject1.layer = 2;
-            if (wireObject1.tag == "house")
-            {
-                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            }
-            else
-            {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            }  
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
         }
 
         // Otherwise it sets the second wire object
@@ -608,23 +573,9 @@ public class BuildScript : MonoBehaviour
                 if (connect == wireObject2)
                 {
                     wireObject1.layer = 0;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
                     wireObject1 = wireObject2;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
             }
@@ -633,23 +584,9 @@ public class BuildScript : MonoBehaviour
                 if (connect == wireObject2)
                 {
                     wireObject1.layer = 0;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
                     wireObject1 = wireObject2;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
             }
@@ -721,7 +658,7 @@ public class BuildScript : MonoBehaviour
             }
             wireObject1.layer = 0;
             wireObject2.layer = 0;
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
             CreateLine();
         }
     }
@@ -772,8 +709,11 @@ public class BuildScript : MonoBehaviour
         }
     }
 
+    // Old satisfaction update
+    /*
     private void UpdateSatisfaction()
     {
+
         //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
         if (trackApproval)
         {
@@ -803,7 +743,7 @@ public class BuildScript : MonoBehaviour
                     {
                         cityApproval.cityApproval -= 10;
                     }
-                    */
+                    //
                 }
 
                 if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
@@ -831,4 +771,5 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
+    */
 }

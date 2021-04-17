@@ -115,6 +115,7 @@ GameObject:
   - component: {fileID: 7553032643689079190}
   - component: {fileID: 6322796380085527213}
   - component: {fileID: 5744325517053779457}
+  - component: {fileID: 6371167446549946006}
   m_Layer: 7
   m_Name: hospital
   m_TagString: hospital
@@ -309,6 +310,7 @@ MonoBehaviour:
   wireLength: 3
   buildingText: Doctors need power to help sick people.
   connected: 0
+  wireMat: {fileID: 0}
   refundAmount: 0
   buyCost: 0
   buildCircle: {fileID: 0}
@@ -624,6 +626,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amountGenerated: 0
   amountConsumed: 0
+--- !u!114 &6371167446549946006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2878062338142282520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects:
+  - {fileID: 2878062338142282520}
 --- !u!1 &4864552276357145745
 GameObject:
   m_ObjectHideFlags: 0

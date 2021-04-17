@@ -6215,6 +6215,7 @@ GameObject:
   - component: {fileID: -8458922824595951122}
   - component: {fileID: 8949452604914509501}
   - component: {fileID: 1203347081602024362}
+  - component: {fileID: 2122029864960458248}
   m_Layer: 0
   m_Name: Windmill
   m_TagString: Generator
@@ -6298,6 +6299,7 @@ MonoBehaviour:
   buildingText: Makes okay power. Sometimes the power made is low. It makes no dirty
     air.
   connected: 0
+  wireMat: {fileID: 0}
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 8939545911215852518}
@@ -6381,6 +6383,24 @@ MonoBehaviour:
   upkeepCost: 0
   farmSize: {x: 12, y: 12}
   windmillMultiplier: 2
+--- !u!114 &2122029864960458248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7366105119603548861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects:
+  - {fileID: 930299439334590020}
+  - {fileID: 5577478353369266888}
+  - {fileID: 5184350370002318212}
+  - {fileID: 9133494519543955087}
+  - {fileID: 801629860}
 --- !u!1 &8270644862673355695
 GameObject:
   m_ObjectHideFlags: 0
