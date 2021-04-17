@@ -40,7 +40,7 @@ public class BuildingTheSmartGrid : MilestoneBase
         }
 
         // If enough houses are powered, start the week-long cooldown
-        if (poweredHouses.Count >= 29)
+        if (poweredHouses.Count >= 30)
         {
             startCountdown = true;
         }

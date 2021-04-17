@@ -33,6 +33,6 @@ public class BranchingOut : MilestoneBase
             }
         }
         
-        return substations.Length >= 2 && poweredHouses >= 9;
+        return substations.Length >= 2 && poweredHouses >= 10;
     }
 }
