@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7781973340629442645}
   - component: {fileID: -8021645519560125708}
   - component: {fileID: -2601394823961240912}
+  - component: {fileID: 4520991485330122047}
   m_Layer: 0
   m_Name: SolarPanelBuilt
   m_TagString: Generator
@@ -88,6 +89,7 @@ MonoBehaviour:
   wireLength: 5
   buildingText: Makes less power. Does not work at night. It makes no dirty air.
   connected: 0
+  wireMat: {fileID: 0}
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 3125414001668101589}
@@ -189,6 +191,19 @@ MonoBehaviour:
   type: 2
   upkeepCost: 0
   upgradePowerAmount: 12
+--- !u!114 &4520991485330122047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007116474896301567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563e2bac2d4dda246aa49db2b66d24c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  childLight: {fileID: 6760464381216673711}
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,7 +256,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -765,6 +780,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bbd7722bf804d4e8d7d3b1bc42f83d, type: 3}
+--- !u!1 &6760464381216673711 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3691427570609482737, guid: 39bbd7722bf804d4e8d7d3b1bc42f83d, type: 3}
+  m_PrefabInstance: {fileID: 7992599989456675934}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6760464381216673706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3691427570609482740, guid: 39bbd7722bf804d4e8d7d3b1bc42f83d, type: 3}
