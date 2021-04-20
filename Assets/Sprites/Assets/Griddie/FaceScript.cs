@@ -34,7 +34,8 @@ public class FaceScript : MonoBehaviour
     {
         if(switchFaces == true)
         {
-            anim.Play("FaceSwap");
+            SwitchFace();
+            //anim.Play("FaceSwap");
             switchFaces = false;
         }
     }

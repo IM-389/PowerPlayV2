@@ -8,18 +8,60 @@ namespace Milestones
     {
         [Tooltip("How many solars need to be upgraded to complete the milestone")]
         public int numToComplete = 5;
-        
-        private PowerManager powerManager;
+
+        private int turbineStart;
 
         private void Start()
         {
-            powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
+            GeneratorScript[] allGenerators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            foreach (var generator in allGenerators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_WIND)
+                {
+                    ++turbineStart;
+                }
+            }
         }
         
         
         public override bool CheckCompleteMilestone()
         {
-            return powerManager.powerAmountsGenerated[3] >= 150;
+            GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
+            GameObject[] allHospitals = GameObject.FindGameObjectsWithTag("hospital");
+
+            int poweredFactories = 0;
+            int poweredHospitals = 0;
+
+            foreach (var factory in allFactories)
+            {
+                if (factory.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
+                {
+                    ++poweredFactories;
+                }
+            }
+
+            foreach (var hospital in allHospitals)
+            {
+                if (hospital.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
+                {
+                    ++poweredHospitals;
+                }
+            }
+
+            GeneratorScript[] allGenerators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            int turbines = 0;
+
+            foreach (var generator in allGenerators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_WIND)
+                {
+                    ++turbines;
+                }
+            }
+
+            return (poweredFactories > 1 && poweredHospitals > 1) && (turbines >= (turbineStart + numToComplete));
         }
         
         public override void SetCompleteMilestone()
