@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 7781973340629442645}
   - component: {fileID: -8021645519560125708}
   - component: {fileID: -2601394823961240912}
+  - component: {fileID: 637120155915579307}
   m_Layer: 0
   m_Name: SolarPanelBuilt
   m_TagString: Generator
@@ -88,6 +89,7 @@ MonoBehaviour:
   wireLength: 5
   buildingText: Makes less power. Does not work at night. It makes no dirty air.
   connected: 0
+  wireMat: {fileID: 0}
   refundAmount: 5
   buyCost: 0
   buildCircle: {fileID: 3125414001668101589}
@@ -189,6 +191,20 @@ MonoBehaviour:
   type: 2
   upkeepCost: 0
   upgradePowerAmount: 12
+--- !u!114 &637120155915579307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007116474896301567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects:
+  - {fileID: 1007116475714797852}
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0

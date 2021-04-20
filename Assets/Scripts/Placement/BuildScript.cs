@@ -50,9 +50,6 @@ public class BuildScript : MonoBehaviour
     [Tooltip("If the player is in removal mode")]
     public bool removalMode;
 
-    [Tooltip("Dropdown used for selecting objects")]
-    public TMP_Dropdown selection;
-
     [Tooltip("Text used for displaying information about the selected object")]
     public Text selectedTooltipText;
 
@@ -91,7 +88,7 @@ public class BuildScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateSatisfaction();
+        //UpdateSatisfaction();
         // If the mouse is over UI, ignore this function
         if (EventSystem.current.IsPointerOverGameObject())
         {
@@ -174,14 +171,6 @@ public class BuildScript : MonoBehaviour
                             totalCoalPlaced++;
                             //check if day has finished, like in ConsumerScript, then do calculation for % of dirty vs clean-be sure to tell doug so he can help with milestone part
                         }
-                        /*
-                        else if(selectedBuilding.CompareTag("gas"))
-                        {
-                            totalBuildingsPlaced++;
-                            totalDirtyPowerPlaced++;
-                            totalGasPlaced++;
-                        }
-                        */
                         else if (selectedBuilding.CompareTag("solar"))
                         {
                             totalBuildingsPlaced++;
@@ -201,25 +190,6 @@ public class BuildScript : MonoBehaviour
                     hitPoints.Clear();
                 }
             }
-            // Old boxcast code
-            /*
-            RaycastHit2D hit;
-            hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-            RaycastHit2D boxHit;
-            boxHit = Physics2D.BoxCast(mouseWorldPos, placeable.dimensions, 0f, Vector2.zero, 0, 1 << LayerMask.NameToLayer("Placeable"));
-            Debug.Log("Hit: " + hit.transform.name);
-            if (boxHit.transform != null)
-                Debug.Log("BoxHit: " + boxHit.transform.name);
-            // If the raycast hit the background, then the cursor is over the background 
-            if (hit.transform.CompareTag("Background") && boxHit.transform is null)
-            {
-                Vector2 spawnPoint = RoundVector(hit.point);
-                GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
-                Vector3 newPos = spawned.transform.position;
-                newPos.z = -1;
-                spawned.transform.position = newPos;
-            }
-            */
 
         }
         
@@ -231,23 +201,6 @@ public class BuildScript : MonoBehaviour
             //Debug.Log(hitPt.transform.name);
             hover.UpdateTooltip();
             hover.ToggleBuildCircle(true);
-            // If the player clicked on the object
-            /*
-            if (Input.GetMouseButtonDown(0))
-            {
-                // If they clicked on a consumer, make it smart
-                // TODO: Tie a cost to this
-                if (upgradeMode && hover.CompareTag("house") || hover.CompareTag("hospital") || hover.CompareTag("factory") || hover.CompareTag("Generator"))
-                {
-                    hover.GetComponent<GeneralObjectScript>().isSmart = true;
-                    hover.transform.GetChild(5).gameObject.SetActive(true);
-                    if (hover.CompareTag("Generator"))
-                    {
-                        hover.GetComponent<GeneratorScript>().DoUpgrade();
-                    }
-                }
-            }
-            */
         }
         else
         {
@@ -282,68 +235,13 @@ public class BuildScript : MonoBehaviour
             wire2.AddNonConsumerConnection(wireObject1);
         }
         
-        /*
-        if (wire1.volts == GeneralObjectScript.Voltage.LOW && (!wire2.isConsumer))
-        {
-            wire1.AddLVConnection(wireObject2);
-        }
-        else if(wire1.volts == GeneralObjectScript.Voltage.LOW && wire2.isConsumer)
-        {
-            wire1.AddConsumerConnection(wireObject2);
-        }
-        else
-        {
-            if ((wire1.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
-                wire2.volts == GeneralObjectScript.Voltage.HIGH) || wire1.volts == GeneralObjectScript.Voltage.HIGH)
-            {
-                wire1.AddNonConsumerConnection(wireObject2);
-            }
-            else
-            {
-                wire1.AddLVConnection(wireObject2);
-            }
-        }
-        // Adds connection from wire 2 to wire 1
-        if (wire2.volts == GeneralObjectScript.Voltage.LOW && (!wire1.isConsumer))
-        {
-            wire2.AddLVConnection(wireObject1);
-        }
-        else if (wire2.volts == GeneralObjectScript.Voltage.LOW && wire1.isConsumer)
-        {
-            wire2.AddConsumerConnection(wireObject1);
-        }
-        else
-        {
-            if ((wire2.volts == GeneralObjectScript.Voltage.TRANSFORMER &&
-                wire1.volts == GeneralObjectScript.Voltage.HIGH) || wire2.volts == GeneralObjectScript.Voltage.HIGH)
-            {
-                wire2.AddNonConsumerConnection(wireObject1);
-            }
-            else
-            {
-                wire2.AddLVConnection(wireObject1);
-            }
-        }
-        */
-        // Sets objects back to null
-        if(wireObject1.tag == "house")
-        {
-            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        }
-        else
-        {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-        }
-        
+        // Sets objects back to nulls
+        wireObject1.layer = 0;
+        wireObject2.layer = 0;
+        wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
+
         wireObject1 = wireObject2;
-        if (wireObject1.tag == "house")
-        {
-            wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-        }
-        else
-        {
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-        }
+        wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
         wireObject2 = null;
         
     }
@@ -354,25 +252,6 @@ public class BuildScript : MonoBehaviour
         return vec;
     }
 
-    /// <summary>
-    /// Used to load the dropdown with the correct objects
-    /// </summary>
-    public void SetupDropdown()
-    {
-        selection.ClearOptions();
-        List<string> dropdownOptions = new List<string>();
-        dropdownOptions.Add("--SELECT TOOL--");
-        foreach (var building in spawnableBuildings)
-        {
-            dropdownOptions.Add(building.GetComponent<PlaceableScript>().buildingName);
-        }
-        dropdownOptions.Add("Wire Mode");
-        dropdownOptions.Add("Upgrade Mode");
-        dropdownOptions.Add("Removal Mode");
-        selection.AddOptions(dropdownOptions);
-        selection.RefreshShownValue();
-    }
-    
     public void SelectUpgradeMode()
     {
         DeselectWireMode();
@@ -401,14 +280,7 @@ public class BuildScript : MonoBehaviour
         upgradeMode = false;
         if (wireObject1 != null)
         {
-            if (wireObject1.tag == "house")
-            {
-                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-            }
-            else
-            {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-            }
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
         }
 
         removalMode = false;
@@ -567,7 +439,7 @@ public class BuildScript : MonoBehaviour
     public void UpdateSelection()
     {
         // Get the value of the dropdown
-        int selected = selection.value - 1;
+        int selected = 0;// selection.value - 1;
         //Strings for item tooltips. We can futz with the exact text later
     
         // If the value is somewhere in the spawnable buildings list, then select that building
@@ -636,14 +508,8 @@ public class BuildScript : MonoBehaviour
         {
             if (wireObject1 != null)
             {
-                if (wireObject1.tag == "house")
-                {
-                    wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                }
-                else
-                {
-                    wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                }
+                wireObject1.layer = 0;
+                wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
             }
             wireObject1 = null;
             return;
@@ -652,14 +518,8 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 == null)
         {
             wireObject1 = hit.transform.gameObject;
-            if (wireObject1.tag == "house")
-            {
-                wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-            }
-            else
-            {
-                wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-            }  
+            wireObject1.layer = 2;
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
         }
 
         // Otherwise it sets the second wire object
@@ -669,8 +529,9 @@ public class BuildScript : MonoBehaviour
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
-                //errorBox.SetActive(true);
-                //errorText.text = "You can't click the same object twice";
+                errorBox.SetActive(true);
+                errorText.text = "You can't click the same object twice";
+                /*
                 if (wireObject1.tag == "house")
                 {
                     wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
@@ -682,27 +543,18 @@ public class BuildScript : MonoBehaviour
 
                 wireObject1 = null;
                 wireObject2 = null;
+                */
                 return;
             }
-            Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
-            Debug.Log(offset);
-            float hypotenuse = Mathf.Sqrt( Mathf.Pow(Mathf.Abs(offset.x), 2) + Mathf.Pow(Mathf.Abs(offset.y),2));
-            Debug.Log(hypotenuse);
+            //Vector3 offset = wireObject1.transform.position - wireObject2.transform.position;
+            //Debug.Log(offset);
+            //float hypotenuse = Mathf.Sqrt( Mathf.Pow(Mathf.Abs(offset.x), 2) + Mathf.Pow(Mathf.Abs(offset.y),2));
+            //Debug.Log(hypotenuse);
             //tooltipWire += "Joins buildings to give electricity to each other.";
 
             GeneralObjectScript wire1 = wireObject1.GetComponent<GeneralObjectScript>();
             GeneralObjectScript wire2 = wireObject2.GetComponent<GeneralObjectScript>();
-
-            //Debug.Log(wire1.connections.Count);
-            //Debug.Log(wire2.connections.Count);
-
-            // Can't create a line longer than the wire length
-            if(wire1.wireLength < hypotenuse)
-            {
-                errorBox.SetActive(true);
-                errorText.text = "Wire cannot reach object";
-                return;
-            }
+            
 
             // Checks and sees if connection is already made between both objects
             /*
@@ -720,23 +572,10 @@ public class BuildScript : MonoBehaviour
             {
                 if (connect == wireObject2)
                 {
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    }
+                    wireObject1.layer = 0;
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
                     wireObject1 = wireObject2;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
             }
@@ -744,35 +583,44 @@ public class BuildScript : MonoBehaviour
             {
                 if (connect == wireObject2)
                 {
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-                    }
+                    wireObject1.layer = 0;
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
                     wireObject1 = wireObject2;
-                    if (wireObject1.tag == "house")
-                    {
-                        wireObject1.transform.GetChild(4).gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
-                    }
-                    else
-                    {
-                        wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
-                    }
+                    wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
+                    return;
+                }
+            }
+            
+            wireObject2.layer = 11;
+            LayerMask searchingMask = 1 << 11;
+            RaycastHit2D hit2d = Physics2D.Linecast(wire1.transform.position, wire2.transform.position, searchingMask);
+
+            if (hit2d.collider != null)
+            {
+                Debug.Log($"Hit {hit2d.transform.name}", hit2d.transform.gameObject);
+                Vector2 offset = (Vector2)wire1.transform.position - hit2d.point;
+                float sqrHypotenuse = offset.sqrMagnitude;
+                float sqrLength = wire1.wireLength * wire1.wireLength;
+                // Can't create a line longer than the wire length
+                if (sqrLength < sqrHypotenuse)
+                {
+                    errorBox.SetActive(true);
+                    errorText.text = "Wire cannot reach object";
+                    wireObject2.layer = 0;
                     return;
                 }
             }
             
             if((wireObject1.CompareTag("Substation") && wire2.isConsumer) || (wire1.isConsumer && wireObject2.CompareTag("Substation")))
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "Cannot connect substation to a consumer";
                 return;
             }
             if(wire1.isConsumer && wire2.isConsumer)
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "Cannot create a connection between consumers";
                 return;
@@ -781,18 +629,21 @@ public class BuildScript : MonoBehaviour
             // connections to consumers don't count towards the limit
             if (!(wire1.isConsumer || wire2.isConsumer) && (wire1.nonConsumerConnections.Count >= wire1.maxConnections || wire2.nonConsumerConnections.Count >= wire2.maxConnections))
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "Too many connections on one object!";
                 return;
             }
             if((wire1.isConsumer && !wire2.isConsumer) && wire1.nonConsumerConnections.Count >= wire1.maxConnections)
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "Too many connections on one object!";
                 return;
             }
             if((wire2.isConsumer && !wire1.isConsumer) && wire2.nonConsumerConnections.Count >= wire2.maxConnections)
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "Too many connections on one object!";
                 return;
@@ -800,12 +651,14 @@ public class BuildScript : MonoBehaviour
             if ((wire1.volts == GeneralObjectScript.Voltage.HIGH && wire2.isConsumer)
                 || wire2.volts == GeneralObjectScript.Voltage.HIGH && wire1.isConsumer)
             {
+                wireObject2.layer = 0;
                 errorBox.SetActive(true);
                 errorText.text = "You cannot connect this generator directly to a consumer!";
                 return;
             }
-            
-            wireObject1.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            wireObject1.layer = 0;
+            wireObject2.layer = 0;
+            wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
             CreateLine();
         }
     }
@@ -856,8 +709,11 @@ public class BuildScript : MonoBehaviour
         }
     }
 
+    // Old satisfaction update
+    /*
     private void UpdateSatisfaction()
     {
+
         //do math calculations for % amount of each and check if day ends. kinda scuff, but should work
         if (trackApproval)
         {
@@ -887,7 +743,7 @@ public class BuildScript : MonoBehaviour
                     {
                         cityApproval.cityApproval -= 10;
                     }
-                    */
+                    //
                 }
 
                 if (totalCleanPowerPlaced / totalBuildingsPlaced >= 1)
@@ -915,4 +771,5 @@ public class BuildScript : MonoBehaviour
             }
         }
     }
+    */
 }
