@@ -6,20 +6,41 @@ namespace Milestones
 {
     public class SunsTheLimit : MilestoneBase
     {
-        [Tooltip("How many solars need to be upgraded to complete the milestone")]
+        [Tooltip("How many solars need to be placed to complete the milestone")]
         public int numToComplete = 5;
 
-        private PowerManager powerManager;
+        private int currentSolars;
 
         private void Start()
         {
-            powerManager = GameObject.FindWithTag("GameController").GetComponent<PowerManager>();
+            GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            foreach (var generator in generators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_SOLAR)
+                {
+                    ++currentSolars;
+                }
+                
+            }
         }
-        
-        
+
+
         public override bool CheckCompleteMilestone()
         {
-            return powerManager.powerAmountsGenerated[2] >= 150;
+            GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
+
+            int solars = 0;
+            
+            foreach (var generator in generators)
+            {
+                if (generator.type == PowerManager.POWER_TYPES.TYPE_SOLAR)
+                {
+                    ++solars;
+                }
+            }
+
+            return solars >= (currentSolars + numToComplete);
         }
 
         public override void SetCompleteMilestone()
