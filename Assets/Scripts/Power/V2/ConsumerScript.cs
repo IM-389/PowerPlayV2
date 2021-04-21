@@ -31,6 +31,11 @@ namespace Power.V2
 
         bool isPowered = false;
 
+        // House: 1 Hospital: 20 Factory: 10
+        public int approvalIncrease;
+        // House: 3 Hospital: 35 Factory: 15
+        public int approvalDecrease;
+
         public float maxConsumption = -1;
         public float minConsumption = Int32.MaxValue;
         private void Start()
@@ -126,46 +131,21 @@ namespace Power.V2
                 {
                     if (!isPowered)
                     {
-                        if (gameObject.CompareTag("house"))
-                        {
-                            timeManager.cityApproval -= 3;
-                            Debug.Log("A house isn't powered. -3 CitySat");
-                        }
-                        else if (gameObject.CompareTag("hospital"))
-                        {
-                            timeManager.cityApproval -= 35;
-                            Debug.Log("A hospital isn't powered. -35 CitySat");
-                        }
-                        else if (gameObject.CompareTag("factory"))
-                        {
-                            timeManager.cityApproval -= 15;
-                            Debug.Log("A factory isn't powered. -15 CitySat");
-                        }
+                        timeManager.DecreaseCitySat(approvalDecrease);
                     }
                     else
                     {
-                        if (gameObject.CompareTag("house"))
-                        {
-                            timeManager.cityApproval += 1;
-                        }
-                        else if (gameObject.CompareTag("hospital"))
-                        {
-                            timeManager.cityApproval += 20;
-                        }
-                        else if (gameObject.CompareTag("factory"))
-                        {
-                            timeManager.cityApproval += 10;
-                        }
+                        timeManager.IncreaseCitySat(approvalIncrease);
                     }
                     if(!check && consumingHouses/totalHouses >= 1)
                     {
-                        timeManager.cityApproval += 25;
+                        timeManager.IncreaseCitySat(25);
                         Debug.Log("Congrats, all of your consumers are powered");
                         check = true;
                     }
                     else if(!check && consumingHouses / totalHouses >= 0.5)
                     {
-                        timeManager.cityApproval += 10;
+                        timeManager.IncreaseCitySat(10);
                         Debug.Log("Congrats, half or more of your consumers are powered");
                         check = true;
                     }
@@ -178,8 +158,6 @@ namespace Power.V2
         public void TrackApproval()
         {
             approvalTracking = true;
-            
-            
         }
         public NetworkManager GetManager()
         {

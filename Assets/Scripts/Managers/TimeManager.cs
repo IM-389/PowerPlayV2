@@ -16,7 +16,11 @@ public class TimeManager : MonoBehaviour
     public float timeStep;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
-    public int cityApproval = 100;//Note: we've also got this
+
+    public int maxApproval = 100;
+    public int minApproval = 0;
+    public int cityApproval = 50;//Note: we've also got this
+
     public int days = 1;
     public bool isDay = true;
     public Text clock;
@@ -61,7 +65,7 @@ public class TimeManager : MonoBehaviour
         //Debug.Log("Start happened");
         //Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
-
+        citySat.text = "City Satisfaction: " + cityApproval;
         // Finding and Starting the Event
         backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
         backgrounds1.start();
@@ -121,6 +125,23 @@ public class TimeManager : MonoBehaviour
         backgrounds1.setParameterByName("Time Of Day", hours);
         backgrounds2.setParameterByName("Time Of Day", hours);
         
+    }
+    public void IncreaseCitySat(int modifier)
+    {
+        cityApproval += modifier;
+        if (cityApproval > maxApproval)
+        {
+            cityApproval = maxApproval;
+        }
+        citySat.text = "City Satisfaction: " + cityApproval;
+    }
+    public void DecreaseCitySat(int modifier)
+    {
+        cityApproval -= modifier;
+        if(cityApproval < minApproval)
+        {
+            cityApproval = minApproval;
+        }
         citySat.text = "City Satisfaction: " + cityApproval;
     }
 
