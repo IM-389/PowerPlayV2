@@ -20,9 +20,6 @@ public class DialogueBehaviour : MonoBehaviour
     public BoxCollider2D pauseBlocker;
 
     public GameObject arrow;
-
-    public GameObject popOut;
-    public SlideOutUI po;
     
     // Reference to location of sound
     [FMODUnity.EventRef]
@@ -34,14 +31,12 @@ public class DialogueBehaviour : MonoBehaviour
         gm = GameObject.FindObjectOfType<GameManager>();
         sc = GameObject.FindObjectOfType<SceneController>();
         st = GameObject.FindObjectOfType<StoryTelling>();
-        po = popOut.GetComponent<SlideOutUI>();
         // Ugly method of getting the correct animator
         //griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
-        po.UpdateSlideOutUI(false);
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
 
