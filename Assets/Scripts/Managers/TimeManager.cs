@@ -94,10 +94,6 @@ public class TimeManager : MonoBehaviour
             Time.timeScale = 0;
             resume = 0;
         }
-        else
-        {
-            Time.timeScale = 1;
-        }
     }
     
     // Update is called once per frame

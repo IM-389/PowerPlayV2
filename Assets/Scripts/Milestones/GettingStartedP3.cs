@@ -15,6 +15,10 @@ namespace Milestones
         
         public override bool CheckCompleteMilestone()
         {
+            if (!targetPole)
+            {
+                return true;
+            }
             Vector2 targetScreenPos = mainCam.WorldToScreenPoint(targetPole.transform.position);
             Vector2 targetViewportPos = mainCam.ScreenToViewportPoint(targetScreenPos);
 
