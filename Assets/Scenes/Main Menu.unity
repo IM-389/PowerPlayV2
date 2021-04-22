@@ -5133,7 +5133,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: e93d45f1d1b14bf46acf6b0716af09ea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5868,6 +5868,10 @@ PrefabInstance:
       propertyPath: m_Parameters.widthMultiplier
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 966088293264550615, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3842447526435992641, guid: 1ec4fc379af79624593d181d7eeadd6a, type: 3}
       propertyPath: m_Parameters.widthMultiplier
       value: 2.3
@@ -6370,6 +6374,10 @@ PrefabInstance:
       value: WindParticles
       objectReference: {fileID: 0}
     - target: {fileID: 3340427072384275412, guid: db608f213499166459407f68c17ea106, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340427072384275412, guid: db608f213499166459407f68c17ea106, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
@@ -6513,6 +6521,18 @@ PrefabInstance:
     - target: {fileID: 8138366193326261397, guid: 334607670aaa61043a0a85432babaedd, type: 3}
       propertyPath: m_Name
       value: Title Text (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891741, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 125.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891741, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 92.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891742, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334607670aaa61043a0a85432babaedd, type: 3}
