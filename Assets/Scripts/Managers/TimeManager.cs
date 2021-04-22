@@ -31,6 +31,12 @@ public class TimeManager : MonoBehaviour
     //Accesses the FMOD Event
     [Tooltip("The location of the sound")]
     [FMODUnity.EventRef]
+    public string ambienceReference;
+    public static FMOD.Studio.EventInstance ambience;
+
+    //Accesses the FMOD Event
+    [Tooltip("The location of the sound")]
+    [FMODUnity.EventRef]
     public string backgroundReference1;
     public static FMOD.Studio.EventInstance backgrounds1;
 
@@ -62,6 +68,9 @@ public class TimeManager : MonoBehaviour
         // Finding and Starting the Event
         backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
         backgrounds1.start();
+
+        ambience = FMODUnity.RuntimeManager.CreateInstance(ambienceReference);
+        ambience.start();
 
         globalLight.intensity = 0.4375f;
     }
@@ -102,6 +111,7 @@ public class TimeManager : MonoBehaviour
         //Changing the music based on TOD
         backgrounds1.setParameterByName("Time Of Day", hours);
         backgrounds2.setParameterByName("Time Of Day", hours);
+        ambience.setParameterByName("Time of Day", hours);
         
         citySat.text = "City Satisfaction: " + cityApproval;
     }

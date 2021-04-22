@@ -473,7 +473,7 @@ public class BuildScript : MonoBehaviour
             //tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
             
             
-          
+
             selectedTooltipText.text = tooltipInfo;
         }
         else
@@ -520,12 +520,14 @@ public class BuildScript : MonoBehaviour
             wireObject1 = hit.transform.gameObject;
             wireObject1.layer = 2;
             wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
         }
 
         // Otherwise it sets the second wire object
         else
         {
             wireObject2 = hit.transform.gameObject;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
@@ -578,6 +580,7 @@ public class BuildScript : MonoBehaviour
                     wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             }
             foreach (GameObject connect in wire1.consumerConnections)
             {
@@ -589,6 +592,7 @@ public class BuildScript : MonoBehaviour
                     wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             }
             
             wireObject2.layer = 11;
