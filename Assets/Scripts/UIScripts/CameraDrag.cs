@@ -55,7 +55,7 @@ public class CameraDrag : MonoBehaviour
         newPos.y = Mathf.Clamp(newPos.y, minCameraPos.y, maxCameraPos.y);
         camera.transform.position = newPos; */
         camera.transform.position = ClampCamera(camera.transform.position);
-        if (Input.mouseScrollDelta.y > 0.5f && camera.orthographicSize > minZoom)
+        if ((Input.mouseScrollDelta.y > 0.5f || Input.GetKeyDown(zoomIn)) && camera.orthographicSize > minZoom)
         {
             camera.orthographicSize -= 1;
             Griddie.transform.localScale -= new Vector3(0.14f, 0.14f);
@@ -66,7 +66,7 @@ public class CameraDrag : MonoBehaviour
             Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
             //am.dis -= 0.14f;
         }
-        else if (Input.mouseScrollDelta.y <= -0.5f && camera.orthographicSize < maxZoom)
+        else if ((Input.mouseScrollDelta.y <= -0.5f || Input.GetKeyDown(zoomOut)) && camera.orthographicSize < maxZoom)
         {
             camera.orthographicSize += 1;
             Griddie.transform.localScale += new Vector3(0.14f, 0.14f);
