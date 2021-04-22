@@ -19,6 +19,8 @@ public class DialogueBehaviour : MonoBehaviour
     public Animator griddyAnim;
     public BoxCollider2D pauseBlocker;
 
+    public float previousTimeScale = 0;
+
     public GameObject arrow;
 
     public GameObject popOut;
@@ -35,12 +37,14 @@ public class DialogueBehaviour : MonoBehaviour
         sc = GameObject.FindObjectOfType<SceneController>();
         st = GameObject.FindObjectOfType<StoryTelling>();
         po = popOut.GetComponent<SlideOutUI>();
+        
         // Ugly method of getting the correct animator
         //griddyAnim = griddy.transform.GetChild(0).GetChild(0).GetComponent<Animator>();
     }
 
     public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
+        previousTimeScale = Time.timeScale;
         po.UpdateSlideOutUI(false);
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
@@ -80,7 +84,7 @@ public class DialogueBehaviour : MonoBehaviour
                 griddyAnim.SetBool("leaving", true);
                 pauseBlocker.enabled = false;
                 StartCoroutine(HideGriddy());
-                Time.timeScale = 1;
+                Time.timeScale = previousTimeScale;
             }
 
             return;
