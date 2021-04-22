@@ -10,18 +10,34 @@ public class BuildingTheSmartGrid : MilestoneBase
 
     private TimeManager timeManager;
 
+    private PowerManager powerManager;
+    
     private List<GameObject> poweredHouses = new List<GameObject>();
 
+    [Tooltip("How much power beyond the amount the milestone starts at is required")]
+    public float requiredPower;
+    
     public Text daysLeft;
+
+    private float startPower;
+
+    private bool cachedPower = false;
     
     private bool startCountdown = false;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+        powerManager = GameObject.FindObjectOfType<PowerManager>();
     }
     
     public override bool CheckCompleteMilestone()
     {
+        if (!cachedPower)
+        {
+            startPower = powerManager.GetTotalAmountGenerated();
+            cachedPower = true;
+        }
+        
         GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
         foreach (var house in allHouses)
@@ -56,7 +72,7 @@ public class BuildingTheSmartGrid : MilestoneBase
             // Count the days elapsed
             daysElapsed = timeManager.days - startDay;
             daysLeft.text = "Days all houses powered: " + daysElapsed;
-            return daysElapsed >= 1;
+            return daysElapsed >= 1 && powerManager.GetTotalAmountGenerated() >= (startPower + requiredPower);
         }
 
         return false;

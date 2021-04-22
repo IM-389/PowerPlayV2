@@ -34,6 +34,6 @@ public class GoingGreen : MilestoneBase
             }
         }
 
-        return poweredHouses >= 23;
+        return poweredHouses >= 45;
     }
 }

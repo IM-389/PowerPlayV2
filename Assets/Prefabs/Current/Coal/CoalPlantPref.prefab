@@ -381,7 +381,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorableObjects: []
+  colorableObjects:
+  - {fileID: 7206924124661936608}
 --- !u!1 &7206924125870641257
 GameObject:
   m_ObjectHideFlags: 0
