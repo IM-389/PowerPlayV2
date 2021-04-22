@@ -124,75 +124,86 @@ public class BuildScript : MonoBehaviour
             {
                 wireObject1 = null;
                 wireObject2 = null;
-                PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
-
-                bool blocked = false;
-                if (moneyManager.money >= placeable.cost)
+                if (selectedBuilding != null)
                 {
-                    Debug.Log("under money > placeablecost");
-                    RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero, Mathf.Infinity, layerMask);
-                    Debug.Log(origin.transform.gameObject.layer);
-                    Debug.Log(origin.transform.tag);
-                    // Raycasts  many dimensions depending on the object
-                    for (int i = 0; i > -placeable.dimensions.x; i--)
-                    {
-                        for (int j = 0; j < placeable.dimensions.y; j++)
-                        {
-                            RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero, Mathf.Infinity, layerMask);
-                            hitPoints.Add(hitPoint);
-                        }
-                    }
-                    // Checks the list to make sure each raycast is hitting the background
-                    foreach (RaycastHit2D hitPoint in hitPoints)
-                    {
-                        if (!hitPoint.transform.CompareTag("Background"))
-                        {
-                            blocked = true;
-                        }
-                    }
-                    // If the raycast isn't blocked by a building, then place the building
-                    if (!blocked)
-                    {
-                        Vector2 spawnPoint = RoundVector(origin.point);
-                        spawnPoint -= selectedBuilding.GetComponent<PlaceableScript>().positionOffset;
-                        //Debug.Log(spawnPoint);
-                        GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
-                        Vector3 newPos = spawned.transform.position;
-                        FMODUnity.RuntimeManager.PlayOneShot(placeSound);
-                        // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
-                        newPos.z = -1;
-                        spawned.transform.position = newPos;
-                        moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
+                    PlaceableScript placeable = selectedBuilding.GetComponent<PlaceableScript>();
 
-                        if (selectedBuilding.CompareTag("coal"))
+                    bool blocked = false;
+                    if (moneyManager.money >= placeable.cost)
+                    {
+                        Debug.Log("under money > placeablecost");
+                        RaycastHit2D origin = Physics2D.Raycast(mouseWorldPosRounded, Vector2.zero, Mathf.Infinity, layerMask);
+                        Debug.Log(origin.transform.gameObject.layer);
+                        Debug.Log(origin.transform.tag);
+                        // Raycasts  many dimensions depending on the object
+                        for (int i = 0; i > -placeable.dimensions.x; i--)
                         {
-                            totalBuildingsPlaced++;
-                            totalDirtyPowerPlaced++;
-                            totalCoalPlaced++;
-                            //check if day has finished, like in ConsumerScript, then do calculation for % of dirty vs clean-be sure to tell doug so he can help with milestone part
+                            for (int j = 0; j < placeable.dimensions.y; j++)
+                            {
+                                RaycastHit2D hitPoint = Physics2D.Raycast(mouseWorldPosRounded + new Vector2(i, j), Vector2.zero, Mathf.Infinity, layerMask);
+                                hitPoints.Add(hitPoint);
+                            }
                         }
-                        else if (selectedBuilding.CompareTag("solar"))
+                        // Checks the list to make sure each raycast is hitting the background
+                        foreach (RaycastHit2D hitPoint in hitPoints)
                         {
-                            totalBuildingsPlaced++;
-                            totalCleanPowerPlaced++;
-                            totalSolarPlaced++;
+                            if (!hitPoint.transform.CompareTag("Background"))
+                            {
+                                blocked = true;
+                            }
                         }
-                        else if (selectedBuilding.CompareTag("turbine"))
+                        // If the raycast isn't blocked by a building, then place the building
+                        if (!blocked)
                         {
-                            totalBuildingsPlaced++;
-                            totalCleanPowerPlaced++;
-                            totalWindmillPlaced++;
-                        }
-                    }
+                            Vector2 spawnPoint = RoundVector(origin.point);
+                            spawnPoint -= selectedBuilding.GetComponent<PlaceableScript>().positionOffset;
+                            //Debug.Log(spawnPoint);
+                            GameObject spawned = Instantiate(selectedBuilding, spawnPoint, Quaternion.identity);
+                            Vector3 newPos = spawned.transform.position;
+                            FMODUnity.RuntimeManager.PlayOneShot(placeSound);
+                            // newPos.z = (float)(newPos.y*0.0001)-1; Possible solution for sprite layering
+                            newPos.z = -1;
+                            spawned.transform.position = newPos;
+                            moneyManager.money -= placeable.cost;//determine we have the money and we're not blocked, so deduct the cizash
 
-                    // Clear the list after its done
-                    
-                    hitPoints.Clear();
+                            if (selectedBuilding.CompareTag("coal"))
+                            {
+                                totalBuildingsPlaced++;
+                                totalDirtyPowerPlaced++;
+                                totalCoalPlaced++;
+                                //check if day has finished, like in ConsumerScript, then do calculation for % of dirty vs clean-be sure to tell doug so he can help with milestone part
+                            }
+                            else if (selectedBuilding.CompareTag("solar"))
+                            {
+                                totalBuildingsPlaced++;
+                                totalCleanPowerPlaced++;
+                                totalSolarPlaced++;
+                            }
+                            else if (selectedBuilding.CompareTag("turbine"))
+                            {
+                                totalBuildingsPlaced++;
+                                totalCleanPowerPlaced++;
+                                totalWindmillPlaced++;
+                            }
+                        }
+
+                        // Clear the list after its done
+
+                        hitPoints.Clear();
+                    }
                 }
             }
 
         }
-        
+        // When you right click, set things to inactive
+        else if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Deselected buildings");
+            DeselectWireMode();
+            selectedBuilding = null;
+            removalMode = false;
+            mouseObject.SetActive(false);
+        }
         RaycastHit2D hitPt = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
         HoverScript hover = hitPt.transform.GetComponent<HoverScript>();
 
