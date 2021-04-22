@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: -8519247489278346955}
   - component: {fileID: 404765403952639720}
   - component: {fileID: 9067260884277353181}
+  - component: {fileID: -585096048814529268}
   m_Layer: 0
   m_Name: CoalPlantPref
   m_TagString: Generator
@@ -368,6 +369,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childLight: {fileID: 8917058391516344164}
+--- !u!114 &-585096048814529268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7206924125788488262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects: []
 --- !u!1 &7206924125870641257
 GameObject:
   m_ObjectHideFlags: 0

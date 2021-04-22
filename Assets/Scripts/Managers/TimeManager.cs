@@ -26,9 +26,6 @@ public class TimeManager : MonoBehaviour
     public float resume = 1;
     public Light2D globalLight;
     public NightOnOff nightAnimation;
-    public GameObject timeParticleOne;
-    public GameObject timeParticleTwo;
-    public GameObject timeParticleThree;
 
     [Header("Sound")]
     //Accesses the FMOD Event
@@ -73,33 +70,21 @@ public class TimeManager : MonoBehaviour
     //When clicked again, set Time.timeScale back to 1F
     public void onButtonPressTwoTimesSpeed()
     {
-        timeParticleThree.SetActive(true);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(false);
         Time.timeScale = 2F;
         resume = 2F;
     }
     public void onButtonPressOneAndHalfSpeed()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(true);
-        timeParticleOne.SetActive(false);
         Time.timeScale = 1.5F;
         resume = 1.5F;
     }
     public void resetToRegSpeed()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(true);
         Time.timeScale = 1F;
         resume = 1f;
     }
     public void pause()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(false);
         if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
@@ -108,9 +93,6 @@ public class TimeManager : MonoBehaviour
         else
         {
             Time.timeScale = 1;
-            timeParticleThree.SetActive(false);
-            timeParticleTwo.SetActive(false);
-            timeParticleOne.SetActive(true);
         }
     }
     
