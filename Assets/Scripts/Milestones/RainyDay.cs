@@ -22,6 +22,7 @@ public class RainyDay : MilestoneBase
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+        randomEvents = GameObject.FindObjectOfType<RandomEventManager>();
     }
     
     public override bool CheckCompleteMilestone()
