@@ -32,7 +32,9 @@ public class BranchingOut : MilestoneBase
                 ++poweredHouses;
             }
         }
+
+        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
         
-        return substations.Length >= 2 && poweredHouses >= 10;
+        return substations.Length >= 2 && poweredHouses >= 10 && generators.Length >= 2;
     }
 }

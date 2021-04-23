@@ -11,6 +11,8 @@ public class RainyDay : MilestoneBase
 
     private List<GameObject> poweredHouses = new List<GameObject>();
 
+    private RandomEventManager randomEvents;
+    
     private bool startCountdown = false;
     
     [Tooltip("Area to upgrade the houses in")]
@@ -57,8 +59,8 @@ public class RainyDay : MilestoneBase
 
             // Count the days elapsed
             daysElapsed = timeManager.days - startDay;
-            daysLeft.text = "Days left: " + daysElapsed;
-            return daysElapsed >= 1;
+            daysLeft.text = "Days all houses powered: " + daysElapsed;
+            return daysElapsed >= 1 && timeManager.cityApproval >= 60;
         }
 
         return false;
@@ -68,6 +70,8 @@ public class RainyDay : MilestoneBase
     {
         base.SetCompleteMilestone();
 
+        randomEvents.doEvents = true;
+        
         for (int i = 0; i < upgradeArea.transform.childCount; ++i)
         {
             if (upgradeArea.transform.GetChild(i).CompareTag("house"))

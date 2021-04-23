@@ -16,7 +16,11 @@ public class TimeManager : MonoBehaviour
     public float timeStep;
     public int totalTimeSteps;
     public int minutes, displayHours, hours = 0;
-    public int cityApproval = 100;//Note: we've also got this
+
+    public int maxApproval = 100;
+    public int minApproval = 0;
+    public int cityApproval = 50;//Note: we've also got this
+
     public int days = 1;
     public bool isDay = true;
     public Text clock;
@@ -26,9 +30,6 @@ public class TimeManager : MonoBehaviour
     public float resume = 1;
     public Light2D globalLight;
     public NightOnOff nightAnimation;
-    public GameObject timeParticleOne;
-    public GameObject timeParticleTwo;
-    public GameObject timeParticleThree;
 
     [Header("Sound")]
     //Accesses the FMOD Event
@@ -61,7 +62,7 @@ public class TimeManager : MonoBehaviour
         //Debug.Log("Start happened");
         //Debug.Log(this.gameObject);
         StartCoroutine("TimeCalculator");//You start the coroutine, it will repeat itself unless you call StopCoroutine("TimeCalculator");
-
+        citySat.text = "City Satisfaction: " + cityApproval;
         // Finding and Starting the Event
         backgrounds1 = FMODUnity.RuntimeManager.CreateInstance(backgroundReference1);
         backgrounds1.start();
@@ -73,44 +74,25 @@ public class TimeManager : MonoBehaviour
     //When clicked again, set Time.timeScale back to 1F
     public void onButtonPressTwoTimesSpeed()
     {
-        timeParticleThree.SetActive(true);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(false);
         Time.timeScale = 2F;
         resume = 2F;
     }
     public void onButtonPressOneAndHalfSpeed()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(true);
-        timeParticleOne.SetActive(false);
         Time.timeScale = 1.5F;
         resume = 1.5F;
     }
     public void resetToRegSpeed()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(true);
         Time.timeScale = 1F;
         resume = 1f;
     }
     public void pause()
     {
-        timeParticleThree.SetActive(false);
-        timeParticleTwo.SetActive(false);
-        timeParticleOne.SetActive(false);
         if (Time.timeScale != 0)
         {
             Time.timeScale = 0;
             resume = 0;
-        }
-        else
-        {
-            Time.timeScale = 1;
-            timeParticleThree.SetActive(false);
-            timeParticleTwo.SetActive(false);
-            timeParticleOne.SetActive(true);
         }
     }
     
@@ -121,6 +103,23 @@ public class TimeManager : MonoBehaviour
         backgrounds1.setParameterByName("Time Of Day", hours);
         backgrounds2.setParameterByName("Time Of Day", hours);
         
+    }
+    public void IncreaseCitySat(int modifier)
+    {
+        cityApproval += modifier;
+        if (cityApproval > maxApproval)
+        {
+            cityApproval = maxApproval;
+        }
+        citySat.text = "City Satisfaction: " + cityApproval;
+    }
+    public void DecreaseCitySat(int modifier)
+    {
+        cityApproval -= modifier;
+        if(cityApproval < minApproval)
+        {
+            cityApproval = minApproval;
+        }
         citySat.text = "City Satisfaction: " + cityApproval;
     }
 

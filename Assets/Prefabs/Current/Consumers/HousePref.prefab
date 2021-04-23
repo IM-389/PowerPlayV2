@@ -5708,6 +5708,8 @@ MonoBehaviour:
   moneyGained: 0
   alert: {fileID: 0}
   smartPowerAlert: {fileID: 2067710383698671812}
+  approvalIncrease: 1
+  approvalDecrease: 3
   maxConsumption: -1
   minConsumption: 2.1474836e+9
 --- !u!114 &3436949082897699858

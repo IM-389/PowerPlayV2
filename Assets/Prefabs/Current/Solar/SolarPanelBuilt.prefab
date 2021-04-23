@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -8021645519560125708}
   - component: {fileID: -2601394823961240912}
   - component: {fileID: 4520991485330122047}
+  - component: {fileID: 5603371993922002459}
   m_Layer: 0
   m_Name: SolarPanelBuilt
   m_TagString: Generator
@@ -204,6 +205,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   childLight: {fileID: 6760464381216673711}
+--- !u!114 &5603371993922002459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1007116474896301567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77ca82298593e914593237c3ebc64792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colorableObjects:
+  - {fileID: 1007116475714797852}
 --- !u!1 &1007116475714797852
 GameObject:
   m_ObjectHideFlags: 0

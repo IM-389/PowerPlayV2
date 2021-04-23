@@ -10,7 +10,7 @@ namespace Milestones
 
         private TimeManager timeManager;
 
-        private List<GameObject> poweredHouses = new List<GameObject>();
+        private List<GameObject> poweredBuildings = new List<GameObject>();
 
         private bool startCountdown = false;
 
@@ -26,20 +26,37 @@ namespace Milestones
             foreach (var house in allHouses)
             {
                 // If the house has not already been counted
-                if (!poweredHouses.Contains(house))
+                if (!poweredBuildings.Contains(house))
                 {
                     // If the house is powered
                     if (house.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
                         house.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
                     {
                         // Add to the list of previously powered houses
-                        poweredHouses.Add(house);
+                        poweredBuildings.Add(house);
                     }
                 }
             }
 
+            GameObject[] allFactories = GameObject.FindGameObjectsWithTag("factory");
+            
+            foreach (var factory in allFactories)
+            {
+                // If the house has not already been counted
+                if (!poweredBuildings.Contains(factory))
+                {
+                    // If the house is powered
+                    if (factory.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
+                        factory.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
+                    {
+                        // Add to the list of previously powered houses
+                        poweredBuildings.Add(factory);
+                    }
+                }
+            }
+            
             // If enough houses are powered, start the week-long cooldown
-            if (poweredHouses.Count >= 30)
+            if (poweredBuildings.Count >= 32)
             {
                 startCountdown = true;
             }
