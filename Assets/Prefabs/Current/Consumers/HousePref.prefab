@@ -5708,6 +5708,8 @@ MonoBehaviour:
   moneyGained: 0
   alert: {fileID: 0}
   smartPowerAlert: {fileID: 2067710383698671812}
+  approvalIncrease: 1
+  approvalDecrease: 3
   maxConsumption: -1
   minConsumption: 2.1474836e+9
 --- !u!114 &3436949082897699858
@@ -5961,7 +5963,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3726316775442956722, guid: aa9adc35b44e82f48b606a252bcfc69f, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3726316775442956722, guid: aa9adc35b44e82f48b606a252bcfc69f, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[1]
@@ -5973,7 +5975,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3726316775442956722, guid: aa9adc35b44e82f48b606a252bcfc69f, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[3]
-      value: 106311279
+      value: 2145369835
       objectReference: {fileID: 0}
     - target: {fileID: 3726316775442956722, guid: aa9adc35b44e82f48b606a252bcfc69f, type: 3}
       propertyPath: m_ApplyToSortingLayers.Array.data[4]
