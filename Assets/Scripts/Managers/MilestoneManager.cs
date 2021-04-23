@@ -71,13 +71,14 @@ public class MilestoneManager : MonoBehaviour
 
             dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
             dialouge.TriggerDialogue(currentMilestones.hasQuestion);
+            daysLeft.text = "";
         }
-        if(currentMilestones.startDay > -1)
+        if (currentMilestones.startDay > -1)
         {
            currentMilestones.daysElapsed = timeManager.days - currentMilestones.startDay;
         }
         text = currentMilestones.milestoneText + "\n";
-        daysLeft.text = "";
+       
         
         milestoneText.text = text;
     }

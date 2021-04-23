@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: -3898479872415834453}
   - component: {fileID: 4643292264813615015}
   - component: {fileID: 9051996957653173204}
+  - component: {fileID: 8462448977947966760}
   m_Layer: 0
   m_Name: SubstationPref
   m_TagString: Substation
@@ -217,6 +218,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorableObjects:
   - {fileID: 3034602858743919561}
+--- !u!114 &8462448977947966760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3034602858000373936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e21bc9611b25e0b4f8006a042782e406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3034602858743919561
 GameObject:
   m_ObjectHideFlags: 0
