@@ -1,5 +1,241 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1236367575382939574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8238799777165714356}
+  - component: {fileID: 6868906025393853080}
+  m_Layer: 0
+  m_Name: InWithTheNewButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8238799777165714356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236367575382939574}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6868906025393853080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236367575382939574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052344100194}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &1618398548482139404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5919357127037183187}
+  - component: {fileID: 6688731995243022748}
+  m_Layer: 0
+  m_Name: RainyDayButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5919357127037183187
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618398548482139404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6688731995243022748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1618398548482139404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204051002110277}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &5081038129689630485
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4658907222952612739}
+  - component: {fileID: 3171587033502085680}
+  m_Layer: 0
+  m_Name: BuldingTheSmartGridButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4658907222952612739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081038129689630485}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3171587033502085680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5081038129689630485}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Power a factory and hospital
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052249886389}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &5093366583137637759
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 269317373824688845}
+  - component: {fileID: 4798005883899211182}
+  m_Layer: 0
+  m_Name: OutWithTheOldButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &269317373824688845
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093366583137637759}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4798005883899211182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093366583137637759}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204051929737048}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
 --- !u!1 &6521204050823110433
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +265,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 13
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050823110447
 MonoBehaviour:
@@ -60,6 +296,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   upgradeAreas:
   - {fileID: 0}
@@ -95,7 +332,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 8
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050868160670
 MonoBehaviour:
@@ -118,11 +355,12 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204051929737048}
+  - {fileID: 4798005883899211182}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204050914697442
 GameObject:
@@ -153,7 +391,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 19
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050914697440
 MonoBehaviour:
@@ -181,6 +419,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204050923638164
 GameObject:
@@ -211,7 +450,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 15
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050923638162
 MonoBehaviour:
@@ -228,16 +467,17 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power all houses for 1 day
   milestoneName: Building the Smart Grid
-  hasQuestion: 1
+  hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052249886389}
+  - {fileID: 3171587033502085680}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   requiredPower: 0
   daysLeft: {fileID: 0}
@@ -270,7 +510,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 12
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051002110277
 MonoBehaviour:
@@ -296,11 +536,12 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204050823110447}
+  - {fileID: 2798183330618914263}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   upgradeArea: {fileID: 0}
   daysLeft: {fileID: 0}
@@ -332,7 +573,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 21
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6521204051080078608
 GameObject:
@@ -398,6 +639,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204051363903587
 GameObject:
@@ -455,6 +697,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204051592583256
 GameObject:
@@ -502,7 +745,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Place power poles to power all the houses!
   milestoneName: Basic Connections
-  hasQuestion: 0
+  hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -516,11 +759,12 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052501826468}
+  - {fileID: 9033665301933003532}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204051658446247
 GameObject:
@@ -582,6 +826,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204051805236112
 GameObject:
@@ -612,7 +857,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 17
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051805236126
 MonoBehaviour:
@@ -639,6 +884,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   numToComplete: 5
 --- !u!1 &6521204051929737050
@@ -670,7 +916,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051929737048
 MonoBehaviour:
@@ -693,11 +939,12 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052344100194}
+  - {fileID: 6868906025393853080}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204051954012048
 GameObject:
@@ -728,7 +975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051954012062
 MonoBehaviour:
@@ -755,6 +1002,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   daysLeft: {fileID: 0}
 --- !u!1 &6521204052013161000
@@ -786,7 +1034,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052013160982
 MonoBehaviour:
@@ -815,11 +1063,12 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204050868160670}
+  - {fileID: 6527593497104967203}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   arrow: {fileID: 0}
 --- !u!1 &6521204052076212512
@@ -851,7 +1100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 18
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052076212526
 MonoBehaviour:
@@ -878,6 +1127,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   numToComplete: 5
 --- !u!1 &6521204052205378399
@@ -909,7 +1159,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 20
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052205378396
 MonoBehaviour:
@@ -935,6 +1185,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204052249886391
 GameObject:
@@ -965,7 +1216,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 16
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052249886389
 MonoBehaviour:
@@ -987,11 +1238,12 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204051805236126}
+  - {fileID: 6002348780737726471}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   daysLeft: {fileID: 0}
 --- !u!1 &6521204052316507005
@@ -1027,17 +1279,26 @@ Transform:
   - {fileID: 6521204051080078609}
   - {fileID: 6521204051658446244}
   - {fileID: 6521204051592583257}
+  - {fileID: 5681984574228640371}
   - {fileID: 6521204052501826471}
+  - {fileID: 7144828906884697063}
   - {fileID: 6521204052013161001}
+  - {fileID: 2895490156513202088}
   - {fileID: 6521204050868160657}
+  - {fileID: 269317373824688845}
   - {fileID: 6521204051929737051}
+  - {fileID: 8238799777165714356}
   - {fileID: 6521204051954012049}
   - {fileID: 6521204052344100197}
+  - {fileID: 5919357127037183187}
   - {fileID: 6521204051002110276}
+  - {fileID: 7226719938418355390}
   - {fileID: 6521204050823110446}
   - {fileID: 5017224915143814201}
   - {fileID: 6521204050923638165}
+  - {fileID: 4658907222952612739}
   - {fileID: 6521204052249886388}
+  - {fileID: 5282649079090860158}
   - {fileID: 6521204051805236113}
   - {fileID: 6521204052076212513}
   - {fileID: 6521204050914697443}
@@ -1075,7 +1336,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052344100194
 MonoBehaviour:
@@ -1097,11 +1358,12 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204051002110277}
+  - {fileID: 6688731995243022748}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   upgradeArea: {fileID: 0}
   daysLeft: {fileID: 0}
@@ -1161,6 +1423,7 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
 --- !u!1 &6521204052501826470
 GameObject:
@@ -1191,7 +1454,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052501826468
 MonoBehaviour:
@@ -1208,7 +1471,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Create a new substation, and use it to power the new houses
   milestoneName: Branching Out
-  hasQuestion: 1
+  hasQuestion: 0
   enabledObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1219,11 +1482,12 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052013160982}
+  - {fileID: 5882798115625832736}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   arrow: {fileID: 0}
 --- !u!1 &6521204052585664213
@@ -1282,8 +1546,127 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
   maxDays: 0
   targetPole: {fileID: 0}
+--- !u!1 &7358075934786391102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2895490156513202088}
+  - component: {fileID: 6527593497104967203}
+  m_Layer: 0
+  m_Name: PoweringUpButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2895490156513202088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358075934786391102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6527593497104967203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358075934786391102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204050868160670}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &7611478976315240090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7226719938418355390}
+  - component: {fileID: 2798183330618914263}
+  m_Layer: 0
+  m_Name: EnterTheSmartGridButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7226719938418355390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611478976315240090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2798183330618914263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7611478976315240090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204050823110447}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
 --- !u!1 &8104064863305857443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,7 +1678,7 @@ GameObject:
   - component: {fileID: 5017224915143814201}
   - component: {fileID: 3423651520121888726}
   m_Layer: 0
-  m_Name: PoweringIndustryP2
+  m_Name: PoweringIndustryButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1313,7 +1696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 14
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3423651520121888726
 MonoBehaviour:
@@ -1330,7 +1713,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power a factory and hospital
   milestoneName: 
-  hasQuestion: 1
+  hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
   newBuildings: []
@@ -1340,5 +1723,183 @@ MonoBehaviour:
   smartCoins: 0
   startDay: -1
   daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &8371619356977801211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5282649079090860158}
+  - component: {fileID: 6002348780737726471}
+  m_Layer: 0
+  m_Name: UsingTheSmartGridButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5282649079090860158
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371619356977801211}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6002348780737726471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8371619356977801211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Power a factory and hospital
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204051805236126}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &8471675868121119783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7144828906884697063}
+  - component: {fileID: 5882798115625832736}
+  m_Layer: 0
+  m_Name: BranchingOutButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7144828906884697063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8471675868121119783}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5882798115625832736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8471675868121119783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052013160982}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &8963544854585620740
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5681984574228640371}
+  - component: {fileID: 9033665301933003532}
+  m_Layer: 0
+  m_Name: BasicConnectionsButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5681984574228640371
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963544854585620740}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9033665301933003532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963544854585620740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Place power poles to power all the houses!
+  milestoneName: 
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052501826468}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
   maxDays: 0
   targetButton: {fileID: 0}

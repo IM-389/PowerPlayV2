@@ -22,9 +22,6 @@ public class DialogueBehaviour : MonoBehaviour
     public float previousTimeScale = 0;
 
     public GameObject arrow;
-
-    public GameObject popOut;
-    public SlideOutUI po;
     
     // Reference to location of sound
     [FMODUnity.EventRef]

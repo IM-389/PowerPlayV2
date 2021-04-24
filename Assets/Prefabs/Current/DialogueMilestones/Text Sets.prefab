@@ -1,5 +1,152 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2197140918253928783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1262530778394991939}
+  - component: {fileID: 3798249872265330114}
+  m_Layer: 0
+  m_Name: OutWithTheOldButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1262530778394991939
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197140918253928783}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3798249872265330114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2197140918253928783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 2197140918253928783}
+  nextTextSet: {fileID: 3818978951736599955}
+  dialogue:
+    sentences:
+    - You are just breezing through this great job! You are definitely ready for
+      the next question about solar energy.
+--- !u!1 &2283855935682397535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6654335020100555327}
+  - component: {fileID: 4701394946236005902}
+  m_Layer: 0
+  m_Name: PoweringUpButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6654335020100555327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283855935682397535}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4701394946236005902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2283855935682397535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 2283855935682397535}
+  nextTextSet: {fileID: 3818978950957599995}
+  dialogue:
+    sentences:
+    - Great job powering the new neighborhood. Be ready for the next quiz question
+      about carbon dioxide.
+--- !u!1 &2750976988453169766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5758048225205031481}
+  - component: {fileID: 4286820483635986647}
+  m_Layer: 0
+  m_Name: PoweringIndustryButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &5758048225205031481
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750976988453169766}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4286820483635986647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2750976988453169766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 2750976988453169766}
+  nextTextSet: {fileID: 3818978951575355016}
+  dialogue:
+    sentences:
+    - Absolutely Amazing!
+    - Next question now, yes
 --- !u!1 &3818978949942769132
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +176,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 17
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978949942769134
 MonoBehaviour:
@@ -44,20 +191,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978949942769132}
-  nextTextSet: {fileID: 3818978950780145047}
+  nextTextSet: {fileID: 5995642949280023954}
   dialogue:
     sentences:
     - The Smart Grid helps out in a lot of ways. For example, the Smart Grid says
       when a home needs more or less power, where and when a house loses power, and
       is more efficient than the traditional grid.
-    - To truly see the effects of your new Smart Grid, we will see how it works over
-      the course of 3 days.
     - The new neighborhood that just opened has been equipped with Smart Meters.
       Smart Meters work with the power plant to help make energy more efficient.
       They tell when a place has too much or too little power, help identify blackouts
       when they occur, and make renewable energy even more stable for everyone to
       use.
-    - "Let\u2019s see if you learned what the main functions of the Smart Grid is."
 --- !u!1 &3818978950206534005
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,7 +231,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 13
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950206534007
 MonoBehaviour:
@@ -102,11 +246,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978950206534005}
-  nextTextSet: {fileID: 3818978951575355016}
+  nextTextSet: {fileID: 2750976988453169766}
   dialogue:
     sentences:
     - The growing power grid has attracted the attention of a Factory and Hospital.
-      We should go power them.
+      We should go power them. Try to power them using multiple types of power.
     - Smart Meters have been installed in the second neighborhood. Go check them
       out!
 --- !u!1 &3818978950207393213
@@ -138,7 +282,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 22
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950207393215
 MonoBehaviour:
@@ -190,7 +334,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 21
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950265756227
 MonoBehaviour:
@@ -208,7 +352,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 0}
   dialogue:
     sentences:
-    - 
+    - Congratz, you have proven yourself to be a good Smart Grid operator! You may
+      close the game through the pause menu, or continue in freeplay mode for as
+      long as you like.
 --- !u!1 &3818978950484947257
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +384,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950484947259
 MonoBehaviour:
@@ -253,18 +399,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978950484947257}
-  nextTextSet: {fileID: 3818978950957599995}
+  nextTextSet: {fileID: 2283855935682397535}
   dialogue:
     sentences:
-    - Fantastic! The neighborhood now has power! When people have their homes powered
-      their satisfaction goes up which is what we want.
-    - The town keeps growing, another neighborhood has been built! This time, you
-      need to build the generator for it as well. Just like you built the substation,
-      build a new Coal Plant near the new neighborhood!
-    - Once you have built the new Coal Plant, connect it to the houses.
-    - Fossil fuels may pollute the air with CO<sub>2</sub> (Carbon Dioxide) but they
-      are easily cheaper than clean energy (solar and wind) and are more reliable
-      than clean energy so they are necessary for now.
+    - "Amazing! Now that we have a new place to power, let\u2019s see if you can
+      power it using what you know now."
 --- !u!1 &3818978950506970305
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,7 +433,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 20
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950506970307
 MonoBehaviour:
@@ -398,7 +537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 18
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950780145041
 MonoBehaviour:
@@ -419,6 +558,7 @@ MonoBehaviour:
     - Congrats on powering all the houses for a day. For your achievement we are
       upgrading all the solar panels. Now instead of turning off at night and not
       working during cloudy days the solar panels do now work during those times.
+    - Now try and power an entire neighborhood with just solar panels.
 --- !u!1 &3818978950789678276
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,7 +642,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950798463951
 MonoBehaviour:
@@ -517,14 +657,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978950798463949}
-  nextTextSet: {fileID: 3818978950484947257}
+  nextTextSet: {fileID: 8673809124865356359}
   dialogue:
     sentences:
     - Great work connecting those wires! A new neighborhood has opened up, and you
       need to build the substation and connect the wires!
+    - This neighborhood needs a coal plant and substations as well. Build them the
+      same way as before.
     - To connect the buildings, just place the power pole next to the buildings you
       wish to connect.
-    - This quiz question about power poles should be a sinch for you.
 --- !u!1 &3818978950850381384
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,7 +710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978950850381384}
-  nextTextSet: {fileID: 3818978950798463949}
+  nextTextSet: {fileID: 6165095487682146258}
   dialogue:
     sentences:
     - Fantastic! Now all that is needed is building the wires and connecting everything
@@ -611,18 +752,25 @@ Transform:
   - {fileID: 3818978950573175823}
   - {fileID: 3818978950789678277}
   - {fileID: 3818978950850381385}
+  - {fileID: 2556661976192490256}
   - {fileID: 3818978950798463950}
+  - {fileID: 878712946777836583}
   - {fileID: 3818978950484947258}
-  - {fileID: 3818978951364046449}
+  - {fileID: 6654335020100555327}
   - {fileID: 3818978950957599972}
+  - {fileID: 1262530778394991939}
   - {fileID: 3818978951736599965}
+  - {fileID: 2646405618579890579}
   - {fileID: 3818978951293459022}
+  - {fileID: 8387157471050713970}
   - {fileID: 3818978951064686727}
+  - {fileID: 4841047972001132458}
   - {fileID: 3818978950206534006}
+  - {fileID: 5758048225205031481}
   - {fileID: 3818978951575355017}
-  - {fileID: 8959685470700254188}
-  - {fileID: 1232980657294179334}
+  - {fileID: 6982983359202100101}
   - {fileID: 3818978949942769133}
+  - {fileID: 4945915657959583846}
   - {fileID: 3818978950780145040}
   - {fileID: 3818978951498804749}
   - {fileID: 3818978950506970306}
@@ -661,7 +809,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950957599973
 MonoBehaviour:
@@ -676,7 +824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978950957599995}
-  nextTextSet: {fileID: 3818978951736599955}
+  nextTextSet: {fileID: 2197140918253928783}
   dialogue:
     sentences:
     - You see those coal plants, they are starting to become a problem by making
@@ -687,8 +835,6 @@ MonoBehaviour:
       of 3 houses.
     - "As the name suggests, solar panels work with the sun. They won\u2019t produce
       power during the night or when there are clouds out"
-    - You are just breezing through this great job! You are definitely ready for
-      the next question about solar energy.
 --- !u!1 &3818978950990658700
 GameObject:
   m_ObjectHideFlags: 0
@@ -818,7 +964,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 12
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951064686720
 MonoBehaviour:
@@ -833,13 +979,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978951064686726}
-  nextTextSet: {fileID: 3818978950206534005}
+  nextTextSet: {fileID: 7640254609936555995}
   dialogue:
     sentences:
-    - Would you look at that! Now that you have powered enough homes you have unlocked
-      a <b>Smart Meter!</b>
-    - "Smart meters really do help us a lot, let\u2019s see if you know how they
-      help houses in the next question."
+    - "Now that we have Smart Meters placed in a single neighborhood, we should see
+      what happens when something goes wrong and see how it is different than if
+      we didn\u2019t have Smart Meters."
+    - We should also try to hit a goal of powering the neighborhoods for 1 day. Should
+      be easier with the help of Smart Meters.
 --- !u!1 &3818978951293459021
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,7 +1016,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 11
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951293459023
 MonoBehaviour:
@@ -884,61 +1031,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978951293459021}
-  nextTextSet: {fileID: 3818978951064686726}
+  nextTextSet: {fileID: 8189631319404650758}
   dialogue:
     sentences:
     - "Looks like some houses aren\u2019t powered. Now that we have many types of
       power production, try to power the homes with some of the new ways we found!"
---- !u!1 &3818978951364046448
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3818978951364046449}
-  - component: {fileID: 3818978951364046450}
-  m_Layer: 0
-  m_Name: PoweringUpP2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &3818978951364046449
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3818978951364046448}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3818978951364046450
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3818978951364046448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textSet: {fileID: 3818978951364046448}
-  nextTextSet: {fileID: 3818978950957599995}
-  dialogue:
-    sentences:
-    - Amazing! Now that we have a coal plant built, we need to be able to move the
-      power from the coal plant to the home.
-    - Be ready, the next question is about Carbon Dioxide!
 --- !u!1 &3818978951494332491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,7 +1114,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 19
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951498804750
 MonoBehaviour:
@@ -1037,6 +1134,7 @@ MonoBehaviour:
     sentences:
     - All Wind turbines will now work more efficiently when placed close together.
       This is called a wind farm.
+    - Try and use the wind farm to power the new neighborhood.
 --- !u!1 &3818978951575355016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1164,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 14
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951575355018
 MonoBehaviour:
@@ -1081,11 +1179,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978951575355016}
-  nextTextSet: {fileID: 6324835396096213917}
+  nextTextSet: {fileID: 6367870531884122943}
   dialogue:
     sentences:
-    - Absolutely Amazing!
-    - Next question now, yes
+    - Now that you understand the basics of the power grid we are going to improve
+      it. So let me introduce The <b>Smart Grid!</b>
+    - The Smart Grid is a more efficient power grid. Specifically, the Smart Grid
+      constantly communicates the people's homes to the power company.
+    - A reason the Smart Grid is so good is it allows renewable energy to be used
+      more effectively as now if the renewable energy fails, then instead of you
+      losing power you can now borrow energy from people who have too much.
+    - "If you don\u2019t have a Smart Meter for a house, you won\u2019t know where
+      the power outage is, only that there is one. With Smart Meters you can literally
+      see where the power is out which increases efficiency and public satisfaction."
+    - All homes now have a Smart Meter
 --- !u!1 &3818978951682047609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 23
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951682047611
 MonoBehaviour:
@@ -1163,7 +1270,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 10
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951736599964
 MonoBehaviour:
@@ -1178,7 +1285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978951736599955}
-  nextTextSet: {fileID: 3818978951293459021}
+  nextTextSet: {fileID: 6135269040530501263}
   dialogue:
     sentences:
     - Great job with those Solar Panels. Now we will show you another form of renewable
@@ -1189,9 +1296,7 @@ MonoBehaviour:
     - "Wind Turbines need wind to work, so try putting some down and connect them
       to a new neighborhood. People don\u2019t like it when wind turbines are too
       close to their houses so try to be careful of that."
-    - Just looking at those wind turbines is so cool. Be prepared for the next question
-      about how wind turbines work.
---- !u!1 &5837481888067828417
+--- !u!1 &5995642949280023954
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1199,29 +1304,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8959685470700254188}
+  - component: {fileID: 4945915657959583846}
+  - component: {fileID: 7787657319904664791}
   m_Layer: 0
-  m_Name: QUESTION
+  m_Name: UsingTheSmartGridButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &8959685470700254188
+--- !u!4 &4945915657959583846
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5837481888067828417}
+  m_GameObject: {fileID: 5995642949280023954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 15
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6324835396096213917
+--- !u!114 &7787657319904664791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5995642949280023954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 5995642949280023954}
+  nextTextSet: {fileID: 3818978949942769132}
+  dialogue:
+    sentences:
+    - The old power grid has a lot less improvements to itself due to it being old.
+      The next question asks which is one of the improvements the Smart Grid brings
+      to the table.
+--- !u!1 &6135269040530501263
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1229,22 +1354,218 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1232980657294179334}
-  - component: {fileID: 7598432134453724764}
+  - component: {fileID: 2646405618579890579}
+  - component: {fileID: 8651172991211785127}
   m_Layer: 0
-  m_Name: BuildingTheSmartGridP2
+  m_Name: InWithTheNewButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!4 &1232980657294179334
+--- !u!4 &2646405618579890579
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6324835396096213917}
+  m_GameObject: {fileID: 6135269040530501263}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8651172991211785127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6135269040530501263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 6135269040530501263}
+  nextTextSet: {fileID: 3818978951293459021}
+  dialogue:
+    sentences:
+    - Just looking at those wind turbines is so cool. Be prepared for the next question
+      about how wind turbines work.
+--- !u!1 &6165095487682146258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2556661976192490256}
+  - component: {fileID: 2743582407852753990}
+  m_Layer: 0
+  m_Name: BasicConnectionsButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2556661976192490256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165095487682146258}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2743582407852753990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6165095487682146258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 6165095487682146258}
+  nextTextSet: {fileID: 3818978950798463949}
+  dialogue:
+    sentences:
+    - 'Great job connecting all those parts together. To test your knowledge we will
+      ask you questions about what you have learned from time to time. '
+    - This quiz question about power poles should be a sinch for you.
+--- !u!1 &6367870531884122943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6982983359202100101}
+  - component: {fileID: 292228860448012124}
+  m_Layer: 0
+  m_Name: BuildingTheSmartGridButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6982983359202100101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367870531884122943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292228860448012124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6367870531884122943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 6367870531884122943}
+  nextTextSet: {fileID: 3818978949942769132}
+  dialogue:
+    sentences:
+    - "Let\u2019s see if you learned what the main functions of the Smart Grid is."
+--- !u!1 &7640254609936555995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4841047972001132458}
+  - component: {fileID: 1191390495520284506}
+  m_Layer: 0
+  m_Name: EnterTheSmartGridButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4841047972001132458
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640254609936555995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191390495520284506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7640254609936555995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 7640254609936555995}
+  nextTextSet: {fileID: 3818978950206534005}
+  dialogue:
+    sentences:
+    - Great work! See how much Smart Meters help us? Now for a short question about
+      what Smart Meters do.
+--- !u!1 &8189631319404650758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8387157471050713970}
+  - component: {fileID: 2558608828808993611}
+  m_Layer: 0
+  m_Name: RainyDayButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &8387157471050713970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8189631319404650758}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1252,31 +1573,75 @@ Transform:
   m_Father: {fileID: 3818978950864860943}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7598432134453724764
+--- !u!114 &2558608828808993611
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6324835396096213917}
+  m_GameObject: {fileID: 8189631319404650758}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textSet: {fileID: 6324835396096213917}
-  nextTextSet: {fileID: 3818978949942769132}
+  textSet: {fileID: 8189631319404650758}
+  nextTextSet: {fileID: 3818978951064686726}
   dialogue:
     sentences:
-    - Now that you understand the basics of the power grid we are going to improve
-      it. So let me introduce <b>The Smart Grid!</b>
-    - The Smart Grid is a more efficient power grid. Specifically, the Smart Grid
-      constantly communicates the people's homes to the power company.
-    - A reason the Smart Grid is so good is it allows renewable energy to be used
-      more effectively as now if the renewable energy fails, then instead of you
-      losing power you now can borrow energy from people who have too much.
-    - "If you don\u2019t have a Smart Meter for a house, you won\u2019t know where
-      the power outage is, only that there is one. With Smart Meters you can literally
-      see where the power is out which increases efficiency and public satisfaction."
-    - All homes now have a Smart Meter
-    - "Let\u2019s see if you learned what the main functions of the Smart Grid is."
+    - "Smart meters really do help us a lot, let\u2019s see if you know how they
+      help houses in the next question. "
+--- !u!1 &8673809124865356359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 878712946777836583}
+  - component: {fileID: 8690523233422951304}
+  m_Layer: 0
+  m_Name: BranchingOutButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &878712946777836583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673809124865356359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8690523233422951304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8673809124865356359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 8673809124865356359}
+  nextTextSet: {fileID: 3818978950484947257}
+  dialogue:
+    sentences:
+    - Fantastic! The neighborhood now has power!
+    - The town keeps growing, another neighborhood has been built! This time, you
+      need to build the generator for it as well. Just like you built the substation,
+      build a new Coal Plant near the new neighborhood!
+    - Fossil fuels may pollute the air with CO2 (Carbon Dioxide) but they are easily
+      cheaper than clean energy (solar and wind) and are more reliable than clean
+      energy so they are necessary for now.

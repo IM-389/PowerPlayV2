@@ -69,8 +69,11 @@ public class MilestoneManager : MonoBehaviour
                 quizManager.StartQuiz();
             }
 
-            dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
-            dialouge.TriggerDialogue(currentMilestones.hasQuestion);
+            if (currentMilestones.hasText)
+            {
+                dialouge = dialouge.nextTextSet.GetComponent<StoryTelling>();
+                dialouge.TriggerDialogue(currentMilestones.hasQuestion);
+            }
         }
         if(currentMilestones.startDay > -1)
         {
