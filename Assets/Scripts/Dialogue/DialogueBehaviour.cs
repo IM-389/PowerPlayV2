@@ -27,7 +27,10 @@ public class DialogueBehaviour : MonoBehaviour
     [FMODUnity.EventRef]
     public string griddyAffirmative;
 
-    void Start()
+    public GameObject popOut;
+    private SlideOutUI po;
+    
+    void Awake()
     {
         //sentences = new List<string>();
         gm = GameObject.FindObjectOfType<GameManager>();
