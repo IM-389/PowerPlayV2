@@ -9,7 +9,7 @@ namespace Milestones
             //Debug.Log("BasicConnectionsP1");
             GameObject[] powerPoles = GameObject.FindGameObjectsWithTag("Power");
 
-            return powerPoles.Length >= 4;
+            return powerPoles.Length >= 5;
         }
     }
 }

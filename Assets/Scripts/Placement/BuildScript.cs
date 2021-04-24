@@ -73,6 +73,9 @@ public class BuildScript : MonoBehaviour
 
     public bool trackApproval;
 
+    //to deselect buttons
+    public SlideOutUI po;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +86,9 @@ public class BuildScript : MonoBehaviour
         cityApproval = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         //();
+
+        //find the slide out UI
+        po = GameObject.FindObjectOfType<SlideOutUI>();
     }
 
     // Update is called once per frame
@@ -199,6 +205,7 @@ public class BuildScript : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Deselected buildings");
+            po.MakeButtonsWork();
             DeselectWireMode();
             selectedBuilding = null;
             removalMode = false;
