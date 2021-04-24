@@ -39,8 +39,22 @@ namespace Milestones
                     ++solars;
                 }
             }
+            
+            GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
-            return solars >= (currentSolars + numToComplete);
+            int poweredHouses = 0;
+            
+            foreach (var house in allHouses)
+            {
+                // If the house is powered
+                    if (house.GetComponent<GeneralObjectScript>().isMilestoneCounted &&
+                        house.GetComponent<ConsumerScript>().GetManager().hasEnoughPower)
+                    {
+                        ++poweredHouses;
+                    }
+            }
+
+            return solars >= (currentSolars + numToComplete) && poweredHouses >= 45;
         }
 
         public override void SetCompleteMilestone()

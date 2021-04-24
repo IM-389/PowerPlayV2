@@ -61,7 +61,7 @@ namespace Milestones
                 }
             }
 
-            return (poweredFactories > 1 && poweredHospitals > 1) && (turbines >= (turbineStart + numToComplete));
+            return (poweredFactories > 6 && poweredHospitals > 2) && (turbines >= (turbineStart + numToComplete));
         }
         
         public override void SetCompleteMilestone()

@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 5588274786107567410}
   m_Layer: 7
   m_Name: restaurant
-  m_TagString: restaurant
+  m_TagString: house
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

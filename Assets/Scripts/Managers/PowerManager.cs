@@ -92,4 +92,15 @@ public class PowerManager : MonoBehaviour
         }
     }
 
+    public float GetTotalAmountGenerated()
+    {
+        float total = powerAmountsGenerated[0];
+        for (int i = 1; i < powerAmountsGenerated.Length; ++i)
+        {
+            total += powerAmountsGenerated[i];
+        }
+
+        return total;
+    }
+
 }

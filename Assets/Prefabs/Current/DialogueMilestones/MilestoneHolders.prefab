@@ -239,6 +239,7 @@ MonoBehaviour:
   startDay: -1
   daysElapsed: 0
   maxDays: 0
+  requiredPower: 0
   daysLeft: {fileID: 0}
 --- !u!1 &6521204051002110279
 GameObject:
@@ -377,7 +378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Move Camera          Zoom in/out         Remove the power pole
+  milestoneText: Remove the power pole!
   milestoneName: Getting Started
   hasQuestion: 0
   enabledObjects:
@@ -442,7 +443,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Change time using the buttons in the bottom left!
   milestoneName: 
   hasQuestion: 0
   enabledObjects: []
@@ -1148,7 +1149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Move around and zoom!
   milestoneName: 
   hasQuestion: 0
   enabledObjects: []
@@ -1269,7 +1270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Find the power pole!
   milestoneName: 
   hasQuestion: 0
   enabledObjects: []
