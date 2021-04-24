@@ -113,7 +113,8 @@ public class DialogueBehaviour : MonoBehaviour
         Destroy(st.textSet);
         st = GameObject.FindObjectOfType<StoryTelling>();
         st.TriggerDialogue(hasQuiz);
-        
+        popOut.SetActive(true);
+
     }
 
     private IEnumerator HideGriddy()
