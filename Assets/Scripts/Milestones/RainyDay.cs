@@ -72,7 +72,7 @@ public class RainyDay : MilestoneBase
         base.SetCompleteMilestone();
 
         randomEvents.doEvents = true;
-        
+        ConsumerScript.approvalTracking = true;
         for (int i = 0; i < upgradeArea.transform.childCount; ++i)
         {
             if (upgradeArea.transform.GetChild(i).CompareTag("house"))

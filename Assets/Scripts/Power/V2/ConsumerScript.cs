@@ -27,7 +27,7 @@ namespace Power.V2
         static float consumingHouses;
         static float totalHouses;
         static bool check = false;
-        static bool approvalTracking;
+        public static bool approvalTracking;
 
         bool isPowered = false;
 

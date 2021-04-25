@@ -299,8 +299,15 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 != null)
         {
             wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
+            wireObject1.layer = 0;
         }
 
+        if (wireObject2 != null)
+        {
+            wireObject2.GetComponent<RecolorScript>().Recolor(Color.white);
+            wireObject2.layer = 0;
+        }
+        
         removalMode = false;
 
         //buildCircle.gameObject.SetActive(true);
