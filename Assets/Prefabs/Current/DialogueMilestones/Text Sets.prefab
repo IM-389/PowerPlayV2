@@ -404,9 +404,8 @@ MonoBehaviour:
     - The town keeps growing, another neighborhood has been built! This time, you
       need to build the generator for it as well. Just like you built the substation,
       build a new Coal Plant near the new neighborhood!
-    - <b>Fossil fuels may pollute the air with CO2 (Carbon Dioxide) but they are
-      easily cheaper than clean energy (solar and wind) and are more reliable than
-      clean energy so they are necessary for now.</b>
+    - <b>Coal Plants burn coal, which is a fossil fuel. Fossil fuels may pollute
+      the air with CO<sub>2</sub> (Carbon Dioxide), but are cheap and reliable</b>
     - Once you have built the new Coal Plant, connect it to the houses.
 --- !u!1 &3818978950506970305
 GameObject:
@@ -614,7 +613,7 @@ MonoBehaviour:
     - 'The people are without power. We must restore power to their homes to make
       them happy. '
     - To connect the coal plant to the house you first need power poles and a substation.<b>Power
-      poles help transfer the power from place to place.</b>
+      poles help transfer the power from place to place. </b>
     - "To build a power pole, click on the big Tools button in the bottom right and
       select the \u201CPower Poles\u201D button. Place the power pole under the arrows."
 --- !u!1 &3818978950798463949
@@ -1397,7 +1396,7 @@ MonoBehaviour:
   dialogue:
     sentences:
     - You are just breezing through this, great job! Just looking at those wind turbines
-      is so cool. Be prepared for the next question about how wind turbines work.
+      is so cool. Get ready  for the next question about how wind turbines work.
 --- !u!1 &6165095487682146258
 GameObject:
   m_ObjectHideFlags: 0
