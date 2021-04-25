@@ -29,7 +29,8 @@ public class DialogueBehaviour : MonoBehaviour
 
     public GameObject popOut;
     private SlideOutUI po;
-    
+
+    private int currentSentence = -1;
     void Awake()
     {
         //sentences = new List<string>();
@@ -44,6 +45,7 @@ public class DialogueBehaviour : MonoBehaviour
 
     public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
+        currentSentence = -1;
         previousTimeScale = Time.timeScale;
         po.UpdateSlideOutUI(false);
         dialougePanel.SetActive(true);
@@ -66,12 +68,13 @@ public class DialogueBehaviour : MonoBehaviour
     public void DisplayNextSentence(bool hasQuiz)
     {
 
+        ++currentSentence;
         FaceScript.faceSprite = 2;
         FaceScript.switchFaces = true;
 
         //Debug.Log("Calling DisplayNextSentence!");
         //Debug.Log($"Number items in list: {sentences.Count}");
-        if (sentences.Count == 0)
+        if (currentSentence >= sentences.Count)
         {
             //sc.dialogueLine.text = nextSetMessage;
             //nextSetButton.SetActive(true);
@@ -91,12 +94,29 @@ public class DialogueBehaviour : MonoBehaviour
 
         }
         griddyAnim.SetTrigger("talkingTrigger");
-        string talk = sentences[0];
+        string talk = sentences[currentSentence];
         sc.dialogueLine.text = talk;
         Time.timeScale = 0;
-        sentences.RemoveAt(0);
+        //sentences.RemoveAt(0);
     }
 
+    public void DisplayPreviousSentence()
+    {
+        // Prevent underflowing the sentences
+        if (currentSentence <= 0)
+        {
+            return;
+        }
+
+        --currentSentence;
+        
+        FaceScript.faceSprite = 2;
+        FaceScript.switchFaces = true;
+        
+        griddyAnim.SetTrigger("talkingTrigger");
+        sc.dialogueLine.text = sentences[currentSentence];
+    }
+    
     public void EndDialogue(bool hasQuiz)
     {
         if(st.nextTextSet == null)
