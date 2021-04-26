@@ -73,6 +73,9 @@ public class BuildScript : MonoBehaviour
 
     public bool trackApproval;
 
+    //to deselect buttons
+    public SlideOutUI po;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +86,9 @@ public class BuildScript : MonoBehaviour
         cityApproval = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
         moneyManager = GameObject.FindWithTag("GameController").GetComponent<MoneyManager>();
         //();
+
+        //find the slide out UI
+        po = GameObject.FindObjectOfType<SlideOutUI>();
     }
 
     // Update is called once per frame
@@ -199,6 +205,7 @@ public class BuildScript : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             Debug.Log("Deselected buildings");
+            po.MakeButtonsWork();
             DeselectWireMode();
             selectedBuilding = null;
             removalMode = false;
@@ -292,8 +299,15 @@ public class BuildScript : MonoBehaviour
         if (wireObject1 != null)
         {
             wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
+            wireObject1.layer = 0;
         }
 
+        if (wireObject2 != null)
+        {
+            wireObject2.GetComponent<RecolorScript>().Recolor(Color.white);
+            wireObject2.layer = 0;
+        }
+        
         removalMode = false;
 
         //buildCircle.gameObject.SetActive(true);
@@ -484,7 +498,7 @@ public class BuildScript : MonoBehaviour
             //tooltipInfo += $"LV Connections: {sGos.maxLVConnections}\n";
             
             
-          
+
             selectedTooltipText.text = tooltipInfo;
         }
         else
@@ -531,12 +545,14 @@ public class BuildScript : MonoBehaviour
             wireObject1 = hit.transform.gameObject;
             wireObject1.layer = 2;
             wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
         }
 
         // Otherwise it sets the second wire object
         else
         {
             wireObject2 = hit.transform.gameObject;
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             // Checks to make sure the same object isn't clicked twice
             if (wireObject1 == wireObject2)
             {
@@ -589,6 +605,7 @@ public class BuildScript : MonoBehaviour
                     wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             }
             foreach (GameObject connect in wire1.consumerConnections)
             {
@@ -600,6 +617,7 @@ public class BuildScript : MonoBehaviour
                     wireObject1.GetComponent<RecolorScript>().Recolor(Color.blue);
                     return;
                 }
+                //FMODUnity.RuntimeManager.PlayOneShot("event:/Sound Effects/Object Select");
             }
             
             wireObject2.layer = 11;

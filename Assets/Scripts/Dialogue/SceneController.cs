@@ -52,6 +52,14 @@ public class SceneController : MonoBehaviour
 
     }
 
+    public void PressButtonPreviousText()
+    {
+        db.DisplayPreviousSentence();
+        FMODUnity.RuntimeManager.PlayOneShot(griddySounds);
+        canPress = false;
+        Invoke("WaitToPress", waitTime);
+    }
+
     public void ContinueTutorial()
     {
         goToNext = true;

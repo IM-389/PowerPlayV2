@@ -39,6 +39,8 @@ namespace Milestones
 
         public int daysElapsed;
 
+        public bool hasText = true;
+        
         public int maxDays;
         public abstract bool CheckCompleteMilestone();
 
