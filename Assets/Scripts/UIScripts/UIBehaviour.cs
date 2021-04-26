@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Power.V2;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -55,6 +56,7 @@ public class UIBehaviour : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(num);
         Time.timeScale = 1;
+        ConsumerScript.approvalTracking = false;
         TimeManager.backgrounds1.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         TimeManager.backgrounds2.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }

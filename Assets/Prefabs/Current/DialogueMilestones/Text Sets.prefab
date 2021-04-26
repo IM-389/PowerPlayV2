@@ -47,8 +47,7 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978951736599955}
   dialogue:
     sentences:
-    - You are just breezing through this great job! You are definitely ready for
-      the next question about solar energy.
+    - You are definitely ready for the next question about solar energy.
 --- !u!1 &2283855935682397535
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,8 +401,12 @@ MonoBehaviour:
   nextTextSet: {fileID: 2283855935682397535}
   dialogue:
     sentences:
-    - "Amazing! Now that we have a new place to power, let\u2019s see if you can
-      power it using what you know now."
+    - The town keeps growing, another neighborhood has been built! This time, you
+      need to build the generator for it as well. Just like you built the substation,
+      build a new Coal Plant near the new neighborhood!
+    - <b>Coal Plants burn coal, which is a fossil fuel. Fossil fuels may pollute
+      the air with CO<sub>2</sub> (Carbon Dioxide), but are cheap and reliable</b>
+    - Once you have built the new Coal Plant, connect it to the houses.
 --- !u!1 &3818978950506970305
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,10 +507,10 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Good job finding the power pole!
-    - "That shouldn\u2019t be there. We should remove it to save space."
-    - To remove objects, press the build button in the lower right corner and press
-      the removal tool. This allows you to now remove objects.
-    - With the removal tool selected, go click on the power pole.
+    - "That shouldn\u2019t be there. We should remove it."
+    - To remove objects, press the Tools button in the lower right corner and press
+      the Removal Tool. This allows you to now remove objects.
+    - With the Removal Tool selected, go click on the power pole.
 --- !u!1 &3818978950780145047
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,12 +610,12 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Great job removing the power pole! With your skills we can do anything!
-    - 'As you see on the screen, the people are without power. We must restore power
-      to their homes to make them happy. '
-    - To connect the coal plant to the house you first need power poles and a substation.
-      Power poles help transfer the power from place to place.
-    - "To build a power pole, click on the big tools button in the bottom right and
-      select the \u201CPower Poles\u201D button. Place the power pole anywhere."
+    - 'The people are without power. We must restore power to their homes to make
+      them happy. '
+    - To connect the coal plant to the house you first need power poles and a substation.<b>Power
+      poles help transfer the power from place to place. </b>
+    - "To build a power pole, click on the big Tools button in the bottom right and
+      select the \u201CPower Poles\u201D button. Place the power pole under the arrows."
 --- !u!1 &3818978950798463949
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,10 +663,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 8673809124865356359}
   dialogue:
     sentences:
-    - Great work connecting those wires! A new neighborhood has opened up, and you
-      need to build the substation and connect the wires!
-    - This neighborhood needs a coal plant and substations as well. Build them the
-      same way as before.
+    - A new neighborhood has opened up, and we have a new mission for you!
+    - This neighborhood needs a coal plant and substations. Build them the same way
+      as before.
     - To connect the buildings, just place the power pole next to the buildings you
       wish to connect.
 --- !u!1 &3818978950850381384
@@ -713,12 +715,12 @@ MonoBehaviour:
   nextTextSet: {fileID: 6165095487682146258}
   dialogue:
     sentences:
-    - Fantastic! Now all that is needed is building the wires and connecting everything
-      together.
-    - Now just select wires on the right side of the screen like you did with the
-      power poles.
-    - Go and connect the power poles to the big machine on the screen with no wires
-      on one side.
+    - 'Fantastic! Now all that is needed is building the wires and connecting everything
+      together. '
+    - Now use the Tools Menu to select wires on the right side of the screen like
+      you did with the power poles.
+    - Now that you selected the wires go and connect the power poles to the grey
+      machine on the screen with no wires on one side.
 --- !u!1 &3818978950864860942
 GameObject:
   m_ObjectHideFlags: 0
@@ -832,9 +834,9 @@ MonoBehaviour:
     - We will start with Solar Panels, these environmentally friendly forms of energy
       do not hurt the Earth and still produce energy for people.
     - Start by building Solar Panels and connecting them to a small neighborhood
-      of 3 houses.
-    - "As the name suggests, solar panels work with the sun. They won\u2019t produce
-      power during the night or when there are clouds out"
+      of five houses.
+    - "As the name suggests, solar panels work with the sun. <b>They won\u2019t produce
+      power during the night or when there are clouds out</b>"
 --- !u!1 &3818978950990658700
 GameObject:
   m_ObjectHideFlags: 0
@@ -1340,7 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 5995642949280023954}
-  nextTextSet: {fileID: 3818978949942769132}
+  nextTextSet: {fileID: 3818978950780145047}
   dialogue:
     sentences:
     - The old power grid has a lot less improvements to itself due to it being old.
@@ -1393,8 +1395,8 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978951293459021}
   dialogue:
     sentences:
-    - Just looking at those wind turbines is so cool. Be prepared for the next question
-      about how wind turbines work.
+    - You are just breezing through this, great job! Just looking at those wind turbines
+      is so cool. Get ready  for the next question about how wind turbines work.
 --- !u!1 &6165095487682146258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,9 +1444,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978950798463949}
   dialogue:
     sentences:
-    - 'Great job connecting all those parts together. To test your knowledge we will
-      ask you questions about what you have learned from time to time. '
-    - This quiz question about power poles should be a sinch for you.
+    - Great job connecting all those parts together. To test your knowledge we will
+      ask you questions about what you have learned from time to time.
+    - "Let\u2019s try this first quiz questions!"
 --- !u!1 &6367870531884122943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1589,6 +1591,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978951064686726}
   dialogue:
     sentences:
+    - Would you look at that! Now that you have powered enough homes you have unlocked
+      a <b>Smart Meter</b>! When people have their homes powered their satisfaction
+      goes up which is what we want the Smart Meters help homes stay powered.
     - "Smart meters really do help us a lot, let\u2019s see if you know how they
       help houses in the next question. "
 --- !u!1 &8673809124865356359
@@ -1639,9 +1644,3 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Fantastic! The neighborhood now has power!
-    - The town keeps growing, another neighborhood has been built! This time, you
-      need to build the generator for it as well. Just like you built the substation,
-      build a new Coal Plant near the new neighborhood!
-    - Fossil fuels may pollute the air with CO2 (Carbon Dioxide) but they are easily
-      cheaper than clean energy (solar and wind) and are more reliable than clean
-      energy so they are necessary for now.

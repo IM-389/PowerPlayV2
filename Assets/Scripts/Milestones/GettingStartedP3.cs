@@ -20,8 +20,8 @@ namespace Milestones
             Vector2 targetScreenPos = mainCam.WorldToScreenPoint(targetPos);
             Vector2 targetViewportPos = mainCam.ScreenToViewportPoint(targetScreenPos);
 
-            return (targetViewportPos.x <= 0.6 && targetViewportPos.x >= 0.4) &&
-                   (targetViewportPos.y <= 0.6 && targetViewportPos.y >= 0.4);
+            return (targetViewportPos.x <= 0.7 && targetViewportPos.x >= 0.3) &&
+                   (targetViewportPos.y <= 0.7 && targetViewportPos.y >= 0.3);
         }
     }
 }

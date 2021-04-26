@@ -26,15 +26,15 @@ public class SlideOutUI : MonoBehaviour
         anim.SetBool("button pressed", button);
         if (!button)
         {
-            Invoke("HideTheScreen", 1f);
+            //Invoke("HideTheScreen", 1f);
         }
     }
-
+    /*
     void HideTheScreen()
     {
         gameObject.SetActive(false);
     }
-
+    */
     public void MakeButtonsWork()
     {
         foreach(Button button in buttons)

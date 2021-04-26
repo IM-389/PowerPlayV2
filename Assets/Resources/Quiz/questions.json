@@ -1,12 +1,12 @@
 {
   "Questions": [
     {
-      "Question": "What is the core purpose of power poles?\n",
+      "Question": "What is the primary purpose of power poles?\n",
       "Answers": [
         "To move the electricity from one place to another",
         "To be the light of our world",
-        "Power poles means everything is faster",
-        "Power poles isn’t used for anything"
+        "Power poles mean everything is faster",
+        "Power poles aren’t used for anything"
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! The core purpose of power poles is to help move electricity from one place to another.",
@@ -59,14 +59,26 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, Wind turbines get power when the wind turns the blades and powers a generator."
     },
     {
-      "Question": "Can houses without Smart Meters communicate if they don't have power on their own?\n",
+      "Question": "Can Smart Meters automatically communicate if the house has a power outage?\n",
       "Answers": [
         "Yes",
         "No"
       ],
-      "Correct": 1,
+      "Correct": 0,
       "PostAnswerTextCorrect": "Correct! Normal houses can't communicate with the power grid on their own. Which is why we would need Smart Meters to help the houses communicate.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be False, houses can't normally communicate on their own without a Smart Meter."
+    },
+    {
+      "Question": "What is the key thing Smart Meters are communicating?",
+      "Answers": [
+        "Smart Meters help tell the power plants your private information",
+        "Smart Meters don’t do anything",
+        "Smart Meters show how much power you are using and how much you need",
+        "All of the above"
+      ],
+      "Correct": 2,
+      "PostAnswerTextCorrect": "Correct! Smart Meters communicate with power companies and can alert them if the power goes out!",
+      "PostAnswerTextIncorrect": "Incorrect, sorry. The correct answer would be C, Smart Meters show how much power you are using and how much you need"
     },
     {
       "Question": "Factories and Hospitals require a lot more energy to run because they always need to be working at their best. The Smart Grid would help as would help bring power to these places more efficiently making them work better\n",
