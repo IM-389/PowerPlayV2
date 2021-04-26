@@ -1342,7 +1342,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 5995642949280023954}
-  nextTextSet: {fileID: 3818978949942769132}
+  nextTextSet: {fileID: 3818978950780145047}
   dialogue:
     sentences:
     - The old power grid has a lot less improvements to itself due to it being old.
