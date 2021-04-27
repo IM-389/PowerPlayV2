@@ -189,7 +189,7 @@ MonoBehaviour:
   isGenerator: 0
   isConsumer: 0
   wireLength: 3.5
-  buildingText: Helps you send Low-Voltage Power a long way.
+  buildingText: Helps you send power a long way.
   connected: 0
   wireMat: {fileID: 0}
   refundAmount: 0
