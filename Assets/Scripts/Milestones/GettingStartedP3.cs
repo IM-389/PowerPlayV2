@@ -9,6 +9,8 @@ namespace Milestones
         private Camera mainCam;
 
         private Vector3 targetPos;
+        
+        public GameObject griddie;
         private void Start()
         {
             mainCam = Camera.main;
@@ -17,6 +19,11 @@ namespace Milestones
         
         public override bool CheckCompleteMilestone()
         {
+            if (griddie.activeSelf)
+            {
+                return false;
+            }
+            
             Vector2 targetScreenPos = mainCam.WorldToScreenPoint(targetPos);
             Vector2 targetViewportPos = mainCam.ScreenToViewportPoint(targetScreenPos);
 

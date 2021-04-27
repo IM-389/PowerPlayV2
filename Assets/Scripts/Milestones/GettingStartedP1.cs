@@ -9,6 +9,7 @@ namespace Milestones
 
         private Camera mainCam;
 
+        public GameObject griddie;
         private void Start()
         {
             mainCam = Camera.main;
@@ -18,6 +19,11 @@ namespace Milestones
         
         public override bool CheckCompleteMilestone()
         {
+            if (griddie.activeSelf)
+            {
+                return false;
+            }
+            
             Vector2 currentPos = mainCam.transform.position;
             float currentZoom = mainCam.orthographicSize;
 
