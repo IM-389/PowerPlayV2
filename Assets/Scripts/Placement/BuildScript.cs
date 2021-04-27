@@ -202,7 +202,7 @@ public class BuildScript : MonoBehaviour
 
         }
         // When you right click, set things to inactive
-        else if (Input.GetMouseButtonDown(1))
+        else if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Deselected buildings");
             po.MakeButtonsWork();
