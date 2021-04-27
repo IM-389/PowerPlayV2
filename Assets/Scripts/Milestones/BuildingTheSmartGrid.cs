@@ -24,6 +24,9 @@ public class BuildingTheSmartGrid : MilestoneBase
     private bool cachedPower = false;
     
     private bool startCountdown = false;
+
+    [Tooltip("Area to upgrade the houses in")]
+    public GameObject[] upgradeAreas;
     private void Start()
     {
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
@@ -76,5 +79,22 @@ public class BuildingTheSmartGrid : MilestoneBase
         }
 
         return false;
+    }
+
+    public override void SetCompleteMilestone()
+    {
+        base.SetCompleteMilestone();
+        
+        foreach (var upgradeArea in upgradeAreas)
+        {
+            for (int i = 0; i < upgradeArea.transform.childCount; ++i)
+            {
+                if (upgradeArea.transform.GetChild(i).CompareTag("house"))
+                {
+                    upgradeArea.transform.GetChild(i).GetComponent<GeneralObjectScript>().isSmart = true;
+                    upgradeArea.transform.GetChild(i).GetChild(5).gameObject.SetActive(true);
+                }
+            }
+        }
     }
 }
