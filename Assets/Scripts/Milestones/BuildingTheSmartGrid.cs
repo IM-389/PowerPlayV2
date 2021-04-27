@@ -56,7 +56,7 @@ public class BuildingTheSmartGrid : MilestoneBase
         }
 
         // If enough houses are powered, start the week-long cooldown
-        if (poweredHouses.Count >= 25)
+        if (poweredHouses.Count >= 25)//one factory one hospital
         {
             startCountdown = true;
         }

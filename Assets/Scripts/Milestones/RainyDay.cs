@@ -45,7 +45,7 @@ public class RainyDay : MilestoneBase
         }
 
         // If enough houses are powered, start the week-long cooldown
-        if (poweredHouses.Count >= 23)
+        if (poweredHouses.Count >= 25)
         {
             startCountdown = true;
         }
