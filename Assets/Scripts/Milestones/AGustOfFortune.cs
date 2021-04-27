@@ -11,6 +11,8 @@ namespace Milestones
 
         private int turbineStart;
 
+        [Tooltip("GSO to make removable at the end of thee milestone")]
+        public GeneralObjectScript toMakeRemovable;
         private void Start()
         {
             GeneratorScript[] allGenerators = GameObject.FindObjectsOfType<GeneratorScript>();
@@ -68,7 +70,7 @@ namespace Milestones
         {
             base.SetCompleteMilestone();
             StartCoroutine(AutoUpgrade());
-
+            toMakeRemovable.unRemovable = false;
         }
         
         private IEnumerator AutoUpgrade()

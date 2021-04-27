@@ -294,6 +294,10 @@ public class BuildScript : MonoBehaviour
     }
     public void DeselectWireMode()
     {
+        if (wireObject1.CompareTag("PauseBlocker"))
+        {
+            wireObject1 = null;
+        }
         wireMode = false;
         upgradeMode = false;
         if (wireObject1 != null)

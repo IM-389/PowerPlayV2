@@ -75,7 +75,7 @@ public class BuildingTheSmartGrid : MilestoneBase
             // Count the days elapsed
             daysElapsed = timeManager.days - startDay;
             daysLeft.text = "Days all houses powered: " + daysElapsed;
-            return daysElapsed >= 1 && powerManager.GetTotalAmountGenerated() >= (startPower + requiredPower);
+            return daysElapsed >= 1;// && powerManager.GetTotalAmountGenerated() >= (startPower + requiredPower);
         }
 
         return false;
