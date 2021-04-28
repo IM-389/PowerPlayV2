@@ -298,6 +298,10 @@ public class BuildScript : MonoBehaviour
         {
             wireObject1 = null;
         }
+        if (wireObject2 != null && wireObject2.CompareTag("PauseBlocker"))
+        {
+            wireObject2 = null;
+        }
         wireMode = false;
         upgradeMode = false;
         if (wireObject1 != null)

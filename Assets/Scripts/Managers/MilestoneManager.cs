@@ -57,6 +57,7 @@ public class MilestoneManager : MonoBehaviour
         if (isComplete || Input.GetKeyDown(KeyCode.Y))
         {
             Debug.Log("Milestone complete, setting next ones!");
+            daysLeft.text = "";
             currentMilestones.SetCompleteMilestone();
             moneyManager.money += currentMilestones.moneyGained;
             foreach (var building in currentMilestones.newBuildings)
@@ -83,8 +84,7 @@ public class MilestoneManager : MonoBehaviour
            currentMilestones.daysElapsed = timeManager.days - currentMilestones.startDay;
         }
         text = currentMilestones.milestoneText + "\n";
-        daysLeft.text = "";
-        
+
         milestoneText.text = text;
     }
 }

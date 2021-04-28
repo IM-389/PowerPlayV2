@@ -60,7 +60,7 @@ public class RainyDay : MilestoneBase
 
             // Count the days elapsed
             daysElapsed = timeManager.days - startDay;
-            daysLeft.text = "Days all houses powered: " + daysElapsed;
+            daysLeft.text = $"Days all houses powered: {daysElapsed.ToString()}";
             return daysElapsed >= 1 && timeManager.cityApproval >= 60;
         }
 
