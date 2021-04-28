@@ -15,10 +15,14 @@ public class SquirrelEvent : EventBase
     // }
     //public GameObject[] findPower;
     private BuildScript wireObject1;
-    public override bool DoEvent()
+    public override bool DoEvent(bool force)
     {
         Debug.Log("Squirrel time selected!");
         int chance = Random.Range(0, 100);
+        if (force)
+        {
+            chance = 0;
+        }
         if(chance < eventChance)
         {
             Debug.Log("Squirrel time baby!");

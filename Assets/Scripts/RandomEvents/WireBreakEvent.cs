@@ -13,11 +13,15 @@ public class WireBreakEvent : EventBase
     // Update is called once per frame
     public BuildScript wireBreaker;
     private MoneyManager moneyManager;
-    public override bool DoEvent()
+    public override bool DoEvent(bool force)
     {
         Debug.Log("Wire Break Selected!");
         //Vector2 mouseWorldPos = mainCamera.ScreenToWorldPoint(Input.mousePosition);
         int chance = Random.Range(0, 100);
+        if (force)
+        {
+            chance = 0;
+        }
         //pick a random item, pick a random connection, remove
         if (chance < eventChance)
         {

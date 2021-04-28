@@ -19,6 +19,6 @@ public abstract class EventBase : MonoBehaviour
         timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
     }
     
-    public abstract bool DoEvent();
+    public abstract bool DoEvent(bool force);
 
 }

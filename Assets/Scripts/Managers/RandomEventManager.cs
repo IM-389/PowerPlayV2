@@ -61,7 +61,7 @@ public class RandomEventManager : MonoBehaviour
 
             EventBase eventSelected = events[eventRNG];
 
-            if (eventSelected.DoEvent())
+            if (eventSelected.DoEvent(false))
             {
                 eventNotification.transform.GetChild(1).GetComponent<Text>().text = eventSelected.notification;
                 eventNotification.SetActive(true);
@@ -77,5 +77,10 @@ public class RandomEventManager : MonoBehaviour
     {
         yield return new WaitForSeconds(notificationShowTime);
         eventNotification.SetActive(false);
+    }
+
+    public void RunEvent(int id)
+    {
+        events[id].DoEvent(true);
     }
 }

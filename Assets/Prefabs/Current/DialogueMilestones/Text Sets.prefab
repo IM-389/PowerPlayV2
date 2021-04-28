@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6082244161681113519}
   - component: {fileID: 8978163785435498665}
   m_Layer: 0
-  m_Name: RainyDaySctiptedEvent
+  m_Name: RainyDaySquirrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textSet: {fileID: 3818978951293459021}
-  nextTextSet: {fileID: 8189631319404650758}
+  nextTextSet: {fileID: 945450003837330915}
   dialogue:
     sentences:
     - "Looks like some houses aren\u2019t powered. Now that we have many types of
