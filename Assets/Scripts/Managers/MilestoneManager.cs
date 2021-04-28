@@ -31,6 +31,8 @@ public class MilestoneManager : MonoBehaviour
 
     public TimeManager timeManager;
 
+    public MoneyManager moneyManager;
+    
     public Text daysLeft;
     /// <summary>
     /// Sets the data for the first milestone
@@ -40,6 +42,7 @@ public class MilestoneManager : MonoBehaviour
         currentMilestones = milestones[0];
         milestoneText.text = currentMilestones.milestoneText;
         build = GameObject.FindWithTag("Background").GetComponent<BuildScript>();
+        moneyManager = gameObject.GetComponent<MoneyManager>();
     }
     
     /// <summary>
@@ -55,7 +58,7 @@ public class MilestoneManager : MonoBehaviour
         {
             Debug.Log("Milestone complete, setting next ones!");
             currentMilestones.SetCompleteMilestone();
-            
+            moneyManager.money += currentMilestones.moneyGained;
             foreach (var building in currentMilestones.newBuildings)
             {
                 build.spawnableBuildings.Add(building);

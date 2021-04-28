@@ -9,9 +9,9 @@ public class GoingGreen : MilestoneBase
     private bool generatorRemoved = false;
     public override bool CheckCompleteMilestone()
     {
+        GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
         if (!generatorRemoved)
         {
-            GeneratorScript[] generators = GameObject.FindObjectsOfType<GeneratorScript>();
 
             foreach (var generator in generators)
             {
@@ -24,7 +24,7 @@ public class GoingGreen : MilestoneBase
 
         generatorRemoved = true;
         GameObject[] houses = GameObject.FindGameObjectsWithTag("house");
-
+        
         int poweredHouses = 0;
         foreach (var house in houses)
         {
@@ -34,6 +34,14 @@ public class GoingGreen : MilestoneBase
             }
         }
 
+        foreach (var generator in generators)
+        {
+            if (generator.type == PowerManager.POWER_TYPES.TYPE_COAL)
+            {
+                return false;
+            }
+        }
+        
         return poweredHouses >= 45;
     }
 }

@@ -125,6 +125,38 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
     },
     {
+      "Question": "What allows solar panels to power during the night and to function more efficiently during the night?\n",
+      "Answers": [
+        "They use heat to generate more power",
+        "The solar panels store excess power in batteries during the day",
+        "They all communicate with each other and can better sense which panels are getting more light",
+        "They look cooler now, so they generate more power"
+      ],
+      "Correct": 1,
+      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+    },
+    {
+      "Question": "Wind Turbines are facing multiple different directions in a wind farm so when the wind blows in different directions you still generate power.\n",
+      "Answers": [
+        "True",
+        "False"
+      ],
+      "Correct": 0,
+      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+    },
+    {
+      "Question": "Is Green Energy actually green?\n",
+      "Answers": [
+        "True",
+        "False"
+      ],
+      "Correct": 1,
+      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+    },
+    {
       "Question": "END\n",
       "Answers": [
         "END"

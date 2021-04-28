@@ -14,6 +14,9 @@ namespace Milestones
 
         public string milestoneName;
 
+        [Tooltip("How much money is gained for completing the milestone")]
+        public int moneyGained;
+        
         [Tooltip("If this milestone has a question once it is completed")]
         public bool hasQuestion;
 

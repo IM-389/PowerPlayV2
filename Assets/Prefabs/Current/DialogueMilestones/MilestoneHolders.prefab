@@ -44,8 +44,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -103,8 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -162,8 +164,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power a factory and hospital
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -221,8 +224,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -280,8 +284,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power a factory and hospital
+  milestoneText: Power all houses, and the new factory and hospital!
   milestoneName: Powering Industry
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -349,6 +354,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Use solar panels to power the new neighborhood!
   milestoneName: Out With The Old
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -406,9 +412,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Remove the original coal genetator, and power those houses with
-    Green Energy
+  milestoneText: Remove all coal generators, and power the entire town with green
+    energy!
   milestoneName: Going Green
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -465,8 +472,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power all houses for 1 day
+  milestoneText: Build more power generators to make sure everything stays on for
+    1 day!
   milestoneName: Building the Smart Grid
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -481,6 +490,7 @@ MonoBehaviour:
   maxDays: 0
   requiredPower: 0
   daysLeft: {fileID: 0}
+  upgradeAreas: []
 --- !u!1 &6521204051002110279
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,8 +535,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power all houses for 1 day
+  milestoneText: Power all the houses for 1 day!
   milestoneName: Enter the Smart Grid
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -621,6 +632,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Remove the power pole!
   milestoneName: Getting Started
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects:
   - {fileID: 0}
@@ -687,6 +699,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Change time using the buttons in the bottom left!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -743,8 +756,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Connect the power poles to the gray machine!
   milestoneName: Basic Connections
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -810,8 +824,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Place power poles under the arrows!
   milestoneName: Basic Connections
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects:
   - {fileID: 0}
@@ -872,8 +887,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Generate 150 power with solar panels
+  milestoneText: Power the new area with Solar Panels for 1 day!
   milestoneName: Suns the Limit
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -931,8 +947,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Use windmills to power the unpowered houses!
+  milestoneText: Use windmills to power the new houses!
   milestoneName: In With The New
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -992,6 +1009,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Power  all houses for 1 day
   milestoneName: Satisfied
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects: []
   disabledObjects: []
@@ -1049,8 +1067,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Create a new coal plant, and power all the houses
+  milestoneText: Create another Coal Plant, and use it to power the new neighborhood!
   milestoneName: Powering Up
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects:
   - {fileID: 0}
@@ -1115,8 +1134,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Generate 200 power with wind turbines
+  milestoneText: Power the new area with Wind Turbines for 1 day!
   milestoneName: A Gust of Fortune
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1130,6 +1150,7 @@ MonoBehaviour:
   hasText: 1
   maxDays: 0
   numToComplete: 5
+  toMakeRemovable: {fileID: 0}
 --- !u!1 &6521204052205378399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1176,6 +1197,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: See how long you can keep the town powered!
   milestoneName: END
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1231,8 +1253,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power everything for 1 day
+  milestoneText: Power the newly created restaurants and factories for 1 day!
   milestoneName: Using the Smart Grid
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1351,8 +1374,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power all houses for 1 day
+  milestoneText: Power all the houses for 1 day, and make sure the City Satisfaction
+    reaches 60!
   milestoneName: Rainy Day
+  moneyGained: 0
   hasQuestion: 1
   enabledObjects: []
   disabledObjects: []
@@ -1413,6 +1438,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Move around and zoom!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1425,6 +1451,7 @@ MonoBehaviour:
   daysElapsed: 0
   hasText: 1
   maxDays: 0
+  griddie: {fileID: 0}
 --- !u!1 &6521204052501826470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,8 +1496,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Create a new substation, and use it to power the new houses
+  milestoneText: Create a Coal Plant and substation to power the neighborhood!
   milestoneName: Branching Out
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects:
   - {fileID: 0}
@@ -1536,6 +1564,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Find the power pole!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1549,6 +1578,7 @@ MonoBehaviour:
   hasText: 1
   maxDays: 0
   targetPole: {fileID: 0}
+  griddie: {fileID: 0}
 --- !u!1 &7358075934786391102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,8 +1623,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1652,8 +1683,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1711,8 +1743,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power a factory and hospital
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1770,8 +1803,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power a factory and hospital
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1829,8 +1863,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1888,8 +1923,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Place power poles to power all the houses!
+  milestoneText: Answer the quiz question!
   milestoneName: 
+  moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []

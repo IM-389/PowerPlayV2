@@ -1,5 +1,56 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &945450003837330915
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6082244161681113519}
+  - component: {fileID: 8978163785435498665}
+  m_Layer: 0
+  m_Name: RainyDaySctiptedEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6082244161681113519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945450003837330915}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3818978950864860943}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8978163785435498665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945450003837330915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fa29a33aedf6de41a388433e0c1e441, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textSet: {fileID: 945450003837330915}
+  nextTextSet: {fileID: 8189631319404650758}
+  dialogue:
+    sentences:
+    - "Looks like some houses aren\u2019t powered. Now that we have many types of
+      power production, try to power the homes with some of the new ways we found!"
+    - "When people have their homes powered their satisfaction goes up. This is what
+      we want as a powered customer, is a happy one and won\u2019t move away."
 --- !u!1 &2197140918253928783
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,8 +146,8 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978950957599995}
   dialogue:
     sentences:
-    - Great job powering the new neighborhood. Be ready for the next quiz question
-      about carbon dioxide.
+    - Great job powering the new neighborhood. Get ready for the next quiz question
+      about carbon dioxide
 --- !u!1 &2750976988453169766
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +177,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 20
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4286820483635986647
 MonoBehaviour:
@@ -145,7 +196,7 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Absolutely Amazing!
-    - Next question now, yes
+    - Next question now, yes?
 --- !u!1 &3818978949942769132
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +226,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 23
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978949942769134
 MonoBehaviour:
@@ -196,11 +247,7 @@ MonoBehaviour:
     - The Smart Grid helps out in a lot of ways. For example, the Smart Grid says
       when a home needs more or less power, where and when a house loses power, and
       is more efficient than the traditional grid.
-    - The new neighborhood that just opened has been equipped with Smart Meters.
-      Smart Meters work with the power plant to help make energy more efficient.
-      They tell when a place has too much or too little power, help identify blackouts
-      when they occur, and make renewable energy even more stable for everyone to
-      use.
+    - 'The new neighborhood that just opened has been equipped with Smart Meters. '
 --- !u!1 &3818978950206534005
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,7 +277,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 19
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950206534007
 MonoBehaviour:
@@ -248,7 +295,7 @@ MonoBehaviour:
   nextTextSet: {fileID: 2750976988453169766}
   dialogue:
     sentences:
-    - The growing power grid has attracted the attention of a Factory and Hospital.
+    - The growing power grid has attracted the attention of a factory and a hospital.
       We should go power them. Try to power them using multiple types of power.
     - Smart Meters have been installed in the second neighborhood. Go check them
       out!
@@ -281,7 +328,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 29
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950207393215
 MonoBehaviour:
@@ -333,7 +380,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950265756227
 MonoBehaviour:
@@ -402,8 +449,8 @@ MonoBehaviour:
   dialogue:
     sentences:
     - The town keeps growing, another neighborhood has been built! This time, you
-      need to build the generator for it as well. Just like you built the substation,
-      build a new Coal Plant near the new neighborhood!
+      need to build the generator for it as well. Just like before, build a new Substation
+      and Coal Plant near the new neighborhood.
     - <b>Coal Plants burn coal, which is a fossil fuel. Fossil fuels may pollute
       the air with CO<sub>2</sub> (Carbon Dioxide), but are cheap and reliable</b>
     - Once you have built the new Coal Plant, connect it to the houses.
@@ -436,7 +483,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950506970307
 MonoBehaviour:
@@ -540,7 +587,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978950780145041
 MonoBehaviour:
@@ -558,9 +605,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978951498804748}
   dialogue:
     sentences:
-    - Congrats on powering all the houses for a day. For your achievement we are
+    - Congrats on powering all the houses for a day. For your achievement, we are
       upgrading all the solar panels. Now instead of turning off at night and not
-      working during cloudy days the solar panels do now work during those times.
+      working during cloudy days, the solar panels now work during those times.
     - Now try and power an entire neighborhood with just solar panels.
 --- !u!1 &3818978950789678276
 GameObject:
@@ -664,8 +711,12 @@ MonoBehaviour:
   dialogue:
     sentences:
     - A new neighborhood has opened up, and we have a new mission for you!
+    - Each new milestone you complete you will earn money that you can use to complete
+      the next one.
     - This neighborhood needs a coal plant and substations. Build them the same way
       as before.
+    - "Substations are needed because they make sure the power you get is safe to
+      handle and isn\u2019t harmful."
     - To connect the buildings, just place the power pole next to the buildings you
       wish to connect.
 --- !u!1 &3818978950850381384
@@ -715,12 +766,13 @@ MonoBehaviour:
   nextTextSet: {fileID: 6165095487682146258}
   dialogue:
     sentences:
-    - 'Fantastic! Now all that is needed is building the wires and connecting everything
-      together. '
-    - Now use the Tools Menu to select wires on the right side of the screen like
-      you did with the power poles.
-    - Now that you selected the wires go and connect the power poles to the grey
-      machine on the screen with no wires on one side.
+    - Fantastic! Now all that is needed is connecting everything together.
+    - Use the Tools Menu to select wires on the right side of the screen like you
+      did with the power poles.
+    - "Now that you selected the \u201CWires\u201D go and connect the power poles
+      to the grey machine on the screen with no wires on one side"
+    - "If you accidentally select something don\u2019t worry, just press the spacebar
+      to deselect it."
 --- !u!1 &3818978950864860942
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +816,7 @@ Transform:
   - {fileID: 3818978951736599965}
   - {fileID: 2646405618579890579}
   - {fileID: 3818978951293459022}
+  - {fileID: 6082244161681113519}
   - {fileID: 8387157471050713970}
   - {fileID: 3818978951064686727}
   - {fileID: 4841047972001132458}
@@ -829,14 +882,14 @@ MonoBehaviour:
   nextTextSet: {fileID: 2197140918253928783}
   dialogue:
     sentences:
-    - You see those coal plants, they are starting to become a problem by making
-      the Earth unwell, we need to go and use better alternatives.
-    - We will start with Solar Panels, these environmentally friendly forms of energy
+    - You see those coal plants? They are starting to become a problem by making
+      pollution, we need to go and use better alternatives.
+    - We will start with Solar Panels. These environmentally friendly power generators
       do not hurt the Earth and still produce energy for people.
+    - "As the name suggests, solar panels work with the sun. <b>They won\u2019t produce
+      power during the night or when there are clouds out.</b>"
     - Start by building Solar Panels and connecting them to a small neighborhood
       of five houses.
-    - "As the name suggests, solar panels work with the sun. <b>They won\u2019t produce
-      power during the night or when there are clouds out</b>"
 --- !u!1 &3818978950990658700
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,9 +939,9 @@ MonoBehaviour:
     sentences:
     - Hey there, my name is Griddie the Smart Grid. My job is to help you make the
       best Smart Grid you can possibly make! With our teamwork, we can achieve anything!
-    - 'To look around, click-and-drag the right mouse button. Let go of the right
-      mouse button when you want to stop moving. '
-    - "You can also use the mouse\u2019s scroll wheel to zoom in and out. "
+    - To look around, use the arrow keys on the keyboard.
+    - To zoom in and out use the minus key (-) to zoom out, the equals key (=) to
+      zoom in.
 --- !u!1 &3818978951007899535
 GameObject:
   m_ObjectHideFlags: 0
@@ -966,7 +1019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 17
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951064686720
 MonoBehaviour:
@@ -984,10 +1037,12 @@ MonoBehaviour:
   nextTextSet: {fileID: 7640254609936555995}
   dialogue:
     sentences:
-    - "Now that we have Smart Meters placed in a single neighborhood, we should see
-      what happens when something goes wrong and see how it is different than if
+    - "Soon we will have Smart Meters placed in the first neighborhood. We should
+      see what happens when something goes wrong and how it is different than if
       we didn\u2019t have Smart Meters."
-    - We should also try to hit a goal of powering the neighborhoods for 1 day. Should
+    - Smart Meters stay in constant communication with the power plant to see if
+      you have no power, have too little power, and or have too much power.
+    - We should try to keep powering all of the neighborhoods for one day. This should
       be easier with the help of Smart Meters.
 --- !u!1 &3818978951293459021
 GameObject:
@@ -1038,6 +1093,8 @@ MonoBehaviour:
     sentences:
     - "Looks like some houses aren\u2019t powered. Now that we have many types of
       power production, try to power the homes with some of the new ways we found!"
+    - "When people have their homes powered their satisfaction goes up. This is what
+      we want as a powered customer, is a happy one and won\u2019t move away."
 --- !u!1 &3818978951494332491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1116,7 +1173,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951498804750
 MonoBehaviour:
@@ -1135,7 +1192,8 @@ MonoBehaviour:
   dialogue:
     sentences:
     - All Wind turbines will now work more efficiently when placed close together.
-      This is called a wind farm.
+      This is called a wind farm, where all the turbines are placed closely together
+      but in different directions to generate power wherever the wind flows.
     - Try and use the wind farm to power the new neighborhood.
 --- !u!1 &3818978951575355016
 GameObject:
@@ -1166,7 +1224,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 21
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951575355018
 MonoBehaviour:
@@ -1186,15 +1244,18 @@ MonoBehaviour:
     sentences:
     - Now that you understand the basics of the power grid we are going to improve
       it. So let me introduce The <b>Smart Grid!</b>
-    - The Smart Grid is a more efficient power grid. Specifically, the Smart Grid
-      constantly communicates the people's homes to the power company.
+    - "The Smart Grid is a more efficient power grid. Specifically, the Smart Grid
+      allows constant communication between people\u2019s homes and the power company."
     - A reason the Smart Grid is so good is it allows renewable energy to be used
-      more effectively as now if the renewable energy fails, then instead of you
-      losing power you can now borrow energy from people who have too much.
+      more effectively. If the renewable energy fails, you can now borrow energy
+      from people who have too much instead of you losing power.
     - "If you don\u2019t have a Smart Meter for a house, you won\u2019t know where
       the power outage is, only that there is one. With Smart Meters you can literally
-      see where the power is out which increases efficiency and public satisfaction."
-    - All homes now have a Smart Meter
+      see where the power is out, which increases efficiency and public satisfaction."
+    - All homes now have a Smart Meter and all Substations have been upgraded to
+      turn off generators when we have enough, and prioritize cleaner energy to the
+      coal alternative.
+    - Try to connect the power grids from neighborhood [1] to neighborhood [2]
 --- !u!1 &3818978951682047609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,7 +1285,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 30
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3818978951682047611
 MonoBehaviour:
@@ -1295,9 +1356,9 @@ MonoBehaviour:
     - "As you will notice from the Solar Panels, renewable energy isn\u2019t as consistent
       as non renewable energy like coal plants. We will explain how to make them
       more consistent later."
-    - "Wind Turbines need wind to work, so try putting some down and connect them
-      to a new neighborhood. People don\u2019t like it when wind turbines are too
-      close to their houses so try to be careful of that."
+    - "<b>Wind Turbines need wind to work to produce power,</b> so try putting some
+      down and connect them to a new neighborhood. People don\u2019t like it when
+      wind turbines are too close to their houses so try to be careful of that."
 --- !u!1 &5995642949280023954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 24
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7787657319904664791
 MonoBehaviour:
@@ -1444,9 +1505,9 @@ MonoBehaviour:
   nextTextSet: {fileID: 3818978950798463949}
   dialogue:
     sentences:
-    - Great job connecting all those parts together. To test your knowledge we will
+    - Great job connecting all those parts together! To test your knowledge we will
       ask you questions about what you have learned from time to time.
-    - "Let\u2019s try this first quiz questions!"
+    - "Let\u2019s try this first quiz question!"
 --- !u!1 &6367870531884122943
 GameObject:
   m_ObjectHideFlags: 0
@@ -1476,7 +1537,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 22
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &292228860448012124
 MonoBehaviour:
@@ -1524,7 +1585,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 18
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1191390495520284506
 MonoBehaviour:
@@ -1573,7 +1634,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3818978950864860943}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2558608828808993611
 MonoBehaviour:
@@ -1592,10 +1653,11 @@ MonoBehaviour:
   dialogue:
     sentences:
     - Would you look at that! Now that you have powered enough homes you have unlocked
-      a <b>Smart Meter</b>! When people have their homes powered their satisfaction
-      goes up which is what we want the Smart Meters help homes stay powered.
-    - "Smart meters really do help us a lot, let\u2019s see if you know how they
-      help houses in the next question. "
+      a <b>Smart Meter</b>! The Smart Meters help homes stay powered by staying in
+      constant communication with the power grid to tell it if you have power or
+      not.
+    - "Smart meters help us a lot. Let\u2019s see if you know how they help houses
+      in the next question. "
 --- !u!1 &8673809124865356359
 GameObject:
   m_ObjectHideFlags: 0
