@@ -6386,6 +6386,10 @@ PrefabInstance:
       value: WindParticles
       objectReference: {fileID: 0}
     - target: {fileID: 3340427072384275412, guid: db608f213499166459407f68c17ea106, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3340427072384275412, guid: db608f213499166459407f68c17ea106, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 10301, guid: 0000000000000000f000000000000000, type: 0}
@@ -6529,6 +6533,18 @@ PrefabInstance:
     - target: {fileID: 8138366193326261397, guid: 334607670aaa61043a0a85432babaedd, type: 3}
       propertyPath: m_Name
       value: Title Text (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891741, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 125.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891741, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 92.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 8138366194488891742, guid: 334607670aaa61043a0a85432babaedd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 334607670aaa61043a0a85432babaedd, type: 3}
