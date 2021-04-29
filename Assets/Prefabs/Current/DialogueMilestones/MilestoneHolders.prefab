@@ -284,8 +284,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: Click the "Tools" button, then the "Remove Tool"!
+  milestoneText: Click the "Tools" button, then the "Remove Tool"!
+  milestoneName: 
   moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
@@ -344,8 +344,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: Select the Power Poles button in the Tools menu!!
+  milestoneText: Select the Power Poles button in the Tools menu!!
+  milestoneName: 
   moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
@@ -404,7 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Power all the houses for 1 day!
   milestoneName: 
   moneyGained: 0
   hasQuestion: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Create another Coal Plant, and use it to power the new neighborhood!
   milestoneName: 
   moneyGained: 0
   hasQuestion: 0
@@ -583,8 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Power all the houses for 1 day, and make sure the City Satisfaction
-    reaches 60!
+  milestoneText: Repair the broken wires!
   milestoneName: 
   moneyGained: 0
   hasQuestion: 0
@@ -763,8 +762,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
-  milestoneName: Select the wire button in the Tools menu!!
+  milestoneText: Select the wire button in the Tools menu!!
+  milestoneName: 
   moneyGained: 0
   hasQuestion: 0
   enabledObjects: []
@@ -1759,7 +1758,7 @@ GameObject:
   - component: {fileID: 6521204052249886388}
   - component: {fileID: 6521204052249886389}
   m_Layer: 0
-  m_Name: UsingTheSmartGrtid
+  m_Name: UsingTheSmartGrid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2046,7 +2045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: Create a Coal Plant and substation to power the neighborhood!
+  milestoneText: Create a Coal Plant to power the neighborhood!
   milestoneName: Branching Out
   moneyGained: 0
   hasQuestion: 0
@@ -2233,7 +2232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Place a substation to connect your new Coal Plant to the houses!
   milestoneName: 
   moneyGained: 0
   hasQuestion: 0
@@ -2353,7 +2352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sequenceNumber: 0
-  milestoneText: 
+  milestoneText: Connect the substation to the houses with Power Poles!
   milestoneName: 
   moneyGained: 0
   hasQuestion: 0

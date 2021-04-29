@@ -12,12 +12,20 @@ public class RainySquirrel : MilestoneBase
     private bool delayStarted = false;
 
     private bool delayFinished = false;
-    private void Start()
-    {
-    }
-    
+
     public override bool CheckCompleteMilestone()
     {
+        if (!delayStarted)
+        {
+            delayStarted = true;
+            StartCoroutine(RunDelay());
+        }
+
+        if (!delayFinished)
+        {
+            return false;
+        }
+        
         GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
         int houses = 0;
@@ -34,5 +42,11 @@ public class RainySquirrel : MilestoneBase
         }
 
         return houses >= 25;
+    }
+    
+    private IEnumerator RunDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        delayFinished = true;
     }
 }

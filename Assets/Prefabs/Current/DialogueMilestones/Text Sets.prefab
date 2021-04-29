@@ -1455,8 +1455,7 @@ MonoBehaviour:
     - All homes now have a Smart Meter and all Substations have been upgraded to
       turn off generators when we have enough, and prioritize cleaner energy to the
       coal alternative.
-    - 'Try to connect the power grids from neighborhood [1] to neighborhood [2] //Building
-      smart grid milestone question '
+    - Try to connect the power grids from the Red neighborhood to the Blue one!
 --- !u!1 &3818978951682047609
 GameObject:
   m_ObjectHideFlags: 0

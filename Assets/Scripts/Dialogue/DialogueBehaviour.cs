@@ -19,7 +19,7 @@ public class DialogueBehaviour : MonoBehaviour
     public Animator griddyAnim;
     public BoxCollider2D pauseBlocker;
 
-    public float previousTimeScale = 0;
+    public float previousTimeScale = 1;
 
     public GameObject arrow;
     
