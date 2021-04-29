@@ -190,7 +190,7 @@ public class TimeManager : MonoBehaviour
             if (hours >= 1 && hours <= 25)
             {
                 //isDay = true;
-                string buffer = "";
+                //string buffer = "";
                 StringBuilder builder = new StringBuilder();
                 if (hours == 25)
                 {
