@@ -29,12 +29,19 @@ namespace Power.V2
         public int upkeepCost;
         private MoneyManager moneyManager;
         private PowerManager powerManager;
+
+        private Animator anim;
         private void Start()
         {
             totalGenerators++;
             if(type == PowerManager.POWER_TYPES.TYPE_COAL)
             {
                 coalGenerators++;
+            }
+
+            if (type == PowerManager.POWER_TYPES.TYPE_WIND)
+            {
+                anim = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
             }
             timeManager = GameObject.FindObjectOfType<TimeManager>();
             ns = gameObject.GetComponent<NetworkScript>();
@@ -131,8 +138,14 @@ namespace Power.V2
             // Apply the changes to the manager again
             //manager.powerGenerated += amountInfo.amountGenerated;
 
+            // Freeze the animation
+            anim.speed = 0;
+            
             yield return new WaitForSeconds(seconds);
 
+            // Restart the animation
+            anim.speed = 1;
+            
             // Remove the previously generated amount
             manager.powerGenerated -= amountInfo.amountGenerated;
             

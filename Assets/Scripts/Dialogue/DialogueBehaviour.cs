@@ -46,6 +46,7 @@ public class DialogueBehaviour : MonoBehaviour
     public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
         currentSentence = -1;
+        Time.timeScale = previousTimeScale;
         previousTimeScale = Time.timeScale;
         po.UpdateSlideOutUI(false);
         dialougePanel.SetActive(true);

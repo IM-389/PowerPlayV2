@@ -2,20 +2,12 @@ using Power.V2;
 using Milestones;
 using UnityEngine;
 
-public class BranchingOut : MilestoneBase
+public class BranchingOutP3 : MilestoneBase
 {
     public GameObject arrow;
     ArrowBehaviour am;
     public override bool CheckCompleteMilestone()
     {
-        GameObject[] substations = GameObject.FindGameObjectsWithTag("Substation");
-
-        if(substations.Length >= 2)
-        {
-            am = arrow.GetComponent<ArrowBehaviour>();
-            am.FinishTheJob();
-        }
-        
         // Find all houses
         GameObject[] houses = GameObject.FindGameObjectsWithTag("house");
 
@@ -33,8 +25,6 @@ public class BranchingOut : MilestoneBase
             }
         }
 
-        GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
-        
-        return substations.Length >= 2 && poweredHouses >= 10 && generators.Length >= 2;
+        return poweredHouses >= 10;
     }
 }

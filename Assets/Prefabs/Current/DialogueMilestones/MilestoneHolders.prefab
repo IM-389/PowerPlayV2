@@ -1,5 +1,125 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100277798675130990
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4071089165211266059}
+  - component: {fileID: 1589152480460584375}
+  m_Layer: 0
+  m_Name: SunsTheLimitButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4071089165211266059
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100277798675130990}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 34
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1589152480460584375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100277798675130990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Answer the quiz question!
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052076212526}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &597036551933929651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2826767266244105677}
+  - component: {fileID: 5758881289921275643}
+  m_Layer: 0
+  m_Name: AGustOfFortuneButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2826767266244105677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597036551933929651}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 36
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5758881289921275643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597036551933929651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Answer the quiz question!
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204050914697440}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
 --- !u!1 &1236367575382939574
 GameObject:
   m_ObjectHideFlags: 0
@@ -29,7 +149,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 14
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6868906025393853080
 MonoBehaviour:
@@ -52,7 +172,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052344100194}
+  - {fileID: 1092611035592225024}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -89,7 +209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 18
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6688731995243022748
 MonoBehaviour:
@@ -120,6 +240,245 @@ MonoBehaviour:
   hasText: 1
   maxDays: 0
   targetButton: {fileID: 0}
+--- !u!1 &1694758648215381211
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1731361226641539407}
+  - component: {fileID: 601409021990170560}
+  m_Layer: 0
+  m_Name: GettingStartedRemoveTool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1731361226641539407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694758648215381211}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &601409021990170560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694758648215381211}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: Click the "Tools" button, then the "Remove Tool"!
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204051080078622}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &3023853192338161784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3594818568175621410}
+  - component: {fileID: 1092611035592225024}
+  m_Layer: 0
+  m_Name: RainyPreSquirrel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3594818568175621410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023853192338161784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1092611035592225024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3023853192338161784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfb58a6b21cf95e42911a8966609d790, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 3913127786689363989}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+--- !u!1 &4061365515372935099
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7371621207958265945}
+  - component: {fileID: 4748934027688149822}
+  m_Layer: 0
+  m_Name: GoingGreenButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7371621207958265945
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061365515372935099}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 38
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4748934027688149822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4061365515372935099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: Answer the quiz question!
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204052205378396}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &4395261320477126516
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4004682828641458019}
+  - component: {fileID: 4607758153539823094}
+  m_Layer: 0
+  m_Name: PoweringUpP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4004682828641458019
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395261320477126516}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4607758153539823094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395261320477126516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8745578aeda823444b15748c03f73257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6527593497104967203}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  arrow: {fileID: 0}
 --- !u!1 &4769338293900370813
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +508,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 17
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3913127786689363989
 MonoBehaviour:
@@ -173,7 +532,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6688731995243022748}
+  - {fileID: 6521204052344100194}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -209,7 +568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 24
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3171587033502085680
 MonoBehaviour:
@@ -269,7 +628,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 12
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &4798005883899211182
 MonoBehaviour:
@@ -293,6 +652,66 @@ MonoBehaviour:
   newBuildings: []
   nextMilestones:
   - {fileID: 6521204051929737048}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  targetButton: {fileID: 0}
+--- !u!1 &5208811139849382738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7196314839519842684}
+  - component: {fileID: 8036399889295396650}
+  m_Layer: 0
+  m_Name: BasicConnectionsWireButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7196314839519842684
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208811139849382738}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8036399889295396650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5208811139849382738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40dfd1cb22324a37ad9ac2a1b5749ce8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: Select the wire button in the Tools menu!!
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 6521204051592583238}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -329,7 +748,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 21
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050823110447
 MonoBehaviour:
@@ -356,7 +775,7 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 0}
+  - {fileID: 3423651520121888726}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -397,7 +816,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 11
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050868160670
 MonoBehaviour:
@@ -457,7 +876,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 29
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050914697440
 MonoBehaviour:
@@ -481,7 +900,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052205378396}
+  - {fileID: 4748934027688149822}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -517,7 +936,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 23
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204050923638162
 MonoBehaviour:
@@ -580,7 +999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 19
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051002110277
 MonoBehaviour:
@@ -644,7 +1063,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 31
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6521204051080078608
 GameObject:
@@ -675,7 +1094,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051080078622
 MonoBehaviour:
@@ -801,7 +1220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051592583238
 MonoBehaviour:
@@ -869,7 +1288,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051658446245
 MonoBehaviour:
@@ -896,7 +1315,7 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204051592583238}
+  - {fileID: 8036399889295396650}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -932,7 +1351,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 27
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051805236126
 MonoBehaviour:
@@ -955,7 +1374,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204052076212526}
+  - {fileID: 1589152480460584375}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -992,7 +1411,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 13
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051929737048
 MonoBehaviour:
@@ -1052,7 +1471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 15
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204051954012062
 MonoBehaviour:
@@ -1094,7 +1513,7 @@ GameObject:
   - component: {fileID: 6521204052013161001}
   - component: {fileID: 6521204052013160982}
   m_Layer: 0
-  m_Name: PoweringUp
+  m_Name: PoweringUpP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,7 +1531,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 9
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052013160982
 MonoBehaviour:
@@ -1142,7 +1561,7 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 6527593497104967203}
+  - {fileID: 4607758153539823094}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -1179,7 +1598,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 28
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052076212526
 MonoBehaviour:
@@ -1202,7 +1621,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204050914697440}
+  - {fileID: 5758881289921275643}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -1240,7 +1659,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 30
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052205378396
 MonoBehaviour:
@@ -1298,7 +1717,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 25
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052249886389
 MonoBehaviour:
@@ -1359,21 +1778,27 @@ Transform:
   - {fileID: 6521204052423696610}
   - {fileID: 6521204051363903584}
   - {fileID: 6521204052585664210}
+  - {fileID: 1731361226641539407}
   - {fileID: 6521204051080078609}
   - {fileID: 6521204051658446244}
+  - {fileID: 7196314839519842684}
   - {fileID: 6521204051592583257}
   - {fileID: 5681984574228640371}
   - {fileID: 6521204052501826471}
+  - {fileID: 5966696835762900870}
+  - {fileID: 1168243715028397872}
   - {fileID: 7144828906884697063}
   - {fileID: 6521204052013161001}
+  - {fileID: 4004682828641458019}
   - {fileID: 2895490156513202088}
   - {fileID: 6521204050868160657}
   - {fileID: 269317373824688845}
   - {fileID: 6521204051929737051}
   - {fileID: 8238799777165714356}
   - {fileID: 6521204051954012049}
-  - {fileID: 6521204052344100197}
+  - {fileID: 3594818568175621410}
   - {fileID: 6042602155168805016}
+  - {fileID: 6521204052344100197}
   - {fileID: 5919357127037183187}
   - {fileID: 6521204051002110276}
   - {fileID: 7226719938418355390}
@@ -1384,8 +1809,11 @@ Transform:
   - {fileID: 6521204052249886388}
   - {fileID: 5282649079090860158}
   - {fileID: 6521204051805236113}
+  - {fileID: 4071089165211266059}
   - {fileID: 6521204052076212513}
+  - {fileID: 2826767266244105677}
   - {fileID: 6521204050914697443}
+  - {fileID: 7371621207958265945}
   - {fileID: 6521204052205378397}
   - {fileID: 6521204051072620920}
   m_Father: {fileID: 0}
@@ -1420,7 +1848,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 16
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052344100194
 MonoBehaviour:
@@ -1444,7 +1872,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 3913127786689363989}
+  - {fileID: 6688731995243022748}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -1524,7 +1952,7 @@ GameObject:
   - component: {fileID: 6521204052501826471}
   - component: {fileID: 6521204052501826468}
   m_Layer: 0
-  m_Name: BranchingOut
+  m_Name: BranchingOutP1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1542,7 +1970,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6521204052501826468
 MonoBehaviour:
@@ -1571,7 +1999,7 @@ MonoBehaviour:
   - {fileID: 0}
   newBuildings: []
   nextMilestones:
-  - {fileID: 5882798115625832736}
+  - {fileID: 3671591321291481011}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -1631,7 +2059,7 @@ MonoBehaviour:
   disabledObjects: []
   newBuildings: []
   nextMilestones:
-  - {fileID: 6521204051080078622}
+  - {fileID: 601409021990170560}
   isGeneratingSmartCoins: 0
   smartCoins: 0
   startDay: -1
@@ -1669,7 +2097,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 10
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6527593497104967203
 MonoBehaviour:
@@ -1700,6 +2128,66 @@ MonoBehaviour:
   hasText: 1
   maxDays: 0
   targetButton: {fileID: 0}
+--- !u!1 &7457835525462762955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5966696835762900870}
+  - component: {fileID: 3671591321291481011}
+  m_Layer: 0
+  m_Name: BranchingOutP2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5966696835762900870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457835525462762955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3671591321291481011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7457835525462762955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17b1d1c5a7d034345a24ccc0fcfed418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 696598700349576747}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  arrow: {fileID: 0}
 --- !u!1 &7611478976315240090
 GameObject:
   m_ObjectHideFlags: 0
@@ -1729,7 +2217,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 20
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2798183330618914263
 MonoBehaviour:
@@ -1760,6 +2248,66 @@ MonoBehaviour:
   hasText: 1
   maxDays: 0
   targetButton: {fileID: 0}
+--- !u!1 &8075705589484864896
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168243715028397872}
+  - component: {fileID: 696598700349576747}
+  m_Layer: 0
+  m_Name: BranchingOutP3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168243715028397872
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075705589484864896}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6521204052316507002}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &696598700349576747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8075705589484864896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25afcf7b0f968543be1969b3eb1fad8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sequenceNumber: 0
+  milestoneText: 
+  milestoneName: 
+  moneyGained: 0
+  hasQuestion: 0
+  enabledObjects: []
+  disabledObjects: []
+  newBuildings: []
+  nextMilestones:
+  - {fileID: 5882798115625832736}
+  isGeneratingSmartCoins: 0
+  smartCoins: 0
+  startDay: -1
+  daysElapsed: 0
+  hasText: 1
+  maxDays: 0
+  arrow: {fileID: 0}
 --- !u!1 &8104064863305857443
 GameObject:
   m_ObjectHideFlags: 0
@@ -1789,7 +2337,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 22
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3423651520121888726
 MonoBehaviour:
@@ -1849,7 +2397,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 26
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6002348780737726471
 MonoBehaviour:
@@ -1909,7 +2457,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 8
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5882798115625832736
 MonoBehaviour:
@@ -1969,7 +2517,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6521204052316507002}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &9033665301933003532
 MonoBehaviour:

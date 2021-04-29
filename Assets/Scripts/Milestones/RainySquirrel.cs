@@ -6,23 +6,18 @@ using UnityEngine;
 
 public class RainySquirrel : MilestoneBase
 {
-    private RandomEventManager eventManager;
 
     private bool ranEvent = false;
-    
+
+    private bool delayStarted = false;
+
+    private bool delayFinished = false;
     private void Start()
     {
-        eventManager = GameObject.FindObjectOfType<RandomEventManager>();
     }
     
     public override bool CheckCompleteMilestone()
     {
-        if (!ranEvent)
-        {
-            eventManager.RunEvent(2);
-            ranEvent = true;
-        }
-        
         GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
         int houses = 0;
