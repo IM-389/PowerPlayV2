@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 using FMOD.Studio;
@@ -183,12 +184,14 @@ public class TimeManager : MonoBehaviour
 
     IEnumerator TimeCalculator()//This is a coroutine.
     {
+        WaitForSeconds wait = new WaitForSeconds(0.25f);
         while (true)
         {
             if (hours >= 1 && hours <= 25)
             {
                 //isDay = true;
                 string buffer = "";
+                StringBuilder builder = new StringBuilder();
                 if (hours == 25)
                 {
                     //isDay = true;
@@ -202,8 +205,8 @@ public class TimeManager : MonoBehaviour
                 
                 if (hours == 12 || hours == 24)
                 {   
-                    buffer += "Day: " + days + ", 12 ";
-
+                    //buffer += "Day: " + days + ", 12 ";
+                    builder.Append($"Day: {days}, 12 ");
                     if (hours == 12)
                     {
                         MusicManage();
@@ -211,23 +214,26 @@ public class TimeManager : MonoBehaviour
 
                     if(hours == 24)
                     {
-                        buffer += " A.M";
-                        
+                        //buffer += " A.M";
+                        builder.Append(" A.M");
                     }
                 }
                 else
                 {
-                    buffer += "Day: " + days + ", " + hours % 12;
+                    //buffer += "Day: " + days + ", " + hours % 12;
+                    builder.Append($"Day: {days}, {hours % 12}");
                 }
 
                 if (hours >= 12 && hours != 24)
                 {
-                    buffer +=  " P.M";
+                    //buffer +=  " P.M";
+                    builder.Append(" P.M");
                 }
 
                 else if(hours > 24 || hours <= 11)
                 {
-                    buffer += " A.M";
+                    //buffer += " A.M";
+                    builder.Append(" A.M");
                 }
                 if(hours == 6 || hours == 12 || hours == 16 || hours == 24)
                 {
@@ -261,7 +267,7 @@ public class TimeManager : MonoBehaviour
                     globalLight.intensity += 0.009375f;
                 } 
                 
-                clock.text = buffer;
+                clock.text = builder.ToString();
                 //Debug.Log("The time is Day");
             }
 
@@ -275,7 +281,7 @@ public class TimeManager : MonoBehaviour
                 displayHours++;
             }
 
-            yield return new WaitForSeconds(0.25F);//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
+            yield return wait;//This is the time to wait before the coroutine do its stuff again. There, you put the duration in seconds of an IN GAME minute. Right now, minutes will last for one second, just like it is in Zelda Majora's mask (the N64 version).
         }
     }
     /*
