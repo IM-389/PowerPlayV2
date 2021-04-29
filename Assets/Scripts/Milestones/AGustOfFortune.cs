@@ -51,19 +51,23 @@ namespace Milestones
                 }
             }
 
-            GeneratorScript[] allGenerators = GameObject.FindObjectsOfType<GeneratorScript>();
+            GameObject[] allGenerators = GameObject.FindGameObjectsWithTag("Generator");
 
             int turbines = 0;
 
             foreach (var generator in allGenerators)
             {
-                if (generator.type == PowerManager.POWER_TYPES.TYPE_WIND)
+                if (generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_WIND)
                 {
                     ++turbines;
                 }
             }
 
-            return (poweredFactories > 6 && poweredHospitals > 2) && (turbines >= (turbineStart + numToComplete));
+            bool isComplete = (poweredFactories > 6 && poweredHospitals > 2) &&
+                              (turbines >= (turbineStart + numToComplete));
+            Debug.Log($"[AGustOfFortune]: {isComplete}");
+
+            return isComplete;
         }
         
         public override void SetCompleteMilestone()
