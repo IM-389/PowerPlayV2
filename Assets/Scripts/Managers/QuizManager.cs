@@ -135,10 +135,10 @@ public class QuizManager : MonoBehaviour
 
     public void CloseQuiz()
     {
-        griddyAnim.SetBool("leaving", true);
-        pauseBlocker.enabled = false;
-        StartCoroutine(HideGriddy());
-        Time.timeScale = 1;
+        //griddyAnim.SetBool("leaving", true);
+        //pauseBlocker.enabled = false;
+        //StartCoroutine(HideGriddy());
+        //Time.timeScale = 1;
     }
     
     private IEnumerator HideGriddy()
