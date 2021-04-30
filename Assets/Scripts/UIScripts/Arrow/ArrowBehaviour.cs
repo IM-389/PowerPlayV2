@@ -11,21 +11,25 @@ public class ArrowBehaviour : MonoBehaviour
     //public GameObject cam;
     public float speed = 1;
     float angle;
-    public float destroyDis = 2.0f;
+    public float disMAX = 0.7f;
+    public float disMIN = 0.3f;
 
     // checks if the arrow is for tracking instead of just pointing
     public bool trackingArrow;
     // checks if there is another arrow after the current one
     public bool isThereMore;
     //
-    public bool finishPlacement;
+    private Camera mainCam;
+
+    private Vector3 targetPos;
 
 
     //public ArrowManager am;
     // Start is called before the first frame update
     void Start()
     {
-        //am = FindObjectOfType<ArrowManager>();
+        mainCam = Camera.main;
+        targetPos = target.transform.position;
     }
 
     // Update is called once per frame
@@ -44,7 +48,7 @@ public class ArrowBehaviour : MonoBehaviour
             Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
             gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, q, Time.deltaTime * speed);
 
-            if (Vector3.Distance(gameObject.transform.position, target.transform.position) < destroyDis) //set this to whatever suits best
+            if (CheckIfFound()) //set this to whatever suits best
             {
                 FinishTheJob();
             }
@@ -60,5 +64,15 @@ public class ArrowBehaviour : MonoBehaviour
         }
         
         gameObject.SetActive(false);
+    }
+
+    bool CheckIfFound()
+    {
+
+        Vector2 targetScreenPos = mainCam.WorldToScreenPoint(targetPos);
+        Vector2 targetViewportPos = mainCam.ScreenToViewportPoint(targetScreenPos);
+
+        return (targetViewportPos.x <= disMAX && targetViewportPos.x >= disMIN) &&
+               (targetViewportPos.y <= disMAX && targetViewportPos.y >= disMIN);
     }
 }
