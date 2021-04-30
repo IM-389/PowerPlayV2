@@ -91,24 +91,24 @@ namespace Power.V2
                             if(hitObject.CompareTag("house") || hitObject.CompareTag("factory")|| hitObject.CompareTag("hospital"))
                             {
                                 timeManager.cityApproval -= 10;
-                                Debug.Log("Lower City satisfaction, coal plant/windmill is too close to house");
+                                //Debug.Log("Lower City satisfaction, coal plant/windmill is too close to house");
                             }
                         }
                         if (!check)
                         {
                             if(coalGenerators/totalGenerators >= 1f)
                             {
-                                Debug.Log("100% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("100% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 40;
                             }
                             else if(coalGenerators/totalGenerators >= 0.9f)
                             {
-                                Debug.Log("90% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("90% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 20;
                             }
                             else if (coalGenerators/totalGenerators >= 0.8f)
                             {
-                                Debug.Log("80% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("80% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 10;
                             }
                             check = true;

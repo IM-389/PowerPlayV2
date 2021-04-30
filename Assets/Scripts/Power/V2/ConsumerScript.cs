@@ -62,7 +62,6 @@ namespace Power.V2
                 }
             }
             totalHouses++;
-            Debug.Log(totalHouses);
         }
 
         private void Update()

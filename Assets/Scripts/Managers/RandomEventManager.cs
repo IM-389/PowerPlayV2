@@ -47,14 +47,9 @@ public class RandomEventManager : MonoBehaviour
          */
         
         // Ticks on day changes
-        timestep = timeManager.days;
-        if (doEvents && timestep > previousTimestep && timeManager.days > 1)
+        timestep = timeManager.hours;
+        if (doEvents && timestep > previousTimestep && timeManager.hours > 1)
         {
-            // Reset all the power adjustments each day
-            for (int i = 0; i < 4; ++i)
-            {
-                powerManager.powerAdjusts[i] = 1;
-            }
             
             // Determine which event to select
             int eventRNG = Random.Range(0, events.Count);
@@ -69,8 +64,10 @@ public class RandomEventManager : MonoBehaviour
             }
 
         }
+        
+        
 
-        previousTimestep = timeManager.days;
+        previousTimestep = timeManager.hours;
     }
 
     private IEnumerator HideNotification()

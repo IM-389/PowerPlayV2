@@ -63,10 +63,14 @@ namespace Milestones
                 }
             }
 
-            bool isComplete = (poweredFactories > 6 && poweredHospitals > 2) &&
+            bool isComplete = (poweredFactories >= 6 && poweredHospitals >= 4) &&
                               (turbines >= (turbineStart + numToComplete));
             Debug.Log($"[AGustOfFortune]: {isComplete}");
 
+            Debug.Log($"[AGustOfFortune] Current Turbines: {turbines}");
+            Debug.Log($"[AGustOfFortune] Powered Hospitals: {poweredHospitals}");
+            Debug.Log($"[AGustOfFortune] Powered Factories: {poweredFactories}");
+            
             return isComplete;
         }
         

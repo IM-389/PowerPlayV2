@@ -6,7 +6,7 @@ public class PowerManager : MonoBehaviour
     private TimeManager timeManager;
 
     private bool wasDay;
-    
+
     public enum POWER_TYPES
     {
         TYPE_COAL = 0,
@@ -22,9 +22,14 @@ public class PowerManager : MonoBehaviour
 
     private void Update()
     {
+
         if (timeManager.isDay && !wasDay)
         {
+            // Reset all the power adjustments on the start of a new day
+            powerAdjusts[0] = 1;
+            powerAdjusts[1] = 1;
             powerAdjusts[2] = 1;
+            powerAdjusts[3] = 1;
         }
 
         if (wasDay && !timeManager.isDay)
