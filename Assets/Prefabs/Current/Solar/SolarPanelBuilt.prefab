@@ -92,7 +92,7 @@ MonoBehaviour:
   connected: 0
   wireMat: {fileID: 0}
   refundAmount: 5
-  buyCost: 0
+  buyCost: 5
   buildCircle: {fileID: 3125414001668101589}
   isSmart: 0
   unRemovable: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 9
+  amountGenerated: 6
   amountConsumed: 0
 --- !u!114 &7781973340629442645
 MonoBehaviour:
@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   upkeepCost: 0
-  upgradePowerAmount: 12
+  upgradePowerAmount: 9
 --- !u!114 &4520991485330122047
 MonoBehaviour:
   m_ObjectHideFlags: 0

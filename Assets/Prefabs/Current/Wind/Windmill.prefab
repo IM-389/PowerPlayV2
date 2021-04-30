@@ -6300,8 +6300,8 @@ MonoBehaviour:
     air.
   connected: 0
   wireMat: {fileID: 0}
-  refundAmount: 5
-  buyCost: 0
+  refundAmount: 8
+  buyCost: 8
   buildCircle: {fileID: 8939545911215852518}
   isSmart: 0
   unRemovable: 0
@@ -6365,7 +6365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cc791f8be209df459fbb2db60372c76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amountGenerated: 15
+  amountGenerated: 5
   amountConsumed: 0
 --- !u!114 &1203347081602024362
 MonoBehaviour:

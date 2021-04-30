@@ -46,7 +46,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 176
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -465,7 +465,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 100
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -644,7 +644,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 51
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -704,7 +704,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 30
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -1170,7 +1170,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Remove the power pole!
   milestoneName: Getting Started
-  moneyGained: 0
+  moneyGained: 2
   hasQuestion: 0
   enabledObjects:
   - {fileID: 0}
@@ -2174,7 +2174,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 30
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -2294,7 +2294,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 30
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -2474,7 +2474,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 80
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -2534,7 +2534,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 20
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
@@ -2594,7 +2594,7 @@ MonoBehaviour:
   sequenceNumber: 0
   milestoneText: Answer the quiz question!
   milestoneName: 
-  moneyGained: 0
+  moneyGained: 15
   hasQuestion: 0
   enabledObjects: []
   disabledObjects: []
