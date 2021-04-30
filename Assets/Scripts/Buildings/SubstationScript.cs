@@ -33,7 +33,7 @@ public class SubstationScript : MonoBehaviour
                    if(generators[i].GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_COAL)
                     {
                        coalPower += generators[i].GetComponent<PowerAmountInfo>().amountGenerated;
-                        coal.Add(generators[i]);
+                       coal.Add(generators[i]);
                     }
                     else
                     {
