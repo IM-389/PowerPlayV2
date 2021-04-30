@@ -13,6 +13,8 @@ public class QuizManager : MonoBehaviour
     public GameManager gameManager;
     [Tooltip("Reference to the SoundManager")]
     public SoundManager soundManager;
+    [Tooltip("Reference to the DialougeBehavior")]
+    public DialogueBehaviour db;
     private QuestionContainer questions;
 
     public List<QuestionInfo> questionsList = new List<QuestionInfo>();
@@ -46,7 +48,7 @@ public class QuizManager : MonoBehaviour
         questions = JsonUtility.FromJson<QuestionContainer>(questionData.text);
 
         questionsList.AddRange(questions.Questions);
-
+        db = GameObject.Find("Dialgoue Controller").GetComponent<DialogueBehaviour>();
         //Debug.Log(questionsList.Count);
     }
     
@@ -75,6 +77,7 @@ public class QuizManager : MonoBehaviour
 
     public void StartQuiz()
     {
+        db.afterQuiz = true;
         currentQuestion = NextQuestion();
         UpdateQuiz(currentQuestion);
     }
