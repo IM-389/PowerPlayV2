@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 1}
-  cost: 0
+  cost: 2
   positionOffset: {x: 0, y: 0}
   buildingName: 
 --- !u!61 &8242497555912496528
