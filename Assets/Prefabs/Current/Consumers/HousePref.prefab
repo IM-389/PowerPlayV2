@@ -117,7 +117,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e74d52c5447780d458980b313b6bc8f1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0b5300fd34720dc4781652b2cb589596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5324,7 +5324,7 @@ MonoBehaviour:
   volts: 0
   isGenerator: 0
   isConsumer: 1
-  wireLength: 3.1
+  wireLength: 3.5
   buildingText: People live here.
   connected: 0
   wireMat: {fileID: 0}
