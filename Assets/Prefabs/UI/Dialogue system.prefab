@@ -435,6 +435,7 @@ MonoBehaviour:
   griddy: {fileID: 0}
   griddyAnim: {fileID: 0}
   pauseBlocker: {fileID: 0}
+  afterQuiz: 0
   previousTimeScale: 0
   arrow: {fileID: 0}
   griddyAffirmative: 
