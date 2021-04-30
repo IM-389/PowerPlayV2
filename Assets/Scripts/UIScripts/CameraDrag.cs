@@ -45,8 +45,9 @@ public class CameraDrag : MonoBehaviour
             camera.transform.position -= new Vector3(Input.GetAxis("Mouse X") * speed, Input.GetAxis("Mouse Y") * speed);
             
         }
-        float xAxis = Input.GetAxis("Horizontal");
-        float yAxis = Input.GetAxis("Vertical");
+        float xAxis = Input.GetAxisRaw("Horizontal");
+        float yAxis = Input.GetAxisRaw("Vertical");
+        Debug.Log($"xAxis: {xAxis}, yAxis: {yAxis}");
         camera.transform.Translate(new Vector3(xAxis*buttonSpeed* Time.fixedDeltaTime, yAxis*buttonSpeed*Time.fixedDeltaTime, 0));
 
         // Limits camera to certain position range

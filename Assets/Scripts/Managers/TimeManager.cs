@@ -206,9 +206,9 @@ public class TimeManager : MonoBehaviour
                 if (hours == 12 || hours == 24)
                 {   
                     //buffer += "Day: " + days + ", 12 ";
-                    builder.Append($"Day: {days}, 12 ");
+                    //builder.Append($"Day: {days}, 12 ");
                     builder.Append(days);
-                    builder.Append(", 12");
+                    builder.Append(", P.M");
                     if (hours == 12)
                     {
                         MusicManage();
