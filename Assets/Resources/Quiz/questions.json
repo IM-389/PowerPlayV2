@@ -1,19 +1,19 @@
 {
   "Questions": [
     {
-      "Question": "What is the primary purpose of power poles?\n",
+      "Question": "What is the primary purpose of Power Poles?\n",
       "Answers": [
         "To move the electricity from one place to another",
         "To be the light of our world",
-        "Power poles mean everything is faster",
-        "Power poles aren’t used for anything"
+        "Power Poles mean everything is faster",
+        "Power Poles aren’t used for anything"
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! The core purpose of power poles is to help move electricity from one place to another.",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, to move the electricity from one place to another."
     },
     {
-      "Question": "Substations make sure that the power you get to your house is safe to use and won’t harm you or the house.\n",
+      "Question": "Substations make sure that the power you get to your house is safe to use.\n",
       "Answers": [
         "True",
         "False"
@@ -23,35 +23,35 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, Substations make sure the power is safe to use for your home."
     },
     {
-      "Question": "Coal power plants add a lot of CO<sub>2</sub> (Carbon Dioxide) and other greenhouse gases that hurt the planet. As alternatives, which type(s) of power plant(s) would be the more environmentally friendly?\n",
+      "Question": "Why don’t people like Coal Plants?\n",
       "Answers": [
-        "Wind",
-        "Solar",
-        "Both A and B",
-        "None of the above"
+        "Coal Plants look weird.",
+        "Coal Plants cost too much money to use a lot of them.",
+        "Coal Plants make lots of yucky smoke.",
+        "None of the above."
       ],
       "Correct": 2,
-      "PostAnswerTextCorrect": "Correct! Cleaner forms of energy would be wind and solar as they do not pollute the environment.",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, Cleaner forms of energy would be solar and wind as they don't use fossil fuels."
+      "PostAnswerTextCorrect": "Correct! Coal Plants make yucky smoke that hurts the environment.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, Coal plants make yucky smoke that hurts the environment."
     },
     {
-      "Question": "Why can’t we solely rely on solar energy?\n",
+      "Question": "What is one reason that Solar Panels can’t completely replace Coal Plants?\n",
       "Answers": [
-        "It doesn’t work during the night",
-        "Solar energy is too dangerous",
-        "The sun is a lie",
-        "This is false, we can solely rely on solar energy"
+        "Solar Panels don’t send out enough power at night.",
+        "Solar energy is too dangerous.",
+        "The Sun is a lie!",
+        "Actually, we can replace Coal Plants with Solar Panels!"
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! Solar panels work with energy from the sun, when it is night time the sun isn't out so the solar panels don't work",
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, Solar panels can't get power from the sun at night when the sun isn't out."
     },
     {
-      "Question": "How do wind turbines work?\n",
+      "Question": "How do Wind Turbines work?\n",
       "Answers": [
-        "They chop up the air",
-        "Wind turbines make wind",
-        "Wind turbines turn wind power into power by spinning the blades",
+        "Wind Turbines chop up the air.",
+        "Wind Turbines make wind",
+        "Wind turbines turn wind into power.",
         "None of the above"
       ],
       "Correct": 2,
@@ -59,58 +59,48 @@
       "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, Wind turbines get power when the wind turns the blades and powers a generator."
     },
     {
-      "Question": "Can Smart Meters automatically communicate if the house has a power outage?\n",
+      "Question": "What do we need to do to raise City Satisfaction?\n",
       "Answers": [
-        "Yes",
-        "No"
+        "Not have too many Coal Plants",
+        "Have more types of clean energy",
+        "Not have homes too close to power plants",
+        "All of the above"
       ],
-      "Correct": 0,
-      "PostAnswerTextCorrect": "Correct! Normal houses can't communicate with the power grid on their own. Which is why we would need Smart Meters to help the houses communicate.",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be False, houses can't normally communicate on their own without a Smart Meter."
+      "Correct": 3,
+      "PostAnswerTextCorrect": "Correct! City Satisfaction can be raised by not having too many Coal Plants, more types of clean energy, and not having too many homes near power plants.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, City Satisfaction can be raised by not having too many Coal Plants, more types of clean energy, and not having too many homes near power plants."
     },
     {
-      "Question": "What is the key thing Smart Meters are communicating?",
+      "Question": "What are Smart Meters used for?\n",
       "Answers": [
-        "Smart Meters help tell the power plants your private information",
-        "Smart Meters don’t do anything",
-        "Smart Meters show how much power you are using and how much you need",
+        "Smart Meters give power plants your private information.",
+        "Smart Meters don’t do anything.",
+        "Smart Meters show how much power you are using and how much you need.",
         "All of the above"
       ],
       "Correct": 2,
-      "PostAnswerTextCorrect": "Correct! Smart Meters communicate with power companies and can alert them if the power goes out!",
+      "PostAnswerTextCorrect": "Correct! Smart Meters communicate with power plants and tell them how much power you need and how much you are using",
       "PostAnswerTextIncorrect": "Incorrect, sorry. The correct answer would be C, Smart Meters show how much power you are using and how much you need"
     },
     {
-      "Question": "Factories and Hospitals require a lot more energy to run because they always need to be working at their best. The Smart Grid would help as would help bring power to these places more efficiently making them work better\n",
+      "Question": "Factories and Hospitals require a lot more energy to run. The Smart Meters would help bring power to these places more efficiently.\n",
       "Answers": [
         "True",
         "False"
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! The Smart Grid knows when a building like a hospital or factory needs power so it will help them get the power they need when they need it.",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be True, the Smart Grid can efficiently give factories and hospitals the power they need when they need it."
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A, the Smart Grid can efficiently give factories and hospitals the power they need when they need it."
     },
     {
-      "Question": "The Smart Grid helps out in a lot of ways. For example, the Smart Grid says when a home needs more or less power, where and when a house loses power, and is more efficient than the traditional grid\n",
+      "Question": "The Smart Grid allows you to take power from other generators in the grid if they are making extra.\n",
       "Answers": [
         "True",
         "False"
       ],
       "Correct": 0,
       "PostAnswerTextCorrect": "Correct! The Smart Grid can tell when a home has no power or too much power and will fix the issue itself without a long process",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be true. The Smart Grid allows homes to automatically alert the power company when they lose power."
-    },
-    {
-      "Question": "What is the key thing Smart Meters are communicating?\n",
-      "Answers": [
-        "Smart Meters help tell the power plants your private information",
-        "Smart Meters don’t do anything",
-        "Smart Meters show how much power you are using and how much you need",
-        "All of the above"
-      ],
-      "Correct": 2,
-      "PostAnswerTextCorrect": "Correct! The key things the Smart Meters communicate is how much power you are using and how much you have.",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be C, the Smart Meters communicate how much power you are using and how much power you have."
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be A. The Smart Grid can automatically transfer power when needed."
     },
     {
       "Question": "What is a quality of life improvement that the Smart Grid supplies?\n",
@@ -118,14 +108,14 @@
         "The old grid was way better than the Smart Grid",
         "There is no difference between the Smart Grid and the old grid",
         "The Smart Grid brings you flowers when you are unwell",
-        "The Smart grid can detect where a blackout is and get it fixed way quicker"
+        "The Smart Grid can detect where a blackout is and get it fixed way quicker"
       ],
       "Correct": 3,
-      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+      "PostAnswerTextCorrect": "Correct! The Smart Grid can detect when a blackout has occured and fix it quicker.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, The Smart grid can detect when a blackout has occured and fix it quicker."
     },
     {
-      "Question": "What allows solar panels to power during the night and to function more efficiently during the night?\n",
+      "Question": "What allows solar panels to power during the night?\n",
       "Answers": [
         "They use heat to generate more power",
         "The solar panels store excess power in batteries during the day",
@@ -133,8 +123,8 @@
         "They look cooler now, so they generate more power"
       ],
       "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+      "PostAnswerTextCorrect": "Correct! The batteries allow the solar panels to hold in energy during the night to power homes when the sun isn't out.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be B, the batteries allow the solar panels to hold in energy during the night to power homes when the sun isn't out."
     },
     {
       "Question": "Wind Turbines are facing multiple different directions in a wind farm so when the wind blows in different directions you still generate power.\n",
@@ -143,18 +133,20 @@
         "False"
       ],
       "Correct": 0,
-      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+      "PostAnswerTextCorrect": "Correct! When Wind Turbines face multiple directions they can catch the wind and use it for power no matter which direction the wind is going.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be True, when Wind Turbines face multiple directions they can catch the wind and use it for power no matter which direction the wind is going."
     },
     {
-      "Question": "Is Green Energy actually green?\n",
+      "Question": "How are Green Energy and the Smart Grid connected?\n",
       "Answers": [
-        "True",
-        "False"
+        "Green energy turns the Smart Grid bright green",
+        "The Smart Grid makes Green energy more reliable",
+        "The Smart Grid turns off Green generators all the time",
+        "They are not connected"
       ],
       "Correct": 1,
-      "PostAnswerTextCorrect": "Correct! The Smart Grid can tell immediately when there is a blackout and fix it far quicker than the traditional grid does",
-      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be D, the Smart Grid can tell immediately when there is a blackout and fix it as fast as it can."
+      "PostAnswerTextCorrect": "Correct! The Smart Grid can take energy from other generators and put them in places that need it more so there are no blackouts.",
+      "PostAnswerTextIncorrect": "Incorrect sorry, the correct answer would be B, the Smart Grid can take energy from other generators and put them in places that need it more so there are no blackouts."
     },
     {
       "Question": "END\n",

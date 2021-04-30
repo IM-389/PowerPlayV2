@@ -13,14 +13,21 @@ public class VideoSettingsBehaviour : MonoBehaviour
 
     [Tooltip("Toggle used for detecting fullscreen status")]
     public Toggle fullscreenToggle;
-    
+
+    public GameObject options;
+    public GameObject confirmRes;
+    public GameObject confirmFull;
+
     public Resolution[] resolutions;
 
     private Dictionary<int, int> resolutionIndexMap = new Dictionary<int, int>();
-    
+
+    //testing
+    bool hasLoaded = false;
     // Start is called before the first frame update
     void Start()
     {
+        //confirm.SetActive(false);
         resolutionSelect.ClearOptions();
         List<string> options = new List<string>();
         resolutions = Screen.resolutions;
@@ -54,13 +61,52 @@ public class VideoSettingsBehaviour : MonoBehaviour
         //Screen.fullScreen = fullscreenToggle.isOn;
         Screen.fullScreen = isFullscreen;
         SaveSettings();
+        if (hasLoaded) 
+        {
+            confirmFull.SetActive(true);
+            options.SetActive(false);
+        }
+        
     }
 
+    public void KeepFullScreen()
+    {
+        SaveSettings();
+        options.SetActive(true);
+        confirmFull.SetActive(false);
+    }
+
+    public void RevertFullScreen()
+    {
+        bool full = Convert.ToBoolean(PlayerPrefs.GetInt("IsFullscreen"));
+        Screen.fullScreen = full;
+        fullscreenToggle.isOn = !fullscreenToggle.isOn;
+        options.SetActive(true);
+        confirmFull.SetActive(false);
+    }
     public void SetResolution(int index)
     {
         Resolution resolution = resolutions[resolutionIndexMap[resolutionSelect.value]];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        if (hasLoaded)
+        {
+            confirmRes.SetActive(true);
+            options.SetActive(false);
+        }
+    }
+
+    public void KeepResolution()
+    {
         SaveSettings();
+        options.SetActive(true);
+        confirmRes.SetActive(false);
+    }
+
+    public void RevertResolution()
+    {
+        resolutionSelect.value = PlayerPrefs.GetInt("ResolutionIndex");
+        options.SetActive(true);
+        confirmRes.SetActive(false);
     }
 
     public void SaveSettings()
@@ -91,10 +137,18 @@ public class VideoSettingsBehaviour : MonoBehaviour
         {
             Screen.fullScreen = true;
         }
+
+        hasLoaded = true;
     }
 
+    public void AmTest()
+    {
+        print("hello I finished");
+    }
+    /*
     private void OnDisable()
     {
         SaveSettings();
     }
+    */
 }

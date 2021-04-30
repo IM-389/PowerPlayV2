@@ -54,6 +54,8 @@ namespace Milestones
                     }
             }
 
+            Debug.Log($"[SunsTheLimit] Current Solars: {solars}");
+            Debug.Log($"[SunsTheLimit] Powered Houses: {poweredHouses}");
             return solars >= (currentSolars + numToComplete) && poweredHouses >= 45;
         }
 

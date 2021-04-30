@@ -30,17 +30,17 @@ public class SquirrelEvent : EventBase
             GameObject[] findPower = GameObject.FindGameObjectsWithTag("Power");//finds all gameobjects with the tag "power"
             int rand = Random.Range(0, findPower.Length);
             GeneralObjectScript safeFound = findPower[rand].GetComponent<GeneralObjectScript>();
-            if (safeFound.consumerConnections.Count > 0)
+            if (safeFound.consumerConnections.Count > 0 || safeFound.nonConsumerConnections.Count > 0)
             {
                 for(int i = 0; i < safeFound.consumerConnections.Count;)
                 {
                     safeFound.consumerConnections[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
                     safeFound.RemoveConnection(safeFound.consumerConnections[i]);
-                    //Destroy(wireObject1);
-                    //if(wireObject1.wireObject1.GetComponentInChildren<SpriteRenderer>().color == Color.blue)
-                    //{
-                    //    Destroy(wireObject1.wireObject1);
-                   // }
+                }
+                for(int i = 0; i < safeFound.nonConsumerConnections.Count;)
+                {
+                    safeFound.nonConsumerConnections[i].GetComponent<GeneralObjectScript>().RemoveConnection(safeFound.gameObject);
+                    safeFound.RemoveConnection(safeFound.nonConsumerConnections[i]);
                 }
             }
 

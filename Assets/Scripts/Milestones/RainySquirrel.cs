@@ -6,21 +6,24 @@ using UnityEngine;
 
 public class RainySquirrel : MilestoneBase
 {
-    private RandomEventManager eventManager;
 
     private bool ranEvent = false;
-    
-    private void Start()
-    {
-        eventManager = GameObject.FindObjectOfType<RandomEventManager>();
-    }
-    
+
+    private bool delayStarted = false;
+
+    private bool delayFinished = false;
+
     public override bool CheckCompleteMilestone()
     {
-        if (!ranEvent)
+        if (!delayStarted)
         {
-            eventManager.RunEvent(2);
-            ranEvent = true;
+            delayStarted = true;
+            StartCoroutine(RunDelay());
+        }
+
+        if (!delayFinished)
+        {
+            return false;
         }
         
         GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
@@ -39,5 +42,11 @@ public class RainySquirrel : MilestoneBase
         }
 
         return houses >= 25;
+    }
+    
+    private IEnumerator RunDelay()
+    {
+        yield return new WaitForSeconds(0.5f);
+        delayFinished = true;
     }
 }

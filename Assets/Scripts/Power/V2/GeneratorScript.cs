@@ -29,12 +29,19 @@ namespace Power.V2
         public int upkeepCost;
         private MoneyManager moneyManager;
         private PowerManager powerManager;
+
+        private Animator anim;
         private void Start()
         {
             totalGenerators++;
             if(type == PowerManager.POWER_TYPES.TYPE_COAL)
             {
                 coalGenerators++;
+            }
+
+            if (type == PowerManager.POWER_TYPES.TYPE_WIND)
+            {
+                anim = transform.GetChild(0).GetChild(1).GetComponent<Animator>();
             }
             timeManager = GameObject.FindObjectOfType<TimeManager>();
             ns = gameObject.GetComponent<NetworkScript>();
@@ -84,24 +91,24 @@ namespace Power.V2
                             if(hitObject.CompareTag("house") || hitObject.CompareTag("factory")|| hitObject.CompareTag("hospital"))
                             {
                                 timeManager.cityApproval -= 10;
-                                Debug.Log("Lower City satisfaction, coal plant/windmill is too close to house");
+                                //Debug.Log("Lower City satisfaction, coal plant/windmill is too close to house");
                             }
                         }
                         if (!check)
                         {
                             if(coalGenerators/totalGenerators >= 1f)
                             {
-                                Debug.Log("100% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("100% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 40;
                             }
                             else if(coalGenerators/totalGenerators >= 0.9f)
                             {
-                                Debug.Log("90% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("90% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 20;
                             }
                             else if (coalGenerators/totalGenerators >= 0.8f)
                             {
-                                Debug.Log("80% of your generators are coal, try using something a little MMMM cleaner!");
+                                //Debug.Log("80% of your generators are coal, try using something a little MMMM cleaner!");
                                 timeManager.cityApproval -= 10;
                             }
                             check = true;
@@ -131,8 +138,14 @@ namespace Power.V2
             // Apply the changes to the manager again
             //manager.powerGenerated += amountInfo.amountGenerated;
 
+            // Freeze the animation
+            anim.speed = 0;
+            
             yield return new WaitForSeconds(seconds);
 
+            // Restart the animation
+            anim.speed = 1;
+            
             // Remove the previously generated amount
             manager.powerGenerated -= amountInfo.amountGenerated;
             

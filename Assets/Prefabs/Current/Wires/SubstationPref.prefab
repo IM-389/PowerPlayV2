@@ -110,8 +110,8 @@ MonoBehaviour:
   buildingText: Lets you connect many wires in one spot.
   connected: 0
   wireMat: {fileID: 0}
-  refundAmount: 0
-  buyCost: 0
+  refundAmount: 2
+  buyCost: 2
   buildCircle: {fileID: 272067711978254278}
   isSmart: 0
   unRemovable: 0

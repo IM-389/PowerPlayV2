@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dimensions: {x: 1, y: 2}
-  cost: 5
+  cost: 8
   positionOffset: {x: 0.2, y: -1}
   buildingName: Wind Generator
 --- !u!212 &7656360763664652194

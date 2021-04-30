@@ -192,8 +192,8 @@ MonoBehaviour:
   buildingText: Helps you send power a long way.
   connected: 0
   wireMat: {fileID: 0}
-  refundAmount: 0
-  buyCost: 0
+  refundAmount: 1
+  buyCost: 1
   buildCircle: {fileID: 6811981818816594772}
   isSmart: 0
   unRemovable: 0
