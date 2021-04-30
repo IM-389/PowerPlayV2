@@ -19,6 +19,8 @@ public class DialogueBehaviour : MonoBehaviour
     public Animator griddyAnim;
     public BoxCollider2D pauseBlocker;
 
+    public bool afterQuiz = false;
+
     public float previousTimeScale = 1;
 
     public GameObject arrow;
@@ -46,8 +48,11 @@ public class DialogueBehaviour : MonoBehaviour
     public void StartConvo(Dialogue dialog, bool hasQuiz)
     {
         currentSentence = -1;
-        Time.timeScale = previousTimeScale;
-        previousTimeScale = Time.timeScale;
+        // Time.timeScale = previousTimeScale;
+        if (!afterQuiz)
+        {
+            previousTimeScale = Time.timeScale;
+        }
         po.UpdateSlideOutUI(false);
         dialougePanel.SetActive(true);
         st = GameObject.FindObjectOfType<StoryTelling>();
@@ -89,6 +94,7 @@ public class DialogueBehaviour : MonoBehaviour
                 pauseBlocker.enabled = false;
                 StartCoroutine(HideGriddy());
                 Time.timeScale = previousTimeScale;
+                afterQuiz = false;
             }
 
             return;
