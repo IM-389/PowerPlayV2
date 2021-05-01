@@ -22,14 +22,6 @@ public class PoweringUpP1 : MilestoneBase
             }
         }
         
-
-        if (coalGen >= 1)
-        {
-            am = arrow.GetComponent<ArrowBehaviour>();
-            am.FinishTheJob();
-        }
-        
-        
         return coalGen >= 2;
     }
 }

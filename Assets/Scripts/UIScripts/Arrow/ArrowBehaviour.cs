@@ -62,13 +62,12 @@ public class ArrowBehaviour : MonoBehaviour
             next.SetActive(true);
             isThereMore = false;
         }
-        
+
         gameObject.SetActive(false);
     }
 
     bool CheckIfFound()
     {
-
         Vector2 targetScreenPos = mainCam.WorldToScreenPoint(targetPos);
         Vector2 targetViewportPos = mainCam.ScreenToViewportPoint(targetScreenPos);
 

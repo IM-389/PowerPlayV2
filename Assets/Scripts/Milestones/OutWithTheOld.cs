@@ -4,8 +4,39 @@ namespace Milestones
 {
     public class OutWithTheOld : MilestoneBase
     {
+        /*
+        public GameObject arrow;
+        ArrowBehaviour am;
+        bool CheckArrow
+        {
+            get
+            {
+                GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
+
+                int solarGen = 0;
+
+                foreach (var generator in generators)
+                {
+                    GeneralObjectScript gos = generator.GetComponent<GeneralObjectScript>();
+                    if (gos.isMilestoneCounted &&
+                        generator.GetComponent<GeneratorScript>().type == PowerManager.POWER_TYPES.TYPE_SOLAR)
+                    {
+                        ++solarGen;
+                    }
+                }
+
+                return solarGen >= 2;
+            }
+        }
+        */
         public override bool CheckCompleteMilestone()
         {
+            /*if (CheckArrow)
+            {
+                am = arrow.GetComponent<ArrowBehaviour>();
+                am.FinishTheJob();
+                // also include code to set the one thing as in active
+            }*/
             GameObject[] generators = GameObject.FindGameObjectsWithTag("Generator");
 
             int solarGen = 0;
@@ -40,4 +71,6 @@ namespace Milestones
             return solarGen >= 1 && poweredHouses >= 20;
         }
     }
+
+
 }
