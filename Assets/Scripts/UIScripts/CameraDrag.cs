@@ -27,13 +27,15 @@ public class CameraDrag : MonoBehaviour
     public Vector2 maxCameraPos;
 
 
-    //public GameObject arrowManager;
+    public GameObject arrowManager;
     ArrowManager am;
+    Vector3 startArrow;
     private void Start()
     {
         //am = arrowManager.GetComponent<ArrowManager>();
         camera = Camera.main;
         startPosGriddie = Griddie.transform.position;
+        startArrow = arrowManager.transform.position;
     }
     
     // Update is called once per frame
@@ -66,6 +68,13 @@ public class CameraDrag : MonoBehaviour
             pos.y = 0.1f;
             Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
             //am.dis -= 0.14f;
+            //camera.orthographicSize -= 1;
+            arrowManager.transform.localScale -= new Vector3(0.14f, 0.14f);
+            arrowManager.transform.position = startArrow;
+            Vector3 posA = Camera.main.WorldToViewportPoint(arrowManager.transform.position);
+            //pos.x = 0.24f;
+            //pos.y = 0.1f;
+            arrowManager.transform.position = Camera.main.ViewportToWorldPoint(posA);
         }
         else if ((Input.mouseScrollDelta.y <= -0.5f || Input.GetKeyDown(zoomOut)) && camera.orthographicSize < maxZoom)
         {
@@ -77,6 +86,12 @@ public class CameraDrag : MonoBehaviour
             pos.y = 0.1f;
             Griddie.transform.position = Camera.main.ViewportToWorldPoint(pos);
             //am.dis += 0.14f;
+            arrowManager.transform.localScale += new Vector3(0.14f, 0.14f);
+            arrowManager.transform.position = startArrow;
+            Vector3 posA = Camera.main.WorldToViewportPoint(arrowManager.transform.position);
+            //pos.x = 0.24f;
+            //pos.y = 0.1f;
+            arrowManager.transform.position = Camera.main.ViewportToWorldPoint(posA);
         }
     }
 
