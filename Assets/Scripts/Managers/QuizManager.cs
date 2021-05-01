@@ -77,7 +77,7 @@ public class QuizManager : MonoBehaviour
 
     public void StartQuiz()
     {
-        db.afterQuiz = true;
+        
         currentQuestion = NextQuestion();
         UpdateQuiz(currentQuestion);
     }
@@ -112,6 +112,7 @@ public class QuizManager : MonoBehaviour
     
     public bool CheckAnswer(int answer)
     {
+        db.afterQuiz = true;
         return answer == currentQuestion.Correct;
     }
 
