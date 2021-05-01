@@ -207,8 +207,9 @@ public class TimeManager : MonoBehaviour
                 {   
                     //buffer += "Day: " + days + ", 12 ";
                     //builder.Append($"Day: {days}, 12 ");
+                    builder.Append("Day: ");
                     builder.Append(days);
-                    //builder.Append(", P.M");
+                    builder.Append(", 12");
                     if (hours == 12)
                     {
                         MusicManage();
@@ -217,19 +218,23 @@ public class TimeManager : MonoBehaviour
                     if(hours == 24)
                     {
                         //buffer += " A.M";
-                        //builder.Append(" A.M");
+                        builder.Append(" A.M");
+                    }
+                    else
+                    {
+                        builder.Append(" P.M");
                     }
                 }
                 else
                 {
                     //buffer += "Day: " + days + ", " + hours % 12;
-                    builder.Append($"Day:");
+                    builder.Append($"Day: ");
                     builder.Append(days);
                     builder.Append(", ");
                     builder.Append(hours % 12);
                 }
 
-                if (hours >= 12 && hours != 24)
+                if (hours > 12 && hours != 24)
                 {
                     //buffer +=  " P.M";
                     builder.Append(" P.M");
