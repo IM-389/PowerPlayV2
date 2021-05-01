@@ -857,7 +857,7 @@ MonoBehaviour:
     sentences:
     - Great job removing the Power Pole! With your skills, we can do anything!
     - "Looks like this neighborhood is out of power. Let\u2019s fix that!"
-    - 'To get power from this Coal Plant to other buildings, likeouses, you need
+    - 'To get power from this Coal Plant to other buildings, like houses, you need
       to lay down some Power Poles. <b>Power Poles help transfer the power from place
       to place.</b> '
     - "To build a power pole, click on the big Tools button in the bottom right and
@@ -1088,10 +1088,10 @@ MonoBehaviour:
     - "Solar Panels belong to a group we call \u201Cenvironmentally friendly\u201D
       power generators. They don\u2019t make smoke, but they still create power for
       us."
-    - "<b>Since Solar Panels soak up light from our Sun, they send out very little
-      power during the night or in cloudy weather. They also cost more money to build.
-      Sadly, that means Solar Panels can\u2019t replace Coal Plants completely\u2026
-      yet.</b>"
+    - <b>Since Solar Panels soak up light from our Sun, they send out very little
+      power during the night or in cloudy weather.</b>
+    - "<b>They also cost more money to build. Sadly, that means Solar Panels can\u2019t
+      replace Coal Plants completely\u2026 yet.</b>"
     - "Let\u2019s start by building some Solar Panels."
 --- !u!1 &3818978950990658700
 GameObject:
@@ -1553,10 +1553,11 @@ MonoBehaviour:
     sentences:
     - 'Solar Panels sure are brilliant, but we have one more generator to look at:
       Wind Turbines!'
-    - "<b>Wind Turbines turn wind into power</b>, which also makes them an environmentally
+    - <b>Wind Turbines turn wind into power</b>, which also makes them an environmentally
       friendly power generator. Try putting some down and connect them to the new
-      neighborhood. But be careful: people don\u2019t like it when wind turbines
-      are too close to their house. Turbines can be pretty noisy!"
+      neighborhood.
+    - "But be careful: people don\u2019t like it when wind turbines are too close
+      to their house. Turbines can be pretty noisy!"
     - "As you will notice from the Solar Panels and Wind Turbines, green energy isn\u2019t
       as consistent as fossil fuels like coal plants. We will explain how to make
       them more consistent later."
