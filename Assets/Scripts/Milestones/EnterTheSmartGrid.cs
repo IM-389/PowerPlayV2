@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Power.V2;
@@ -18,12 +19,33 @@ namespace Milestones
         public GameObject upgradeArea;
 
         public Text daysLeft;
+        
+        private RandomEventManager eventManager;
+        
+        private bool ranEvent = false;
+
+        private bool delayStarted = false;
+
+        private bool delayFinished = false;
         private void Start()
         {
             timeManager = GameObject.FindWithTag("GameController").GetComponent<TimeManager>();
+            eventManager = GameObject.FindObjectOfType<RandomEventManager>();
         }
         public override bool CheckCompleteMilestone()
         {
+            if (!delayStarted)
+            {
+                delayStarted = true;
+                StartCoroutine(RunDelay());
+            }
+
+            if (!ranEvent && delayFinished)
+            {
+                eventManager.RunEvent(2);
+                ranEvent = true;
+            }
+            
             GameObject[] allHouses = GameObject.FindGameObjectsWithTag("house");
 
             foreach (var house in allHouses)
@@ -64,6 +86,12 @@ namespace Milestones
             return false;
         }
 
+        private IEnumerator RunDelay()
+        {
+            yield return new WaitForSeconds(10);
+            delayFinished = true;
+        }
+        
         public override void SetCompleteMilestone()
         {
             base.SetCompleteMilestone();
