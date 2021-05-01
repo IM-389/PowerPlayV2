@@ -67,6 +67,9 @@ TagManager:
   - name: Trees
     uniqueID: 1554202843
     locked: 0
+  - name: Building
+    uniqueID: 3686998089
+    locked: 0
   - name: NightCycle
     uniqueID: 2145369835
     locked: 0

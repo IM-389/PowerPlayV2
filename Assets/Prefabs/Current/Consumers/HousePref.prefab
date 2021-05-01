@@ -72,7 +72,7 @@ Transform:
   m_GameObject: {fileID: 2067710383698671812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: -63.67}
   m_Children: []
   m_Father: {fileID: 6028709754009470984}
   m_RootOrder: 7
@@ -93,10 +93,10 @@ SpriteRenderer:
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
   m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
+  m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,9 +114,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -302095513
+  m_SortingLayer: 6
+  m_SortingOrder: 55
   m_Sprite: {fileID: 21300000, guid: 0b5300fd34720dc4781652b2cb589596, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -140,6 +140,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2164de9067890d4da8152419bb5ca02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minStayOnX: 0.2
+  maxStayOnX: 0.8
+  minStayOnY: 0.2
+  maxStayOnY: 0.8
 --- !u!1 &5456081886927572592
 GameObject:
   m_ObjectHideFlags: 0
@@ -5232,7 +5236,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6028709754009470984}
-  - component: {fileID: 1615638224}
   - component: {fileID: 9213772324347092880}
   - component: {fileID: -1264182747367775761}
   - component: {fileID: -1488912352967434167}
@@ -5272,17 +5275,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &1615638224
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6028709754009470987}
-  m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!61 &9213772324347092880
 BoxCollider2D:
   m_ObjectHideFlags: 0
