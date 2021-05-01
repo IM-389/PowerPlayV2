@@ -48,7 +48,8 @@ public class RandomEventManager : MonoBehaviour
         
         // Ticks on day changes
         timestep = timeManager.hours;
-        if (doEvents && timestep > previousTimestep && timeManager.hours > 1)
+        // Only run events if they are enabled, and only try to run them every 3 hours
+        if (doEvents && timestep > previousTimestep && timeManager.hours > 1 && (timestep % 3 == 0))
         {
             
             // Determine which event to select
