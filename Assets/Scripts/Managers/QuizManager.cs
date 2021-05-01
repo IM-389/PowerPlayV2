@@ -39,8 +39,7 @@ public class QuizManager : MonoBehaviour
     /// </summary>
     private int questionsAsked;
 
-    [Tooltip("How many points a correct question is worth, if it does not revive")]
-    public int quizPoints = 10;
+    public GameObject closeButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -120,6 +119,10 @@ public class QuizManager : MonoBehaviour
     {
         string result = "";
 
+        if (answerChoices.value == 0)
+        {
+            return;
+        }
         if (CheckAnswer(answerChoices.value - 1))
         {
             result += currentQuestion.PostAnswerTextCorrect;
@@ -134,6 +137,7 @@ public class QuizManager : MonoBehaviour
 
         //result += currentQuestion.Answers[currentQuestion.Correct];
 
+        closeButton.SetActive(true);
         questionText.text = result;
     }
 
