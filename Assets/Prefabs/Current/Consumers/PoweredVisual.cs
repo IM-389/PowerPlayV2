@@ -10,10 +10,11 @@ public class PoweredVisual : MonoBehaviour
     bool powered = false;
     //public GameObject windows;
     private SpriteRenderer spriteR;
-    //public Sprite poweredSprite;
-    //public Sprite unpoweredSprite;
+    public Sprite poweredSprite;
+    public Sprite unpoweredSprite;
     public GameObject smoke;
     public GameObject houseLight;
+    public bool usesSprite;
 
     public ConsumerScript consumer;
 
@@ -26,7 +27,7 @@ public class PoweredVisual : MonoBehaviour
 
     private void Start()
     {
-        //spriteR = gameObject.GetComponent<SpriteRenderer>();
+        spriteR = gameObject.GetComponent<SpriteRenderer>();
         network = transform.GetComponent<NetworkScript>();
         CheckPower();
         //anim = gameObject.GetComponent<Animator>();
@@ -43,7 +44,11 @@ public class PoweredVisual : MonoBehaviour
     {
         if (powered == false)
         {
-            //spriteR.sprite = unpoweredSprite;
+            if (usesSprite == true)
+            {
+                spriteR.sprite = unpoweredSprite;
+            }
+
             smoke.SetActive(false);
             houseLight.SetActive(false);
             anim.speed = 0;
@@ -51,7 +56,10 @@ public class PoweredVisual : MonoBehaviour
         }
         if (powered == true)
         {
-            //spriteR.sprite = poweredSprite;
+            if (usesSprite == true)
+            {
+                spriteR.sprite = poweredSprite;
+            }
             houseLight.SetActive(true);
             smoke.SetActive(true);
             anim.speed = 1;
