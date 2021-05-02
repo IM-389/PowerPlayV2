@@ -1924,7 +1924,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sequenceNumber: 0
   milestoneText: Power all the houses for 1 day, and make sure the City Satisfaction
-    reaches 60!
+    reaches 30!
   milestoneName: Rainy Day
   moneyGained: 0
   hasQuestion: 1
