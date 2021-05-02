@@ -693,6 +693,13 @@ public class BuildScript : MonoBehaviour
                 errorText.text = "You cannot connect this generator directly to a consumer!";
                 return;
             }
+            if(wireObject1.CompareTag("Generator") && wireObject2.CompareTag("Generator"))
+            {
+                wireObject2.layer = 0;
+                errorBox.SetActive(true);
+                errorText.text = "You cannot connect a generator to another generator!";
+                return;
+            }
             wireObject1.layer = 0;
             wireObject2.layer = 0;
             wireObject1.GetComponent<RecolorScript>().Recolor(Color.white);
