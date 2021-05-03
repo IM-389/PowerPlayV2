@@ -25,6 +25,7 @@ namespace Power.V2
 
         private List<GameObject> visitedObjects = new List<GameObject>();
 
+        private int maxHops = 500;
         /*
          * Dictionary of if each connection leads to the generator
          * Pathfinding algo style
@@ -57,7 +58,7 @@ namespace Power.V2
         public void OnRemoved(GameObject removedFrom)
         {
             Debug.Log("Disconnected!");
-            if (!FindManager(manager, gameObject))
+            if (!FindManager(manager, gameObject, 0))
             {
                 NetworkManager prevManager = manager;
                 manager = null;
@@ -108,7 +109,7 @@ namespace Power.V2
                 Debug.Log($"{otherManager} has higher precedence, updating manager");
                 //otherManager.SetProperties(manager);
                 DestroyImmediate(manager);
-                ChangeManager(otherManager);
+                ChangeManager(otherManager, 0);
             }
 
             return true;
@@ -120,12 +121,19 @@ namespace Power.V2
         /// Updates the manager for all objects on the network
         /// </summary>
         /// <param name="newManager">New manager for the network</param>
-        private void ChangeManager(NetworkManager newManager)
+        private void ChangeManager(NetworkManager newManager, int numHops)
         {
             if (manager == newManager)
             {
                 return;
             }
+
+            if (numHops > maxHops)
+            {
+                Debug.Log("ChangeManager: Maximum number of hops reached");
+                return;
+            }
+            
 
             isManager = false;
             manager = newManager;
@@ -137,7 +145,7 @@ namespace Power.V2
 
             foreach (var connection in allConnections)
             {
-                connection.GetComponent<NetworkScript>().ChangeManager(newManager);
+                connection.GetComponent<NetworkScript>().ChangeManager(newManager, numHops + 1);
             }
         }
 
@@ -152,7 +160,7 @@ namespace Power.V2
             List<GameObject> allConnections = gos.GetAllConnections();
             foreach (var connection in allConnections)
             {
-                connection.GetComponent<NetworkScript>().ChangeManager(manager);
+                connection.GetComponent<NetworkScript>().ChangeManager(manager, 0);
             }
         }
 
@@ -161,9 +169,9 @@ namespace Power.V2
         /// </summary>
         /// <param name="networkManager">The manager to search for</param>
         /// <returns>True if manager is found, false if not</returns>
-        private bool FindManager(NetworkManager networkManager, GameObject target)
+        private bool FindManager(NetworkManager networkManager, GameObject target, int numHops)
         {
-            Debug.Log($"Finding {networkManager.gameObject.name} from {gameObject.name}");
+            Debug.Log($"Finding {networkManager.gameObject.name} from {gameObject.name}. Hops: {numHops}");
             if (isManager && manager.Equals(networkManager))
             {
                 Debug.Log($"FindManager: {gameObject.name} found manager!!!");
@@ -178,6 +186,12 @@ namespace Power.V2
                 return false;
             }
 
+            if (numHops > maxHops)
+            {
+                Debug.Log("FindManager: Maximum amount of hops reached!");
+                return false;
+            }
+            
             //isVisited = true;
             List<GameObject> allConnections = gos.GetAllConnections();
 
@@ -185,7 +199,7 @@ namespace Power.V2
             foreach (var connection in allConnections)
             {
                 visitedObjects.Add(connection);
-                found = connection.GetComponent<NetworkScript>().FindManager(networkManager, gameObject);
+                found = connection.GetComponent<NetworkScript>().FindManager(networkManager, gameObject, numHops + 1);
                 //found = FindManager(networkManager, connection);
                 if (found)
                 {
