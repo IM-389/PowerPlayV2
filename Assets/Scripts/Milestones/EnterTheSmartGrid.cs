@@ -34,12 +34,6 @@ namespace Milestones
         }
         public override bool CheckCompleteMilestone()
         {
-            if (!delayStarted)
-            {
-                delayStarted = true;
-                StartCoroutine(RunDelay());
-            }
-
             if (!ranEvent && delayFinished)
             {
                 eventManager.RunEvent(2);
@@ -85,12 +79,7 @@ namespace Milestones
 
             return false;
         }
-
-        private IEnumerator RunDelay()
-        {
-            yield return new WaitForSeconds(10);
-            delayFinished = true;
-        }
+        
         
         public override void SetCompleteMilestone()
         {
