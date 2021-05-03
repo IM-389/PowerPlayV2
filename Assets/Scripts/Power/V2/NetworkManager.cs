@@ -23,6 +23,8 @@ namespace Power.V2
         public float powerConsumed;
 
         public bool hasEnoughPower = false;
+
+        public bool randomizePrecedence = true;
         // Start is called before the first frame update
         void Awake()
         {
@@ -31,7 +33,8 @@ namespace Power.V2
             powerGenerated += gameObject.GetComponent<PowerAmountInfo>().amountGenerated;
             // Determine predecence number randomly upon placement
             // Random number is large enough to (hopefully) prevent 2 managers with the same from being connected
-            precedenceNumber = Random.Range(0, 100000000);
+            if (randomizePrecedence)
+                precedenceNumber = Random.Range(0, 1000000000);
         }
 
         private void Update()

@@ -172,7 +172,7 @@ namespace Power.V2
             }
 
             //if (isVisited)
-            if (visitedObjects.Contains(target))
+            if (visitedObjects.Contains(target) || target is null)
             {
                 Debug.Log($"FindManager: {gameObject.name} already visited {networkManager.gameObject.name}!");
                 return false;

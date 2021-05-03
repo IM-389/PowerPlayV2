@@ -69,10 +69,16 @@ namespace Milestones
                 if (startDay < 0)
                 {
                     startDay = timeManager.days;
+                    // Compensate for the day ticking over right as the milestone starts
+                    ++startDay;
                 }
 
                 // Count the days elapsed
                 daysElapsed = timeManager.days - startDay;
+                if (daysElapsed < 0)
+                {
+                    daysElapsed = 0;
+                }
                 daysLeft.text = "Days all houses powered: " + daysElapsed;
                 return daysElapsed >= 1;
             }

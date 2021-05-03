@@ -46,7 +46,7 @@ public class ArrowBehaviour : MonoBehaviour
             Vector3 dis = target.transform.position - gameObject.transform.position;
             angle = Mathf.Atan2(dis.y, dis.x) * Mathf.Rad2Deg;
             Quaternion q = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, q, Time.deltaTime * speed);
+            gameObject.transform.rotation = Quaternion.Slerp(gameObject.transform.rotation, q, Time.unscaledDeltaTime * speed);
 
             if (CheckIfFound()) //set this to whatever suits best
             {
