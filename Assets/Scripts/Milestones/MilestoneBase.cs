@@ -49,6 +49,7 @@ namespace Milestones
 
         public virtual void SetCompleteMilestone()
         {
+            daysElapsed = 0;
             foreach (var unlocked in enabledObjects)
             {
                 unlocked.SetActive(true);
