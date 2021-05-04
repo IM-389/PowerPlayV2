@@ -115,7 +115,7 @@ public class SoundManager : MonoBehaviour
     {
         masterSliderText.text = "Master = " + (Mathf.Round(masterSlider.value)) + "%";
         musicSliderText.text = "Music = " + (Mathf.Round(musicSlider.value)) + "%";
-        sfxSliderText.text = "SFX = " + (Mathf.Round(sfxSlider.value)) + "%";
+        sfxSliderText.text = "Sound Effects = " + (Mathf.Round(sfxSlider.value)) + "%";
     }
 
     public void LoadSettings()
