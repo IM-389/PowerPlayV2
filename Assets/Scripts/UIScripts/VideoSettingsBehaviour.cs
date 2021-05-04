@@ -36,6 +36,10 @@ public class VideoSettingsBehaviour : MonoBehaviour
         
         for (int i = 0; i < resolutions.Length; ++i)
         {
+            if (resolutions[i].width % 16 != 0 || resolutions[i].height % 9 != 0)
+            {
+                continue;
+            }
             string option = $"{resolutions[i].width} x {resolutions[i].height}";
             if (!options.Contains(option))
             {
